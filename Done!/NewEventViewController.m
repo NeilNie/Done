@@ -16,7 +16,30 @@
 
 - (IBAction)addEvent:(id)sender {
     
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    [realm beginWriteTransaction];
     
+    Events *NewEvent = [[Events alloc] init];
+    NewEvent.title = title;
+    NewEvent.subTitle = subTitle;
+    NewEvent.location = location;
+    NewEvent.date = date;
+    [realm addObject:NewEvent];
+    [realm commitWriteTransaction];
+    
+    if (reminder) {
+        UILocalNotification *notification = [[UILocalNotification alloc] init];
+        notification.fireDate = date;
+        notification.alertTitle = @"You have a new reminder";
+        notification.alertBody = title;
+        notification.timeZone = [NSTimeZone defaultTimeZone];
+        notification.applicationIconBadgeNumber = [[UIApplication sharedApplication]applicationIconBadgeNumber] + 1;
+        [[UIApplication sharedApplication] scheduleLocalNotification:notification];
+    }
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+- (IBAction)cancel:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(void)setUpView{
@@ -61,8 +84,6 @@
 
 -(NSDictionary *)getCellDescriptorForIndexPath:(NSIndexPath *)indexPath{
     
-    NSLog(@"numbers %@", [[visibleRowsPerSection objectAtIndex:indexPath.section] objectAtIndex:indexPath.row]);
-    
     NSNumber *indexOfVisibleRow = [[visibleRowsPerSection objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
     NSDictionary *cellDescriptor = [[cellDescriptors objectAtIndex:indexPath.section] objectAtIndex:indexOfVisibleRow.integerValue];
     return cellDescriptor;
@@ -77,7 +98,6 @@
     NSNumber *number = [[[cellDescriptors objectAtIndex:indexPath.section] objectAtIndex:indexOfTappedRow.integerValue] objectForKey:@"isExpandable"];
     if (number.intValue == 1) {
         
-        NSLog(@"will be expanded");
         BOOL shouldExpandAndShowSubRows = NO;
         NSLog(@"shouldExpandAndShowSubRows %@", [NSNumber numberWithBool:shouldExpandAndShowSubRows]);
         NSNumber *Int = [[[cellDescriptors objectAtIndex:indexPath.section] objectAtIndex:indexOfTappedRow.integerValue] objectForKey:@"isExpanded"];
@@ -98,7 +118,6 @@
         
     }
     else {
-        NSLog(@"else statement");
         NSString *string = [[[cellDescriptors objectAtIndex:indexPath.section] objectAtIndex:indexOfTappedRow.integerValue] objectForKey:@"cellIdentifier"];
         if ([string isEqualToString:@"idCellValuePicker"]) {
             
@@ -198,9 +217,9 @@
 -(void)textFieldChanged:(NSString *)newText withCell:(CustomCell *)parentCell{
     
     NSIndexPath *parentCellIndex = [self.table indexPathForCell:parentCell];
-    if (parentCellIndex.row == 0) {
-        title = newText;
+    if (parentCellIndex.row == 1) {
         [[[cellDescriptors objectAtIndex:0] objectAtIndex:0] setValue:newText forKey:@"primaryTitle"];
+        title = newText;
     }else{
         subTitle = newText;
     }

@@ -9,6 +9,7 @@
 #import <Realm/Realm.h>
 
 @interface Events : RLMObject
+
 @property NSString *title;
 @property NSString *subTitle;
 @property NSDate *date;

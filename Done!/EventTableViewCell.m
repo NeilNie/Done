@@ -10,6 +10,8 @@
 
 @implementation EventTableViewCell
 
+@synthesize delegate;
+
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
@@ -21,4 +23,11 @@
     // Configure the view for the selected state
 }
 
+- (IBAction)done:(id)sender {
+    
+    [_button setImage:[UIImage imageNamed:@"circle-f.png"] forState:UIControlStateNormal];
+    if (delegate != nil) {
+        [delegate ClickedDone:self];
+    }
+}
 @end

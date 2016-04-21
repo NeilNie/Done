@@ -10,6 +10,8 @@
 #import <Realm/Realm.h>
 
 #import "CustomCell.h"
+#import "Events.h"
+#import "TodoViewController.h"
 
 @interface NewEventViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, CustomCellDelegates>{
     NSArray *array;

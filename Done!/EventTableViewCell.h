@@ -10,4 +10,16 @@
 
 @interface EventTableViewCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+@property (weak, nonatomic) IBOutlet UIButton *button;
+@property (nonatomic, assign) id delegate;
+- (IBAction)done:(id)sender;
+
+@end
+
+@protocol EventCellDelegate <NSObject>
+
+-(void)ClickedDone:(EventTableViewCell *)cell;
+
 @end

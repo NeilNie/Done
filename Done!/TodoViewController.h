@@ -10,11 +10,14 @@
 #import <Realm/Realm.h>
 
 #import "Events.h"
+#import "EventTableViewCell.h"
 
-@interface TodoViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>{
+@interface TodoViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, EventCellDelegate>{
     RLMResults *result;
+    UIRefreshControl *refresh;
 }
 
+@property (weak, nonatomic) IBOutlet UINavigationItem *item;
 @property (weak, nonatomic) IBOutlet UITableView *table;
 
 @end

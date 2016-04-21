@@ -8,9 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import <JTCalendar/JTCalendar.h>
+#import <Realm/Realm.h>
+
+#import "Events.h"
 
 @interface CalendarViewController : UIViewController <JTCalendarDelegate, UITableViewDataSource, UITableViewDelegate>{
+    NSMutableArray *array;
+    NSDate *dateSelected;
+    NSMutableDictionary *eventsByDate;
     
+    Events *currentEvent;
 }
 
 @property (weak, nonatomic) IBOutlet JTCalendarMenuView *calendarMenuView;
