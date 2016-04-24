@@ -22,6 +22,13 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>1.0.0</string>
+	<key>CLKComplicationPrincipalClass</key>
+	<string>ComplicationController</string>
+	<key>CLKComplicationSupportedFamilies</key>
+	<array>
+		<string>CLKComplicationFamilyModularLarge</string>
+		<string>CLKComplicationFamilyUtilitarianLarge</string>
+	</array>
 	<key>NSExtension</key>
 	<dict>
 		<key>NSExtensionAttributes</key>

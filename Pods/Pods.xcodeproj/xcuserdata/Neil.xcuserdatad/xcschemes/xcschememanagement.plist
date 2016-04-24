@@ -3,7 +3,28 @@
 <plist version="1.0">
 <dict>
 	<key>SchemeUserState</key>
-	<dict/>
+	<dict>
+		<key>JTCalendar.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Done! Widgets.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Realm.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>2A739A09DF63110B9D9141965BB26C19</key>
@@ -12,6 +33,11 @@
 			<true/>
 		</dict>
 		<key>3B12482092375F94B5148758E7940F20</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>76581F97F149DC996732D3704AB7E435</key>
 		<dict>
 			<key>primary</key>
 			<true/>

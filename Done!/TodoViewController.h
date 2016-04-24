@@ -11,10 +11,12 @@
 
 #import "Events.h"
 #import "EventTableViewCell.h"
+#import "MMWormhole.h"
 
 @interface TodoViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, EventCellDelegate>{
     RLMResults *result;
     UIRefreshControl *refresh;
+    MMWormhole *wormhole;
 }
 
 @property (weak, nonatomic) IBOutlet UINavigationItem *item;

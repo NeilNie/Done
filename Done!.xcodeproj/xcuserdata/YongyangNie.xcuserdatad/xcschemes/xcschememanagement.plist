@@ -4,6 +4,21 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Done! Apple Watch (Notification).xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
+		<key>Done! Apple Watch.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
+		<key>Done! Widgets.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
 		<key>Done!.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -12,6 +27,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>003C01471CCC4752003F7A0B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>006083471CC4007500A344F1</key>
 		<dict>
 			<key>primary</key>
@@ -23,6 +43,21 @@
 			<true/>
 		</dict>
 		<key>0060836B1CC4007500A344F1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0087E5021CCBE6DA00CDF882</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>281838B81CC9B01800D5930E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>28BDF7DE1CC9093100E3F63C</key>
 		<dict>
 			<key>primary</key>
 			<true/>

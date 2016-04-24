@@ -2,13 +2,22 @@
 //  InterfaceController.h
 //  Done! Apple Watch Extension
 //
-//  Created by Yongyang Nie on 4/21/16.
+//  Created by Yongyang Nie on 4/23/16.
 //  Copyright © 2016 Yongyang Nie. All rights reserved.
 //
 
 #import <WatchKit/WatchKit.h>
 #import <Foundation/Foundation.h>
+#import <Realm/Realm.h>
 
-@interface InterfaceController : WKInterfaceController
+#import "Events.h"
+#import "MMWormhole.h"
+
+@interface InterfaceController : WKInterfaceController{
+    RLMResults *result;
+
+}
+
+@property (strong, nonatomic) MMWormhole *wormhole;
 
 @end

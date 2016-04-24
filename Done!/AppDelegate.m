@@ -7,8 +7,12 @@
 //
 
 #import "AppDelegate.h"
+#import <Realm/Realm.h>
+#import "MMWormhole.h"
 
 @interface AppDelegate ()
+
+@property (strong, nonatomic) MMWormhole *wormhole;
 
 @end
 
@@ -21,6 +25,12 @@
     [[UITabBar appearance] setTintColor:[UIColor lightGrayColor]];
     [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]} forState:UIControlStateNormal];
     [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor lightGrayColor]} forState:UIControlStateSelected];
+    
+    NSURL *directory = [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:@"group.done.com.watch"];
+    NSString *realmPath = [directory.path stringByAppendingPathComponent:@"db.realm"];
+    RLMRealmConfiguration *config = [RLMRealmConfiguration defaultConfiguration];
+    config.fileURL = [NSURL fileURLWithPath:realmPath];
+    [RLMRealmConfiguration setDefaultConfiguration:config];
     // Override point for customization after application launch.
     return YES;
 }
@@ -31,6 +41,13 @@
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
+    
+    NSLog(@"did enter background");
+    self.wormhole = [[MMWormhole alloc] initWithApplicationGroupIdentifier:@"group.done.com.watch" optionalDirectory:@"wormhole"];
+    [self.wormhole listenForMessageWithIdentifier:@"idRequestUpdate" listener:^(id  _Nullable messageObject) {
+        NSLog(@"request received%@", messageObject);
+//        [[NSNotificationCenter defaultCenter] postNotificationName:@"ndUpdateWatch" object:nil];
+    }];
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }

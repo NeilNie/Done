@@ -21,7 +21,7 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return array.count;
+    return eventArray.count;
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -29,12 +29,15 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 50;
+    return 70;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"idCalendar" forIndexPath:indexPath];
+    EventTableViewCell *cell = (EventTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"idEventCell" forIndexPath:indexPath];
+    Events *event = [eventArray objectAtIndex:indexPath.row];
+    cell.titleLabel.text = event.title;
+    cell.dateLabel.text = [[self dateFormatter] stringFromDate:event.date];
     return cell;
 }
 
@@ -63,8 +66,7 @@
     }
     
     if([self haveEventForDay:dayView.date withRealmResult:[Events allObjects]]){
-        [array addObject:currentEvent];
-        NSLog(@"array %@", array);
+        NSLog(@"%@", eventArray);
         [self.table reloadData];
     }
     
@@ -122,13 +124,13 @@
 
 - (BOOL)haveEventForDay:(NSDate *)date withRealmResult:(RLMResults *)realm
 {
-    
+    [eventArray removeAllObjects];
     for (int i = 0; i < realm.count; i++) {
         
         Events *event = [realm objectAtIndex:i];
         NSString *string = [[self dateFormatter] stringFromDate:event.date];
         if ([string isEqualToString:[[self dateFormatter] stringFromDate:date]]) {
-            currentEvent = event;
+            [eventArray addObject:event];
             return YES;
         }
     }
@@ -153,7 +155,7 @@
     [_calendarManager setContentView:_calendarContentView];
     [_calendarManager setDate:[NSDate date]];
     
-    array = [NSMutableArray array];
+    eventArray = [NSMutableArray array];
     // Do any additional setup after loading the view.
 }
 

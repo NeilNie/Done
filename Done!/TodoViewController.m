@@ -16,6 +16,18 @@
 
 #pragma mark - UITableView Delegate
 
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        Events *event = [result objectAtIndex:indexPath.row];
+        RLMRealm *realm = [RLMRealm defaultRealm];
+        [realm beginWriteTransaction];
+        [realm deleteObject:event];
+        [realm commitWriteTransaction];
+        [self.table deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationTop];
+    }
+}
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
 }
@@ -47,7 +59,7 @@
 
 #pragma mark - Private
 - (IBAction)addNewEvent:(id)sender {
-    ;
+    
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UIViewController *NewEventView = [storyboard instantiateViewControllerWithIdentifier:@"AddView"];
     [self presentViewController:NewEventView animated:YES completion:nil];
@@ -66,11 +78,30 @@
     [self.table addSubview:refresh];
 }
 
+-(void)syncEventsWithExtensions{
+    
+    NSMutableArray *arry = [NSMutableArray array];
+    NSDateFormatter *formate = [[NSDateFormatter alloc] init];
+    formate.dateStyle = NSDateFormatterLongStyle;
+    
+    for (int i = 1; i < result.count; i++) {
+        
+        Events *event = [result objectAtIndex:i];
+        NSMutableDictionary *dictionary = [[NSMutableDictionary alloc] init];
+        [dictionary setValue:event.title forKey:@"title"];
+        [dictionary setValue:[formate stringFromDate:event.date] forKey:@"date"];
+        
+        [arry addObject:dictionary];
+    }
+    NSUserDefaults *shared = [[NSUserDefaults alloc] initWithSuiteName:@"group.done.com.yongyang"];
+    [shared setObject:arry forKey:@"RealmResult"];
+    [shared synchronize];
+}
+
 #pragma EventCell Delegate
 
 -(void)ClickedDone:(EventTableViewCell *)cell{
     
-    NSLog(@"clicked done");
     NSIndexPath *index = [self.table indexPathForCell:cell];
     Events *event = [result objectAtIndex:index.row];
     RLMRealm *realm = [RLMRealm defaultRealm];
@@ -78,14 +109,21 @@
     [realm deleteObject:event];
     [realm commitWriteTransaction];
     
-    [self.table reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationTop];
+    [self.table deleteRowsAtIndexPaths:@[index] withRowAnimation:UITableViewRowAnimationTop];
 }
+
+-(void)syncDataWithWatch:(id)data{
+    NSLog(@"realms synced");
+    [wormhole passMessageObject:data identifier:@"idWatchSync"];
+}
+
 
 #pragma mark - Life Cycle
 
 -(void)viewDidAppear:(BOOL)animated{
     
     [self.table reloadData];
+    [self syncEventsWithExtensions];
     [super viewDidAppear:YES];
 }
 
@@ -94,8 +132,14 @@
     result = [Events allObjects];
     [self.table registerNib:[UINib nibWithNibName:@"EventTableViewCell" bundle:nil] forCellReuseIdentifier:@"idEventCell"];
     [self setUpView];
-    [super viewDidLoad];
     
+    wormhole = [[MMWormhole alloc] initWithApplicationGroupIdentifier:@"group.done.com.watch" optionalDirectory:@"wormhole"];
+    [wormhole listenForMessageWithIdentifier:@"idRequestUpdate" listener:^(id  _Nullable messageObject) {
+        NSLog(@"update request received");
+        [self syncDataWithWatch:result];
+    }];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(syncDataWithWatch:) name:@"ndUpdateWatch" object:result];
+    [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
 

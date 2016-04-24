@@ -1,6 +1,10 @@
+target 'Done! Widgets' do
+	pod 'Realm'
+end
+
+pod 'JTCalendar', '~> 2.0'
 pod 'Realm'
 pod 'Google/Analytics'
-pod 'JTCalendar', '~> 2.0'
 
 source 'https://github.com/CocoaPods/Specs.git'
 

@@ -14,6 +14,11 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
+		<key>Done! Widgets.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
 		<key>Done!.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -33,6 +38,11 @@
 			<true/>
 		</dict>
 		<key>0060836B1CC4007500A344F1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>281838B81CC9B01800D5930E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
