@@ -8,17 +8,22 @@
 
 #import <UIKit/UIKit.h>
 #import <Realm/Realm.h>
+#import <WatchConnectivity/WatchConnectivity.h>
 
 #import "Events.h"
 #import "EventTableViewCell.h"
-#import "MMWormhole.h"
+#import "CreateNewVC.h"
+#import "EventsHelper.h"
+#import "Projects.h"
 
-@interface TodoViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, EventCellDelegate>{
-    RLMResults *result;
+BOOL phoneModified;
+
+@interface TodoViewController : UIViewController <WCSessionDelegate, UITableViewDelegate, UITableViewDataSource, EventCellDelegate, CreateNewDelegate>{
+    RLMArray *result;
     UIRefreshControl *refresh;
-    MMWormhole *wormhole;
 }
-
+@property (weak, nonatomic) Projects *project;
+@property (weak, nonatomic) IBOutlet UINavigationItem *naviTitle;
 @property (weak, nonatomic) IBOutlet UINavigationItem *item;
 @property (weak, nonatomic) IBOutlet UITableView *table;
 

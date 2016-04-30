@@ -7,17 +7,15 @@
 //
 
 #import <WatchKit/WatchKit.h>
+#import <WatchConnectivity/WatchConnectivity.h>
 #import <Foundation/Foundation.h>
 #import <Realm/Realm.h>
 
 #import "Events.h"
-#import "MMWormhole.h"
+#import "EventsHelper.h"
 
-@interface InterfaceController : WKInterfaceController{
+@interface InterfaceController : WKInterfaceController <WCSessionDelegate> {
     RLMResults *result;
-
 }
-
-@property (strong, nonatomic) MMWormhole *wormhole;
 
 @end

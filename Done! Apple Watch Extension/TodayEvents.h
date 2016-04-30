@@ -9,15 +9,18 @@
 #import <WatchKit/WatchKit.h>
 #import <Foundation/Foundation.h>
 #import <Realm/Realm.h>
+#import <WatchConnectivity/WatchConnectivity.h>
 #import "Row.h"
 #import "Events.h"
-#import "MMWormhole.h"
+#import "EventsHelper.h"
 
-@interface TodayEvents : WKInterfaceController{
-    RLMResults *events;
-    MMWormhole *wormhole;
+BOOL updated;
+
+@interface TodayEvents : WKInterfaceController <WCSessionDelegate>{
+    
+    RLMResults *result;
 }
-
-@property (weak, nonatomic) WKInterfaceTable *table;
+@property (strong, nonatomic) WCSession *session;
+@property (weak, nonatomic) IBOutlet WKInterfaceTable *table;
 
 @end

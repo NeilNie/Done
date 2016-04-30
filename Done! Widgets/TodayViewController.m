@@ -37,7 +37,7 @@
     
     EventTableViewCell *cell = (EventTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"idEventCell" forIndexPath:indexPath];
     NSDateFormatter *formate = [[NSDateFormatter alloc] init];
-    formate.dateStyle = NSDateFormatterLongStyle;
+    [formate setDateFormat:@"yyyy-MM-dd HH:mm"];
     NSDictionary *dictionary = [result objectAtIndex:indexPath.row];
     
     cell.titleLabel.text = [dictionary objectForKey:@"title"];

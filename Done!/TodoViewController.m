@@ -19,12 +19,12 @@
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
     
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        Events *event = [result objectAtIndex:indexPath.row];
         RLMRealm *realm = [RLMRealm defaultRealm];
         [realm beginWriteTransaction];
-        [realm deleteObject:event];
+        [self.project.events removeObjectAtIndex:indexPath.row];
         [realm commitWriteTransaction];
         [self.table deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationTop];
+        [EventsHelper eventsAreModified:self];
     }
 }
 
@@ -49,7 +49,7 @@
     EventTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"idEventCell" forIndexPath:indexPath];
     Events *event = [result objectAtIndex:indexPath.row];
     NSDateFormatter *formate = [[NSDateFormatter alloc] init];
-    formate.dateStyle = NSDateFormatterLongStyle;
+    [formate setDateFormat:@"yyyy-MM-dd HH:mm"];
     cell.titleLabel.text = event.title;
     cell.dateLabel.text = [formate stringFromDate:event.date];
     
@@ -57,13 +57,44 @@
     return cell;
 }
 
+#pragma EventCell Delegate
+
+-(void)ClickedDone:(EventTableViewCell *)cell{
+    
+    NSIndexPath *index = [self.table indexPathForCell:cell];
+    Events *event = [result objectAtIndex:index.row];
+    [EventsHelper deleteEvent:event];
+    
+    [self.table deleteRowsAtIndexPaths:@[index] withRowAnimation:UITableViewRowAnimationTop];
+}
+
+#pragma mark - NewEventDelegate
+
+-(void)addNewEventToProject:(Events *)event{
+    
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    [realm beginWriteTransaction];
+    [self.project.events addObject:event];
+    [realm commitWriteTransaction];
+    
+    NSLog(@"added a new event %@ to project %@", event, self.project.title);
+    [self.table reloadData];
+}
+
 #pragma mark - Private
+
 - (IBAction)addNewEvent:(id)sender {
     
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UIViewController *NewEventView = [storyboard instantiateViewControllerWithIdentifier:@"AddView"];
-    [self presentViewController:NewEventView animated:YES completion:nil];
+//    NewEventViewController *NewEventView = (NewEventViewController *)[[self storyboard] instantiateViewControllerWithIdentifier:@"AddView"];
+//    NewEventView = [[NewEventViewController alloc] init];
+//    NewEventView.delegate = self;
+//    NSLog(@"delegate %@", NewEventView.delegate);
+//    [self presentViewController:NewEventView animated:YES completion:^{
+//        NewEventView.delegate = self;
+//    }];
+    [self performSegueWithIdentifier:@"newEvent" sender:nil];
     [self performSelector:@selector(function) withObject:nil afterDelay:5];
+    
 }
 -(void)function{
     [refresh endRefreshing];
@@ -78,67 +109,31 @@
     [self.table addSubview:refresh];
 }
 
--(void)syncEventsWithExtensions{
-    
-    NSMutableArray *arry = [NSMutableArray array];
-    NSDateFormatter *formate = [[NSDateFormatter alloc] init];
-    formate.dateStyle = NSDateFormatterLongStyle;
-    
-    for (int i = 1; i < result.count; i++) {
-        
-        Events *event = [result objectAtIndex:i];
-        NSMutableDictionary *dictionary = [[NSMutableDictionary alloc] init];
-        [dictionary setValue:event.title forKey:@"title"];
-        [dictionary setValue:[formate stringFromDate:event.date] forKey:@"date"];
-        
-        [arry addObject:dictionary];
-    }
-    NSUserDefaults *shared = [[NSUserDefaults alloc] initWithSuiteName:@"group.done.com.yongyang"];
-    [shared setObject:arry forKey:@"RealmResult"];
-    [shared synchronize];
-}
-
-#pragma EventCell Delegate
-
--(void)ClickedDone:(EventTableViewCell *)cell{
-    
-    NSIndexPath *index = [self.table indexPathForCell:cell];
-    Events *event = [result objectAtIndex:index.row];
-    RLMRealm *realm = [RLMRealm defaultRealm];
-    [realm beginWriteTransaction];
-    [realm deleteObject:event];
-    [realm commitWriteTransaction];
-    
-    [self.table deleteRowsAtIndexPaths:@[index] withRowAnimation:UITableViewRowAnimationTop];
-}
-
--(void)syncDataWithWatch:(id)data{
-    NSLog(@"realms synced");
-    [wormhole passMessageObject:data identifier:@"idWatchSync"];
-}
-
-
 #pragma mark - Life Cycle
 
 -(void)viewDidAppear:(BOOL)animated{
     
     [self.table reloadData];
-    [self syncEventsWithExtensions];
+    NSUserDefaults *shared = [[NSUserDefaults alloc] initWithSuiteName:@"group.done.com.yongyang"];
+    [shared setObject:[EventsHelper convertToArray:[Events allObjects]] forKey:@"RealmResult"];
+    [shared synchronize];
     [super viewDidAppear:YES];
+}
+
+-(void)viewDidDisappear:(BOOL)animated{
+    
+    [super viewDidDisappear:YES];
 }
 
 - (void)viewDidLoad {
     
-    result = [Events allObjects];
+    self.naviTitle.title = self.project.title;
+    result = self.project.events;
+    
     [self.table registerNib:[UINib nibWithNibName:@"EventTableViewCell" bundle:nil] forCellReuseIdentifier:@"idEventCell"];
     [self setUpView];
     
-    wormhole = [[MMWormhole alloc] initWithApplicationGroupIdentifier:@"group.done.com.watch" optionalDirectory:@"wormhole"];
-    [wormhole listenForMessageWithIdentifier:@"idRequestUpdate" listener:^(id  _Nullable messageObject) {
-        NSLog(@"update request received");
-        [self syncDataWithWatch:result];
-    }];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(syncDataWithWatch:) name:@"ndUpdateWatch" object:result];
+    NSLog(@"current project %@", _project);
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
@@ -149,14 +144,19 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([[segue destinationViewController] isKindOfClass:[CreateNewVC class]]) {
+        CreateNewVC *vc = [segue destinationViewController];
+        vc.delegate = self;
+    }
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-*/
+
 
 @end

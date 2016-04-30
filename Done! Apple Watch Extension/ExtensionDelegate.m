@@ -7,10 +7,18 @@
 //
 
 #import "ExtensionDelegate.h"
+#import <Realm/Realm.h>
 
 @implementation ExtensionDelegate
 
 - (void)applicationDidFinishLaunching {
+    
+//    NSURL *directory = [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:@"group.done.com.watch"];
+//    NSString *realmPath = [directory.path stringByAppendingPathComponent:@"db.realm"];
+//    RLMRealmConfiguration *config = [RLMRealmConfiguration defaultConfiguration];
+//    config.fileURL = [NSURL fileURLWithPath:realmPath];
+//    [RLMRealmConfiguration setDefaultConfiguration:config];
+//    NSLog(@"%@", [RLMRealm defaultRealm].configuration.fileURL);
     // Perform any final initialization of your application.
 }
 

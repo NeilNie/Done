@@ -16,12 +16,6 @@
 
 @implementation InterfaceController
 
--(IBAction)send{
-    
-    [self.wormhole passMessageObject:@"updateRequested" identifier:@"idRequestUpdate"];
-    NSLog(@"update request sent");
-
-}
 - (void)awakeWithContext:(id)context {
     
     [super awakeWithContext:context];
@@ -29,18 +23,6 @@
 }
 
 - (void)willActivate {
-    
-    NSURL *directory = [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:@"group.done.com.watch"];
-    NSString *realmPath = [directory.path stringByAppendingPathComponent:@"db.realm"];
-    RLMRealmConfiguration *config = [RLMRealmConfiguration defaultConfiguration];
-    config.fileURL = [NSURL fileURLWithPath:realmPath];
-    [RLMRealmConfiguration setDefaultConfiguration:config];
-    
-    self.wormhole = [[MMWormhole alloc] initWithApplicationGroupIdentifier:@"group.done.com.watch" optionalDirectory:@"wormhole"];
-    [self.wormhole passMessageObject:@"updateRequested" identifier:@"idRequestUpdate"];
-    NSLog(@"update request sent");
-    //    result = [wormhole messageWithIdentifier:@"idWatchSync"];
-    //    NSLog(@"%@", result);
 
     // This method is called when watch view controller is about to be visible to user
     [super willActivate];

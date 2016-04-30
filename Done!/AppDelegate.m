@@ -8,11 +8,10 @@
 
 #import "AppDelegate.h"
 #import <Realm/Realm.h>
-#import "MMWormhole.h"
+#import "EventsHelper.h"
+#import "Events.h"
 
 @interface AppDelegate ()
-
-@property (strong, nonatomic) MMWormhole *wormhole;
 
 @end
 
@@ -20,6 +19,14 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    WCSession *session = [WCSession defaultSession];
+    session.delegate = self;
+    [session activateSession];
+    if ([[session.receivedApplicationContext objectForKey:@"needSync"] isEqualToString:@"NO"]) {
+        [session updateApplicationContext:@{@"needSync":@"NO"} error:nil];
+        NSLog(@"updated iPhone application context");
+    }
     
     [[UITabBar appearance] setBackgroundImage:[UIImage imageNamed:@"tabBar.png"]];
     [[UITabBar appearance] setTintColor:[UIColor lightGrayColor]];
@@ -31,6 +38,7 @@
     RLMRealmConfiguration *config = [RLMRealmConfiguration defaultConfiguration];
     config.fileURL = [NSURL fileURLWithPath:realmPath];
     [RLMRealmConfiguration setDefaultConfiguration:config];
+    NSLog(@"%@", [RLMRealm defaultRealm].configuration.fileURL);
     // Override point for customization after application launch.
     return YES;
 }
@@ -43,11 +51,12 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     
     NSLog(@"did enter background");
-    self.wormhole = [[MMWormhole alloc] initWithApplicationGroupIdentifier:@"group.done.com.watch" optionalDirectory:@"wormhole"];
-    [self.wormhole listenForMessageWithIdentifier:@"idRequestUpdate" listener:^(id  _Nullable messageObject) {
-        NSLog(@"request received%@", messageObject);
-//        [[NSNotificationCenter defaultCenter] postNotificationName:@"ndUpdateWatch" object:nil];
-    }];
+    
+    if(WCSession.isSupported){
+        WCSession *session = [WCSession defaultSession];
+        session.delegate = self;
+        [session activateSession];
+    }
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }
@@ -62,6 +71,27 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark - WCSession Delegate
+
+-(void)session:(WCSession *)session didReceiveApplicationContext:(NSDictionary<NSString *,id> *)applicationContext{
+    NSLog(@"received application context %@", applicationContext);
+}
+
+-(void)session:(WCSession *)session didReceiveMessage:(NSDictionary<NSString *,id> *)message replyHandler:(void (^)(NSDictionary<NSString *,id> * _Nonnull))replyHandler{
+    
+    NSLog(@"received message");
+    NSMutableArray *array = [EventsHelper convertToArray:[Events allObjects]];
+    replyHandler(@{@"data": array});
+    NSLog(@"sent reply");
+}
+
+-(void)sessionWatchStateDidChange:(WCSession *)session{
+    NSLog(@"watch status changed");
+}
+-(void)sessionDidDeactivate:(WCSession *)session{
+    NSLog(@"session deactivated");
 }
 
 @end

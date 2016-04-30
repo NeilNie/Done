@@ -11,7 +11,7 @@
 
 @interface Row : NSObject
 
-@property (weak, nonatomic) IBOutlet WKInterfaceLabel *title;
+@property (weak, nonatomic) IBOutlet WKInterfaceLabel *titleLabel;
 @property (weak, nonatomic) IBOutlet WKInterfaceLabel *date;
 @property (weak, nonatomic) IBOutlet WKInterfaceButton *done;
 

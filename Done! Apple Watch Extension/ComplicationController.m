@@ -59,8 +59,14 @@
 #pragma mark - Placeholder Templates
 
 - (void)getPlaceholderTemplateForComplication:(CLKComplication *)complication withHandler:(void(^)(CLKComplicationTemplate * __nullable complicationTemplate))handler {
+    
+    //CLKComplicationTemplateModularLargeStandardBody *template = [[CLKComplicationTemplateModularLargeStandardBody alloc] init];
+    CLKComplicationTemplateModularLargeStandardBody *template = [[CLKComplicationTemplateModularLargeStandardBody alloc] init];
+    template.headerTextProvider = [CLKTimeIntervalTextProvider textProviderWithStartDate:[NSDate date] endDate:[NSDate dateWithTimeIntervalSinceNow:60 * 60]];
+    template.body1TextProvider = [CLKSimpleTextProvider textProviderWithText:@"Talk to Joseph, finish the job" shortText:@"My name"];
+    template.body2TextProvider = [CLKSimpleTextProvider textProviderWithText:@"Amherst MA" shortText:@"My name"];
     // This method will be called once per supported complication, and the results will be cached
-    handler(nil);
+    handler((CLKComplicationTemplate *)template);
 }
 
 @end

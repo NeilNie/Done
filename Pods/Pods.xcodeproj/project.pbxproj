@@ -10,19 +10,6 @@
 	<string>46</string>
 	<key>objects</key>
 	<dict>
-		<key>0021F9EA93F7DE7A10FF9CFD035BF62C</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>RLMRealm.mm</string>
-			<key>path</key>
-			<string>Realm/RLMRealm.mm</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>004EE8BDAA2979DE9D98F9D78D864956</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -36,7 +23,7 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>01F7B7D017373D9D754B5D1B995C2AAE</key>
+		<key>00A1842E252B61DAFF79CBD9D3DF4CE5</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -45,16 +32,97 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>RLMObjectBase.h</string>
+			<string>RLMMigration.h</string>
 			<key>path</key>
-			<string>include/Realm/RLMObjectBase.h</string>
+			<string>include/Realm/RLMMigration.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>00A8143C505966B4E7D8B27D7E00E34C</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>21FB390C57BF6ED69BD1023D7527C9BE</string>
+				<string>2D8BC8E2EC8E33BD420E1D94E7DC00B4</string>
+				<string>E9CAF2EF386CEF6A4FB73EE803F3F465</string>
+				<string>1A2EF8CCD4A7353FD8571725F23A47B2</string>
+				<string>F09B26BFF6684A16667720FD6A5D34EB</string>
+				<string>5978FD42CB3E7FA28294069467B26F70</string>
+				<string>B3202F695D0971787E7A0B508FEEA545</string>
+				<string>384580B6D45A7C11EB61ABD6B89A9F3F</string>
+				<string>E5B1839ED04DA10EF62A2444C9AC3D76</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>01A7A1C0B9A4E8E418EE11C5678E5A01</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>archive.ar</string>
+			<key>name</key>
+			<string>libGTM_DebugUtils_external.a</string>
+			<key>path</key>
+			<string>Libraries/libGTM_DebugUtils_external.a</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>024A8B65DA92600E0E4EEA6C76729C52</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>JTCalendarMenuView.h</string>
+			<key>path</key>
+			<string>JTCalendar/Views/JTCalendarMenuView.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>0277B1ADF355AEC79FF6BB9BC36E69FF</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>archive.ar</string>
+			<key>name</key>
+			<string>libGTM_Regex_external.a</string>
+			<key>path</key>
+			<string>Libraries/libGTM_Regex_external.a</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>0331F0FA6194E78C5F21C09F2A41704A</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>archive.ar</string>
+			<key>name</key>
+			<string>librealm-ios.a</string>
+			<key>path</key>
+			<string>core/librealm-ios.a</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
 		<key>03922706154903F1B9BFACBAAD28C1D1</key>
 		<dict>
 			<key>fileRef</key>
-			<string>525D58FBE347AE514F77B04FC8D23099</string>
+			<string>49546553BA3731E6BB2BEDF73A9D95C8</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -65,29 +133,16 @@
 				</array>
 			</dict>
 		</dict>
-		<key>03E16012AF546BEB068531EA31FC9782</key>
+		<key>04179E8B99A32D52261CA9FBB24C119F</key>
 		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
+			<key>children</key>
+			<array>
+				<string>A520D44877CB9E6D875F49061C595C79</string>
+			</array>
 			<key>isa</key>
-			<string>PBXFileReference</string>
+			<string>PBXGroup</string>
 			<key>name</key>
-			<string>external_commit_helper.cpp</string>
-			<key>path</key>
-			<string>Realm/ObjectStore/impl/apple/external_commit_helper.cpp</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>03F2EC6D43C9CF1C4906874373E4C99A</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>index_set.cpp</string>
-			<key>path</key>
-			<string>Realm/ObjectStore/index_set.cpp</string>
+			<string>Frameworks</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -105,40 +160,10 @@
 			<key>isa</key>
 			<string>XCConfigurationList</string>
 		</dict>
-		<key>04CEBA2ED8B31B92A4608C96009B839C</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>archive.ar</string>
-			<key>name</key>
-			<string>libGTM_RoundedRectPath_external.a</string>
-			<key>path</key>
-			<string>Libraries/libGTM_RoundedRectPath_external.a</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>051F7261E37FAA18A0DDB4B119E974AD</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>RLMObjectSchema_Private.h</string>
-			<key>path</key>
-			<string>include/Realm/RLMObjectSchema_Private.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>0528C3367FCA3B4AAEDC555C96520FD3</key>
 		<dict>
 			<key>fileRef</key>
-			<string>F3CF53CFD1B824B7B8015DFC5E7FEB6A</string>
+			<string>CF096F8EE5D23F46805CAA092CF22198</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -217,25 +242,36 @@
 			<key>name</key>
 			<string>Release</string>
 		</dict>
-		<key>061F5E982F30FC6812E18FE52FDDE3B0</key>
+		<key>05B2525E126BC38FBB525502F8D88478</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>RLMSchema_Private.h</string>
+			<string>external_commit_helper.cpp</string>
 			<key>path</key>
-			<string>include/Realm/RLMSchema_Private.h</string>
+			<string>Realm/ObjectStore/impl/apple/external_commit_helper.cpp</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>05FBB8194E2BEA41E242907B23667E76</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>collection_notifications.cpp</string>
+			<key>path</key>
+			<string>Realm/ObjectStore/collection_notifications.cpp</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
 		<key>074F9F1D8F63696A43FE7D17BAFDB1F5</key>
 		<dict>
 			<key>fileRef</key>
-			<string>01F7B7D017373D9D754B5D1B995C2AAE</string>
+			<string>8F98ADA9C14538B8F7273D85EB40FB75</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -246,113 +282,40 @@
 				</array>
 			</dict>
 		</dict>
-		<key>07E6B9F5AED7BDE48A98F57B53BDC0BD</key>
+		<key>07B8A391E1226BF836D0C5AEFF2578EB</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
+			<string>sourcecode.c.objc</string>
 			<key>name</key>
-			<string>Analytics-Module.h</string>
+			<string>JTCalendarScrollManager.m</string>
 			<key>path</key>
-			<string>Headers/ModuleHeaders/Analytics-Module.h</string>
+			<string>JTCalendar/Managers/JTCalendarScrollManager.m</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>082E6EBCBFC39CD72E264620A859572F</key>
+		<key>08CDA7776AE1C7B5372D19FB8482D04A</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>name</key>
-			<string>transact_log_handler.cpp</string>
+			<string>RLMArray.mm</string>
 			<key>path</key>
-			<string>Realm/ObjectStore/impl/transact_log_handler.cpp</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>08E5F807E9ED377E2D07580659959939</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>JTCalendarPage.h</string>
-			<key>path</key>
-			<string>JTCalendar/Protocols/JTCalendarPage.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>097C54C8329E829B1C6269CD0B5ECF89</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>4933C5978F5384E27AE5D746F137EBB9</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>GoogleSymbolUtilities</string>
-			<key>path</key>
-			<string>GoogleSymbolUtilities</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>09D2023FAE975A6EB146089655FACD07</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>AdMob-Module.h</string>
-			<key>path</key>
-			<string>Headers/ModuleHeaders/AdMob-Module.h</string>
+			<string>Realm/RLMArray.mm</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
 		<key>09EF9593BEFE8076642BDAF465470F89</key>
 		<dict>
 			<key>fileRef</key>
-			<string>4353A167190798EC8E5BCCAECDAAB8CB</string>
+			<string>F844FAB98B8B7EBCE4A419A6B2DF786B</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
-		</dict>
-		<key>0C60A62F108E1F91BCF5FCC6AA56FCC5</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>RLMObject.h</string>
-			<key>path</key>
-			<string>include/Realm/RLMObject.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>0C75A4C48BCDE509B0587F6091DF04E1</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>list_notifier.cpp</string>
-			<key>path</key>
-			<string>Realm/ObjectStore/impl/list_notifier.cpp</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
 		</dict>
 		<key>0CC4120B4F52FC744BDDF7B8E08E4BA3</key>
 		<dict>
@@ -366,6 +329,19 @@
 			<string>PBXSourcesBuildPhase</string>
 			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
+		</dict>
+		<key>0D0142E8B02FBAFE9B7380E2898F4445</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>results_notifier.cpp</string>
+			<key>path</key>
+			<string>Realm/ObjectStore/impl/results_notifier.cpp</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>0D4F0FB21BCD5B6F18C5D7C170945C1B</key>
 		<dict>
@@ -394,29 +370,14 @@
 		<key>0E330EE7DC1E1266DAC29510C553CF55</key>
 		<dict>
 			<key>fileRef</key>
-			<string>99F5428B180C69CFFE6ED3879D5C1A2D</string>
+			<string>F29AE5ACE185DBB2E81614BD911FF29A</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
-		</dict>
-		<key>0E70BD0C0EEFC8C9BAD59B04DE0F39A3</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>RLMPlatform.h</string>
-			<key>path</key>
-			<string>include/Realm/RLMPlatform.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
 		</dict>
 		<key>0F16F146F2A6AA0C76D5C5C0E57F24E2</key>
 		<dict>
 			<key>fileRef</key>
-			<string>D830D1D0FF0285CA79EF13500DF155D0</string>
+			<string>B0036E2B55B637AB127BD492A3BE3186</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -435,57 +396,42 @@
 		<key>0FB0AF668D6FCCACCD066E3C19618288</key>
 		<dict>
 			<key>fileRef</key>
-			<string>4DE6B58E38C7295298A5DE62B87CA504</string>
+			<string>622E3D81EBAEAC37F1DA69DB165F2496</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>0FC5F9A0F5CDE111EDBAAAE86919D343</key>
+		<key>102F4536D9F4106B4314BEA95DF037A6</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>name</key>
-			<string>RLMResults.mm</string>
+			<string>RLMOptionalBase.mm</string>
 			<key>path</key>
-			<string>Realm/RLMResults.mm</string>
+			<string>Realm/RLMOptionalBase.mm</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>100A0D4F162A7E08DF6B2F74D763C727</key>
+		<key>1063ACC37D0D2F63041B1178DBBD65ED</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>archive.ar</string>
 			<key>name</key>
-			<string>libProtocolBuffers_external.a</string>
+			<string>RLMRealmUtil.mm</string>
 			<key>path</key>
-			<string>Libraries/libProtocolBuffers_external.a</string>
+			<string>Realm/RLMRealmUtil.mm</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
 		<key>10CD137E4CDFCD5819F196C6FD3485D4</key>
 		<dict>
 			<key>fileRef</key>
-			<string>88E7BD6351A009B0CC59650D2900709E</string>
+			<string>D93088AD8D12D2B1EC2E4BA01C94BE3E</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
-		</dict>
-		<key>117D3ABAAF8EB35739AC7ACDD44DD43B</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>47CC60A22122D6AF150F874D5BA5C5CB</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
 		</dict>
 		<key>118D00193E9BB950D70FF848968AE562</key>
 		<dict>
@@ -500,7 +446,7 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>12C2115E5F6A11D8B679F52D16DDB8F5</key>
+		<key>13338EDCE04F2BA36D58D68230FBEA4D</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -509,17 +455,48 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>RLMCollection.h</string>
+			<string>CloudMessaging-Module.h</string>
 			<key>path</key>
-			<string>include/Realm/RLMCollection.h</string>
+			<string>Headers/ModuleHeaders/CloudMessaging-Module.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>141DEF7498B338EBA7C6469B70E6C3F3</key>
+		<key>14A5F3C5598EE038D49426F679765B5C</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>archive.ar</string>
+			<key>name</key>
+			<string>libGTM_KVO_external.a</string>
+			<key>path</key>
+			<string>Libraries/libGTM_KVO_external.a</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>157F5E1ED854EB180A9C3E390064D987</key>
 		<dict>
 			<key>children</key>
 			<array>
-				<string>C72679C585108A410A4C001226097A58</string>
+				<string>4B9DB27CF353FD956A9FD2B0DBFA94CE</string>
+				<string>51F068D5E05946B0D9445E09E1BCED40</string>
+				<string>01A7A1C0B9A4E8E418EE11C5678E5A01</string>
+				<string>796551C37F22EEA6D2386EBEB723CB8B</string>
+				<string>C902D334FDC0B9339F407D0EF6D5ED8C</string>
+				<string>14A5F3C5598EE038D49426F679765B5C</string>
+				<string>1DC6D23CE2D2E98FC5902C640A51230C</string>
+				<string>3119ADB2845711C6CDF6A31CBDA3E4CE</string>
+				<string>C642D70A117F87A8EF57BFD25E310A84</string>
+				<string>896924422F685F4746C5C819215F3010</string>
+				<string>79DD473B55165BEC7158837327387885</string>
+				<string>0277B1ADF355AEC79FF6BB9BC36E69FF</string>
+				<string>5940E1C3007D56177E03C6DF3FAE8785</string>
+				<string>3C15ABD258418AE729B6DF8A06040AFE</string>
+				<string>73885FD4D70060D6671A6E03C6A4B06C</string>
+				<string>D5149F2DDB9D92C7481BE0B94AC7A50C</string>
+				<string>9EA9CF60FB59D2E0851AE0EC52D181C4</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -528,63 +505,7 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>145481809A99980382E971AB9B833210</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>archive.ar</string>
-			<key>name</key>
-			<string>libGTM_DebugUtils_external.a</string>
-			<key>path</key>
-			<string>Libraries/libGTM_DebugUtils_external.a</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>14E1C306F48DB7917D0CCC46A039DD3F</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>archive.ar</string>
-			<key>name</key>
-			<string>libGTM_SystemVersion_external.a</string>
-			<key>path</key>
-			<string>Libraries/libGTM_SystemVersion_external.a</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>153E400CA4BD9D1ADB6D549191CCD001</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>object_schema.cpp</string>
-			<key>path</key>
-			<string>Realm/ObjectStore/object_schema.cpp</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>1923129BDD6DF65786C05C0B6AF3BF58</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>RLMOptionalBase.mm</string>
-			<key>path</key>
-			<string>Realm/RLMOptionalBase.mm</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>197C671613D17814E14E6185B0595426</key>
+		<key>158EE4295A86630261F5BF24DAD22F5B</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -593,16 +514,46 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>JTCalendarScrollManager.h</string>
+			<string>RLMListBase.h</string>
 			<key>path</key>
-			<string>JTCalendar/Managers/JTCalendarScrollManager.h</string>
+			<string>include/Realm/RLMListBase.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1A2EF8CCD4A7353FD8571725F23A47B2</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>4C201DEF08CEEBAF284A0E3C24CEFBF1</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>GoogleInterchangeUtilities</string>
+			<key>path</key>
+			<string>GoogleInterchangeUtilities</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1B0BD09753333A3330C1132398EC6160</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>JTCalendarWeekView.h</string>
+			<key>path</key>
+			<string>JTCalendar/Views/JTCalendarWeekView.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
 		<key>1BD9A7D961F4EFA0036917EA269EE9ED</key>
 		<dict>
 			<key>fileRef</key>
-			<string>5F5B84287CD09B283944164AAF09533B</string>
+			<string>DAEECC0FAFF1045D0EE212AF3F069E98</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -611,25 +562,23 @@
 				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.99.0"' -D__ASSERTMACROS__</string>
 			</dict>
 		</dict>
-		<key>1C59D9E8731917D4CDB995D642626459</key>
+		<key>1C1F7A133FC95B8C45CC40317F1D61C6</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>RLMAccessor.h</string>
+			<string>list_notifier.cpp</string>
 			<key>path</key>
-			<string>include/Realm/RLMAccessor.h</string>
+			<string>Realm/ObjectStore/impl/list_notifier.cpp</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
 		<key>1CB669E3C44EC689D47821CBD48CEDDD</key>
 		<dict>
 			<key>fileRef</key>
-			<string>E771EAED1A0205BE6BABEDDA37234C5D</string>
+			<string>860E9DDA9FF48B0F6D5504311BFE5E77</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -641,7 +590,7 @@
 		<key>1D1147AEC7E665BED21D80587C63EA71</key>
 		<dict>
 			<key>fileRef</key>
-			<string>37AE5314144B32F58EBD9F850A9BA9C2</string>
+			<string>E9131B7F9A494E75DAD12E103848849D</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -652,36 +601,25 @@
 				</array>
 			</dict>
 		</dict>
-		<key>1DA1545DA24C45DCDFCD6D01B5E2F04B</key>
+		<key>1DC6D23CE2D2E98FC5902C640A51230C</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>archive.ar</string>
 			<key>name</key>
-			<string>RLMObjectSchema.mm</string>
+			<string>libGTM_NSData+zlib.a</string>
 			<key>path</key>
-			<string>Realm/RLMObjectSchema.mm</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>1DC563A155D4CC6EE2FD633E6E65F027</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>shared_realm.cpp</string>
-			<key>path</key>
-			<string>Realm/ObjectStore/shared_realm.cpp</string>
+			<string>Libraries/libGTM_NSData+zlib.a</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
 		<key>1F1EB1D5C65A1D56BB63ED3A3B000B83</key>
 		<dict>
 			<key>fileRef</key>
-			<string>12C2115E5F6A11D8B679F52D16DDB8F5</string>
+			<string>A0586AED3A6B0F6F2E049C904C15376C</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -695,7 +633,7 @@
 		<key>1F1FE08B1A94FCC6FA9ABE61581F243A</key>
 		<dict>
 			<key>fileRef</key>
-			<string>25461F827BE05C92E9804612C2EB4CAA</string>
+			<string>DB8738B85D79E960DA2F981AB83428BE</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -721,38 +659,25 @@
 			<key>sourceTree</key>
 			<string>BUILT_PRODUCTS_DIR</string>
 		</dict>
-		<key>203082ACCCDA72AF5F62D28ED01CA528</key>
+		<key>205DB8BF7465BEF9679BFE279BCE32F0</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
+			<string>sourcecode.c.objc</string>
 			<key>name</key>
-			<string>GGLContext.h</string>
+			<string>JTDateHelper.m</string>
 			<key>path</key>
-			<string>Headers/GGLCore/Public/GGLContext.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>206F552E7903AEF889E7D74B30536D22</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>RLMUtil.mm</string>
-			<key>path</key>
-			<string>Realm/RLMUtil.mm</string>
+			<string>JTCalendar/JTDateHelper.m</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
 		<key>21AED605122C6957BF18CBFD0ADF802E</key>
 		<dict>
 			<key>fileRef</key>
-			<string>7F0BC419A8E83F7DE9E8B9B11CAC146D</string>
+			<string>21C9A5153D8CDD437AAC4F31BB843632</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -761,25 +686,39 @@
 				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.99.0"' -D__ASSERTMACROS__</string>
 			</dict>
 		</dict>
-		<key>220055BB961E361E93461A5F1BE7F809</key>
+		<key>21C9A5153D8CDD437AAC4F31BB843632</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>JTCalendarWeekDayView.h</string>
+			<string>RLMPredicateUtil.mm</string>
 			<key>path</key>
-			<string>JTCalendar/Views/JTCalendarWeekDayView.h</string>
+			<string>Realm/RLMPredicateUtil.mm</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>21FB390C57BF6ED69BD1023D7527C9BE</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>8CB6BD3E87FAE680346E7056D5818827</string>
+				<string>BA30E6FEF1EE4CD07EAEC6DFFD5FEC9F</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Google</string>
+			<key>path</key>
+			<string>Google</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
 		<key>2231F4DA4DACACC7D3013ADFACCA6F23</key>
 		<dict>
 			<key>fileRef</key>
-			<string>1923129BDD6DF65786C05C0B6AF3BF58</string>
+			<string>102F4536D9F4106B4314BEA95DF037A6</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -788,20 +727,22 @@
 				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.99.0"' -D__ASSERTMACROS__</string>
 			</dict>
 		</dict>
-		<key>234DD1D7C3668BAD840CE0E49D140BA1</key>
+		<key>2373877D155A76DB3EEEEBE5F1E0973D</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>archive.ar</string>
 			<key>name</key>
-			<string>RLMMigration.mm</string>
+			<string>libGTMSessionFetcher_core_external.a</string>
 			<key>path</key>
-			<string>Realm/RLMMigration.mm</string>
+			<string>Libraries/libGTMSessionFetcher_core_external.a</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>25461F827BE05C92E9804612C2EB4CAA</key>
+		<key>24054F8150AF86056D65BDDCFE7273B9</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -810,24 +751,9 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>JTCalendarPageView.h</string>
+			<string>GAI.h</string>
 			<key>path</key>
-			<string>JTCalendar/Views/JTCalendarPageView.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>25EF6A190F52FAB49F12CD243188652D</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>GAIEcommerceProductAction.h</string>
-			<key>path</key>
-			<string>Headers/Public/GAIEcommerceProductAction.h</string>
+			<string>Headers/Public/GAI.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -844,59 +770,25 @@
 			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
 		</dict>
-		<key>27774CFB7F8295ACAB0DBFF614094347</key>
+		<key>27344C60B50BA35CF36BAEA5D1D1F839</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
+			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>RLMSwiftSupport.m</string>
+			<string>RLMArray.h</string>
 			<key>path</key>
-			<string>Realm/RLMSwiftSupport.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>28D9434200B99AE9BB37DAC477B7C290</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>39AC7ECF0B68AB46E4D38745F4821164</string>
-				<string>F930FDE57B6712C887E24301C596301B</string>
-				<string>67B9B5E4BC60EDA0C4507F357882801E</string>
-				<string>8CE3B02BAE5D2F7F05661093F697D595</string>
-				<string>3FEB005E4D5874C26BECC28CFE59D041</string>
-				<string>097C54C8329E829B1C6269CD0B5ECF89</string>
-				<string>D3B0CEE4CD1804203C29C461FEA07850</string>
-				<string>7DF77B858836922A8A10E3D0F969E6E0</string>
-				<string>66C21223E8E3C8865CD983345E1C01C4</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>2965DD701C853B2A88651EA6904662AB</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>RLMAccessor.mm</string>
-			<key>path</key>
-			<string>Realm/RLMAccessor.mm</string>
+			<string>include/Realm/RLMArray.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
 		<key>29ABE043F6723C4AC53F9AE22694FC20</key>
 		<dict>
 			<key>fileRef</key>
-			<string>153E400CA4BD9D1ADB6D549191CCD001</string>
+			<string>8BA5B44536F34275CD180B586B6CAF27</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -908,7 +800,7 @@
 		<key>29EF4B6F2B2C84958F7B4B667DA71451</key>
 		<dict>
 			<key>fileRef</key>
-			<string>0E70BD0C0EEFC8C9BAD59B04DE0F39A3</string>
+			<string>38CD4551068433085991571E414A7D57</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -945,31 +837,18 @@
 			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
 		</dict>
-		<key>2A4A979FDA08D7121DDE49A632854883</key>
+		<key>2A56BEC439ADF8C4A9C048CF1E8F6942</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
-			<string>archive.ar</string>
+			<string>sourcecode.c.objc</string>
 			<key>name</key>
-			<string>libGTM_iPhone_external.a</string>
+			<string>RLMSwiftSupport.m</string>
 			<key>path</key>
-			<string>Libraries/libGTM_iPhone_external.a</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>2A7053C9E9A2727BCD3CCAF9E375B1A7</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>100A0D4F162A7E08DF6B2F74D763C727</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
+			<string>Realm/RLMSwiftSupport.m</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -998,10 +877,38 @@
 			<key>productType</key>
 			<string>com.apple.product-type.library.static</string>
 		</dict>
+		<key>2BF96451EE77672CE31AA3E04D757FAE</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>weak_realm_notifier.cpp</string>
+			<key>path</key>
+			<string>Realm/ObjectStore/impl/apple/weak_realm_notifier.cpp</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>2C025B19BCBD109FC064420C13DCC162</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>RLMSchema_Private.h</string>
+			<key>path</key>
+			<string>include/Realm/RLMSchema_Private.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>2C9406C2E84BFB50DA74C24732B44836</key>
 		<dict>
 			<key>fileRef</key>
-			<string>1DA1545DA24C45DCDFCD6D01B5E2F04B</string>
+			<string>4E0A9DDDA8153F64FC0D556AFDC20F55</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -1009,6 +916,32 @@
 				<key>COMPILER_FLAGS</key>
 				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.99.0"' -D__ASSERTMACROS__</string>
 			</dict>
+		</dict>
+		<key>2CAAD3893BF79EFD75AF25ECD0254E02</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>RLMQueryUtil.mm</string>
+			<key>path</key>
+			<string>Realm/RLMQueryUtil.mm</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>2D8BC8E2EC8E33BD420E1D94E7DC00B4</key>
+		<dict>
+			<key>children</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Google-Mobile-Ads-SDK</string>
+			<key>path</key>
+			<string>Google-Mobile-Ads-SDK</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>2D8E8EC45A3A1A1D94AE762CB5028504</key>
 		<dict>
@@ -1052,10 +985,25 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>3119ADB2845711C6CDF6A31CBDA3E4CE</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>archive.ar</string>
+			<key>name</key>
+			<string>libGTM_NSDictionary+URLArguments_external.a</string>
+			<key>path</key>
+			<string>Libraries/libGTM_NSDictionary+URLArguments_external.a</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>314B1E6C082A0434704CCA2236390B82</key>
 		<dict>
 			<key>fileRef</key>
-			<string>4945FEE60F2744F20F40AA0ADC4213C0</string>
+			<string>27344C60B50BA35CF36BAEA5D1D1F839</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -1069,7 +1017,7 @@
 		<key>320F51465AA32B92DC7D226C300D48E3</key>
 		<dict>
 			<key>fileRef</key>
-			<string>836CA8A8CE52289F38F2F305685B96FB</string>
+			<string>3DF0A6AD91C8CD0C86EA0557849E953B</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -1083,7 +1031,7 @@
 		<key>3272C3E350413BAB532B851E39C932A0</key>
 		<dict>
 			<key>fileRef</key>
-			<string>6AF40EF7A6088811132B6B7ACBD561CA</string>
+			<string>08CDA7776AE1C7B5372D19FB8482D04A</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -1092,7 +1040,7 @@
 				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.99.0"' -D__ASSERTMACROS__</string>
 			</dict>
 		</dict>
-		<key>32743AEFE69766681B12B8DCF1E78B11</key>
+		<key>328E976DB0F8DD05AEF74062AB117F9F</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -1101,16 +1049,16 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>GAIFields.h</string>
+			<string>RLMDefines.h</string>
 			<key>path</key>
-			<string>Headers/Public/GAIFields.h</string>
+			<string>include/Realm/RLMDefines.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
 		<key>33794CA504410AB26B162ED33A6C753C</key>
 		<dict>
 			<key>fileRef</key>
-			<string>62BF847109825A19D2E74276E28028AE</string>
+			<string>05FBB8194E2BEA41E242907B23667E76</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -1119,62 +1067,56 @@
 				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.99.0"' -D__ASSERTMACROS__</string>
 			</dict>
 		</dict>
-		<key>3650D543F1F023F1784D5B5BE6A47D92</key>
+		<key>341B2C032E5EC78999709E7023A7E14A</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>JTCalendarDelegateManager.h</string>
+			<string>RLMCollection.mm</string>
 			<key>path</key>
-			<string>JTCalendar/Managers/JTCalendarDelegateManager.h</string>
+			<string>Realm/RLMCollection.mm</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>3745582A9A9240E0679312EB259AA6BD</key>
+		<key>348668ECB6050430611D4748381933EE</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>GGLErrorCode.h</string>
+			<string>text.xcconfig</string>
 			<key>path</key>
-			<string>Headers/GGLCore/Public/GGLErrorCode.h</string>
+			<string>JTCalendar.xcconfig</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>37AE5314144B32F58EBD9F850A9BA9C2</key>
+		<key>372240FBC0BE5841E59F29CFAF3826AA</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>JTCalendarWeekDay.h</string>
+			<string>RLMSchema.mm</string>
 			<key>path</key>
-			<string>JTCalendar/Protocols/JTCalendarWeekDay.h</string>
+			<string>Realm/RLMSchema.mm</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
 		<key>382C4C19629155EDA7D0186475BCC04A</key>
 		<dict>
 			<key>fileRef</key>
-			<string>D10AEF6CB5801067EDFA25BA6B561B7A</string>
+			<string>43F3599B7F63BB4F007C877D76005AE3</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
 		<key>383BCBA23CEEBCE2D83C33A04F3E68BF</key>
 		<dict>
 			<key>fileRef</key>
-			<string>60F6931A0AC36DCA8590D12CA005BE56</string>
+			<string>4D1F9F64782B15D6D72C7473F9E9BE56</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -1183,36 +1125,72 @@
 				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.99.0"' -D__ASSERTMACROS__</string>
 			</dict>
 		</dict>
-		<key>389A0FB3E469EB3B31DD7E5A93D4F083</key>
+		<key>384580B6D45A7C11EB61ABD6B89A9F3F</key>
 		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
+			<key>children</key>
+			<array>
+				<string>9FE8B4ABA4E60A38E2B7DE7BEAA4005C</string>
+				<string>856158AD3F00FF850E17E8F431BC1E73</string>
+				<string>CF096F8EE5D23F46805CAA092CF22198</string>
+				<string>88F77A8E1C7CA60D51279A0D14753AB0</string>
+				<string>63B56A086C656706438198B3E4089FA9</string>
+				<string>872012BE9B37235EA9A303362A3CC135</string>
+				<string>A9DDAD931B1432C4F7331809B5393E14</string>
+				<string>AF294A7C4181DC03FFD41D819952AFA9</string>
+				<string>F29AE5ACE185DBB2E81614BD911FF29A</string>
+				<string>024A8B65DA92600E0E4EEA6C76729C52</string>
+				<string>E6B42954B6FF3A59A65D267DAC193E3E</string>
+				<string>E926DDB68BCAD0C3D573F5753485867E</string>
+				<string>DB8738B85D79E960DA2F981AB83428BE</string>
+				<string>9F7D222974AB2E8A326A64BC53B0ED49</string>
+				<string>A56CB073F5458EAF805C5FE96D481FCC</string>
+				<string>07B8A391E1226BF836D0C5AEFF2578EB</string>
+				<string>C9263DD8519D2D4F9BB36AFC9DBAE165</string>
+				<string>F844FAB98B8B7EBCE4A419A6B2DF786B</string>
+				<string>AA679D26E80FC3DCAA43ED652660F328</string>
+				<string>E9131B7F9A494E75DAD12E103848849D</string>
+				<string>CE472CF4ADA7217188F543E791C29325</string>
+				<string>9CFAEAD40E28668E8BFFE6E4604A5A18</string>
+				<string>1B0BD09753333A3330C1132398EC6160</string>
+				<string>F6B070913567E9DC59DFA9DCAA911992</string>
+				<string>68C177C1ECB46EC7B1883160AFC57160</string>
+				<string>41318FCD4393E342D1684B7FB36FD7F5</string>
+				<string>205DB8BF7465BEF9679BFE279BCE32F0</string>
+				<string>6A18A069E2D2E8062FB94E32B8FA0DD9</string>
+				<string>D93088AD8D12D2B1EC2E4BA01C94BE3E</string>
+				<string>748B9252898D12E8178C730A9D6F2809</string>
+				<string>7D97EB40B8B3F7F435893F0EA895F3C2</string>
+				<string>622E3D81EBAEAC37F1DA69DB165F2496</string>
+				<string>F3CD57BC89E67CA3983B743D6A7143E5</string>
+			</array>
 			<key>isa</key>
-			<string>PBXFileReference</string>
+			<string>PBXGroup</string>
 			<key>name</key>
-			<string>RLMArrayLinkView.mm</string>
+			<string>JTCalendar</string>
 			<key>path</key>
-			<string>Realm/RLMArrayLinkView.mm</string>
+			<string>JTCalendar</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>38FAD3BCC49379387B63E2B550F9F04E</key>
+		<key>38CD4551068433085991571E414A7D57</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>RLMRealmUtil.mm</string>
+			<string>RLMPlatform.h</string>
 			<key>path</key>
-			<string>Realm/RLMRealmUtil.mm</string>
+			<string>include/Realm/RLMPlatform.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
 		<key>39291E770DB698852BC4C55A0C605C7F</key>
 		<dict>
 			<key>fileRef</key>
-			<string>7DA8DF98A20D22CD00FA7B6C9E8A57E8</string>
+			<string>7C104B08FBA679575D0BE5A15068802A</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -1236,19 +1214,16 @@
 			<key>remoteInfo</key>
 			<string>JTCalendar</string>
 		</dict>
-		<key>39AC7ECF0B68AB46E4D38745F4821164</key>
+		<key>3980312DA792F82B04E29A53472997E4</key>
 		<dict>
-			<key>children</key>
-			<array>
-				<string>D3279BAFC1B83A713BB3A458DDCDC103</string>
-				<string>C778FDD3976092FE8E96E44D2412A095</string>
-			</array>
+			<key>includeInIndex</key>
+			<string>1</string>
 			<key>isa</key>
-			<string>PBXGroup</string>
+			<string>PBXFileReference</string>
 			<key>name</key>
-			<string>Google</string>
+			<string>schema.cpp</string>
 			<key>path</key>
-			<string>Google</string>
+			<string>Realm/ObjectStore/schema.cpp</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -1265,40 +1240,10 @@
 			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
 		</dict>
-		<key>3AC987D1094BC73952BD648CBB4367E5</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>GAITracker.h</string>
-			<key>path</key>
-			<string>Headers/Public/GAITracker.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3AE3DFE84EE7C8E358EB1E4E64D18395</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>GGLConfiguration.h</string>
-			<key>path</key>
-			<string>Headers/GGLCore/Public/GGLConfiguration.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>3B0937526EF2C2D45E292C73CD7EBC42</key>
 		<dict>
 			<key>fileRef</key>
-			<string>C00E1BF3F3F2AEFA244A0D2F88D106C3</string>
+			<string>856158AD3F00FF850E17E8F431BC1E73</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -1336,7 +1281,7 @@
 			<key>productType</key>
 			<string>com.apple.product-type.library.static</string>
 		</dict>
-		<key>3B2434BBD3584F14FAE3EEB52FCE1C40</key>
+		<key>3B361CB80D589C9EA89B3F8454233C53</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -1345,33 +1290,31 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>RLMOptionalBase.h</string>
+			<string>Analytics-Module.h</string>
 			<key>path</key>
-			<string>include/Realm/RLMOptionalBase.h</string>
+			<string>Headers/ModuleHeaders/Analytics-Module.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>3D0CAC7BFD3587C2DB1727690176ABEA</key>
+		<key>3C15ABD258418AE729B6DF8A06040AFE</key>
 		<dict>
-			<key>children</key>
-			<array>
-				<string>EC66E3097E859E7B535C139639E76373</string>
-				<string>6EC0AA1EC44AD684AC5D229AA491B5B3</string>
-				<string>50DDF3D665C61E3A5207E537051F025F</string>
-			</array>
+			<key>includeInIndex</key>
+			<string>1</string>
 			<key>isa</key>
-			<string>PBXGroup</string>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>archive.ar</string>
 			<key>name</key>
-			<string>Support Files</string>
+			<string>libGTM_StringEncoding_external.a</string>
 			<key>path</key>
-			<string>../Target Support Files/Realm</string>
+			<string>Libraries/libGTM_StringEncoding_external.a</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
 		<key>3D712C12089C1C2376613C8FFAC58E83</key>
 		<dict>
 			<key>fileRef</key>
-			<string>AA8BF6609A977761149569B3AFD38718</string>
+			<string>7F52E3D55B9E49F195A9C99587CD7581</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -1408,10 +1351,25 @@
 			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
 		</dict>
+		<key>3DF0A6AD91C8CD0C86EA0557849E953B</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>RLMObject_Private.h</string>
+			<key>path</key>
+			<string>include/Realm/RLMObject_Private.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>3E0FD51A1522DEA316D2AC75704460D0</key>
 		<dict>
 			<key>fileRef</key>
-			<string>EEE64832074267F211A00C911D3159FA</string>
+			<string>7D97EB40B8B3F7F435893F0EA895F3C2</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -1435,7 +1393,7 @@
 			<key>sourceTree</key>
 			<string>DEVELOPER_DIR</string>
 		</dict>
-		<key>3F68537A1777EB1541E96C0728E62417</key>
+		<key>3E971529FD721A5B1EA9C23D79B5EA03</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -1444,44 +1402,44 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>GAIEcommerceProduct.h</string>
+			<string>RLMResults.h</string>
 			<key>path</key>
-			<string>Headers/Public/GAIEcommerceProduct.h</string>
+			<string>include/Realm/RLMResults.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>3FEB005E4D5874C26BECC28CFE59D041</key>
+		<key>41318FCD4393E342D1684B7FB36FD7F5</key>
 		<dict>
-			<key>children</key>
-			<array>
-				<string>8747FB29FEE5CE4260345A4F5A5218E1</string>
-			</array>
+			<key>includeInIndex</key>
+			<string>1</string>
 			<key>isa</key>
-			<string>PBXGroup</string>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>GoogleNetworkingUtilities</string>
+			<string>JTDateHelper.h</string>
 			<key>path</key>
-			<string>GoogleNetworkingUtilities</string>
+			<string>JTCalendar/JTDateHelper.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>41D4243751C38BB4006439A2CDFF6BCD</key>
+		<key>415521C89403389AC6EE889700A27BC0</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>name</key>
-			<string>RLMAnalytics.mm</string>
+			<string>collection_notifier.cpp</string>
 			<key>path</key>
-			<string>Realm/RLMAnalytics.mm</string>
+			<string>Realm/ObjectStore/impl/collection_notifier.cpp</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
 		<key>426A25F81EBB1CD263AFFB6F4315B35F</key>
 		<dict>
 			<key>fileRef</key>
-			<string>8DCF599CB3355719982874CA981F1E91</string>
+			<string>FF94CCCC4E07C50B0055873F11DF32DC</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -1495,7 +1453,7 @@
 		<key>42A5CDC1B9970230C8244833A734CA52</key>
 		<dict>
 			<key>fileRef</key>
-			<string>BC8F23840EBDF2BFB6D89AC376F7D9BF</string>
+			<string>5D1996055B24C0A5EC97E09DD76BD402</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -1506,37 +1464,7 @@
 				</array>
 			</dict>
 		</dict>
-		<key>4353A167190798EC8E5BCCAECDAAB8CB</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>JTCalendarSettings.m</string>
-			<key>path</key>
-			<string>JTCalendar/JTCalendarSettings.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>4446DE218CB8061B79997339A463377E</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>archive.ar</string>
-			<key>name</key>
-			<string>libGTM_KVO_external.a</string>
-			<key>path</key>
-			<string>Libraries/libGTM_KVO_external.a</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>44924A01129EFBA096EDAEFD2760FC8F</key>
+		<key>43784B5BF97A0F434AE45EBE0264C8F2</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -1545,9 +1473,48 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>RLMResults.h</string>
+			<string>GAIDictionaryBuilder.h</string>
 			<key>path</key>
-			<string>include/Realm/RLMResults.h</string>
+			<string>Headers/Public/GAIDictionaryBuilder.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>43F3599B7F63BB4F007C877D76005AE3</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>JTCalendar-dummy.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4518F4CD75FD5DF3A11673BAADB14331</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>index_set.cpp</string>
+			<key>path</key>
+			<string>Realm/ObjectStore/index_set.cpp</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>45568EED4901F99DA43513C9F6105B89</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>RLMAnalytics.mm</string>
+			<key>path</key>
+			<string>Realm/RLMAnalytics.mm</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -1583,19 +1550,6 @@
 			<key>name</key>
 			<string>Debug</string>
 		</dict>
-		<key>47CC60A22122D6AF150F874D5BA5C5CB</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>GoogleMobileAds.framework</string>
-			<key>path</key>
-			<string>GoogleMobileAdsSdkiOS-7.7.1/GoogleMobileAds.framework</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>480DDC430D9DACA674CDBECB3DE25151</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -1609,40 +1563,10 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>484C6B5FD69EA24E3332C920AB83DF51</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>Analytics.h</string>
-			<key>path</key>
-			<string>Headers/GGLAnalytics/Public/Analytics.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>4876ED0C0E280806BC2D12F7AAA23D0B</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>RLMProperty.h</string>
-			<key>path</key>
-			<string>include/Realm/RLMProperty.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>4917783535F0F9D1F534364F6CB52AC3</key>
 		<dict>
 			<key>fileRef</key>
-			<string>27774CFB7F8295ACAB0DBFF614094347</string>
+			<string>2A56BEC439ADF8C4A9C048CF1E8F6942</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -1654,7 +1578,7 @@
 		<key>492697A6D0E13E61FC7BBA7614556AE8</key>
 		<dict>
 			<key>baseConfigurationReference</key>
-			<string>EC66E3097E859E7B535C139639E76373</string>
+			<string>E0D946DFC3AA52E2E9EDBE6998AE5155</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>APPLICATION_EXTENSION_API_ONLY</key>
@@ -1687,198 +1611,7 @@
 			<key>name</key>
 			<string>Release</string>
 		</dict>
-		<key>4933C5978F5384E27AE5D746F137EBB9</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>6548FBD96F72EFC789EEB6C8D4C665B4</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>4945FEE60F2744F20F40AA0ADC4213C0</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>RLMArray.h</string>
-			<key>path</key>
-			<string>include/Realm/RLMArray.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>4971D228CE1E61D5105FC888AECAC874</key>
-		<dict>
-			<key>fileRef</key>
-			<string>E436AB61FDDE70E7FB6D5AFB097D46D4</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>4C0BEA5FBBBAB29225196EE23EE60DC5</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>collection_change_builder.cpp</string>
-			<key>path</key>
-			<string>Realm/ObjectStore/impl/collection_change_builder.cpp</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>4DCEE102AAEF72CE38E475188BA7CE47</key>
-		<dict>
-			<key>fileRef</key>
-			<string>08E5F807E9ED377E2D07580659959939</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>4DDF7B6FBE75C3A9C85CDC988B935F82</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>JTDateHelper.m</string>
-			<key>path</key>
-			<string>JTCalendar/JTDateHelper.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>4DE6B58E38C7295298A5DE62B87CA504</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>JTVerticalCalendarView.m</string>
-			<key>path</key>
-			<string>JTCalendar/Views/JTVerticalCalendarView.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>4E7379ED8430D3C46867843C0EE8F71B</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>GAI.h</string>
-			<key>path</key>
-			<string>Headers/Public/GAI.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>4FC25108739F9E0C7259776D97A1336A</key>
-		<dict>
-			<key>fileRef</key>
-			<string>6052A3C8292C209C6FA81B94F01DC7FD</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>4FE5804620E691EC096F60806F55AEE3</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>JTHorizontalCalendarView.h</string>
-			<key>path</key>
-			<string>JTCalendar/Views/JTHorizontalCalendarView.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5063D17059518B52B255C9C4061917E8</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>schema.cpp</string>
-			<key>path</key>
-			<string>Realm/ObjectStore/schema.cpp</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>50B5320A8060BAFF68DEA0AEAD09DDE0</key>
-		<dict>
-			<key>fileRef</key>
-			<string>220055BB961E361E93461A5F1BE7F809</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>50DDF3D665C61E3A5207E537051F025F</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>Realm-prefix.pch</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>519987801E2AE4494B6445AD42C2CC5E</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>RLMConstants.h</string>
-			<key>path</key>
-			<string>include/Realm/RLMConstants.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>525D58FBE347AE514F77B04FC8D23099</key>
+		<key>49546553BA3731E6BB2BEDF73A9D95C8</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -1893,10 +1626,171 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>4971D228CE1E61D5105FC888AECAC874</key>
+		<dict>
+			<key>fileRef</key>
+			<string>A9C48E84503D61F752FD9A239A3E4BD7</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>4977F57ED3769517B7F7C18F45D970BF</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>RLMRealm.mm</string>
+			<key>path</key>
+			<string>Realm/RLMRealm.mm</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4ADC780C2565F8B543127C87B708F5FC</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>Core-Module.h</string>
+			<key>path</key>
+			<string>Headers/ModuleHeaders/Core-Module.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4B9DB27CF353FD956A9FD2B0DBFA94CE</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>archive.ar</string>
+			<key>name</key>
+			<string>libGTM_AddressBook_external.a</string>
+			<key>path</key>
+			<string>Libraries/libGTM_AddressBook_external.a</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4C201DEF08CEEBAF284A0E3C24CEFBF1</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>8A1D6CD029915EC6502182F6343A83D9</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Frameworks</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4D1F9F64782B15D6D72C7473F9E9BE56</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>RLMObject.mm</string>
+			<key>path</key>
+			<string>Realm/RLMObject.mm</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4DCEE102AAEF72CE38E475188BA7CE47</key>
+		<dict>
+			<key>fileRef</key>
+			<string>E926DDB68BCAD0C3D573F5753485867E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>4E0A9DDDA8153F64FC0D556AFDC20F55</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>RLMObjectSchema.mm</string>
+			<key>path</key>
+			<string>Realm/RLMObjectSchema.mm</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4F998C76B5BF75D5CB2938D98F344624</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>RLMAccessor.h</string>
+			<key>path</key>
+			<string>include/Realm/RLMAccessor.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4FC25108739F9E0C7259776D97A1336A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F6B070913567E9DC59DFA9DCAA911992</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>50B5320A8060BAFF68DEA0AEAD09DDE0</key>
+		<dict>
+			<key>fileRef</key>
+			<string>CE472CF4ADA7217188F543E791C29325</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>51F068D5E05946B0D9445E09E1BCED40</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>archive.ar</string>
+			<key>name</key>
+			<string>libGTM_core_external.a</string>
+			<key>path</key>
+			<string>Libraries/libGTM_core_external.a</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>52DC668B0B68A66B0FA6187EAB904AF2</key>
 		<dict>
 			<key>fileRef</key>
-			<string>FEECF5C13C8880121D69D24B3DA015AD</string>
+			<string>1B0BD09753333A3330C1132398EC6160</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -1934,10 +1828,23 @@
 			<key>isa</key>
 			<string>XCConfigurationList</string>
 		</dict>
+		<key>54D636337D6520E9827FE43316DE0B7D</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>RLMUtil.mm</string>
+			<key>path</key>
+			<string>Realm/RLMUtil.mm</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>54FBDF33E9F6FCD5A191EA442F2BD4A3</key>
 		<dict>
 			<key>fileRef</key>
-			<string>1DC563A155D4CC6EE2FD633E6E65F027</string>
+			<string>BA00B61A0B0350EDBA70AD3BEFE42316</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -1949,7 +1856,7 @@
 		<key>550156AE7AC1A9BCB2FF80AC5E5E9CF2</key>
 		<dict>
 			<key>fileRef</key>
-			<string>03F2EC6D43C9CF1C4906874373E4C99A</string>
+			<string>4518F4CD75FD5DF3A11673BAADB14331</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -1958,25 +1865,10 @@
 				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.99.0"' -D__ASSERTMACROS__</string>
 			</dict>
 		</dict>
-		<key>550521A50857C08BC8FDFA243CA24507</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>RLMConstants.m</string>
-			<key>path</key>
-			<string>Realm/RLMConstants.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>56817EDF817762843F04249DB39FBEDC</key>
 		<dict>
 			<key>fileRef</key>
-			<string>A531BA099C883A08EBEFCC2FF0BDA38C</string>
+			<string>024A8B65DA92600E0E4EEA6C76729C52</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -1987,25 +1879,10 @@
 				</array>
 			</dict>
 		</dict>
-		<key>56BC7CA90DA219BC88206A72BFF361F2</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>SignIn-Module.h</string>
-			<key>path</key>
-			<string>Headers/ModuleHeaders/SignIn-Module.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>56BEA0B233AD6B201F558A2CD8B18D70</key>
 		<dict>
 			<key>fileRef</key>
-			<string>8B9F28BA213ED1B64D22F75AB05F3F65</string>
+			<string>158EE4295A86630261F5BF24DAD22F5B</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -2019,7 +1896,7 @@
 		<key>56E57075B7E9918AAE1FC3C152BB4124</key>
 		<dict>
 			<key>fileRef</key>
-			<string>4FE5804620E691EC096F60806F55AEE3</string>
+			<string>6A18A069E2D2E8062FB94E32B8FA0DD9</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -2033,7 +1910,7 @@
 		<key>57169B778AA6DC79F6DBB343EB636D69</key>
 		<dict>
 			<key>fileRef</key>
-			<string>E051385FF49E6963FFF410FBEFC3A134</string>
+			<string>0D0142E8B02FBAFE9B7380E2898F4445</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -2045,7 +1922,7 @@
 		<key>57A59214CA7B8A19F35865C38D8C4BFA</key>
 		<dict>
 			<key>fileRef</key>
-			<string>71915DB164F73414F7B25046747E9D48</string>
+			<string>B19D954B24E8E1DC394484A5D154C79A</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -2055,6 +1932,19 @@
 					<string>Public</string>
 				</array>
 			</dict>
+		</dict>
+		<key>5876E19864C48190A70C2CA11126BA8C</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>object_store.cpp</string>
+			<key>path</key>
+			<string>Realm/ObjectStore/object_store.cpp</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>58AC373E72E24B89EC6A1337A6942A5A</key>
 		<dict>
@@ -2072,7 +1962,7 @@
 		<key>5939FA30BD11B334E75DE208F89482C2</key>
 		<dict>
 			<key>fileRef</key>
-			<string>7D96FD308B5CF0430532A5EFC84786DF</string>
+			<string>9FE8B4ABA4E60A38E2B7DE7BEAA4005C</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -2083,25 +1973,25 @@
 				</array>
 			</dict>
 		</dict>
-		<key>5948B5022805B493EE4A569D0ED4122D</key>
+		<key>5940E1C3007D56177E03C6DF3FAE8785</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
+			<string>archive.ar</string>
 			<key>name</key>
-			<string>JTCalendarDelegate.h</string>
+			<string>libGTM_RoundedRectPath_external.a</string>
 			<key>path</key>
-			<string>JTCalendar/JTCalendarDelegate.h</string>
+			<string>Libraries/libGTM_RoundedRectPath_external.a</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
 		<key>5950FD58D6BE67AE4B0083CFD313C859</key>
 		<dict>
 			<key>fileRef</key>
-			<string>C25F81EFBC7AAEC42513B441DA5AAD40</string>
+			<string>76E460F19CF42BD0894994B0E6D58DE6</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -2112,19 +2002,7 @@
 				</array>
 			</dict>
 		</dict>
-		<key>595ED081FA4C8E5DF1C93980B0D6F5A4</key>
-		<dict>
-			<key>fileRef</key>
-			<string>0FC5F9A0F5CDE111EDBAAAE86919D343</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.99.0"' -D__ASSERTMACROS__</string>
-			</dict>
-		</dict>
-		<key>5A40E8CF926FBCE94EBC85B8D210F9CA</key>
+		<key>59552CF0A8819214DFCE5D37ADC41027</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -2133,16 +2011,71 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>RLMRealmConfiguration_Private.h</string>
+			<string>Analytics.h</string>
 			<key>path</key>
-			<string>include/Realm/RLMRealmConfiguration_Private.h</string>
+			<string>Headers/GGLAnalytics/Public/Analytics.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>595ED081FA4C8E5DF1C93980B0D6F5A4</key>
+		<dict>
+			<key>fileRef</key>
+			<string>6F61BFD7BA16A4F50E68B0B882E200BF</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.99.0"' -D__ASSERTMACROS__</string>
+			</dict>
+		</dict>
+		<key>5978FD42CB3E7FA28294069467B26F70</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>E8034090E21716F07592F187ACFF220A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>GoogleSymbolUtilities</string>
+			<key>path</key>
+			<string>GoogleSymbolUtilities</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>59A1B7B175D1FBAAB6AB45294BE9C9EC</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>results.cpp</string>
+			<key>path</key>
+			<string>Realm/ObjectStore/results.cpp</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5C18D240BC521EE97285DB06AEFA9829</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>SignIn-Module.h</string>
+			<key>path</key>
+			<string>Headers/ModuleHeaders/SignIn-Module.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
 		<key>5C378E9457D6A5632634E072AD14CECD</key>
 		<dict>
 			<key>fileRef</key>
-			<string>A70E0ABA8C5824C7D331B105441C876F</string>
+			<string>AA679D26E80FC3DCAA43ED652660F328</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -2153,23 +2086,40 @@
 				</array>
 			</dict>
 		</dict>
-		<key>5F5B84287CD09B283944164AAF09533B</key>
+		<key>5D1996055B24C0A5EC97E09DD76BD402</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>RLMUpdateChecker.mm</string>
+			<string>RLMRealm_Private.h</string>
 			<key>path</key>
-			<string>Realm/RLMUpdateChecker.mm</string>
+			<string>include/Realm/RLMRealm_Private.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5D9203597EC013531D0311CD08215E4B</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>archive.ar</string>
+			<key>name</key>
+			<string>libGGLAnalytics.a</string>
+			<key>path</key>
+			<string>Libraries/libGGLAnalytics.a</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
 		<key>5F7BC1BEA57E2F9C374D7B49628A05CE</key>
 		<dict>
 			<key>fileRef</key>
-			<string>D534FB4CAFF5B52D3F8FE58843099C45</string>
+			<string>2BF96451EE77672CE31AA3E04D757FAE</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -2178,18 +2128,16 @@
 				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.99.0"' -D__ASSERTMACROS__</string>
 			</dict>
 		</dict>
-		<key>6052A3C8292C209C6FA81B94F01DC7FD</key>
+		<key>603831147F3EAFA20007FE0EB222621C</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
 			<key>name</key>
-			<string>JTCalendarWeekView.m</string>
+			<string>realm_coordinator.cpp</string>
 			<key>path</key>
-			<string>JTCalendar/Views/JTCalendarWeekView.m</string>
+			<string>Realm/ObjectStore/impl/realm_coordinator.cpp</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -2206,29 +2154,18 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>60F6931A0AC36DCA8590D12CA005BE56</key>
+		<key>622E3D81EBAEAC37F1DA69DB165F2496</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
 			<key>name</key>
-			<string>RLMObject.mm</string>
+			<string>JTVerticalCalendarView.m</string>
 			<key>path</key>
-			<string>Realm/RLMObject.mm</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>62BF847109825A19D2E74276E28028AE</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>collection_notifications.cpp</string>
-			<key>path</key>
-			<string>Realm/ObjectStore/collection_notifications.cpp</string>
+			<string>JTCalendar/Views/JTVerticalCalendarView.m</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -2286,7 +2223,7 @@
 			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
 		</dict>
-		<key>632075099E00DB80218F7263C02FBDEA</key>
+		<key>63B56A086C656706438198B3E4089FA9</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -2295,13 +2232,13 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>JTContent.h</string>
+			<string>JTCalendarDelegate.h</string>
 			<key>path</key>
-			<string>JTCalendar/Protocols/JTContent.h</string>
+			<string>JTCalendar/JTCalendarDelegate.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>642127ADC7AAE487C193C8C4903BCFFE</key>
+		<key>65D11F9908CAAB4AF97ED5EC31AC4625</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -2310,53 +2247,23 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>CloudMessaging-Module.h</string>
+			<string>RLMObjectStore.h</string>
 			<key>path</key>
-			<string>Headers/ModuleHeaders/CloudMessaging-Module.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>646011EBF9B49E1ECCA87F6F01F1C77B</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>archive.ar</string>
-			<key>name</key>
-			<string>libGTM_AddressBook_external.a</string>
-			<key>path</key>
-			<string>Libraries/libGTM_AddressBook_external.a</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6548FBD96F72EFC789EEB6C8D4C665B4</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>archive.ar</string>
-			<key>name</key>
-			<string>libGSDK_Overload_external.a</string>
-			<key>path</key>
-			<string>Libraries/libGSDK_Overload_external.a</string>
+			<string>include/Realm/RLMObjectStore.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
 		<key>65D13D4E0D034836C35C629BED24DB25</key>
 		<dict>
 			<key>fileRef</key>
-			<string>4DDF7B6FBE75C3A9C85CDC988B935F82</string>
+			<string>205DB8BF7465BEF9679BFE279BCE32F0</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
 		<key>65FFD37361503C4D5C6FC0F13CEA911C</key>
 		<dict>
 			<key>baseConfigurationReference</key>
-			<string>6F49009E408D830C6001BC73D89A12EE</string>
+			<string>348668ECB6050430611D4748381933EE</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>APPLICATION_EXTENSION_API_ONLY</key>
@@ -2389,78 +2296,14 @@
 			<key>name</key>
 			<string>Release</string>
 		</dict>
-		<key>66C21223E8E3C8865CD983345E1C01C4</key>
+		<key>67CF939ADF7F27345C861D28E57EB29E</key>
 		<dict>
-			<key>children</key>
-			<array>
-				<string>4C0BEA5FBBBAB29225196EE23EE60DC5</string>
-				<string>62BF847109825A19D2E74276E28028AE</string>
-				<string>B74045AD8D32CD9525C5EEE41478DF63</string>
-				<string>03E16012AF546BEB068531EA31FC9782</string>
-				<string>03F2EC6D43C9CF1C4906874373E4C99A</string>
-				<string>FCD7D166F4B158FAAF89F19875BADF61</string>
-				<string>0C75A4C48BCDE509B0587F6091DF04E1</string>
-				<string>153E400CA4BD9D1ADB6D549191CCD001</string>
-				<string>8B900215216B194CDB1DB784B32CFF43</string>
-				<string>720E07175BCE3D5247F8571198947265</string>
-				<string>9E892EA20D1EAD09A01C487C40DFB61A</string>
-				<string>E051385FF49E6963FFF410FBEFC3A134</string>
-				<string>1C59D9E8731917D4CDB995D642626459</string>
-				<string>2965DD701C853B2A88651EA6904662AB</string>
-				<string>41D4243751C38BB4006439A2CDFF6BCD</string>
-				<string>6AF40EF7A6088811132B6B7ACBD561CA</string>
-				<string>AA8BF6609A977761149569B3AFD38718</string>
-				<string>389A0FB3E469EB3B31DD7E5A93D4F083</string>
-				<string>F3295BA93ADB8B377236744C4B66BEEA</string>
-				<string>550521A50857C08BC8FDFA243CA24507</string>
-				<string>8B9F28BA213ED1B64D22F75AB05F3F65</string>
-				<string>E771EAED1A0205BE6BABEDDA37234C5D</string>
-				<string>234DD1D7C3668BAD840CE0E49D140BA1</string>
-				<string>7DA8DF98A20D22CD00FA7B6C9E8A57E8</string>
-				<string>60F6931A0AC36DCA8590D12CA005BE56</string>
-				<string>836CA8A8CE52289F38F2F305685B96FB</string>
-				<string>CB2473D5B7334537B762A4CDBA3C8D8D</string>
-				<string>1DA1545DA24C45DCDFCD6D01B5E2F04B</string>
-				<string>051F7261E37FAA18A0DDB4B119E974AD</string>
-				<string>C641CE09FFCA01EA4C3F45D35E20AB88</string>
-				<string>E9C3F5063828D3CE129F2A5F9DE38B81</string>
-				<string>D6770DF7BDD4B06EA842F77E06826514</string>
-				<string>3B2434BBD3584F14FAE3EEB52FCE1C40</string>
-				<string>1923129BDD6DF65786C05C0B6AF3BF58</string>
-				<string>7F0BC419A8E83F7DE9E8B9B11CAC146D</string>
-				<string>BBDBC85C6184277C641A240B664EBC75</string>
-				<string>C25F81EFBC7AAEC42513B441DA5AAD40</string>
-				<string>B1ECA61C29CC688D250DB4079667042B</string>
-				<string>0021F9EA93F7DE7A10FF9CFD035BF62C</string>
-				<string>BC8F23840EBDF2BFB6D89AC376F7D9BF</string>
-				<string>D830D1D0FF0285CA79EF13500DF155D0</string>
-				<string>5A40E8CF926FBCE94EBC85B8D210F9CA</string>
-				<string>38FAD3BCC49379387B63E2B550F9F04E</string>
-				<string>0FC5F9A0F5CDE111EDBAAAE86919D343</string>
-				<string>C8B06B9F4E8C8FB55C0BF08ADC621CF6</string>
-				<string>80053675DEC8B10A5AB6FC0D0F713FF8</string>
-				<string>061F5E982F30FC6812E18FE52FDDE3B0</string>
-				<string>27774CFB7F8295ACAB0DBFF614094347</string>
-				<string>5F5B84287CD09B283944164AAF09533B</string>
-				<string>206F552E7903AEF889E7D74B30536D22</string>
-				<string>5063D17059518B52B255C9C4061917E8</string>
-				<string>1DC563A155D4CC6EE2FD633E6E65F027</string>
-				<string>082E6EBCBFC39CD72E264620A859572F</string>
-				<string>D534FB4CAFF5B52D3F8FE58843099C45</string>
-				<string>C4A27ADBE852DCCAC0A3410AED77A9A9</string>
-				<string>6E6DCE17BADA5B070713343B23443FA2</string>
-				<string>3D0CAC7BFD3587C2DB1727690176ABEA</string>
-			</array>
+			<key>fileRef</key>
+			<string>E6B42954B6FF3A59A65D267DAC193E3E</string>
 			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Realm</string>
-			<key>path</key>
-			<string>Realm</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
+			<string>PBXBuildFile</string>
 		</dict>
-		<key>67B6FB48C7FE6A7A9CF322FDB8E4B109</key>
+		<key>68C177C1ECB46EC7B1883160AFC57160</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -2468,42 +2311,27 @@
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>JTCalendar-prefix.pch</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>67B9B5E4BC60EDA0C4507F357882801E</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>4E7379ED8430D3C46867843C0EE8F71B</string>
-				<string>A0C34901B3DEF2DF2244A1DEF9789CBA</string>
-				<string>EC3C87E55FC749F3D8C5823A6635D43C</string>
-				<string>3F68537A1777EB1541E96C0728E62417</string>
-				<string>25EF6A190F52FAB49F12CD243188652D</string>
-				<string>7335FCDE843598C5D9BA2134814BEE83</string>
-				<string>32743AEFE69766681B12B8DCF1E78B11</string>
-				<string>D3FB27CAF89599297EE36B1957F51C93</string>
-				<string>E4C79D256F336B2284913F7F3D7E2976</string>
-				<string>3AC987D1094BC73952BD648CBB4367E5</string>
-				<string>740071E74C54ADAB4FBA44BE15245D6E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
 			<key>name</key>
-			<string>GoogleAnalytics</string>
+			<string>JTContent.h</string>
 			<key>path</key>
-			<string>GoogleAnalytics</string>
+			<string>JTCalendar/Protocols/JTContent.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>67CF939ADF7F27345C861D28E57EB29E</key>
+		<key>68E7C34F55A7122F0B4E7C58AA113833</key>
 		<dict>
-			<key>fileRef</key>
-			<string>73F634A1104CEB796538B0E46428E466</string>
+			<key>includeInIndex</key>
+			<string>1</string>
 			<key>isa</key>
-			<string>PBXBuildFile</string>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>RLMObjectSchema_Private.h</string>
+			<key>path</key>
+			<string>include/Realm/RLMObjectSchema_Private.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>6946BC222B49659AD2D3C39FF9EA0F45</key>
 		<dict>
@@ -2520,31 +2348,18 @@
 			<key>sourceTree</key>
 			<string>BUILT_PRODUCTS_DIR</string>
 		</dict>
-		<key>6A5AF55FD304A2745DE12CE3EC9B44F8</key>
+		<key>6A18A069E2D2E8062FB94E32B8FA0DD9</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
+			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>JTCalendarWeekDayView.m</string>
+			<string>JTHorizontalCalendarView.h</string>
 			<key>path</key>
-			<string>JTCalendar/Views/JTCalendarWeekDayView.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6AF40EF7A6088811132B6B7ACBD561CA</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>RLMArray.mm</string>
-			<key>path</key>
-			<string>Realm/RLMArray.mm</string>
+			<string>JTCalendar/Views/JTHorizontalCalendarView.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -2562,25 +2377,38 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>6BAF1CE33415C7A5BCDBF4494E5E89B5</key>
+		<key>6C834AA6DF4DD542BB8BE5AF0AF1A17C</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
-			<string>archive.ar</string>
+			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>libGTM_UIFont+LineHeight_external.a</string>
+			<string>GGLErrorCode.h</string>
 			<key>path</key>
-			<string>Libraries/libGTM_UIFont+LineHeight_external.a</string>
+			<string>Headers/GGLCore/Public/GGLErrorCode.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6C9E61890917316C397B2B24216F22C6</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>RLMProperty.mm</string>
+			<key>path</key>
+			<string>Realm/RLMProperty.mm</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
 		<key>6D797980E69D19629DC395537E245912</key>
 		<dict>
 			<key>fileRef</key>
-			<string>197C671613D17814E14E6185B0595426</string>
+			<string>A56CB073F5458EAF805C5FE96D481FCC</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -2591,49 +2419,48 @@
 				</array>
 			</dict>
 		</dict>
-		<key>6E6DCE17BADA5B070713343B23443FA2</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>71915DB164F73414F7B25046747E9D48</string>
-				<string>4945FEE60F2744F20F40AA0ADC4213C0</string>
-				<string>12C2115E5F6A11D8B679F52D16DDB8F5</string>
-				<string>519987801E2AE4494B6445AD42C2CC5E</string>
-				<string>70370D04F9AC8D64A4E5524342D46DE3</string>
-				<string>936E72B8BE613658367E21783591F6FA</string>
-				<string>0C60A62F108E1F91BCF5FCC6AA56FCC5</string>
-				<string>01F7B7D017373D9D754B5D1B995C2AAE</string>
-				<string>6F098312073FB5623036A00E4CB6A34D</string>
-				<string>DF73836EEEA25D28A75661F450ABD6DF</string>
-				<string>0E70BD0C0EEFC8C9BAD59B04DE0F39A3</string>
-				<string>4876ED0C0E280806BC2D12F7AAA23D0B</string>
-				<string>525D58FBE347AE514F77B04FC8D23099</string>
-				<string>E436AB61FDDE70E7FB6D5AFB097D46D4</string>
-				<string>8BE776EF3FBB6397DE0808CC3F13B069</string>
-				<string>44924A01129EFBA096EDAEFD2760FC8F</string>
-				<string>8DCF599CB3355719982874CA981F1E91</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Headers</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6EC0AA1EC44AD684AC5D229AA491B5B3</key>
+		<key>6F61BFD7BA16A4F50E68B0B882E200BF</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>RLMResults.mm</string>
 			<key>path</key>
-			<string>Realm-dummy.m</string>
+			<string>Realm/RLMResults.mm</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>6F098312073FB5623036A00E4CB6A34D</key>
+		<key>70ABC080923A22DA3DF15FCDB378829A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>BFAB1220B4C88D75AFD18233079C646D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>71C0D0094A799BC387C6F579826349EE</key>
+		<dict>
+			<key>fileRef</key>
+			<string>68C177C1ECB46EC7B1883160AFC57160</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>733A5897C600F3A98959287229B797CA</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -2642,41 +2469,41 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>RLMObjectBase_Dynamic.h</string>
+			<string>GGLContext.h</string>
 			<key>path</key>
-			<string>include/Realm/RLMObjectBase_Dynamic.h</string>
+			<string>Headers/GGLCore/Public/GGLContext.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>6F49009E408D830C6001BC73D89A12EE</key>
+		<key>73885FD4D70060D6671A6E03C6A4B06C</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>JTCalendar.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>70370D04F9AC8D64A4E5524342D46DE3</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
+			<string>archive.ar</string>
 			<key>name</key>
-			<string>RLMDefines.h</string>
+			<string>libGTM_SystemVersion_external.a</string>
 			<key>path</key>
-			<string>include/Realm/RLMDefines.h</string>
+			<string>Libraries/libGTM_SystemVersion_external.a</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>70902B159E213B7FEC30BD95515173B0</key>
+		<key>73D1226A085828C38B9979441764EEC4</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>RLMMigration.mm</string>
+			<key>path</key>
+			<string>Realm/RLMMigration.mm</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>748B9252898D12E8178C730A9D6F2809</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -2691,124 +2518,10 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>70ABC080923A22DA3DF15FCDB378829A</key>
-		<dict>
-			<key>fileRef</key>
-			<string>519987801E2AE4494B6445AD42C2CC5E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>71915DB164F73414F7B25046747E9D48</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>Realm.h</string>
-			<key>path</key>
-			<string>include/Realm/Realm.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>71C0D0094A799BC387C6F579826349EE</key>
-		<dict>
-			<key>fileRef</key>
-			<string>632075099E00DB80218F7263C02FBDEA</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>720E07175BCE3D5247F8571198947265</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>realm_coordinator.cpp</string>
-			<key>path</key>
-			<string>Realm/ObjectStore/impl/realm_coordinator.cpp</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>7335FCDE843598C5D9BA2134814BEE83</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>GAIEcommercePromotion.h</string>
-			<key>path</key>
-			<string>Headers/Public/GAIEcommercePromotion.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>73F634A1104CEB796538B0E46428E466</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>JTCalendarMenuView.m</string>
-			<key>path</key>
-			<string>JTCalendar/Views/JTCalendarMenuView.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>740071E74C54ADAB4FBA44BE15245D6E</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>CC1E516FEEECFA453DC8D0CDC81C6378</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>7471BA27EAB34626228F41FE94A76E9C</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>JTCalendarPageView.m</string>
-			<key>path</key>
-			<string>JTCalendar/Views/JTCalendarPageView.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>75379C68449F68DC2C1F377ED50654B8</key>
 		<dict>
 			<key>fileRef</key>
-			<string>0C75A4C48BCDE509B0587F6091DF04E1</string>
+			<string>1C1F7A133FC95B8C45CC40317F1D61C6</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -2816,6 +2529,47 @@
 				<key>COMPILER_FLAGS</key>
 				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.99.0"' -D__ASSERTMACROS__</string>
 			</dict>
+		</dict>
+		<key>75697B07D4062F9BD02E78EE54B968ED</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>collection_change_builder.cpp</string>
+			<key>path</key>
+			<string>Realm/ObjectStore/impl/collection_change_builder.cpp</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7610E73F0D801492B6C738EE5E32F4BD</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>GAITracker.h</string>
+			<key>path</key>
+			<string>Headers/Public/GAITracker.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7635DC0F1052DE474CE5730846774E45</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>RLMObjectStore.mm</string>
+			<key>path</key>
+			<string>Realm/RLMObjectStore.mm</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>76581F97F149DC996732D3704AB7E435</key>
 		<dict>
@@ -2844,10 +2598,25 @@
 			<key>productType</key>
 			<string>com.apple.product-type.library.static</string>
 		</dict>
+		<key>76E460F19CF42BD0894994B0E6D58DE6</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>RLMProperty_Private.h</string>
+			<key>path</key>
+			<string>include/Realm/RLMProperty_Private.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>7705EC4F62912C0038B7D546A8EB957B</key>
 		<dict>
 			<key>fileRef</key>
-			<string>F3295BA93ADB8B377236744C4B66BEEA</string>
+			<string>341B2C032E5EC78999709E7023A7E14A</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -2859,9 +2628,54 @@
 		<key>78108C0C0349E286C4DBD1F0F8158820</key>
 		<dict>
 			<key>fileRef</key>
-			<string>CA78ACEA03A4642F050F0C940A690DE6</string>
+			<string>07B8A391E1226BF836D0C5AEFF2578EB</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
+		</dict>
+		<key>78A7B079597E6761A8B9CB14E8C04727</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>RLMObjectBase_Dynamic.h</string>
+			<key>path</key>
+			<string>include/Realm/RLMObjectBase_Dynamic.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>796551C37F22EEA6D2386EBEB723CB8B</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>archive.ar</string>
+			<key>name</key>
+			<string>libGTM_GTMURLBuilder_external.a</string>
+			<key>path</key>
+			<string>Libraries/libGTM_GTMURLBuilder_external.a</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>79DD473B55165BEC7158837327387885</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>archive.ar</string>
+			<key>name</key>
+			<string>libGTM_NSStringXML_external.a</string>
+			<key>path</key>
+			<string>Libraries/libGTM_NSStringXML_external.a</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>79EAA5712C6816A162C8ADFC8F2D3993</key>
 		<dict>
@@ -2922,7 +2736,7 @@
 		<key>7BEE7F63C1D84A914DDCFF1B488745CB</key>
 		<dict>
 			<key>fileRef</key>
-			<string>5063D17059518B52B255C9C4061917E8</string>
+			<string>3980312DA792F82B04E29A53472997E4</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -2930,6 +2744,21 @@
 				<key>COMPILER_FLAGS</key>
 				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.99.0"' -D__ASSERTMACROS__</string>
 			</dict>
+		</dict>
+		<key>7C104B08FBA679575D0BE5A15068802A</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>RLMMigration_Private.h</string>
+			<key>path</key>
+			<string>include/Realm/RLMMigration_Private.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>7C2CF6B97F445B913944336B78577DDD</key>
 		<dict>
@@ -2968,7 +2797,7 @@
 		<key>7C76B8BA2EE7869DF55A88B3824A53AE</key>
 		<dict>
 			<key>fileRef</key>
-			<string>061F5E982F30FC6812E18FE52FDDE3B0</string>
+			<string>2C025B19BCBD109FC064420C13DCC162</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -2982,7 +2811,7 @@
 		<key>7C8E68669BCDBFF74889998588A0D447</key>
 		<dict>
 			<key>fileRef</key>
-			<string>051F7261E37FAA18A0DDB4B119E974AD</string>
+			<string>68E7C34F55A7122F0B4E7C58AA113833</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -3006,7 +2835,7 @@
 			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
 		</dict>
-		<key>7CEDB59A5D4E93E68C44FE4B37C9B0C2</key>
+		<key>7CD3684624F62053379605F83357B8AC</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -3015,13 +2844,13 @@
 			<key>lastKnownFileType</key>
 			<string>archive.ar</string>
 			<key>name</key>
-			<string>libGTM_Regex_external.a</string>
+			<string>libGSDK_Overload_external.a</string>
 			<key>path</key>
-			<string>Libraries/libGTM_Regex_external.a</string>
+			<string>Libraries/libGSDK_Overload_external.a</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>7D96FD308B5CF0430532A5EFC84786DF</key>
+		<key>7D97EB40B8B3F7F435893F0EA895F3C2</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -3030,24 +2859,9 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>JTCalendar.h</string>
+			<string>JTVerticalCalendarView.h</string>
 			<key>path</key>
-			<string>JTCalendar/JTCalendar.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>7DA8DF98A20D22CD00FA7B6C9E8A57E8</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>RLMMigration_Private.h</string>
-			<key>path</key>
-			<string>include/Realm/RLMMigration_Private.h</string>
+			<string>JTCalendar/Views/JTVerticalCalendarView.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -3057,7 +2871,7 @@
 			<array>
 				<string>BA6428E9F66FD5A23C0A2E06ED26CD2F</string>
 				<string>BC3CA7F9E30CC8F7E2DD044DD34432FC</string>
-				<string>28D9434200B99AE9BB37DAC477B7C290</string>
+				<string>00A8143C505966B4E7D8B27D7E00E34C</string>
 				<string>8F66B7DA465859A580E1C199407AFA61</string>
 				<string>6B19801DEF5B23B6C383722CEAD9C043</string>
 			</array>
@@ -3066,57 +2880,10 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>7DF77B858836922A8A10E3D0F969E6E0</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>7D96FD308B5CF0430532A5EFC84786DF</string>
-				<string>C00E1BF3F3F2AEFA244A0D2F88D106C3</string>
-				<string>F3CF53CFD1B824B7B8015DFC5E7FEB6A</string>
-				<string>C7684AEB04032D505DE5188EF74CAA4C</string>
-				<string>5948B5022805B493EE4A569D0ED4122D</string>
-				<string>3650D543F1F023F1784D5B5BE6A47D92</string>
-				<string>CFBC8839B09BC8D2E78444E014C0ACFA</string>
-				<string>EF850BE1A41CA8E3F6F1A3D175FB2BA6</string>
-				<string>99F5428B180C69CFFE6ED3879D5C1A2D</string>
-				<string>A531BA099C883A08EBEFCC2FF0BDA38C</string>
-				<string>73F634A1104CEB796538B0E46428E466</string>
-				<string>08E5F807E9ED377E2D07580659959939</string>
-				<string>25461F827BE05C92E9804612C2EB4CAA</string>
-				<string>7471BA27EAB34626228F41FE94A76E9C</string>
-				<string>197C671613D17814E14E6185B0595426</string>
-				<string>CA78ACEA03A4642F050F0C940A690DE6</string>
-				<string>817DB42F7E03B13DF1AEE66AE504A3A3</string>
-				<string>4353A167190798EC8E5BCCAECDAAB8CB</string>
-				<string>A70E0ABA8C5824C7D331B105441C876F</string>
-				<string>37AE5314144B32F58EBD9F850A9BA9C2</string>
-				<string>220055BB961E361E93461A5F1BE7F809</string>
-				<string>6A5AF55FD304A2745DE12CE3EC9B44F8</string>
-				<string>FEECF5C13C8880121D69D24B3DA015AD</string>
-				<string>6052A3C8292C209C6FA81B94F01DC7FD</string>
-				<string>632075099E00DB80218F7263C02FBDEA</string>
-				<string>B325F348FBF4C626E53465E8CEA315B1</string>
-				<string>4DDF7B6FBE75C3A9C85CDC988B935F82</string>
-				<string>4FE5804620E691EC096F60806F55AEE3</string>
-				<string>88E7BD6351A009B0CC59650D2900709E</string>
-				<string>70902B159E213B7FEC30BD95515173B0</string>
-				<string>EEE64832074267F211A00C911D3159FA</string>
-				<string>4DE6B58E38C7295298A5DE62B87CA504</string>
-				<string>7F8C02AD7FA0316AF5AABF3CDD9ADED8</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>JTCalendar</string>
-			<key>path</key>
-			<string>JTCalendar</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>7E77CABDEDA503DE1A906B2669FA84C6</key>
 		<dict>
 			<key>fileRef</key>
-			<string>C8B06B9F4E8C8FB55C0BF08ADC621CF6</string>
+			<string>B993F9DCA33C53010DC18FC313F78EFC</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -3130,7 +2897,7 @@
 		<key>7EB429512C6695F018A9DAA1A92C7C8C</key>
 		<dict>
 			<key>fileRef</key>
-			<string>206F552E7903AEF889E7D74B30536D22</string>
+			<string>54D636337D6520E9827FE43316DE0B7D</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -3139,33 +2906,18 @@
 				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.99.0"' -D__ASSERTMACROS__</string>
 			</dict>
 		</dict>
-		<key>7F0BC419A8E83F7DE9E8B9B11CAC146D</key>
+		<key>7F52E3D55B9E49F195A9C99587CD7581</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>RLMPredicateUtil.mm</string>
+			<string>RLMArray_Private.h</string>
 			<key>path</key>
-			<string>Realm/RLMPredicateUtil.mm</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>7F8C02AD7FA0316AF5AABF3CDD9ADED8</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>6F49009E408D830C6001BC73D89A12EE</string>
-				<string>D10AEF6CB5801067EDFA25BA6B561B7A</string>
-				<string>67B6FB48C7FE6A7A9CF322FDB8E4B109</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Support Files</string>
-			<key>path</key>
-			<string>../Target Support Files/JTCalendar</string>
+			<string>include/Realm/RLMArray_Private.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -3182,20 +2934,7 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>80053675DEC8B10A5AB6FC0D0F713FF8</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>RLMSchema.mm</string>
-			<key>path</key>
-			<string>Realm/RLMSchema.mm</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>817DB42F7E03B13DF1AEE66AE504A3A3</key>
+		<key>81A8C90FD7A79EC147FB562424A67E03</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -3204,16 +2943,16 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>JTCalendarSettings.h</string>
+			<string>GAILogger.h</string>
 			<key>path</key>
-			<string>JTCalendar/JTCalendarSettings.h</string>
+			<string>Headers/Public/GAILogger.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
 		<key>82399DFCF4D98180CD82A2D564A2FBFB</key>
 		<dict>
 			<key>fileRef</key>
-			<string>38FAD3BCC49379387B63E2B550F9F04E</string>
+			<string>1063ACC37D0D2F63041B1178DBBD65ED</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -3225,7 +2964,7 @@
 		<key>82BE79B5748B3D01DA4E4FD0FAB1ADAB</key>
 		<dict>
 			<key>fileRef</key>
-			<string>2965DD701C853B2A88651EA6904662AB</string>
+			<string>C9C4F4D77C0A689D87B81C5D1CA0B068</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -3234,7 +2973,20 @@
 				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.99.0"' -D__ASSERTMACROS__</string>
 			</dict>
 		</dict>
-		<key>836CA8A8CE52289F38F2F305685B96FB</key>
+		<key>8457A6F0F7186921CCB4DE1F16D07DD4</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>RLMObservation.mm</string>
+			<key>path</key>
+			<string>Realm/RLMObservation.mm</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>856158AD3F00FF850E17E8F431BC1E73</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -3243,16 +2995,16 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>RLMObject_Private.h</string>
+			<string>JTCalendarDay.h</string>
 			<key>path</key>
-			<string>include/Realm/RLMObject_Private.h</string>
+			<string>JTCalendar/Protocols/JTCalendarDay.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
 		<key>85A33D486B9C51FCBD8653FD28A53F09</key>
 		<dict>
 			<key>fileRef</key>
-			<string>3650D543F1F023F1784D5B5BE6A47D92</string>
+			<string>872012BE9B37235EA9A303362A3CC135</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -3262,6 +3014,19 @@
 					<string>Public</string>
 				</array>
 			</dict>
+		</dict>
+		<key>860E9DDA9FF48B0F6D5504311BFE5E77</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>RLMListBase.mm</string>
+			<key>path</key>
+			<string>Realm/RLMListBase.mm</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>8631780CF68C7B459FA5C2CEEA25F79D</key>
 		<dict>
@@ -3284,17 +3049,18 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>8747FB29FEE5CE4260345A4F5A5218E1</key>
+		<key>872012BE9B37235EA9A303362A3CC135</key>
 		<dict>
-			<key>children</key>
-			<array>
-				<string>FDC0372DEA971B56400068E6CFD15510</string>
-				<string>9FA212D7C37DDE163FF08668AB2A6C44</string>
-			</array>
+			<key>includeInIndex</key>
+			<string>1</string>
 			<key>isa</key>
-			<string>PBXGroup</string>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>Frameworks</string>
+			<string>JTCalendarDelegateManager.h</string>
+			<key>path</key>
+			<string>JTCalendar/Managers/JTCalendarDelegateManager.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -3334,7 +3100,7 @@
 			<key>targetProxy</key>
 			<string>39698647EBED6B3F82D19D34F608E0B8</string>
 		</dict>
-		<key>88E7BD6351A009B0CC59650D2900709E</key>
+		<key>88F77A8E1C7CA60D51279A0D14753AB0</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -3343,9 +3109,86 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.objc</string>
 			<key>name</key>
-			<string>JTHorizontalCalendarView.m</string>
+			<string>JTCalendarDayView.m</string>
 			<key>path</key>
-			<string>JTCalendar/Views/JTHorizontalCalendarView.m</string>
+			<string>JTCalendar/Views/JTCalendarDayView.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8936C3FE30D82FDDFE789F8F6A741462</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>GAIFields.h</string>
+			<key>path</key>
+			<string>Headers/Public/GAIFields.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>896924422F685F4746C5C819215F3010</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>archive.ar</string>
+			<key>name</key>
+			<string>libGTM_NSStringHTML_external.a</string>
+			<key>path</key>
+			<string>Libraries/libGTM_NSStringHTML_external.a</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8A1D6CD029915EC6502182F6343A83D9</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>archive.ar</string>
+			<key>name</key>
+			<string>libProtocolBuffers_external.a</string>
+			<key>path</key>
+			<string>Libraries/libProtocolBuffers_external.a</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8A7E6D93207AEE0B2460BFC92A824468</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>E0D946DFC3AA52E2E9EDBE6998AE5155</string>
+				<string>D91ECA72CF98B52EB7E606F1E3732E59</string>
+				<string>93EEE977FAAE0150FA1B3400D4B5F5DA</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Support Files</string>
+			<key>path</key>
+			<string>../Target Support Files/Realm</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8AD0928BF9B023F2B4A05F06E186289B</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>RLMOptionalBase.h</string>
+			<key>path</key>
+			<string>include/Realm/RLMOptionalBase.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -3362,53 +3205,10 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>8B900215216B194CDB1DB784B32CFF43</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>object_store.cpp</string>
-			<key>path</key>
-			<string>Realm/ObjectStore/object_store.cpp</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8B9F28BA213ED1B64D22F75AB05F3F65</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>RLMListBase.h</string>
-			<key>path</key>
-			<string>include/Realm/RLMListBase.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8BA21E8D6C6CB3E73A766FBE07FF9DEE</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>AppInvite-Module.h</string>
-			<key>path</key>
-			<string>Headers/ModuleHeaders/AppInvite-Module.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>8BA53006F496FB1F06850721806091E8</key>
 		<dict>
 			<key>fileRef</key>
-			<string>DF73836EEEA25D28A75661F450ABD6DF</string>
+			<string>A033CD3A4A5B3E1BC9CCEBBDBFADE377</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -3419,10 +3219,23 @@
 				</array>
 			</dict>
 		</dict>
+		<key>8BA5B44536F34275CD180B586B6CAF27</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>object_schema.cpp</string>
+			<key>path</key>
+			<string>Realm/ObjectStore/object_schema.cpp</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>8BBBC7C8379573C5F1C6D210339D5F49</key>
 		<dict>
 			<key>fileRef</key>
-			<string>8B900215216B194CDB1DB784B32CFF43</string>
+			<string>5876E19864C48190A70C2CA11126BA8C</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -3431,70 +3244,25 @@
 				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.99.0"' -D__ASSERTMACROS__</string>
 			</dict>
 		</dict>
-		<key>8BE776EF3FBB6397DE0808CC3F13B069</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>RLMRealmConfiguration.h</string>
-			<key>path</key>
-			<string>include/Realm/RLMRealmConfiguration.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8CE3B02BAE5D2F7F05661093F697D595</key>
+		<key>8CB6BD3E87FAE680346E7056D5818827</key>
 		<dict>
 			<key>children</key>
 			<array>
-				<string>2A7053C9E9A2727BCD3CCAF9E375B1A7</string>
+				<string>59552CF0A8819214DFCE5D37ADC41027</string>
+				<string>91D72207135CCC700963262BC8D6C0D8</string>
+				<string>F03EB3AF8A115B4897B3BCCAC9B38BC8</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
 			<key>name</key>
-			<string>GoogleInterchangeUtilities</string>
-			<key>path</key>
-			<string>GoogleInterchangeUtilities</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8D203A3237AE3BEEE63BC3D51C305C0E</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>archive.ar</string>
-			<key>name</key>
-			<string>libGTM_NSDictionary+URLArguments_external.a</string>
-			<key>path</key>
-			<string>Libraries/libGTM_NSDictionary+URLArguments_external.a</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8DCF599CB3355719982874CA981F1E91</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>RLMSchema.h</string>
-			<key>path</key>
-			<string>include/Realm/RLMSchema.h</string>
+			<string>Analytics</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
 		<key>8DDDA12A4DB4B647F2F15ADA76E25677</key>
 		<dict>
 			<key>fileRef</key>
-			<string>817DB42F7E03B13DF1AEE66AE504A3A3</string>
+			<string>C9263DD8519D2D4F9BB36AFC9DBAE165</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -3504,21 +3272,6 @@
 					<string>Public</string>
 				</array>
 			</dict>
-		</dict>
-		<key>8E5E8CD652C10048B537D217AF664BC1</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>archive.ar</string>
-			<key>name</key>
-			<string>libGTM_NSStringHTML_external.a</string>
-			<key>path</key>
-			<string>Libraries/libGTM_NSStringHTML_external.a</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
 		</dict>
 		<key>8E86D422CC272BD1F9E69AAA3AF8AD9E</key>
 		<dict>
@@ -3530,6 +3283,19 @@
 			<string>text.plist.xml</string>
 			<key>path</key>
 			<string>Pods-acknowledgements.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8ECC916C6C84191EC55D75BF0C593433</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>0331F0FA6194E78C5F21C09F2A41704A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Frameworks</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -3549,6 +3315,21 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>8F98ADA9C14538B8F7273D85EB40FB75</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>RLMObjectBase.h</string>
+			<key>path</key>
+			<string>include/Realm/RLMObjectBase.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>8FB03FA6DD3246EF71A7457F5916CB52</key>
 		<dict>
 			<key>isa</key>
@@ -3560,7 +3341,7 @@
 			<key>targetProxy</key>
 			<string>0D4F0FB21BCD5B6F18C5D7C170945C1B</string>
 		</dict>
-		<key>936E72B8BE613658367E21783591F6FA</key>
+		<key>8FDEF07C648632F4615F34BF4A39E975</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -3569,31 +3350,72 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>RLMMigration.h</string>
+			<string>RLMRealmConfiguration.h</string>
 			<key>path</key>
-			<string>include/Realm/RLMMigration.h</string>
+			<string>include/Realm/RLMRealmConfiguration.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>954CE8A6AE6019DA7FBCBDDE88E859DA</key>
+		<key>91D72207135CCC700963262BC8D6C0D8</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
-			<string>archive.ar</string>
+			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>libGTM_NSStringXML_external.a</string>
+			<string>GGLContext+Analytics.h</string>
 			<key>path</key>
-			<string>Libraries/libGTM_NSStringXML_external.a</string>
+			<string>Headers/GGLAnalytics/Public/GGLContext+Analytics.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>93EEE977FAAE0150FA1B3400D4B5F5DA</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>Realm-prefix.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>96E0657FC546B3AA0B0CC9D680E97AC7</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>JTCalendar-prefix.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>974FA590C0CA70D5BE3CE4A59716FCC7</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>Core.h</string>
+			<key>path</key>
+			<string>Headers/GGLCore/Public/Core.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
 		<key>988907F0CBC2A7FD69F9E513EF1901B0</key>
 		<dict>
 			<key>fileRef</key>
-			<string>4C0BEA5FBBBAB29225196EE23EE60DC5</string>
+			<string>75697B07D4062F9BD02E78EE54B968ED</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -3605,11 +3427,24 @@
 		<key>99253DC7829CA8D9874F0E0AA7A9AE2F</key>
 		<dict>
 			<key>fileRef</key>
-			<string>C7684AEB04032D505DE5188EF74CAA4C</string>
+			<string>88F77A8E1C7CA60D51279A0D14753AB0</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>99F5428B180C69CFFE6ED3879D5C1A2D</key>
+		<key>99B1BE413AD47EA6C9DA59A4EE10CDAB</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>RLMObjectBase.mm</string>
+			<key>path</key>
+			<string>Realm/RLMObjectBase.mm</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9CFAEAD40E28668E8BFFE6E4604A5A18</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -3618,9 +3453,9 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.objc</string>
 			<key>name</key>
-			<string>JTCalendarManager.m</string>
+			<string>JTCalendarWeekDayView.m</string>
 			<key>path</key>
-			<string>JTCalendar/JTCalendarManager.m</string>
+			<string>JTCalendar/Views/JTCalendarWeekDayView.m</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -3637,23 +3472,25 @@
 			<key>remoteInfo</key>
 			<string>Realm</string>
 		</dict>
-		<key>9E892EA20D1EAD09A01C487C40DFB61A</key>
+		<key>9EA9CF60FB59D2E0851AE0EC52D181C4</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>archive.ar</string>
 			<key>name</key>
-			<string>results.cpp</string>
+			<string>libGTMStackTrace_external.a</string>
 			<key>path</key>
-			<string>Realm/ObjectStore/results.cpp</string>
+			<string>Libraries/libGTMStackTrace_external.a</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
 		<key>9F6EB2196CF00734F4081B43D70FE9CA</key>
 		<dict>
 			<key>fileRef</key>
-			<string>BBDBC85C6184277C641A240B664EBC75</string>
+			<string>6C9E61890917316C397B2B24216F22C6</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -3662,25 +3499,55 @@
 				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.99.0"' -D__ASSERTMACROS__</string>
 			</dict>
 		</dict>
-		<key>9FA212D7C37DDE163FF08668AB2A6C44</key>
+		<key>9F7D222974AB2E8A326A64BC53B0ED49</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
-			<string>archive.ar</string>
+			<string>sourcecode.c.objc</string>
 			<key>name</key>
-			<string>libGTMSessionFetcher_full_external.a</string>
+			<string>JTCalendarPageView.m</string>
 			<key>path</key>
-			<string>Libraries/libGTMSessionFetcher_full_external.a</string>
+			<string>JTCalendar/Views/JTCalendarPageView.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9FE8B4ABA4E60A38E2B7DE7BEAA4005C</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>JTCalendar.h</string>
+			<key>path</key>
+			<string>JTCalendar/JTCalendar.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A033CD3A4A5B3E1BC9CCEBBDBFADE377</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>RLMObjectSchema.h</string>
+			<key>path</key>
+			<string>include/Realm/RLMObjectSchema.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
 		<key>A04B5921D2843381108BAEB4D54B7233</key>
 		<dict>
 			<key>fileRef</key>
-			<string>936E72B8BE613658367E21783591F6FA</string>
+			<string>00A1842E252B61DAFF79CBD9D3DF4CE5</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -3691,7 +3558,7 @@
 				</array>
 			</dict>
 		</dict>
-		<key>A0C34901B3DEF2DF2244A1DEF9789CBA</key>
+		<key>A0586AED3A6B0F6F2E049C904C15376C</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -3700,16 +3567,16 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>GAIDictionaryBuilder.h</string>
+			<string>RLMCollection.h</string>
 			<key>path</key>
-			<string>Headers/Public/GAIDictionaryBuilder.h</string>
+			<string>include/Realm/RLMCollection.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
 		<key>A13E92A26F059F0EABF70712CEBEB63C</key>
 		<dict>
 			<key>fileRef</key>
-			<string>0021F9EA93F7DE7A10FF9CFD035BF62C</string>
+			<string>4977F57ED3769517B7F7C18F45D970BF</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -3718,7 +3585,21 @@
 				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.99.0"' -D__ASSERTMACROS__</string>
 			</dict>
 		</dict>
-		<key>A18D3B3A6A1B046D85A7B873D25B2B88</key>
+		<key>A2811362EF3C7EBF723940415377C315</key>
+		<dict>
+			<key>fileRef</key>
+			<string>78A7B079597E6761A8B9CB14E8C04727</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>A520D44877CB9E6D875F49061C595C79</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -3727,27 +3608,13 @@
 			<key>lastKnownFileType</key>
 			<string>archive.ar</string>
 			<key>name</key>
-			<string>libGTM_GTMURLBuilder_external.a</string>
+			<string>libGoogleAnalytics.a</string>
 			<key>path</key>
-			<string>Libraries/libGTM_GTMURLBuilder_external.a</string>
+			<string>Libraries/libGoogleAnalytics.a</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>A2811362EF3C7EBF723940415377C315</key>
-		<dict>
-			<key>fileRef</key>
-			<string>6F098312073FB5623036A00E4CB6A34D</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>A531BA099C883A08EBEFCC2FF0BDA38C</key>
+		<key>A5227B995D3E13914C3602DADBA7E6C6</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -3756,16 +3623,16 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>JTCalendarMenuView.h</string>
+			<string>AppInvite-Module.h</string>
 			<key>path</key>
-			<string>JTCalendar/Views/JTCalendarMenuView.h</string>
+			<string>Headers/ModuleHeaders/AppInvite-Module.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
 		<key>A54F14447F9A26EEBBC08FAD71F60D05</key>
 		<dict>
 			<key>fileRef</key>
-			<string>5948B5022805B493EE4A569D0ED4122D</string>
+			<string>63B56A086C656706438198B3E4089FA9</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -3776,10 +3643,25 @@
 				</array>
 			</dict>
 		</dict>
+		<key>A56CB073F5458EAF805C5FE96D481FCC</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>JTCalendarScrollManager.h</string>
+			<key>path</key>
+			<string>JTCalendar/Managers/JTCalendarScrollManager.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>A61D96D89F1DE6FCE162C38DB51C22F3</key>
 		<dict>
 			<key>fileRef</key>
-			<string>7471BA27EAB34626228F41FE94A76E9C</string>
+			<string>9F7D222974AB2E8A326A64BC53B0ED49</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
@@ -3790,7 +3672,7 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>A70E0ABA8C5824C7D331B105441C876F</key>
+		<key>A9C48E84503D61F752FD9A239A3E4BD7</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -3799,16 +3681,31 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>JTCalendarWeek.h</string>
+			<string>RLMRealm_Dynamic.h</string>
 			<key>path</key>
-			<string>JTCalendar/Protocols/JTCalendarWeek.h</string>
+			<string>include/Realm/RLMRealm_Dynamic.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A9DDAD931B1432C4F7331809B5393E14</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>JTCalendarDelegateManager.m</string>
+			<key>path</key>
+			<string>JTCalendar/Managers/JTCalendarDelegateManager.m</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
 		<key>AA3E1197B4FAB6E2BA36F9AFFFA06F43</key>
 		<dict>
 			<key>baseConfigurationReference</key>
-			<string>EC66E3097E859E7B535C139639E76373</string>
+			<string>E0D946DFC3AA52E2E9EDBE6998AE5155</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>APPLICATION_EXTENSION_API_ONLY</key>
@@ -3844,7 +3741,7 @@
 		<key>AA41C6AD136CA0438F9924E41334E9DE</key>
 		<dict>
 			<key>fileRef</key>
-			<string>70902B159E213B7FEC30BD95515173B0</string>
+			<string>748B9252898D12E8178C730A9D6F2809</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -3855,7 +3752,7 @@
 				</array>
 			</dict>
 		</dict>
-		<key>AA8BF6609A977761149569B3AFD38718</key>
+		<key>AA679D26E80FC3DCAA43ED652660F328</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -3864,24 +3761,22 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>RLMArray_Private.h</string>
+			<string>JTCalendarWeek.h</string>
 			<key>path</key>
-			<string>include/Realm/RLMArray_Private.h</string>
+			<string>JTCalendar/Protocols/JTCalendarWeek.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>AC57E9E068038264A8653AD878EC9CEC</key>
+		<key>AE77363F2612D03C957BEC7BA8382A61</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>archive.ar</string>
 			<key>name</key>
-			<string>libGTM_core_external.a</string>
+			<string>transact_log_handler.cpp</string>
 			<key>path</key>
-			<string>Libraries/libGTM_core_external.a</string>
+			<string>Realm/ObjectStore/impl/transact_log_handler.cpp</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -3903,23 +3798,81 @@
 			<key>targetProxy</key>
 			<string>9D559D6C91C552A2164B9B3D7485013C</string>
 		</dict>
-		<key>B1ECA61C29CC688D250DB4079667042B</key>
+		<key>AF211875435B108E456C9B3B9FE72E68</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>name</key>
-			<string>RLMQueryUtil.mm</string>
+			<string>RLMArrayLinkView.mm</string>
 			<key>path</key>
-			<string>Realm/RLMQueryUtil.mm</string>
+			<string>Realm/RLMArrayLinkView.mm</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AF294A7C4181DC03FFD41D819952AFA9</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>JTCalendarManager.h</string>
+			<key>path</key>
+			<string>JTCalendar/JTCalendarManager.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B0036E2B55B637AB127BD492A3BE3186</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>RLMRealmConfiguration.mm</string>
+			<key>path</key>
+			<string>Realm/RLMRealmConfiguration.mm</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B0309D965C3E9CE7418B7168445C683F</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>RLMObject.h</string>
+			<key>path</key>
+			<string>include/Realm/RLMObject.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B19D954B24E8E1DC394484A5D154C79A</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>Realm.h</string>
+			<key>path</key>
+			<string>include/Realm/Realm.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
 		<key>B220419B4C503551B3063F69014A5CE6</key>
 		<dict>
 			<key>fileRef</key>
-			<string>0C60A62F108E1F91BCF5FCC6AA56FCC5</string>
+			<string>B0309D965C3E9CE7418B7168445C683F</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -3930,18 +3883,18 @@
 				</array>
 			</dict>
 		</dict>
-		<key>B325F348FBF4C626E53465E8CEA315B1</key>
+		<key>B3202F695D0971787E7A0B508FEEA545</key>
 		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
+			<key>children</key>
+			<array>
+				<string>157F5E1ED854EB180A9C3E390064D987</string>
+			</array>
 			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
+			<string>PBXGroup</string>
 			<key>name</key>
-			<string>JTDateHelper.h</string>
+			<string>GoogleUtilities</string>
 			<key>path</key>
-			<string>JTCalendar/JTDateHelper.h</string>
+			<string>GoogleUtilities</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -4018,35 +3971,6 @@
 			<key>name</key>
 			<string>Debug</string>
 		</dict>
-		<key>B4B8C9847EDA8CCE9D0BFF3B9E233692</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>646011EBF9B49E1ECCA87F6F01F1C77B</string>
-				<string>AC57E9E068038264A8653AD878EC9CEC</string>
-				<string>145481809A99980382E971AB9B833210</string>
-				<string>A18D3B3A6A1B046D85A7B873D25B2B88</string>
-				<string>2A4A979FDA08D7121DDE49A632854883</string>
-				<string>4446DE218CB8061B79997339A463377E</string>
-				<string>F3BD030866D310634824CC36D65ADF02</string>
-				<string>8D203A3237AE3BEEE63BC3D51C305C0E</string>
-				<string>D0DE0EF0AE10D64E16225C9070DB11ED</string>
-				<string>8E5E8CD652C10048B537D217AF664BC1</string>
-				<string>954CE8A6AE6019DA7FBCBDDE88E859DA</string>
-				<string>7CEDB59A5D4E93E68C44FE4B37C9B0C2</string>
-				<string>04CEBA2ED8B31B92A4608C96009B839C</string>
-				<string>EDDE82D96998075489F4B88FB26417C9</string>
-				<string>14E1C306F48DB7917D0CCC46A039DD3F</string>
-				<string>6BAF1CE33415C7A5BCDBF4494E5E89B5</string>
-				<string>BB7C17E1ACF370056A0A564C7512401C</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>B690936246E0298A6AFBB145F87F2C69</key>
 		<dict>
 			<key>children</key>
@@ -4068,23 +3992,10 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>B74045AD8D32CD9525C5EEE41478DF63</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>collection_notifier.cpp</string>
-			<key>path</key>
-			<string>Realm/ObjectStore/impl/collection_notifier.cpp</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>B934767C00A5119E574FAA2430B3B0EA</key>
 		<dict>
 			<key>fileRef</key>
-			<string>B74045AD8D32CD9525C5EEE41478DF63</string>
+			<string>415521C89403389AC6EE889700A27BC0</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -4093,18 +4004,55 @@
 				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.99.0"' -D__ASSERTMACROS__</string>
 			</dict>
 		</dict>
-		<key>BA264E2315A23C444AE41C71138B69D5</key>
+		<key>B993F9DCA33C53010DC18FC313F78EFC</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
-			<string>archive.ar</string>
+			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>libGGLCore.a</string>
+			<string>RLMResults_Private.h</string>
 			<key>path</key>
-			<string>Libraries/libGGLCore.a</string>
+			<string>include/Realm/RLMResults_Private.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>BA00B61A0B0350EDBA70AD3BEFE42316</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>shared_realm.cpp</string>
+			<key>path</key>
+			<string>Realm/ObjectStore/shared_realm.cpp</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>BA30E6FEF1EE4CD07EAEC6DFFD5FEC9F</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>EF788F26CFECF8E8F8AA8E6193E91DAC</string>
+				<string>3B361CB80D589C9EA89B3F8454233C53</string>
+				<string>A5227B995D3E13914C3602DADBA7E6C6</string>
+				<string>13338EDCE04F2BA36D58D68230FBEA4D</string>
+				<string>974FA590C0CA70D5BE3CE4A59716FCC7</string>
+				<string>4ADC780C2565F8B543127C87B708F5FC</string>
+				<string>E6116A5EF44A29FBBDF0F92A14935C78</string>
+				<string>733A5897C600F3A98959287229B797CA</string>
+				<string>6C834AA6DF4DD542BB8BE5AF0AF1A17C</string>
+				<string>BDB8E17C33A4B71301503B625E794137</string>
+				<string>5C18D240BC521EE97285DB06AEFA9829</string>
+				<string>FF9357F6F3CB5FD90AF38685C802F556</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Core</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -4157,21 +4105,6 @@
 			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
 		</dict>
-		<key>BB7C17E1ACF370056A0A564C7512401C</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>archive.ar</string>
-			<key>name</key>
-			<string>libGTMStackTrace_external.a</string>
-			<key>path</key>
-			<string>Libraries/libGTMStackTrace_external.a</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>BB963F253721030BDD659F3ABBEF6FD6</key>
 		<dict>
 			<key>explicitFileType</key>
@@ -4187,19 +4120,6 @@
 			<key>sourceTree</key>
 			<string>BUILT_PRODUCTS_DIR</string>
 		</dict>
-		<key>BBDBC85C6184277C641A240B664EBC75</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>RLMProperty.mm</string>
-			<key>path</key>
-			<string>Realm/RLMProperty.mm</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>BC3CA7F9E30CC8F7E2DD044DD34432FC</key>
 		<dict>
 			<key>children</key>
@@ -4213,7 +4133,7 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>BC801DCCF586C3B6F5D6FB7960444CDC</key>
+		<key>BDB8E17C33A4B71301503B625E794137</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -4222,31 +4142,16 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>GGLContext+Analytics.h</string>
+			<string>GMRConfiguration.h</string>
 			<key>path</key>
-			<string>Headers/GGLAnalytics/Public/GGLContext+Analytics.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BC8F23840EBDF2BFB6D89AC376F7D9BF</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>RLMRealm_Private.h</string>
-			<key>path</key>
-			<string>include/Realm/RLMRealm_Private.h</string>
+			<string>Headers/GGLCore/Public/GMRConfiguration.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
 		<key>BF33E647DB5EEB5EDF757654CBA83D10</key>
 		<dict>
 			<key>fileRef</key>
-			<string>4876ED0C0E280806BC2D12F7AAA23D0B</string>
+			<string>E42398890F3CC6ED02C0B5E34F5B94E1</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -4270,7 +4175,7 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>C00E1BF3F3F2AEFA244A0D2F88D106C3</key>
+		<key>BFAB1220B4C88D75AFD18233079C646D</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -4279,31 +4184,29 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>JTCalendarDay.h</string>
+			<string>RLMConstants.h</string>
 			<key>path</key>
-			<string>JTCalendar/Protocols/JTCalendarDay.h</string>
+			<string>include/Realm/RLMConstants.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>C25F81EFBC7AAEC42513B441DA5AAD40</key>
+		<key>C267B26EF517A4986E4261882C20354D</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>RLMProperty_Private.h</string>
+			<string>list.cpp</string>
 			<key>path</key>
-			<string>include/Realm/RLMProperty_Private.h</string>
+			<string>Realm/ObjectStore/list.cpp</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
 		<key>C2815AB15AD9D4E08771BED458CAE5D5</key>
 		<dict>
 			<key>fileRef</key>
-			<string>234DD1D7C3668BAD840CE0E49D140BA1</string>
+			<string>73D1226A085828C38B9979441764EEC4</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -4337,23 +4240,10 @@
 			<key>productType</key>
 			<string>com.apple.product-type.library.static</string>
 		</dict>
-		<key>C4A27ADBE852DCCAC0A3410AED77A9A9</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>F49E82724C937F0B45493037B146AC98</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>C4FBB220B43E219584C7C5DAC6440899</key>
 		<dict>
 			<key>fileRef</key>
-			<string>44924A01129EFBA096EDAEFD2760FC8F</string>
+			<string>3E971529FD721A5B1EA9C23D79B5EA03</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -4364,218 +4254,7 @@
 				</array>
 			</dict>
 		</dict>
-		<key>C641CE09FFCA01EA4C3F45D35E20AB88</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>RLMObjectStore.h</string>
-			<key>path</key>
-			<string>include/Realm/RLMObjectStore.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C72679C585108A410A4C001226097A58</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>archive.ar</string>
-			<key>name</key>
-			<string>libGGLAnalytics.a</string>
-			<key>path</key>
-			<string>Libraries/libGGLAnalytics.a</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C7684AEB04032D505DE5188EF74CAA4C</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>JTCalendarDayView.m</string>
-			<key>path</key>
-			<string>JTCalendar/Views/JTCalendarDayView.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C778FDD3976092FE8E96E44D2412A095</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>09D2023FAE975A6EB146089655FACD07</string>
-				<string>07E6B9F5AED7BDE48A98F57B53BDC0BD</string>
-				<string>8BA21E8D6C6CB3E73A766FBE07FF9DEE</string>
-				<string>642127ADC7AAE487C193C8C4903BCFFE</string>
-				<string>CCB74D667F7A3CC3B81A5C5EB263EC6B</string>
-				<string>FE9A1F049E13BE178B8999767A4C1FF7</string>
-				<string>3AE3DFE84EE7C8E358EB1E4E64D18395</string>
-				<string>203082ACCCDA72AF5F62D28ED01CA528</string>
-				<string>3745582A9A9240E0679312EB259AA6BD</string>
-				<string>D2BAE1BC6797A5C3E921F0DCC85156E7</string>
-				<string>56BC7CA90DA219BC88206A72BFF361F2</string>
-				<string>D87553794E6A3361CCAF6C38CE1F267B</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Core</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C7A68641A6946885A5884955838B7DFF</key>
-		<dict>
-			<key>fileRef</key>
-			<string>EF850BE1A41CA8E3F6F1A3D175FB2BA6</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>C8B06B9F4E8C8FB55C0BF08ADC621CF6</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>RLMResults_Private.h</string>
-			<key>path</key>
-			<string>include/Realm/RLMResults_Private.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C987055333DA728A7BA9F3E2591EC872</key>
-		<dict>
-			<key>fileRef</key>
-			<string>3B2434BBD3584F14FAE3EEB52FCE1C40</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>CA78ACEA03A4642F050F0C940A690DE6</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>JTCalendarScrollManager.m</string>
-			<key>path</key>
-			<string>JTCalendar/Managers/JTCalendarScrollManager.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CB2473D5B7334537B762A4CDBA3C8D8D</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>RLMObjectBase.mm</string>
-			<key>path</key>
-			<string>Realm/RLMObjectBase.mm</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CBC9E5E582D356C002289018DE2CC553</key>
-		<dict>
-			<key>fileRef</key>
-			<string>FCD7D166F4B158FAAF89F19875BADF61</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.99.0"' -D__ASSERTMACROS__</string>
-			</dict>
-		</dict>
-		<key>CC1E516FEEECFA453DC8D0CDC81C6378</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>archive.ar</string>
-			<key>name</key>
-			<string>libGoogleAnalytics.a</string>
-			<key>path</key>
-			<string>Libraries/libGoogleAnalytics.a</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CCB74D667F7A3CC3B81A5C5EB263EC6B</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>Core.h</string>
-			<key>path</key>
-			<string>Headers/GGLCore/Public/Core.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CFBC8839B09BC8D2E78444E014C0ACFA</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>JTCalendarDelegateManager.m</string>
-			<key>path</key>
-			<string>JTCalendar/Managers/JTCalendarDelegateManager.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D0D1D8260732EFA47EA8F3F6DFFA518F</key>
-		<dict>
-			<key>fileRef</key>
-			<string>B325F348FBF4C626E53465E8CEA315B1</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>D0DE0EF0AE10D64E16225C9070DB11ED</key>
+		<key>C642D70A117F87A8EF57BFD25E310A84</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -4590,10 +4269,81 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>D0DFE2D00DD5FC3839FA4E3B04E7D4C0</key>
+		<key>C7A68641A6946885A5884955838B7DFF</key>
 		<dict>
 			<key>fileRef</key>
-			<string>082E6EBCBFC39CD72E264620A859572F</string>
+			<string>AF294A7C4181DC03FFD41D819952AFA9</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>C902D334FDC0B9339F407D0EF6D5ED8C</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>archive.ar</string>
+			<key>name</key>
+			<string>libGTM_iPhone_external.a</string>
+			<key>path</key>
+			<string>Libraries/libGTM_iPhone_external.a</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C9263DD8519D2D4F9BB36AFC9DBAE165</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>JTCalendarSettings.h</string>
+			<key>path</key>
+			<string>JTCalendar/JTCalendarSettings.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C987055333DA728A7BA9F3E2591EC872</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8AD0928BF9B023F2B4A05F06E186289B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>C9C4F4D77C0A689D87B81C5D1CA0B068</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>RLMAccessor.mm</string>
+			<key>path</key>
+			<string>Realm/RLMAccessor.mm</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>CBC9E5E582D356C002289018DE2CC553</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C267B26EF517A4986E4261882C20354D</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -4602,7 +4352,107 @@
 				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.99.0"' -D__ASSERTMACROS__</string>
 			</dict>
 		</dict>
-		<key>D10AEF6CB5801067EDFA25BA6B561B7A</key>
+		<key>CE472CF4ADA7217188F543E791C29325</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>JTCalendarWeekDayView.h</string>
+			<key>path</key>
+			<string>JTCalendar/Views/JTCalendarWeekDayView.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>CF096F8EE5D23F46805CAA092CF22198</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>JTCalendarDayView.h</string>
+			<key>path</key>
+			<string>JTCalendar/Views/JTCalendarDayView.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D0D1D8260732EFA47EA8F3F6DFFA518F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>41318FCD4393E342D1684B7FB36FD7F5</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>D0DFE2D00DD5FC3839FA4E3B04E7D4C0</key>
+		<dict>
+			<key>fileRef</key>
+			<string>AE77363F2612D03C957BEC7BA8382A61</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.99.0"' -D__ASSERTMACROS__</string>
+			</dict>
+		</dict>
+		<key>D184141CFFF34C97AA438725EBE2496E</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>GAIEcommerceProductAction.h</string>
+			<key>path</key>
+			<string>Headers/Public/GAIEcommerceProductAction.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D1F26B184130CCEF1F69F4DF368A8B14</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>B19D954B24E8E1DC394484A5D154C79A</string>
+				<string>27344C60B50BA35CF36BAEA5D1D1F839</string>
+				<string>A0586AED3A6B0F6F2E049C904C15376C</string>
+				<string>BFAB1220B4C88D75AFD18233079C646D</string>
+				<string>328E976DB0F8DD05AEF74062AB117F9F</string>
+				<string>00A1842E252B61DAFF79CBD9D3DF4CE5</string>
+				<string>B0309D965C3E9CE7418B7168445C683F</string>
+				<string>8F98ADA9C14538B8F7273D85EB40FB75</string>
+				<string>78A7B079597E6761A8B9CB14E8C04727</string>
+				<string>A033CD3A4A5B3E1BC9CCEBBDBFADE377</string>
+				<string>38CD4551068433085991571E414A7D57</string>
+				<string>E42398890F3CC6ED02C0B5E34F5B94E1</string>
+				<string>49546553BA3731E6BB2BEDF73A9D95C8</string>
+				<string>A9C48E84503D61F752FD9A239A3E4BD7</string>
+				<string>8FDEF07C648632F4615F34BF4A39E975</string>
+				<string>3E971529FD721A5B1EA9C23D79B5EA03</string>
+				<string>FF94CCCC4E07C50B0055873F11DF32DC</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Headers</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D1F70BA157450612E8B79DD6525562BD</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -4610,12 +4460,29 @@
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>RLMConstants.m</string>
 			<key>path</key>
-			<string>JTCalendar-dummy.m</string>
+			<string>Realm/RLMConstants.m</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>D2BAE1BC6797A5C3E921F0DCC85156E7</key>
+		<key>D2B9C0B91EA9F312120C7306F9BF582B</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>archive.ar</string>
+			<key>name</key>
+			<string>libGTMSessionFetcher_full_external.a</string>
+			<key>path</key>
+			<string>Libraries/libGTMSessionFetcher_full_external.a</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D32606C2C4AE00A29043D3AF780FDCCF</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -4624,63 +4491,18 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>GMRConfiguration.h</string>
+			<string>GAITrackedViewController.h</string>
 			<key>path</key>
-			<string>Headers/GGLCore/Public/GMRConfiguration.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D3279BAFC1B83A713BB3A458DDCDC103</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>484C6B5FD69EA24E3332C920AB83DF51</string>
-				<string>BC801DCCF586C3B6F5D6FB7960444CDC</string>
-				<string>141DEF7498B338EBA7C6469B70E6C3F3</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Analytics</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D3B0CEE4CD1804203C29C461FEA07850</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>B4B8C9847EDA8CCE9D0BFF3B9E233692</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>GoogleUtilities</string>
-			<key>path</key>
-			<string>GoogleUtilities</string>
+			<string>Headers/Public/GAITrackedViewController.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
 		<key>D3D29E390B4B407CCD220B4F0842AD14</key>
 		<dict>
 			<key>fileRef</key>
-			<string>CFBC8839B09BC8D2E78444E014C0ACFA</string>
+			<string>A9DDAD931B1432C4F7331809B5393E14</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
-		</dict>
-		<key>D3FB27CAF89599297EE36B1957F51C93</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>GAILogger.h</string>
-			<key>path</key>
-			<string>Headers/Public/GAILogger.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
 		</dict>
 		<key>D41D8CD98F00B204E9800998ECF8427E</key>
 		<dict>
@@ -4758,7 +4580,7 @@
 		<key>D4EBB3F2E7B2A47B8774CE2BE47E188F</key>
 		<dict>
 			<key>fileRef</key>
-			<string>720E07175BCE3D5247F8571198947265</string>
+			<string>603831147F3EAFA20007FE0EB222621C</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -4767,23 +4589,25 @@
 				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.99.0"' -D__ASSERTMACROS__</string>
 			</dict>
 		</dict>
-		<key>D534FB4CAFF5B52D3F8FE58843099C45</key>
+		<key>D5149F2DDB9D92C7481BE0B94AC7A50C</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>archive.ar</string>
 			<key>name</key>
-			<string>weak_realm_notifier.cpp</string>
+			<string>libGTM_UIFont+LineHeight_external.a</string>
 			<key>path</key>
-			<string>Realm/ObjectStore/impl/apple/weak_realm_notifier.cpp</string>
+			<string>Libraries/libGTM_UIFont+LineHeight_external.a</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
 		<key>D5E81A9BF266361891FF44671E680E6C</key>
 		<dict>
 			<key>fileRef</key>
-			<string>8BE776EF3FBB6397DE0808CC3F13B069</string>
+			<string>8FDEF07C648632F4615F34BF4A39E975</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -4794,23 +4618,25 @@
 				</array>
 			</dict>
 		</dict>
-		<key>D6770DF7BDD4B06EA842F77E06826514</key>
+		<key>D5F7ED7E67DA75C2105F44D11B1B56D3</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>RLMObservation.mm</string>
+			<string>GAIEcommerceFields.h</string>
 			<key>path</key>
-			<string>Realm/RLMObservation.mm</string>
+			<string>Headers/Public/GAIEcommerceFields.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
 		<key>D7B08D3EDEF6505A3BD329F898B29FD1</key>
 		<dict>
 			<key>fileRef</key>
-			<string>1C59D9E8731917D4CDB995D642626459</string>
+			<string>4F998C76B5BF75D5CB2938D98F344624</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -4820,19 +4646,6 @@
 					<string>Private</string>
 				</array>
 			</dict>
-		</dict>
-		<key>D830D1D0FF0285CA79EF13500DF155D0</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>RLMRealmConfiguration.mm</string>
-			<key>path</key>
-			<string>Realm/RLMRealmConfiguration.mm</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
 		</dict>
 		<key>D843192895FA658FEA7CE015CDBE45EC</key>
 		<dict>
@@ -4848,23 +4661,38 @@
 			<key>isa</key>
 			<string>XCConfigurationList</string>
 		</dict>
-		<key>D87553794E6A3361CCAF6C38CE1F267B</key>
+		<key>D91ECA72CF98B52EB7E606F1E3732E59</key>
 		<dict>
-			<key>children</key>
-			<array>
-				<string>BA264E2315A23C444AE41C71138B69D5</string>
-			</array>
+			<key>includeInIndex</key>
+			<string>1</string>
 			<key>isa</key>
-			<string>PBXGroup</string>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>Realm-dummy.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D93088AD8D12D2B1EC2E4BA01C94BE3E</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
 			<key>name</key>
-			<string>Frameworks</string>
+			<string>JTHorizontalCalendarView.m</string>
+			<key>path</key>
+			<string>JTCalendar/Views/JTHorizontalCalendarView.m</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
 		<key>D9489EE88D55377864111C5564947AF1</key>
 		<dict>
 			<key>fileRef</key>
-			<string>9E892EA20D1EAD09A01C487C40DFB61A</string>
+			<string>59A1B7B175D1FBAAB6AB45294BE9C9EC</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -4886,10 +4714,38 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>DAEECC0FAFF1045D0EE212AF3F069E98</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>RLMUpdateChecker.mm</string>
+			<key>path</key>
+			<string>Realm/RLMUpdateChecker.mm</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>DB8738B85D79E960DA2F981AB83428BE</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>JTCalendarPageView.h</string>
+			<key>path</key>
+			<string>JTCalendar/Views/JTCalendarPageView.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>DC7476BA007341D109F83A29F6075C24</key>
 		<dict>
 			<key>fileRef</key>
-			<string>5A40E8CF926FBCE94EBC85B8D210F9CA</string>
+			<string>FB80543583589EC1E7FA82F82BB96EB7</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -4903,7 +4759,7 @@
 		<key>DD6454F9A083CD6BE673CBC83A944C59</key>
 		<dict>
 			<key>fileRef</key>
-			<string>C641CE09FFCA01EA4C3F45D35E20AB88</string>
+			<string>65D11F9908CAAB4AF97ED5EC31AC4625</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -4948,149 +4804,21 @@
 			<key>name</key>
 			<string>Debug</string>
 		</dict>
-		<key>DF73836EEEA25D28A75661F450ABD6DF</key>
+		<key>DFBD35E73B9655AA27E7DFD9E00E0338</key>
 		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
+			<key>children</key>
+			<array>
+				<string>2373877D155A76DB3EEEEBE5F1E0973D</string>
+				<string>D2B9C0B91EA9F312120C7306F9BF582B</string>
+			</array>
 			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
+			<string>PBXGroup</string>
 			<key>name</key>
-			<string>RLMObjectSchema.h</string>
-			<key>path</key>
-			<string>include/Realm/RLMObjectSchema.h</string>
+			<string>Frameworks</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>E051385FF49E6963FFF410FBEFC3A134</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>results_notifier.cpp</string>
-			<key>path</key>
-			<string>Realm/ObjectStore/impl/results_notifier.cpp</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E436AB61FDDE70E7FB6D5AFB097D46D4</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>RLMRealm_Dynamic.h</string>
-			<key>path</key>
-			<string>include/Realm/RLMRealm_Dynamic.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E4C3F3CF49CB7742C3B6280457AD52B4</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D6770DF7BDD4B06EA842F77E06826514</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.99.0"' -D__ASSERTMACROS__</string>
-			</dict>
-		</dict>
-		<key>E4C79D256F336B2284913F7F3D7E2976</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>GAITrackedViewController.h</string>
-			<key>path</key>
-			<string>Headers/Public/GAITrackedViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E52ACC3F67193EFDD13746DE2F4542C3</key>
-		<dict>
-			<key>fileRef</key>
-			<string>389A0FB3E469EB3B31DD7E5A93D4F083</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.99.0"' -D__ASSERTMACROS__</string>
-			</dict>
-		</dict>
-		<key>E771EAED1A0205BE6BABEDDA37234C5D</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>RLMListBase.mm</string>
-			<key>path</key>
-			<string>Realm/RLMListBase.mm</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E966ED5866A11865F6E9A3C952C4EBAA</key>
-		<dict>
-			<key>fileRef</key>
-			<string>41D4243751C38BB4006439A2CDFF6BCD</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.99.0"' -D__ASSERTMACROS__</string>
-			</dict>
-		</dict>
-		<key>E9C3F5063828D3CE129F2A5F9DE38B81</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>RLMObjectStore.mm</string>
-			<key>path</key>
-			<string>Realm/RLMObjectStore.mm</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>EB244A1717AE69784B9B2E0E45EFED77</key>
-		<dict>
-			<key>fileRef</key>
-			<string>6A5AF55FD304A2745DE12CE3EC9B44F8</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>EC3C87E55FC749F3D8C5823A6635D43C</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>GAIEcommerceFields.h</string>
-			<key>path</key>
-			<string>Headers/Public/GAIEcommerceFields.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>EC66E3097E859E7B535C139639E76373</key>
+		<key>E0D946DFC3AA52E2E9EDBE6998AE5155</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -5100,6 +4828,248 @@
 			<string>text.xcconfig</string>
 			<key>path</key>
 			<string>Realm.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>E42398890F3CC6ED02C0B5E34F5B94E1</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>RLMProperty.h</string>
+			<key>path</key>
+			<string>include/Realm/RLMProperty.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>E4C3F3CF49CB7742C3B6280457AD52B4</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8457A6F0F7186921CCB4DE1F16D07DD4</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.99.0"' -D__ASSERTMACROS__</string>
+			</dict>
+		</dict>
+		<key>E52ACC3F67193EFDD13746DE2F4542C3</key>
+		<dict>
+			<key>fileRef</key>
+			<string>AF211875435B108E456C9B3B9FE72E68</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.99.0"' -D__ASSERTMACROS__</string>
+			</dict>
+		</dict>
+		<key>E5B1839ED04DA10EF62A2444C9AC3D76</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>75697B07D4062F9BD02E78EE54B968ED</string>
+				<string>05FBB8194E2BEA41E242907B23667E76</string>
+				<string>415521C89403389AC6EE889700A27BC0</string>
+				<string>05B2525E126BC38FBB525502F8D88478</string>
+				<string>4518F4CD75FD5DF3A11673BAADB14331</string>
+				<string>C267B26EF517A4986E4261882C20354D</string>
+				<string>1C1F7A133FC95B8C45CC40317F1D61C6</string>
+				<string>8BA5B44536F34275CD180B586B6CAF27</string>
+				<string>5876E19864C48190A70C2CA11126BA8C</string>
+				<string>603831147F3EAFA20007FE0EB222621C</string>
+				<string>59A1B7B175D1FBAAB6AB45294BE9C9EC</string>
+				<string>0D0142E8B02FBAFE9B7380E2898F4445</string>
+				<string>4F998C76B5BF75D5CB2938D98F344624</string>
+				<string>C9C4F4D77C0A689D87B81C5D1CA0B068</string>
+				<string>45568EED4901F99DA43513C9F6105B89</string>
+				<string>08CDA7776AE1C7B5372D19FB8482D04A</string>
+				<string>7F52E3D55B9E49F195A9C99587CD7581</string>
+				<string>AF211875435B108E456C9B3B9FE72E68</string>
+				<string>341B2C032E5EC78999709E7023A7E14A</string>
+				<string>D1F70BA157450612E8B79DD6525562BD</string>
+				<string>158EE4295A86630261F5BF24DAD22F5B</string>
+				<string>860E9DDA9FF48B0F6D5504311BFE5E77</string>
+				<string>73D1226A085828C38B9979441764EEC4</string>
+				<string>7C104B08FBA679575D0BE5A15068802A</string>
+				<string>4D1F9F64782B15D6D72C7473F9E9BE56</string>
+				<string>3DF0A6AD91C8CD0C86EA0557849E953B</string>
+				<string>99B1BE413AD47EA6C9DA59A4EE10CDAB</string>
+				<string>4E0A9DDDA8153F64FC0D556AFDC20F55</string>
+				<string>68E7C34F55A7122F0B4E7C58AA113833</string>
+				<string>65D11F9908CAAB4AF97ED5EC31AC4625</string>
+				<string>7635DC0F1052DE474CE5730846774E45</string>
+				<string>8457A6F0F7186921CCB4DE1F16D07DD4</string>
+				<string>8AD0928BF9B023F2B4A05F06E186289B</string>
+				<string>102F4536D9F4106B4314BEA95DF037A6</string>
+				<string>21C9A5153D8CDD437AAC4F31BB843632</string>
+				<string>6C9E61890917316C397B2B24216F22C6</string>
+				<string>76E460F19CF42BD0894994B0E6D58DE6</string>
+				<string>2CAAD3893BF79EFD75AF25ECD0254E02</string>
+				<string>4977F57ED3769517B7F7C18F45D970BF</string>
+				<string>5D1996055B24C0A5EC97E09DD76BD402</string>
+				<string>B0036E2B55B637AB127BD492A3BE3186</string>
+				<string>FB80543583589EC1E7FA82F82BB96EB7</string>
+				<string>1063ACC37D0D2F63041B1178DBBD65ED</string>
+				<string>6F61BFD7BA16A4F50E68B0B882E200BF</string>
+				<string>B993F9DCA33C53010DC18FC313F78EFC</string>
+				<string>372240FBC0BE5841E59F29CFAF3826AA</string>
+				<string>2C025B19BCBD109FC064420C13DCC162</string>
+				<string>2A56BEC439ADF8C4A9C048CF1E8F6942</string>
+				<string>DAEECC0FAFF1045D0EE212AF3F069E98</string>
+				<string>54D636337D6520E9827FE43316DE0B7D</string>
+				<string>3980312DA792F82B04E29A53472997E4</string>
+				<string>BA00B61A0B0350EDBA70AD3BEFE42316</string>
+				<string>AE77363F2612D03C957BEC7BA8382A61</string>
+				<string>2BF96451EE77672CE31AA3E04D757FAE</string>
+				<string>8ECC916C6C84191EC55D75BF0C593433</string>
+				<string>D1F26B184130CCEF1F69F4DF368A8B14</string>
+				<string>8A7E6D93207AEE0B2460BFC92A824468</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Realm</string>
+			<key>path</key>
+			<string>Realm</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>E6116A5EF44A29FBBDF0F92A14935C78</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>GGLConfiguration.h</string>
+			<key>path</key>
+			<string>Headers/GGLCore/Public/GGLConfiguration.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>E6B42954B6FF3A59A65D267DAC193E3E</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>JTCalendarMenuView.m</string>
+			<key>path</key>
+			<string>JTCalendar/Views/JTCalendarMenuView.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>E8034090E21716F07592F187ACFF220A</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>7CD3684624F62053379605F83357B8AC</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Frameworks</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>E9131B7F9A494E75DAD12E103848849D</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>JTCalendarWeekDay.h</string>
+			<key>path</key>
+			<string>JTCalendar/Protocols/JTCalendarWeekDay.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>E926DDB68BCAD0C3D573F5753485867E</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>JTCalendarPage.h</string>
+			<key>path</key>
+			<string>JTCalendar/Protocols/JTCalendarPage.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>E966ED5866A11865F6E9A3C952C4EBAA</key>
+		<dict>
+			<key>fileRef</key>
+			<string>45568EED4901F99DA43513C9F6105B89</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.99.0"' -D__ASSERTMACROS__</string>
+			</dict>
+		</dict>
+		<key>E9CAF2EF386CEF6A4FB73EE803F3F465</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>24054F8150AF86056D65BDDCFE7273B9</string>
+				<string>43784B5BF97A0F434AE45EBE0264C8F2</string>
+				<string>D5F7ED7E67DA75C2105F44D11B1B56D3</string>
+				<string>EC955A4652CE47B13E81B134DF10882B</string>
+				<string>D184141CFFF34C97AA438725EBE2496E</string>
+				<string>F4DB293B002E644FC1639360546C3A22</string>
+				<string>8936C3FE30D82FDDFE789F8F6A741462</string>
+				<string>81A8C90FD7A79EC147FB562424A67E03</string>
+				<string>D32606C2C4AE00A29043D3AF780FDCCF</string>
+				<string>7610E73F0D801492B6C738EE5E32F4BD</string>
+				<string>04179E8B99A32D52261CA9FBB24C119F</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>GoogleAnalytics</string>
+			<key>path</key>
+			<string>GoogleAnalytics</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>EB244A1717AE69784B9B2E0E45EFED77</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9CFAEAD40E28668E8BFFE6E4604A5A18</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>EC955A4652CE47B13E81B134DF10882B</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>GAIEcommerceProduct.h</string>
+			<key>path</key>
+			<string>Headers/Public/GAIEcommerceProduct.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -5119,7 +5089,7 @@
 		<key>ED14612B4C5E03A3477A435A97A2E2B5</key>
 		<dict>
 			<key>fileRef</key>
-			<string>80053675DEC8B10A5AB6FC0D0F713FF8</string>
+			<string>372240FBC0BE5841E59F29CFAF3826AA</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -5131,7 +5101,7 @@
 		<key>ED8261B7D4C9305BC28F7860E91E1A60</key>
 		<dict>
 			<key>fileRef</key>
-			<string>E9C3F5063828D3CE129F2A5F9DE38B81</string>
+			<string>7635DC0F1052DE474CE5730846774E45</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -5140,7 +5110,7 @@
 				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.99.0"' -D__ASSERTMACROS__</string>
 			</dict>
 		</dict>
-		<key>EDDE82D96998075489F4B88FB26417C9</key>
+		<key>EE3DDCE94278327562CB810A11E2F5A3</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -5149,16 +5119,16 @@
 			<key>lastKnownFileType</key>
 			<string>archive.ar</string>
 			<key>name</key>
-			<string>libGTM_StringEncoding_external.a</string>
+			<string>libGGLCore.a</string>
 			<key>path</key>
-			<string>Libraries/libGTM_StringEncoding_external.a</string>
+			<string>Libraries/libGGLCore.a</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
 		<key>EE74B7EA6DE0028EF2D9FF6AA4E24B6C</key>
 		<dict>
 			<key>fileRef</key>
-			<string>03E16012AF546BEB068531EA31FC9782</string>
+			<string>05B2525E126BC38FBB525502F8D88478</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -5174,21 +5144,6 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>EEE64832074267F211A00C911D3159FA</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>JTVerticalCalendarView.h</string>
-			<key>path</key>
-			<string>JTCalendar/Views/JTVerticalCalendarView.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>EF685E3BA272F4AFE245ED2B1B2E776D</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -5202,7 +5157,7 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>EF850BE1A41CA8E3F6F1A3D175FB2BA6</key>
+		<key>EF788F26CFECF8E8F8AA8E6193E91DAC</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -5211,48 +5166,80 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>JTCalendarManager.h</string>
+			<string>AdMob-Module.h</string>
 			<key>path</key>
-			<string>JTCalendar/JTCalendarManager.h</string>
+			<string>Headers/ModuleHeaders/AdMob-Module.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F03EB3AF8A115B4897B3BCCAC9B38BC8</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>5D9203597EC013531D0311CD08215E4B</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Frameworks</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F09B26BFF6684A16667720FD6A5D34EB</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>DFBD35E73B9655AA27E7DFD9E00E0338</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>GoogleNetworkingUtilities</string>
+			<key>path</key>
+			<string>GoogleNetworkingUtilities</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F29AE5ACE185DBB2E81614BD911FF29A</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>JTCalendarManager.m</string>
+			<key>path</key>
+			<string>JTCalendar/JTCalendarManager.m</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
 		<key>F2A8E6A48BE69A923A85C013A1F965C9</key>
 		<dict>
 			<key>fileRef</key>
-			<string>6EC0AA1EC44AD684AC5D229AA491B5B3</string>
+			<string>D91ECA72CF98B52EB7E606F1E3732E59</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>F3295BA93ADB8B377236744C4B66BEEA</key>
+		<key>F3CD57BC89E67CA3983B743D6A7143E5</key>
 		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
+			<key>children</key>
+			<array>
+				<string>348668ECB6050430611D4748381933EE</string>
+				<string>43F3599B7F63BB4F007C877D76005AE3</string>
+				<string>96E0657FC546B3AA0B0CC9D680E97AC7</string>
+			</array>
 			<key>isa</key>
-			<string>PBXFileReference</string>
+			<string>PBXGroup</string>
 			<key>name</key>
-			<string>RLMCollection.mm</string>
+			<string>Support Files</string>
 			<key>path</key>
-			<string>Realm/RLMCollection.mm</string>
+			<string>../Target Support Files/JTCalendar</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>F3BD030866D310634824CC36D65ADF02</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>archive.ar</string>
-			<key>name</key>
-			<string>libGTM_NSData+zlib.a</string>
-			<key>path</key>
-			<string>Libraries/libGTM_NSData+zlib.a</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F3CF53CFD1B824B7B8015DFC5E7FEB6A</key>
+		<key>F4DB293B002E644FC1639360546C3A22</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -5261,31 +5248,16 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>JTCalendarDayView.h</string>
+			<string>GAIEcommercePromotion.h</string>
 			<key>path</key>
-			<string>JTCalendar/Views/JTCalendarDayView.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F49E82724C937F0B45493037B146AC98</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>archive.ar</string>
-			<key>name</key>
-			<string>librealm-ios.a</string>
-			<key>path</key>
-			<string>core/librealm-ios.a</string>
+			<string>Headers/Public/GAIEcommercePromotion.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
 		<key>F51714466BB50C119E7D5D413A1EC313</key>
 		<dict>
 			<key>fileRef</key>
-			<string>B1ECA61C29CC688D250DB4079667042B</string>
+			<string>2CAAD3893BF79EFD75AF25ECD0254E02</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -5301,10 +5273,25 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
+		<key>F6B070913567E9DC59DFA9DCAA911992</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>JTCalendarWeekView.m</string>
+			<key>path</key>
+			<string>JTCalendar/Views/JTCalendarWeekView.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>F81BBBAFFE81FA54FB8BBC904190DBD5</key>
 		<dict>
 			<key>fileRef</key>
-			<string>70370D04F9AC8D64A4E5524342D46DE3</string>
+			<string>328E976DB0F8DD05AEF74062AB117F9F</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -5315,25 +5302,25 @@
 				</array>
 			</dict>
 		</dict>
-		<key>F930FDE57B6712C887E24301C596301B</key>
+		<key>F844FAB98B8B7EBCE4A419A6B2DF786B</key>
 		<dict>
-			<key>children</key>
-			<array>
-				<string>117D3ABAAF8EB35739AC7ACDD44DD43B</string>
-			</array>
+			<key>includeInIndex</key>
+			<string>1</string>
 			<key>isa</key>
-			<string>PBXGroup</string>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
 			<key>name</key>
-			<string>Google-Mobile-Ads-SDK</string>
+			<string>JTCalendarSettings.m</string>
 			<key>path</key>
-			<string>Google-Mobile-Ads-SDK</string>
+			<string>JTCalendar/JTCalendarSettings.m</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
 		<key>FA9F1E48D7F02C54FCBE0D6D39C570B6</key>
 		<dict>
 			<key>fileRef</key>
-			<string>CB2473D5B7334537B762A4CDBA3C8D8D</string>
+			<string>99B1BE413AD47EA6C9DA59A4EE10CDAB</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -5349,38 +5336,25 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>FCD7D166F4B158FAAF89F19875BADF61</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>list.cpp</string>
-			<key>path</key>
-			<string>Realm/ObjectStore/list.cpp</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>FDC0372DEA971B56400068E6CFD15510</key>
+		<key>FB80543583589EC1E7FA82F82BB96EB7</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
-			<string>archive.ar</string>
+			<string>sourcecode.c.h</string>
 			<key>name</key>
-			<string>libGTMSessionFetcher_core_external.a</string>
+			<string>RLMRealmConfiguration_Private.h</string>
 			<key>path</key>
-			<string>Libraries/libGTMSessionFetcher_core_external.a</string>
+			<string>include/Realm/RLMRealmConfiguration_Private.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
 		<key>FE32C4A6314573B1134DB953F4006A96</key>
 		<dict>
 			<key>baseConfigurationReference</key>
-			<string>6F49009E408D830C6001BC73D89A12EE</string>
+			<string>348668ECB6050430611D4748381933EE</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>APPLICATION_EXTENSION_API_ONLY</key>
@@ -5413,40 +5387,10 @@
 			<key>name</key>
 			<string>Debug</string>
 		</dict>
-		<key>FE9A1F049E13BE178B8999767A4C1FF7</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>Core-Module.h</string>
-			<key>path</key>
-			<string>Headers/ModuleHeaders/Core-Module.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>FEECF5C13C8880121D69D24B3DA015AD</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>JTCalendarWeekView.h</string>
-			<key>path</key>
-			<string>JTCalendar/Views/JTCalendarWeekView.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>FF0C4CB85C1DC5E4191CE6104B2F8F2C</key>
 		<dict>
 			<key>fileRef</key>
-			<string>550521A50857C08BC8FDFA243CA24507</string>
+			<string>D1F70BA157450612E8B79DD6525562BD</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -5454,6 +5398,34 @@
 				<key>COMPILER_FLAGS</key>
 				<string>-DREALM_HAVE_CONFIG -DREALM_COCOA_VERSION='@"0.99.0"' -D__ASSERTMACROS__</string>
 			</dict>
+		</dict>
+		<key>FF9357F6F3CB5FD90AF38685C802F556</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>EE3DDCE94278327562CB810A11E2F5A3</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Frameworks</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FF94CCCC4E07C50B0055873F11DF32DC</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>RLMSchema.h</string>
+			<key>path</key>
+			<string>include/Realm/RLMSchema.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 	</dict>
 	<key>rootObject</key>
