@@ -32,7 +32,7 @@
         self.addedEvent = [[Events alloc] init];
         self.addedEvent.title = title;
         self.addedEvent.date = date;
-        
+        self.addedEvent.completed = NO;
         [delegate addNewEventToProject:self.addedEvent];
         NSLog(@"delegate method called");
         
@@ -45,6 +45,16 @@
         [delegate addProject:self.addedProject];
         NSLog(@"delegate method called");
     }
+    
+    if(WCSession.isSupported){
+        NSLog(@"sent request");
+        WCSession *session = [WCSession defaultSession];
+        session.delegate = self;
+        [session activateSession];
+        [session updateApplicationContext:@{@"needSync": @"YES"} error:nil];
+        NSLog(@"updated context");
+    }
+    
     [self.navigationController popViewControllerAnimated:YES];
 }
 - (IBAction)cancel:(id)sender {
@@ -66,7 +76,13 @@
 
 -(void)loadCellDiscriptors{
     
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"CellDescriptor" ofType:@"plist"];
+    NSString *path;
+    if ([self.sender isEqualToString:@"event"]) {
+        path = [[NSBundle mainBundle] pathForResource:@"CellDescriptor" ofType:@"plist"];
+    }else if ([self.sender isEqualToString:@"project"]){
+        path = [[NSBundle mainBundle] pathForResource:@"CellDescriptor2" ofType:@"plist"];
+    }
+    
     cellDescriptors = [NSMutableArray arrayWithContentsOfFile:path];
     [self getIndicesOfVisible];
     [self.table reloadData];
@@ -216,7 +232,12 @@
     NSDateFormatter *formate = [[NSDateFormatter alloc] init];
     [formate setDateFormat:@"yyyy-MM-dd HH:mm"];
     NSString *dateString = [formate stringFromDate:selectedDate];
-    [[[cellDescriptors objectAtIndex:0] objectAtIndex:3] setValue:dateString forKey:@"primaryTitle"];
+    
+    if ([self.sender isEqualToString:@"event"]) {
+        [[[cellDescriptors objectAtIndex:0] objectAtIndex:3] setValue:dateString forKey:@"primaryTitle"];
+    }else if ([self.sender isEqualToString:@"project"]){
+        [[[cellDescriptors objectAtIndex:0] objectAtIndex:2] setValue:dateString forKey:@"primaryTitle"];    }
+    
     [self.table reloadData];
     
     date = selectedDate;
@@ -228,7 +249,12 @@
     if (parentCellIndex.row == 1) {
         [[[cellDescriptors objectAtIndex:0] objectAtIndex:0] setValue:newText forKey:@"primaryTitle"];
         title = newText;
-    }else{
+    }
+    else if ([self.sender isEqualToString:@"project"] && parentCellIndex.row == 5){
+        [[[cellDescriptors objectAtIndex:0] objectAtIndex:4] setValue:newText forKey:@"primaryTitle"];
+        title = newText;
+    }
+    else{
         subTitle = newText;
     }
     [self.table reloadData];

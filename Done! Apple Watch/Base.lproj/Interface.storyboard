@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="10116" systemVersion="15F28b" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="10032"/>
@@ -13,12 +13,12 @@
                         <label width="136" height="31" alignment="left" text="Welcome" numberOfLines="2" id="bbl-Qu-woo">
                             <fontDescription key="font" type="system" pointSize="20"/>
                         </label>
-                        <button width="1" alignment="left" title="Today" id="D6k-73-d05">
+                        <button width="1" alignment="left" title="Projects" id="D6k-73-d05">
                             <connections>
                                 <segue destination="9NK-ux-9FD" kind="push" id="qTL-Ol-Xfk"/>
                             </connections>
                         </button>
-                        <button width="1" alignment="left" title="All Events" id="Ya5-dG-33i">
+                        <button width="1" alignment="left" title="Today" id="Ya5-dG-33i">
                             <connections>
                                 <segue destination="rD2-VK-CGW" kind="push" id="Srz-h5-mEv"/>
                             </connections>
@@ -73,24 +73,18 @@
                         <table alignment="left" id="Mtp-2P-cWf">
                             <items>
                                 <tableRow identifier="default" id="0Wr-N8-hH2" customClass="Row">
-                                    <group key="rootItem" width="1" height="81" alignment="left" id="riJ-ay-yQM">
+                                    <group key="rootItem" width="1" height="65" alignment="left" layout="vertical" id="riJ-ay-yQM">
                                         <items>
-                                            <group width="93" height="78" alignment="left" layout="vertical" id="fOw-3F-HDz">
-                                                <items>
-                                                    <label width="95" height="54" alignment="left" text="Help Joseph with science homework" numberOfLines="4" id="u5l-4e-ekb">
-                                                        <fontDescription key="font" type="system" weight="medium" pointSize="15"/>
-                                                    </label>
-                                                    <label width="1" alignment="left" text="2015/04/21" id="Vu1-Xb-pJK">
-                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </label>
-                                                </items>
-                                            </group>
-                                            <button width="30" height="30" alignment="center" verticalAlignment="center" backgroundImage="circle-nf.png" id="Umr-9H-Scy"/>
+                                            <label width="128" height="38" alignment="left" text="Help Joseph with science homework" numberOfLines="4" id="u5l-4e-ekb">
+                                                <fontDescription key="font" type="system" weight="medium" pointSize="15"/>
+                                            </label>
+                                            <label width="1" alignment="left" text="2015/04/21" id="Vu1-Xb-pJK">
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            </label>
                                         </items>
                                     </group>
                                     <connections>
                                         <outlet property="date" destination="Vu1-Xb-pJK" id="HeY-0u-h9J"/>
-                                        <outlet property="done" destination="Umr-9H-Scy" id="IDO-pe-n9v"/>
                                         <outlet property="titleLabel" destination="u5l-4e-ekb" id="cpJ-wk-qKL"/>
                                     </connections>
                                 </tableRow>
@@ -103,6 +97,45 @@
                 </controller>
             </objects>
             <point key="canvasLocation" x="482" y="207"/>
+        </scene>
+        <!--Events-->
+        <scene sceneID="l7t-NA-plE">
+            <objects>
+                <controller identifier="Events" id="Uk2-hj-vOu" customClass="EventsInterfaceController">
+                    <items>
+                        <table alignment="left" id="O6c-Tu-m1L">
+                            <items>
+                                <tableRow identifier="default" id="vST-0Y-RXY" customClass="Row">
+                                    <group key="rootItem" width="1" height="63" alignment="left" id="NSN-x0-C0P">
+                                        <items>
+                                            <group width="93" height="1" alignment="left" layout="vertical" id="RuR-Id-u5V">
+                                                <items>
+                                                    <label width="95" height="36" alignment="left" text="Help Joseph with science homework" numberOfLines="4" id="lsk-yo-Deb">
+                                                        <fontDescription key="font" type="system" weight="medium" pointSize="15"/>
+                                                    </label>
+                                                    <label width="1" height="17.5" alignment="left" text="2015/04/21" id="tsh-9g-l3g">
+                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </label>
+                                                </items>
+                                            </group>
+                                            <button width="30" height="30" alignment="center" verticalAlignment="center" backgroundImage="circle-nf.png" id="GQP-vE-vH8"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="date" destination="tsh-9g-l3g" id="ThR-Td-Vlc"/>
+                                        <outlet property="done" destination="GQP-vE-vH8" id="Wuq-Wo-FGz"/>
+                                        <outlet property="titleLabel" destination="lsk-yo-Deb" id="8c0-te-dc0"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="table" destination="O6c-Tu-m1L" id="OgJ-AR-olx"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="706" y="207"/>
         </scene>
         <!--Glance Interface Controller-->
         <scene sceneID="BOz-TT-tkC">

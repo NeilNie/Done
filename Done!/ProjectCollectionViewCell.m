@@ -10,4 +10,10 @@
 
 @implementation ProjectCollectionViewCell
 
+- (void)awakeFromNib {
+    
+    [super awakeFromNib];
+    // Initialization code
+}
+
 @end

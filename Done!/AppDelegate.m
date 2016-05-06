@@ -23,6 +23,7 @@
     WCSession *session = [WCSession defaultSession];
     session.delegate = self;
     [session activateSession];
+    NSLog(@"received context %@ sent context %@", session.receivedApplicationContext, session.applicationContext);
     if ([[session.receivedApplicationContext objectForKey:@"needSync"] isEqualToString:@"NO"]) {
         [session updateApplicationContext:@{@"needSync":@"NO"} error:nil];
         NSLog(@"updated iPhone application context");
@@ -39,6 +40,15 @@
     config.fileURL = [NSURL fileURLWithPath:realmPath];
     [RLMRealmConfiguration setDefaultConfiguration:config];
     NSLog(@"%@", [RLMRealm defaultRealm].configuration.fileURL);
+    
+    application.applicationIconBadgeNumber = 0;
+    
+    //register for notification
+    UIUserNotificationType types = UIUserNotificationTypeBadge |
+    UIUserNotificationTypeSound | UIUserNotificationTypeAlert;
+    UIUserNotificationSettings *mySettings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
+    [[UIApplication sharedApplication] registerUserNotificationSettings:mySettings];
+    
     // Override point for customization after application launch.
     return YES;
 }
@@ -73,6 +83,17 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
+    
+    UIApplicationState state = [application applicationState];
+    if (state == UIApplicationStateActive) {
+
+    }
+    
+    // Set icon badge number to zero
+    application.applicationIconBadgeNumber = 0;
+}
+
 #pragma mark - WCSession Delegate
 
 -(void)session:(WCSession *)session didReceiveApplicationContext:(NSDictionary<NSString *,id> *)applicationContext{
@@ -82,7 +103,10 @@
 -(void)session:(WCSession *)session didReceiveMessage:(NSDictionary<NSString *,id> *)message replyHandler:(void (^)(NSDictionary<NSString *,id> * _Nonnull))replyHandler{
     
     NSLog(@"received message");
-    NSMutableArray *array = [EventsHelper convertToArray:[Events allObjects]];
+    NSMutableArray *array = [EventsHelper convertAllObjecttoArray];
+    WCSession *wcsession = [WCSession defaultSession];
+    wcsession.delegate = self;
+    [wcsession activateSession];
     replyHandler(@{@"data": array});
     NSLog(@"sent reply");
 }

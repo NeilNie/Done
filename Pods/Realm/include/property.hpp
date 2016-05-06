@@ -23,32 +23,24 @@
 
 namespace realm {
     enum class PropertyType {
-        /** Integer type: NSInteger, int, long, Int (Swift) */
         Int    = 0,
-        /** Boolean type: BOOL, bool, Bool (Swift) */
         Bool   = 1,
-        /** Float type: float, Float (Swift) */
         Float  = 9,
-        /** Double type: double, Double (Swift) */
         Double = 10,
-        /** String type: NSString, String (Swift) */
         String = 2,
-        /** Data type: NSData */
         Data   = 4,
-        /** Any type: id, **not supported in Swift** */
-        Any    = 6,
-        /** Date type: NSDate */
-        Date   = 7,
-        /** Object type. See [Realm Models](https://realm.io/docs/objc/latest/#models) */
+        Any    = 6, // Deprecated and will be removed in the future
+        Date   = 8,
         Object = 12,
-        /** Array type. See [Realm Models](https://realm.io/docs/objc/latest/#models) */
         Array  = 13,
+        LinkingObjects = 14,
     };
 
     struct Property {
         std::string name;
         PropertyType type;
         std::string object_type;
+        std::string link_origin_property_name;
         bool is_primary = false;
         bool is_indexed = false;
         bool is_nullable = false;
@@ -85,6 +77,8 @@ namespace realm {
                 return "object";
             case PropertyType::Array:
                 return "array";
+            case PropertyType::LinkingObjects:
+                return "linking objects";
         }
     }
 }

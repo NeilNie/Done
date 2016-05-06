@@ -16,6 +16,8 @@
 
 #define kRemoveAdsProductIdentifier @"noads.toolbox"
 
+#pragma mark - SkProduct / Payment delegates
+
 - (IBAction)tapsRemoveAdsButton{
     NSLog(@"User requests to remove ads");
     
@@ -121,7 +123,65 @@
     
 }
 
+#pragma mark - UITableView Delegate
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return allEvents.count;
+}
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 70.0;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    EventTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"idEventCell" forIndexPath:indexPath];
+    Events *event = [allEvents objectAtIndex:indexPath.row];
+    NSDateFormatter *formate = [[NSDateFormatter alloc] init];
+    [formate setDateFormat:@"yyyy-MM-dd HH:mm"];
+    cell.titleLabel.text = event.title;
+    cell.dateLabel.text = [formate stringFromDate:event.date];
+    
+    cell.delegate = self;
+    return cell;
+}
+
+- (NSDateFormatter *)dateFormatter
+{
+    static NSDateFormatter *dateFormatter;
+    if(!dateFormatter){
+        dateFormatter = [NSDateFormatter new];
+        dateFormatter.dateFormat = @"dd-MM-yyyy HH:mm";
+    }
+    
+    return dateFormatter;
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    
+    result = [Events allObjects];
+    allEvents = [EventsHelper findEventsForToday:[NSDate date] withRealm:result];
+    Events *event = [EventsHelper findEarliestEventTodayWithArray:allEvents];
+    self.label1.text = [NSString stringWithFormat:@"The first event of your day is %@ at %@", event.title, [[self dateFormatter] stringFromDate:event.date]];
+    self.label2.text = [NSString stringWithFormat:@"There are %lu events today and you have completed %lu of them.", (unsigned long)allEvents.count, (unsigned long)[EventsHelper findCompletedEvents:allEvents withDate:[NSDate date]].count];
+    [self.table reloadData];
+    [super viewDidAppear:YES];
+}
+
 - (void)viewDidLoad {
+    
+    areAdsRemoved = [[NSUserDefaults standardUserDefaults] boolForKey:@"areAdsRemoved"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    result = [Events allObjects];
+    allEvents = [EventsHelper findEventsForToday:[NSDate date] withRealm:result];
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }

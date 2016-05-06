@@ -19,7 +19,7 @@
 BOOL phoneModified;
 
 @interface TodoViewController : UIViewController <WCSessionDelegate, UITableViewDelegate, UITableViewDataSource, EventCellDelegate, CreateNewDelegate>{
-    RLMArray *result;
+    NSMutableArray *allEvents;
     UIRefreshControl *refresh;
 }
 @property (weak, nonatomic) Projects *project;

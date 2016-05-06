@@ -24,6 +24,11 @@
 
 - (void)willActivate {
 
+    WCSession *session = [WCSession defaultSession];
+    session.delegate = self;
+    [session activateSession];
+    NSLog(@"received application context %@", session.receivedApplicationContext);
+    NSLog(@"sent application context %@", session.applicationContext);
     // This method is called when watch view controller is about to be visible to user
     [super willActivate];
 }

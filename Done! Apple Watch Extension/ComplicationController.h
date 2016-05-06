@@ -7,7 +7,12 @@
 //
 
 #import <ClockKit/ClockKit.h>
+#import "EventsHelper.h"
+#import <Realm/Realm.h>
+#import "Events.h"
 
-@interface ComplicationController : NSObject <CLKComplicationDataSource>
+@interface ComplicationController : NSObject <CLKComplicationDataSource>{
+    
+}
 
 @end

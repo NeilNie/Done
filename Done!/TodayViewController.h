@@ -8,11 +8,22 @@
 
 #import <UIKit/UIKit.h>
 #import <StoreKit/StoreKit.h>
+#import <Realm/Realm.h>
+
 #import "Events.h"
 #import "Projects.h"
+#import "EventTableViewCell.h"
+#import "EventsHelper.h"
 
 BOOL areAdsRemoved;
 
-@interface TodayViewController : UIViewController <SKProductsRequestDelegate, SKPaymentTransactionObserver>
+@interface TodayViewController : UIViewController <SKProductsRequestDelegate, SKPaymentTransactionObserver, UITableViewDelegate, UITableViewDataSource>{
+    NSMutableArray *allEvents;
+    RLMResults *result;
+}
+
+@property (weak, nonatomic) IBOutlet UITableView *table;
+@property (weak, nonatomic) IBOutlet UILabel *label1;
+@property (weak, nonatomic) IBOutlet UILabel *label2;
 
 @end

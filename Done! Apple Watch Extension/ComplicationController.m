@@ -35,13 +35,43 @@
 #pragma mark - Timeline Population
 
 - (void)getCurrentTimelineEntryForComplication:(CLKComplication *)complication withHandler:(void(^)(CLKComplicationTimelineEntry * __nullable))handler {
+    
+    NSLog(@"got current entry");
+    RLMResults *re = [Events allObjects];
+    Events *event = [re objectAtIndex:0];
+    
+    CLKComplicationTemplateModularLargeStandardBody *template = [[CLKComplicationTemplateModularLargeStandardBody alloc] init];
+    template.headerTextProvider = [CLKTimeIntervalTextProvider textProviderWithStartDate:[NSDate date] endDate:event.date];
+    template.body1TextProvider = [CLKSimpleTextProvider textProviderWithText:event.title shortText:@"Event Title"];
+    
+    CLKComplicationTimelineEntry *entry = [CLKComplicationTimelineEntry entryWithDate:[NSDate date] complicationTemplate:template];
+    handler(entry);
     // Call the handler with the current timeline entry
-    handler(nil);
 }
 
 - (void)getTimelineEntriesForComplication:(CLKComplication *)complication beforeDate:(NSDate *)date limit:(NSUInteger)limit withHandler:(void(^)(NSArray<CLKComplicationTimelineEntry *> * __nullable entries))handler {
+    
+    NSMutableArray<CLKComplicationTimelineEntry *> *entries = [[NSMutableArray alloc] init];
+    RLMResults *result = [Events allObjects];
+    NSLog(@"all entries %@", result);
+    
+    NSMutableArray *array = [EventsHelper convertToArray:result];
+    NSString *string = [NSString stringWithFormat:@"%lu events today, you have completed %lu of them.", (unsigned long)result.count, (unsigned long)[EventsHelper findCompletedEvents:array withDate:[NSDate date]].count];
+    
+    for (Events *event in result) {
+        
+        if (result.count < limit && [event.date timeIntervalSinceDate:date] > 0){
+            CLKComplicationTemplateModularLargeStandardBody *template = [[CLKComplicationTemplateModularLargeStandardBody alloc] init];
+            template.headerTextProvider = [CLKTimeIntervalTextProvider textProviderWithStartDate:[NSDate date] endDate:event.date];
+            template.body1TextProvider = [CLKSimpleTextProvider textProviderWithText:event.title shortText:@"Event Title"];
+            template.body2TextProvider = [CLKSimpleTextProvider textProviderWithText:string shortText:@"Today"];
+            
+            CLKComplicationTimelineEntry *entry = [CLKComplicationTimelineEntry entryWithDate:[NSDate date] complicationTemplate:template];
+            [entries addObject:entry];
+        }
+    }
     // Call the handler with the timeline entries prior to the given date
-    handler(nil);
+    handler(entries);
 }
 
 - (void)getTimelineEntriesForComplication:(CLKComplication *)complication afterDate:(NSDate *)date limit:(NSUInteger)limit withHandler:(void(^)(NSArray<CLKComplicationTimelineEntry *> * __nullable entries))handler {
@@ -53,20 +83,27 @@
 
 - (void)getNextRequestedUpdateDateWithHandler:(void(^)(NSDate * __nullable updateDate))handler {
     // Call the handler with the date when you would next like to be given the opportunity to update your complication content
-    handler(nil);
+    NSLog(@"next request time updated");
+    handler([NSDate dateWithTimeIntervalSinceNow:60 * 60]);
 }
 
 #pragma mark - Placeholder Templates
 
 - (void)getPlaceholderTemplateForComplication:(CLKComplication *)complication withHandler:(void(^)(CLKComplicationTemplate * __nullable complicationTemplate))handler {
     
-    //CLKComplicationTemplateModularLargeStandardBody *template = [[CLKComplicationTemplateModularLargeStandardBody alloc] init];
-    CLKComplicationTemplateModularLargeStandardBody *template = [[CLKComplicationTemplateModularLargeStandardBody alloc] init];
-    template.headerTextProvider = [CLKTimeIntervalTextProvider textProviderWithStartDate:[NSDate date] endDate:[NSDate dateWithTimeIntervalSinceNow:60 * 60]];
-    template.body1TextProvider = [CLKSimpleTextProvider textProviderWithText:@"Talk to Joseph, finish the job" shortText:@"My name"];
-    template.body2TextProvider = [CLKSimpleTextProvider textProviderWithText:@"Amherst MA" shortText:@"My name"];
-    // This method will be called once per supported complication, and the results will be cached
-    handler((CLKComplicationTemplate *)template);
+    RLMResults *result = [Events allObjects];
+    
+    if (result.count > 0) {
+        Events *event = [result objectAtIndex:0];
+        CLKComplicationTemplateModularLargeStandardBody *template = [[CLKComplicationTemplateModularLargeStandardBody alloc] init];
+        template.headerTextProvider = [CLKTimeIntervalTextProvider textProviderWithStartDate:[NSDate date] endDate:[NSDate dateWithTimeIntervalSinceNow:60 * 60]];
+        template.body1TextProvider = [CLKSimpleTextProvider textProviderWithText:event.title shortText:@"Event Title"];
+        //template.body2TextProvider = [CLKSimpleTextProvider textProviderWithText:@"Please wait" shortText:@"My name"];
+        // This method will be called once per supported complication, and the results will be cached
+        handler((CLKComplicationTemplate *)template);
+    }else{
+        handler(nil);
+    }
 }
 
 @end

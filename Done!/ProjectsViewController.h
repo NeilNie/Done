@@ -8,12 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import <Realm/Realm.h>
+
 #import "Events.h"
 #import "Projects.h"
 #import "TodoViewController.h"
+#import "CreateNewVC.h"
 #import "ProjectCollectionViewCell.h"
+#import "QBPopupMenu.h"
 
-@interface ProjectsViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource>{
+NSInteger gestureIndex;
+
+@interface ProjectsViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource, CreateNewDelegate, UIGestureRecognizerDelegate>{
     RLMResults *projects;
     Projects *passedProject;
 }

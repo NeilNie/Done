@@ -11,6 +11,7 @@
 #import <Realm/Realm.h>
 #import <WatchConnectivity/WatchConnectivity.h>
 #import "Events.h"
+#import "Projects.h"
 
 @interface EventsHelper : NSObject <WCSessionDelegate>
 
@@ -35,13 +36,24 @@
 +(NSMutableArray *)convertToArray:(RLMResults *)results;
 
 /*
- The opposite of the previous method. It takes in an array and turn store them in Default Realm.
+ The opposite of the previous method. It takes in an array and turn store them in Default Realm. The array parameter has to include 
  */
 +(void)createRealmWithArray:(NSMutableArray *)array;
 
-/*
- Important method. Call this when Realm objects are modified and the device need to notify the counterpart.
- */
-+(void)eventsAreModified:(id)object;
++(NSMutableArray *)findEventsForToday:(NSDate *)today withRealm:(RLMResults *)realm;
+
++(NSMutableArray *)findCompletedEvents:(RLMArray *)realm;
+
++(NSMutableArray *)findNotCompletedEvents:(RLMArray *)realm;
+
++(NSMutableArray *)findCompletedEvents:(NSMutableArray *)realm withDate:(NSDate *)date;
+
++(Events *)findEarliestEventTodayWithArray:(NSMutableArray *)array;
+
++(NSMutableArray *)findCompletedEventsRealm:(RLMResults *)realm withDate:(NSDate *)date;
+
++(NSMutableArray *)convertAllObjecttoArray;
+
++(Events *)findEventWithTitle:(NSString *)string withRealm:(RLMArray *)array;
 
 @end

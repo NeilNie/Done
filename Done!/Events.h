@@ -14,6 +14,7 @@
 @property NSString *subTitle;
 @property NSDate *date;
 @property NSString *location;
+@property BOOL completed;
 
 @end
 

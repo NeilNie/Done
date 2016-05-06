@@ -4,7 +4,17 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>FrameAccessor.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>JTCalendar.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>MKFoundationKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -27,17 +37,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>2A739A09DF63110B9D9141965BB26C19</key>
+		<key>0D233DC858A278BA4405A695CFF29EF6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3B12482092375F94B5148758E7940F20</key>
+		<key>0F7B1940DE10624DFABB6A65D0BE9B4A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>76581F97F149DC996732D3704AB7E435</key>
+		<key>164A2609FB4616DAA3F12381E1629518</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>502B6BA5DC5ECF9F7C670427D65DD57E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9CEE09AA88C31EE671B34AC3B68B277A</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -23,7 +23,6 @@
 @property (weak, nonatomic) IBOutlet JTCalendarMenuView *calendarMenuView;
 @property (weak, nonatomic) IBOutlet JTHorizontalCalendarView *calendarContentView;
 @property (weak, nonatomic) IBOutlet UITableView *table;
-
 @property (strong, nonatomic) JTCalendarManager *calendarManager;
 
 @end
