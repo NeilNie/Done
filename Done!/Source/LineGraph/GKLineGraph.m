@@ -28,7 +28,7 @@
 #import <FrameAccessor/FrameAccessor.h>
 #import <MKFoundationKit/NSArray+MK.h>
 
-static CGFloat kDefaultLabelWidth = 40.0;
+static CGFloat kDefaultLabelWidth = 25;
 static CGFloat kDefaultLabelHeight = 12.0;
 static NSInteger kDefaultValueLabelCount = 5;
 

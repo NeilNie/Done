@@ -56,4 +56,6 @@
 
 +(Events *)findEventWithTitle:(NSString *)string withRealm:(RLMArray *)array;
 
++(Events *)findMostRecentEvent:(NSDate *)date withRealm:(NSMutableArray *)realm;
+
 @end

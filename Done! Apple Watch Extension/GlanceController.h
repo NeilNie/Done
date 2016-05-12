@@ -8,7 +8,14 @@
 
 #import <WatchKit/WatchKit.h>
 #import <Foundation/Foundation.h>
+#import <Realm/Realm.h>
+
+#import "Events.h"
+#import "Projects.h"
+#import "EventsHelper.h"
 
 @interface GlanceController : WKInterfaceController
+@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceLabel *titleLabel;
+@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceLabel *dateLabel;
 
 @end

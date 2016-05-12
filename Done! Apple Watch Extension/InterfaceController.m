@@ -13,8 +13,11 @@
 
 @end
 
-
 @implementation InterfaceController
+
+-(void)session:(WCSession *)session didReceiveApplicationContext:(NSDictionary<NSString *,id> *)applicationContext{
+    NSLog(@"application context %@", applicationContext);
+}
 
 - (void)awakeWithContext:(id)context {
     
@@ -39,6 +42,3 @@
 }
 
 @end
-
-
-

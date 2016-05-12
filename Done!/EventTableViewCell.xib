@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15F28b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -15,13 +15,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Computer Science Class" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ogi-lh-CXa">
-                        <rect key="frame" x="28" y="14" width="205" height="20.5"/>
+                        <rect key="frame" x="33" y="14" width="200" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="April 7, 2016 15:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WyS-4b-56k">
-                        <rect key="frame" x="28" y="40.5" width="205" height="18"/>
+                        <rect key="frame" x="33" y="40.5" width="200" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
@@ -37,24 +37,53 @@
                             <action selector="done:" destination="jMh-8Y-oS7" eventType="touchUpInside" id="tSY-OP-jfn"/>
                         </connections>
                     </button>
+                    <button opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DJM-TX-OPX">
+                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="69.5"/>
+                        <color key="backgroundColor" red="0.98823529409999999" green="0.41960784309999999" blue="0.031372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" id="lEP-UQ-al9"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                        <state key="normal" title="Mark as Important">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="markImportant:" destination="jMh-8Y-oS7" eventType="touchUpInside" id="6b1-YL-dig"/>
+                        </connections>
+                    </button>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JcX-Pi-n5S">
+                        <rect key="frame" x="13" y="30" width="10" height="10"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="10" id="l2J-Uf-b0H"/>
+                            <constraint firstAttribute="width" constant="10" id="rCt-6c-Z1C"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="DJM-TX-OPX" firstAttribute="top" secondItem="l5u-jE-jh2" secondAttribute="topMargin" constant="-8" id="3gi-sO-bAh"/>
                     <constraint firstAttribute="bottomMargin" secondItem="WyS-4b-56k" secondAttribute="bottom" constant="3" id="DFS-TH-qju"/>
+                    <constraint firstItem="JcX-Pi-n5S" firstAttribute="centerY" secondItem="l5u-jE-jh2" secondAttribute="centerY" id="Ll7-06-uyn"/>
                     <constraint firstItem="Vd3-AJ-Cf8" firstAttribute="leading" secondItem="WyS-4b-56k" secondAttribute="trailing" constant="8" id="PiZ-jB-Z10"/>
+                    <constraint firstItem="DJM-TX-OPX" firstAttribute="leading" secondItem="l5u-jE-jh2" secondAttribute="leadingMargin" constant="-8" id="WCl-cF-00e"/>
                     <constraint firstItem="Vd3-AJ-Cf8" firstAttribute="top" secondItem="l5u-jE-jh2" secondAttribute="topMargin" constant="12" id="Z09-fi-Lg3"/>
                     <constraint firstAttribute="trailingMargin" secondItem="Vd3-AJ-Cf8" secondAttribute="trailing" constant="8" id="Z1F-9r-jTW"/>
+                    <constraint firstItem="Ogi-lh-CXa" firstAttribute="leading" secondItem="JcX-Pi-n5S" secondAttribute="trailing" constant="10" id="dwX-hD-Ti3"/>
                     <constraint firstItem="Ogi-lh-CXa" firstAttribute="top" secondItem="l5u-jE-jh2" secondAttribute="topMargin" constant="6" id="gQb-LI-4pk"/>
-                    <constraint firstItem="WyS-4b-56k" firstAttribute="leading" secondItem="l5u-jE-jh2" secondAttribute="leadingMargin" constant="20" id="pn3-aw-L4s"/>
-                    <constraint firstItem="Ogi-lh-CXa" firstAttribute="leading" secondItem="l5u-jE-jh2" secondAttribute="leadingMargin" constant="20" id="rod-AL-iOB"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="DJM-TX-OPX" secondAttribute="bottom" constant="-8" id="hs2-6o-GqG"/>
+                    <constraint firstItem="WyS-4b-56k" firstAttribute="leading" secondItem="l5u-jE-jh2" secondAttribute="leadingMargin" constant="25" id="pn3-aw-L4s"/>
+                    <constraint firstItem="Ogi-lh-CXa" firstAttribute="leading" secondItem="l5u-jE-jh2" secondAttribute="leadingMargin" constant="25" id="rod-AL-iOB"/>
                     <constraint firstItem="Vd3-AJ-Cf8" firstAttribute="leading" secondItem="Ogi-lh-CXa" secondAttribute="trailing" constant="8" id="u6h-6x-gRf"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="button" destination="Vd3-AJ-Cf8" id="SI0-eL-pLb"/>
+                <outlet property="constr" destination="lEP-UQ-al9" id="FYC-dv-1zA"/>
                 <outlet property="dateLabel" destination="WyS-4b-56k" id="GL4-R5-MO8"/>
+                <outlet property="importantIcon" destination="JcX-Pi-n5S" id="oeZ-kI-Eu9"/>
+                <outlet property="markButton" destination="DJM-TX-OPX" id="eag-Wt-kjR"/>
                 <outlet property="titleLabel" destination="Ogi-lh-CXa" id="TyN-II-K5M"/>
             </connections>
-            <point key="canvasLocation" x="187" y="322"/>
+            <point key="canvasLocation" x="556" y="372"/>
         </tableViewCell>
     </objects>
     <resources>

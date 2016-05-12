@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15F28b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -15,25 +15,31 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="19b-KL-Eea">
-                        <rect key="frame" x="16" y="11" width="231" height="21"/>
+                        <rect key="frame" x="16" y="11" width="213" height="21"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Em-IQ-5W9">
-                        <rect key="frame" x="263" y="6" width="51" height="31"/>
-                    </switch>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c0V-Aa-cNj" customClass="MDSwitch">
+                        <rect key="frame" x="237" y="9" width="75" height="26"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="75" id="FNh-rY-SFu"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="4Em-IQ-5W9" firstAttribute="leading" secondItem="19b-KL-Eea" secondAttribute="trailing" constant="16" id="0N9-FN-7sF"/>
                     <constraint firstItem="19b-KL-Eea" firstAttribute="leading" secondItem="Z59-zU-53w" secondAttribute="leadingMargin" constant="8" id="BT6-Ek-RBs"/>
-                    <constraint firstItem="19b-KL-Eea" firstAttribute="centerY" secondItem="4Em-IQ-5W9" secondAttribute="centerY" id="KT6-Lx-sYE"/>
+                    <constraint firstItem="c0V-Aa-cNj" firstAttribute="centerY" secondItem="Z59-zU-53w" secondAttribute="centerY" id="Foa-ZB-V2B"/>
+                    <constraint firstItem="c0V-Aa-cNj" firstAttribute="top" secondItem="Z59-zU-53w" secondAttribute="topMargin" constant="1" id="ift-CW-EEn"/>
                     <constraint firstItem="19b-KL-Eea" firstAttribute="centerY" secondItem="Z59-zU-53w" secondAttribute="centerY" id="pKI-AF-inM"/>
-                    <constraint firstItem="4Em-IQ-5W9" firstAttribute="trailing" secondItem="Z59-zU-53w" secondAttribute="trailingMargin" id="rRH-ij-I4y"/>
+                    <constraint firstItem="c0V-Aa-cNj" firstAttribute="leading" secondItem="19b-KL-Eea" secondAttribute="trailing" constant="8" id="rQT-Cf-Ca6"/>
+                    <constraint firstItem="c0V-Aa-cNj" firstAttribute="trailing" secondItem="Z59-zU-53w" secondAttribute="trailingMargin" id="yTT-zs-O7A"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="Switch" destination="4Em-IQ-5W9" id="8HC-hq-6c1"/>
+                <outlet property="Switch" destination="c0V-Aa-cNj" id="rdS-Hg-KfP"/>
                 <outlet property="SwitchLabel" destination="19b-KL-Eea" id="wqx-bP-erK"/>
             </connections>
             <point key="canvasLocation" x="669" y="308"/>

@@ -12,6 +12,7 @@
 
 #import "Events.h"
 #import "EventTableViewCell.h"
+#import "EventsHelper.h"
 
 @interface CalendarViewController : UIViewController <JTCalendarDelegate, UITableViewDataSource, UITableViewDelegate>{
 
@@ -20,9 +21,14 @@
     NSMutableArray *eventArray;
 }
 
-@property (weak, nonatomic) IBOutlet JTCalendarMenuView *calendarMenuView;
 @property (weak, nonatomic) IBOutlet JTHorizontalCalendarView *calendarContentView;
 @property (weak, nonatomic) IBOutlet UITableView *table;
 @property (strong, nonatomic) JTCalendarManager *calendarManager;
-
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *contr;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *labelContr1;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *labelContr2;
+@property (weak, nonatomic) IBOutlet UILabel *eventCountl;
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *yearLabel;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *labelConst3;
 @end

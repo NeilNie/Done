@@ -16,6 +16,22 @@
 
 #pragma mark - GKLineGraphDataSource
 
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    
+    if (self.lineGraph.alpha == 0) {
+        [UIView animateWithDuration:0.2 animations:^{
+            self.lineGraph.alpha = 1;
+            self.barGraph.alpha = 0;
+        }];
+
+    }else if (self.lineGraph.alpha == 1){
+        [UIView animateWithDuration:0.2 animations:^{
+            self.lineGraph.alpha = 0;
+            self.barGraph.alpha = 1;
+        }];
+    }
+}
+
 - (NSInteger)numberOfLines {
     return [self.data count];
 }
@@ -93,9 +109,7 @@
         }
 
         [self.barData addObject:[NSNumber numberWithFloat:f]];
-        NSLog(@"%f", f);
     }
-    NSLog(@"not completed %@ completed %@", self.array, self.eventNumber);
 
 }
 
@@ -126,9 +140,8 @@
 -(void)viewDidAppear:(BOOL)animated{
     
     [self.lineGraph reset];
-    self.lineGraph.hidden = NO;
+    self.lineGraph.alpha = 1.0;
     [self.lineGraph draw];
-    self.barGraph.hidden = NO;
     [self.barGraph draw];
     [super viewDidAppear:YES];
 }
@@ -136,8 +149,8 @@
 - (void)viewDidLoad {
     
     self.graphConst.constant = 0;
-    self.lineGraph.hidden = YES;
-    self.barGraph.hidden = YES;
+    self.lineGraph.alpha = 0;
+    self.barGraph.alpha = 0;
     self.array = [[NSMutableArray alloc] init];
     self.eventNumber = [[NSMutableArray alloc] init];
     self.labels = [[NSMutableArray alloc] init];

@@ -41,24 +41,6 @@
 		</dict>
 		<dict>
 			<key>isExpandable</key>
-			<false/>
-			<key>isExpanded</key>
-			<false/>
-			<key>isVisible</key>
-			<false/>
-			<key>value</key>
-			<string></string>
-			<key>primaryTitle</key>
-			<string>Subtitle</string>
-			<key>secondaryTitle</key>
-			<string></string>
-			<key>cellIdentifier</key>
-			<string>idCellTextfield</string>
-			<key>additionalRows</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>isExpandable</key>
 			<true/>
 			<key>isExpanded</key>
 			<false/>
@@ -69,12 +51,13 @@
 			<key>primaryTitle</key>
 			<string></string>
 			<key>secondaryTitle</key>
-			<string>Event Date</string>
+			<string>Due Date</string>
 			<key>cellIdentifier</key>
 			<string>idCellNormal</string>
 			<key>additionalRows</key>
 			<integer>1</integer>
 		</dict>
+		
 		<dict>
 			<key>isExpandable</key>
 			<false/>
@@ -93,6 +76,7 @@
 			<key>additionalRows</key>
 			<integer>0</integer>
 		</dict>
+		
 		<dict>
 			<key>isExpandable</key>
 			<true/>

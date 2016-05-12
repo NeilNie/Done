@@ -38,7 +38,10 @@
     
     NSLog(@"got current entry");
     RLMResults *re = [Events allObjects];
-    Events *event = [re objectAtIndex:0];
+    Events *event;
+    if (re.count > 0) {
+        event = [re objectAtIndex:0];
+    }
     
     CLKComplicationTemplateModularLargeStandardBody *template = [[CLKComplicationTemplateModularLargeStandardBody alloc] init];
     template.headerTextProvider = [CLKTimeIntervalTextProvider textProviderWithStartDate:[NSDate date] endDate:event.date];
@@ -53,10 +56,9 @@
     
     NSMutableArray<CLKComplicationTimelineEntry *> *entries = [[NSMutableArray alloc] init];
     RLMResults *result = [Events allObjects];
-    NSLog(@"all entries %@", result);
     
-    NSMutableArray *array = [EventsHelper convertToArray:result];
-    NSString *string = [NSString stringWithFormat:@"%lu events today, you have completed %lu of them.", (unsigned long)result.count, (unsigned long)[EventsHelper findCompletedEvents:array withDate:[NSDate date]].count];
+    //NSMutableArray *array = [EventsHelper convertToArray:result];
+    //NSString *string = [NSString stringWithFormat:@"%lu events today, you have completed %lu of them.", (unsigned long)result.count, (unsigned long)[EventsHelper findCompletedEvents:array withDate:[NSDate date]].count];
     
     for (Events *event in result) {
         
@@ -64,7 +66,7 @@
             CLKComplicationTemplateModularLargeStandardBody *template = [[CLKComplicationTemplateModularLargeStandardBody alloc] init];
             template.headerTextProvider = [CLKTimeIntervalTextProvider textProviderWithStartDate:[NSDate date] endDate:event.date];
             template.body1TextProvider = [CLKSimpleTextProvider textProviderWithText:event.title shortText:@"Event Title"];
-            template.body2TextProvider = [CLKSimpleTextProvider textProviderWithText:string shortText:@"Today"];
+            //template.body2TextProvider = [CLKSimpleTextProvider textProviderWithText:string shortText:@"Today"];
             
             CLKComplicationTimelineEntry *entry = [CLKComplicationTimelineEntry entryWithDate:[NSDate date] complicationTemplate:template];
             [entries addObject:entry];

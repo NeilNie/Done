@@ -7,12 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "iOSUILib/MDTableViewCell.h"
 
-@interface EventTableViewCell : UITableViewCell
+@interface EventTableViewCell : MDTableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UIButton *button;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constr;
+@property (weak, nonatomic) IBOutlet UIButton *markButton;
+@property (weak, nonatomic) IBOutlet UIImageView *importantIcon;
 @property (nonatomic, assign) id delegate;
 - (IBAction)done:(id)sender;
 
@@ -20,6 +24,7 @@
 
 @protocol EventCellDelegate <NSObject>
 
--(void)ClickedDone:(EventTableViewCell *)cell;
+-(void)clickedDone:(EventTableViewCell *)cell;
+-(void)markImportant:(EventTableViewCell *)cell;
 
 @end

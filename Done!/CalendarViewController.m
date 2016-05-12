@@ -65,10 +65,19 @@
         }
     }
     
-    if([self haveEventForDay:dayView.date withRealmResult:[Events allObjects]]){
-        NSLog(@"%@", eventArray);
+    NSMutableArray *array = [EventsHelper findEventsForToday:dayView.date withRealm:[Events allObjects]];
+    if(array.count > 0){
+        eventArray = array;
         [self.table reloadData];
     }
+    self.eventCountl.text = [NSString stringWithFormat:@"%lu Events on this day", (unsigned long)array.count];
+    
+    NSDateFormatter *formate = [[NSDateFormatter alloc] init];
+    [formate setDateFormat:@"MMMM, dd"];
+    self.yearLabel.text = @"2016";
+    self.dateLabel.text = [formate stringFromDate:dayView.date];
+    [formate setDateFormat:@"EEEE"];
+    self.navigationItem.title = [formate stringFromDate:dayView.date];
     
 }
 
@@ -138,6 +147,29 @@
     
 }
 
+-(void)gestureAction:(UISwipeGestureRecognizer *)swipe{
+    
+    if (swipe.direction == UISwipeGestureRecognizerDirectionUp) {
+        
+        [UIView animateWithDuration:0.5 animations:^{
+            self.labelContr1.constant = 0;
+            self.labelContr2.constant = 0;
+            self.labelConst3.constant = 0;
+            self.contr.constant = 250;
+            [self.view layoutIfNeeded];
+        }];
+    }else if (swipe.direction == UISwipeGestureRecognizerDirectionDown){
+        
+        [UIView animateWithDuration:0.5 animations:^{
+            self.labelContr1.constant = 110;
+            self.labelContr2.constant = 45;
+            self.labelConst3.constant = 45;
+            self.contr.constant = 0;
+            [self.view layoutIfNeeded];
+        }];
+    }
+}
+
 
 #pragma mark - Life Cycle
 
@@ -149,9 +181,29 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.contr.constant = 0;
+    NSDateFormatter *formate = [[NSDateFormatter alloc] init];
+    [formate setDateFormat:@"MMMM, dd"];
+    self.yearLabel.text = @"2016";
+    self.dateLabel.text = [formate stringFromDate:[NSDate date]];
+    [formate setDateFormat:@"EEEE"];
+    self.navigationItem.title = [formate stringFromDate:[NSDate date]];
+    NSMutableArray *array = [EventsHelper findEventsForToday:[NSDate date] withRealm:[Events allObjects]];
+    if(array.count > 0){
+        eventArray = array;
+        [self.table reloadData];
+    }
+    self.eventCountl.text = [NSString stringWithFormat:@"%lu Events on this day", (unsigned long)array.count];
+    
+    UISwipeGestureRecognizer *swipeUp = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(gestureAction:)];
+    swipeUp.direction = UISwipeGestureRecognizerDirectionUp;
+    UISwipeGestureRecognizer *swipeDown = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(gestureAction:)];
+    swipeUp.direction = UISwipeGestureRecognizerDirectionUp;
+    swipeDown.direction = UISwipeGestureRecognizerDirectionDown;
+    [self.calendarContentView addGestureRecognizer:swipeUp];
+    [self.calendarContentView addGestureRecognizer:swipeDown];
     _calendarManager = [JTCalendarManager new];
     _calendarManager.delegate = self;
-    [_calendarManager setMenuView:_calendarMenuView];
     [_calendarManager setContentView:_calendarContentView];
     [_calendarManager setDate:[NSDate date]];
     

@@ -83,12 +83,14 @@
             [realm commitWriteTransaction];
             
             //create new database with replyMessage, get main queue and update table
-            if (replyMessage != nil) {
-                [EventsHelper createRealmWithArray:[replyMessage objectForKey:@"data"]];
+            NSMutableArray *array = [replyMessage objectForKey:@"data"];
+            if ([array count] > 0) {
+                
+                [EventsHelper createRealmWithArray:array];
                 dispatch_async(dispatch_get_main_queue(), ^{
                     result = [Projects allObjects];
-                    [self setupTable];
                     NSLog(@"%@", replyMessage);
+                    [self setupTable];
                     
                 });
             }
@@ -126,7 +128,7 @@
     
     dispatch_async(dispatch_get_main_queue(), ^{
         result = [Projects allObjects];
-        NSLog(@"%@ %@", [Projects allObjects], [RLMRealm defaultRealm].configuration.fileURL);
+        //NSLog(@"%@ %@", [Projects allObjects], [RLMRealm defaultRealm].configuration.fileURL);
         [self setupTable];
     });
     
@@ -153,6 +155,3 @@
 }
 
 @end
-
-
-

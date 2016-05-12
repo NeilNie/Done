@@ -12,7 +12,6 @@
 
 #import "CustomCell.h"
 #import "Events.h"
-#import "TodayViewController.h"
 #import "EventsHelper.h"
 
 @protocol CreateNewDelegate <NSObject>
