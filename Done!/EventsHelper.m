@@ -53,6 +53,7 @@
 +(NSMutableArray *)convertAllObjecttoArray{
     
     NSMutableArray *arry = [NSMutableArray array];
+    
     NSDateFormatter *formate = [[NSDateFormatter alloc] init];
     [formate setDateFormat:@"yyyy-MM-dd HH:mm"];
     RLMResults *result = [Projects allObjects];
@@ -70,6 +71,7 @@
             NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
             [dic setValue:e.title forKey:@"title"];
             [dic setValue:e.date forKey:@"date"];
+            [dic setValue:[NSNumber numberWithBool:e.completed] forKey:@"completed"];
             [es addObject:dic];
         }
         [dic setValue:es forKey:@"events"];
@@ -92,15 +94,18 @@
         Projects *pro = [[Projects alloc] init];
         pro.title = [dic objectForKey:@"title"];
         pro.date = [dic objectForKey:@"date"];
+       
         NSArray *es = [dic objectForKey:@"events"];
         for (int i = 0; i < es.count; i++) {
             NSDictionary *d = [es objectAtIndex:i];
             Events *e = [[Events alloc] init];
             e.title = [d objectForKey:@"title"];
             e.date = [d objectForKey:@"date"];
+            e.completed = ([[d objectForKey:@"completed"] intValue] == 1)? YES : NO;
             [pro.events addObject:e];
         }
         [realm addObject:pro];
+        NSLog(@"added event %@", pro);
         [realm commitWriteTransaction];
     }
     
@@ -207,6 +212,32 @@
         }
     }
     return event;
+}
+
++(Events *)findMostRecentEvent:(NSDate *)date withRealm:(NSMutableArray *)realm{
+    
+    NSDateFormatter *formate = [[NSDateFormatter alloc] init];
+    [formate setDateFormat:@"HH"];
+    
+    //create event
+    Events *returnEvent = [realm firstObject];
+    //get the difference between time now and first event of the day.
+    int diff = [formate stringFromDate:returnEvent.date].intValue - [formate stringFromDate:date].intValue;
+    
+    //run a loop through
+    for (int i = 0; i < realm.count; i++) {
+        Events *e = [realm objectAtIndex:i];
+        
+        //see of the difference in time of the current event and current date
+        int Cdiff = [formate stringFromDate:e.date].intValue - [formate stringFromDate:date].intValue;
+        
+        //if Cdiff is positive and larger than diff, then the returnEvent is that object. 
+        if (Cdiff > 0 && Cdiff < diff) {
+            returnEvent = e;
+        }
+        
+    }
+    return returnEvent;
 }
 
 @end

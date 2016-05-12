@@ -96,9 +96,6 @@
     } else if (gestureRecognizer.state == UIGestureRecognizerStateBegan) {
         [popupMenu showInView:self.collectionView targetRect:cell.frame animated:YES];
         gestureIndex = indexPath.row;
-        NSLog(@"long press on table view at row %ld", indexPath.row);
-    } else {
-        NSLog(@"gestureRecognizer.state = %ld", gestureRecognizer.state);
     }
 }
 
@@ -152,7 +149,6 @@
     UISwipeGestureRecognizer *gesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(addNewEvent:)];
     gesture.direction = UISwipeGestureRecognizerDirectionLeft;
     [self.collectionView addGestureRecognizer:gesture];
-    NSLog(@"all objects %@", [EventsHelper convertAllObjecttoArray]);
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }

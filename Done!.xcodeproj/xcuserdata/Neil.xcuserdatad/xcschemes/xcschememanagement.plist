@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
+		<key>Done! Apple Watch Glance.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>10</integer>
+		</dict>
 		<key>Done! Apple Watch.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -43,6 +48,11 @@
 			<true/>
 		</dict>
 		<key>0060836B1CC4007500A344F1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>008315401CDE8FDB003E706D</key>
 		<dict>
 			<key>primary</key>
 			<true/>

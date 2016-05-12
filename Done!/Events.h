@@ -15,6 +15,7 @@
 @property NSDate *date;
 @property NSString *location;
 @property BOOL completed;
+@property BOOL important;
 
 @end
 

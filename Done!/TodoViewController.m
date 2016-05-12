@@ -55,6 +55,11 @@
     [formate setDateFormat:@"yyyy-MM-dd HH:mm"];
     cell.titleLabel.text = event.title;
     cell.dateLabel.text = [formate stringFromDate:event.date];
+    if (event.important == YES) {
+        cell.importantIcon.hidden = NO;
+    }else{
+        cell.importantIcon.hidden = YES;
+    }
     
     cell.delegate = self;
     return cell;
@@ -63,7 +68,16 @@
 
 #pragma EventCell Delegate
 
--(void)ClickedDone:(EventTableViewCell *)cell{
+-(void)markImportant:(EventTableViewCell *)cell{
+    
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    [realm beginWriteTransaction];
+    Events *update = [EventsHelper findEventWithTitle:cell.titleLabel.text withRealm:self.project.events];
+    update.important = YES;
+    [realm commitWriteTransaction];
+}
+
+-(void)clickedDone:(EventTableViewCell *)cell{
     
     NSIndexPath *index = [self.table indexPathForCell:cell];
     RLMRealm *realm = [RLMRealm defaultRealm];

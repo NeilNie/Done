@@ -187,7 +187,7 @@
     }else if ([currentDescriptor[@"cellIdentifier"] isEqualToString:@"idCellDatePicker"]){
         return 270;
     }else{
-        return 50;
+        return 53;
     }
     
 }
@@ -210,7 +210,9 @@
         
     }
     else if ([currentDescriptor[@"cellIdentifier"] isEqualToString:@"idCellTextfield"]) {
-        cell.textField.placeholder = currentDescriptor[@"primaryTitle"];
+        self.table.separatorStyle = UITableViewCellSeparatorStyleNone;
+        cell.textField.hint = currentDescriptor[@"primaryTitle"];
+        cell.textField.floatingLabel = currentDescriptor[@"primaryTitle"];
     }
     else if ([currentDescriptor[@"cellIdentifier"] isEqualToString:@"idCellSwitch"]) {
         cell.SwitchLabel.text = currentDescriptor[@"primaryTitle"];
@@ -221,6 +223,7 @@
     else if ([currentDescriptor[@"cellIdentifier"] isEqualToString:@"idCellValuePicker"]) {
         cell.textLabel.text = currentDescriptor[@"primaryTitle"];
     }
+    cell.rippleColor = [UIColor colorWithRed:10.0f/255.0f green:96.0f/255.0f blue:254.0f/255.0f alpha:1.0f];
     cell.delegate = self;
     return cell;
 }

@@ -44,7 +44,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    array = [[NSMutableArray alloc] initWithObjects:@"Productivity", @"Restore Purchases", @"Info", nil];
+    array = [[NSMutableArray alloc] initWithObjects:@"Productivity", @"Tips", @"Restore Purchases", @"Info", nil];
     // Do any additional setup after loading the view.
 }
 

@@ -7,16 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "iOSUILib/MDTableViewCell.h"
+#import "iOSUILib/MDTextField.h"
+#import "iOSUILib/MDButton.h"
+#import "iOSUILib/MDSwitch.h"
+#import "UIFontHelper.h"
 
-
-@interface CustomCell : UITableViewCell <UITextFieldDelegate>{
+@interface CustomCell : MDTableViewCell <UITextFieldDelegate, MDTextFieldDelegate>{
 
 }
 
-@property (weak, nonatomic) IBOutlet UITextField *textField;
+@property (weak, nonatomic) IBOutlet MDTextField *textField;
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
-@property (weak, nonatomic) IBOutlet UISwitch *Switch;
+@property (weak, nonatomic) IBOutlet MDSwitch *Switch;
 @property (weak, nonatomic) IBOutlet UILabel *SwitchLabel;
+@property (weak, nonatomic) IBOutlet MDButton *button;
 @property (nonatomic, assign) id delegate;
 
 @end

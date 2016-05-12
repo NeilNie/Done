@@ -15,13 +15,26 @@
 #import "EventTableViewCell.h"
 #import "EventsHelper.h"
 
+#import "MSCollectionViewCalendarLayout.h"
+#import "MSGridline.h"
+#import "MSTimeRowHeaderBackground.h"
+#import "MSDayColumnHeaderBackground.h"
+#import "MSEventCell.h"
+#import "MSDayColumnHeader.h"
+#import "MSTimeRowHeader.h"
+#import "MSCurrentTimeIndicator.h"
+#import "MSCurrentTimeGridline.h"
+
 BOOL areAdsRemoved;
 
-@interface TodayViewController : UIViewController <SKProductsRequestDelegate, SKPaymentTransactionObserver, UITableViewDelegate, UITableViewDataSource>{
+@interface TodayViewController : UIViewController <MSCollectionViewDelegateCalendarLayout, SKProductsRequestDelegate, SKPaymentTransactionObserver, UITableViewDelegate, UITableViewDataSource>{
     NSMutableArray *allEvents;
     RLMResults *result;
 }
-
+@property (nonatomic, strong) MSCollectionViewCalendarLayout *collectionViewCalendarLayout;
+@property (nonatomic, readonly) CGFloat layoutSectionWidth;
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *contr;
 @property (weak, nonatomic) IBOutlet UITableView *table;
 @property (weak, nonatomic) IBOutlet UILabel *label1;
 @property (weak, nonatomic) IBOutlet UILabel *label2;

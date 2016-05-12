@@ -15,10 +15,11 @@
 #import "CreateNewVC.h"
 #import "ProjectCollectionViewCell.h"
 #import "QBPopupMenu.h"
+#import "EAIntroView.h"
 
 NSInteger gestureIndex;
 
-@interface ProjectsViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource, CreateNewDelegate, UIGestureRecognizerDelegate>{
+@interface ProjectsViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource, CreateNewDelegate, UIGestureRecognizerDelegate, EAIntroDelegate>{
     RLMResults *projects;
     Projects *passedProject;
 }

@@ -14,6 +14,10 @@
 
 @implementation TodayViewController
 
+NSString * const MSEventCellReuseIdentifier = @"MSEventCellReuseIdentifier";
+NSString * const MSDayColumnHeaderReuseIdentifier = @"MSDayColumnHeaderReuseIdentifier";
+NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifier";
+
 #define kRemoveAdsProductIdentifier @"noads.toolbox"
 
 #pragma mark - SkProduct / Payment delegates
@@ -70,7 +74,7 @@
     NSLog(@"received restored transactions: %lu", (unsigned long)queue.transactions.count);
     for (SKPaymentTransaction *transaction in queue.transactions)
     {
-        if(transaction == SKPaymentTransactionStateRestored){
+        if((SKPaymentTransactionState)transaction == SKPaymentTransactionStateRestored){
             NSLog(@"Transaction state -> Restored");
             //called when the user successfully restores a purchase
             [self doRemoveAds];
@@ -79,7 +83,6 @@
         }
         
     }
-    
 }
 
 - (void)paymentQueue:(SKPaymentQueue *)queue updatedTransactions:(NSArray *)transactions{
@@ -149,9 +152,94 @@
     [formate setDateFormat:@"yyyy-MM-dd HH:mm"];
     cell.titleLabel.text = event.title;
     cell.dateLabel.text = [formate stringFromDate:event.date];
-    
+    cell.rippleColor = [UIColor colorWithRed:49.0/225.0 green:116.0/225.0 blue:250.0/225.0 alpha:1.0];
     cell.delegate = self;
     return cell;
+}
+
+#pragma mark - UICollectionViewDataSource
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
+    return 1;
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    return allEvents.count;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    MSEventCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:MSEventCellReuseIdentifier forIndexPath:indexPath];
+    cell.event = [allEvents objectAtIndex:indexPath.row];
+    return cell;
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+{
+    UICollectionReusableView *view;
+    if (kind == MSCollectionElementKindDayColumnHeader) {
+        MSDayColumnHeader *dayColumnHeader = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:MSDayColumnHeaderReuseIdentifier forIndexPath:indexPath];
+        NSDate *day = [self.collectionViewCalendarLayout dateForDayColumnHeaderAtIndexPath:indexPath];
+        NSDate *currentDay = [self currentTimeComponentsForCollectionView:self.collectionView layout:self.collectionViewCalendarLayout];
+        
+        NSDate *startOfDay = [[NSCalendar currentCalendar] startOfDayForDate:day];
+        NSDate *startOfCurrentDay = [[NSCalendar currentCalendar] startOfDayForDate:currentDay];
+        
+        dayColumnHeader.day = day;
+        dayColumnHeader.currentDay = [startOfDay isEqualToDate:startOfCurrentDay];
+        
+        view = dayColumnHeader;
+    } else if (kind == MSCollectionElementKindTimeRowHeader) {
+        MSTimeRowHeader *timeRowHeader = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:MSTimeRowHeaderReuseIdentifier forIndexPath:indexPath];
+        timeRowHeader.time = [self.collectionViewCalendarLayout dateForTimeRowHeaderAtIndexPath:indexPath];
+        view = timeRowHeader;
+    }
+    return view;
+}
+
+#pragma mark - MSCollectionViewCalendarLayout
+
+- (NSDate *)collectionView:(UICollectionView *)collectionView layout:(MSCollectionViewCalendarLayout *)collectionViewCalendarLayout dayForSection:(NSInteger)section
+{
+    return [NSDate date];
+}
+
+- (NSDate *)collectionView:(UICollectionView *)collectionView layout:(MSCollectionViewCalendarLayout *)collectionViewCalendarLayout startTimeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    Events *event = [allEvents objectAtIndex:indexPath.row];
+    return [event.date dateByAddingTimeInterval:-(60 * 60 * 2)];
+}
+
+- (NSDate *)collectionView:(UICollectionView *)collectionView layout:(MSCollectionViewCalendarLayout *)collectionViewCalendarLayout endTimeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    Events *event = [allEvents objectAtIndex:indexPath.row];
+    // Most sports last ~3 hours, and SeatGeek doesn't provide an end time
+    return event.date;
+}
+
+- (NSDate *)currentTimeComponentsForCollectionView:(UICollectionView *)collectionView layout:(MSCollectionViewCalendarLayout *)collectionViewCalendarLayout{
+    return [NSDate date];
+}
+
+#pragma mark - Privates
+
+-(void)gestureAction:(UISwipeGestureRecognizer *)swipe{
+    
+    if (swipe.direction == UISwipeGestureRecognizerDirectionRight) {
+        [UIView animateWithDuration:0.4 animations:^{
+            self.contr.constant = 0;
+            [self.view layoutIfNeeded];
+        }];
+    }else if (swipe.direction == UISwipeGestureRecognizerDirectionLeft){
+        [UIView animateWithDuration:0.4 animations:^{
+            self.contr.constant = [[UIScreen mainScreen] bounds].size.width;
+            [self.view layoutIfNeeded];
+        }];
+    }
+}
+
+-(void)longPressGesture:(UILongPressGestureRecognizer *)press{
+    
 }
 
 - (NSDateFormatter *)dateFormatter
@@ -159,19 +247,61 @@
     static NSDateFormatter *dateFormatter;
     if(!dateFormatter){
         dateFormatter = [NSDateFormatter new];
-        dateFormatter.dateFormat = @"dd-MM-yyyy HH:mm";
+        dateFormatter.dateFormat = @"dd/MM HH:mm";
     }
     
     return dateFormatter;
 }
 
+-(void)setUpCollectionView{
+    
+    self.collectionView.backgroundColor = [UIColor whiteColor];
+    [self.collectionView registerClass:MSEventCell.class forCellWithReuseIdentifier:MSEventCellReuseIdentifier];
+    [self.collectionView registerClass:MSDayColumnHeader.class forSupplementaryViewOfKind:MSCollectionElementKindDayColumnHeader withReuseIdentifier:MSDayColumnHeaderReuseIdentifier];
+    [self.collectionView registerClass:MSTimeRowHeader.class forSupplementaryViewOfKind:MSCollectionElementKindTimeRowHeader withReuseIdentifier:MSTimeRowHeaderReuseIdentifier];
+    
+    self.collectionViewCalendarLayout.sectionWidth = self.layoutSectionWidth;
+    
+    self.collectionViewCalendarLayout = [[MSCollectionViewCalendarLayout alloc] init];
+    self.collectionViewCalendarLayout.delegate = self;
+    [self.collectionView setCollectionViewLayout:self.collectionViewCalendarLayout];
+    // These are optional. If you don't want any of the decoration views, just don't register a class for them.
+    [self.collectionViewCalendarLayout registerClass:MSCurrentTimeIndicator.class forDecorationViewOfKind:MSCollectionElementKindCurrentTimeIndicator];
+    [self.collectionViewCalendarLayout registerClass:MSCurrentTimeGridline.class forDecorationViewOfKind:MSCollectionElementKindCurrentTimeHorizontalGridline];
+    [self.collectionViewCalendarLayout registerClass:MSGridline.class forDecorationViewOfKind:MSCollectionElementKindVerticalGridline];
+    [self.collectionViewCalendarLayout registerClass:MSGridline.class forDecorationViewOfKind:MSCollectionElementKindHorizontalGridline];
+    [self.collectionViewCalendarLayout registerClass:MSTimeRowHeaderBackground.class forDecorationViewOfKind:MSCollectionElementKindTimeRowHeaderBackground];
+   // [self.collectionViewCalendarLayout registerClass:MSDayColumnHeaderBackground.class forDecorationViewOfKind:MSCollectionElementKindDayColumnHeaderBackground];
+
+}
+
+-(void)setUpGestures{
+    
+    UISwipeGestureRecognizer *left = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(gestureAction:)];
+    left.direction = UISwipeGestureRecognizerDirectionLeft;
+    [self.table addGestureRecognizer:left];
+    
+    UISwipeGestureRecognizer *right = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(gestureAction:)];
+    right.direction = UISwipeGestureRecognizerDirectionRight;
+    
+    UILongPressGestureRecognizer *press = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressGesture:)];
+    press.minimumPressDuration = 1;
+    [self.collectionView addGestureRecognizer:press];
+    [self.collectionView addGestureRecognizer:right];
+}
+
 -(void)viewDidAppear:(BOOL)animated{
+    
+    [[UITabBar appearance] setBackgroundImage:[UIImage imageNamed:@"tabBar2.png"]];
     
     result = [Events allObjects];
     allEvents = [EventsHelper findEventsForToday:[NSDate date] withRealm:result];
     Events *event = [EventsHelper findEarliestEventTodayWithArray:allEvents];
     self.label1.text = [NSString stringWithFormat:@"The first event of your day is %@ at %@", event.title, [[self dateFormatter] stringFromDate:event.date]];
     self.label2.text = [NSString stringWithFormat:@"There are %lu events today and you have completed %lu of them.", (unsigned long)allEvents.count, (unsigned long)[EventsHelper findCompletedEvents:allEvents withDate:[NSDate date]].count];
+    
+    [self.collectionView reloadData];
+    [self.collectionViewCalendarLayout scrollCollectionViewToClosetSectionToCurrentTimeAnimated:NO];
     [self.table reloadData];
     [super viewDidAppear:YES];
 }
@@ -182,6 +312,9 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
     result = [Events allObjects];
     allEvents = [EventsHelper findEventsForToday:[NSDate date] withRealm:result];
+    
+    [self setUpGestures];
+    [self setUpCollectionView];
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
@@ -191,14 +324,12 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    
 }
-*/
+
 
 @end
