@@ -23,7 +23,6 @@
     // Initialization code
 }
 
-
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
     // Configure the view for the selected state
@@ -84,6 +83,10 @@
             [self.importantIcon setTransform:CGAffineTransformMakeScale(scale, scale)];
         }];
     }];
+}
+
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self animateHideButton];
 }
 
 - (IBAction)done:(id)sender

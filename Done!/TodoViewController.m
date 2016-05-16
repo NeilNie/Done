@@ -85,24 +85,8 @@
     Events *update = [EventsHelper findEventWithTitle:cell.titleLabel.text withRealm:self.project.events];
     update.completed = YES;
     [realm commitWriteTransaction];
-    allEvents = [EventsHelper findNotCompletedEvents:self.project.events];
+    allEvents = [EventsHelper findTodayNotCompletedEvents:self.project.events];
     [self.table deleteRowsAtIndexPaths:@[index] withRowAnimation:UITableViewRowAnimationTop];
-}
-
-#pragma mark - CreateNew Delegate
-
--(void)addProject:(Projects *)project{}
-
--(void)addNewEventToProject:(Events *)event{
-    
-    RLMRealm *realm = [RLMRealm defaultRealm];
-    [realm beginWriteTransaction];
-    [self.project.events addObject:event];
-    [realm commitWriteTransaction];
-    
-    NSLog(@"added a new event %@ to project %@", event, self.project.title);
-    allEvents = [EventsHelper findNotCompletedEvents:self.project.events];
-    [self.table reloadData];
 }
 
 #pragma mark - Private
@@ -126,23 +110,55 @@
     [self.table addSubview:refresh];
 }
 
+-(void)gestureAction:(UILongPressGestureRecognizer *)press{
+    
+    if (!UIAccessibilityIsReduceTransparencyEnabled()) {
+        //self.view.backgroundColor = [UIColor clearColor];
+        
+        UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight];
+        UIVisualEffectView *blurEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
+        blurEffectView.frame = self.view.bounds;
+        blurEffectView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        
+        [UIView animateWithDuration:0.3 animations:^{
+            [self.view addSubview:blurEffectView];
+        }];
+    }
+}
+
+-(void)syncDataWithExtension{
+    
+    NSMutableArray *a = [EventsHelper findEventsForToday:[NSDate date] withRealm:[Events allObjects]];
+    NSUserDefaults *shared = [[NSUserDefaults alloc] initWithSuiteName:@"group.done.com.yongyang"];
+    [shared setObject:[NSNumber numberWithInteger:a.count] forKey:@"totalEvents"];
+    [shared setObject:[NSNumber numberWithInteger:[EventsHelper findCompletedEventsWithArrayOfEvents:allEvents withDate:[NSDate date]].count] forKey:@"completedEvents"];
+    Events *event = [EventsHelper findMostRecentEvent:[NSDate date] withArrayOfEvents:allEvents];
+    [shared setObject:event.title forKey:@"title"];
+    [shared setObject:event.date forKey:@"date"];
+    [shared synchronize];
+}
+
 #pragma mark - Life Cycle
 
 -(void)viewDidAppear:(BOOL)animated{
     
-    allEvents = [EventsHelper findNotCompletedEvents:self.project.events];
-    NSUserDefaults *shared = [[NSUserDefaults alloc] initWithSuiteName:@"group.done.com.yongyang"];
-    [shared setObject:[EventsHelper convertToArray:[Events allObjects]] forKey:@"RealmResult"];
-    [shared synchronize];
+    allEvents = [EventsHelper findTodayNotCompletedEvents:self.project.events];
+    [self.table reloadData];
+    [self syncDataWithExtension];
+    
     [super viewDidAppear:YES];
 }
 
 - (void)viewDidLoad {
     
     self.naviTitle.title = self.project.title;
-    allEvents = [EventsHelper findNotCompletedEvents:self.project.events];
+    allEvents = [EventsHelper findTodayNotCompletedEvents:self.project.events];
     
     [self.table registerNib:[UINib nibWithNibName:@"EventTableViewCell" bundle:nil] forCellReuseIdentifier:@"idEventCell"];
+    
+    UILongPressGestureRecognizer *press = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(gestureAction:)];
+    press.minimumPressDuration = 1.0;
+    [self.view addGestureRecognizer:press];
     [self setUpView];
     
     NSLog(@"current project %@", _project);
@@ -164,8 +180,8 @@
     
     if ([[segue destinationViewController] isKindOfClass:[CreateNewVC class]]) {
         CreateNewVC *vc = [segue destinationViewController];
-        vc.delegate = self;
         vc.sender = @"event";
+        vc.addedToProject = self.project;
     }
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.

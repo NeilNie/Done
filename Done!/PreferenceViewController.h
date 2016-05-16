@@ -16,7 +16,7 @@
 #import "EventsHelper.h"
 #import "AnalysisViewController.h"
 
-@interface PreferenceViewController : UIViewController <UITableViewDataSource, UITabBarDelegate>{
+@interface PreferenceViewController : UIViewController <UITableViewDataSource, UITabBarDelegate, SKProductsRequestDelegate, SKPaymentTransactionObserver>{
     NSMutableArray *array;
 }
 @property (weak, nonatomic) IBOutlet UIImageView *userImage;

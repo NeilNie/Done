@@ -29,25 +29,6 @@
     Projects *current = [projects objectAtIndex:indexPath.row];
     cell.titleLabel.text = current.title;
     cell.dateLabel.text = [formate stringFromDate:current.date];
-    switch (current.color) {
-        case 0:
-            cell.color.backgroundColor = [UIColor blueColor];
-            break;
-        case 1:
-            cell.color.backgroundColor = [UIColor greenColor];
-            break;
-        case 2:
-            cell.color.backgroundColor = [UIColor yellowColor];
-            break;
-        case 3:
-            cell.color.backgroundColor = [UIColor orangeColor];
-            break;
-            
-        default:
-            cell.color.backgroundColor = [UIColor blueColor];
-            break;
-    }
-    [self cropImagetoRound:cell.color];
     
     UILongPressGestureRecognizer *lpgr = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPress:)];
     lpgr.minimumPressDuration = 1.5; //seconds

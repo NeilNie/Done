@@ -7,13 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <StoreKit/StoreKit.h>
 #import <Realm/Realm.h>
 
 #import "Events.h"
 #import "Projects.h"
 #import "EventTableViewCell.h"
 #import "EventsHelper.h"
+#import "CreateNewVC.h"
 
 #import "MSCollectionViewCalendarLayout.h"
 #import "MSGridline.h"
@@ -25,9 +25,7 @@
 #import "MSCurrentTimeIndicator.h"
 #import "MSCurrentTimeGridline.h"
 
-BOOL areAdsRemoved;
-
-@interface TodayViewController : UIViewController <MSCollectionViewDelegateCalendarLayout, SKProductsRequestDelegate, SKPaymentTransactionObserver, UITableViewDelegate, UITableViewDataSource>{
+@interface TodayViewController : UIViewController <MSCollectionViewDelegateCalendarLayout, UITableViewDelegate, UITableViewDataSource>{
     NSMutableArray *allEvents;
     RLMResults *result;
 }

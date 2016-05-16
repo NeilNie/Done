@@ -18,7 +18,7 @@
 
 BOOL phoneModified;
 
-@interface TodoViewController : UIViewController <WCSessionDelegate, UITableViewDelegate, UITableViewDataSource, EventCellDelegate, CreateNewDelegate>{
+@interface TodoViewController : UIViewController <WCSessionDelegate, UITableViewDelegate, UITableViewDataSource, EventCellDelegate>{
     NSMutableArray *allEvents;
     UIRefreshControl *refresh;
 }

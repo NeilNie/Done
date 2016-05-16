@@ -17,7 +17,6 @@
 @interface ProjectCollectionViewCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *color;
 @property (weak, nonatomic) IBOutlet UIImageView *frontFolder;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *frontFolderConstr;
 @property (retain, nonatomic) id <ProjectCellDelegate> delegate;

@@ -40,13 +40,17 @@
  */
 +(void)createRealmWithArray:(NSMutableArray *)array;
 
++(NSMutableArray *)convertToArrayEventObjects:(RLMResults *)results;
+
 +(NSMutableArray *)findEventsForToday:(NSDate *)today withRealm:(RLMResults *)realm;
 
-+(NSMutableArray *)findCompletedEvents:(RLMArray *)realm;
++(NSMutableArray *)findEventsForToday:(NSDate *)today withArrayOfEvents:(NSMutableArray *)realm;
 
-+(NSMutableArray *)findNotCompletedEvents:(RLMArray *)realm;
++(NSMutableArray *)findTodayCompletedEvents:(RLMArray *)realm;
 
-+(NSMutableArray *)findCompletedEvents:(NSMutableArray *)realm withDate:(NSDate *)date;
++(NSMutableArray *)findTodayNotCompletedEvents:(RLMArray *)realm;
+
++(NSMutableArray *)findCompletedEventsWithArrayOfEvents:(NSMutableArray *)realm withDate:(NSDate *)date;
 
 +(Events *)findEarliestEventTodayWithArray:(NSMutableArray *)array;
 
@@ -56,6 +60,10 @@
 
 +(Events *)findEventWithTitle:(NSString *)string withRealm:(RLMArray *)array;
 
-+(Events *)findMostRecentEvent:(NSDate *)date withRealm:(NSMutableArray *)realm;
++(Events *)findMostRecentEvent:(NSDate *)date withArrayOfEvents:(NSMutableArray *)realm;
+
++(Projects *)findProjectWithName:(NSString *)name;
+
++(Events *)findMostRecentEvent:(NSDate *)date withRealm:(RLMArray *)realm;
 
 @end

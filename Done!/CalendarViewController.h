@@ -7,14 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "JTCalendar/JTCalendar.h"
+#import <StoreKit/StoreKit.h>
 #import <Realm/Realm.h>
+#import <SCLAlertView.h>
 
 #import "Events.h"
 #import "EventTableViewCell.h"
 #import "EventsHelper.h"
+#import "JTCalendar/JTCalendar.h"
 
-@interface CalendarViewController : UIViewController <JTCalendarDelegate, UITableViewDataSource, UITableViewDelegate>{
+BOOL areAdsRemoved;
+
+@interface CalendarViewController : UIViewController <JTCalendarDelegate, UITableViewDataSource, UITableViewDelegate, SKProductsRequestDelegate, SKPaymentTransactionObserver>{
 
     NSDate *dateSelected;
     NSMutableDictionary *eventsByDate;

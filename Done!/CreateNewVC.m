@@ -28,22 +28,22 @@
         [[UIApplication sharedApplication] scheduleLocalNotification:notification];
     }
 
-    if ([self.sender isEqualToString:@"event"]) {
-        self.addedEvent = [[Events alloc] init];
-        self.addedEvent.title = title;
-        self.addedEvent.date = date;
-        self.addedEvent.completed = NO;
-        [delegate addNewEventToProject:self.addedEvent];
-        NSLog(@"delegate method called");
+    if ([self.sender isEqualToString:@"project"]){
         
-    }else if ([self.sender isEqualToString:@"project"]){
+        Projects *addedProject = [[Projects alloc] init];
+        addedProject.title = title;
+        addedProject.date = date;
+        [delegate addProject:addedProject];
+    }else{
         
-        self.addedProject = [[Projects alloc] init];
-        self.addedProject.title = title;
-        self.addedProject.date = date;
-        
-        [delegate addProject:self.addedProject];
-        NSLog(@"delegate method called");
+        Events *addedEvent = [[Events alloc] init];
+        addedEvent.title = title;
+        addedEvent.date = date;
+        addedEvent.completed = NO;
+        RLMRealm *realm = [RLMRealm defaultRealm];
+        [realm beginWriteTransaction];
+        [self.addedToProject.events addObject:addedEvent];
+        [realm commitWriteTransaction];
     }
     
     if(WCSession.isSupported){
@@ -56,6 +56,7 @@
     }
     
     [self.navigationController popViewControllerAnimated:YES];
+    
 }
 - (IBAction)cancel:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
@@ -77,13 +78,53 @@
 -(void)loadCellDiscriptors{
     
     NSString *path;
-    if ([self.sender isEqualToString:@"event"]) {
-        path = [[NSBundle mainBundle] pathForResource:@"CellDescriptor" ofType:@"plist"];
-    }else if ([self.sender isEqualToString:@"project"]){
+    if ([self.sender isEqualToString:@"project"]){
         path = [[NSBundle mainBundle] pathForResource:@"CellDescriptor2" ofType:@"plist"];
+    }else{
+        path = [[NSBundle mainBundle] pathForResource:@"CellDescriptor" ofType:@"plist"];
     }
     
     cellDescriptors = [NSMutableArray arrayWithContentsOfFile:path];
+    
+    if (![self.sender isEqualToString:@"project"]) {
+        NSMutableArray *array2 = [cellDescriptors objectAtIndex:0];
+        RLMResults *result = [Projects allObjects];
+        
+        NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
+        [dict setObject:[NSNumber numberWithInteger:result.count] forKey:@"additionalRows"];
+        [dict setObject:@"idCellNormal" forKey:@"cellIdentifier"];
+        [dict setObject:@1 forKey:@"isExpandable"];
+        [dict setObject:@0 forKey:@"isExpanded"];
+        [dict setObject:@1 forKey:@"isVisible"];
+        if (self.addedToProject) {
+            [dict setObject:self.addedToProject.title forKey:@"primaryTitle"];
+        }else{
+            [dict setObject:@"" forKey:@"primaryTitle"];
+        }
+        
+        [dict setObject:@"Add this this project" forKey:@"secondaryTitle"];
+        [dict setObject:@"" forKey:@"value"];
+        
+        [array2 addObject:dict];
+        for (int i = 0; i < result.count; i++) {
+            Projects *cPro = [result objectAtIndex:i];
+            
+            NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
+            [dic setObject:@0 forKey:@"additionalRows"];
+            [dic setObject:@"idCellValuePicker" forKey:@"cellIdentifier"];
+            [dic setObject:@0 forKey:@"isExpandable"];
+            [dic setObject:@0 forKey:@"isExpanded"];
+            [dic setObject:@0 forKey:@"isVisible"];
+            [dic setObject:cPro.title forKey:@"primaryTitle"];
+            [dic setObject:@"" forKey:@"secondaryTitle"];
+            [dic setObject:@"" forKey:@"value"];
+            
+            [array2 addObject:dic];
+        }
+        [cellDescriptors removeAllObjects];
+        [cellDescriptors addObject:array2];
+    }
+    
     [self getIndicesOfVisible];
     [self.table reloadData];
 }
@@ -144,22 +185,24 @@
     else {
         NSString *string = [[[cellDescriptors objectAtIndex:indexPath.section] objectAtIndex:indexOfTappedRow.integerValue] objectForKey:@"cellIdentifier"];
         if ([string isEqualToString:@"idCellValuePicker"]) {
+            int indexOfParentCell;
             
-            int indexOfParentCell = 0;
-            
-            for (int i = indexOfTappedRow.intValue - 1; i >= 0; i -= 1) {
-                if ((bool)cellDescriptors[indexPath.section][i][@"isExpandable"] == true) {
+            for (int i = indexOfTappedRow.intValue - 1; i >= 0; i --) {
+                NSNumber *x = [[[cellDescriptors objectAtIndex:0] objectAtIndex:i] objectForKey:@"isExpandable"];
+                if (x.intValue == 1) {
                     indexOfParentCell = i;
                     break;
                 }
             }
             CustomCell *cell = (CustomCell *)[self tableView:self.table cellForRowAtIndexPath:indexPath];
-            [cellDescriptors[indexPath.section][indexOfParentCell] setValue:cell.textLabel.text forKey:@"primaryTitle"];
-            [cellDescriptors[indexPath.section][indexOfParentCell] setValue:[NSNumber numberWithBool:NO] forKey:@"isExpanded"];
+            [cellDescriptors[indexPath.section][indexOfParentCell] setValue:cell.valuePickerText.text forKey:@"primaryTitle"];
+            [cellDescriptors[indexPath.section][indexOfParentCell] setValue:@0 forKey:@"isExpanded"];
             
-
-            for (int i = 0; i > indexOfParentCell + 1 && i < indexOfParentCell + (int)cellDescriptors[indexPath.section][indexOfParentCell][@"additionalRows"]; i++) {
-                [cellDescriptors[indexPath.section][i] setValue:[NSNumber numberWithBool:NO] forKey:@"isVisible"];
+            if (self.addedToProject == nil) {
+                self.addedToProject = [EventsHelper findProjectWithName:cell.valuePickerText.text];
+            }
+            for (int i = 0; i > indexOfParentCell + 1 && i < [[[[cellDescriptors objectAtIndex:indexPath.section] objectAtIndex:indexOfParentCell] objectForKey:@"additionalRows"] intValue]; i++) {
+                [cellDescriptors[indexPath.section][i] setValue:@0 forKey:@"isVisible"];
             }
         }
     }
@@ -189,7 +232,6 @@
     }else{
         return 53;
     }
-    
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -221,7 +263,7 @@
         cell.Switch.on = ([value isEqualToString:@"true"]) ? YES : NO;
     }
     else if ([currentDescriptor[@"cellIdentifier"] isEqualToString:@"idCellValuePicker"]) {
-        cell.textLabel.text = currentDescriptor[@"primaryTitle"];
+        cell.valuePickerText.text = currentDescriptor[@"primaryTitle"];
     }
     cell.rippleColor = [UIColor colorWithRed:10.0f/255.0f green:96.0f/255.0f blue:254.0f/255.0f alpha:1.0f];
     cell.delegate = self;

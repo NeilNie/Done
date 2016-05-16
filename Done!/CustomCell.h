@@ -23,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *SwitchLabel;
 @property (weak, nonatomic) IBOutlet MDButton *button;
 @property (nonatomic, assign) id delegate;
+@property (weak, nonatomic) IBOutlet UILabel *valuePickerText;
 
 @end
 

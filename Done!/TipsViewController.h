@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <EAIntroView.h>
 
-@interface TipsViewController : UIViewController
+BOOL intro;
+
+@interface TipsViewController : UIViewController <EAIntroDelegate>
+
+@property (weak, nonatomic) IBOutlet EAIntroView *introView;
 
 @end

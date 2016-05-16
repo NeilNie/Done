@@ -113,23 +113,20 @@
 
 }
 
--(void)gestureAction:(UISwipeGestureRecognizer *)swipe{
+-(void)initShowAlert{
     
-    if (swipe.direction == UISwipeGestureRecognizerDirectionLeft && self.graphConst > 0){
-        
-        [UIView animateWithDuration:1 animations:^{
-            self.graphConst.constant = 0;
-            [self.view layoutIfNeeded];
-        }];
-    }else if (swipe.direction == UISwipeGestureRecognizerDirectionLeft && self.graphConst == 0){
-        
-        [UIView animateWithDuration:1 animations:^{
-            self.graphConst.constant = [[UIScreen mainScreen] bounds].size.width;
-            [self.view layoutIfNeeded];
-        }];
-        [self.barGraph draw];
-    }
+    SCLAlertView *alert = [[SCLAlertView alloc] init];
+    alert.backgroundType = Blur;
+    alert.showAnimationType = FadeIn;
+    [alert addButton:@"Purchase Pro" actionBlock:^(void) {
+        //[self performSegueWithIdentifier:@"idShowPurchase" sender:nil];
+    }];
+    [alert addButton:@"Learn More" actionBlock:^(void) {
+        [self performSegueWithIdentifier:@"idShowPurchase" sender:nil];
+    }];
+    [alert showNotice:self title:@"Notice" subTitle:@"Calendar is a pro feature. You have to purchase it in order to enjoy the pro features." closeButtonTitle:nil duration:0.0f];
 }
+
 
 #pragma mark - Life Cycle
 
@@ -144,6 +141,12 @@
     [self.lineGraph draw];
     [self.barGraph draw];
     [super viewDidAppear:YES];
+    
+    areAdsRemoved = [[NSUserDefaults standardUserDefaults] boolForKey:@"areAdsRemoved"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    if (areAdsRemoved == NO) {
+        [self initShowAlert];
+    }
 }
 
 - (void)viewDidLoad {
@@ -162,11 +165,6 @@
     [self setUpLineGraph];
     self.barGraph.dataSource = self;
     [self.barGraph draw];
-    
-    UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(gestureAction:)];
-    swipe.direction = UISwipeGestureRecognizerDirectionLeft;
-    [self.view addGestureRecognizer:swipe];
-    
     [self.lineGraph reset];
     [self.lineGraph draw];
     

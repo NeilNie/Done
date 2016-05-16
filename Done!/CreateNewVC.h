@@ -33,8 +33,7 @@
     BOOL reminder;
 }
 @property (strong, nonatomic) NSString *sender;
-@property (strong, nonatomic) Projects *addedProject;
-@property (strong, nonatomic) Events *addedEvent;
+@property (strong, nonatomic) Projects *addedToProject;
 @property (nonatomic, assign) id <CreateNewDelegate> delegate;
 @property (weak, nonatomic) IBOutlet UITableView *table;
 

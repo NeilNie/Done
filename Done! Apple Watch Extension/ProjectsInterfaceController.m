@@ -128,7 +128,6 @@
     
     dispatch_async(dispatch_get_main_queue(), ^{
         result = [Projects allObjects];
-        //NSLog(@"%@ %@", [Projects allObjects], [RLMRealm defaultRealm].configuration.fileURL);
         [self setupTable];
     });
     

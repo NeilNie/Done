@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F31a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="M4Y-Lb-cyx">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Today View Controller-->
+        <scene sceneID="cwh-vc-ff4">
+            <objects>
+                <viewController id="M4Y-Lb-cyx" customClass="TodayViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ft6-oW-KC0"/>
+                        <viewControllerLayoutGuide type="bottom" id="FKl-LY-JtV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upcoming:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8pt-HR-y2x">
+                                <rect key="frame" x="16" y="8" width="83" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Book hotel for WWDC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VvJ-J5-3Un">
+                                <rect key="frame" x="16" y="39" width="230" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Due 11:30 05/23" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fg3-kG-xfx">
+                                <rect key="frame" x="16" y="68" width="230" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Summary:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6eL-52-9Cm">
+                                <rect key="frame" x="16" y="109" width="77" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="done-icon copy.png" translatesAutoresizingMaskIntoConstraints="NO" id="a1s-Jd-Pfg">
+                                <rect key="frame" x="254" y="25" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="ByI-0S-b10"/>
+                                    <constraint firstAttribute="height" constant="50" id="XzE-jB-gFS"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="There are 5 events in your day, you have completed 3 of them. " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4tj-Ug-HtB">
+                                <rect key="frame" x="16" y="138" width="288" height="43"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="6eL-52-9Cm" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" id="6zg-LJ-zWc"/>
+                            <constraint firstItem="6eL-52-9Cm" firstAttribute="top" secondItem="fg3-kG-xfx" secondAttribute="bottom" constant="20" id="9KU-uT-Dmt"/>
+                            <constraint firstItem="4tj-Ug-HtB" firstAttribute="trailing" secondItem="S3S-Oj-5AN" secondAttribute="trailingMargin" id="Bxn-Eo-hHP"/>
+                            <constraint firstItem="a1s-Jd-Pfg" firstAttribute="leading" secondItem="VvJ-J5-3Un" secondAttribute="trailing" constant="8" id="DP8-Om-McC"/>
+                            <constraint firstItem="fg3-kG-xfx" firstAttribute="top" secondItem="VvJ-J5-3Un" secondAttribute="bottom" constant="8" id="GOR-ta-KzB"/>
+                            <constraint firstItem="fg3-kG-xfx" firstAttribute="top" secondItem="VvJ-J5-3Un" secondAttribute="bottom" constant="8" id="LYr-Fc-P4B"/>
+                            <constraint firstItem="8pt-HR-y2x" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" id="MTz-Oi-rS6"/>
+                            <constraint firstItem="fg3-kG-xfx" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" id="QXG-10-zFx"/>
+                            <constraint firstItem="4tj-Ug-HtB" firstAttribute="top" secondItem="6eL-52-9Cm" secondAttribute="bottom" constant="8" id="cxy-xN-AE8"/>
+                            <constraint firstItem="a1s-Jd-Pfg" firstAttribute="leading" secondItem="fg3-kG-xfx" secondAttribute="trailing" constant="8" id="eiN-fT-bTm"/>
+                            <constraint firstItem="VvJ-J5-3Un" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" id="g7G-RF-emf"/>
+                            <constraint firstItem="VvJ-J5-3Un" firstAttribute="top" secondItem="8pt-HR-y2x" secondAttribute="bottom" constant="10" id="nz4-Eg-xUh"/>
+                            <constraint firstItem="a1s-Jd-Pfg" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" constant="25" id="qOG-xO-CAi"/>
+                            <constraint firstItem="4tj-Ug-HtB" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" id="sYz-jv-dDJ"/>
+                            <constraint firstItem="8pt-HR-y2x" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" constant="8" id="wrl-S4-Xtf"/>
+                            <constraint firstItem="a1s-Jd-Pfg" firstAttribute="trailing" secondItem="S3S-Oj-5AN" secondAttribute="trailingMargin" id="yEl-2h-JB5"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="200"/>
+                    <connections>
+                        <outlet property="todaySummary" destination="4tj-Ug-HtB" id="P1y-dR-FPZ"/>
+                        <outlet property="upComingDate" destination="fg3-kG-xfx" id="Oyv-6l-nHW"/>
+                        <outlet property="upComingTitle" destination="VvJ-J5-3Un" id="Ntj-Mu-uLR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="516" y="285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="done-icon copy.png" width="152" height="152"/>
+    </resources>
+</document>

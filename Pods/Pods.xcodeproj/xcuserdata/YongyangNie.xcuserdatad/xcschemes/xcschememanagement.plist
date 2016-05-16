@@ -3,76 +3,45 @@
 <plist version="1.0">
 <dict>
 	<key>SchemeUserState</key>
-	<dict>
-		<key>EAIntroView.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>EARestrictedScrollView.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>FrameAccessor.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>JTCalendar.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>JazzHands.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>MKFoundationKit.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>MaterialControls-MaterialControls.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>MaterialControls.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>RKDropdownAlert.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Realm.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>SCLAlertView-Objective-C.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-	</dict>
+	<dict/>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>03463FE48012D015AEB65655FAB5A2AF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0443296581402605E3D61174B12FB64F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>0F7B1940DE10624DFABB6A65D0BE9B4A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1BBCAC0FC88ACD82130816609DC540BB</key>
+		<key>32D57276E9DD8AA311C5163B459683B0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>37C24A916207106BBF1F28672CBB0054</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3D5119C7B317222BA8E7A3A1957C3C7E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>416F61062A72BE1B899FBE2FCA51DE28</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>44B3628C5B7BFFD764480CF937854799</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -87,22 +56,32 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>72B6ABDBF0AB1360BE2C50A6C23C55BC</key>
+		<key>53480ED0BE09FF49E34B1702D485CAAB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>74B211A3EA56A11E5CEBC3D605F551F3</key>
+		<key>674F7F468243737510A2E4F535196107</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8AEC34FD18098B9FF511DEAC4A4EE86B</key>
+		<key>845094611A9F348FC3424D0732624855</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C1F47E282CC30E59A763E8A6D132505F</key>
+		<key>8CC49EFAE1EFF7CF9206284F35984491</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AF4231E8DC3F56064E54473DD71F2F9D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B554EA4810D385686EC2F75B69607367</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -117,12 +96,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EB3DFCECACF144E81B50CEC87B0F2524</key>
+		<key>D41DB93528E37AFE19592B109D812964</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FDAEBA19E6302AC60546440D4B48F752</key>
+		<key>DF4B0923AD0EC536D7E9C9BA732169CC</key>
 		<dict>
 			<key>primary</key>
 			<true/>

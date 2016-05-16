@@ -9,11 +9,13 @@
 #import <UIKit/UIKit.h>
 #import <Realm/Realm.h>
 #import <MKFoundationKit/MKFoundationKit.h>
+#import <SCLAlertView.h>
 
 #import "Projects.h"
 #import "EventsHelper.h"
 #import "Events.h"
 #import "GraphKit.h"
+#import "CalendarViewController.h"
 
 @interface AnalysisViewController : UIViewController <GKLineGraphDataSource, GKBarGraphDataSource>
 

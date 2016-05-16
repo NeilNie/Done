@@ -18,114 +18,6 @@ NSString * const MSEventCellReuseIdentifier = @"MSEventCellReuseIdentifier";
 NSString * const MSDayColumnHeaderReuseIdentifier = @"MSDayColumnHeaderReuseIdentifier";
 NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifier";
 
-#define kRemoveAdsProductIdentifier @"noads.toolbox"
-
-#pragma mark - SkProduct / Payment delegates
-
-- (IBAction)tapsRemoveAdsButton{
-    NSLog(@"User requests to remove ads");
-    
-    if([SKPaymentQueue canMakePayments]){
-        NSLog(@"User can make payments");
-        
-        SKProductsRequest *productsRequest = [[SKProductsRequest alloc] initWithProductIdentifiers:[NSSet setWithObject:kRemoveAdsProductIdentifier]];
-        productsRequest.delegate = self;
-        [productsRequest start];
-        
-    }
-    else{
-        NSLog(@"User cannot make payments due to parental controls");
-        //this is called the user cannot make payments, most likely due to parental controls
-    }
-}
-
-- (void)productsRequest:(SKProductsRequest *)request didReceiveResponse:(SKProductsResponse *)response{
-    SKProduct *validProduct = nil;
-    if([response.products count] > 0){
-        validProduct = [response.products objectAtIndex:0];
-        NSLog(@"Products Available!");
-        [self purchase:validProduct];
-    }
-    else if(!validProduct){
-        NSLog(@"No products available");
-        //this is called if your product id is not valid, this shouldn't be called unless that happens.
-    }
-}
-
-- (IBAction)purchase:(SKProduct *)product{
-    
-    SKPayment *payment = [SKPayment paymentWithProduct:product];
-    [[SKPaymentQueue defaultQueue] addTransactionObserver:self];
-    [[SKPaymentQueue defaultQueue] addPayment:payment];
-}
-
-- (IBAction)restore{
-    
-    //this is called when the user restores purchases, you should hook this up to a button
-    [[SKPaymentQueue defaultQueue] restoreCompletedTransactions];
-    areAdsRemoved = NO;
-    [[NSUserDefaults standardUserDefaults] setBool:areAdsRemoved forKey:@"areAdsRemoved"];
-    //use NSUserDefaults so that you can load wether or not they bought it
-    [[NSUserDefaults standardUserDefaults] synchronize];
-}
-
-- (void) paymentQueueRestoreCompletedTransactionsFinished:(SKPaymentQueue *)queue
-{
-    NSLog(@"received restored transactions: %lu", (unsigned long)queue.transactions.count);
-    for (SKPaymentTransaction *transaction in queue.transactions)
-    {
-        if((SKPaymentTransactionState)transaction == SKPaymentTransactionStateRestored){
-            NSLog(@"Transaction state -> Restored");
-            //called when the user successfully restores a purchase
-            [self doRemoveAds];
-            [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
-            break;
-        }
-        
-    }
-}
-
-- (void)paymentQueue:(SKPaymentQueue *)queue updatedTransactions:(NSArray *)transactions{
-    
-    for(SKPaymentTransaction *transaction in transactions){
-        switch (transaction.transactionState){
-            case SKPaymentTransactionStatePurchasing: NSLog(@"Transaction state -> Purchasing");
-                //called when the user is in the process of purchasing, do not add any of your own code here.
-                break;
-            case SKPaymentTransactionStatePurchased:
-                //this is called when the user has successfully purchased the package (Cha-Ching!)
-                [self doRemoveAds]; //you can add your code for what you want to happen when the user buys the purchase here, for this tutorial we use removing ads
-                [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
-                NSLog(@"Transaction state -> Purchased NoAds");
-                break;
-            case SKPaymentTransactionStateRestored:
-                NSLog(@"Transaction state -> Restored NoAds");
-                //add the same code as you did from SKPaymentTransactionStatePurchased here
-                [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
-                break;
-            case SKPaymentTransactionStateFailed:
-                //called when the transaction does not finnish
-                if(transaction.error.code != SKErrorPaymentCancelled){
-                    NSLog(@"Transaction state -> Cancelled");
-                    //the user cancelled the payment ;(
-                }
-                [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
-                break;
-            case SKPaymentTransactionStateDeferred:
-                break;
-        }
-    }
-}
-
-- (void)doRemoveAds{
-    
-    areAdsRemoved = YES;
-    [[NSUserDefaults standardUserDefaults] setBool:areAdsRemoved forKey:@"areAdsRemoved"];
-    //use NSUserDefaults so that you can load wether or not they bought it
-    [[NSUserDefaults standardUserDefaults] synchronize];
-    
-}
-
 #pragma mark - UITableView Delegate
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -223,6 +115,10 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
 
 #pragma mark - Privates
 
+-(IBAction)addNewEvent:(id)sender{
+    [self performSegueWithIdentifier:@"addNewEvent" sender:nil];
+}
+
 -(void)gestureAction:(UISwipeGestureRecognizer *)swipe{
     
     if (swipe.direction == UISwipeGestureRecognizerDirectionRight) {
@@ -240,6 +136,20 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
 
 -(void)longPressGesture:(UILongPressGestureRecognizer *)press{
     
+    NSLog(@"pressed");
+    [UIView animateWithDuration:0.11 animations:^{
+        const CGFloat scale = 0.97;
+        [self.view setTransform:CGAffineTransformMakeScale(scale, scale)];
+        NSLog(@"animated");
+    } completion:^(BOOL finished) {
+        [UIView animateWithDuration:0.11 animations:^{
+            const CGFloat scale = 1;
+            [self.view setTransform:CGAffineTransformMakeScale(scale, scale)];
+        }];
+    }];
+//    UIStoryboard *MainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//    UIViewController *addEventVC = [MainStoryBoard instantiateViewControllerWithIdentifier:@"createNew"];
+//    [self presentViewController:addEventVC animated:YES completion:nil];
 }
 
 - (NSDateFormatter *)dateFormatter
@@ -283,10 +193,6 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     
     UISwipeGestureRecognizer *right = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(gestureAction:)];
     right.direction = UISwipeGestureRecognizerDirectionRight;
-    
-    UILongPressGestureRecognizer *press = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressGesture:)];
-    press.minimumPressDuration = 1;
-    [self.collectionView addGestureRecognizer:press];
     [self.collectionView addGestureRecognizer:right];
 }
 
@@ -298,7 +204,7 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     allEvents = [EventsHelper findEventsForToday:[NSDate date] withRealm:result];
     Events *event = [EventsHelper findEarliestEventTodayWithArray:allEvents];
     self.label1.text = [NSString stringWithFormat:@"The first event of your day is %@ at %@", event.title, [[self dateFormatter] stringFromDate:event.date]];
-    self.label2.text = [NSString stringWithFormat:@"There are %lu events today and you have completed %lu of them.", (unsigned long)allEvents.count, (unsigned long)[EventsHelper findCompletedEvents:allEvents withDate:[NSDate date]].count];
+    self.label2.text = [NSString stringWithFormat:@"There are %lu events today and you have completed %lu of them.", (unsigned long)allEvents.count, (unsigned long)[EventsHelper findCompletedEventsWithArrayOfEvents:allEvents withDate:[NSDate date]].count];
     
     [self.collectionView reloadData];
     [self.collectionViewCalendarLayout scrollCollectionViewToClosetSectionToCurrentTimeAnimated:NO];
@@ -308,8 +214,6 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
 
 - (void)viewDidLoad {
     
-    areAdsRemoved = [[NSUserDefaults standardUserDefaults] boolForKey:@"areAdsRemoved"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
     result = [Events allObjects];
     allEvents = [EventsHelper findEventsForToday:[NSDate date] withRealm:result];
     
@@ -329,7 +233,12 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
+    if ([[segue destinationViewController] isKindOfClass:[CreateNewVC class]]) {
+        CreateNewVC *vc = [segue destinationViewController];
+        vc.sender = @"event";
+    }
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
 }
-
 
 @end

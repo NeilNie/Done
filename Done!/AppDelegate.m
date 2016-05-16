@@ -10,6 +10,7 @@
 #import <Realm/Realm.h>
 #import "EventsHelper.h"
 #import "Events.h"
+#import "TipsViewController.h"
 
 @interface AppDelegate ()
 
@@ -49,6 +50,17 @@
     UIUserNotificationSettings *mySettings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
     [[UIApplication sharedApplication] registerUserNotificationSettings:mySettings];
 
+    intro = [[NSUserDefaults standardUserDefaults] objectForKey:@"intro"];
+    if (intro == NO) {
+        NSLog(@"display");
+        self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
+        UIStoryboard *MainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        UIViewController *StartView = [MainStoryBoard instantiateViewControllerWithIdentifier:@"TipView"];
+        self.window.rootViewController = StartView;
+        [self.window makeKeyAndVisible];
+        intro = YES;
+        [[NSUserDefaults standardUserDefaults] setBool:intro forKey:@"intro"];
+    }
     // Override point for customization after application launch.
     return YES;
 }
