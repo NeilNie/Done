@@ -130,6 +130,17 @@
     UISwipeGestureRecognizer *gesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(addNewEvent:)];
     gesture.direction = UISwipeGestureRecognizerDirectionLeft;
     [self.collectionView addGestureRecognizer:gesture];
+    
+    areAdsRemoved = [[NSUserDefaults standardUserDefaults] boolForKey:@"areAdsRemoved2"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    if (!areAdsRemoved) {
+        self.banner.adUnitID = @"ca-app-pub-7942613644553368/9252365932";
+        self.banner.rootViewController = self;
+        [self.banner loadRequest:[GADRequest request]];
+    }else{
+        self.banner.hidden = YES;
+    }
+
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }

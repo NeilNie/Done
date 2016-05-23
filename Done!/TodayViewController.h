@@ -14,6 +14,7 @@
 #import "EventTableViewCell.h"
 #import "EventsHelper.h"
 #import "CreateNewVC.h"
+#import "PurchaseViewController.h"
 
 #import "MSCollectionViewCalendarLayout.h"
 #import "MSGridline.h"
@@ -24,6 +25,8 @@
 #import "MSTimeRowHeader.h"
 #import "MSCurrentTimeIndicator.h"
 #import "MSCurrentTimeGridline.h"
+
+@import GoogleMobileAds;
 
 @interface TodayViewController : UIViewController <MSCollectionViewDelegateCalendarLayout, UITableViewDelegate, UITableViewDataSource>{
     NSMutableArray *allEvents;
@@ -36,5 +39,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *table;
 @property (weak, nonatomic) IBOutlet UILabel *label1;
 @property (weak, nonatomic) IBOutlet UILabel *label2;
+@property (weak, nonatomic) IBOutlet GADBannerView *banner;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *arrCont;
 
 @end

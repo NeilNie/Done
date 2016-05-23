@@ -154,21 +154,7 @@
     }
     return array;
 }
-
-+(NSMutableArray *)findTodayNotCompletedEvents:(RLMArray *)realm{
-    
-    NSMutableArray *array = [[NSMutableArray alloc] init];
-    
-    for (int i = 0; i < realm.count; i ++) {
-        
-        Events *event = [realm objectAtIndex:i];
-        if (event.completed == NO) {
-            [array addObject:event];
-        }
-    }
-    return array;
-}
-
+ 
 +(NSMutableArray *)findTodayCompletedEvents:(RLMArray *)realm{
     
     NSMutableArray *array = [[NSMutableArray alloc] init];
@@ -182,6 +168,22 @@
     }
     return array;
 }
+
++(NSMutableArray *)findTodayNotCompletedEvents:(RLMResults *)realm{
+    
+    NSMutableArray *array = [[NSMutableArray alloc] init];
+    NSMutableArray *objects = [self findEventsForToday:[NSDate date] withRealm:realm];
+    
+    for (int i = 0; i < objects.count; i ++) {
+        
+        Events *event = [objects objectAtIndex:i];
+        if (event.completed == NO) {
+            [array addObject:event];
+        }
+    }
+    return array;
+}
+
 +(NSMutableArray *)findCompletedEventsWithArrayOfEvents:(NSMutableArray *)realm withDate:(NSDate *)date{
     
     NSMutableArray *array = [[NSMutableArray alloc] init];
@@ -242,6 +244,19 @@
     return event;
 }
 
++(Events *)findEventWithTitle:(NSString *)string withAllRealm:(RLMResults *)array{
+    
+    Events *event = [[Events alloc] init];
+    for (int i = 0; i < array.count; i++) {
+        
+        Events *e = [array objectAtIndex:i];
+        if ([e.title isEqualToString:string]) {
+            return e;
+        }
+    }
+    return event;
+}
+
 +(Events *)findMostRecentEvent:(NSDate *)date withArrayOfEvents:(NSMutableArray *)realm{
     
     NSDateFormatter *formate = [[NSDateFormatter alloc] init];
@@ -266,6 +281,20 @@
         
     }
     return returnEvent;
+}
+
++(NSMutableArray *)findNotCompletedEvents:(RLMArray *)realm{
+    
+    NSMutableArray *array = [[NSMutableArray alloc] init];
+    
+    for (int i = 0; i < realm.count; i ++) {
+        
+        Events *event = [realm objectAtIndex:i];
+        if (event.completed == NO) {
+            [array addObject:event];
+        }
+    }
+    return array;
 }
 
 +(Events *)findMostRecentEvent:(NSDate *)date withRealm:(RLMArray *)realm{

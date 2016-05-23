@@ -5,7 +5,6 @@
 	<key>com.apple.security.application-groups</key>
 	<array>
 		<string>group.done.com.yongyang</string>
-		<string>group.done.com.watch</string>
 	</array>
 </dict>
 </plist>

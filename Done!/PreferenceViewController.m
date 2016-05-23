@@ -59,8 +59,8 @@
     
     //this is called when the user restores purchases, you should hook this up to a button
     [[SKPaymentQueue defaultQueue] restoreCompletedTransactions];
-    areAdsRemoved = NO;
-    [[NSUserDefaults standardUserDefaults] setBool:areAdsRemoved forKey:@"areAdsRemoved"];
+    areAdsRemoved2 = NO;
+    [[NSUserDefaults standardUserDefaults] setBool:areAdsRemoved2 forKey:@"areAdsRemoved2"];
     //use NSUserDefaults so that you can load wether or not they bought it
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
@@ -115,8 +115,8 @@
 
 - (void)doRemoveAds{
     
-    areAdsRemoved = YES;
-    [[NSUserDefaults standardUserDefaults] setBool:areAdsRemoved forKey:@"areAdsRemoved"];
+    areAdsRemoved2 = YES;
+    [[NSUserDefaults standardUserDefaults] setBool:areAdsRemoved2 forKey:@"areAdsRemoved2"];
     //use NSUserDefaults so that you can load wether or not they bought it
     [[NSUserDefaults standardUserDefaults] synchronize];
     
@@ -170,6 +170,16 @@
     [super viewDidLoad];
     
     array = [[NSMutableArray alloc] initWithObjects:@"Productivity", @"Tips", @"Restore Purchases", @"Info", @"Purchase no ads", nil];
+    
+    areAdsRemoved = [[NSUserDefaults standardUserDefaults] boolForKey:@"areAdsRemoved2"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    if (!areAdsRemoved) {
+        self.banner.adUnitID = @"ca-app-pub-7942613644553368/9252365932";
+        self.banner.rootViewController = self;
+        [self.banner loadRequest:[GADRequest request]];
+    }else{
+        self.banner.hidden = YES;
+    }
     // Do any additional setup after loading the view.
 }
 

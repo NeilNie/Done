@@ -16,6 +16,10 @@
 #import "EventsHelper.h"
 #import "AnalysisViewController.h"
 
+BOOL areAdsRemoved2;
+
+@import GoogleMobileAds;
+
 @interface PreferenceViewController : UIViewController <UITableViewDataSource, UITabBarDelegate, SKProductsRequestDelegate, SKPaymentTransactionObserver>{
     NSMutableArray *array;
 }
@@ -23,5 +27,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *userName;
 @property (weak, nonatomic) IBOutlet UILabel *userEmail;
 @property (weak, nonatomic) IBOutlet UITableView *table;
+@property (weak, nonatomic) IBOutlet GADBannerView *banner;
 
 @end

@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import <WatchConnectivity/WatchConnectivity.h>
+#import <Google/Analytics.h>
+
+@import Firebase;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate, WCSessionDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
 
 @end
 

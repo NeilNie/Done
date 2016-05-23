@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15F28b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15F31a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -25,7 +25,7 @@
                             <!--2015-10-24 10:01:54 +0000-->
                         </date>
                     </datePicker>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GpK-nR-HWc" customClass="MDButton">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GpK-nR-HWc" customClass="MDButton">
                         <rect key="frame" x="110" y="231" width="100" height="32"/>
                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
                         <state key="normal" title="Set Date">
@@ -49,6 +49,7 @@
                 <constraints>
                     <constraint firstAttribute="trailingMargin" secondItem="Dc8-rj-YK5" secondAttribute="trailing" constant="-8" id="0E6-3I-Iul"/>
                     <constraint firstItem="Dc8-rj-YK5" firstAttribute="leading" secondItem="NuO-v5-3qf" secondAttribute="leadingMargin" constant="-8" id="YCc-Gh-kxg"/>
+                    <constraint firstItem="GpK-nR-HWc" firstAttribute="centerX" secondItem="NuO-v5-3qf" secondAttribute="centerX" id="gNN-nm-9Wl"/>
                     <constraint firstItem="Dc8-rj-YK5" firstAttribute="top" secondItem="NuO-v5-3qf" secondAttribute="topMargin" id="hWk-2p-56g"/>
                     <constraint firstItem="Dc8-rj-YK5" firstAttribute="centerX" secondItem="NuO-v5-3qf" secondAttribute="centerX" id="ioI-TO-RE9"/>
                 </constraints>

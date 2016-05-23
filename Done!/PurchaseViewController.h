@@ -10,6 +10,8 @@
 #import <StoreKit/StoreKit.h>
 #import "CalendarViewController.h"
 
+@import FirebaseAnalytics;
+
 @interface PurchaseViewController : UIViewController <SKProductsRequestDelegate, SKPaymentTransactionObserver>
 
 @property (weak, nonatomic) IBOutlet UIImageView *image;

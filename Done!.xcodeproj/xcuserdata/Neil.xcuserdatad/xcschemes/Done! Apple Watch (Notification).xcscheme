@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "28BDF7DE1CC9093100E3F63C"
+               BlueprintIdentifier = "008315401CDE8FDB003E706D"
                BuildableName = "Done! Apple Watch.app"
                BlueprintName = "Done! Apple Watch"
                ReferencedContainer = "container:Done!.xcodeproj">
@@ -42,7 +42,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "28BDF7EA1CC9093200E3F63C"
+               BlueprintIdentifier = "0083154C1CDE8FDB003E706D"
                BuildableName = "Done! Apple Watch Extension.appex"
                BlueprintName = "Done! Apple Watch Extension"
                ReferencedContainer = "container:Done!.xcodeproj">
@@ -56,11 +56,21 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "28FB39501CEE1DF600D4879A"
+               BuildableName = "DoneTests.xctest"
+               BlueprintName = "DoneTests"
+               ReferencedContainer = "container:Done!.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "28BDF7DE1CC9093100E3F63C"
+            BlueprintIdentifier = "008315401CDE8FDB003E706D"
             BuildableName = "Done! Apple Watch.app"
             BlueprintName = "Done! Apple Watch"
             ReferencedContainer = "container:Done!.xcodeproj">
@@ -87,7 +97,7 @@
          RemotePath = "/Done!">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "28BDF7DE1CC9093100E3F63C"
+            BlueprintIdentifier = "008315401CDE8FDB003E706D"
             BuildableName = "Done! Apple Watch.app"
             BlueprintName = "Done! Apple Watch"
             ReferencedContainer = "container:Done!.xcodeproj">
@@ -96,7 +106,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "28BDF7DE1CC9093100E3F63C"
+            BlueprintIdentifier = "008315401CDE8FDB003E706D"
             BuildableName = "Done! Apple Watch.app"
             BlueprintName = "Done! Apple Watch"
             ReferencedContainer = "container:Done!.xcodeproj">
@@ -119,7 +129,7 @@
          RemotePath = "/Done!">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "28BDF7DE1CC9093100E3F63C"
+            BlueprintIdentifier = "008315401CDE8FDB003E706D"
             BuildableName = "Done! Apple Watch.app"
             BlueprintName = "Done! Apple Watch"
             ReferencedContainer = "container:Done!.xcodeproj">
@@ -128,7 +138,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "28BDF7DE1CC9093100E3F63C"
+            BlueprintIdentifier = "008315401CDE8FDB003E706D"
             BuildableName = "Done! Apple Watch.app"
             BlueprintName = "Done! Apple Watch"
             ReferencedContainer = "container:Done!.xcodeproj">

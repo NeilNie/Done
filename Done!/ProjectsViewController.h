@@ -16,8 +16,11 @@
 #import "ProjectCollectionViewCell.h"
 #import "QBPopupMenu.h"
 #import "EAIntroView.h"
+#import "PurchaseViewController.h"
 
 NSInteger gestureIndex;
+
+@import GoogleMobileAds;
 
 @interface ProjectsViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource, CreateNewDelegate, UIGestureRecognizerDelegate, EAIntroDelegate>{
     RLMResults *projects;
@@ -25,5 +28,6 @@ NSInteger gestureIndex;
 }
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (weak, nonatomic) IBOutlet GADBannerView *banner;
 
 @end

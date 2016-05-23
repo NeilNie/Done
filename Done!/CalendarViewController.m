@@ -339,6 +339,13 @@
         [self initShowAlert];
     }
     [_calendarManager reload];
+    
+    NSMutableArray *array = [EventsHelper findEventsForToday:[NSDate date] withRealm:[Events allObjects]];
+    if(array.count > 0){
+        eventArray = array;
+        [self.table reloadData];
+    }
+    
     [super viewDidAppear:YES];
 }
 

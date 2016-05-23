@@ -46,6 +46,18 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
+## Firebase
+
+Copyright 2016 Google Inc.
+
+## FirebaseAnalytics
+
+Copyright 2016 Google Inc.
+
+## FirebaseInstanceID
+
+Copyright 2016 Google Inc.
+
 ## FrameAccessor
 
 Copyright (c) 2012 Alexey Denisov
@@ -69,19 +81,19 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
+## Google-Mobile-Ads-SDK
+
+Copyright 2011 Google Inc. All Rights Reserved.
+
 ## Google
 
-Copyright 2015 Google Inc.
+Copyright 2016 Google Inc.
 
 ## GoogleAnalytics
 
 Copyright 2015 Google Inc.
 
 ## GoogleInterchangeUtilities
-
-Copyright 2015 Google Inc.
-
-## GoogleNetworkingUtilities
 
 Copyright 2015 Google Inc.
 

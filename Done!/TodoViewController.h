@@ -15,8 +15,11 @@
 #import "CreateNewVC.h"
 #import "EventsHelper.h"
 #import "Projects.h"
+#import "PurchaseViewController.h"
 
 BOOL phoneModified;
+
+@import GoogleMobileAds;
 
 @interface TodoViewController : UIViewController <WCSessionDelegate, UITableViewDelegate, UITableViewDataSource, EventCellDelegate>{
     NSMutableArray *allEvents;
@@ -26,5 +29,6 @@ BOOL phoneModified;
 @property (weak, nonatomic) IBOutlet UINavigationItem *naviTitle;
 @property (weak, nonatomic) IBOutlet UINavigationItem *item;
 @property (weak, nonatomic) IBOutlet UITableView *table;
+@property (weak, nonatomic) IBOutlet GADBannerView *banner;
 
 @end

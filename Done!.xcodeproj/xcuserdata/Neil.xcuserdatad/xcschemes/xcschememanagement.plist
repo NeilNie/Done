@@ -7,7 +7,7 @@
 		<key>Done Widget.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>5</integer>
+			<integer>4</integer>
 		</dict>
 		<key>Done! Apple Watch (Notification).xcscheme</key>
 		<dict>
@@ -17,7 +17,7 @@
 		<key>Done! Apple Watch Glance.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>4</integer>
+			<integer>3</integer>
 		</dict>
 		<key>Done! Apple Watch.xcscheme</key>
 		<dict>
@@ -73,6 +73,11 @@
 			<true/>
 		</dict>
 		<key>28BDF7DE1CC9093100E3F63C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>28FB39501CEE1DF600D4879A</key>
 		<dict>
 			<key>primary</key>
 			<true/>

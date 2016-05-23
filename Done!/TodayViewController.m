@@ -20,10 +20,6 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
 
 #pragma mark - UITableView Delegate
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-}
-
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return allEvents.count;
 }
@@ -113,6 +109,20 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     return [NSDate date];
 }
 
+#pragma mark - EventCell Delegate
+
+-(void)clickedDone:(EventTableViewCell *)cell{
+    
+    NSIndexPath *index = [self.table indexPathForCell:cell];
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    [realm beginWriteTransaction];
+    Events *update = [EventsHelper findEventWithTitle:cell.titleLabel.text withAllRealm:[Events allObjects]];
+    update.completed = YES;
+    [realm commitWriteTransaction];
+    allEvents = [EventsHelper findTodayNotCompletedEvents:[Events allObjects]];
+    [self.table deleteRowsAtIndexPaths:@[index] withRowAnimation:UITableViewRowAnimationTop];
+}
+
 #pragma mark - Privates
 
 -(IBAction)addNewEvent:(id)sender{
@@ -147,9 +157,6 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
             [self.view setTransform:CGAffineTransformMakeScale(scale, scale)];
         }];
     }];
-//    UIStoryboard *MainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//    UIViewController *addEventVC = [MainStoryBoard instantiateViewControllerWithIdentifier:@"createNew"];
-//    [self presentViewController:addEventVC animated:YES completion:nil];
 }
 
 - (NSDateFormatter *)dateFormatter
@@ -161,6 +168,24 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     }
     
     return dateFormatter;
+}
+
+-(void)animateSwipeLeft{
+    
+    int x = arc4random()%3;
+    if (x == 1){
+        if (self.contr.constant == 0) {
+            [UIView animateWithDuration:0.5 animations:^{
+                self.arrCont.constant = 30;
+                [self.view layoutIfNeeded];
+            } completion:^(BOOL finished) {
+                [UIView animateWithDuration:0.5 animations:^{
+                    self.arrCont.constant = 0;
+                    [self.view layoutIfNeeded];
+                }];
+            }];
+        }
+    }
 }
 
 -(void)setUpCollectionView{
@@ -181,7 +206,6 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     [self.collectionViewCalendarLayout registerClass:MSGridline.class forDecorationViewOfKind:MSCollectionElementKindVerticalGridline];
     [self.collectionViewCalendarLayout registerClass:MSGridline.class forDecorationViewOfKind:MSCollectionElementKindHorizontalGridline];
     [self.collectionViewCalendarLayout registerClass:MSTimeRowHeaderBackground.class forDecorationViewOfKind:MSCollectionElementKindTimeRowHeaderBackground];
-   // [self.collectionViewCalendarLayout registerClass:MSDayColumnHeaderBackground.class forDecorationViewOfKind:MSCollectionElementKindDayColumnHeaderBackground];
 
 }
 
@@ -198,10 +222,8 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
 
 -(void)viewDidAppear:(BOOL)animated{
     
-    [[UITabBar appearance] setBackgroundImage:[UIImage imageNamed:@"tabBar2.png"]];
-    
     result = [Events allObjects];
-    allEvents = [EventsHelper findEventsForToday:[NSDate date] withRealm:result];
+    allEvents = [EventsHelper findTodayNotCompletedEvents:result];
     Events *event = [EventsHelper findEarliestEventTodayWithArray:allEvents];
     self.label1.text = [NSString stringWithFormat:@"The first event of your day is %@ at %@", event.title, [[self dateFormatter] stringFromDate:event.date]];
     self.label2.text = [NSString stringWithFormat:@"There are %lu events today and you have completed %lu of them.", (unsigned long)allEvents.count, (unsigned long)[EventsHelper findCompletedEventsWithArrayOfEvents:allEvents withDate:[NSDate date]].count];
@@ -209,13 +231,35 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     [self.collectionView reloadData];
     [self.collectionViewCalendarLayout scrollCollectionViewToClosetSectionToCurrentTimeAnimated:NO];
     [self.table reloadData];
+    
+    if (allEvents.count == 0) {
+        self.table.hidden = YES;
+    }else{
+        self.table.hidden = NO;
+    }
+    
     [super viewDidAppear:YES];
 }
 
 - (void)viewDidLoad {
     
     result = [Events allObjects];
-    allEvents = [EventsHelper findEventsForToday:[NSDate date] withRealm:result];
+    allEvents = [EventsHelper findTodayNotCompletedEvents:result];
+    if (allEvents.count == 0) {
+        self.table.hidden = YES;
+    }else{
+        self.table.hidden = NO;
+    }
+    
+    areAdsRemoved = [[NSUserDefaults standardUserDefaults] boolForKey:@"areAdsRemoved2"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    if (!areAdsRemoved) {
+        self.banner.adUnitID = @"ca-app-pub-7942613644553368/9252365932";
+        self.banner.rootViewController = self;
+        [self.banner loadRequest:[GADRequest request]];
+    }else{
+        self.banner.hidden = YES;
+    }
     
     [self setUpGestures];
     [self setUpCollectionView];

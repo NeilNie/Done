@@ -92,6 +92,11 @@
 - (void)viewDidLoad {
     
     self.navigationController.navigationBar.hidden = YES;
+    
+    [FIRAnalytics logEventWithName:kFIREventViewItem parameters:@{kFIRParameterContentType:@"introView",
+                                                                  kFIRParameterValue:@"1",
+                                                                  kFIRParameterItemID:@"A01"
+                                                                  }];
     [self showIntroView];
     [super viewDidLoad];
     // Do any additional setup after loading the view.

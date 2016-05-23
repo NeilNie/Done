@@ -18,15 +18,7 @@
 
 - (IBAction)addEvent:(id)sender {
     
-    if (reminder) {
-        UILocalNotification *notification = [[UILocalNotification alloc] init];
-        notification.fireDate = date;
-        notification.alertTitle = @"You have a new reminder";
-        notification.alertBody = title;
-        notification.timeZone = [NSTimeZone defaultTimeZone];
-        notification.applicationIconBadgeNumber = [[UIApplication sharedApplication]applicationIconBadgeNumber] + 1;
-        [[UIApplication sharedApplication] scheduleLocalNotification:notification];
-    }
+    [self scheduleReminder:reminder];
 
     if ([self.sender isEqualToString:@"project"]){
         
@@ -34,16 +26,22 @@
         addedProject.title = title;
         addedProject.date = date;
         [delegate addProject:addedProject];
+        [self.navigationController popViewControllerAnimated:YES];
     }else{
         
-        Events *addedEvent = [[Events alloc] init];
-        addedEvent.title = title;
-        addedEvent.date = date;
-        addedEvent.completed = NO;
-        RLMRealm *realm = [RLMRealm defaultRealm];
-        [realm beginWriteTransaction];
-        [self.addedToProject.events addObject:addedEvent];
-        [realm commitWriteTransaction];
+        if (self.addedToProject == nil) {
+            [RKDropdownAlert title:@"Opps" message:@"You have to select a project that this event will be added to."];
+        }else{
+            Events *addedEvent = [[Events alloc] init];
+            addedEvent.title = title;
+            addedEvent.date = date;
+            addedEvent.completed = NO;
+            RLMRealm *realm = [RLMRealm defaultRealm];
+            [realm beginWriteTransaction];
+            [self.addedToProject.events addObject:addedEvent];
+            [realm commitWriteTransaction];
+            [self.navigationController popViewControllerAnimated:YES];
+        }
     }
     
     if(WCSession.isSupported){
@@ -54,9 +52,17 @@
         [session updateApplicationContext:@{@"needSync": @"YES"} error:nil];
         NSLog(@"updated context");
     }
-    
-    [self.navigationController popViewControllerAnimated:YES];
-    
+}
+-(void)scheduleReminder:(BOOL)yes{
+    if (yes) {
+        UILocalNotification *notification = [[UILocalNotification alloc] init];
+        notification.fireDate = date;
+        notification.alertTitle = @"You have a new reminder";
+        notification.alertBody = title;
+        notification.timeZone = [NSTimeZone defaultTimeZone];
+        notification.applicationIconBadgeNumber = [[UIApplication sharedApplication]applicationIconBadgeNumber] + 1;
+        [[UIApplication sharedApplication] scheduleLocalNotification:notification];
+    }
 }
 - (IBAction)cancel:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
@@ -254,7 +260,7 @@
     else if ([currentDescriptor[@"cellIdentifier"] isEqualToString:@"idCellTextfield"]) {
         self.table.separatorStyle = UITableViewCellSeparatorStyleNone;
         cell.textField.hint = currentDescriptor[@"primaryTitle"];
-        cell.textField.floatingLabel = currentDescriptor[@"primaryTitle"];
+        //cell.textField.floatingLabel = currentDescriptor[@"primaryTitle"];
     }
     else if ([currentDescriptor[@"cellIdentifier"] isEqualToString:@"idCellSwitch"]) {
         cell.SwitchLabel.text = currentDescriptor[@"primaryTitle"];

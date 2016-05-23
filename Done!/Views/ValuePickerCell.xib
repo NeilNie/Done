@@ -15,16 +15,16 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blue-folder.png" translatesAutoresizingMaskIntoConstraints="NO" id="usL-YS-PS1">
-                        <rect key="frame" x="8" y="8" width="44" height="34"/>
+                        <rect key="frame" x="8" y="10" width="38" height="30"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="44" id="mtq-j7-dDs"/>
-                            <constraint firstAttribute="height" constant="34" id="nEp-8a-b15"/>
+                            <constraint firstAttribute="width" constant="38" id="mtq-j7-dDs"/>
+                            <constraint firstAttribute="height" constant="30" id="nEp-8a-b15"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T1o-RV-9gx">
-                        <rect key="frame" x="60" y="14" width="252" height="21"/>
+                        <rect key="frame" x="54" y="14" width="258" height="21"/>
                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>

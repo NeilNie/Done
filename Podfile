@@ -11,10 +11,21 @@ pod 'SCLAlertView-Objective-C'
 pod 'UIColor-HexString'
 pod 'Masonry'
 pod 'RWBlurPopover', '~> 3.0.0'
+pod 'Firebase'
+pod 'Google/Analytics'
+source 'https://github.com/CocoaPods/Specs.git'
 
+platform :ios, '7.0'
+pod 'Google-Mobile-Ads-SDK', '~> 7.0'
 end
 
 target 'Done Widget' do
+
+pod 'Realm'
+
+end
+
+target 'Done! Apple Watch Extension' do
 
 pod 'Realm'
 

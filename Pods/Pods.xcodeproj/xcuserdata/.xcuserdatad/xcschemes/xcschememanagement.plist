@@ -39,6 +39,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-Done! Apple Watch Extension.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Done!.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -54,12 +59,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Realm-iOS9.0.xcscheme</key>
+		<key>Realm-iOS7.0.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>Realm-iOS9.3.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Realm-watchOS2.2.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

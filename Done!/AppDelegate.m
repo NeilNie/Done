@@ -18,7 +18,6 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     WCSession *session = [WCSession defaultSession];
@@ -30,27 +29,22 @@
         NSLog(@"updated iPhone application context");
     }
     
+    [[GAI sharedInstance] trackerWithTrackingId:@"UA-74138512-12"];
+    [FIRApp configure];
+    
     [[UITabBar appearance] setBackgroundImage:[UIImage imageNamed:@"tabBar.png"]];
     [[UITabBar appearance] setTintColor:[UIColor lightGrayColor]];
     [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]} forState:UIControlStateNormal];
     [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor lightGrayColor]} forState:UIControlStateSelected];
     
-    NSURL *directory = [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:@"group.done.com.watch"];
-    NSString *realmPath = [directory.path stringByAppendingPathComponent:@"db.realm"];
-    RLMRealmConfiguration *config = [RLMRealmConfiguration defaultConfiguration];
-    config.fileURL = [NSURL fileURLWithPath:realmPath];
-    [RLMRealmConfiguration setDefaultConfiguration:config];
-    NSLog(@"%@", [RLMRealm defaultRealm].configuration.fileURL);
-    
     application.applicationIconBadgeNumber = 0;
-    
     //register for notification
     UIUserNotificationType types = UIUserNotificationTypeBadge |
     UIUserNotificationTypeSound | UIUserNotificationTypeAlert;
     UIUserNotificationSettings *mySettings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
     [[UIApplication sharedApplication] registerUserNotificationSettings:mySettings];
 
-    intro = [[NSUserDefaults standardUserDefaults] objectForKey:@"intro"];
+    intro = [[NSUserDefaults standardUserDefaults] boolForKey:@"intro"];
     if (intro == NO) {
         NSLog(@"display");
         self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];

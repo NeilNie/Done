@@ -85,7 +85,7 @@
     Events *update = [EventsHelper findEventWithTitle:cell.titleLabel.text withRealm:self.project.events];
     update.completed = YES;
     [realm commitWriteTransaction];
-    allEvents = [EventsHelper findTodayNotCompletedEvents:self.project.events];
+    allEvents = [EventsHelper findNotCompletedEvents:self.project.events];
     [self.table deleteRowsAtIndexPaths:@[index] withRowAnimation:UITableViewRowAnimationTop];
 }
 
@@ -142,9 +142,19 @@
 
 -(void)viewDidAppear:(BOOL)animated{
     
-    allEvents = [EventsHelper findTodayNotCompletedEvents:self.project.events];
+    allEvents = [EventsHelper findNotCompletedEvents:self.project.events];
     [self.table reloadData];
     [self syncDataWithExtension];
+    
+    areAdsRemoved = [[NSUserDefaults standardUserDefaults] boolForKey:@"areAdsRemoved2"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    if (!areAdsRemoved) {
+        self.banner.adUnitID = @"ca-app-pub-7942613644553368/9252365932";
+        self.banner.rootViewController = self;
+        [self.banner loadRequest:[GADRequest request]];
+    }else{
+        self.banner.hidden = YES;
+    }
     
     [super viewDidAppear:YES];
 }
@@ -152,13 +162,24 @@
 - (void)viewDidLoad {
     
     self.naviTitle.title = self.project.title;
-    allEvents = [EventsHelper findTodayNotCompletedEvents:self.project.events];
+    allEvents = [EventsHelper findNotCompletedEvents:self.project.events];
     
     [self.table registerNib:[UINib nibWithNibName:@"EventTableViewCell" bundle:nil] forCellReuseIdentifier:@"idEventCell"];
     
     UILongPressGestureRecognizer *press = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(gestureAction:)];
     press.minimumPressDuration = 1.0;
     [self.view addGestureRecognizer:press];
+    
+    areAdsRemoved = [[NSUserDefaults standardUserDefaults] boolForKey:@"areAdsRemoved2"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    if (!areAdsRemoved) {
+        self.banner.adUnitID = @"ca-app-pub-7942613644553368/9252365932";
+        self.banner.rootViewController = self;
+        [self.banner loadRequest:[GADRequest request]];
+    }else{
+        self.banner.hidden = YES;
+    }
+    
     [self setUpView];
     
     NSLog(@"current project %@", _project);

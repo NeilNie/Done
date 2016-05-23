@@ -110,7 +110,15 @@
 
         [self.barData addObject:[NSNumber numberWithFloat:f]];
     }
-
+    if (self.barData.count <= 1 || self.array.count <= 1) {
+        [RKDropdownAlert title:@"Opps" message:@"There are not enough data to make a graph"];
+    }else{
+        [self setUpLineGraph];
+        self.barGraph.dataSource = self;
+        [self.barGraph draw];
+        [self.lineGraph reset];
+        [self.lineGraph draw];
+    }
 }
 
 -(void)initShowAlert{
@@ -162,11 +170,6 @@
     
     self.edgesForExtendedLayout = UIRectEdgeNone;
     [self setUpData];
-    [self setUpLineGraph];
-    self.barGraph.dataSource = self;
-    [self.barGraph draw];
-    [self.lineGraph reset];
-    [self.lineGraph draw];
     
     [super viewDidLoad];
     // Do any additional setup after loading the view.

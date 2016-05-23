@@ -135,18 +135,19 @@
     [UIView animateWithDuration:0.3 animations:^{
         self.image.image = [UIImage imageNamed:[NSString stringWithFormat:@"sss_%i", x]];
     }];
+    self.textView.font = [UIFont systemFontOfSize:16.0 weight:UIFontWeightThin];
     switch (x) {
         case 1:
-            self.textView.text = @"Pro version include productivity graph feature. ";
+            self.textView.text = [NSString stringWithFormat:@"Pro version include productivity graph feature. "];
             break;
         case 2:
-            self.textView.text = @"You can also see the graph of your productivity percentage. Which is the amount of events finished divide by numbers of not finished events";
+            self.textView.text = [NSString stringWithFormat:@"You can also see the graph of your productivity percentage. Which is the amount of events finished divide by numbers of not finished events"];
             break;
         case 3:
-            self.textView.text = @"More importantly, you can enjoy the calendar feature. You can see the dates that are free at a glance. It also tells you how any events are scheduled so you are not overwhelmed.";
+            self.textView.text = [NSString stringWithFormat:@"More importantly, you can enjoy the calendar feature. You can see the dates that are free at a glance. It also tells you how any events are scheduled so you are not overwhelmed."];
             break;
         case 4:
-            self.textView.text = @"You can also select a date and see a list of events for that day. There are much more you can do with the useful calendar feature. All of this is only 2.99$ for lifetime subscription. No annual fee, charges or anything.";
+            self.textView.text = [NSString stringWithFormat:@"You can also select a date and see a list of events for that day. There are much more you can do with the useful calendar feature. All of this is only 2.99$ for lifetime subscription. No annual fee, charges or anything."];
             break;
             
         default:
@@ -157,6 +158,11 @@
 - (void)viewDidLoad {
     
     x = 1;
+    
+    [FIRAnalytics logEventWithName:kFIREventViewItem parameters:@{kFIRParameterContentType:@"purchaseView",
+                                                                  kFIRParameterValue:@"1",
+                                                                  kFIRParameterItemID:@"A02"
+                                                                  }];
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }

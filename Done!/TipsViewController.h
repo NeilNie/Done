@@ -11,6 +11,8 @@
 
 BOOL intro;
 
+@import FirebaseAnalytics;
+
 @interface TipsViewController : UIViewController <EAIntroDelegate>
 
 @property (weak, nonatomic) IBOutlet EAIntroView *introView;

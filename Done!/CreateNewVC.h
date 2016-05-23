@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Realm/Realm.h>
 #import <WatchConnectivity/WatchConnectivity.h>
+#import <RKDropdownAlert.h>
 
 #import "CustomCell.h"
 #import "Events.h"

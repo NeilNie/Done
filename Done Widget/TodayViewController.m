@@ -44,7 +44,7 @@
     [formate setDateFormat:@"yyyy-MM-dd HH:mm"];
     self.upComingDate.text = [formate stringFromDate:date];
     self.upComingTitle.text = title;
-    self.todaySummary.text = [NSString stringWithFormat:@"There are %lu events today and you have completed %lu of them.", totalEvents.integerValue, completedEvents.integerValue];
+    self.todaySummary.text = [NSString stringWithFormat:@"There are %lu events today and you have completed %lu of them.", (long)totalEvents.integerValue, (long)completedEvents.integerValue];
 }
 
 - (void)didReceiveMemoryWarning {

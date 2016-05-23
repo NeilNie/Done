@@ -31,35 +31,15 @@
         <!--Today-->
         <scene sceneID="mDb-ry-dZS">
             <objects>
-                <controller title="Today" id="rD2-VK-CGW">
+                <controller title="Today" id="rD2-VK-CGW" customClass="TodayInterfaceController">
                     <items>
-                        <table alignment="left" id="MdF-gd-3cQ">
-                            <items>
-                                <tableRow identifier="default" id="6O5-l3-Qb5" customClass="Row">
-                                    <group key="rootItem" width="1" height="84" alignment="left" id="7k2-hy-rQM">
-                                        <items>
-                                            <group width="93" height="1" alignment="left" layout="vertical" id="tN2-QE-9jf">
-                                                <items>
-                                                    <label width="95" alignment="left" text="Help Joseph with science homework" numberOfLines="4" id="PSz-wT-0CP">
-                                                        <fontDescription key="font" type="system" weight="medium" pointSize="15"/>
-                                                    </label>
-                                                    <label width="1" alignment="left" text="2015/04/21" id="8Z8-Vi-jn2">
-                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </label>
-                                                </items>
-                                            </group>
-                                            <button width="30" height="30" alignment="center" verticalAlignment="center" backgroundImage="circle-nf.png" id="002-zN-fR2"/>
-                                        </items>
-                                    </group>
-                                    <connections>
-                                        <outlet property="date" destination="8Z8-Vi-jn2" id="gK0-pY-va0"/>
-                                        <outlet property="done" destination="002-zN-fR2" id="PKM-aD-Ovp"/>
-                                        <outlet property="title" destination="PSz-wT-0CP" id="coM-yw-j49"/>
-                                    </connections>
-                                </tableRow>
-                            </items>
-                        </table>
+                        <label alignment="left" text="The first event of your day is () at ()" numberOfLines="3" id="hYq-tL-tuX"/>
+                        <label alignment="left" text="There are () events today and you have completed () of them." numberOfLines="6" id="BAB-Y7-Uzj"/>
                     </items>
+                    <connections>
+                        <outlet property="label1" destination="hYq-tL-tuX" id="UVZ-L5-fZ8"/>
+                        <outlet property="label2" destination="BAB-Y7-Uzj" id="NV0-fx-Rh5"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="482" y="492"/>
