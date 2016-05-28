@@ -15,6 +15,9 @@
 #import "Events.h"
 #import "EventsHelper.h"
 
+@import FirebaseDatabase;
+@import FirebaseAuth;
+
 @protocol CreateNewDelegate <NSObject>
 
 -(void)addNewEventToProject:(Events *)event;
@@ -37,5 +40,5 @@
 @property (strong, nonatomic) Projects *addedToProject;
 @property (nonatomic, assign) id <CreateNewDelegate> delegate;
 @property (weak, nonatomic) IBOutlet UITableView *table;
-
+@property (strong, nonatomic) FIRDatabaseReference *ref;
 @end

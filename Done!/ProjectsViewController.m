@@ -107,7 +107,7 @@
     [image.layer setMasksToBounds:YES];
 }
 
-- (IBAction)addNewEvent:(id)sender {
+- (void)addNewEvent{
     
     [self performSegueWithIdentifier:@"newProject" sender:nil];
 }
@@ -127,7 +127,7 @@
 - (void)viewDidLoad {
     
     projects = [Projects allObjects];
-    UISwipeGestureRecognizer *gesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(addNewEvent:)];
+    UISwipeGestureRecognizer *gesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(addNewEvent)];
     gesture.direction = UISwipeGestureRecognizerDirectionLeft;
     [self.collectionView addGestureRecognizer:gesture];
     

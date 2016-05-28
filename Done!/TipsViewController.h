@@ -16,5 +16,5 @@ BOOL intro;
 @interface TipsViewController : UIViewController <EAIntroDelegate>
 
 @property (weak, nonatomic) IBOutlet EAIntroView *introView;
-
+@property (strong, nonatomic) UIWindow *window;
 @end

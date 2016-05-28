@@ -19,40 +19,82 @@
 - (IBAction)addEvent:(id)sender {
     
     [self scheduleReminder:reminder];
-
-    if ([self.sender isEqualToString:@"project"]){
-        
-        Projects *addedProject = [[Projects alloc] init];
-        addedProject.title = title;
-        addedProject.date = date;
-        [delegate addProject:addedProject];
-        [self.navigationController popViewControllerAnimated:YES];
-    }else{
-        
-        if (self.addedToProject == nil) {
-            [RKDropdownAlert title:@"Opps" message:@"You have to select a project that this event will be added to."];
-        }else{
-            Events *addedEvent = [[Events alloc] init];
-            addedEvent.title = title;
-            addedEvent.date = date;
-            addedEvent.completed = NO;
-            RLMRealm *realm = [RLMRealm defaultRealm];
-            [realm beginWriteTransaction];
-            [self.addedToProject.events addObject:addedEvent];
-            [realm commitWriteTransaction];
-            [self.navigationController popViewControllerAnimated:YES];
-        }
-    }
     
-    if(WCSession.isSupported){
-        NSLog(@"sent request");
-        WCSession *session = [WCSession defaultSession];
-        session.delegate = self;
-        [session activateSession];
-        [session updateApplicationContext:@{@"needSync": @"YES"} error:nil];
-        NSLog(@"updated context");
+    if ([self checkData] == NO) {
+        [RKDropdownAlert title:@"Opps" message:@"You have to set a date and a title for your project/event."];
+    
+    }else{
+        if ([self.sender isEqualToString:@"project"]){
+        
+            [delegate addProject:[EventsHelper createProjectWithDate:date title:title]];
+            [self.navigationController popViewControllerAnimated:YES];
+        }else{
+            
+            if (self.addedToProject == nil) {
+                [RKDropdownAlert title:@"Opps" message:@"You have to select a project that this event will be added to."];
+            }else{
+                RLMRealm *realm = [RLMRealm defaultRealm];
+                [realm beginWriteTransaction];
+                Events *event = [EventsHelper createEventWithDate:date title:title otherInfo:nil];
+                [self.addedToProject.events addObject:event];
+                [self addEventToFirebase:event];
+                [realm commitWriteTransaction];
+                [self.navigationController popViewControllerAnimated:YES];
+            }
+        }
+        [self syncWithWatch];
     }
 }
+
+-(void)addEventToFirebase:(Events *)event{
+    
+    FIRUser *user = [FIRAuth auth].currentUser;
+    NSString *eventID = [self uuid];
+    [[[_ref child:@"events"] child:eventID] setValue:@{@"event_title": event.title,
+                                                       @"event_date": [[self dateFormatter] stringFromDate:event.date],
+                                                       @"owner": user.displayName}];
+    [[[_ref child:@"projects"] child:user.displayName] setValue:@{@"events":eventID}];
+
+}
+
+- (NSString *)uuid
+{
+    CFUUIDRef uuidRef = CFUUIDCreate(NULL);
+    CFStringRef uuidStringRef = CFUUIDCreateString(NULL, uuidRef);
+    CFRelease(uuidRef);
+    return (__bridge_transfer NSString *)uuidStringRef;
+}
+
+- (NSDateFormatter *)dateFormatter
+{
+    static NSDateFormatter *dateFormatter;
+    if(!dateFormatter){
+        dateFormatter = [NSDateFormatter new];
+        dateFormatter.dateFormat = @"dd/MM/yyyy HH:MM";
+    }
+    
+    return dateFormatter;
+}
+
+-(void)syncWithWatch{
+    
+    NSLog(@"sent request");
+    WCSession *session = [WCSession defaultSession];
+    session.delegate = self;
+    [session activateSession];
+    [session updateApplicationContext:@{@"needSync": @"YES"} error:nil];
+    NSLog(@"updated context");
+}
+
+-(BOOL)checkData{
+    
+    if (title != nil && date != nil) {
+        return YES;
+    }else{
+        return NO;
+    }
+}
+
 -(void)scheduleReminder:(BOOL)yes{
     if (yes) {
         UILocalNotification *notification = [[UILocalNotification alloc] init];
@@ -215,7 +257,6 @@
     
     [self getIndicesOfVisible];
     [self.table reloadSections:[NSIndexSet indexSetWithIndex:indexPath.section] withRowAnimation:UITableViewRowAnimationFade];
-    
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -325,10 +366,10 @@
 -(void)viewDidAppear:(BOOL)animated{
     
     visibleRowsPerSection = [NSMutableArray array];
+    self.ref = [[FIRDatabase database] reference];
     [self setUpView];
     [self loadCellDiscriptors];
     self.table.hidden = NO;
-    NSLog(@"delegate %@", self.delegate);
     [super viewDidAppear:YES];
 }
 

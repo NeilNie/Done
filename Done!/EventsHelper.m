@@ -10,16 +10,22 @@
 
 @implementation EventsHelper
 
-+(void)createEventWithDate:(NSDate *)date title:(NSString *)title otherInfo:(NSDictionary *)info{
-    
-    RLMRealm *realm = [RLMRealm defaultRealm];
-    [realm beginWriteTransaction];
++(Events *)createEventWithDate:(NSDate *)date title:(NSString *)title otherInfo:(NSDictionary *)info{
     
     Events *NewEvent = [[Events alloc] init];
     NewEvent.title = title;
     NewEvent.date = date;
-    [realm addObject:NewEvent];
-    [realm commitWriteTransaction];
+    NewEvent.completed = NO;
+    return NewEvent;
+    
+}
+
++(Projects *)createProjectWithDate:(NSDate *)date title:(NSString *)title{
+    
+    Projects *NewProject = [[Projects alloc] init];
+    NewProject.title = title;
+    NewProject.date = date;
+    return NewProject;
     
 }
 +(void)deleteEvent:(Events *)event{

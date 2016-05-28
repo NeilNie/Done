@@ -125,10 +125,6 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
 
 #pragma mark - Privates
 
--(IBAction)addNewEvent:(id)sender{
-    [self performSegueWithIdentifier:@"addNewEvent" sender:nil];
-}
-
 -(void)gestureAction:(UISwipeGestureRecognizer *)swipe{
     
     if (swipe.direction == UISwipeGestureRecognizerDirectionRight) {

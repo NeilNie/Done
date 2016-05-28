@@ -11,6 +11,7 @@
 #import <Google/Analytics.h>
 
 @import Firebase;
+@import FirebaseAuth;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate, WCSessionDelegate>
 

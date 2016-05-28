@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import <Realm/Realm.h>
-#import <FBSDKCoreKit/FBSDKCoreKit.h>
-#import <FBSDKLoginKit/FBSDKLoginKit.h>
 
 #import "Projects.h"
 #import "Events.h"

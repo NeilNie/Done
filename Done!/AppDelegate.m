@@ -43,17 +43,18 @@
     UIUserNotificationTypeSound | UIUserNotificationTypeAlert;
     UIUserNotificationSettings *mySettings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
     [[UIApplication sharedApplication] registerUserNotificationSettings:mySettings];
-
-    intro = [[NSUserDefaults standardUserDefaults] boolForKey:@"intro"];
-    if (intro == NO) {
-        NSLog(@"display");
-        self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
-        UIStoryboard *MainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        UIViewController *StartView = [MainStoryBoard instantiateViewControllerWithIdentifier:@"TipView"];
+    
+    FIRUser *user = [FIRAuth auth].currentUser;
+    self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
+    UIStoryboard *MainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *StartView = [MainStoryBoard instantiateViewControllerWithIdentifier:@"userAuth"];
+    UIViewController *mainView = [MainStoryBoard instantiateViewControllerWithIdentifier:@"mainView"];
+    if (user == nil) {
         self.window.rootViewController = StartView;
         [self.window makeKeyAndVisible];
-        intro = YES;
-        [[NSUserDefaults standardUserDefaults] setBool:intro forKey:@"intro"];
+    }else{
+        self.window.rootViewController = mainView;
+        [self.window makeKeyAndVisible];
     }
     // Override point for customization after application launch.
     return YES;
@@ -65,8 +66,6 @@
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    
-    NSLog(@"did enter background");
     
     if(WCSession.isSupported){
         WCSession *session = [WCSession defaultSession];

@@ -91,7 +91,7 @@
 
 #pragma mark - Private
 
-- (IBAction)addNewEvent:(id)sender {
+- (void)addNewEvent{
     
     [self performSegueWithIdentifier:@"newEvent" sender:nil];
     [self performSelector:@selector(function) withObject:nil afterDelay:5];
@@ -106,7 +106,7 @@
     refresh.backgroundColor = [UIColor colorWithRed:49.0/225.0 green:116.0/225.0 blue:250.0/225.0 alpha:1.0];
     refresh.tintColor = [UIColor whiteColor];
     refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"Add a New Event" attributes:@{NSForegroundColorAttributeName : [UIColor whiteColor], NSFontAttributeName: [UIFont fontWithName:@"Helvetica Neue" size:20]}];
-    [refresh addTarget:self action:@selector(addNewEvent:) forControlEvents:UIControlEventValueChanged];
+    [refresh addTarget:self action:@selector(addNewEvent) forControlEvents:UIControlEventValueChanged];
     [self.table addSubview:refresh];
 }
 

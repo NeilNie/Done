@@ -20,7 +20,11 @@
         self.navigationController.navigationBar.hidden = NO;
         [self.navigationController popViewControllerAnimated:YES];
     }else{
-        [self performSegueWithIdentifier:@"idFinishIntro" sender:nil];
+        self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
+        UIStoryboard *MainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        UIViewController *mainView = [MainStoryBoard instantiateViewControllerWithIdentifier:@"mainView"];
+        self.window.rootViewController = mainView;
+        [self.window makeKeyAndVisible];
     }
 }
 

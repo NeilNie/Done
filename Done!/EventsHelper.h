@@ -18,7 +18,9 @@
 /**
  create an event object with date, title. Other info should be in a dictionary and will be process in the method. (to be implemented)
  */
-+(void)createEventWithDate:(NSDate *)date title:(NSString *)title otherInfo:(NSDictionary *)info;
++(Events *)createEventWithDate:(NSDate *)date title:(NSString *)title otherInfo:(NSDictionary *)info;
+
++(Projects *)createProjectWithDate:(NSDate *)date title:(NSString *)title;
 
 /**
  Delete an event, the `Events` object will be passed in the paramenter.
