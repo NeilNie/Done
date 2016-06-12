@@ -15,16 +15,24 @@
 @implementation TipsViewController
 
 - (void)introDidFinish:(EAIntroView *)introView {
-    NSLog(@"introDidFinish callback");
+
     if (self.navigationController.parentViewController != nil) {
         self.navigationController.navigationBar.hidden = NO;
         [self.navigationController popViewControllerAnimated:YES];
     }else{
-        self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
-        UIStoryboard *MainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        UIViewController *mainView = [MainStoryBoard instantiateViewControllerWithIdentifier:@"mainView"];
-        self.window.rootViewController = mainView;
-        [self.window makeKeyAndVisible];
+        NSLog(@"will display view controller");
+        UIWindow *window = [UIApplication sharedApplication].delegate.window;
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        UINavigationController *navigationController = [storyboard instantiateViewControllerWithIdentifier:@"NavigationController"];
+        MainViewController *mainViewController = [storyboard instantiateInitialViewController];
+        mainViewController.rootViewController = navigationController;
+        window.rootViewController = mainViewController;
+        [UIView transitionWithView:window
+                          duration:0.3
+                           options:UIViewAnimationOptionTransitionCrossDissolve
+                        animations:nil
+                        completion:nil];
+        [mainViewController setupWithPresentationStyle:LGSideMenuPresentationStyleSlideBelow type:0];
     }
 }
 
@@ -58,7 +66,7 @@
     
     EAIntroPage *page6 = [EAIntroPage page];
     page6.title = @"Swipe down to create a new event.";
-    page6.titlePositionY = 120;
+    page6.titlePositionY = 140;
     page6.titleColor = [UIColor whiteColor];
     page6.bgImage = [UIImage imageNamed:@"screen_shot_7.png"];
     

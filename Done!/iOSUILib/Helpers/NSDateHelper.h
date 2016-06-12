@@ -25,9 +25,9 @@
 NS_ASSUME_NONNULL_BEGIN
 @interface NSDateHelper : NSObject
 + (nullable NSDate *)mdDateFromString:(NSString *)string format:(NSString *)format;
-+ (nullable NSDate *)mdDateWithYear:(NSInteger)year
-                     month:(NSInteger)month
-                       day:(NSInteger)day;
+//+ (nullable NSDate *)mdDateWithYear:(NSInteger)year
+//                     month:(NSInteger)month
+//                       day:(NSInteger)day;
 + (BOOL)prefers24Hour;
 @end
 NS_ASSUME_NONNULL_END

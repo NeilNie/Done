@@ -17,6 +17,7 @@
 BOOL areAdsRemoved2;
 
 @import GoogleMobileAds;
+@import FirebaseAuth;
 
 @interface PreferenceViewController : UIViewController <UITableViewDataSource, UITabBarDelegate, SKProductsRequestDelegate, SKPaymentTransactionObserver>{
     NSMutableArray *array;

@@ -55,6 +55,16 @@
     }
     return arry;
 }
++ (NSDateFormatter *)dateFormatter
+{
+    static NSDateFormatter *dateFormatter;
+    if(!dateFormatter){
+        dateFormatter = [NSDateFormatter new];
+        dateFormatter.dateFormat = @"dd/MM HH:mm";
+    }
+    
+    return dateFormatter;
+}
 
 +(NSMutableArray *)convertToArrayEventObjects:(RLMResults *)results{
     
@@ -304,6 +314,32 @@
 }
 
 +(Events *)findMostRecentEvent:(NSDate *)date withRealm:(RLMArray *)realm{
+    
+    NSDateFormatter *formate = [[NSDateFormatter alloc] init];
+    [formate setDateFormat:@"HH"];
+    
+    //create event
+    Events *returnEvent = [realm firstObject];
+    //get the difference between time now and first event of the day.
+    int diff = [formate stringFromDate:returnEvent.date].intValue - [formate stringFromDate:date].intValue;
+    
+    //run a loop through
+    for (int i = 0; i < realm.count; i++) {
+        Events *e = [realm objectAtIndex:i];
+        
+        //see of the difference in time of the current event and current date
+        int Cdiff = [formate stringFromDate:e.date].intValue - [formate stringFromDate:date].intValue;
+        
+        //if Cdiff is positive and larger than diff, then the returnEvent is that object.
+        if (Cdiff > 0 && Cdiff < diff) {
+            returnEvent = e;
+        }
+        
+    }
+    return returnEvent;
+}
+
++(Events *)findMostRecentEvent:(NSDate *)date withRealmResult:(RLMResults *)realm{
     
     NSDateFormatter *formate = [[NSDateFormatter alloc] init];
     [formate setDateFormat:@"HH"];

@@ -1,0 +1,23 @@
+/* 
+  Localizable.strings
+  Done!
+
+  Created by Yongyang Nie on 5/31/16.
+  Copyright © 2016 Yongyang Nie. All rights reserved.
+*/
+
+"The first event of your day is %@ at %@" = "The first event of your day is %@ at %@";
+"There are %lu events today and you have completed %lu of them." = "There are %lu events today and you have completed %lu of them.";
+"%lu Events on this day" = "%lu Events on this day";
+"Calendar is a pro feature. You have to purchase it in order to enjoy the pro features." = "Calendar is a pro feature. You have to purchase it in order to enjoy the pro features.";
+"Purchase Pro" = "Purchase Pro";
+"Learn More" = "Learn More";
+"Notice" = "Notice";
+"Productivity" = "Productivity";
+"Restore Purchases" = "Restore Purchases";
+"Info" = "Info";
+"Purchase no ads" = "Purchase no ads";
+"Pro version include productivity graph feature." = "Pro version include productivity graph feature.";
+"You can also see the graph of your productivity percentage. Which is the amount of events finished divide by numbers of not finished events" = "You can also see the graph of your productivity percentage. Which is the amount of events finished divide by numbers of not finished events";
+"More importantly, you can enjoy the calendar feature. You can see the dates that are free at a glance. It also tells you how any events are scheduled so you are not overwhelmed." = "More importantly, you can enjoy the calendar feature. You can see the dates that are free at a glance. It also tells you how any events are scheduled so you are not overwhelmed.";
+"You can also select a date and see a list of events for that day. There are much more you can do with the useful calendar feature. All of this is only 2.99$ for lifetime subscription. No annual fee, charges or anything." = "You can also select a date and see a list of events for that day. There are much more you can do with the useful calendar feature. All of this is only 2.99$ for lifetime subscription. No annual fee, charges or anything.";

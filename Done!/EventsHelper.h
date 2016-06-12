@@ -15,6 +15,7 @@
 
 @interface EventsHelper : NSObject <WCSessionDelegate>
 
++ (NSDateFormatter *)dateFormatter;
 /**
  create an event object with date, title. Other info should be in a dictionary and will be process in the method. (to be implemented)
  */
@@ -40,6 +41,7 @@
 /**
  This method converts all the Event objects to a NSMutableArray that contains Event objects.
  */
+
 +(NSMutableArray *)convertToArrayEventObjects:(RLMResults *)results;
 
 /**
@@ -67,6 +69,8 @@
  The parameter is a `RLMResults` object. The method goes through all the `Events` and turn the `RLMResults` object into a NSMutableArray.
  */
 +(NSMutableArray *)convertToArray:(RLMResults *)results;
+
++(Events *)findMostRecentEvent:(NSDate *)date withRealmResult:(RLMResults *)realm;
 
 +(NSMutableArray *)findTodayNotCompletedEvents:(RLMResults *)realm;
 

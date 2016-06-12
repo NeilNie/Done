@@ -577,8 +577,9 @@
   if (input.isFirstResponder) {
     return [input resignFirstResponder];
   }
-
-  return YES;
+    [super resignFirstResponder];
+    return YES;
+    
 }
 
 - (BOOL)isFirstResponder {

@@ -17,16 +17,20 @@
 #import "QBPopupMenu.h"
 #import "EAIntroView.h"
 #import "PurchaseViewController.h"
+#import "RZTransitionsInteractionControllers.h"
+#import "RZTransitionsAnimationControllers.h"
+#import "RZTransitionInteractionControllerProtocol.h"
+#import "RZTransitionsManager.h"
 
 NSInteger gestureIndex;
 
 @import GoogleMobileAds;
 
-@interface ProjectsViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource, CreateNewDelegate, UIGestureRecognizerDelegate, EAIntroDelegate>{
+@interface ProjectsViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource, CreateNewDelegate, UIGestureRecognizerDelegate, EAIntroDelegate, RZTransitionInteractionControllerDelegate>{
     RLMResults *projects;
     Projects *passedProject;
 }
-
+@property (nonatomic, strong) id<RZTransitionInteractionController> presentInteractionController;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet GADBannerView *banner;
 

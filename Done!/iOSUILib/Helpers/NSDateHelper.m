@@ -21,7 +21,6 @@
 // THE SOFTWARE.
 
 #import "NSDateHelper.h"
-#import "NSCalendarHelper.h"
 
 @implementation NSDateHelper
 + (NSDate *)mdDateFromString:(NSString *)string format:(NSString *)format {
@@ -30,16 +29,16 @@
   return [formatter dateFromString:string];
 }
 
-+ (NSDate *)mdDateWithYear:(NSInteger)year
-                     month:(NSInteger)month
-                       day:(NSInteger)day {
-  NSCalendar *calendar = [NSCalendarHelper mdSharedCalendar];
-  NSDateComponents *components = [[NSDateComponents alloc] init];
-  components.year = year;
-  components.month = month;
-  components.day = day;
-  return [calendar dateFromComponents:components];
-}
+//+ (NSDate *)mdDateWithYear:(NSInteger)year
+//                     month:(NSInteger)month
+//                       day:(NSInteger)day {
+//  NSCalendar *calendar = [NSCalendarHelper mdSharedCalendar];
+//  NSDateComponents *components = [[NSDateComponents alloc] init];
+//  components.year = year;
+//  components.month = month;
+//  components.day = day;
+//  return [calendar dateFromComponents:components];
+//}
 
 + (BOOL)prefers24Hour {
   NSDateFormatter *formatter = [[NSDateFormatter alloc] init];

@@ -11,6 +11,7 @@
 #import <WatchConnectivity/WatchConnectivity.h>
 
 #import "Events.h"
+#import "AppDelegate.h"
 #import "EventTableViewCell.h"
 #import "CreateNewVC.h"
 #import "EventsHelper.h"

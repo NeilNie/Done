@@ -24,6 +24,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>LGSideMenuController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>MKFoundationKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -55,6 +60,11 @@
 			<false/>
 		</dict>
 		<key>RWBlurPopover.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>RZTransitions.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

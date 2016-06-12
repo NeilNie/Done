@@ -28,13 +28,13 @@
 #import <FrameAccessor/FrameAccessor.h>
 #import <MKFoundationKit/NSArray+MK.h>
 
-static CGFloat kDefaultLabelWidth = 25;
+static CGFloat kDefaultLabelWidth = 40.0;
 static CGFloat kDefaultLabelHeight = 12.0;
 static NSInteger kDefaultValueLabelCount = 5;
 
 static CGFloat kDefaultLineWidth = 3.0;
-static CGFloat kDefaultMargin = 10.0;
-static CGFloat kDefaultMarginBottom = 20.0;
+static CGFloat kDefaultMargin = 5.0;
+static CGFloat kDefaultMarginBottom = 8.0;
 
 static CGFloat kAxisMargin = 50.0;
 
@@ -95,7 +95,7 @@ static CGFloat kAxisMargin = 50.0;
 
 - (void)_constructTitleLabels {
     
-    NSInteger count = [[self.dataSource valuesForLineAtIndex:0] count];
+    NSInteger count = [self.dataSource valuesForLineAtIndex:0].count;
     id items = [NSMutableArray arrayWithCapacity:count];
     for (NSInteger idx = 0; idx < count; idx++) {
         

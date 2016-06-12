@@ -1,0 +1,15 @@
+
+/* Class = "UILabel"; text = "There are 5 events in your day, you have completed 3 of them. "; ObjectID = "4tj-Ug-HtB"; */
+"4tj-Ug-HtB.text" = "There are 5 events in your day, you have completed 3 of them. ";
+
+/* Class = "UILabel"; text = "Summary:"; ObjectID = "6eL-52-9Cm"; */
+"6eL-52-9Cm.text" = "Summary:";
+
+/* Class = "UILabel"; text = "Upcoming:"; ObjectID = "8pt-HR-y2x"; */
+"8pt-HR-y2x.text" = "Upcoming:";
+
+/* Class = "UILabel"; text = "Book hotel for WWDC"; ObjectID = "VvJ-J5-3Un"; */
+"VvJ-J5-3Un.text" = "Book hotel for WWDC";
+
+/* Class = "UILabel"; text = "Due 11:30 05/23"; ObjectID = "fg3-kG-xfx"; */
+"fg3-kG-xfx.text" = "Due 11:30 05/23";

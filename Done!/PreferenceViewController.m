@@ -165,11 +165,23 @@
     cell.textLabel.text = [array objectAtIndex:indexPath.row];
     return cell;
 }
+- (IBAction)logout:(id)sender {
+    
+    NSError *error;
+    [[FIRAuth auth] signOut:&error];
+    if (!error) {
+        assert(@"");
+    }
+}
+
+-(IBAction)showMenu:(id)sender{
+    [kMainViewController showLeftViewAnimated:YES completionHandler:nil];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    array = [[NSMutableArray alloc] initWithObjects:@"Productivity", @"Tips", @"Restore Purchases", @"Info", @"Purchase no ads", nil];
+    array = [[NSMutableArray alloc] initWithObjects:NSLocalizedString(@"Productivity", nil), NSLocalizedString(@"Tips", nil), NSLocalizedString(@"Restore Purchases", nil), NSLocalizedString(@"Tips", nil), NSLocalizedString(@"Info", nil), NSLocalizedString(@"Purchase no ads", nil), nil];
     
     areAdsRemoved = [[NSUserDefaults standardUserDefaults] boolForKey:@"areAdsRemoved2"];
     [[NSUserDefaults standardUserDefaults] synchronize];

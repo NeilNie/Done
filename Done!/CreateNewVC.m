@@ -25,8 +25,9 @@
     
     }else{
         if ([self.sender isEqualToString:@"project"]){
-        
-            [delegate addProject:[EventsHelper createProjectWithDate:date title:title]];
+            Projects *p = [EventsHelper createProjectWithDate:date title:title];
+            [self addProjectToFirebase:p];
+            [delegate addProject:p];
             [self.navigationController popViewControllerAnimated:YES];
         }else{
             
@@ -37,7 +38,7 @@
                 [realm beginWriteTransaction];
                 Events *event = [EventsHelper createEventWithDate:date title:title otherInfo:nil];
                 [self.addedToProject.events addObject:event];
-                [self addEventToFirebase:event];
+                [FBHelper addEventToFirebase:event addedToProject:self.addedToProject];
                 [realm commitWriteTransaction];
                 [self.navigationController popViewControllerAnimated:YES];
             }
@@ -52,9 +53,31 @@
     NSString *eventID = [self uuid];
     [[[_ref child:@"events"] child:eventID] setValue:@{@"event_title": event.title,
                                                        @"event_date": [[self dateFormatter] stringFromDate:event.date],
-                                                       @"owner": user.displayName}];
-    [[[_ref child:@"projects"] child:user.displayName] setValue:@{@"events":eventID}];
+                                                       @"owner": user.displayName
+                                                       }];
+    [[[[_ref child:@"projects"] child:user.displayName] child:self.addedToProject.title] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+        
+        __block NSMutableArray *UpdateArray;
+        if ([snapshot.value objectForKey:@"events"] == nil) {
+            UpdateArray = [NSMutableArray array];
+        }else{
+            UpdateArray = [snapshot.value objectForKey:@"events"];
+        }
+        [UpdateArray addObject:eventID];
+        NSDictionary *updateDic = @{[NSString stringWithFormat:@"projects/%@/%@/events", user.displayName, self.addedToProject.title]:UpdateArray};
+        [_ref updateChildValues:updateDic];
+    }];
+}
 
+-(void)addProjectToFirebase:(Projects *)project{
+    
+    FIRUser *user = [FIRAuth auth].currentUser;
+    NSLog(@"username %@", user.displayName);
+    NSString *projectID = [self uuid];
+    [[[[_ref child:@"projects"] child:user.displayName] child:project.title] setValue:@{@"project_title": project.title,
+                                                                                        @"project_id":projectID,
+                                                                                        @"project_date": [[self dateFormatter] stringFromDate:project.date],
+                                                                                        @"events":[NSMutableArray array]}];
 }
 
 - (NSString *)uuid
@@ -212,7 +235,6 @@
     if (number.intValue == 1) {
         
         BOOL shouldExpandAndShowSubRows = NO;
-        NSLog(@"shouldExpandAndShowSubRows %@", [NSNumber numberWithBool:shouldExpandAndShowSubRows]);
         NSNumber *Int = [[[cellDescriptors objectAtIndex:indexPath.section] objectAtIndex:indexOfTappedRow.integerValue] objectForKey:@"isExpanded"];
         if (Int.intValue == 0) {
 
@@ -325,10 +347,11 @@
     [formate setDateFormat:@"yyyy-MM-dd HH:mm"];
     NSString *dateString = [formate stringFromDate:selectedDate];
     
-    if ([self.sender isEqualToString:@"event"]) {
+    if ([self.sender isEqualToString:@"project"]) {
+        [[[cellDescriptors objectAtIndex:0] objectAtIndex:2] setValue:dateString forKey:@"primaryTitle"];
+    }else{
         [[[cellDescriptors objectAtIndex:0] objectAtIndex:3] setValue:dateString forKey:@"primaryTitle"];
-    }else if ([self.sender isEqualToString:@"project"]){
-        [[[cellDescriptors objectAtIndex:0] objectAtIndex:2] setValue:dateString forKey:@"primaryTitle"];    }
+    }
     
     [self.table reloadData];
     
@@ -366,7 +389,8 @@
 -(void)viewDidAppear:(BOOL)animated{
     
     visibleRowsPerSection = [NSMutableArray array];
-    self.ref = [[FIRDatabase database] reference];
+    //self.ref = [[FIRDatabase database] reference];
+    FBHelper = [[FirebaseHelper alloc] init];
     [self setUpView];
     [self loadCellDiscriptors];
     self.table.hidden = NO;

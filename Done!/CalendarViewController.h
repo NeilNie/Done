@@ -12,6 +12,7 @@
 #import <SCLAlertView.h>
 
 #import "Events.h"
+#import "AppDelegate.h"
 #import "EventTableViewCell.h"
 #import "EventsHelper.h"
 #import "JTCalendar/JTCalendar.h"

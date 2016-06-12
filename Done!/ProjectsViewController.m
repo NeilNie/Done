@@ -107,6 +107,11 @@
     [image.layer setMasksToBounds:YES];
 }
 
+-(IBAction)showMenu:(id)sender{
+    NSLog(@"show menu");
+    [kMainViewController showLeftViewAnimated:YES completionHandler:nil];
+}
+
 - (void)addNewEvent{
     
     [self performSegueWithIdentifier:@"newProject" sender:nil];

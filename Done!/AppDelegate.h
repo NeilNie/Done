@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <WatchConnectivity/WatchConnectivity.h>
 #import <Google/Analytics.h>
+#import "MainViewController.h"
+
+#define kMainViewController (MainViewController *)[UIApplication sharedApplication].delegate.window.rootViewController
 
 @import Firebase;
 @import FirebaseAuth;

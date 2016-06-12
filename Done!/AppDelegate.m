@@ -45,17 +45,25 @@
     [[UIApplication sharedApplication] registerUserNotificationSettings:mySettings];
     
     FIRUser *user = [FIRAuth auth].currentUser;
-    self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
-    UIStoryboard *MainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UIViewController *StartView = [MainStoryBoard instantiateViewControllerWithIdentifier:@"userAuth"];
-    UIViewController *mainView = [MainStoryBoard instantiateViewControllerWithIdentifier:@"mainView"];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    UINavigationController *navigationController = [storyboard instantiateViewControllerWithIdentifier:@"NavigationController"];
+    MainViewController *mainViewController = [storyboard instantiateInitialViewController];
+    mainViewController.rootViewController = navigationController;
+    self.window.rootViewController = mainViewController;
+    UIViewController *startView = [storyboard instantiateViewControllerWithIdentifier:@"userAuth"];
     if (user == nil) {
-        self.window.rootViewController = StartView;
+        self.window.rootViewController = startView;
         [self.window makeKeyAndVisible];
     }else{
-        self.window.rootViewController = mainView;
-        [self.window makeKeyAndVisible];
+        [UIView transitionWithView:self.window
+                          duration:0.3
+                           options:UIViewAnimationOptionTransitionCrossDissolve
+                        animations:nil
+                        completion:nil];
+        [mainViewController setupWithPresentationStyle:LGSideMenuPresentationStyleSlideBelow type:0];
     }
+    
+
     // Override point for customization after application launch.
     return YES;
 }

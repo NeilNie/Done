@@ -14,6 +14,7 @@
 #import "CustomCell.h"
 #import "Events.h"
 #import "EventsHelper.h"
+#import "FirebaseHelper.h"
 
 @import FirebaseDatabase;
 @import FirebaseAuth;
@@ -35,6 +36,8 @@
     NSDate *date;
     NSString *location;
     BOOL reminder;
+    
+    FirebaseHelper *FBHelper;
 }
 @property (strong, nonatomic) NSString *sender;
 @property (strong, nonatomic) Projects *addedToProject;

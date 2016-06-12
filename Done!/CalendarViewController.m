@@ -181,7 +181,7 @@
         eventArray = array;
         [self.table reloadData];
     }
-    self.eventCountl.text = [NSString stringWithFormat:@"%lu Events on this day", (unsigned long)array.count];
+    self.eventCountl.text = [NSString stringWithFormat:NSLocalizedString(@"%lu Events on this day", nil), (unsigned long)array.count];
     
     NSDateFormatter *formate = [[NSDateFormatter alloc] init];
     [formate setDateFormat:@"MMMM, dd"];
@@ -309,7 +309,7 @@
         NSLog(@"reloaded data %@ %@", eventArray, array);
         [self.table reloadData];
     }
-    self.eventCountl.text = [NSString stringWithFormat:@"%lu Events on this day", (unsigned long)array.count];
+    self.eventCountl.text = [NSString stringWithFormat:NSLocalizedString(@"%lu Events on this day", nil), (unsigned long)array.count];
 }
 
 -(void)initShowAlert{
@@ -317,16 +317,20 @@
     SCLAlertView *alert = [[SCLAlertView alloc] init];
     alert.backgroundType = Blur;
     alert.showAnimationType = FadeIn;
-    [alert addButton:@"Purchase Pro" actionBlock:^(void) {
+    [alert addButton:NSLocalizedString(@"Purchase Pro", nil) actionBlock:^(void) {
         [self tapsRemoveAdsButton];
     }];
-    [alert addButton:@"Learn More" actionBlock:^(void) {
+    [alert addButton:NSLocalizedString(@"Learn More", nil) actionBlock:^(void) {
         [self performSegueWithIdentifier:@"idShowPurchase" sender:nil];
     }];
-    [alert showNotice:self title:@"Notice" subTitle:@"Calendar is a pro feature. You have to purchase it in order to enjoy the pro features." closeButtonTitle:nil duration:0.0f];
+    [alert showNotice:self title:NSLocalizedString(@"Notice", nil) subTitle: NSLocalizedString(@"Calendar is a pro feature. You have to purchase it in order to enjoy the pro features.", nil) closeButtonTitle:nil duration:0.0f];
 }
 - (IBAction)addNewEvent:(id)sender {
     [self performSegueWithIdentifier:@"idaddNewEvent" sender:nil];
+}
+
+-(IBAction)showMenu:(id)sender{
+    [kMainViewController showLeftViewAnimated:YES completionHandler:nil];
 }
 
 #pragma mark - Life Cycle

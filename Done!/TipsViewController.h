@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <EAIntroView.h>
+#import "MainViewController.h"
 
 BOOL intro;
 

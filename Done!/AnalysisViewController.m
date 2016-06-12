@@ -110,15 +110,13 @@
 
         [self.barData addObject:[NSNumber numberWithFloat:f]];
     }
-    if (self.barData.count <= 1 || self.array.count <= 1) {
-        [RKDropdownAlert title:@"Opps" message:@"There are not enough data to make a graph"];
-    }else{
-        [self setUpLineGraph];
-        self.barGraph.dataSource = self;
-        [self.barGraph draw];
-        [self.lineGraph reset];
-        [self.lineGraph draw];
-    }
+    NSLog(@"graph data %@", self.array);
+    [self setUpLineGraph];
+    self.barGraph.dataSource = self;
+    [self.barGraph draw];
+    [self.lineGraph reset];
+    [self.lineGraph draw];
+    
 }
 
 -(void)initShowAlert{
@@ -130,7 +128,7 @@
         //[self performSegueWithIdentifier:@"idShowPurchase" sender:nil];
     }];
     [alert addButton:@"Learn More" actionBlock:^(void) {
-        [self performSegueWithIdentifier:@"idShowPurchase" sender:nil];
+        [self performSegueWithIdentifier:@"idShowPurchaseInfo" sender:nil];
     }];
     [alert showNotice:self title:@"Notice" subTitle:@"Calendar is a pro feature. You have to purchase it in order to enjoy the pro features." closeButtonTitle:nil duration:0.0f];
 }

@@ -1,0 +1,23 @@
+/* 
+  Localizable.strings Chinese
+  Done!
+
+  Created by Yongyang Nie on 5/31/16.
+  Copyright © 2016 Yongyang Nie. All rights reserved.
+*/
+
+"Hooray! Your day is clear!" = "";
+"There are %lu events today and you have completed %lu of them." = "";
+"%lu Events on this day" = "";
+"Calendar is a pro feature. You have to purchase it in order to enjoy the pro features." = "您需要购买升级版才可以享用日历功能";
+"Purchase Pro" = "购买升级版";
+"Learn More" = "更多信息";
+"Notice" = "请注意";
+"Productivity" = "效率";
+"Restore Purchases" = "退换";
+"Info" = "信息";
+"Purchase no ads" = "购买";
+"Pro version include productivity graph feature." = "升级版可以让您享受效率图表";
+"You can also see the graph of your productivity percentage. Which is the amount of events finished divide by numbers of not finished events" = "您可以看到您的效率指数，也就是用您完成的任务数量处以总共任务数量";
+"More importantly, you can enjoy the calendar feature. You can see the dates that are free at a glance. It also tells you how any events are scheduled so you are not overwhelmed." = "更重要的是，您可以享用日历功能。您可以看见未来一个月所有的任务。您也可以看到每一天所有的任务";
+"You can also select a date and see a list of events for that day. There are much more you can do with the useful calendar feature. All of this is only 2.99$ for lifetime subscription. No annual fee, charges or anything." = "日历功能可以帮助您更好的管理您的任务。所有这些功能只有12.99。 无任何外加费用！";
