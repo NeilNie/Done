@@ -13,9 +13,8 @@
 #import "Events.h"
 #import "Projects.h"
 
-@interface EventsHelper : NSObject <WCSessionDelegate>
+@interface EventsHelper : NSObject
 
-+ (NSDateFormatter *)dateFormatter;
 /**
  create an event object with date, title. Other info should be in a dictionary and will be process in the method. (to be implemented)
  */
@@ -87,5 +86,11 @@
 +(Projects *)findProjectWithName:(NSString *)name;
 
 +(Events *)findMostRecentEvent:(NSDate *)date withRealm:(RLMArray *)realm;
+
+#pragma mark - Helpers
+
++ (NSString *)uoid;
+
++ (NSDateFormatter *)dateFormatter;
 
 @end

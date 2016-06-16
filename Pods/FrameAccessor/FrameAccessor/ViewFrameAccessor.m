@@ -157,10 +157,6 @@
 
 - (void)setCenterX:(CGFloat)newCenterX
 {
-    if (isnan(newCenterX)) {
-        NSLog(@"reset value");
-        newCenterX = 0.0f;
-    }
     self.center = CGPointMake(newCenterX, self.center.y);
 }
 
@@ -171,10 +167,6 @@
 
 - (void)setCenterY:(CGFloat)newCenterY
 {
-    if (isnan(newCenterY)) {
-        NSLog(@"reset value");
-        newCenterY = 0.0f;
-    }
     self.center = CGPointMake(self.center.x, newCenterY);
 }
 

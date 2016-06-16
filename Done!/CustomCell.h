@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "iOSUILib/MDTableViewCell.h"
 #import "iOSUILib/MDTextField.h"
-#import "iOSUILib/MDButton.h"
 #import "iOSUILib/MDSwitch.h"
 #import "UIFontHelper.h"
 
@@ -21,7 +20,7 @@
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 @property (weak, nonatomic) IBOutlet MDSwitch *Switch;
 @property (weak, nonatomic) IBOutlet UILabel *SwitchLabel;
-@property (weak, nonatomic) IBOutlet MDButton *button;
+@property (weak, nonatomic) IBOutlet UIButton *button;
 @property (nonatomic, assign) id delegate;
 @property (weak, nonatomic) IBOutlet UILabel *valuePickerText;
 

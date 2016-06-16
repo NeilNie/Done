@@ -39,10 +39,9 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     EventTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"idEventCell" forIndexPath:indexPath];
     Events *event = [allEvents objectAtIndex:indexPath.row];
     NSDateFormatter *formate = [[NSDateFormatter alloc] init];
-    [formate setDateFormat:@"yyyy-MM-dd HH:mm"];
+    [formate setDateFormat:@"dd/MM/yyyy HH:MM"];
     cell.titleLabel.text = event.title;
     cell.dateLabel.text = [formate stringFromDate:event.date];
-    cell.rippleColor = [UIColor colorWithRed:49.0/225.0 green:116.0/225.0 blue:250.0/225.0 alpha:1.0];
     cell.delegate = self;
     return cell;
 }
@@ -182,6 +181,12 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     [self.collectionViewCalendarLayout registerClass:MSTimeRowHeaderBackground.class forDecorationViewOfKind:MSCollectionElementKindTimeRowHeaderBackground];
 }
 
+-(void)tapGesture:(UITapGestureRecognizer *)tap{
+    if (_graphView.alpha == 1) {
+        [self performSegueWithIdentifier:@"showGraphUI" sender:nil];
+    }
+}
+
 -(void)setUpGestures{
     
     UISwipeGestureRecognizer *left = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(gestureAction:)];
@@ -191,6 +196,9 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     UISwipeGestureRecognizer *right = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(gestureAction:)];
     right.direction = UISwipeGestureRecognizerDirectionRight;
     [self.collectionView addGestureRecognizer:right];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGesture:)];
+    [self.graphView addGestureRecognizer:tap];
 }
 
 -(void)setShadowforView:(UIView *)view{
@@ -249,10 +257,10 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     areAdsRemoved = [[NSUserDefaults standardUserDefaults] boolForKey:@"areAdsRemoved"];
     [[NSUserDefaults standardUserDefaults] synchronize];
     if (areAdsRemoved == NO) {
-        UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
-        UIVisualEffectView *blurEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
-        blurEffectView.frame = self.graphView.bounds;
-        blurEffectView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+//        UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
+//        UIVisualEffectView *blurEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
+//        blurEffectView.frame = self.graphView.bounds;
+//        blurEffectView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(self.graphView.center.x - 90, self.graphView.center.y, 180, 45)];
         label.numberOfLines = 2;
@@ -260,11 +268,8 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
         label.text = @"Productivity Graph is a pro feature";
         label.font = [UIFont systemFontOfSize:15 weight:UIFontWeightThin];
         label.textColor = [UIColor whiteColor];
-        [self.graphView addSubview:blurEffectView];
+        //[self.graphView addSubview:blurEffectView];
         [self.graphView addSubview:label];
-        
-    }else{
-        
     }
 }
 -(void)initShowAlert{
@@ -333,50 +338,11 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
 - (NSString *)titleForLineAtIndex:(NSInteger)index {
     return [self.labels objectAtIndex:index];
 }
-
-#pragma mark - Graphics
-
-- (void)initLayer {
-
-    if (!_rippleColor)
-        _rippleColor = [UIColor colorWithWhite:0.5 alpha:0.8];
-    
-    mdLayer = [[MDRippleLayer alloc] initWithSuperLayer:self.view.layer];
-    [mdLayer setEffectColor:_rippleColor];
-    mdLayer.enableElevation = false;
-    mdLayer.effectSpeed = 600;
-}
-
-- (void)setRippleColor:(UIColor *)rippleColor {
-    _rippleColor = rippleColor;
-    [mdLayer setEffectColor:rippleColor];
-}
-
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    
-    [super touchesBegan:touches withEvent:event];
-    CGPoint point = [touches.allObjects[0] locationInView:self.view];
-    [mdLayer startEffectsAtLocation:point];
-}
-
-- (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
-    [super touchesCancelled:touches withEvent:event];
-    [mdLayer stopEffectsImmediately];
-}
-
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-    [super touchesEnded:touches withEvent:event];
-    [mdLayer stopEffects];
-}
-
-- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
-    [super touchesMoved:touches withEvent:event];
-    [mdLayer stopEffects];
-}
-
 #pragma mark - Life Cycle
 
 - (void)viewDidLoad {
+    
+    [super viewDidLoad];
     
     //get data for today
     result = [Events allObjects];
@@ -391,7 +357,6 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     self.tableContr.constant = self.view.bounds.size.height - 190 - 160;
     
     [self setUpGestures];
-    [self initLayer];
     [self setShadowforView:self.totalEView];
     [self setShadowforView:self.todayView];
     [self setShadowforView:self.completedEView];
@@ -407,7 +372,6 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     self.totalEView.center = CGPointMake(self.totalEView.center.x, self.totalEView.center.y - 100);
     self.todayView.center = CGPointMake(self.completedEView.center.x, self.todayView.center.y - 100);
 
-    [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
 
@@ -419,7 +383,7 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
         self.tableContr.constant = 4;
         [self.view layoutIfNeeded];
     }];
-    [self setUpGraphData];
+    //[self setUpGraphData];
     [self setupView];
     [super viewDidAppear:YES];
 }

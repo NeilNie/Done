@@ -36,7 +36,7 @@ static CGFloat kDefaultLineWidth = 3.0;
 static CGFloat kDefaultMargin = 5.0;
 static CGFloat kDefaultMarginBottom = 8.0;
 
-static CGFloat kAxisMargin = 50.0;
+static CGFloat kAxisMargin = 25.0;
 
 @interface GKLineGraph ()
 
@@ -164,6 +164,7 @@ static CGFloat kAxisMargin = 50.0;
     
         CGFloat value = [self _minValue] + (idx * [self _stepValueLabelY]);
         item.centerY = [self _positionYForLineValue:value];
+        item.centerX = item.centerX - 15.0f;
         
         item.text = [@(ceil(value)) stringValue];
 //        item.text = [@(value) stringValue];

@@ -11,15 +11,8 @@
 #import "LeftViewCell.h"
 #import "MainViewController.h"
 
-#import "RZTransitionInteractionControllerProtocol.h"
-#import "RZTransitionsInteractionControllers.h"
-#import "RZTransitionsAnimationControllers.h"
-#import "RZRectZoomAnimationController.h"
-#import "RZTransitionsManager.h"
+@interface LeftViewController ()
 
-@interface LeftViewController () <RZTransitionInteractionControllerDelegate, RZRectZoomAnimationDelegate>
-
-@property (nonatomic, strong) RZRectZoomAnimationController *presentDismissAnimationController;
 @property (nonatomic, assign) CGPoint circleTransitionStartPoint;
 @property (nonatomic, assign) CGRect transitionCellRect;
 @property (strong, nonatomic) NSArray *titlesArray;
@@ -42,14 +35,14 @@
                      @"Preference",];
 
     // -----
-    self.presentDismissAnimationController = [[RZRectZoomAnimationController alloc] init];
-    [self.presentDismissAnimationController setRectZoomDelegate:self];
-    self.circleTransitionStartPoint = CGPointZero;
-    self.transitionCellRect = CGRectZero;
-    [[RZTransitionsManager shared] setAnimationController:self.presentDismissAnimationController
-                                       fromViewController:[self class]
-                                                forAction:RZTransitionAction_PresentDismiss];
-    [self setTransitioningDelegate:[RZTransitionsManager shared]];
+//    self.presentDismissAnimationController = [[RZRectZoomAnimationController alloc] init];
+//    [self.presentDismissAnimationController setRectZoomDelegate:self];
+//    self.circleTransitionStartPoint = CGPointZero;
+//    self.transitionCellRect = CGRectZero;
+//    [[RZTransitionsManager shared] setAnimationController:self.presentDismissAnimationController
+//                                       fromViewController:[self class]
+//                                                forAction:RZTransitionAction_PresentDismiss];
+//    [self setTransitioningDelegate:[RZTransitionsManager shared]];
     
     self.tableView.contentInset = UIEdgeInsetsMake(44.f, 0.f, 44.f, 0.f);
 }
@@ -141,12 +134,12 @@
     [mainViewController setupWithPresentationStyle:LGSideMenuPresentationStyleSlideBelow type:0];
 }
 
-- (UIViewController *)nextViewControllerForInteractor:(id<RZTransitionInteractionController>)interactor
-{
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UIViewController *today = [storyboard instantiateViewControllerWithIdentifier:@"NavigationController"];
-    return today;
-}
+//- (UIViewController *)nextViewControllerForInteractor:(id<RZTranitionInteractionController>)interactor
+//{
+//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//    UIViewController *today = [storyboard instantiateViewControllerWithIdentifier:@"NavigationController"];
+//    return today;
+//}
 
 #pragma mark - RZRectZoomAnimationDelegate
 

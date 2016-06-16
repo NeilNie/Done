@@ -21,7 +21,7 @@
     
     NSInteger rowCount = self.table.numberOfRows;
     NSDateFormatter *formate = [[NSDateFormatter alloc] init];
-    [formate setDateFormat:@"yyyy-MM-dd HH:mm"];
+    [formate setDateFormat:@"dd/MM/yyyy HH:MM"];
     
     for (NSInteger i = 0; i < rowCount; i++) {
         

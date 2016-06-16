@@ -16,6 +16,10 @@
 
 #pragma mark - WCSession Delegate
 
+-(void)session:(WCSession *)session activationDidCompleteWithState:(WCSessionActivationState)activationState error:(NSError *)error{
+    
+}
+
 -(void)session:(WCSession *)session didReceiveApplicationContext:(NSDictionary<NSString *,id> *)applicationContext{
     
     NSLog(@"received context (delegate method) %@", applicationContext);

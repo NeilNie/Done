@@ -130,7 +130,7 @@
     }
 }
 - (IBAction)cancel:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(void)setUpView{
@@ -142,8 +142,7 @@
     [self.table registerNib:[UINib nibWithNibName:@"TextfieldCell" bundle:nil] forCellReuseIdentifier:@"idCellTextfield"];
     [self.table registerNib:[UINib nibWithNibName:@"DatePickerCell" bundle:nil] forCellReuseIdentifier:@"idCellDatePicker"];
     [self.table registerNib:[UINib nibWithNibName:@"ValuePickerCell" bundle:nil] forCellReuseIdentifier:@"idCellValuePicker"];
-    [self.table registerNib:[UINib nibWithNibName:@"SwitchCell" bundle:nil] forCellReuseIdentifier:@"idCellSwitch"];
-    
+    [self.table registerNib:[UINib nibWithNibName:@"SwitchCell" bundle:nil] forCellReuseIdentifier:@"idCellSwitch"];    
 }
 
 -(void)loadCellDiscriptors{
@@ -237,7 +236,7 @@
         BOOL shouldExpandAndShowSubRows = NO;
         NSNumber *Int = [[[cellDescriptors objectAtIndex:indexPath.section] objectAtIndex:indexOfTappedRow.integerValue] objectForKey:@"isExpanded"];
         if (Int.intValue == 0) {
-
+            
             NSLog(@"should expand = yes");
             // In this case the cell should expand.
             shouldExpandAndShowSubRows = YES;
@@ -344,7 +343,7 @@
 -(void)dateWasSelected:(NSDate *)selectedDate{
     
     NSDateFormatter *formate = [[NSDateFormatter alloc] init];
-    [formate setDateFormat:@"yyyy-MM-dd HH:mm"];
+    [formate setDateFormat:@"dd/MM/yyyy HH:MM"];
     NSString *dateString = [formate stringFromDate:selectedDate];
     
     if ([self.sender isEqualToString:@"project"]) {

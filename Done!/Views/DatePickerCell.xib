@@ -1,64 +1,46 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15G7a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11129.15" systemVersion="16A201w" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11103.10"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <mutableArray key="Roboto-Regular.ttf">
-            <string>Roboto-Regular</string>
-        </mutableArray>
-    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="idCellDatePicker" rowHeight="275" id="48e-9n-bSa" customClass="CustomCell">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="idCellDatePicker" rowHeight="275" id="48e-9n-bSa" customClass="CustomDatePickerCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="270"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="48e-9n-bSa" id="NuO-v5-3qf">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="269.5"/>
+                <frame key="frameInset" width="320" height="269.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="10" translatesAutoresizingMaskIntoConstraints="NO" id="Dc8-rj-YK5">
-                        <rect key="frame" x="0.0" y="8" width="320" height="216"/>
-                        <date key="date" timeIntervalSinceReferenceDate="467373714.16895503">
-                            <!--2015-10-24 10:01:54 +0000-->
-                        </date>
-                    </datePicker>
-                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GpK-nR-HWc" customClass="MDButton">
-                        <rect key="frame" x="110" y="231" width="100" height="32"/>
-                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
-                        <state key="normal" title="Set Date">
-                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </state>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="enabled" value="YES"/>
-                            <userDefinedRuntimeAttribute type="number" keyPath="type">
-                                <integer key="value" value="1"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="color" keyPath="rippleColor">
-                                <color key="value" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fy9-3F-zDJ">
+                        <state key="normal" title="Set Date"/>
                         <connections>
-                            <action selector="selectedDate:" destination="48e-9n-bSa" eventType="touchUpInside" id="OWP-bK-loq"/>
+                            <action selector="selectedDate:" destination="48e-9n-bSa" eventType="touchUpInside" id="fHT-NW-ft6"/>
                         </connections>
                     </button>
+                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="uKw-xD-CFg">
+                        <date key="date" timeIntervalSinceReferenceDate="487724278.324229">
+                            <!--2016-06-15 22:57:58 +0000-->
+                        </date>
+                    </datePicker>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailingMargin" secondItem="Dc8-rj-YK5" secondAttribute="trailing" constant="-8" id="0E6-3I-Iul"/>
-                    <constraint firstItem="Dc8-rj-YK5" firstAttribute="leading" secondItem="NuO-v5-3qf" secondAttribute="leadingMargin" constant="-8" id="YCc-Gh-kxg"/>
-                    <constraint firstItem="GpK-nR-HWc" firstAttribute="centerX" secondItem="NuO-v5-3qf" secondAttribute="centerX" id="gNN-nm-9Wl"/>
-                    <constraint firstItem="Dc8-rj-YK5" firstAttribute="top" secondItem="NuO-v5-3qf" secondAttribute="topMargin" id="hWk-2p-56g"/>
-                    <constraint firstItem="Dc8-rj-YK5" firstAttribute="centerX" secondItem="NuO-v5-3qf" secondAttribute="centerX" id="ioI-TO-RE9"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="Fy9-3F-zDJ" secondAttribute="bottom" constant="-0.5" id="DjO-j6-XbP"/>
+                    <constraint firstItem="Fy9-3F-zDJ" firstAttribute="top" secondItem="uKw-xD-CFg" secondAttribute="bottom" constant="8" id="Pku-qR-Wbb"/>
+                    <constraint firstAttribute="topMargin" secondItem="uKw-xD-CFg" secondAttribute="top" id="a4o-GE-hL7"/>
+                    <constraint firstItem="uKw-xD-CFg" firstAttribute="leading" secondItem="NuO-v5-3qf" secondAttribute="leading" id="a6s-uY-hEI"/>
+                    <constraint firstAttribute="trailing" secondItem="uKw-xD-CFg" secondAttribute="trailing" id="ntX-aV-Nng"/>
+                    <constraint firstItem="Fy9-3F-zDJ" firstAttribute="centerX" secondItem="NuO-v5-3qf" secondAttribute="centerX" id="pbL-DV-Vcu"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="button" destination="GpK-nR-HWc" id="z6E-h4-qab"/>
-                <outlet property="datePicker" destination="Dc8-rj-YK5" id="y3t-Ny-Tnz"/>
+                <outlet property="button" destination="Fy9-3F-zDJ" id="wyl-f9-pyh"/>
+                <outlet property="datePicker" destination="uKw-xD-CFg" id="koc-jL-iM4"/>
             </connections>
-            <point key="canvasLocation" x="209" y="344"/>
+            <point key="canvasLocation" x="258" y="374"/>
         </tableViewCell>
     </objects>
 </document>

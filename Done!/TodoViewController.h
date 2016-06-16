@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Realm/Realm.h>
 #import <WatchConnectivity/WatchConnectivity.h>
+#import <SWTableViewCell/SWTableViewCell.h>
 
 #import "Events.h"
 #import "AppDelegate.h"
@@ -17,14 +18,17 @@
 #import "EventsHelper.h"
 #import "Projects.h"
 #import "PurchaseViewController.h"
+#import "addEventCell.h"
 
 BOOL phoneModified;
 
 @import GoogleMobileAds;
 
-@interface TodoViewController : UIViewController <WCSessionDelegate, UITableViewDelegate, UITableViewDataSource, EventCellDelegate>{
+@interface TodoViewController : UIViewController <WCSessionDelegate, UITableViewDelegate, UITableViewDataSource, EventCellDelegate, SWTableViewCellDelegate, addEventCellDelegate>{
     NSMutableArray *allEvents;
     UIRefreshControl *refresh;
+    NSInteger selected;
+    BOOL sameSelection;
 }
 @property (weak, nonatomic) Projects *project;
 @property (weak, nonatomic) IBOutlet UINavigationItem *naviTitle;

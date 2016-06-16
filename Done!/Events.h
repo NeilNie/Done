@@ -10,6 +10,7 @@
 
 @interface Events : RLMObject
 
+@property NSString *uoid;
 @property NSString *title;
 @property NSString *subTitle;
 @property NSDate *date;

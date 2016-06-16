@@ -59,16 +59,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>RWBlurPopover.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>RZTransitions.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Realm-iOS7.0.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -85,6 +75,11 @@
 			<false/>
 		</dict>
 		<key>SCLAlertView-Objective-C.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SWTableViewCell.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

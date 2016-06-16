@@ -34,6 +34,7 @@
 - (void)awakeFromNib {
   // Initialization code
   [self initLayer];
+    [super awakeFromNib];
 }
 
 - (instancetype)init {

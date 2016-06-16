@@ -16,23 +16,16 @@
 
 #pragma mark - UITableView Delegate
 
--(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-
-        [EventsHelper deleteEvent:[allEvents objectAtIndex:indexPath.row]];
-        [allEvents removeObjectAtIndex:indexPath.row];
-        [self.table deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationTop];
-        
-        if(WCSession.isSupported){
-            NSLog(@"sent request");
-            WCSession *session = [WCSession defaultSession];
-            session.delegate = self;
-            [session activateSession];
-            [session updateApplicationContext:@{@"needSync": @"YES"} error:nil];
-            NSLog(@"updated context");
-        }
+    sameSelection = NO;
+    if (selected == indexPath.row){
+        sameSelection = YES;
+    }else{
+        selected = indexPath.row;
     }
+    [self.table beginUpdates];
+    [self.table endUpdates];
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -44,29 +37,120 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 70.0;
+    
+    if (sameSelection) {
+        return 70;
+    }else if ([indexPath row] == selected){
+        return 103;
+    }else{
+        return 70.0;
+    }
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    EventTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"idEventCell" forIndexPath:indexPath];
-    Events *event = [allEvents objectAtIndex:indexPath.row];
-    NSDateFormatter *formate = [[NSDateFormatter alloc] init];
-    [formate setDateFormat:@"yyyy-MM-dd HH:mm"];
-    cell.titleLabel.text = event.title;
-    cell.dateLabel.text = [formate stringFromDate:event.date];
-    if (event.important == YES) {
-        cell.importantIcon.hidden = NO;
+    if (indexPath.row + 1 == allEvents.count) {
+        addEventCell *cell = [tableView dequeueReusableCellWithIdentifier:@"addEventCell" forIndexPath:indexPath];
+        cell.delegate = self;
+        return cell;
     }else{
-        cell.importantIcon.hidden = YES;
+        EventTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"idEventCell" forIndexPath:indexPath];
+        cell.leftUtilityButtons = [self leftButtons];
+        cell.rightUtilityButtons = [self rightButtons];
+        Events *event = [allEvents objectAtIndex:indexPath.row];
+        NSDateFormatter *formate = [[NSDateFormatter alloc] init];
+        [formate setDateFormat:@"dd/MM/yyyy HH:MM"];
+        cell.titleLabel.text = event.title;
+        cell.dateLabel.text = [formate stringFromDate:event.date];
+        if (event.important == YES) {
+            [cell.starButton setImage:[UIImage imageNamed:@"star_full.png"] forState:UIControlStateNormal];
+        }else{
+            [cell.starButton setImage:[UIImage imageNamed:@"star.png"] forState:UIControlStateNormal];
+        }
+        cell.delegate = self;
+        return cell;
     }
+}
+- (NSArray *)rightButtons
+{
+    NSMutableArray *rightUtilityButtons = [NSMutableArray new];
+    [rightUtilityButtons sw_addUtilityButtonWithColor:
+     [UIColor colorWithRed:0.78f green:0.78f blue:0.8f alpha:1.0]
+                                                title:@"Done"];
+    [rightUtilityButtons sw_addUtilityButtonWithColor:
+     [UIColor colorWithRed:1.0f green:0.231f blue:0.188 alpha:1.0f]
+                                                title:@"Delete"];
     
-    cell.delegate = self;
-    return cell;
+    return rightUtilityButtons;
+}
+
+- (NSArray *)leftButtons
+{
+    NSMutableArray *leftUtilityButtons = [NSMutableArray new];
     
+    [leftUtilityButtons sw_addUtilityButtonWithColor:
+     [UIColor orangeColor] title:@"Important"];
+    [leftUtilityButtons sw_addUtilityButtonWithColor:
+     [UIColor blueColor] title:@"Hide"];;
+    return leftUtilityButtons;
+}
+
+#pragma mark - SWTableViewCell Delegate
+
+- (void)swipeableTableViewCell:(SWTableViewCell *)cell didTriggerLeftUtilityButtonWithIndex:(NSInteger)index {
+    switch (index) {
+        case 0:
+            [self markImportant:(EventTableViewCell *)cell];
+            break;
+        case 1:
+            NSLog(@"clock button was pressed");
+            break;
+        default:
+            break;
+    }
+}
+
+- (void)swipeableTableViewCell:(SWTableViewCell *)cell didTriggerRightUtilityButtonWithIndex:(NSInteger)index {
+    NSIndexPath *indexPath = [self.table indexPathForCell:cell];
+    switch (index) {
+        case 0:
+            [EventsHelper deleteEvent:[allEvents objectAtIndex:indexPath.row]];
+            [allEvents removeObjectAtIndex:indexPath.row];
+            [self.table deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationTop];
+            NSLog(@"deleted");
+            if(WCSession.isSupported){
+                NSLog(@"sent request");
+                WCSession *session = [WCSession defaultSession];
+                session.delegate = self;
+                [session activateSession];
+                [session updateApplicationContext:@{@"needSync": @"YES"} error:nil];
+                NSLog(@"updated context");
+            }
+            break;
+        case 1:
+            [self clickedDone:(EventTableViewCell *)cell];
+            break;
+        default:
+            break;
+    }
 }
 
 #pragma EventCell Delegate
+
+-(void)addNewEventFromCell:(addEventCell *)cell{
+    
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    [realm beginWriteTransaction];
+    Events *event = [EventsHelper createEventWithDate:[NSDate date] title:cell.textfield.text otherInfo:nil];
+    [realm addObject:event];
+    [realm commitWriteTransaction];
+    
+    allEvents = [EventsHelper findNotCompletedEvents:self.project.events];
+    [self syncDataWithExtension];
+    [allEvents addObject:@""];
+    [self.table reloadData];
+    
+}
 
 -(void)markImportant:(EventTableViewCell *)cell{
     
@@ -87,43 +171,31 @@
     [realm commitWriteTransaction];
     allEvents = [EventsHelper findNotCompletedEvents:self.project.events];
     [self.table deleteRowsAtIndexPaths:@[index] withRowAnimation:UITableViewRowAnimationTop];
+    [allEvents addObject:@""];
+}
+
+-(void)starEvent:(EventTableViewCell *)cell{
+    
+}
+-(void)setReminder:(EventTableViewCell *)cell{
+    
+}
+-(void)moveEvent:(EventTableViewCell *)cell{
+    
+}
+-(void)attachments:(EventTableViewCell *)cell{
+    
 }
 
 #pragma mark - Private
 
-- (void)addNewEvent{
+- (IBAction)addNewEvent:(id)sender{
     
-    [self performSegueWithIdentifier:@"newEvent" sender:nil];
-    [self performSelector:@selector(function) withObject:nil afterDelay:5];
-    
-}
--(void)function{
-    [refresh endRefreshing];
-}
--(void)setUpView{
-    
-    refresh = [[UIRefreshControl alloc] init];
-    refresh.backgroundColor = [UIColor colorWithRed:49.0/225.0 green:116.0/225.0 blue:250.0/225.0 alpha:1.0];
-    refresh.tintColor = [UIColor whiteColor];
-    refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"Add a New Event" attributes:@{NSForegroundColorAttributeName : [UIColor whiteColor], NSFontAttributeName: [UIFont fontWithName:@"Helvetica Neue" size:20]}];
-    [refresh addTarget:self action:@selector(addNewEvent) forControlEvents:UIControlEventValueChanged];
-    [self.table addSubview:refresh];
-}
-
--(void)gestureAction:(UILongPressGestureRecognizer *)press{
-    
-    if (!UIAccessibilityIsReduceTransparencyEnabled()) {
-        //self.view.backgroundColor = [UIColor clearColor];
-        
-        UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight];
-        UIVisualEffectView *blurEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
-        blurEffectView.frame = self.view.bounds;
-        blurEffectView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-        
-        [UIView animateWithDuration:0.3 animations:^{
-            [self.view addSubview:blurEffectView];
-        }];
-    }
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *view = [storyboard instantiateViewControllerWithIdentifier:@"createNew"];
+    dispatch_async(dispatch_get_main_queue(), ^ {
+        [self presentViewController:view animated:YES completion:nil];
+    });
 }
 
 -(void)syncDataWithExtension{
@@ -143,8 +215,9 @@
 -(void)viewDidAppear:(BOOL)animated{
     
     allEvents = [EventsHelper findNotCompletedEvents:self.project.events];
-    [self.table reloadData];
     [self syncDataWithExtension];
+    [allEvents addObject:@""];
+    
     
     areAdsRemoved = [[NSUserDefaults standardUserDefaults] boolForKey:@"areAdsRemoved2"];
     [[NSUserDefaults standardUserDefaults] synchronize];
@@ -163,13 +236,9 @@
     
     self.naviTitle.title = self.project.title;
     allEvents = [EventsHelper findNotCompletedEvents:self.project.events];
-    
+    [allEvents addObject:@""];
     [self.table registerNib:[UINib nibWithNibName:@"EventTableViewCell" bundle:nil] forCellReuseIdentifier:@"idEventCell"];
-    
-    UILongPressGestureRecognizer *press = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(gestureAction:)];
-    press.minimumPressDuration = 1.0;
-    [self.view addGestureRecognizer:press];
-    
+    [self.table registerNib:[UINib nibWithNibName:@"addEventCell" bundle:nil] forCellReuseIdentifier:@"addEventCell"];
     areAdsRemoved = [[NSUserDefaults standardUserDefaults] boolForKey:@"areAdsRemoved2"];
     [[NSUserDefaults standardUserDefaults] synchronize];
     if (!areAdsRemoved) {
@@ -180,9 +249,8 @@
         self.banner.hidden = YES;
     }
     
-    [self setUpView];
-    
-    NSLog(@"current project %@", _project);
+    sameSelection = YES;
+    selected = 1;
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
@@ -192,7 +260,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 
 #pragma mark - Navigation
 

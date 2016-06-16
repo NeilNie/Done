@@ -119,7 +119,6 @@
     [[NSUserDefaults standardUserDefaults] setBool:areAdsRemoved forKey:@"areAdsRemoved"];
     //use NSUserDefaults so that you can load wether or not they bought it
     [[NSUserDefaults standardUserDefaults] synchronize];
-    
 }
 
 #pragma mark - UITableView Delegate
@@ -143,12 +142,9 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     EventTableViewCell *cell = (EventTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"idEventCell" forIndexPath:indexPath];
-    if (eventArray.count > 0) {
-        Events *event = [eventArray objectAtIndex:indexPath.row];
-        cell.titleLabel.text = event.title;
-        cell.dateLabel.text = [[self dateFormatter] stringFromDate:event.date];
-    }
-    
+    Events *event = [eventArray objectAtIndex:indexPath.row];
+    cell.titleLabel.text = event.title;
+    cell.dateLabel.text = [[self dateFormatter] stringFromDate:event.date];
     return cell;
 }
 
@@ -220,8 +216,8 @@
         dayView.dotView.backgroundColor = [UIColor redColor];
         dayView.textLabel.textColor = [UIColor blackColor];
     }
-    
-    if([self haveEventForDay:dayView.date withRealmResult:[Events allObjects]]){
+    NSMutableArray *array = [EventsHelper findEventsForToday:dayView.date withRealm:[Events allObjects]];
+    if(array.count > 0){
         dayView.dotView.hidden = NO;
     }
     else{
@@ -259,9 +255,8 @@
 }
 
 -(void)gestureAction:(UISwipeGestureRecognizer *)swipe{
-    
+
     if (swipe.direction == UISwipeGestureRecognizerDirectionUp) {
-        
         [UIView animateWithDuration:0.5 animations:^{
             self.labelContr1.constant = 0;
             self.labelContr2.constant = 0;
@@ -271,7 +266,6 @@
             [self.view layoutIfNeeded];
         }];
     }else if (swipe.direction == UISwipeGestureRecognizerDirectionDown){
-        
         [UIView animateWithDuration:0.5 animations:^{
             self.labelContr1.constant = 110;
             self.labelContr2.constant = 45;
@@ -279,20 +273,21 @@
             self.contr.constant = 0;
             [self.view layoutIfNeeded];
         }];
+
     }
 }
 
 -(void)setUpGestures{
     
+    NSLog(@"set up gesture");
+    UISwipeGestureRecognizer *swipeDown = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(gestureAction:)];
+    swipeDown.direction = UISwipeGestureRecognizerDirectionDown;
+    [self.calendarContentView addGestureRecognizer:swipeDown];
+    
     UISwipeGestureRecognizer *swipeUp = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(gestureAction:)];
     swipeUp.direction = UISwipeGestureRecognizerDirectionUp;
-    UISwipeGestureRecognizer *swipeDown = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(gestureAction:)];
-    swipeUp.direction = UISwipeGestureRecognizerDirectionUp;
-    swipeDown.direction = UISwipeGestureRecognizerDirectionDown;
     [self.calendarContentView addGestureRecognizer:swipeUp];
-    [self.calendarContentView addGestureRecognizer:swipeDown];
-}
-
+} 
 -(void)setUpLabels{
     
     self.contr.constant = 0;
@@ -306,7 +301,6 @@
     NSMutableArray *array = [EventsHelper findEventsForToday:[NSDate date] withRealm:[Events allObjects]];
     if(array.count > 0){
         eventArray = [[NSMutableArray alloc] initWithArray:array];
-        NSLog(@"reloaded data %@ %@", eventArray, array);
         [self.table reloadData];
     }
     self.eventCountl.text = [NSString stringWithFormat:NSLocalizedString(@"%lu Events on this day", nil), (unsigned long)array.count];
@@ -349,7 +343,6 @@
         eventArray = array;
         [self.table reloadData];
     }
-    
     [super viewDidAppear:YES];
 }
 

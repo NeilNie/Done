@@ -8,14 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "iOSUILib/MDTableViewCell.h"
+#import <SWTableViewCell.h>
 
-@interface EventTableViewCell : MDTableViewCell
+@interface EventTableViewCell : SWTableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UIButton *button;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constr;
 @property (weak, nonatomic) IBOutlet UIButton *markButton;
+@property (weak, nonatomic) IBOutlet UIButton *starButton;
 @property (weak, nonatomic) IBOutlet UIImageView *importantIcon;
 @property (nonatomic, assign) id delegate;
 - (IBAction)done:(id)sender;
@@ -26,5 +28,9 @@
 
 -(void)clickedDone:(EventTableViewCell *)cell;
 -(void)markImportant:(EventTableViewCell *)cell;
+-(void)starEvent:(EventTableViewCell *)cell;
+-(void)setReminder:(EventTableViewCell *)cell;
+-(void)moveEvent:(EventTableViewCell *)cell;
+-(void)attachments:(EventTableViewCell *)cell;
 
 @end

@@ -18,6 +18,10 @@
 -(void)session:(WCSession *)session didReceiveApplicationContext:(NSDictionary<NSString *,id> *)applicationContext{
     NSLog(@"application context %@", applicationContext);
 }
+-(void)session:(WCSession *)session activationDidCompleteWithState:(WCSessionActivationState)activationState error:(NSError *)error{
+    
+}
+
 - (void)awakeWithContext:(id)context {
     
     [super awakeWithContext:context];

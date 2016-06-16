@@ -16,8 +16,16 @@
     NewEvent.title = title;
     NewEvent.date = date;
     NewEvent.completed = NO;
+    NewEvent.uoid = [self uoid];
     return NewEvent;
-    
+}
+
++ (NSString *)uoid
+{
+    CFUUIDRef uuidRef = CFUUIDCreate(NULL);
+    CFStringRef uuidStringRef = CFUUIDCreateString(NULL, uuidRef);
+    CFRelease(uuidRef);
+    return (__bridge_transfer NSString *)uuidStringRef;
 }
 
 +(Projects *)createProjectWithDate:(NSDate *)date title:(NSString *)title{
@@ -26,7 +34,6 @@
     NewProject.title = title;
     NewProject.date = date;
     return NewProject;
-    
 }
 +(void)deleteEvent:(Events *)event{
     
@@ -42,7 +49,7 @@
     
     NSMutableArray *arry = [NSMutableArray array];
     NSDateFormatter *formate = [[NSDateFormatter alloc] init];
-    [formate setDateFormat:@"yyyy-MM-dd HH:mm"];
+    [formate setDateFormat:@"dd/MM/yyyy HH:MM"];
     
     for (int i = 0; i < results.count; i++) {
         
@@ -60,7 +67,7 @@
     static NSDateFormatter *dateFormatter;
     if(!dateFormatter){
         dateFormatter = [NSDateFormatter new];
-        dateFormatter.dateFormat = @"dd/MM HH:mm";
+        dateFormatter.dateFormat = @"dd/MM/yyyy HH:MM";
     }
     
     return dateFormatter;
@@ -83,7 +90,7 @@
     NSMutableArray *arry = [NSMutableArray array];
     
     NSDateFormatter *formate = [[NSDateFormatter alloc] init];
-    [formate setDateFormat:@"yyyy-MM-dd HH:mm"];
+    [formate setDateFormat:@"dd/MM/yyyy HH:MM"];
     RLMResults *result = [Projects allObjects];
     
     for (int i = 0; i < result.count; i++) {
@@ -143,7 +150,7 @@
     
     NSMutableArray *array = [[NSMutableArray alloc] init];
     NSDateFormatter *formate = [[NSDateFormatter alloc] init];
-    [formate setDateFormat:@"yyyy-MM-dd"];
+    [formate setDateFormat:@"dd/MM/yyyy"];
     
     for (int i = 0; i < realm.count; i++) {
         
@@ -159,7 +166,7 @@
     
     NSMutableArray *array = [[NSMutableArray alloc] init];
     NSDateFormatter *formate = [[NSDateFormatter alloc] init];
-    [formate setDateFormat:@"yyyy-MM-dd"];
+    [formate setDateFormat:@"dd/MM/yyyy"];
     
     for (int i = 0; i < realm.count; i++) {
         

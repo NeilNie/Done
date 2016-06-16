@@ -181,7 +181,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    array = [[NSMutableArray alloc] initWithObjects:NSLocalizedString(@"Productivity", nil), NSLocalizedString(@"Tips", nil), NSLocalizedString(@"Restore Purchases", nil), NSLocalizedString(@"Tips", nil), NSLocalizedString(@"Info", nil), NSLocalizedString(@"Purchase no ads", nil), nil];
+    array = [[NSMutableArray alloc] initWithObjects:NSLocalizedString(@"Productivity", nil), NSLocalizedString(@"Tips", nil), NSLocalizedString(@"Restore Purchases", nil), NSLocalizedString(@"Info", nil), NSLocalizedString(@"Purchase no ads", nil), nil];
     
     areAdsRemoved = [[NSUserDefaults standardUserDefaults] boolForKey:@"areAdsRemoved2"];
     [[NSUserDefaults standardUserDefaults] synchronize];

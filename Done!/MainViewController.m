@@ -24,7 +24,6 @@
     _leftViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"LeftViewController"];
     
     // -----
-    
     if (type == 0)
     {
         [self setLeftViewEnabledWithWidth:250.f
@@ -33,15 +32,6 @@
         
         self.leftViewStatusBarStyle = UIStatusBarStyleDefault;
         self.leftViewStatusBarVisibleOptions = LGSideMenuStatusBarVisibleOnNone;
-        
-        // -----
-        
-        [self setRightViewEnabledWithWidth:100.f
-                         presentationStyle:style
-                      alwaysVisibleOptions:LGSideMenuAlwaysVisibleOnNone];
-        
-        self.rightViewStatusBarStyle = UIStatusBarStyleDefault;
-        self.rightViewStatusBarVisibleOptions = LGSideMenuStatusBarVisibleOnNone;
         
         // -----
         
@@ -122,13 +112,13 @@
     }
     else if (type == 4)
     {
-        self.swipeGestureArea = LGSideMenuSwipeGestureAreaFull;
-        self.rootViewCoverColorForLeftView = [UIColor colorWithRed:0.f green:1.f blue:0.5 alpha:0.3];
-        self.rootViewScaleForLeftView = 0.6;
-        self.rootViewLayerBorderWidth = 3.f;
-        self.rootViewLayerBorderColor = [UIColor whiteColor];
-        self.rootViewLayerShadowRadius = 10.f;
-        self.rootViewCoverColorForRightView = [UIColor colorWithRed:0.f green:0.5 blue:1.f alpha:0.3];
+//        self.swipeGestureArea = LGSideMenuSwipeGestureAreaFull;
+//        self.rootViewCoverColorForLeftView = [UIColor colorWithRed:0.f green:1.f blue:0.5 alpha:0.3];
+//        self.rootViewScaleForLeftView = 0.6;
+//        self.rootViewLayerBorderWidth = 3.f;
+//        self.rootViewLayerBorderColor = [UIColor whiteColor];
+//        self.rootViewLayerShadowRadius = 10.f;
+//        self.rootViewCoverColorForRightView = [UIColor colorWithRed:0.f green:0.5 blue:1.f alpha:0.3];
         
         // -----
         

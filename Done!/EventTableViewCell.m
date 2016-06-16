@@ -18,7 +18,6 @@
     [self addGestureRecognizer:gesture];
     //[self.markButton addGestureRecognizer:gesture];
     self.importantIcon.backgroundColor = [UIColor orangeColor];
-    [self cropImagetoRound:self.importantIcon];
     [super awakeFromNib];
     // Initialization code
 }
@@ -26,16 +25,6 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
     // Configure the view for the selected state
-}
-
--(void)cropImagetoRound:(UIImageView *)image{
-    
-    CALayer *imageLayer = image.layer;
-    [imageLayer setCornerRadius:5];
-    [imageLayer setBorderWidth:0];
-    [imageLayer setMasksToBounds:YES];
-    [image.layer setCornerRadius:image.frame.size.width/2];
-    [image.layer setMasksToBounds:YES];
 }
 
 -(void)gestureAction:(UISwipeGestureRecognizer *)swipe
@@ -48,10 +37,9 @@
 }
 
 - (IBAction)markImportant:(id)sender {
-    
-    [self animateHideButton];
+
     self.importantIcon.hidden = NO;
-    [self circleAnimation];
+    [self.starButton setImage:[UIImage imageNamed:@"star_full.png"] forState:UIControlStateNormal];
     if (delegate != nil) {
         [delegate markImportant:self];
     }
@@ -72,18 +60,6 @@
         [self layoutIfNeeded];
     }];
 }
--(void)circleAnimation
-{
-    [UIView animateWithDuration:0.3 animations:^{
-        const CGFloat scale = 8;
-        [self.importantIcon setTransform:CGAffineTransformMakeScale(scale, scale)];
-    } completion:^(BOOL finished) {
-        [UIView animateWithDuration:0.3 animations:^{
-            const CGFloat scale = 1;
-            [self.importantIcon setTransform:CGAffineTransformMakeScale(scale, scale)];
-        }];
-    }];
-}
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self animateHideButton];
@@ -96,4 +72,23 @@
         [delegate clickedDone:self];
     }
 }
+- (IBAction)moveEventToProject:(id)sender {
+    if (delegate != nil) {
+        [delegate moveEvent:self];
+    }
+
+}
+- (IBAction)EventScheduleReminder:(id)sender {
+    if (delegate != nil) {
+        [delegate setReminder:self];
+    }
+
+}
+- (IBAction)addAttachments:(id)sender {
+    if (delegate != nil) {
+        [delegate attachments:self];
+    }
+
+}
+
 @end

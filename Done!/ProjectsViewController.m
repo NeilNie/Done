@@ -112,9 +112,13 @@
     [kMainViewController showLeftViewAnimated:YES completionHandler:nil];
 }
 
-- (void)addNewEvent{
+- (IBAction)addNewEvent:(id)sender{
     
-    [self performSegueWithIdentifier:@"newProject" sender:nil];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *view = [storyboard instantiateViewControllerWithIdentifier:@"createNew"];
+    dispatch_async(dispatch_get_main_queue(), ^ {
+        [self presentViewController:view animated:YES completion:nil];
+    });
 }
 
 #pragma mark - Life Cycle
@@ -132,9 +136,6 @@
 - (void)viewDidLoad {
     
     projects = [Projects allObjects];
-    UISwipeGestureRecognizer *gesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(addNewEvent)];
-    gesture.direction = UISwipeGestureRecognizerDirectionLeft;
-    [self.collectionView addGestureRecognizer:gesture];
     
     areAdsRemoved = [[NSUserDefaults standardUserDefaults] boolForKey:@"areAdsRemoved2"];
     [[NSUserDefaults standardUserDefaults] synchronize];

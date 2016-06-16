@@ -3,15 +3,106 @@
 <plist version="1.0">
 <dict>
 	<key>SchemeUserState</key>
-	<dict/>
+	<dict>
+		<key>EAIntroView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>EARestrictedScrollView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>FrameAccessor.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>JTCalendar.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>LGSideMenuController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>MKFoundationKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Masonry.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Done Widget.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Done! Apple Watch Extension.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Done!.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>RKDropdownAlert.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>RWBlurPopover.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Realm-iOS7.0.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Realm-iOS9.3.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Realm-watchOS2.2.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SCLAlertView-Objective-C.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SWTableViewCell.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>UIColor-HexString.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>03463FE48012D015AEB65655FAB5A2AF</key>
+		<key>0443296581402605E3D61174B12FB64F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>0443296581402605E3D61174B12FB64F</key>
+		<key>08F66AC1276811366D3F43F0EB204C12</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -26,12 +117,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2C7C5D5817550882524FBC092362A116</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>44B3628C5B7BFFD764480CF937854799</key>
+		<key>3F013237F46EBDB7F3E6331D05C28981</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -51,22 +137,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>53F0C6C2864BB936013771E1E65E0FD2</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>5CEF40925996448B4AD34AB7976775D3</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>674F7F468243737510A2E4F535196107</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>6A64D426C779829F30A9504416C1E86B</key>
+		<key>6236B943A4819B442346E45476B106B5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -81,27 +152,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7EF6C19CD1618F2AD39D2A9608B5D592</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>85E436F0F8FFB65B46EF56FAEFE7072B</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>8CC49EFAE1EFF7CF9206284F35984491</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>9F89F462552636966C321F9DCD061C8E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>AE0ABE93CEDAC642F4B330BA7F976392</key>
+		<key>8DCF8CDDD94C291671F11A93722E4C0E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -111,27 +162,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BACA9AF9BE7D800F738A9FC21276E30A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>C3AD7E342840A1BEA026D1D3A2D9C1A7</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C817E5B0C9738F8B27E80CAE959CEFA3</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>CC10A51A744FC5251E3988CF5074CE2C</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>CCF02A2E3C3C35C3686BF8317EB4FEAB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -141,17 +172,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D41DB93528E37AFE19592B109D812964</key>
+		<key>DCBFD4C7156095439B9754BAAC3A5846</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DF4B0923AD0EC536D7E9C9BA732169CC</key>
+		<key>E51903BBC640C39C3076CAC829FB205E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E7A5AFBB62D1F1591B98CF49701767E9</key>
+		<key>FC9F7AE6BE74467F2AE992D7D4BA24FB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
