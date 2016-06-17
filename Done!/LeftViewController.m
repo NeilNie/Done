@@ -30,7 +30,7 @@
     _titlesArray = @[@"Done - Task Manager",
                      @"",
                      @"Today",
-                     @"Projects",
+                     @"Tasks",
                      @"Calendar",
                      @"Preference",];
 
@@ -84,7 +84,7 @@
 {
     [kMainViewController hideLeftViewAnimated:YES completionHandler:nil];
     UINavigationController *today = [self.storyboard instantiateViewControllerWithIdentifier:@"NavigationController"];
-    UINavigationController *projects = [self.storyboard instantiateViewControllerWithIdentifier:@"Projects"];
+    UINavigationController *projects = [self.storyboard instantiateViewControllerWithIdentifier:@"Tasks"];
     UINavigationController *preference = [self.storyboard instantiateViewControllerWithIdentifier:@"Preference"];
     UINavigationController *calendar = [self.storyboard instantiateViewControllerWithIdentifier:@"Calendar"];
     MainViewController *mainViewController = [self.storyboard instantiateInitialViewController];

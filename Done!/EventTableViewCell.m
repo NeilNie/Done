@@ -12,6 +12,19 @@
 
 @synthesize delegate;
 
+-(void)setUpCell{
+    
+    self.titleLabel.text = self.event.title;
+    NSDateFormatter *formate = [[NSDateFormatter alloc] init];
+    [formate setDateFormat:@"dd/MM/yyyy HH:MM"];
+    self.dateLabel.text = [formate stringFromDate:self.event.date];
+    if (self.event.important == YES) {
+        [self.starButton setImage:[UIImage imageNamed:@"star_full.png"] forState:UIControlStateNormal];
+    }else{
+        [self.starButton setImage:[UIImage imageNamed:@"star.png"] forState:UIControlStateNormal];
+    }
+}
+
 - (void)awakeFromNib {
     
     UISwipeGestureRecognizer *gesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(gestureAction:)];

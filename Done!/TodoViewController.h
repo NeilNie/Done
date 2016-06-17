@@ -11,6 +11,7 @@
 #import <WatchConnectivity/WatchConnectivity.h>
 #import <SWTableViewCell/SWTableViewCell.h>
 
+#import "iOSUILib/MDTabBarViewController.h"
 #import "Events.h"
 #import "AppDelegate.h"
 #import "EventTableViewCell.h"
@@ -24,12 +25,14 @@ BOOL phoneModified;
 
 @import GoogleMobileAds;
 
-@interface TodoViewController : UIViewController <WCSessionDelegate, UITableViewDelegate, UITableViewDataSource, EventCellDelegate, SWTableViewCellDelegate, addEventCellDelegate>{
+@interface TodoViewController : UIViewController <WCSessionDelegate, UITableViewDelegate, UITableViewDataSource, EventCellDelegate, SWTableViewCellDelegate, addEventCellDelegate, MDTabBarDelegate, CreateNewDelegate>{
+
     NSMutableArray *allEvents;
-    UIRefreshControl *refresh;
+    NSMutableArray *tabBarArray;
     NSInteger selected;
     BOOL sameSelection;
 }
+@property (weak, nonatomic) IBOutlet MDTabBar *tabBar;
 @property (weak, nonatomic) Projects *project;
 @property (weak, nonatomic) IBOutlet UINavigationItem *naviTitle;
 @property (weak, nonatomic) IBOutlet UINavigationItem *item;

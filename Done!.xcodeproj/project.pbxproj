@@ -112,7 +112,6 @@
 		28B7ACBB1CE0AB2E007B3662 /* MDSuggestPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B7AC901CE0AB2E007B3662 /* MDSuggestPopupView.m */; };
 		28B7ACBC1CE0AB2E007B3662 /* MDSuggestTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B7AC921CE0AB2E007B3662 /* MDSuggestTableView.m */; };
 		28B7ACBD1CE0AB2E007B3662 /* UIView+MDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B7AC941CE0AB2E007B3662 /* UIView+MDExtension.m */; };
-		28BF6F541CD0D4DB00059D7D /* ProjectsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28BF6F531CD0D4DB00059D7D /* ProjectsViewController.m */; };
 		28BF6F571CD0D56000059D7D /* ProjectCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 28BF6F561CD0D56000059D7D /* ProjectCollectionViewCell.m */; };
 		28C2DAC11CD02716007441D0 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C2DAC01CD02716007441D0 /* TodayViewController.m */; };
 		28D48AE01D06E52000723DA5 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 28D48ADF1D06E52000723DA5 /* menu.png */; };
@@ -417,8 +416,6 @@
 		28B7AC921CE0AB2E007B3662 /* MDSuggestTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDSuggestTableView.m; sourceTree = "<group>"; };
 		28B7AC931CE0AB2E007B3662 /* UIView+MDExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MDExtension.h"; sourceTree = "<group>"; };
 		28B7AC941CE0AB2E007B3662 /* UIView+MDExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MDExtension.m"; sourceTree = "<group>"; };
-		28BF6F521CD0D4DB00059D7D /* ProjectsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectsViewController.h; sourceTree = "<group>"; };
-		28BF6F531CD0D4DB00059D7D /* ProjectsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectsViewController.m; sourceTree = "<group>"; };
 		28BF6F551CD0D56000059D7D /* ProjectCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectCollectionViewCell.h; sourceTree = "<group>"; };
 		28BF6F561CD0D56000059D7D /* ProjectCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectCollectionViewCell.m; sourceTree = "<group>"; };
 		28C2DABF1CD02716007441D0 /* TodayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
@@ -729,16 +726,9 @@
 		00FA9E401CE90DE700E977D0 /* Native */ = {
 			isa = PBXGroup;
 			children = (
+				284CFBB41D13684B00BFDCBE /* View Classes */,
 				0060834E1CC4007500A344F1 /* AppDelegate.h */,
 				0060834F1CC4007500A344F1 /* AppDelegate.m */,
-				28006A111CC6B41900583D69 /* CustomCell.h */,
-				28006A121CC6B41900583D69 /* CustomCell.m */,
-				2885388E1D1225F1008EADFE /* CustomDatePickerCell.h */,
-				2885388F1D1225F1008EADFE /* CustomDatePickerCell.m */,
-				2802F81D1CC5B78800C65966 /* EventTableViewCell.h */,
-				2802F81E1CC5B78800C65966 /* EventTableViewCell.m */,
-				28BF6F551CD0D56000059D7D /* ProjectCollectionViewCell.h */,
-				28BF6F561CD0D56000059D7D /* ProjectCollectionViewCell.m */,
 				2802F8201CC5B7AE00C65966 /* Events.h */,
 				2802F8211CC5B7AE00C65966 /* Events.m */,
 				28E53D001CD04662002DB55F /* Projects.h */,
@@ -747,10 +737,6 @@
 				00BEC6711CCBC93A008B7862 /* EventsHelper.m */,
 				28FDBD5F1CFB968700EFEB59 /* FirebaseHelper.h */,
 				28FDBD601CFB968700EFEB59 /* FirebaseHelper.m */,
-				28FE7D001D065CB200855009 /* LeftViewCell.h */,
-				28FE7D011D065CB200855009 /* LeftViewCell.m */,
-				286C08CF1D0FACEC0077F91F /* addEventCell.h */,
-				286C08D01D0FACEC0077F91F /* addEventCell.m */,
 				281F990B1CE2B4B6008D9342 /* Done!-Bridging-Header.h */,
 			);
 			name = Native;
@@ -810,8 +796,6 @@
 				28C2DAC01CD02716007441D0 /* TodayViewController.m */,
 				00F48A311CC5194100B94EA4 /* TodoViewController.h */,
 				00F48A321CC5194100B94EA4 /* TodoViewController.m */,
-				28BF6F521CD0D4DB00059D7D /* ProjectsViewController.h */,
-				28BF6F531CD0D4DB00059D7D /* ProjectsViewController.m */,
 				00F48A2E1CC5193000B94EA4 /* CalendarViewController.h */,
 				00F48A2F1CC5193000B94EA4 /* CalendarViewController.m */,
 				00F48A341CC5194A00B94EA4 /* PreferenceViewController.h */,
@@ -845,6 +829,25 @@
 				280EFD941CE2C17500C31E46 /* MSTimeRowHeaderBackground.m */,
 			);
 			name = Timeline;
+			sourceTree = "<group>";
+		};
+		284CFBB41D13684B00BFDCBE /* View Classes */ = {
+			isa = PBXGroup;
+			children = (
+				28FE7D001D065CB200855009 /* LeftViewCell.h */,
+				28FE7D011D065CB200855009 /* LeftViewCell.m */,
+				286C08CF1D0FACEC0077F91F /* addEventCell.h */,
+				286C08D01D0FACEC0077F91F /* addEventCell.m */,
+				28006A111CC6B41900583D69 /* CustomCell.h */,
+				28006A121CC6B41900583D69 /* CustomCell.m */,
+				2885388E1D1225F1008EADFE /* CustomDatePickerCell.h */,
+				2885388F1D1225F1008EADFE /* CustomDatePickerCell.m */,
+				2802F81D1CC5B78800C65966 /* EventTableViewCell.h */,
+				2802F81E1CC5B78800C65966 /* EventTableViewCell.m */,
+				28BF6F551CD0D56000059D7D /* ProjectCollectionViewCell.h */,
+				28BF6F561CD0D56000059D7D /* ProjectCollectionViewCell.m */,
+			);
+			name = "View Classes";
 			sourceTree = "<group>";
 		};
 		28B7AC3C1CE0AB2E007B3662 /* iOSUILib */ = {
@@ -1498,7 +1501,6 @@
 				28F4FD0C1CDC01740042352F /* GKLineGraph.m in Sources */,
 				28B7ACAE1CE0AB2E007B3662 /* MDTabBar.m in Sources */,
 				28B7ACA21CE0AB2E007B3662 /* MDMathHelper.m in Sources */,
-				28BF6F541CD0D4DB00059D7D /* ProjectsViewController.m in Sources */,
 				28FDBD611CFB968700EFEB59 /* FirebaseHelper.m in Sources */,
 				006083501CC4007500A344F1 /* AppDelegate.m in Sources */,
 				28B7ACB11CE0AB2E007B3662 /* MDTextField.m in Sources */,

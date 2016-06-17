@@ -12,20 +12,20 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="270"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="48e-9n-bSa" id="NuO-v5-3qf">
-                <frame key="frameInset" width="320" height="269.5"/>
+                <frame key="frameInset" width="320" height="269"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fy9-3F-zDJ">
-                        <state key="normal" title="Set Date"/>
-                        <connections>
-                            <action selector="selectedDate:" destination="48e-9n-bSa" eventType="touchUpInside" id="fHT-NW-ft6"/>
-                        </connections>
-                    </button>
                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="uKw-xD-CFg">
                         <date key="date" timeIntervalSinceReferenceDate="487724278.324229">
                             <!--2016-06-15 22:57:58 +0000-->
                         </date>
                     </datePicker>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fy9-3F-zDJ">
+                        <state key="normal" title="Set Date"/>
+                        <connections>
+                            <action selector="setDate:" destination="48e-9n-bSa" eventType="touchUpInside" id="FTb-jD-Eb6"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottomMargin" secondItem="Fy9-3F-zDJ" secondAttribute="bottom" constant="-0.5" id="DjO-j6-XbP"/>

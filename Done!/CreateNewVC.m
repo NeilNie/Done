@@ -45,6 +45,8 @@
         }
         [self syncWithWatch];
     }
+    [self dismissViewControllerAnimated:YES
+                             completion:nil];
 }
 
 -(void)addEventToFirebase:(Events *)event{
@@ -320,7 +322,7 @@
         
     }
     else if ([currentDescriptor[@"cellIdentifier"] isEqualToString:@"idCellTextfield"]) {
-        self.table.separatorStyle = UITableViewCellSeparatorStyleNone;
+//        self.table.separatorStyle = UITableViewCellSeparatorStyleNone;
         cell.textField.hint = currentDescriptor[@"primaryTitle"];
         //cell.textField.floatingLabel = currentDescriptor[@"primaryTitle"];
     }
@@ -333,7 +335,6 @@
     else if ([currentDescriptor[@"cellIdentifier"] isEqualToString:@"idCellValuePicker"]) {
         cell.valuePickerText.text = currentDescriptor[@"primaryTitle"];
     }
-    cell.rippleColor = [UIColor colorWithRed:10.0f/255.0f green:96.0f/255.0f blue:254.0f/255.0f alpha:1.0f];
     cell.delegate = self;
     return cell;
 }
@@ -345,7 +346,7 @@
     NSDateFormatter *formate = [[NSDateFormatter alloc] init];
     [formate setDateFormat:@"dd/MM/yyyy HH:MM"];
     NSString *dateString = [formate stringFromDate:selectedDate];
-    
+    NSLog(@"%@", dateString);
     if ([self.sender isEqualToString:@"project"]) {
         [[[cellDescriptors objectAtIndex:0] objectAtIndex:2] setValue:dateString forKey:@"primaryTitle"];
     }else{
@@ -398,6 +399,7 @@
 
 - (void)viewDidLoad {
 
+    NSLog(@"%@", delegate);
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }

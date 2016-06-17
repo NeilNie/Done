@@ -12,13 +12,12 @@
 
 @synthesize delegate;
 
--(IBAction)selectedDate:(id)sender{
-    
-    if (delegate != nil) {
-        [delegate dateWasSelected:self.datePicker.date];
-        NSLog(@"method called %@", self.datePicker.date);
-    }
-}
+//-(IBAction)selectedDate:(id)sender{
+//    
+//    if (delegate != nil) {
+//        [delegate dateWasSelected:self.datePicker.date];
+//    }
+//}
 
 -(void)dateWasSelected:(NSString *)selectedDateString{
     

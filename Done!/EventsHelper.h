@@ -41,7 +41,7 @@
  This method converts all the Event objects to a NSMutableArray that contains Event objects.
  */
 
-+(NSMutableArray *)convertToArrayEventObjects:(RLMResults *)results;
++(NSMutableArray *)convertEventsToArray:(RLMResults *)results;
 
 /**
  This method finds all the Event objects on a specific day which is the parameter.
@@ -50,7 +50,7 @@
 
 +(NSMutableArray *)findEventsForToday:(NSDate *)today withArrayOfEvents:(NSMutableArray *)realm;
 
-+(NSMutableArray *)findTodayCompletedEvents:(RLMArray *)realm;
++(NSMutableArray *)findTodayCompletedEvents:(RLMResults *)realm;
 
 +(NSMutableArray *)findCompletedEventsWithArrayOfEvents:(NSMutableArray *)realm withDate:(NSDate *)date;
 
@@ -64,11 +64,6 @@
  */
 +(NSMutableArray *)convertAllObjecttoArray;
 
-/**
- The parameter is a `RLMResults` object. The method goes through all the `Events` and turn the `RLMResults` object into a NSMutableArray.
- */
-+(NSMutableArray *)convertToArray:(RLMResults *)results;
-
 +(Events *)findMostRecentEvent:(NSDate *)date withRealmResult:(RLMResults *)realm;
 
 +(NSMutableArray *)findTodayNotCompletedEvents:(RLMResults *)realm;
@@ -77,7 +72,7 @@
 
 +(Events *)findEarliestEventTodayWithArray:(NSMutableArray *)array;
 
-+(Events *)findEventWithTitle:(NSString *)string withRealm:(RLMArray *)array;
+//+(Events *)findEventWithTitle:(NSString *)string withRealm:(RLMArray *)array;
 
 +(Events *)findEventWithTitle:(NSString *)string withAllRealm:(RLMResults *)array;
 
@@ -86,6 +81,8 @@
 +(Projects *)findProjectWithName:(NSString *)name;
 
 +(Events *)findMostRecentEvent:(NSDate *)date withRealm:(RLMArray *)realm;
+
++(NSMutableArray *)findImportantEvents:(NSDate *)date withRealm:(RLMResults *)realm;
 
 #pragma mark - Helpers
 

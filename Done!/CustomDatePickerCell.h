@@ -11,3 +11,9 @@
 @interface CustomDatePickerCell : CustomCell
 
 @end
+
+@protocol CustomDatePickerCellDelegate <NSObject>
+
+-(void)dateWasSelected:(NSDate *)selectedDate;
+
+@end

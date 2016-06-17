@@ -9,6 +9,11 @@
 #import "CustomDatePickerCell.h"
 
 @implementation CustomDatePickerCell
+- (IBAction)setDate:(id)sender {
+    
+    NSLog(@"%@", [super delegate]);
+    [[super delegate] dateWasSelected:self.datePicker.date];
+}
 
 - (void)layoutSubviews {
     [super layoutSubviews];
@@ -21,5 +26,4 @@
         }
     });
 }
-
 @end

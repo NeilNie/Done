@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "iOSUILib/MDTableViewCell.h"
+#import "Events.h"
 #import <SWTableViewCell.h>
 
 @interface EventTableViewCell : SWTableViewCell
 
+@property (strong, nonatomic) IBOutlet Events *event;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UIButton *button;
@@ -21,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *importantIcon;
 @property (nonatomic, assign) id delegate;
 - (IBAction)done:(id)sender;
+- (void)setUpCell;
 
 @end
 

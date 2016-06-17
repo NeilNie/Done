@@ -1,9 +1,9 @@
 //
 //  CustomCell.h
 //  
-//
+//  (c) Yongyang Nie
 //  Created by Yongyang Nie on 4/19/16.
-//
+//  All Rights Reserved
 //
 
 #import <UIKit/UIKit.h>
@@ -11,10 +11,9 @@
 #import "iOSUILib/MDTextField.h"
 #import "iOSUILib/MDSwitch.h"
 #import "UIFontHelper.h"
+#import "Events.h"
 
-@interface CustomCell : MDTableViewCell <UITextFieldDelegate, MDTextFieldDelegate>{
-
-}
+@interface CustomCell : UITableViewCell <UITextFieldDelegate, MDTextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet MDTextField *textField;
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
@@ -28,7 +27,6 @@
 
 @protocol CustomCellDelegates <NSObject>
 
--(void)dateWasSelected:(NSDate *)selectedDate;
 -(void)switchHasChanged:(BOOL)isOn;
 -(void)textFieldChanged:(NSString *)newText withCell:(CustomCell *)parentCell;
 

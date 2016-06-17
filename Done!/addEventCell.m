@@ -15,13 +15,15 @@
 -(BOOL)textFieldShouldReturn:(MDTextField *)textField
 {
     NSLog(@"textfield returned");
-    [delegate addNewEventFromCell:self];
-    return YES;
+    if (delegate != nil) {
+        [delegate addNewEventFromCell:self];
+    }
+    return NO;
 }
 
 - (void)awakeFromNib {
-    
-    self.textfield.delegate = self;
+
+    _textfield.delegate = self;
     [super awakeFromNib];
     // Initialization code
 }

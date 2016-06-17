@@ -14,6 +14,12 @@
 
 @implementation TodoViewController
 
+#pragma mark - MDTab Bar
+
+- (void)tabBar:(MDTabBar *)tabBar didChangeSelectedIndex:(NSUInteger)selectedIndex {
+    [self loadViewBasedonTabBar];
+}
+
 #pragma mark - UITableView Delegate
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -51,22 +57,17 @@
     
     if (indexPath.row + 1 == allEvents.count) {
         addEventCell *cell = [tableView dequeueReusableCellWithIdentifier:@"addEventCell" forIndexPath:indexPath];
+        cell.textfield.text = @"";
         cell.delegate = self;
         return cell;
     }else{
-        EventTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"idEventCell" forIndexPath:indexPath];
+        EventTableViewCell *cell = (EventTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"idEventCell" forIndexPath:indexPath];
         cell.leftUtilityButtons = [self leftButtons];
         cell.rightUtilityButtons = [self rightButtons];
+        
         Events *event = [allEvents objectAtIndex:indexPath.row];
-        NSDateFormatter *formate = [[NSDateFormatter alloc] init];
-        [formate setDateFormat:@"dd/MM/yyyy HH:MM"];
-        cell.titleLabel.text = event.title;
-        cell.dateLabel.text = [formate stringFromDate:event.date];
-        if (event.important == YES) {
-            [cell.starButton setImage:[UIImage imageNamed:@"star_full.png"] forState:UIControlStateNormal];
-        }else{
-            [cell.starButton setImage:[UIImage imageNamed:@"star.png"] forState:UIControlStateNormal];
-        }
+        cell.event = event;
+        [cell setUpCell];
         cell.delegate = self;
         return cell;
     }
@@ -135,28 +136,27 @@
     }
 }
 
-#pragma EventCell Delegate
+#pragma mark - EventCell Delegate
 
 -(void)addNewEventFromCell:(addEventCell *)cell{
     
     RLMRealm *realm = [RLMRealm defaultRealm];
     [realm beginWriteTransaction];
     Events *event = [EventsHelper createEventWithDate:[NSDate date] title:cell.textfield.text otherInfo:nil];
-    [realm addObject:event];
+    [self.project.events addObject:event];
     [realm commitWriteTransaction];
     
     allEvents = [EventsHelper findNotCompletedEvents:self.project.events];
     [self syncDataWithExtension];
     [allEvents addObject:@""];
     [self.table reloadData];
-    
 }
 
 -(void)markImportant:(EventTableViewCell *)cell{
     
     RLMRealm *realm = [RLMRealm defaultRealm];
     [realm beginWriteTransaction];
-    Events *update = [EventsHelper findEventWithTitle:cell.titleLabel.text withRealm:self.project.events];
+    Events *update = cell.event;
     update.important = YES;
     [realm commitWriteTransaction];
 }
@@ -166,7 +166,7 @@
     NSIndexPath *index = [self.table indexPathForCell:cell];
     RLMRealm *realm = [RLMRealm defaultRealm];
     [realm beginWriteTransaction];
-    Events *update = [EventsHelper findEventWithTitle:cell.titleLabel.text withRealm:self.project.events];
+    Events *update = cell.event;
     update.completed = YES;
     [realm commitWriteTransaction];
     allEvents = [EventsHelper findNotCompletedEvents:self.project.events];
@@ -187,17 +187,36 @@
     
 }
 
+#pragma mark - CreateNew Delegate
+
+-(void)addProject:(Projects *)project{
+    
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    [realm beginWriteTransaction];
+    [realm addObject:project];
+    [realm commitWriteTransaction];
+    NSLog(@"new project added %@", project);
+}
+
+-(void)addNewEventToProject:(Events *)event{}
+
 #pragma mark - Private
+
+-(IBAction)showMenu:(id)sender{
+    NSLog(@"show menu");
+    [kMainViewController showLeftViewAnimated:YES completionHandler:nil];
+}
 
 - (IBAction)addNewEvent:(id)sender{
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UIViewController *view = [storyboard instantiateViewControllerWithIdentifier:@"createNew"];
+    UINavigationController *view = [storyboard instantiateViewControllerWithIdentifier:@"createNew"];
+    ((CreateNewVC *)view.topViewController).delegate = self;
+    
     dispatch_async(dispatch_get_main_queue(), ^ {
         [self presentViewController:view animated:YES completion:nil];
     });
 }
-
 -(void)syncDataWithExtension{
     
     NSMutableArray *a = [EventsHelper findEventsForToday:[NSDate date] withRealm:[Events allObjects]];
@@ -210,14 +229,67 @@
     [shared synchronize];
 }
 
+-(void)loadViewBasedonTabBar{
+    
+    allEvents = [NSMutableArray array];
+    RLMResults *result = [Events allObjects];
+    switch (self.tabBar.selectedIndex) {
+        case 0:
+            allEvents = [EventsHelper findImportantEvents:[NSDate date] withRealm:result];
+            [allEvents addObject:@""];
+            [self.table reloadData];
+            return;
+            break;
+        case 1:
+            allEvents = [EventsHelper findTodayCompletedEvents:result];
+            [allEvents addObject:@""];
+            [self.table reloadData];
+            return;
+            break;
+        case 2:
+            allEvents = [EventsHelper convertEventsToArray:result];
+            [allEvents addObject:@""];
+            [self.table reloadData];
+            return;
+            break;
+            
+        default:
+            break;
+    }
+    
+    if (self.tabBar.selectedIndex == tabBarArray.count) {
+        
+    }else{
+        self.project = [EventsHelper findProjectWithName:[tabBarArray objectAtIndex:self.tabBar.selectedIndex]];
+        allEvents = [EventsHelper findNotCompletedEvents:self.project.events];
+        [allEvents addObject:@""];
+        [self.table reloadData];
+    }
+}
+
+-(void)setUpTabBar{
+    
+    _tabBar.delegate = self;
+    
+    tabBarArray = [[NSMutableArray alloc] initWithObjects:@"Important", @"Completed", @"All", nil];
+    RLMResults *allProjects = [Projects allObjects];
+    for (int i = 0; i < allProjects.count; i++) {
+        Projects *currentProject = [allProjects objectAtIndex:i];
+        [tabBarArray addObject:currentProject.title];
+    }
+    [tabBarArray addObject:@"+"];
+    [_tabBar setItems:tabBarArray];
+
+    self.tabBar.textFont = [UIFont systemFontOfSize:15 weight:UIFontWeightMedium];
+}
+
 #pragma mark - Life Cycle
 
 -(void)viewDidAppear:(BOOL)animated{
     
-    allEvents = [EventsHelper findNotCompletedEvents:self.project.events];
-    [self syncDataWithExtension];
-    [allEvents addObject:@""];
-    
+    [self setUpTabBar];
+    [self loadViewBasedonTabBar];
+    //[self syncDataWithExtension];
     
     areAdsRemoved = [[NSUserDefaults standardUserDefaults] boolForKey:@"areAdsRemoved2"];
     [[NSUserDefaults standardUserDefaults] synchronize];
@@ -234,23 +306,12 @@
 
 - (void)viewDidLoad {
     
-    self.naviTitle.title = self.project.title;
-    allEvents = [EventsHelper findNotCompletedEvents:self.project.events];
-    [allEvents addObject:@""];
     [self.table registerNib:[UINib nibWithNibName:@"EventTableViewCell" bundle:nil] forCellReuseIdentifier:@"idEventCell"];
     [self.table registerNib:[UINib nibWithNibName:@"addEventCell" bundle:nil] forCellReuseIdentifier:@"addEventCell"];
-    areAdsRemoved = [[NSUserDefaults standardUserDefaults] boolForKey:@"areAdsRemoved2"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-    if (!areAdsRemoved) {
-        self.banner.adUnitID = @"ca-app-pub-7942613644553368/9252365932";
-        self.banner.rootViewController = self;
-        [self.banner loadRequest:[GADRequest request]];
-    }else{
-        self.banner.hidden = YES;
-    }
     
     sameSelection = YES;
     selected = 1;
+
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
@@ -274,6 +335,5 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-
 
 @end
