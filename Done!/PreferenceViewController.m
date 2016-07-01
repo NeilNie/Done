@@ -174,24 +174,11 @@
     }
 }
 
--(IBAction)showMenu:(id)sender{
-    [kMainViewController showLeftViewAnimated:YES completionHandler:nil];
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     array = [[NSMutableArray alloc] initWithObjects:NSLocalizedString(@"Productivity", nil), NSLocalizedString(@"Tips", nil), NSLocalizedString(@"Restore Purchases", nil), NSLocalizedString(@"Info", nil), NSLocalizedString(@"Purchase no ads", nil), nil];
-    
-    areAdsRemoved = [[NSUserDefaults standardUserDefaults] boolForKey:@"areAdsRemoved2"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-    if (!areAdsRemoved) {
-        self.banner.adUnitID = @"ca-app-pub-7942613644553368/9252365932";
-        self.banner.rootViewController = self;
-        [self.banner loadRequest:[GADRequest request]];
-    }else{
-        self.banner.hidden = YES;
-    }
+
     // Do any additional setup after loading the view.
 }
 

@@ -2,15 +2,11 @@ PODS:
   - EAIntroView (2.8.3):
     - EARestrictedScrollView (~> 1.1.0)
   - EARestrictedScrollView (1.1.0)
-  - Firebase (3.2.1):
-    - Firebase/Core (= 3.2.1)
   - Firebase/Analytics (3.2.1):
     - FirebaseAnalytics (= 3.2.0)
   - Firebase/Auth (3.2.1):
     - Firebase/Analytics (= 3.2.1)
     - FirebaseAuth (= 3.0.2)
-  - Firebase/Core (3.2.1):
-    - Firebase/Analytics (= 3.2.1)
   - Firebase/Database (3.2.1):
     - Firebase/Analytics (= 3.2.1)
     - FirebaseDatabase (= 3.0.1)
@@ -35,13 +31,6 @@ PODS:
     - GoogleIPhoneUtilities (~> 1.2)
     - GoogleSymbolUtilities (~> 1.1)
   - FrameAccessor (2.0)
-  - Google-Mobile-Ads-SDK (7.8.1)
-  - Google/Analytics (3.0.3):
-    - Google/Core
-    - GoogleAnalytics (~> 3.12)
-  - Google/Core (3.0.3):
-    - FirebaseAnalytics (~> 3.2)
-  - GoogleAnalytics (3.14.0)
   - GoogleInterchangeUtilities (1.2.1):
     - GoogleSymbolUtilities (~> 1.0)
   - GoogleIPhoneUtilities (1.2.1):
@@ -53,7 +42,6 @@ PODS:
   - GoogleUtilities (1.3.1):
     - GoogleSymbolUtilities (~> 1.0)
   - JTCalendar (2.1.7)
-  - LGSideMenuController (1.0.10)
   - Masonry (1.0.1)
   - MKFoundationKit (1.3.0):
     - MKFoundationKit/AutoDescribe (= 1.3.0)
@@ -88,27 +76,23 @@ PODS:
     - Realm/Headers (= 1.0.1)
   - Realm/Headers (1.0.1)
   - RKDropdownAlert (0.3.0)
-  - RWBlurPopover (3.0.1)
-  - SCLAlertView-Objective-C (1.0.3)
+  - SCLAlertView-Objective-C (1.0.4)
   - SWTableViewCell (0.3.7)
   - UIColor-HexString (1.3.0)
 
 DEPENDENCIES:
   - EAIntroView (~> 2.8.0)
-  - Firebase
+  - EARestrictedScrollView (~> 1.1.0)
+  - Firebase/Analytics
   - Firebase/Auth
   - Firebase/Database
   - Firebase/Messaging
   - FrameAccessor
-  - Google-Mobile-Ads-SDK (~> 7.0)
-  - Google/Analytics
   - JTCalendar (~> 2.0)
-  - LGSideMenuController (~> 1.0.0)
   - Masonry
   - MKFoundationKit (~> 1.3)
   - Realm
   - RKDropdownAlert
-  - RWBlurPopover (~> 3.0.0)
   - SCLAlertView-Objective-C
   - SWTableViewCell (~> 0.3.7)
   - UIColor-HexString
@@ -123,25 +107,20 @@ SPEC CHECKSUMS:
   FirebaseInstanceID: d014d574053a2fe84478f12f7bae96979e7051bb
   FirebaseMessaging: 8a92e9ea70673605aa7d1803d2d5aa3eb946009c
   FrameAccessor: 443a13e58e23a10ff22180da0897b28c3f6abf66
-  Google: 813c467362eabc11385f5a5cc9ad0cb651a58f4e
-  Google-Mobile-Ads-SDK: 3c2a6656117989469bfe7645640aa1de024a4c6c
-  GoogleAnalytics: 9be1afdb8deeac4bb5f13ca7f7d3b9db2a1f43dc
   GoogleInterchangeUtilities: def8415a862effc67d549d5b5b0b9c7a2f97d4de
   GoogleIPhoneUtilities: 63f25e93a3ddcb66884d182aab3a660d98f1479b
   GoogleNetworkingUtilities: 3e83269048cfb498dc7ec83ab36813360965c74f
   GoogleSymbolUtilities: 33117db1b5f290c6fbf259585e4885b4c84b98d7
   GoogleUtilities: 56c5ac05b7aa5dc417a1bb85221a9516e04d7032
   JTCalendar: bc7f3086a4df02aa2e02ac4d505ef888cc2283a0
-  LGSideMenuController: 8682bdbd0008c1acfbce95eaf96cc3657bca5f95
   Masonry: a1a931a0d08870ed8ae415a2ea5ea68ebcac77df
   MKFoundationKit: 26afe1cf63d4982a937d555537ca1a3fb50a9c77
   Realm: 2e15e39d35b08abb529e212ed5d8af107b5236c8
   RKDropdownAlert: f4b3364c251829ad439dc666836a1f2dad26f4c7
-  RWBlurPopover: db19e5018eb223f1514d50ad6caa4b049614d0fe
-  SCLAlertView-Objective-C: e83376218b431109dc5403adc63f8e9787db7b74
+  SCLAlertView-Objective-C: dd8a12b4068b8bae1b25c1748d7413b5abcad05b
   SWTableViewCell: 2a94aadc9d47b2b611fa064566bf57948b95b579
   UIColor-HexString: fadc2e1389db19147ac99dee92222d3bd8bfec4a
 
-PODFILE CHECKSUM: 89b6a453014828a8032c2c9881814831e68c28c2
+PODFILE CHECKSUM: 183e2d27517b160bbde6e53bc1a23dd8135be515
 
 COCOAPODS: 1.0.0

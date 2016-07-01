@@ -16,7 +16,6 @@
 
 BOOL areAdsRemoved2;
 
-@import GoogleMobileAds;
 @import FirebaseAuth;
 
 @interface PreferenceViewController : UIViewController <UITableViewDataSource, UITabBarDelegate, SKProductsRequestDelegate, SKPaymentTransactionObserver>{
@@ -26,6 +25,6 @@ BOOL areAdsRemoved2;
 @property (weak, nonatomic) IBOutlet UILabel *userName;
 @property (weak, nonatomic) IBOutlet UILabel *userEmail;
 @property (weak, nonatomic) IBOutlet UITableView *table;
-@property (weak, nonatomic) IBOutlet GADBannerView *banner;
+//@property (weak, nonatomic) IBOutlet GADBannerView *banner;
 
 @end

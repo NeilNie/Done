@@ -8,17 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import <WatchConnectivity/WatchConnectivity.h>
-#import <Google/Analytics.h>
-#import "MainViewController.h"
+#import "EventManager.h"
 
-#define kMainViewController (MainViewController *)[UIApplication sharedApplication].delegate.window.rootViewController
-
-@import Firebase;
+@import FirebaseAnalytics;
 @import FirebaseAuth;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate, WCSessionDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (nonatomic, strong) EventManager *eventManager;
 
 @end
-

@@ -226,7 +226,8 @@ static NSString *const kChangePasswordText = @"Change Password";
 }
 
 - (IBAction)didTapLink:(id)sender {
-  NSMutableArray *providers = [@[@(AuthGoogle),
+  NSMutableArray *providers = [@[@(AuthEmail),
+                                @(AuthGoogle),
                                 @(AuthFacebook),
                                 @(AuthTwitter)] mutableCopy];
 
@@ -234,7 +235,9 @@ static NSString *const kChangePasswordText = @"Change Password";
   // providers, so always check the documentation for a complete reference:
   // https://firebase.google.com/docs/auth
   for (id<FIRUserInfo> userInfo in [FIRAuth auth].currentUser.providerData) {
-    if ([userInfo.providerID isEqualToString:FIRFacebookAuthProviderID]) {
+    if ([userInfo.providerID isEqualToString:FIREmailPasswordAuthProviderID]) {
+        [providers removeObject:@(AuthEmail)];
+    } else if ([userInfo.providerID isEqualToString:FIRFacebookAuthProviderID]) {
       [providers removeObject:@(AuthFacebook)];
     } else if ([userInfo.providerID isEqualToString:FIRGoogleAuthProviderID]) {
       [providers removeObject:@(AuthGoogle)];

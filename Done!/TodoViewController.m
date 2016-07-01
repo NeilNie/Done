@@ -147,7 +147,7 @@
     [realm commitWriteTransaction];
     
     allEvents = [EventsHelper findNotCompletedEvents:self.project.events];
-    [self syncDataWithExtension];
+    //[self syncDataWithExtension];
     [allEvents addObject:@""];
     [self.table reloadData];
 }
@@ -201,11 +201,6 @@
 -(void)addNewEventToProject:(Events *)event{}
 
 #pragma mark - Private
-
--(IBAction)showMenu:(id)sender{
-    NSLog(@"show menu");
-    [kMainViewController showLeftViewAnimated:YES completionHandler:nil];
-}
 
 - (IBAction)addNewEvent:(id)sender{
     
@@ -291,21 +286,12 @@
     [self loadViewBasedonTabBar];
     //[self syncDataWithExtension];
     
-    areAdsRemoved = [[NSUserDefaults standardUserDefaults] boolForKey:@"areAdsRemoved2"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-    if (!areAdsRemoved) {
-        self.banner.adUnitID = @"ca-app-pub-7942613644553368/9252365932";
-        self.banner.rootViewController = self;
-        [self.banner loadRequest:[GADRequest request]];
-    }else{
-        self.banner.hidden = YES;
-    }
-    
     [super viewDidAppear:YES];
 }
 
 - (void)viewDidLoad {
     
+    NSLog(@"%@", [RLMRealm defaultRealm].configuration.fileURL);
     [self.table registerNib:[UINib nibWithNibName:@"EventTableViewCell" bundle:nil] forCellReuseIdentifier:@"idEventCell"];
     [self.table registerNib:[UINib nibWithNibName:@"addEventCell" bundle:nil] forCellReuseIdentifier:@"addEventCell"];
     

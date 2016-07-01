@@ -23,8 +23,6 @@
 
 BOOL phoneModified;
 
-@import GoogleMobileAds;
-
 @interface TodoViewController : UIViewController <WCSessionDelegate, UITableViewDelegate, UITableViewDataSource, EventCellDelegate, SWTableViewCellDelegate, addEventCellDelegate, MDTabBarDelegate, CreateNewDelegate>{
 
     NSMutableArray *allEvents;
@@ -33,10 +31,10 @@ BOOL phoneModified;
     BOOL sameSelection;
 }
 @property (weak, nonatomic) IBOutlet MDTabBar *tabBar;
-@property (weak, nonatomic) Projects *project;
+@property (strong, nonatomic) Projects *project;
 @property (weak, nonatomic) IBOutlet UINavigationItem *naviTitle;
 @property (weak, nonatomic) IBOutlet UINavigationItem *item;
 @property (weak, nonatomic) IBOutlet UITableView *table;
-@property (weak, nonatomic) IBOutlet GADBannerView *banner;
+//@property (weak, nonatomic) IBOutlet GADBannerView *banner;
 
 @end

@@ -24,15 +24,12 @@
         UIWindow *window = [UIApplication sharedApplication].delegate.window;
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         UINavigationController *navigationController = [storyboard instantiateViewControllerWithIdentifier:@"NavigationController"];
-        MainViewController *mainViewController = [storyboard instantiateInitialViewController];
-        mainViewController.rootViewController = navigationController;
-        window.rootViewController = mainViewController;
+        window.rootViewController = navigationController;
         [UIView transitionWithView:window
                           duration:0.3
                            options:UIViewAnimationOptionTransitionCrossDissolve
                         animations:nil
                         completion:nil];
-        [mainViewController setupWithPresentationStyle:LGSideMenuPresentationStyleSlideBelow type:0];
     }
 }
 

@@ -174,6 +174,7 @@ class MainViewController: UITableViewController, GIDSignInDelegate, GIDSignInUID
 
   @IBAction func didTapLink(sender: AnyObject) {
     var providers = Set([
+      AuthProvider.AuthEmail,
       AuthProvider.AuthGoogle,
       AuthProvider.AuthFacebook,
       AuthProvider.AuthTwitter
@@ -183,7 +184,9 @@ class MainViewController: UITableViewController, GIDSignInDelegate, GIDSignInUID
     // https://firebase.google.com/docs/auth
     let user = FIRAuth.auth()?.currentUser
     for info in (user?.providerData)! {
-      if (info.providerID == FIRTwitterAuthProviderID) {
+      if (info.providerID == FIREmailPasswordAuthProviderID) {
+        providers.remove(AuthProvider.AuthEmail)
+      } else if (info.providerID == FIRTwitterAuthProviderID) {
         providers.remove(AuthProvider.AuthTwitter)
       } else if (info.providerID == FIRFacebookAuthProviderID) {
         providers.remove(AuthProvider.AuthFacebook)

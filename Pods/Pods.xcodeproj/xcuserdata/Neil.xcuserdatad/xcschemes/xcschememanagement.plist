@@ -24,11 +24,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>LGSideMenuController.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>MKFoundationKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -59,12 +54,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>RWBlurPopover.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Realm-iOS7.0.xcscheme</key>
+		<key>Realm-iOS9.0.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -102,7 +92,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>08F66AC1276811366D3F43F0EB204C12</key>
+		<key>0801E05E46CA6B36108BACF38B83E77A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -112,12 +102,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>129F90E179B17CC5DA48A17561448137</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>199ABC0B1BFC8D546690C537651AF134</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3F013237F46EBDB7F3E6331D05C28981</key>
+		<key>3C8BEDC9D0B126DDE949BD890FCF5818</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -132,12 +127,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>53480ED0BE09FF49E34B1702D485CAAB</key>
+		<key>506649191F5E736506B4058E4786A408</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6236B943A4819B442346E45476B106B5</key>
+		<key>53480ED0BE09FF49E34B1702D485CAAB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -147,12 +142,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>71B76793A3B7514D38CE8C93A9B8C8F4</key>
+		<key>A79BAADC08D4BAB0B76BEA34B037370D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8DCF8CDDD94C291671F11A93722E4C0E</key>
+		<key>B2C555CC3A28F589B96527D824F18F23</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -168,21 +163,6 @@
 			<true/>
 		</dict>
 		<key>D1EC2572C5166CE2498C72FAF128EABE</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>DCBFD4C7156095439B9754BAAC3A5846</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E51903BBC640C39C3076CAC829FB205E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FC9F7AE6BE74467F2AE992D7D4BA24FB</key>
 		<dict>
 			<key>primary</key>
 			<true/>

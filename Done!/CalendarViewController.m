@@ -144,7 +144,8 @@
     EventTableViewCell *cell = (EventTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"idEventCell" forIndexPath:indexPath];
     Events *event = [eventArray objectAtIndex:indexPath.row];
     cell.titleLabel.text = event.title;
-    cell.dateLabel.text = [[self dateFormatter] stringFromDate:event.date];
+    cell.dateLabel.text = [[NYDate getDefaultDateFormatter] stringFromDate:event.date];
+    
     return cell;
 }
 
@@ -306,36 +307,14 @@
     self.eventCountl.text = [NSString stringWithFormat:NSLocalizedString(@"%lu Events on this day", nil), (unsigned long)array.count];
 }
 
--(void)initShowAlert{
-    
-    SCLAlertView *alert = [[SCLAlertView alloc] init];
-    alert.backgroundType = Blur;
-    alert.showAnimationType = FadeIn;
-    [alert addButton:NSLocalizedString(@"Purchase Pro", nil) actionBlock:^(void) {
-        [self tapsRemoveAdsButton];
-    }];
-    [alert addButton:NSLocalizedString(@"Learn More", nil) actionBlock:^(void) {
-        [self performSegueWithIdentifier:@"idShowPurchase" sender:nil];
-    }];
-    [alert showNotice:self title:NSLocalizedString(@"Notice", nil) subTitle: NSLocalizedString(@"Calendar is a pro feature. You have to purchase it in order to enjoy the pro features.", nil) closeButtonTitle:nil duration:0.0f];
-}
 - (IBAction)addNewEvent:(id)sender {
-    [self performSegueWithIdentifier:@"idaddNewEvent" sender:nil];
-}
-
--(IBAction)showMenu:(id)sender{
-    [kMainViewController showLeftViewAnimated:YES completionHandler:nil];
+    //[self performSegueWithIdentifier:@"idaddNewEvent" sender:nil];
 }
 
 #pragma mark - Life Cycle
 
 -(void)viewDidAppear:(BOOL)animated{
-    
-    areAdsRemoved = [[NSUserDefaults standardUserDefaults] boolForKey:@"areAdsRemoved"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-    if (areAdsRemoved == NO) {
-        [self initShowAlert];
-    }
+
     [_calendarManager reload];
     
     NSMutableArray *array = [EventsHelper findEventsForToday:[NSDate date] withRealm:[Events allObjects]];
@@ -348,12 +327,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    areAdsRemoved = [[NSUserDefaults standardUserDefaults] boolForKey:@"areAdsRemoved"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-    if (areAdsRemoved == NO) {
-        [self initShowAlert];
-    }
     
     _calendarManager = [JTCalendarManager new];
     _calendarManager.delegate = self;

@@ -16,6 +16,7 @@
 #import "EventTableViewCell.h"
 #import "EventsHelper.h"
 #import "JTCalendar/JTCalendar.h"
+#import "NYDate.h"
 
 BOOL areAdsRemoved;
 

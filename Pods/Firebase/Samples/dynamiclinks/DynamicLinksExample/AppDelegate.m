@@ -74,12 +74,16 @@ static NSString *const CUSTOM_URL_SCHEME = @"dlscheme";
 - (BOOL)application:(UIApplication *)application
 continueUserActivity:(NSUserActivity *)userActivity
  restorationHandler:(void (^)(NSArray *))restorationHandler {
-  // [START_EXCLUDE silent]
-  NSLog(@"%@", userActivity.webpageURL);
-  __weak AppDelegate *weakSelf = self;
-  // [END_EXCLUDE]
 
-  BOOL handled = [[FIRDynamicLinks dynamicLinks]
+  // [START_EXCLUDE silent]
+  BOOL handled = NO;
+
+  NSLog(@"%@", userActivity.webpageURL);
+
+  __weak AppDelegate *weakSelf = self;
+
+  // [END_EXCLUDE]
+  handled = [[FIRDynamicLinks dynamicLinks]
              handleUniversalLink:userActivity.webpageURL
              completion:^(FIRDynamicLink * _Nullable dynamicLink,
                           NSError * _Nullable error) {

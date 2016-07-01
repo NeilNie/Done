@@ -41,8 +41,10 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSRemindersUsageDescription</key>
+	<string>We need access to your reminders</string>
+    <key>NSCalendarsUsageDescription</key>
+    <string>We need access to your calendar</string>
 </dict>
 </plist>

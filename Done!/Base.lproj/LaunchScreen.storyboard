@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F31a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11129.15" systemVersion="16A201w" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" generatesPrototypingConstraints="YES" useTraitCollections="YES" colorMatched="NO" initialViewController="01J-lp-oVM">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <development version="7000" identifier="xcode"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11103.10"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -13,18 +14,18 @@
                         <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="done-icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="vWg-8X-g6q">
-                                <rect key="frame" x="200" y="200" width="200" height="200"/>
+                                <rect key="frame" x="88" y="234" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="EAZ-JF-cSI"/>
                                     <constraint firstAttribute="width" constant="200" id="sLZ-FQ-08p"/>
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="vWg-8X-g6q" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="a2o-CO-PCJ"/>
                             <constraint firstItem="vWg-8X-g6q" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="myF-av-a2p"/>
@@ -37,6 +38,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="done-icon.png" width="1024" height="1024"/>
+        <image name="done-icon.png" width="768" height="768"/>
     </resources>
 </document>

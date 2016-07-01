@@ -12,9 +12,7 @@
 
 @end
 
-@implementation TodayViewController {
-    MDRippleLayer *mdLayer;
-}
+@implementation TodayViewController
 
 NSString * const MSEventCellReuseIdentifier = @"MSEventCellReuseIdentifier";
 NSString * const MSDayColumnHeaderReuseIdentifier = @"MSDayColumnHeaderReuseIdentifier";
@@ -117,7 +115,7 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     NSIndexPath *index = [self.table indexPathForCell:cell];
     RLMRealm *realm = [RLMRealm defaultRealm];
     [realm beginWriteTransaction];
-    Events *update = [EventsHelper findEventWithTitle:cell.titleLabel.text withAllRealm:[Events allObjects]];
+    Events *update = cell.event;
     update.completed = YES;
     [realm commitWriteTransaction];
     allEvents = [EventsHelper findTodayNotCompletedEvents:[Events allObjects]];
@@ -143,23 +141,6 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
         [self.collectionView reloadData];
     }
 }
--(IBAction)switchViews:(id)sender{
-    
-    areAdsRemoved = [[NSUserDefaults standardUserDefaults] boolForKey:@"areAdsRemoved"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-    if (areAdsRemoved == NO && self.switchView.isOn) {
-        [self initShowAlert];
-    }
-    if ([self.switchView isOn]) {
-        [UIView animateWithDuration:0.2 animations:^{
-            self.graphView.alpha = 1.0f;
-        }];
-    }else{
-        [UIView animateWithDuration:0.2 animations:^{
-            self.graphView.alpha = 0.0f;
-        }];
-    }
-}
 
 -(void)setUpCollectionView{
     
@@ -168,7 +149,7 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     [self.collectionView registerClass:MSDayColumnHeader.class forSupplementaryViewOfKind:MSCollectionElementKindDayColumnHeader withReuseIdentifier:MSDayColumnHeaderReuseIdentifier];
     [self.collectionView registerClass:MSTimeRowHeader.class forSupplementaryViewOfKind:MSCollectionElementKindTimeRowHeader withReuseIdentifier:MSTimeRowHeaderReuseIdentifier];
     
-    self.collectionViewCalendarLayout.sectionWidth = self.layoutSectionWidth;
+    //self.collectionViewCalendarLayout.sectionWidth = self.layoutSectionWidth;
     
     self.collectionViewCalendarLayout = [[MSCollectionViewCalendarLayout alloc] init];
     self.collectionViewCalendarLayout.delegate = self;
@@ -179,6 +160,8 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     [self.collectionViewCalendarLayout registerClass:MSGridline.class forDecorationViewOfKind:MSCollectionElementKindVerticalGridline];
     [self.collectionViewCalendarLayout registerClass:MSGridline.class forDecorationViewOfKind:MSCollectionElementKindHorizontalGridline];
     [self.collectionViewCalendarLayout registerClass:MSTimeRowHeaderBackground.class forDecorationViewOfKind:MSCollectionElementKindTimeRowHeaderBackground];
+    
+    [self.collectionViewCalendarLayout scrollCollectionViewToClosetSectionToCurrentTimeAnimated:NO];
 }
 
 -(void)tapGesture:(UITapGestureRecognizer *)tap{
@@ -203,36 +186,26 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
 
 -(void)setShadowforView:(UIView *)view{
     
-    view.layer.shadowRadius = 1.5f;
+    view.layer.cornerRadius = 15;
+    view.layer.shadowRadius = 2.0f;
     view.layer.shadowColor = [UIColor lightGrayColor].CGColor;
-    view.layer.shadowOffset = CGSizeMake(-1.0f, 2.5f);
-    view.layer.shadowOpacity = 0.9f;
+    view.layer.shadowOffset = CGSizeMake(-1.0f, 3.0f);
+    view.layer.shadowOpacity = 0.8f;
     view.layer.masksToBounds = NO;
+
 }
 
--(void)setupView{
-    
-    //check for ads removed.
-    areAdsRemoved = [[NSUserDefaults standardUserDefaults] boolForKey:@"areAdsRemoved2"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-    if (!areAdsRemoved) {
-        self.banner.adUnitID = @"ca-app-pub-7942613644553368/9252365932";
-        self.banner.rootViewController = self;
-        [self.banner loadRequest:[GADRequest request]];
-    }else{
-        self.banner.hidden = YES;
-    }
-    
+-(void)setUpUserInterface{
+
+    //set up data
     result = [Events allObjects];
     allEvents = [EventsHelper findEventsForToday:[NSDate date] withRealm:result];
     [self.table reloadData];
     [self.collectionView reloadData];
+    self.labels = @[@"1", @"2", @"3",@"4", @"5", @"6",@"7"];
     
     //set up views with data
-    Events *event = [EventsHelper findMostRecentEvent:[NSDate date] withRealmResult:result];
-    self.upcomingTime.text = [[EventsHelper dateFormatter] stringFromDate:event.date];
-    self.upcomingTitle.text = event.title;
-    self.totalLabel.text = [NSString stringWithFormat:@"%lu", (unsigned long)allEvents.count];
+    //self.totalLabel.text = [NSString stringWithFormat:@"%lu", (unsigned long)allEvents.count];
     self.completedLabel.text = [NSString stringWithFormat:@"%lu", (unsigned long)[EventsHelper findCompletedEventsWithArrayOfEvents:allEvents withDate:[NSDate date]].count];
     NSDateFormatter *formate = [[NSDateFormatter alloc] init];
     NSDate *date = [NSDate date];
@@ -253,33 +226,6 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
         self.collectionView.hidden = NO;
         self.clearLabel.hidden = YES;
     }
-    
-    areAdsRemoved = [[NSUserDefaults standardUserDefaults] boolForKey:@"areAdsRemoved"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-    if (areAdsRemoved == NO) {
-//        UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
-//        UIVisualEffectView *blurEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
-//        blurEffectView.frame = self.graphView.bounds;
-//        blurEffectView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-        
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(self.graphView.center.x - 90, self.graphView.center.y, 180, 45)];
-        label.numberOfLines = 2;
-        label.textAlignment = NSTextAlignmentCenter;
-        label.text = @"Productivity Graph is a pro feature";
-        label.font = [UIFont systemFontOfSize:15 weight:UIFontWeightThin];
-        label.textColor = [UIColor whiteColor];
-        //[self.graphView addSubview:blurEffectView];
-        [self.graphView addSubview:label];
-    }
-}
--(void)initShowAlert{
-    
-    SCLAlertView *alert = [[SCLAlertView alloc] init];
-    alert.showAnimationType = FadeIn;
-    [alert addButton:NSLocalizedString(@"Learn More", nil) actionBlock:^(void) {
-        //[self performSegueWithIdentifier:@"idShowPurchase" sender:nil];
-    }];
-    [alert showNotice:self title:NSLocalizedString(@"Notice", nil) subTitle: NSLocalizedString(@"Productivity Graph is a pro feature. You have to purchase it in order to enjoy the pro features.", nil) closeButtonTitle:@"Done" duration:0.0f];
 }
 
 - (void)setUpLineGraph{
@@ -311,9 +257,63 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     [self.graphView reset];
     [self.graphView draw];
 }
--(IBAction)showMenu:(id)sender{
-    [kMainViewController showLeftViewAnimated:YES completionHandler:nil];
+
+- (void)updateAuthorizationStatusToAccessEventStore {
+    
+    // 2
+    EKAuthorizationStatus authorizationStatus = [EKEventStore authorizationStatusForEntityType:EKEntityTypeReminder];
+    
+    switch (authorizationStatus) {
+            // 3
+        case EKAuthorizationStatusDenied:
+        case EKAuthorizationStatusRestricted: {
+            
+            self.ApplicationDelegate.eventManager.eventsAccessGranted = NO;
+            UIAlertController *alertView = [UIAlertController alertControllerWithTitle:@"Oh No" message:@"We have no acess to your calendar" preferredStyle:UIAlertControllerStyleAlert];
+            [self presentViewController:alertView animated:YES completion:nil];
+            break;
+        }
+            
+            // 4
+        case EKAuthorizationStatusAuthorized:
+            self.ApplicationDelegate.eventManager.eventsAccessGranted = YES;
+            NSLog(@"access granted");
+            break;
+            
+            // 5
+        case EKAuthorizationStatusNotDetermined: {
+
+            [self.ApplicationDelegate.eventManager.eventStore requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError * _Nullable error) {
+                if (error == nil) {
+                    // Store the returned granted value.
+                    self.ApplicationDelegate.eventManager.eventsAccessGranted = granted;
+                }
+                else{
+                    // In case of error, just log its description to the debugger.
+                    NSLog(@"%@", [error localizedDescription]);
+                }
+            }];
+            break;
+        }
+    }
 }
+
+-(void)setUpview{
+
+    self.todayConstr.constant = (self.view.frame.size.width - 10) * 3 / 4;
+    
+    //set up shadows in view
+    [self setShadowforView:self.preferenceButton];
+    [self setShadowforView:self.userButton];
+    [self setShadowforView:self.todayView];
+    [self setShadowforView:self.graphView];
+    [self setShadowforView:self.masterView];
+    [self setShadowforView:self.calendarButton];
+    [self setShadowforView:self.listButton];
+    [self setShadowforView:self.addNewButton];
+    //set up for animation
+}
+
 #pragma mark - GraphKit Delegate
 
 - (NSInteger)numberOfLines {
@@ -338,53 +338,30 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
 - (NSString *)titleForLineAtIndex:(NSInteger)index {
     return [self.labels objectAtIndex:index];
 }
+
 #pragma mark - Life Cycle
 
 - (void)viewDidLoad {
     
-    [super viewDidLoad];
-    
-    //get data for today
     result = [Events allObjects];
     allEvents = [EventsHelper findEventsForToday:[NSDate date] withRealm:result];
-    [self.table reloadData];
-    
-    self.labels = @[@"1", @"2", @"3",@"4", @"5", @"6",@"7"];
-    
-    self.tvConst.constant = self.view.bounds.size.width / 3 - 5;
-    self.todayConst.constant = self.view.bounds.size.width / 3 - 5;
-    self.completedConst.constant = self.view.bounds.size.width / 3 - 5;
-    self.tableContr.constant = self.view.bounds.size.height - 190 - 160;
-    
+    self.ApplicationDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     [self setUpGestures];
-    [self setShadowforView:self.totalEView];
-    [self setShadowforView:self.todayView];
-    [self setShadowforView:self.completedEView];
-    [self setShadowforView:self.graphView];
-    [self setShadowforView:self.masterView];
-    [self setShadowforView:self.switchView];
-    
     [self setUpCollectionView];
-    [self.collectionView reloadData];
-    [self.collectionViewCalendarLayout scrollCollectionViewToClosetSectionToCurrentTimeAnimated:NO];
+    [self setUpview];
+    [self updateAuthorizationStatusToAccessEventStore];
     
-    self.completedEView.center = CGPointMake(self.completedEView.center.x, self.completedEView.center.y - 100);
-    self.totalEView.center = CGPointMake(self.totalEView.center.x, self.totalEView.center.y - 100);
-    self.todayView.center = CGPointMake(self.completedEView.center.x, self.todayView.center.y - 100);
-
+#warning testing methods
+    NSLog(@"%@", [NYDate getDateTodayWithHour:15 minutes:0]);
+    [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
 
 -(void)viewDidAppear:(BOOL)animated{
-    
-    [UIView animateWithDuration:0.5 animations:^{
-        self.completedEView.center = CGPointMake(self.completedEView.center.x, self.completedEView.center.y + 100);
-        self.totalEView.center = CGPointMake(self.totalEView.center.x, self.totalEView.center.y + 100);
-        self.tableContr.constant = 4;
-        [self.view layoutIfNeeded];
-    }];
+
+//#warning fix this methods
     //[self setUpGraphData];
-    [self setupView];
+    [self setUpUserInterface];
     [super viewDidAppear:YES];
 }
 

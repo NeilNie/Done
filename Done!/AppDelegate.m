@@ -20,16 +20,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    WCSession *session = [WCSession defaultSession];
-    session.delegate = self;
-    [session activateSession];
-    NSLog(@"received context %@ sent context %@", session.receivedApplicationContext, session.applicationContext);
-    if ([[session.receivedApplicationContext objectForKey:@"needSync"] isEqualToString:@"NO"]) {
-        [session updateApplicationContext:@{@"needSync":@"NO"} error:nil];
-        NSLog(@"updated iPhone application context");
-    }
-    
-    [[GAI sharedInstance] trackerWithTrackingId:@"UA-74138512-12"];
+    self.eventManager = [[EventManager alloc] init];
     [FIRApp configure];
     
     [[UITabBar appearance] setBackgroundImage:[UIImage imageNamed:@"tabBar.png"]];
@@ -47,10 +38,8 @@
     FIRUser *user = [FIRAuth auth].currentUser;
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
     UINavigationController *navigationController = [storyboard instantiateViewControllerWithIdentifier:@"NavigationController"];
-    MainViewController *mainViewController = [storyboard instantiateInitialViewController];
-    mainViewController.rootViewController = navigationController;
-    self.window.rootViewController = mainViewController;
     UIViewController *startView = [storyboard instantiateViewControllerWithIdentifier:@"userAuth"];
+    self.window.rootViewController = navigationController;
     if (user == nil) {
         self.window.rootViewController = startView;
         [self.window makeKeyAndVisible];
@@ -60,7 +49,6 @@
                            options:UIViewAnimationOptionTransitionCrossDissolve
                         animations:nil
                         completion:nil];
-        [mainViewController setupWithPresentationStyle:LGSideMenuPresentationStyleSlideBelow type:0];
     }
     
 
@@ -89,6 +77,7 @@
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
+    
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 }
 
@@ -102,7 +91,6 @@
     if (state == UIApplicationStateActive) {
 
     }
-    
     // Set icon badge number to zero
     application.applicationIconBadgeNumber = 0;
 }
