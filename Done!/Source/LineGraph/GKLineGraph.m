@@ -165,9 +165,7 @@ static CGFloat kAxisMargin = 25.0;
         CGFloat value = [self _minValue] + (idx * [self _stepValueLabelY]);
         item.centerY = [self _positionYForLineValue:value];
         item.centerX = item.centerX - 15.0f;
-        
         item.text = [@(ceil(value)) stringValue];
-//        item.text = [@(value) stringValue];
         
         [items addObject:item];
         [self addSubview:item];

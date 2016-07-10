@@ -21,7 +21,9 @@
 
 @protocol CreateNewDelegate <NSObject>
 
+@optional
 -(void)addNewEventToProject:(Events *)event;
+@required
 -(void)addProject:(Projects *)project;
 @end
 

@@ -182,7 +182,7 @@
     
     NSDateFormatter *formate = [[NSDateFormatter alloc] init];
     [formate setDateFormat:@"MMMM, dd"];
-    self.yearLabel.text = @"2016";
+    self.yearLabel.text = NSLocalizedString(@"2016", nil);
     self.dateLabel.text = [formate stringFromDate:dayView.date];
     [formate setDateFormat:@"EEEE"];
     self.navigationItem.title = [formate stringFromDate:dayView.date];
@@ -294,7 +294,8 @@
     self.contr.constant = 0;
     NSDateFormatter *formate = [[NSDateFormatter alloc] init];
     [formate setDateFormat:@"MMMM, dd"];
-    self.yearLabel.text = @"2016";
+    self.yearLabel.text = NSLocalizedString(@"2016", ni
+                                            );
     self.dateLabel.text = [formate stringFromDate:[NSDate date]];
     [formate setDateFormat:@"EEEE"];
     self.navigationItem.title = [formate stringFromDate:[NSDate date]];

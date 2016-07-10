@@ -10,6 +10,8 @@
 
 @interface TodoViewController ()
 
+@property(nonatomic) CGPoint startPoint;
+
 @end
 
 @implementation TodoViewController
@@ -115,10 +117,13 @@
     NSIndexPath *indexPath = [self.table indexPathForCell:cell];
     switch (index) {
         case 0:
+            [self clickedDone:(EventTableViewCell *)cell];
+            
+            break;
+        case 1:
             [EventsHelper deleteEvent:[allEvents objectAtIndex:indexPath.row]];
             [allEvents removeObjectAtIndex:indexPath.row];
             [self.table deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationTop];
-            NSLog(@"deleted");
             if(WCSession.isSupported){
                 NSLog(@"sent request");
                 WCSession *session = [WCSession defaultSession];
@@ -127,9 +132,6 @@
                 [session updateApplicationContext:@{@"needSync": @"YES"} error:nil];
                 NSLog(@"updated context");
             }
-            break;
-        case 1:
-            [self clickedDone:(EventTableViewCell *)cell];
             break;
         default:
             break;
@@ -170,13 +172,10 @@
     update.completed = YES;
     [realm commitWriteTransaction];
     allEvents = [EventsHelper findNotCompletedEvents:self.project.events];
-    [self.table deleteRowsAtIndexPaths:@[index] withRowAnimation:UITableViewRowAnimationTop];
     [allEvents addObject:@""];
+    [self.table deleteRowsAtIndexPaths:@[index] withRowAnimation:UITableViewRowAnimationTop];
 }
 
--(void)starEvent:(EventTableViewCell *)cell{
-    
-}
 -(void)setReminder:(EventTableViewCell *)cell{
     
 }
@@ -198,20 +197,39 @@
     NSLog(@"new project added %@", project);
 }
 
--(void)addNewEventToProject:(Events *)event{}
-
 #pragma mark - Private
 
-- (IBAction)addNewEvent:(id)sender{
+- (void)addNewEvent{
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UINavigationController *view = [storyboard instantiateViewControllerWithIdentifier:@"createNew"];
     ((CreateNewVC *)view.topViewController).delegate = self;
-    
+    ((CreateNewVC *)view.topViewController).addedToProject = self.project;
     dispatch_async(dispatch_get_main_queue(), ^ {
         [self presentViewController:view animated:YES completion:nil];
     });
 }
+
+-(void)addNewProject{
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UINavigationController *view = [storyboard instantiateViewControllerWithIdentifier:@"createNew"];
+    ((CreateNewVC *)view.topViewController).delegate = self;
+    ((CreateNewVC *)view.topViewController).sender = @"project";
+    dispatch_async(dispatch_get_main_queue(), ^ {
+        [self presentViewController:view animated:YES completion:nil];
+    });
+}
+
+-(void)editProjects{
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UINavigationController *view = [storyboard instantiateViewControllerWithIdentifier:@"tableViewController"];
+    dispatch_async(dispatch_get_main_queue(), ^ {
+        [self presentViewController:view animated:YES completion:nil];
+    });
+}
+
 -(void)syncDataWithExtension{
     
     NSMutableArray *a = [EventsHelper findEventsForToday:[NSDate date] withRealm:[Events allObjects]];
@@ -252,7 +270,8 @@
             break;
     }
     
-    if (self.tabBar.selectedIndex == tabBarArray.count) {
+    NSUInteger barIndex = self.tabBar.selectedIndex;
+    if (barIndex == tabBarArray.count || barIndex == 0 || barIndex == 1 || barIndex == 2) {
         
     }else{
         self.project = [EventsHelper findProjectWithName:[tabBarArray objectAtIndex:self.tabBar.selectedIndex]];
@@ -266,19 +285,110 @@
     
     _tabBar.delegate = self;
     
-    tabBarArray = [[NSMutableArray alloc] initWithObjects:@"Important", @"Completed", @"All", nil];
+    tabBarArray = [[NSMutableArray alloc] initWithObjects:@"Important", @"Completed", @" All ", nil];
     RLMResults *allProjects = [Projects allObjects];
     for (int i = 0; i < allProjects.count; i++) {
         Projects *currentProject = [allProjects objectAtIndex:i];
         [tabBarArray addObject:currentProject.title];
     }
-    [tabBarArray addObject:@"+"];
     [_tabBar setItems:tabBarArray];
 
     self.tabBar.textFont = [UIFont systemFontOfSize:15 weight:UIFontWeightMedium];
 }
 
+-(void)setUpButtons{
+    
+    self.btMore.mdButtonDelegate = self;
+    self.btMore.rotated = NO;
+    //invisible all related buttons
+    self.btEdit.alpha = 0.f;
+    self.btAddEvent.alpha = 0.f;
+    self.btAddProject.alpha = 0.f;
+    
+    _startPoint = CGPointMake(self.btMore.center.x, self.btMore.center.y - 100);
+    self.btEdit.center = _startPoint;
+    self.btAddEvent.center = _startPoint;
+    self.btAddProject.center = _startPoint;
+    [self.btMore setImageSize:25.0f];
+}
+
+- (IBAction)btnClicked:(id)sender {
+    
+    if (sender == self.btMore) {
+        self.btMore.rotated = NO; //reset floating finging button
+    }
+    if (sender == self.btAddEvent) {
+        [self addNewEvent];
+    }
+    if (sender == self.btAddProject) {
+        [self addNewProject];
+    }
+    if (sender == self.btEdit) {
+        [self editProjects];
+    }
+}
+
+-(void)rotationStarted:(id)sender {
+    
+    if (self.btMore == sender){
+        int padding = 90;
+        CGFloat duration = 0.2f;
+        if (!self.btMore.isRotated) {
+            [UIView animateWithDuration:duration
+                                  delay:0.0
+                                options: (UIViewAnimationOptionAllowUserInteraction|UIViewAnimationCurveEaseOut)
+                             animations:^{
+                                 self.btEdit.alpha = 1;
+                                 self.btEdit.transform = CGAffineTransformMakeScale(1.0,.4);
+                                 self.btEdit.transform = CGAffineTransformConcat(CGAffineTransformMakeTranslation(0, +padding*3.5f), CGAffineTransformMakeScale(1.0, 1.0));
+                                 
+                                 self.btAddProject.alpha = 1;
+                                 self.btAddProject.transform = CGAffineTransformMakeScale(1.0,.5);
+                                 self.btAddProject.transform = CGAffineTransformConcat(CGAffineTransformMakeTranslation(0, +padding*2.7f), CGAffineTransformMakeScale(1.0, 1.0));
+                                 
+                                 self.btAddEvent.alpha = 1;
+                                 self.btAddEvent.transform = CGAffineTransformMakeScale(1.0,.6);
+                                 self.btAddEvent.transform = CGAffineTransformConcat(CGAffineTransformMakeTranslation(0, +padding*2), CGAffineTransformMakeScale(1.0, 1.0));
+                                 
+                             } completion:^(BOOL finished) {
+                                 
+                             }];
+       } else {
+            [UIView animateWithDuration:duration/2
+                                  delay:0.0
+                                options: kNilOptions
+                             animations:^{
+                                 self.btEdit.alpha = 0;
+                                 self.btEdit.transform = CGAffineTransformMakeTranslation(0, 0);
+                                 
+                                 self.btAddProject.alpha = 0;
+                                 self.btAddProject.transform = CGAffineTransformMakeTranslation(0, 0);
+                                 
+                                 self.btAddEvent.alpha = 0;
+                                 self.btAddEvent.transform = CGAffineTransformMakeTranslation(0, 0);
+                                 
+                             } completion:^(BOOL finished) {
+                                 
+                             }];
+        }
+    }
+}
+-(void)rotationCompleted:(id)sender{
+    
+    if (self.btMore == sender){
+        //NSLog(@"btShare rotationCompleted %s", self.btMore.isRotated?"rotated":"normal");
+    }
+}
+
 #pragma mark - Life Cycle
+
+-(void)viewDidLayoutSubviews{
+    
+    _startPoint = CGPointMake(self.btMore.center.x, self.btMore.center.y - 100);
+    self.btEdit.center = _startPoint;
+    self.btAddEvent.center = _startPoint;
+    self.btAddProject.center = _startPoint;
+}
 
 -(void)viewDidAppear:(BOOL)animated{
     
@@ -291,6 +401,7 @@
 
 - (void)viewDidLoad {
     
+    [self setUpButtons];
     NSLog(@"%@", [RLMRealm defaultRealm].configuration.fileURL);
     [self.table registerNib:[UINib nibWithNibName:@"EventTableViewCell" bundle:nil] forCellReuseIdentifier:@"idEventCell"];
     [self.table registerNib:[UINib nibWithNibName:@"addEventCell" bundle:nil] forCellReuseIdentifier:@"addEventCell"];

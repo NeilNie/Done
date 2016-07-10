@@ -16,6 +16,8 @@
 #import "EventsHelper.h"
 #import "CreateNewVC.h"
 #import "PurchaseViewController.h"
+#import "GraphKit.h"
+#import "NYDate.h"
 
 #import "MSCollectionViewCalendarLayout.h"
 #import "MSGridline.h"
@@ -27,24 +29,14 @@
 #import "MSCurrentTimeIndicator.h"
 #import "MSCurrentTimeGridline.h"
 #import "iOSUILib/MDRippleLayer.h"
-#import "GraphKit.h"
-#import "NYDate.h"
 
 @import FirebaseAuth;
 
-@interface TodayViewController : UIViewController <MSCollectionViewDelegateCalendarLayout, UITableViewDelegate, UITableViewDataSource, GKLineGraphDataSource>{
+@interface TodayViewController : UIViewController <MSCollectionViewDelegateCalendarLayout, UITableViewDelegate, UITableViewDataSource, GKLineGraphDataSource, CreateNewDelegate>{
     NSMutableArray *allEvents;
     RLMResults *result;
 }
-//graphs
-@property (strong, nonatomic) NSMutableArray *data;
-@property (strong, nonatomic) NSMutableArray *completedData;
-@property (strong, nonatomic) NSMutableArray *eventNumber;
-@property (nonatomic, strong) NSArray *labels;
-@property (nonatomic, strong) AppDelegate *ApplicationDelegate;
 
-@property (nonatomic, strong) MSCollectionViewCalendarLayout *collectionViewCalendarLayout;
-@property (nonatomic, readonly) CGFloat layoutSectionWidth;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet UITableView *table;
 //@property (weak, nonatomic) IBOutlet GADBannerView *banner;
@@ -66,5 +58,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *userButton;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *todayConstr;
 @property (weak, nonatomic) IBOutlet UIButton *preferenceButton;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *graphConstr;
 
 @end

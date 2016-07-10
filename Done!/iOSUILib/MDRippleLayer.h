@@ -24,7 +24,7 @@
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
-@interface MDRippleLayer : CALayer
+@interface MDRippleLayer : CALayer <CAAnimationDelegate>
 
 /*!
  * @brief enable ripple effect or not
@@ -56,6 +56,8 @@ NS_ASSUME_NONNULL_BEGIN
  * @brief Speed of the ripple effect, points per second
  */
 @property(nonatomic) CGFloat effectSpeed;
+
+@property (nullable, assign) id delegate;
 
 /*!
  * @brief Base color for effects. By default, ripple effect has the same color

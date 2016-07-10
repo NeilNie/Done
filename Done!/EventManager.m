@@ -55,15 +55,15 @@
 -(NSArray *)getTodayEventCalendars{
     
     NSArray *allCalendars = [self getLocalEventCalendars];
-    NSArray *todayEvents = [NSArray array];
     NSPredicate *predicate = [self.eventStore predicateForEventsWithStartDate:[NYDate todayStarts] endDate:[NYDate tomorrowStarts] calendars:allCalendars];
-    todayEvents = [self.eventStore eventsMatchingPredicate:predicate];
+    NSArray *todayEvents = [self.eventStore eventsMatchingPredicate:predicate];
     return todayEvents;
 }
 
 -(NSMutableArray<NYTimePeriod *> *)busyTimesToday{
     
     NSArray *eventsToday = [self getTodayEventCalendars];
+    
     NSMutableArray *periodArray = [NSMutableArray array];
     for (int i = 0; i < eventsToday.count; i++) {
         EKEvent *event = [eventsToday objectAtIndex:i];
@@ -80,28 +80,25 @@
     
     ////1
     //go through all the busy periods in the day, and find the gaps between each peroids.
-    for (int i = 0; i < busyTimes.count; i++) {
+    for (int i = 0; i < busyTimes.count - 1; i++) {
         
-        //only execute the code if there are more than two events in a day
-        if (busyTimes.count >= 2) {
-            NYTimePeriod *current = [busyTimes objectAtIndex:i];
-            NYTimePeriod *next = [busyTimes objectAtIndex:i + 1];
-            
-            //if the gap between the events are more than 5 minutes, then create a NYTimePeriod object and add it to the array.
-            if ([current.endDate timeIntervalSinceDate:next.startDate] > 5 * 60) { // if
-                NYTimePeriod *freePeriod = [[NYTimePeriod alloc] initWithStart:current.endDate andEnd:next.startDate];
-                [freePeriods addObject:freePeriod];
-            }
+        NYTimePeriod *current = [busyTimes objectAtIndex:i];
+        NYTimePeriod *next = [busyTimes objectAtIndex:i + 1];
+        
+        //if the gap between the events are more than 5 minutes, then create a NYTimePeriod object and add it to the array.
+        if ([current.endDate timeIntervalSinceDate:next.startDate] < - 5 * 60) { // if
+            NYTimePeriod *freePeriod = [[NYTimePeriod alloc] initWithStart:current.endDate andEnd:next.startDate];
+            [freePeriods addObject:freePeriod];
         }
     }
     
     ////2
-    //if the first event of the day is after 9, then 
+    //if the first event of the day is after 9, then
     NSDate *todayAtEight = [NYDate getDateTodayWithHour:8 minutes:0];
     NYTimePeriod *firstPeriod = [busyTimes objectAtIndex:0];
     
     //
-    if ([todayAtEight timeIntervalSinceDate:firstPeriod.startDate] > 5 * 60) {
+    if ([todayAtEight timeIntervalSinceDate:firstPeriod.startDate] > 10 * 60) {
         
     }
     

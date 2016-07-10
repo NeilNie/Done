@@ -162,7 +162,7 @@
                                                                   kFIRParameterValue:@"1",
                                                                   kFIRParameterItemID:@"A02"
                                                                   }];
-    self.textView.text = @"Pro version include productivity graph feature.";
+    self.textView.text = [NSString stringWithFormat:NSLocalizedString(@"Pro version include productivity graph feature.", nil)];
     self.textView.font = [UIFont systemFontOfSize:17.0f weight:UIFontWeightThin];
     self.textView.textColor = [UIColor whiteColor];
     [super viewDidLoad];

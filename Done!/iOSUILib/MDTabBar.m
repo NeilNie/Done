@@ -47,7 +47,7 @@
 @end
 
 @implementation MDSegmentedControl {
-  UIView *indicatorView;
+  __strong UIView *indicatorView;
   UIView *beingTouchedView;
   UIFont *font;
   MDTabBar *tabBar;
@@ -373,6 +373,7 @@
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    
   [super touchesEnded:touches withEvent:event];
   if (beingTouchedView) {
     for (CALayer *layer in beingTouchedView.layer.sublayers) {

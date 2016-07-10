@@ -10,6 +10,14 @@
 
 @interface TodayViewController ()
 
+@property (strong, nonatomic) NSMutableArray *data;
+@property (strong, nonatomic) NSMutableArray *completedData;
+@property (strong, nonatomic) NSMutableArray *eventNumber;
+@property (nonatomic, strong) NSArray *labels;
+@property (nonatomic, strong) AppDelegate *ApplicationDelegate;
+@property (nonatomic, strong) MSCollectionViewCalendarLayout *collectionViewCalendarLayout;
+@property (nonatomic, readonly) CGFloat layoutSectionWidth;
+
 @end
 
 @implementation TodayViewController
@@ -122,7 +130,27 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     [self.table deleteRowsAtIndexPaths:@[index] withRowAnimation:UITableViewRowAnimationTop];
 }
 
+#pragma mark - CreateNew Delegate
+
+-(void)addProject:(Projects *)project{
+    
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    [realm beginWriteTransaction];
+    [realm addObject:project];
+    [realm commitWriteTransaction];
+    NSLog(@"new project added %@", project);
+}
+
 #pragma mark - Privates
+
+-(IBAction)addNewEvent:(id)sender{
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UINavigationController *view = [storyboard instantiateViewControllerWithIdentifier:@"createNew"];
+    ((CreateNewVC *)view.topViewController).delegate = self;
+    dispatch_async(dispatch_get_main_queue(), ^ {
+        [self presentViewController:view animated:YES completion:nil];
+    });}
 
 -(void)gestureAction:(UISwipeGestureRecognizer *)swipe{
     
@@ -205,8 +233,9 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     self.labels = @[@"1", @"2", @"3",@"4", @"5", @"6",@"7"];
     
     //set up views with data
-    //self.totalLabel.text = [NSString stringWithFormat:@"%lu", (unsigned long)allEvents.count];
-    self.completedLabel.text = [NSString stringWithFormat:@"%lu", (unsigned long)[EventsHelper findCompletedEventsWithArrayOfEvents:allEvents withDate:[NSDate date]].count];
+    NSUInteger totalEts = allEvents.count;
+    NSUInteger compleEts = [EventsHelper findCompletedEventsWithArrayOfEvents:allEvents withDate:[NSDate date]].count;
+    self.completedLabel.text = [NSString stringWithFormat:@"%lu/%lu", (unsigned long)compleEts, (unsigned long)totalEts];
     NSDateFormatter *formate = [[NSDateFormatter alloc] init];
     NSDate *date = [NSDate date];
     [formate setDateFormat:@"MMMM"];
@@ -269,7 +298,9 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
         case EKAuthorizationStatusRestricted: {
             
             self.ApplicationDelegate.eventManager.eventsAccessGranted = NO;
-            UIAlertController *alertView = [UIAlertController alertControllerWithTitle:@"Oh No" message:@"We have no acess to your calendar" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertController *alertView = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Oh No", ni
+                                                                                                         ) message:NSLocalizedString(@"We have no acess to your calendar", ni
+                                                                                                                          ) preferredStyle:UIAlertControllerStyleAlert];
             [self presentViewController:alertView animated:YES completion:nil];
             break;
         }
@@ -301,7 +332,9 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
 -(void)setUpview{
 
     self.todayConstr.constant = (self.view.frame.size.width - 10) * 3 / 4;
-    
+    if (self.view.bounds.size.width == 320) {
+        self.graphConstr.constant = 135;
+    }
     //set up shadows in view
     [self setShadowforView:self.preferenceButton];
     [self setShadowforView:self.userButton];
@@ -352,7 +385,7 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     [self updateAuthorizationStatusToAccessEventStore];
     
 #warning testing methods
-    NSLog(@"%@", [NYDate getDateTodayWithHour:15 minutes:0]);
+    NSLog(@"%@", [self.ApplicationDelegate.eventManager freeTimesToday]);
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
@@ -360,7 +393,7 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
 -(void)viewDidAppear:(BOOL)animated{
 
 //#warning fix this methods
-    //[self setUpGraphData];
+    [self setUpGraphData];
     [self setUpUserInterface];
     [super viewDidAppear:YES];
 }

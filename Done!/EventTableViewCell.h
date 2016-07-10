@@ -29,9 +29,11 @@
 
 @protocol EventCellDelegate <NSObject>
 
+@required
 -(void)clickedDone:(EventTableViewCell *)cell;
 -(void)markImportant:(EventTableViewCell *)cell;
--(void)starEvent:(EventTableViewCell *)cell;
+
+@optional
 -(void)setReminder:(EventTableViewCell *)cell;
 -(void)moveEvent:(EventTableViewCell *)cell;
 -(void)attachments:(EventTableViewCell *)cell;

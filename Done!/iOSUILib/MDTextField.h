@@ -71,7 +71,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 NS_ASSUME_NONNULL_END
 IB_DESIGNABLE
-@interface MDTextField : UIControl
+@interface MDTextField : UIControl <CAAnimationDelegate>
 
 @property(null_unspecified, nonatomic) IBInspectable NSString *hint;
 @property(null_unspecified, nonatomic) IBInspectable NSString *label;

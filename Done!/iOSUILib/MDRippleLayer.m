@@ -49,6 +49,8 @@
   __weak UIView *superView;
 }
 
+@synthesize delegate;
+
 // static float clearEffectDuration = 0.3;
 
 - (instancetype)initWithSuperLayer:(CALayer *)superLayer {

@@ -16,6 +16,7 @@
     NewEvent.title = title;
     NewEvent.date = date;
     NewEvent.completed = NO;
+    NewEvent.important = NO;
     NewEvent.uoid = [self uoid];
     return NewEvent;
 }
@@ -211,7 +212,7 @@
     
     NSMutableArray *array = [[NSMutableArray alloc] init];
     NSDateFormatter *formate = [[NSDateFormatter alloc] init];
-    [formate setDateFormat:@"yyyy-MM-dd"];
+    [formate setDateFormat:@"dd/MM/yyyy"];
 
     for (int i = 0; i < realm.count; i ++) {
         
@@ -227,13 +228,16 @@
     
     NSMutableArray *array = [[NSMutableArray alloc] init];
     NSDateFormatter *formate = [[NSDateFormatter alloc] init];
-    [formate setDateFormat:@"yyyy-MM-dd"];
+    [formate setDateStyle:NSDateFormatterShortStyle];
+    [formate setTimeZone:[NSTimeZone localTimeZone]];
     
     for (int i = 0; i < realm.count; i ++) {
         
         Events *event = [realm objectAtIndex:i];
-        if (event.completed == YES && [[formate stringFromDate:date] isEqualToString:[formate stringFromDate:event.date]]) {
-            [array addObject:event];
+        if (event.completed == YES) {
+            if ([[formate stringFromDate:date] isEqualToString:[formate stringFromDate:event.date]]) {
+                [array addObject:event];
+            }
         }
     }
     return array;
@@ -375,12 +379,14 @@
 +(NSMutableArray *)findImportantEvents:(NSDate *)date withRealm:(RLMResults *)realm{
     
     NSMutableArray *array = [EventsHelper findEventsForToday:date withRealm:realm];
-    for (int i = 0; i < 0; i++) {
+    NSMutableArray *returnArray = [NSMutableArray array];
+    for (int i = 0; i < array.count; i++) {
         Events *event = [realm objectAtIndex:i];
+        NSLog(@"Hello");
         if (event.important == YES) {
-            [array addObject:event];
+            [returnArray addObject:event];
         }
     }
-    return array;
+    return returnArray;
 }
 @end

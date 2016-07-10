@@ -31,7 +31,7 @@
             [self.navigationController popViewControllerAnimated:YES];
         }else{
             
-            if (self.addedToProject == nil) {
+            if (self.delegate == nil) {
                 [RKDropdownAlert title:@"Opps" message:@"You have to select a project that this event will be added to."];
             }else{
                 RLMRealm *realm = [RLMRealm defaultRealm];
@@ -124,7 +124,7 @@
     if (yes) {
         UILocalNotification *notification = [[UILocalNotification alloc] init];
         notification.fireDate = date;
-        notification.alertTitle = @"You have a new reminder";
+        notification.alertTitle = NSLocalizedString(@"You have a new reminder", nil);
         notification.alertBody = title;
         notification.timeZone = [NSTimeZone defaultTimeZone];
         notification.applicationIconBadgeNumber = [[UIApplication sharedApplication]applicationIconBadgeNumber] + 1;
@@ -350,7 +350,7 @@
     if ([self.sender isEqualToString:@"project"]) {
         [[[cellDescriptors objectAtIndex:0] objectAtIndex:2] setValue:dateString forKey:@"primaryTitle"];
     }else{
-        [[[cellDescriptors objectAtIndex:0] objectAtIndex:3] setValue:dateString forKey:@"primaryTitle"];
+        [[[cellDescriptors objectAtIndex:0] objectAtIndex:2] setValue:dateString forKey:@"primaryTitle"];
     }
     
     [self.table reloadData];

@@ -20,10 +20,13 @@
 #import "Projects.h"
 #import "PurchaseViewController.h"
 #import "addEventCell.h"
+#import "iOSUILib/MDButton.h"
+#import "MDDeviceHelper.h"
+#import "UIView+MDExtension.h"
 
 BOOL phoneModified;
 
-@interface TodoViewController : UIViewController <WCSessionDelegate, UITableViewDelegate, UITableViewDataSource, EventCellDelegate, SWTableViewCellDelegate, addEventCellDelegate, MDTabBarDelegate, CreateNewDelegate>{
+@interface TodoViewController : UIViewController <WCSessionDelegate, UITableViewDelegate, UITableViewDataSource, EventCellDelegate, SWTableViewCellDelegate, addEventCellDelegate, MDTabBarDelegate, CreateNewDelegate, MDButtonDelegate>{
 
     NSMutableArray *allEvents;
     NSMutableArray *tabBarArray;
@@ -31,6 +34,10 @@ BOOL phoneModified;
     BOOL sameSelection;
 }
 @property (weak, nonatomic) IBOutlet MDTabBar *tabBar;
+@property (weak, nonatomic) IBOutlet MDButton *btMore;
+@property (weak, nonatomic) IBOutlet MDButton *btAddEvent;
+@property (weak, nonatomic) IBOutlet MDButton *btAddProject;
+@property (weak, nonatomic) IBOutlet MDButton *btEdit;
 @property (strong, nonatomic) Projects *project;
 @property (weak, nonatomic) IBOutlet UINavigationItem *naviTitle;
 @property (weak, nonatomic) IBOutlet UINavigationItem *item;
