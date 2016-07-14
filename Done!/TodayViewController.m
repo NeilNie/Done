@@ -26,31 +26,16 @@ NSString * const MSEventCellReuseIdentifier = @"MSEventCellReuseIdentifier";
 NSString * const MSDayColumnHeaderReuseIdentifier = @"MSDayColumnHeaderReuseIdentifier";
 NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifier";
 
-#pragma mark - UITableView Delegate
+#pragma mark - UIViewControllerPreviewingDelegate
 
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return allEvents.count;
-}
-
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 1;
-}
-
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 70.0;
-}
-
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+-(void)previewingContext:(id<UIViewControllerPreviewing>)previewingContext commitViewController:(UIViewController *)viewControllerToCommit{
     
-    EventTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"idEventCell" forIndexPath:indexPath];
-    Events *event = [allEvents objectAtIndex:indexPath.row];
-    NSDateFormatter *formate = [[NSDateFormatter alloc] init];
-    [formate setDateFormat:@"dd/MM/yyyy HH:MM"];
-    cell.titleLabel.text = event.title;
-    cell.dateLabel.text = [formate stringFromDate:event.date];
-    cell.delegate = self;
-    return cell;
 }
+
+-(UIViewController *)previewingContext:(id<UIViewControllerPreviewing>)previewingContext viewControllerForLocation:(CGPoint)location{
+    return nil;
+}
+
 
 #pragma mark - UICollectionViewDataSource
 
@@ -59,13 +44,13 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return allEvents.count;
+    return collectionViewArray.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     MSEventCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:MSEventCellReuseIdentifier forIndexPath:indexPath];
-    cell.event = [allEvents objectAtIndex:indexPath.row];
+    cell.event = [collectionViewArray objectAtIndex:indexPath.row];
     return cell;
 }
 
@@ -101,33 +86,22 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
 
 - (NSDate *)collectionView:(UICollectionView *)collectionView layout:(MSCollectionViewCalendarLayout *)collectionViewCalendarLayout startTimeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    Events *event = [allEvents objectAtIndex:indexPath.row];
-    return [event.date dateByAddingTimeInterval:-(60 * 60 * 2)];
+    Events *time = [collectionViewArray objectAtIndex:indexPath.row];
+    return time.date;
 }
 
 - (NSDate *)collectionView:(UICollectionView *)collectionView layout:(MSCollectionViewCalendarLayout *)collectionViewCalendarLayout endTimeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    Events *event = [allEvents objectAtIndex:indexPath.row];
-    // Most sports last ~3 hours, and SeatGeek doesn't provide an end time
-    return event.date;
+    Events *time = [collectionViewArray objectAtIndex:indexPath.row];
+    if (time.endDate) {
+        return time.endDate;
+    }else{
+        return [time.date dateByAddingTimeInterval:60*30];
+    }
 }
 
 - (NSDate *)currentTimeComponentsForCollectionView:(UICollectionView *)collectionView layout:(MSCollectionViewCalendarLayout *)collectionViewCalendarLayout{
     return [NSDate date];
-}
-
-#pragma mark - EventCell Delegate
-
--(void)clickedDone:(EventTableViewCell *)cell{
-    
-    NSIndexPath *index = [self.table indexPathForCell:cell];
-    RLMRealm *realm = [RLMRealm defaultRealm];
-    [realm beginWriteTransaction];
-    Events *update = cell.event;
-    update.completed = YES;
-    [realm commitWriteTransaction];
-    allEvents = [EventsHelper findTodayNotCompletedEvents:[Events allObjects]];
-    [self.table deleteRowsAtIndexPaths:@[index] withRowAnimation:UITableViewRowAnimationTop];
 }
 
 #pragma mark - CreateNew Delegate
@@ -143,6 +117,27 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
 
 #pragma mark - Privates
 
+-(NSArray<Events *> *)timePeriodsinTimeline{
+
+    NSArray *calendarEvents = [self.ApplicationDelegate.eventManager getTodayEventCalendars];
+    NSMutableArray *events = [NSMutableArray array];
+    NSDateFormatter *formate = [[NSDateFormatter alloc] init];
+    [formate setDateFormat:@"dd"];
+    
+    for (int i = 0; i < calendarEvents.count; i++) {
+        Events *event = [[Events alloc] init];
+        EKEvent *calendar = [calendarEvents objectAtIndex:i];
+        if ([[formate stringFromDate:calendar.startDate] isEqualToString:[formate stringFromDate:calendar.endDate]]) {
+            event.title = calendar.title;
+            event.date = calendar.startDate;
+            event.endDate = calendar.endDate;
+            [events addObject:event];
+        }
+    }
+    NSArray *returnArray = [allEvents arrayByAddingObjectsFromArray:events];
+    return returnArray;
+}
+
 -(IBAction)addNewEvent:(id)sender{
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
@@ -150,24 +145,7 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     ((CreateNewVC *)view.topViewController).delegate = self;
     dispatch_async(dispatch_get_main_queue(), ^ {
         [self presentViewController:view animated:YES completion:nil];
-    });}
-
--(void)gestureAction:(UISwipeGestureRecognizer *)swipe{
-    
-    NSLog(@"swiped");
-    if (swipe.direction == UISwipeGestureRecognizerDirectionRight) {
-        [UIView animateWithDuration:0.4 animations:^{
-            self.contr.constant = self.masterView.bounds.size.width;
-            [self.view layoutIfNeeded];
-        }];
-    }else if (swipe.direction == UISwipeGestureRecognizerDirectionLeft){
-        [UIView animateWithDuration:0.4 animations:^{
-            self.contr.constant = 0;
-            [self.view layoutIfNeeded];
-        }];
-        [self setUpCollectionView];
-        [self.collectionView reloadData];
-    }
+    });
 }
 
 -(void)setUpCollectionView{
@@ -190,26 +168,14 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     [self.collectionViewCalendarLayout registerClass:MSTimeRowHeaderBackground.class forDecorationViewOfKind:MSCollectionElementKindTimeRowHeaderBackground];
     
     [self.collectionViewCalendarLayout scrollCollectionViewToClosetSectionToCurrentTimeAnimated:NO];
+    
+    [self.collectionView reloadData];
 }
 
 -(void)tapGesture:(UITapGestureRecognizer *)tap{
     if (_graphView.alpha == 1) {
         [self performSegueWithIdentifier:@"showGraphUI" sender:nil];
     }
-}
-
--(void)setUpGestures{
-    
-    UISwipeGestureRecognizer *left = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(gestureAction:)];
-    left.direction = UISwipeGestureRecognizerDirectionLeft;
-    [self.table addGestureRecognizer:left];
-    
-    UISwipeGestureRecognizer *right = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(gestureAction:)];
-    right.direction = UISwipeGestureRecognizerDirectionRight;
-    [self.collectionView addGestureRecognizer:right];
-    
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGesture:)];
-    [self.graphView addGestureRecognizer:tap];
 }
 
 -(void)setShadowforView:(UIView *)view{
@@ -227,9 +193,7 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
 
     //set up data
     result = [Events allObjects];
-    allEvents = [EventsHelper findEventsForToday:[NSDate date] withRealm:result];
-    [self.table reloadData];
-    [self.collectionView reloadData];
+    allEvents = [EventsHelper findTodayNotCompletedEvents:result];
     self.labels = @[@"1", @"2", @"3",@"4", @"5", @"6",@"7"];
     
     //set up views with data
@@ -247,11 +211,9 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     
     //hide or show table
     if (allEvents.count == 0) {
-        self.table.hidden = YES;
         self.collectionView.hidden = YES;
         self.clearLabel.hidden = NO;
     }else{
-        self.table.hidden = NO;
         self.collectionView.hidden = NO;
         self.clearLabel.hidden = YES;
     }
@@ -377,14 +339,21 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
 - (void)viewDidLoad {
     
     result = [Events allObjects];
-    allEvents = [EventsHelper findEventsForToday:[NSDate date] withRealm:result];
+    allEvents = [EventsHelper findTodayCompletedEvents:result];
+    collectionViewArray = [self timePeriodsinTimeline];
     self.ApplicationDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    [self setUpGestures];
     [self setUpCollectionView];
     [self setUpview];
     [self updateAuthorizationStatusToAccessEventStore];
     
-#warning testing methods
+    //YOU SHOULDN'T DO THIS. Call the -setUpGraph function in a dispatch block with system low level timer. However, there is no easy workaround. We have to wait until the layout is full loaded and setup before calling -setUpGraph function. 
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        [self.graphView reset];
+        [self setUpGraphData];
+        
+    });
+    
     NSLog(@"%@", [self.ApplicationDelegate.eventManager freeTimesToday]);
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -392,8 +361,6 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
 
 -(void)viewDidAppear:(BOOL)animated{
 
-//#warning fix this methods
-    [self setUpGraphData];
     [self setUpUserInterface];
     [super viewDidAppear:YES];
 }

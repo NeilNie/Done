@@ -266,7 +266,7 @@
                 }
             }
             CustomCell *cell = (CustomCell *)[self tableView:self.table cellForRowAtIndexPath:indexPath];
-            [cellDescriptors[indexPath.section][indexOfParentCell] setValue:cell.valuePickerText.text forKey:@"primaryTitle"];
+            [[cellDescriptors[indexPath.section] objectAtIndex:indexOfParentCell] setValue:cell.valuePickerText.text forKey:@"primaryTitle"];
             [cellDescriptors[indexPath.section][indexOfParentCell] setValue:@0 forKey:@"isExpanded"];
             
             if (self.addedToProject == nil) {

@@ -36,19 +36,19 @@
 
 - (void)getCurrentTimelineEntryForComplication:(CLKComplication *)complication withHandler:(void(^)(CLKComplicationTimelineEntry * __nullable))handler {
     
-    NSLog(@"got current entry");
-    RLMResults *re = [Events allObjects];
-    Events *event;
-    if (re.count > 0) {
-        event = [re objectAtIndex:0];
-    }
-    
-    CLKComplicationTemplateModularLargeStandardBody *template = [[CLKComplicationTemplateModularLargeStandardBody alloc] init];
-    template.headerTextProvider = [CLKTimeIntervalTextProvider textProviderWithStartDate:[NSDate date] endDate:event.date];
-    template.body1TextProvider = [CLKSimpleTextProvider textProviderWithText:event.title shortText:@"Event Title"];
-    
-    CLKComplicationTimelineEntry *entry = [CLKComplicationTimelineEntry entryWithDate:[NSDate date] complicationTemplate:template];
-    handler(entry);
+//    NSLog(@"got current entry");
+//    RLMResults *re = [Events allObjects];
+//    Events *event;
+//    if (re.count > 0) {
+//        event = [re objectAtIndex:0];
+//    }
+//    
+//    CLKComplicationTemplateModularLargeStandardBody *template = [[CLKComplicationTemplateModularLargeStandardBody alloc] init];
+//    template.headerTextProvider = [CLKTimeIntervalTextProvider textProviderWithStartDate:[NSDate date] endDate:event.date];
+//    template.body1TextProvider = [CLKSimpleTextProvider textProviderWithText:event.title shortText:@"Event Title"];
+//    
+//    CLKComplicationTimelineEntry *entry = [CLKComplicationTimelineEntry entryWithDate:[NSDate date] complicationTemplate:template];
+//    handler(entry);
     // Call the handler with the current timeline entry
 }
 

@@ -163,12 +163,15 @@ static CGFloat kAxisMargin = 25.0;
         item.textColor = [UIColor lightGrayColor];
     
         CGFloat value = [self _minValue] + (idx * [self _stepValueLabelY]);
-        item.centerY = [self _positionYForLineValue:value];
-        item.centerX = item.centerX - 15.0f;
-        item.text = [@(ceil(value)) stringValue];
+        if (value != 0) {
+            item.centerY = [self _positionYForLineValue:value];
+            item.centerX = item.centerX - 15.0f;
+            item.text = [@(ceil(value)) stringValue];
+            
+            [items addObject:item];
+            [self addSubview:item];
+        }
         
-        [items addObject:item];
-        [self addSubview:item];
     }
     self.valueLabels = items;
 }

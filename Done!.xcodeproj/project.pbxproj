@@ -92,6 +92,7 @@
 		289873601CF3BE8B00A283C1 /* button_outline.png in Resources */ = {isa = PBXBuildFile; fileRef = 2898735F1CF3BE8B00A283C1 /* button_outline.png */; };
 		289873621CF3E1C300A283C1 /* button_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 289873611CF3E1C300A283C1 /* button_selected.png */; };
 		28B2003C1CC7C36500A18DFC /* CellDescriptor.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28B2003B1CC7C36500A18DFC /* CellDescriptor.plist */; };
+		28B4463B1D370D76000A0501 /* TimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B4463A1D370D76000A0501 /* TimelineViewController.m */; };
 		28B7AC951CE0AB2E007B3662 /* AutoResizeTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B7AC3E1CE0AB2E007B3662 /* AutoResizeTextView.m */; };
 		28B7ACA11CE0AB2E007B3662 /* MDDeviceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B7AC581CE0AB2E007B3662 /* MDDeviceHelper.m */; };
 		28B7ACA31CE0AB2E007B3662 /* NSDateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B7AC5C1CE0AB2E007B3662 /* NSDateHelper.m */; };
@@ -351,6 +352,8 @@
 		289873611CF3E1C300A283C1 /* button_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_selected.png; sourceTree = "<group>"; };
 		28AB06A41CCA3F8F0071B16D /* Done!.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Done!.entitlements"; sourceTree = "<group>"; };
 		28B2003B1CC7C36500A18DFC /* CellDescriptor.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CellDescriptor.plist; sourceTree = "<group>"; };
+		28B446391D370D76000A0501 /* TimelineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimelineViewController.h; sourceTree = "<group>"; };
+		28B4463A1D370D76000A0501 /* TimelineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimelineViewController.m; sourceTree = "<group>"; };
 		28B7AC3D1CE0AB2E007B3662 /* AutoResizeTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoResizeTextView.h; sourceTree = "<group>"; };
 		28B7AC3E1CE0AB2E007B3662 /* AutoResizeTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoResizeTextView.m; sourceTree = "<group>"; };
 		28B7AC571CE0AB2E007B3662 /* MDDeviceHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDDeviceHelper.h; sourceTree = "<group>"; };
@@ -762,6 +765,8 @@
 				00F48A351CC5194A00B94EA4 /* PreferenceViewController.m */,
 				28D9AF251CDA9F6800E50C10 /* AnalysisViewController.h */,
 				28D9AF261CDA9F6800E50C10 /* AnalysisViewController.m */,
+				28B446391D370D76000A0501 /* TimelineViewController.h */,
+				28B4463A1D370D76000A0501 /* TimelineViewController.m */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -1396,6 +1401,7 @@
 				0020F72A1CD584A900F47CEE /* QBPopupMenuItemView.m in Sources */,
 				28B7ACA31CE0AB2E007B3662 /* NSDateHelper.m in Sources */,
 				286E50641D150E8000EEA0A6 /* NYDate.m in Sources */,
+				28B4463B1D370D76000A0501 /* TimelineViewController.m in Sources */,
 				28E53D021CD04662002DB55F /* Projects.m in Sources */,
 				280EFD991CE2C17500C31E46 /* MSGridline.m in Sources */,
 				28B7ACAF1CE0AB2E007B3662 /* MDTabBarViewController.m in Sources */,
@@ -1660,8 +1666,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"${PODS_ROOT}/GoogleAnalytics/Libraries\"",
-					"$(inherited)",
 					"\"${PODS_ROOT}/Realm/core\"",
 				);
 				OTHER_LDFLAGS = "$(inherited)";
@@ -1689,12 +1693,6 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"${PODS_ROOT}/Google/Libraries\"",
-					"$(inherited)",
-					"\"${PODS_ROOT}/GoogleAnalytics/Libraries\"",
-					"$(inherited)",
-					"\"${PODS_ROOT}/GoogleNetworkingUtilities/Libraries\"",
 					"$(inherited)",
 					"\"${PODS_ROOT}/Realm/core\"",
 				);

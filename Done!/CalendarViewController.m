@@ -257,25 +257,29 @@
 
 -(void)gestureAction:(UISwipeGestureRecognizer *)swipe{
 
-    if (swipe.direction == UISwipeGestureRecognizerDirectionUp) {
-        [UIView animateWithDuration:0.5 animations:^{
-            self.labelContr1.constant = 0;
-            self.labelContr2.constant = 0;
-            self.labelConst3.constant = 0;
-            self.contr.constant = 250;
-            [self.table reloadData];
-            [self.view layoutIfNeeded];
-        }];
-    }else if (swipe.direction == UISwipeGestureRecognizerDirectionDown){
-        [UIView animateWithDuration:0.5 animations:^{
-            self.labelContr1.constant = 110;
-            self.labelContr2.constant = 45;
-            self.labelConst3.constant = 45;
-            self.contr.constant = 0;
-            [self.view layoutIfNeeded];
-        }];
-
-    }
+    dispatch_async(dispatch_get_main_queue(), ^{
+        
+        if (swipe.direction == UISwipeGestureRecognizerDirectionUp) {
+            [UIView animateWithDuration:0.5 animations:^{
+                self.labelContr1.constant = 0;
+                self.labelContr2.constant = 0;
+                self.labelConst3.constant = 0;
+                self.contr.constant = 250;
+                [self.table reloadData];
+                [self.view layoutIfNeeded];
+            }];
+        }else if (swipe.direction == UISwipeGestureRecognizerDirectionDown){
+            [UIView animateWithDuration:0.5 animations:^{
+                self.labelContr1.constant = 110;
+                self.labelContr2.constant = 45;
+                self.labelConst3.constant = 45;
+                self.contr.constant = 0;
+                [self.view layoutIfNeeded];
+            }];
+            
+        }
+    });
+    
 }
 
 -(void)setUpGestures{

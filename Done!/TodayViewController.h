@@ -32,13 +32,13 @@
 
 @import FirebaseAuth;
 
-@interface TodayViewController : UIViewController <MSCollectionViewDelegateCalendarLayout, UITableViewDelegate, UITableViewDataSource, GKLineGraphDataSource, CreateNewDelegate>{
+@interface TodayViewController : UIViewController <MSCollectionViewDelegateCalendarLayout,GKLineGraphDataSource, CreateNewDelegate, UIViewControllerPreviewingDelegate>{
     NSMutableArray *allEvents;
     RLMResults *result;
+    NSArray *collectionViewArray;
 }
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
-@property (weak, nonatomic) IBOutlet UITableView *table;
 //@property (weak, nonatomic) IBOutlet GADBannerView *banner;
 @property (weak, nonatomic) IBOutlet UILabel *completedLabel;
 
