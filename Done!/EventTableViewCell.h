@@ -13,13 +13,10 @@
 
 @interface EventTableViewCell : SWTableViewCell
 
-@property (strong, nonatomic) IBOutlet Events *event;
+@property (strong, nonatomic) Events *event;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UIButton *button;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constr;
-@property (weak, nonatomic) IBOutlet UIButton *markButton;
-@property (weak, nonatomic) IBOutlet UIButton *starButton;
 @property (weak, nonatomic) IBOutlet UIImageView *importantIcon;
 @property (nonatomic, assign) id delegate;
 - (IBAction)done:(id)sender;
@@ -31,11 +28,6 @@
 
 @required
 -(void)clickedDone:(EventTableViewCell *)cell;
--(void)markImportant:(EventTableViewCell *)cell;
 
-@optional
--(void)setReminder:(EventTableViewCell *)cell;
--(void)moveEvent:(EventTableViewCell *)cell;
--(void)attachments:(EventTableViewCell *)cell;
 
 @end

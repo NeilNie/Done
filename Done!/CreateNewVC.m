@@ -18,7 +18,16 @@
 
 - (IBAction)addEvent:(id)sender {
     
-    [self scheduleReminder:reminder];
+    if (reminder == YES) {
+        UILocalNotification *notification = [[UILocalNotification alloc] init];
+        notification.fireDate = date;
+        notification.alertTitle = NSLocalizedString(@"You have a new reminder", nil);
+        notification.alertBody = title;
+        notification.soundName = UILocalNotificationDefaultSoundName;
+        notification.timeZone = [NSTimeZone localTimeZone];
+        notification.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber] + 1;
+        [[UIApplication sharedApplication] scheduleLocalNotification:notification];
+    }
     
     if ([self checkData] == NO) {
         [RKDropdownAlert title:@"Opps" message:@"You have to set a date and a title for your project/event."];
@@ -120,17 +129,6 @@
     }
 }
 
--(void)scheduleReminder:(BOOL)yes{
-    if (yes) {
-        UILocalNotification *notification = [[UILocalNotification alloc] init];
-        notification.fireDate = date;
-        notification.alertTitle = NSLocalizedString(@"You have a new reminder", nil);
-        notification.alertBody = title;
-        notification.timeZone = [NSTimeZone defaultTimeZone];
-        notification.applicationIconBadgeNumber = [[UIApplication sharedApplication]applicationIconBadgeNumber] + 1;
-        [[UIApplication sharedApplication] scheduleLocalNotification:notification];
-    }
-}
 - (IBAction)cancel:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -344,7 +342,7 @@
 -(void)dateWasSelected:(NSDate *)selectedDate{
     
     NSDateFormatter *formate = [[NSDateFormatter alloc] init];
-    [formate setDateFormat:@"dd/MM/yyyy HH:MM"];
+    [formate setDateFormat:@"dd/MM/yyyy hh:mm"];
     NSString *dateString = [formate stringFromDate:selectedDate];
     NSLog(@"%@", dateString);
     if ([self.sender isEqualToString:@"project"]) {

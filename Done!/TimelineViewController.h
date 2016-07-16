@@ -7,7 +7,30 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <WatchConnectivity/WatchConnectivity.h>
+#import "Events.h"
+#import "Projects.h"
+#import "EventsHelper.h"
+#import "EventManager.h"
+#import "EventTableViewCell.h"
 
-@interface TimelineViewController : UIViewController
+#import "MSCollectionViewCalendarLayout.h"
+#import "MSGridline.h"
+#import "MSTimeRowHeaderBackground.h"
+#import "MSDayColumnHeaderBackground.h"
+#import "MSEventCell.h"
+#import "MSDayColumnHeader.h"
+#import "MSTimeRowHeader.h"
+#import "MSCurrentTimeIndicator.h"
+#import "MSCurrentTimeGridline.h"
+#import "iOSUILib/MDRippleLayer.h"
 
+@interface TimelineViewController : UIViewController <MSCollectionViewDelegateCalendarLayout, EventCellDelegate, WCSessionDelegate, SWTableViewCellDelegate, UITableViewDelegate, UITableViewDataSource>{
+    NSArray *collectionViewArray;
+    NSMutableArray *allEvents;
+}
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constrs;
+@property (weak, nonatomic) IBOutlet UIButton *button;
 @end

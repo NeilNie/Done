@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11129.15" systemVersion="16A201w" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11163.2" systemVersion="16A239j" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11103.10"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11133"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="idEventCell" rowHeight="103" id="jMh-8Y-oS7" customClass="EventTableViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="103"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="idEventCell" rowHeight="80" id="jMh-8Y-oS7" customClass="EventTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jMh-8Y-oS7" id="l5u-jE-jh2">
-                <frame key="frameInset" width="287" height="102"/>
+                <frame key="frameInset" width="320" height="79"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Computer Science Class" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ogi-lh-CXa">
@@ -35,98 +35,37 @@
                             <action selector="done:" destination="jMh-8Y-oS7" eventType="touchUpInside" id="tSY-OP-jfn"/>
                         </connections>
                     </button>
-                    <button opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DJM-TX-OPX">
-                        <color key="backgroundColor" red="0.98823529409999999" green="0.41960784309999999" blue="0.031372549020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OhP-bN-iUH">
                         <constraints>
-                            <constraint firstAttribute="width" id="lEP-UQ-al9"/>
+                            <constraint firstAttribute="width" constant="15" id="sZF-U0-75Y"/>
+                            <constraint firstAttribute="height" constant="15" id="tc2-2g-EyO"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                        <state key="normal" title="Mark as Important">
-                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </state>
-                        <connections>
-                            <action selector="markImportant:" destination="jMh-8Y-oS7" eventType="touchUpInside" id="6b1-YL-dig"/>
-                        </connections>
-                    </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="owL-Kl-Ox6">
-                        <constraints>
-                            <constraint firstAttribute="height" constant="25" id="DEU-fD-xTL"/>
-                            <constraint firstAttribute="width" constant="25" id="POl-ZE-atI"/>
-                        </constraints>
-                        <state key="normal" image="star.png"/>
-                        <connections>
-                            <action selector="markImportant:" destination="jMh-8Y-oS7" eventType="touchUpInside" id="LAU-2B-IgY"/>
-                        </connections>
-                    </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5GQ-Cg-Rg4">
-                        <constraints>
-                            <constraint firstAttribute="width" constant="25" id="DzI-vh-8D7"/>
-                            <constraint firstAttribute="height" constant="25" id="phD-nN-AOz"/>
-                        </constraints>
-                        <state key="normal" image="appointment_reminders.png"/>
-                        <connections>
-                            <action selector="EventScheduleReminder:" destination="jMh-8Y-oS7" eventType="touchUpInside" id="UcZ-UB-zHF"/>
-                        </connections>
-                    </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IzD-dz-YQw">
-                        <constraints>
-                            <constraint firstAttribute="height" constant="25" id="8Zc-ld-OpB"/>
-                            <constraint firstAttribute="width" constant="25" id="ltA-ck-zUb"/>
-                        </constraints>
-                        <state key="normal" image="move_stock.png"/>
-                        <connections>
-                            <action selector="moveEventToProject:" destination="jMh-8Y-oS7" eventType="touchUpInside" id="eHd-Ka-njG"/>
-                        </connections>
-                    </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z4s-2n-Zzo">
-                        <constraints>
-                            <constraint firstAttribute="width" constant="25" id="Ndx-jo-brr"/>
-                            <constraint firstAttribute="height" constant="25" id="vsV-zk-GLu"/>
-                        </constraints>
-                        <state key="normal" image="attach.png"/>
-                        <connections>
-                            <action selector="addAttachments:" destination="jMh-8Y-oS7" eventType="touchUpInside" id="gph-hc-Vo9"/>
-                        </connections>
-                    </button>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="WyS-4b-56k" firstAttribute="top" secondItem="Ogi-lh-CXa" secondAttribute="bottom" constant="8" id="1qB-ag-rPf"/>
-                    <constraint firstItem="DJM-TX-OPX" firstAttribute="top" secondItem="l5u-jE-jh2" secondAttribute="topMargin" constant="-8" id="3gi-sO-bAh"/>
-                    <constraint firstItem="owL-Kl-Ox6" firstAttribute="top" secondItem="WyS-4b-56k" secondAttribute="bottom" constant="8" id="8Pc-BH-MOk"/>
-                    <constraint firstItem="5GQ-Cg-Rg4" firstAttribute="top" secondItem="WyS-4b-56k" secondAttribute="bottom" constant="8" id="CL9-yF-RyJ"/>
-                    <constraint firstItem="z4s-2n-Zzo" firstAttribute="top" secondItem="WyS-4b-56k" secondAttribute="bottom" constant="8" id="Dhh-rI-e9d"/>
-                    <constraint firstItem="IzD-dz-YQw" firstAttribute="top" secondItem="WyS-4b-56k" secondAttribute="bottom" constant="8" id="O8m-6j-toa"/>
+                    <constraint firstItem="WyS-4b-56k" firstAttribute="leading" secondItem="OhP-bN-iUH" secondAttribute="trailing" constant="6" id="5sT-Ia-rUV"/>
                     <constraint firstItem="Vd3-AJ-Cf8" firstAttribute="leading" secondItem="WyS-4b-56k" secondAttribute="trailing" constant="8" id="PiZ-jB-Z10"/>
-                    <constraint firstItem="owL-Kl-Ox6" firstAttribute="leading" secondItem="l5u-jE-jh2" secondAttribute="leadingMargin" constant="18" id="RvN-AC-DhU"/>
-                    <constraint firstItem="DJM-TX-OPX" firstAttribute="leading" secondItem="l5u-jE-jh2" secondAttribute="leadingMargin" constant="-8" id="WCl-cF-00e"/>
-                    <constraint firstItem="Vd3-AJ-Cf8" firstAttribute="top" secondItem="l5u-jE-jh2" secondAttribute="topMargin" constant="12" id="Z09-fi-Lg3"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="Vd3-AJ-Cf8" secondAttribute="trailing" constant="8" id="Z1F-9r-jTW"/>
+                    <constraint firstItem="Vd3-AJ-Cf8" firstAttribute="top" secondItem="l5u-jE-jh2" secondAttribute="topMargin" constant="15" id="Z09-fi-Lg3"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Vd3-AJ-Cf8" secondAttribute="trailing" constant="14" id="Z1F-9r-jTW"/>
+                    <constraint firstItem="OhP-bN-iUH" firstAttribute="leading" secondItem="l5u-jE-jh2" secondAttribute="leading" constant="5" id="ao9-aR-Xaa"/>
                     <constraint firstItem="Ogi-lh-CXa" firstAttribute="top" secondItem="l5u-jE-jh2" secondAttribute="topMargin" constant="6" id="gQb-LI-4pk"/>
-                    <constraint firstItem="5GQ-Cg-Rg4" firstAttribute="leading" secondItem="IzD-dz-YQw" secondAttribute="trailing" constant="50" id="hKy-lv-XgH"/>
-                    <constraint firstItem="z4s-2n-Zzo" firstAttribute="leading" secondItem="owL-Kl-Ox6" secondAttribute="trailing" constant="50" id="hQG-Pj-foj"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="DJM-TX-OPX" secondAttribute="bottom" constant="-8" id="hs2-6o-GqG"/>
-                    <constraint firstAttribute="trailing" secondItem="5GQ-Cg-Rg4" secondAttribute="trailing" constant="16" id="kus-Th-tDj"/>
                     <constraint firstItem="WyS-4b-56k" firstAttribute="leading" secondItem="l5u-jE-jh2" secondAttribute="leadingMargin" constant="18" id="pn3-aw-L4s"/>
                     <constraint firstItem="Ogi-lh-CXa" firstAttribute="leading" secondItem="l5u-jE-jh2" secondAttribute="leadingMargin" constant="18" id="rod-AL-iOB"/>
                     <constraint firstItem="Vd3-AJ-Cf8" firstAttribute="leading" secondItem="Ogi-lh-CXa" secondAttribute="trailing" constant="8" id="u6h-6x-gRf"/>
+                    <constraint firstItem="OhP-bN-iUH" firstAttribute="centerY" secondItem="l5u-jE-jh2" secondAttribute="centerY" id="vbK-Ce-DDL"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
                 <outlet property="button" destination="Vd3-AJ-Cf8" id="SI0-eL-pLb"/>
-                <outlet property="constr" destination="lEP-UQ-al9" id="FYC-dv-1zA"/>
                 <outlet property="dateLabel" destination="WyS-4b-56k" id="GL4-R5-MO8"/>
-                <outlet property="markButton" destination="DJM-TX-OPX" id="eag-Wt-kjR"/>
-                <outlet property="starButton" destination="owL-Kl-Ox6" id="MEa-qZ-Kgz"/>
                 <outlet property="titleLabel" destination="Ogi-lh-CXa" id="TyN-II-K5M"/>
             </connections>
             <point key="canvasLocation" x="556" y="392"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="appointment_reminders.png" width="96" height="96"/>
-        <image name="attach.png" width="96" height="96"/>
         <image name="circle-nf.png" width="200" height="200"/>
-        <image name="move_stock.png" width="96" height="96"/>
-        <image name="star.png" width="100" height="100"/>
     </resources>
 </document>

@@ -94,19 +94,20 @@
     [leftUtilityButtons sw_addUtilityButtonWithColor:
      [UIColor orangeColor] title:@"Important"];
     [leftUtilityButtons sw_addUtilityButtonWithColor:
-     [UIColor blueColor] title:@"Hide"];;
+     [UIColor blueColor] title:@"Alert"];;
     return leftUtilityButtons;
 }
 
 #pragma mark - SWTableViewCell Delegate
 
 - (void)swipeableTableViewCell:(SWTableViewCell *)cell didTriggerLeftUtilityButtonWithIndex:(NSInteger)index {
+
     switch (index) {
         case 0:
             [self markImportant:(EventTableViewCell *)cell];
             break;
         case 1:
-            NSLog(@"clock button was pressed");
+            [self setReminder:((EventTableViewCell *)cell).event.date withText:((EventTableViewCell *)cell).event.title];
             break;
         default:
             break;
@@ -152,7 +153,29 @@
     //[self syncDataWithExtension];
     [allEvents addObject:@""];
     [self.table reloadData];
+    
+    UILocalNotification *notification = [[UILocalNotification alloc] init];
+    notification.fireDate = [[NSDate date] dateByAddingTimeInterval:5 * 60];
+    notification.alertTitle = NSLocalizedString(@"You have a new reminder", nil);
+    notification.alertBody = cell.textfield.text;
+    notification.soundName = UILocalNotificationDefaultSoundName;
+    notification.timeZone = [NSTimeZone localTimeZone];
+    notification.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber] + 1;
+    [[UIApplication sharedApplication] scheduleLocalNotification:notification];
 }
+
+#pragma mark - CreateNew Delegate
+
+-(void)addProject:(Projects *)project{
+    
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    [realm beginWriteTransaction];
+    [realm addObject:project];
+    [realm commitWriteTransaction];
+    NSLog(@"new project added %@", project);
+}
+
+#pragma mark - Private
 
 -(void)markImportant:(EventTableViewCell *)cell{
     
@@ -176,28 +199,17 @@
     [self.table deleteRowsAtIndexPaths:@[index] withRowAnimation:UITableViewRowAnimationTop];
 }
 
--(void)setReminder:(EventTableViewCell *)cell{
+-(void)setReminder:(NSDate *)date withText:(NSString *)text{
     
+    UILocalNotification *notification = [[UILocalNotification alloc] init];
+    notification.fireDate = date;
+    notification.alertTitle = NSLocalizedString(@"You have a new reminder", nil);
+    notification.alertBody = text;
+    notification.soundName = UILocalNotificationDefaultSoundName;
+    notification.timeZone = [NSTimeZone localTimeZone];
+    notification.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber] + 1;
+    [[UIApplication sharedApplication] scheduleLocalNotification:notification];
 }
--(void)moveEvent:(EventTableViewCell *)cell{
-    
-}
--(void)attachments:(EventTableViewCell *)cell{
-    
-}
-
-#pragma mark - CreateNew Delegate
-
--(void)addProject:(Projects *)project{
-    
-    RLMRealm *realm = [RLMRealm defaultRealm];
-    [realm beginWriteTransaction];
-    [realm addObject:project];
-    [realm commitWriteTransaction];
-    NSLog(@"new project added %@", project);
-}
-
-#pragma mark - Private
 
 - (void)addNewEvent{
     

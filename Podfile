@@ -12,7 +12,6 @@ pod 'UIColor-HexString'
 pod 'Masonry'
 pod 'Firebase/Database'
 pod 'Firebase/Auth'
-pod 'Firebase/Messaging'
 pod 'Firebase/Analytics'
 pod 'SWTableViewCell', '~> 0.3.7'
 
@@ -29,4 +28,3 @@ target 'Done! Apple Watch Extension' do
 pod 'Realm'
 
 end
-

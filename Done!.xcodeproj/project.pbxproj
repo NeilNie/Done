@@ -18,7 +18,6 @@
 		0060834D1CC4007500A344F1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0060834C1CC4007500A344F1 /* main.m */; };
 		006083501CC4007500A344F1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0060834F1CC4007500A344F1 /* AppDelegate.m */; };
 		0060835B1CC4007500A344F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 006083591CC4007500A344F1 /* LaunchScreen.storyboard */; };
-		007334541CCC5144009D8FDC /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 007334531CCC5144009D8FDC /* StoreKit.framework */; };
 		0083154E1CDE8FDB003E706D /* Done! Apple Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0083154D1CDE8FDB003E706D /* Done! Apple Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		008315681CDE8FDB003E706D /* Done! Apple Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 008315411CDE8FDB003E706D /* Done! Apple Watch.app */; };
 		0083157D1CDE8FF2003E706D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 008315701CDE8FF2003E706D /* Assets.xcassets */; };
@@ -67,16 +66,10 @@
 		280EFD9B1CE2C17500C31E46 /* MSTimeRowHeaderBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 280EFD941CE2C17500C31E46 /* MSTimeRowHeaderBackground.m */; };
 		280EFD9F1CE2C1C600C31E46 /* MSCollectionViewCalendarLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 280EFD9E1CE2C1C600C31E46 /* MSCollectionViewCalendarLayout.m */; };
 		280EFDA21CE2C1E400C31E46 /* MSEventCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 280EFDA11CE2C1E400C31E46 /* MSEventCell.m */; };
-		281F9BF61D0F67D900FC1695 /* appointment_reminders.png in Resources */ = {isa = PBXBuildFile; fileRef = 281F9BF21D0F67D900FC1695 /* appointment_reminders.png */; };
-		281F9BF71D0F67D900FC1695 /* attach.png in Resources */ = {isa = PBXBuildFile; fileRef = 281F9BF31D0F67D900FC1695 /* attach.png */; };
-		281F9BF81D0F67D900FC1695 /* move_stock.png in Resources */ = {isa = PBXBuildFile; fileRef = 281F9BF41D0F67D900FC1695 /* move_stock.png */; };
-		281F9BF91D0F67D900FC1695 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 281F9BF51D0F67D900FC1695 /* star.png */; };
+		2820EAA71D380F73007A9178 /* DoneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2820EAA61D380F73007A9178 /* DoneTests.m */; };
+		2820EAB51D380F8A007A9178 /* DoneUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2820EAB41D380F8A007A9178 /* DoneUITests.m */; };
 		2836B9091D303806006ADBAF /* TableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2836B9081D303806006ADBAF /* TableController.m */; };
 		283D1B111D1640DF000CEC0C /* NYTimePeriod.m in Sources */ = {isa = PBXBuildFile; fileRef = 283D1B101D1640DF000CEC0C /* NYTimePeriod.m */; };
-		2845DECD1D224F1B00D228F1 /* circle-nf.png in Resources */ = {isa = PBXBuildFile; fileRef = 2845DECC1D224F1B00D228F1 /* circle-nf.png */; };
-		2845DECE1D224F1B00D228F1 /* circle-nf.png in Resources */ = {isa = PBXBuildFile; fileRef = 2845DECC1D224F1B00D228F1 /* circle-nf.png */; };
-		2845DECF1D224F1B00D228F1 /* circle-nf.png in Resources */ = {isa = PBXBuildFile; fileRef = 2845DECC1D224F1B00D228F1 /* circle-nf.png */; };
-		2845DED01D224F1B00D228F1 /* circle-nf.png in Resources */ = {isa = PBXBuildFile; fileRef = 2845DECC1D224F1B00D228F1 /* circle-nf.png */; };
 		284A641B1D0FA953009A348A /* addEventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 284A641A1D0FA953009A348A /* addEventCell.xib */; };
 		285431871CE01BD80022F993 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 285431861CE01BD80022F993 /* UIKit.framework */; };
 		285431891CE01BE20022F993 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 285431881CE01BE20022F993 /* QuartzCore.framework */; };
@@ -116,7 +109,6 @@
 		28B7ACBB1CE0AB2E007B3662 /* MDSuggestPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B7AC901CE0AB2E007B3662 /* MDSuggestPopupView.m */; };
 		28B7ACBC1CE0AB2E007B3662 /* MDSuggestTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B7AC921CE0AB2E007B3662 /* MDSuggestTableView.m */; };
 		28B7ACBD1CE0AB2E007B3662 /* UIView+MDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B7AC941CE0AB2E007B3662 /* UIView+MDExtension.m */; };
-		28BF6F571CD0D56000059D7D /* ProjectCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 28BF6F561CD0D56000059D7D /* ProjectCollectionViewCell.m */; };
 		28C2DAC11CD02716007441D0 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C2DAC01CD02716007441D0 /* TodayViewController.m */; };
 		28D48AE01D06E52000723DA5 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 28D48ADF1D06E52000723DA5 /* menu.png */; };
 		28D9AF271CDA9F6800E50C10 /* AnalysisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D9AF261CDA9F6800E50C10 /* AnalysisViewController.m */; };
@@ -126,12 +118,9 @@
 		28EB3A6E1CEA8E2D00A5BCED /* DatePickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28EB3A671CEA8E2D00A5BCED /* DatePickerCell.xib */; };
 		28EB3A6F1CEA8E2D00A5BCED /* EventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28EB3A681CEA8E2D00A5BCED /* EventTableViewCell.xib */; };
 		28EB3A701CEA8E2D00A5BCED /* NormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28EB3A691CEA8E2D00A5BCED /* NormalCell.xib */; };
-		28EB3A711CEA8E2D00A5BCED /* ProjectCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28EB3A6A1CEA8E2D00A5BCED /* ProjectCollectionView.xib */; };
 		28EB3A721CEA8E2D00A5BCED /* SwitchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28EB3A6B1CEA8E2D00A5BCED /* SwitchCell.xib */; };
 		28EB3A731CEA8E2D00A5BCED /* TextfieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28EB3A6C1CEA8E2D00A5BCED /* TextfieldCell.xib */; };
 		28EB3A741CEA8E2D00A5BCED /* ValuePickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28EB3A6D1CEA8E2D00A5BCED /* ValuePickerCell.xib */; };
-		28EB3A9F1CEA8EBE00A5BCED /* appWScr-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 28EB3A841CEA8EBE00A5BCED /* appWScr-1.png */; };
-		28EB3AA01CEA8EBE00A5BCED /* appWScr-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 28EB3A851CEA8EBE00A5BCED /* appWScr-2.png */; };
 		28EB3AA11CEA8EBE00A5BCED /* appWScr-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 28EB3A861CEA8EBE00A5BCED /* appWScr-3.png */; };
 		28EB3AA41CEA8EBE00A5BCED /* bg1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 28EB3A891CEA8EBE00A5BCED /* bg1@2x.png */; };
 		28EB3AA51CEA8EBE00A5BCED /* bg3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 28EB3A8A1CEA8EBE00A5BCED /* bg3@2x.png */; };
@@ -142,17 +131,16 @@
 		28EB3AAE1CEA8EBE00A5BCED /* screen_shot_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 28EB3A931CEA8EBE00A5BCED /* screen_shot_1.png */; };
 		28EB3AAF1CEA8EBE00A5BCED /* screen_shot_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 28EB3A941CEA8EBE00A5BCED /* screen_shot_2.png */; };
 		28EB3AB01CEA8EBE00A5BCED /* screen_shot_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 28EB3A951CEA8EBE00A5BCED /* screen_shot_3.png */; };
-		28EB3AB11CEA8EBE00A5BCED /* screen_shot_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 28EB3A961CEA8EBE00A5BCED /* screen_shot_4.png */; };
 		28EB3AB21CEA8EBE00A5BCED /* screen_shot_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 28EB3A971CEA8EBE00A5BCED /* screen_shot_5.png */; };
-		28EB3AB31CEA8EBE00A5BCED /* screen_shot_7.png in Resources */ = {isa = PBXBuildFile; fileRef = 28EB3A981CEA8EBE00A5BCED /* screen_shot_7.png */; };
 		28EB3AB91CEA8EBE00A5BCED /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = 28EB3A9E1CEA8EBE00A5BCED /* user.png */; };
+		28F176B11D3976B300DCE3E1 /* circled_down_filled.png in Resources */ = {isa = PBXBuildFile; fileRef = 28F176B01D3976B300DCE3E1 /* circled_down_filled.png */; };
+		28F176B31D3984DC00DCE3E1 /* circle-nf.png in Resources */ = {isa = PBXBuildFile; fileRef = 28F176B21D3984DC00DCE3E1 /* circle-nf.png */; };
 		28F4FD0A1CDC01740042352F /* GKBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F4FD011CDC01740042352F /* GKBar.m */; };
 		28F4FD0B1CDC01740042352F /* GKBarGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F4FD031CDC01740042352F /* GKBarGraph.m */; };
 		28F4FD0C1CDC01740042352F /* GKLineGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F4FD071CDC01740042352F /* GKLineGraph.m */; };
 		28F4FD0D1CDC01740042352F /* UIColor+GraphKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F4FD091CDC01740042352F /* UIColor+GraphKit.m */; };
 		28F5E53D1CE53BF500C15FF6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D9AF341CDACF4E00E50C10 /* CoreGraphics.framework */; };
 		28F5E53F1CE53BFB00C15FF6 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28F5E53E1CE53BFB00C15FF6 /* Accelerate.framework */; };
-		28F666821D00D1AC008B6A1D /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28F666811D00D1AC008B6A1D /* Reveal.framework */; };
 		28F666841D00F0FB008B6A1D /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = 28F666831D00F0FB008B6A1D /* info.png */; };
 		28F896F91CEBF98100C546EC /* TodayInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F896F81CEBF98100C546EC /* TodayInterfaceController.m */; };
 		28F896FB1CEBFB5500C546EC /* done-icon copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 28F896FA1CEBFB5500C546EC /* done-icon copy.png */; };
@@ -186,6 +174,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 00FA9E1F1CE902BE00E977D0;
 			remoteInfo = "Done Widget";
+		};
+		2820EAA91D380F73007A9178 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 006083401CC4007500A344F1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 006083471CC4007500A344F1;
+			remoteInfo = "Done!";
+		};
+		2820EAB71D380F8A007A9178 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 006083401CC4007500A344F1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 006083471CC4007500A344F1;
+			remoteInfo = "Done!";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -324,16 +326,17 @@
 		280EFDA11CE2C1E400C31E46 /* MSEventCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSEventCell.m; sourceTree = "<group>"; };
 		281838BA1CC9B01800D5930E /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		281F990B1CE2B4B6008D9342 /* Done!-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Done!-Bridging-Header.h"; sourceTree = "<group>"; };
-		281F9BF21D0F67D900FC1695 /* appointment_reminders.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appointment_reminders.png; sourceTree = "<group>"; };
-		281F9BF31D0F67D900FC1695 /* attach.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = attach.png; sourceTree = "<group>"; };
-		281F9BF41D0F67D900FC1695 /* move_stock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = move_stock.png; sourceTree = "<group>"; };
-		281F9BF51D0F67D900FC1695 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
+		2820EAA41D380F72007A9178 /* DoneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DoneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2820EAA61D380F73007A9178 /* DoneTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DoneTests.m; sourceTree = "<group>"; };
+		2820EAA81D380F73007A9178 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2820EAB21D380F89007A9178 /* DoneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DoneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2820EAB41D380F8A007A9178 /* DoneUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DoneUITests.m; sourceTree = "<group>"; };
+		2820EAB61D380F8A007A9178 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2836B9071D303806006ADBAF /* TableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableController.h; sourceTree = "<group>"; };
 		2836B9081D303806006ADBAF /* TableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableController.m; sourceTree = "<group>"; };
 		283D1B0F1D1640DF000CEC0C /* NYTimePeriod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYTimePeriod.h; sourceTree = "<group>"; };
 		283D1B101D1640DF000CEC0C /* NYTimePeriod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYTimePeriod.m; sourceTree = "<group>"; };
 		284112D61CDAD09900718101 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
-		2845DECC1D224F1B00D228F1 /* circle-nf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "circle-nf.png"; sourceTree = "<group>"; };
 		284A641A1D0FA953009A348A /* addEventCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = addEventCell.xib; sourceTree = "<group>"; };
 		285431861CE01BD80022F993 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		285431881CE01BE20022F993 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -401,8 +404,6 @@
 		28B7AC921CE0AB2E007B3662 /* MDSuggestTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDSuggestTableView.m; sourceTree = "<group>"; };
 		28B7AC931CE0AB2E007B3662 /* UIView+MDExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MDExtension.h"; sourceTree = "<group>"; };
 		28B7AC941CE0AB2E007B3662 /* UIView+MDExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MDExtension.m"; sourceTree = "<group>"; };
-		28BF6F551CD0D56000059D7D /* ProjectCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectCollectionViewCell.h; sourceTree = "<group>"; };
-		28BF6F561CD0D56000059D7D /* ProjectCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectCollectionViewCell.m; sourceTree = "<group>"; };
 		28C2DABF1CD02716007441D0 /* TodayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
 		28C2DAC01CD02716007441D0 /* TodayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodayViewController.m; sourceTree = "<group>"; };
 		28C50E351CE94594004C3A65 /* Done Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Done Widget.entitlements"; sourceTree = "<group>"; };
@@ -434,12 +435,9 @@
 		28EB3A671CEA8E2D00A5BCED /* DatePickerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DatePickerCell.xib; path = Views/DatePickerCell.xib; sourceTree = "<group>"; };
 		28EB3A681CEA8E2D00A5BCED /* EventTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EventTableViewCell.xib; path = Views/EventTableViewCell.xib; sourceTree = "<group>"; };
 		28EB3A691CEA8E2D00A5BCED /* NormalCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NormalCell.xib; path = Views/NormalCell.xib; sourceTree = "<group>"; };
-		28EB3A6A1CEA8E2D00A5BCED /* ProjectCollectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProjectCollectionView.xib; path = Views/ProjectCollectionView.xib; sourceTree = "<group>"; };
 		28EB3A6B1CEA8E2D00A5BCED /* SwitchCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SwitchCell.xib; path = Views/SwitchCell.xib; sourceTree = "<group>"; };
 		28EB3A6C1CEA8E2D00A5BCED /* TextfieldCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TextfieldCell.xib; path = Views/TextfieldCell.xib; sourceTree = "<group>"; };
 		28EB3A6D1CEA8E2D00A5BCED /* ValuePickerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ValuePickerCell.xib; path = Views/ValuePickerCell.xib; sourceTree = "<group>"; };
-		28EB3A841CEA8EBE00A5BCED /* appWScr-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appWScr-1.png"; sourceTree = "<group>"; };
-		28EB3A851CEA8EBE00A5BCED /* appWScr-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appWScr-2.png"; sourceTree = "<group>"; };
 		28EB3A861CEA8EBE00A5BCED /* appWScr-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appWScr-3.png"; sourceTree = "<group>"; };
 		28EB3A891CEA8EBE00A5BCED /* bg1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg1@2x.png"; sourceTree = "<group>"; };
 		28EB3A8A1CEA8EBE00A5BCED /* bg3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg3@2x.png"; sourceTree = "<group>"; };
@@ -450,10 +448,10 @@
 		28EB3A931CEA8EBE00A5BCED /* screen_shot_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screen_shot_1.png; sourceTree = "<group>"; };
 		28EB3A941CEA8EBE00A5BCED /* screen_shot_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screen_shot_2.png; sourceTree = "<group>"; };
 		28EB3A951CEA8EBE00A5BCED /* screen_shot_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screen_shot_3.png; sourceTree = "<group>"; };
-		28EB3A961CEA8EBE00A5BCED /* screen_shot_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screen_shot_4.png; sourceTree = "<group>"; };
 		28EB3A971CEA8EBE00A5BCED /* screen_shot_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screen_shot_5.png; sourceTree = "<group>"; };
-		28EB3A981CEA8EBE00A5BCED /* screen_shot_7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screen_shot_7.png; sourceTree = "<group>"; };
 		28EB3A9E1CEA8EBE00A5BCED /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user.png; sourceTree = "<group>"; };
+		28F176B01D3976B300DCE3E1 /* circled_down_filled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circled_down_filled.png; sourceTree = "<group>"; };
+		28F176B21D3984DC00DCE3E1 /* circle-nf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "circle-nf.png"; sourceTree = "<group>"; };
 		28F4FD001CDC01740042352F /* GKBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKBar.h; sourceTree = "<group>"; };
 		28F4FD011CDC01740042352F /* GKBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKBar.m; sourceTree = "<group>"; };
 		28F4FD021CDC01740042352F /* GKBarGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKBarGraph.h; sourceTree = "<group>"; };
@@ -464,7 +462,6 @@
 		28F4FD081CDC01740042352F /* UIColor+GraphKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+GraphKit.h"; sourceTree = "<group>"; };
 		28F4FD091CDC01740042352F /* UIColor+GraphKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+GraphKit.m"; sourceTree = "<group>"; };
 		28F5E53E1CE53BFB00C15FF6 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
-		28F666811D00D1AC008B6A1D /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
 		28F666831D00F0FB008B6A1D /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info.png; sourceTree = "<group>"; };
 		28F896F71CEBF98100C546EC /* TodayInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodayInterfaceController.h; sourceTree = "<group>"; };
 		28F896F81CEBF98100C546EC /* TodayInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodayInterfaceController.m; sourceTree = "<group>"; };
@@ -493,10 +490,8 @@
 				28F5E53F1CE53BFB00C15FF6 /* Accelerate.framework in Frameworks */,
 				28F5E53D1CE53BF500C15FF6 /* CoreGraphics.framework in Frameworks */,
 				285431891CE01BE20022F993 /* QuartzCore.framework in Frameworks */,
-				28F666821D00D1AC008B6A1D /* Reveal.framework in Frameworks */,
 				285431871CE01BD80022F993 /* UIKit.framework in Frameworks */,
 				0091B29E1CCD3E4F000B50A0 /* WatchConnectivity.framework in Frameworks */,
-				007334541CCC5144009D8FDC /* StoreKit.framework in Frameworks */,
 				9CEEF1370D088F60D48BC164 /* libPods-Done!.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -515,6 +510,20 @@
 			files = (
 				00FA9E211CE902BE00E977D0 /* NotificationCenter.framework in Frameworks */,
 				9CF1839CAA7AE4AA60648E2F /* libPods-Done Widget.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2820EAA11D380F72007A9178 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2820EAAF1D380F89007A9178 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -550,11 +559,12 @@
 		0060833F1CC4007500A344F1 = {
 			isa = PBXGroup;
 			children = (
-				28F666811D00D1AC008B6A1D /* Reveal.framework */,
 				0060834A1CC4007500A344F1 /* Done! */,
 				008315421CDE8FDB003E706D /* Done! Apple Watch */,
 				008315511CDE8FDB003E706D /* Done! Apple Watch Extension */,
 				00FA9E221CE902BE00E977D0 /* Done Widget */,
+				2820EAA51D380F73007A9178 /* DoneTests */,
+				2820EAB31D380F8A007A9178 /* DoneUITests */,
 				006083491CC4007500A344F1 /* Products */,
 				E6E9915F888699DBBD0F4075 /* Frameworks */,
 				B74423AB2838B07D2C52E67F /* Pods */,
@@ -568,6 +578,8 @@
 				008315411CDE8FDB003E706D /* Done! Apple Watch.app */,
 				0083154D1CDE8FDB003E706D /* Done! Apple Watch Extension.appex */,
 				00FA9E201CE902BE00E977D0 /* Done Widget.appex */,
+				2820EAA41D380F72007A9178 /* DoneTests.xctest */,
+				2820EAB21D380F89007A9178 /* DoneUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -727,7 +739,6 @@
 				28EB3A681CEA8E2D00A5BCED /* EventTableViewCell.xib */,
 				28EB3A691CEA8E2D00A5BCED /* NormalCell.xib */,
 				284A641A1D0FA953009A348A /* addEventCell.xib */,
-				28EB3A6A1CEA8E2D00A5BCED /* ProjectCollectionView.xib */,
 				28EB3A6B1CEA8E2D00A5BCED /* SwitchCell.xib */,
 				28EB3A6C1CEA8E2D00A5BCED /* TextfieldCell.xib */,
 				28EB3A6D1CEA8E2D00A5BCED /* ValuePickerCell.xib */,
@@ -796,6 +807,24 @@
 			name = Timeline;
 			sourceTree = "<group>";
 		};
+		2820EAA51D380F73007A9178 /* DoneTests */ = {
+			isa = PBXGroup;
+			children = (
+				2820EAA61D380F73007A9178 /* DoneTests.m */,
+				2820EAA81D380F73007A9178 /* Info.plist */,
+			);
+			path = DoneTests;
+			sourceTree = "<group>";
+		};
+		2820EAB31D380F8A007A9178 /* DoneUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2820EAB41D380F8A007A9178 /* DoneUITests.m */,
+				2820EAB61D380F8A007A9178 /* Info.plist */,
+			);
+			path = DoneUITests;
+			sourceTree = "<group>";
+		};
 		2827C8DC1D14795700986D9E /* Source */ = {
 			isa = PBXGroup;
 			children = (
@@ -820,8 +849,6 @@
 				2885388F1D1225F1008EADFE /* CustomDatePickerCell.m */,
 				2802F81D1CC5B78800C65966 /* EventTableViewCell.h */,
 				2802F81E1CC5B78800C65966 /* EventTableViewCell.m */,
-				28BF6F551CD0D56000059D7D /* ProjectCollectionViewCell.h */,
-				28BF6F561CD0D56000059D7D /* ProjectCollectionViewCell.m */,
 			);
 			name = "View Classes";
 			sourceTree = "<group>";
@@ -908,11 +935,8 @@
 			isa = PBXGroup;
 			children = (
 				28EB3A921CEA8EBE00A5BCED /* Media.xcassets */,
+				28F176B01D3976B300DCE3E1 /* circled_down_filled.png */,
 				28908B421D0FA3E800341F20 /* star_full.png */,
-				281F9BF21D0F67D900FC1695 /* appointment_reminders.png */,
-				281F9BF31D0F67D900FC1695 /* attach.png */,
-				281F9BF41D0F67D900FC1695 /* move_stock.png */,
-				281F9BF51D0F67D900FC1695 /* star.png */,
 				28D48ADF1D06E52000723DA5 /* menu.png */,
 				28F666831D00F0FB008B6A1D /* info.png */,
 				005F07961CFA245F00BEA06B /* export.png */,
@@ -920,21 +944,17 @@
 				2898735D1CF3ABA600A283C1 /* colorBackground.jpg */,
 				00D95DEE1CF2006B00DF7736 /* left.png */,
 				289873611CF3E1C300A283C1 /* button_selected.png */,
-				28EB3A841CEA8EBE00A5BCED /* appWScr-1.png */,
-				28EB3A851CEA8EBE00A5BCED /* appWScr-2.png */,
 				28EB3A861CEA8EBE00A5BCED /* appWScr-3.png */,
 				28EB3A891CEA8EBE00A5BCED /* bg1@2x.png */,
 				28EB3A8A1CEA8EBE00A5BCED /* bg3@2x.png */,
 				28EB3A8B1CEA8EBE00A5BCED /* bg5@2x.png */,
 				28EB3A8D1CEA8EBE00A5BCED /* circle-f.png */,
 				28EB3A8F1CEA8EBE00A5BCED /* done-icon.png */,
-				2845DECC1D224F1B00D228F1 /* circle-nf.png */,
 				28EB3A931CEA8EBE00A5BCED /* screen_shot_1.png */,
+				28F176B21D3984DC00DCE3E1 /* circle-nf.png */,
 				28EB3A941CEA8EBE00A5BCED /* screen_shot_2.png */,
 				28EB3A951CEA8EBE00A5BCED /* screen_shot_3.png */,
-				28EB3A961CEA8EBE00A5BCED /* screen_shot_4.png */,
 				28EB3A971CEA8EBE00A5BCED /* screen_shot_5.png */,
-				28EB3A981CEA8EBE00A5BCED /* screen_shot_7.png */,
 				28EB3A9E1CEA8EBE00A5BCED /* user.png */,
 				28F896FA1CEBFB5500C546EC /* done-icon copy.png */,
 			);
@@ -1016,13 +1036,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 006083751CC4007500A344F1 /* Build configuration list for PBXNativeTarget "Done!" */;
 			buildPhases = (
-				27E8A934AB9411DFC84C970B /* 📦 Check Pods Manifest.lock */,
+				27E8A934AB9411DFC84C970B /* [CP] Check Pods Manifest.lock */,
 				006083441CC4007500A344F1 /* Sources */,
 				006083451CC4007500A344F1 /* Frameworks */,
 				006083461CC4007500A344F1 /* Resources */,
 				28BDF7DA1CC8F03900E3F63C /* Embed Watch Content */,
-				985931BD511981C0595CEA3D /* 📦 Embed Pods Frameworks */,
-				B63B112249B56F8E11F02FFE /* 📦 Copy Pods Resources */,
+				985931BD511981C0595CEA3D /* [CP] Embed Pods Frameworks */,
+				B63B112249B56F8E11F02FFE /* [CP] Copy Pods Resources */,
 				00FA9E301CE902BE00E977D0 /* Embed App Extensions */,
 			);
 			buildRules = (
@@ -1058,12 +1078,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 008315691CDE8FDB003E706D /* Build configuration list for PBXNativeTarget "Done! Apple Watch Extension" */;
 			buildPhases = (
-				66F2B314EB24E2BB55DE1EB4 /* 📦 Check Pods Manifest.lock */,
+				66F2B314EB24E2BB55DE1EB4 /* [CP] Check Pods Manifest.lock */,
 				008315491CDE8FDB003E706D /* Sources */,
 				0083154A1CDE8FDB003E706D /* Frameworks */,
 				0083154B1CDE8FDB003E706D /* Resources */,
-				CFA7B2874C644EAA44E2D028 /* 📦 Embed Pods Frameworks */,
-				57AF8069826B98CFE3958961 /* 📦 Copy Pods Resources */,
+				CFA7B2874C644EAA44E2D028 /* [CP] Embed Pods Frameworks */,
+				57AF8069826B98CFE3958961 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1078,12 +1098,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00FA9E2F1CE902BE00E977D0 /* Build configuration list for PBXNativeTarget "Done Widget" */;
 			buildPhases = (
-				E8F2B812DA75E331B36D49B4 /* 📦 Check Pods Manifest.lock */,
+				E8F2B812DA75E331B36D49B4 /* [CP] Check Pods Manifest.lock */,
 				00FA9E1C1CE902BE00E977D0 /* Sources */,
 				00FA9E1D1CE902BE00E977D0 /* Frameworks */,
 				00FA9E1E1CE902BE00E977D0 /* Resources */,
-				1E4D4D217F803766E28428A5 /* 📦 Embed Pods Frameworks */,
-				6B6072B544FAD5BF18A27642 /* 📦 Copy Pods Resources */,
+				1E4D4D217F803766E28428A5 /* [CP] Embed Pods Frameworks */,
+				6B6072B544FAD5BF18A27642 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1093,6 +1113,42 @@
 			productName = "Done Widget";
 			productReference = 00FA9E201CE902BE00E977D0 /* Done Widget.appex */;
 			productType = "com.apple.product-type.app-extension";
+		};
+		2820EAA31D380F72007A9178 /* DoneTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2820EAAD1D380F73007A9178 /* Build configuration list for PBXNativeTarget "DoneTests" */;
+			buildPhases = (
+				2820EAA01D380F72007A9178 /* Sources */,
+				2820EAA11D380F72007A9178 /* Frameworks */,
+				2820EAA21D380F72007A9178 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2820EAAA1D380F73007A9178 /* PBXTargetDependency */,
+			);
+			name = DoneTests;
+			productName = DoneTests;
+			productReference = 2820EAA41D380F72007A9178 /* DoneTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2820EAB11D380F89007A9178 /* DoneUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2820EAB91D380F8A007A9178 /* Build configuration list for PBXNativeTarget "DoneUITests" */;
+			buildPhases = (
+				2820EAAE1D380F89007A9178 /* Sources */,
+				2820EAAF1D380F89007A9178 /* Frameworks */,
+				2820EAB01D380F89007A9178 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2820EAB81D380F8A007A9178 /* PBXTargetDependency */,
+			);
+			name = DoneUITests;
+			productName = DoneUITests;
+			productReference = 2820EAB21D380F89007A9178 /* DoneUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -1135,6 +1191,20 @@
 							};
 						};
 					};
+					2820EAA31D380F72007A9178 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 8NZ8K5GNH8;
+						DevelopmentTeamName = "Huan He";
+						ProvisioningStyle = Automatic;
+						TestTargetID = 006083471CC4007500A344F1;
+					};
+					2820EAB11D380F89007A9178 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 8NZ8K5GNH8;
+						DevelopmentTeamName = "Huan He";
+						ProvisioningStyle = Automatic;
+						TestTargetID = 006083471CC4007500A344F1;
+					};
 				};
 			};
 			buildConfigurationList = 006083431CC4007500A344F1 /* Build configuration list for PBXProject "Done!" */;
@@ -1158,6 +1228,8 @@
 				008315401CDE8FDB003E706D /* Done! Apple Watch */,
 				0083154C1CDE8FDB003E706D /* Done! Apple Watch Extension */,
 				00FA9E1F1CE902BE00E977D0 /* Done Widget */,
+				2820EAA31D380F72007A9178 /* DoneTests */,
+				2820EAB11D380F89007A9178 /* DoneUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -1170,29 +1242,24 @@
 				28908B431D0FA3E800341F20 /* star_full.png in Resources */,
 				28B2003C1CC7C36500A18DFC /* CellDescriptor.plist in Resources */,
 				28EB3AA61CEA8EBE00A5BCED /* bg5@2x.png in Resources */,
-				281F9BF91D0F67D900FC1695 /* star.png in Resources */,
 				28EB3AAD1CEA8EBE00A5BCED /* Media.xcassets in Resources */,
 				28EB3AA51CEA8EBE00A5BCED /* bg3@2x.png in Resources */,
-				28EB3A711CEA8E2D00A5BCED /* ProjectCollectionView.xib in Resources */,
 				00D95DEF1CF2006B00DF7736 /* left.png in Resources */,
 				28EB3AA11CEA8EBE00A5BCED /* appWScr-3.png in Resources */,
 				28EB3AB21CEA8EBE00A5BCED /* screen_shot_5.png in Resources */,
 				28EB3A6F1CEA8E2D00A5BCED /* EventTableViewCell.xib in Resources */,
-				281F9BF61D0F67D900FC1695 /* appointment_reminders.png in Resources */,
 				28EB3AB91CEA8EBE00A5BCED /* user.png in Resources */,
 				28EB3AAE1CEA8EBE00A5BCED /* screen_shot_1.png in Resources */,
 				28F666841D00F0FB008B6A1D /* info.png in Resources */,
+				28F176B11D3976B300DCE3E1 /* circled_down_filled.png in Resources */,
 				0002893B1CF10D9F005CEA17 /* GoogleService-Info.plist in Resources */,
 				28EB3AA81CEA8EBE00A5BCED /* circle-f.png in Resources */,
+				28F176B31D3984DC00DCE3E1 /* circle-nf.png in Resources */,
 				28EB3A6E1CEA8E2D00A5BCED /* DatePickerCell.xib in Resources */,
-				28EB3AB11CEA8EBE00A5BCED /* screen_shot_4.png in Resources */,
 				28EB3AAF1CEA8EBE00A5BCED /* screen_shot_2.png in Resources */,
-				28EB3AA01CEA8EBE00A5BCED /* appWScr-2.png in Resources */,
-				281F9BF71D0F67D900FC1695 /* attach.png in Resources */,
 				289873601CF3BE8B00A283C1 /* button_outline.png in Resources */,
 				28E5430F1CFDEEC000FD05A7 /* Localizable.strings in Resources */,
 				28EB3A701CEA8E2D00A5BCED /* NormalCell.xib in Resources */,
-				2845DECD1D224F1B00D228F1 /* circle-nf.png in Resources */,
 				005F07971CFA245F00BEA06B /* export.png in Resources */,
 				28908B411D0FA39200341F20 /* Main.storyboard in Resources */,
 				2898735E1CF3ABA600A283C1 /* colorBackground.jpg in Resources */,
@@ -1200,16 +1267,13 @@
 				28F896FB1CEBFB5500C546EC /* done-icon copy.png in Resources */,
 				00F4A8FC1CD520690062416D /* CellDescriptor2.plist in Resources */,
 				28EB3A731CEA8E2D00A5BCED /* TextfieldCell.xib in Resources */,
-				28EB3AB31CEA8EBE00A5BCED /* screen_shot_7.png in Resources */,
 				28EB3A721CEA8E2D00A5BCED /* SwitchCell.xib in Resources */,
 				28D48AE01D06E52000723DA5 /* menu.png in Resources */,
 				28EB3AAA1CEA8EBE00A5BCED /* done-icon.png in Resources */,
-				281F9BF81D0F67D900FC1695 /* move_stock.png in Resources */,
 				284A641B1D0FA953009A348A /* addEventCell.xib in Resources */,
 				28EB3A741CEA8E2D00A5BCED /* ValuePickerCell.xib in Resources */,
 				28EB3AB01CEA8EBE00A5BCED /* screen_shot_3.png in Resources */,
 				0060835B1CC4007500A344F1 /* LaunchScreen.storyboard in Resources */,
-				28EB3A9F1CEA8EBE00A5BCED /* appWScr-1.png in Resources */,
 				289873621CF3E1C300A283C1 /* button_selected.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1220,7 +1284,6 @@
 			files = (
 				28F896FC1CEBFB5500C546EC /* done-icon copy.png in Resources */,
 				0083158A1CDE8FFE003E706D /* Assets.xcassets in Resources */,
-				2845DECE1D224F1B00D228F1 /* circle-nf.png in Resources */,
 				28E757091CE4BD2E00707380 /* Media.xcassets in Resources */,
 				009A02321CDE9E3800C0B23D /* Interface.storyboard in Resources */,
 			);
@@ -1232,7 +1295,6 @@
 			files = (
 				28F896FD1CEBFB5500C546EC /* done-icon copy.png in Resources */,
 				0083157D1CDE8FF2003E706D /* Assets.xcassets in Resources */,
-				2845DECF1D224F1B00D228F1 /* circle-nf.png in Resources */,
 				009A02221CDE9DE200C0B23D /* circle-nf.png in Resources */,
 				008315841CDE8FF2003E706D /* PushNotificationPayload.apns in Resources */,
 			);
@@ -1243,21 +1305,34 @@
 			buildActionMask = 2147483647;
 			files = (
 				00FA9E281CE902BE00E977D0 /* MainInterface.storyboard in Resources */,
-				2845DED01D224F1B00D228F1 /* circle-nf.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2820EAA21D380F72007A9178 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2820EAB01D380F89007A9178 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1E4D4D217F803766E28428A5 /* 📦 Embed Pods Frameworks */ = {
+		1E4D4D217F803766E28428A5 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1265,14 +1340,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Done Widget/Pods-Done Widget-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		27E8A934AB9411DFC84C970B /* 📦 Check Pods Manifest.lock */ = {
+		27E8A934AB9411DFC84C970B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1280,14 +1355,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		57AF8069826B98CFE3958961 /* 📦 Copy Pods Resources */ = {
+		57AF8069826B98CFE3958961 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1295,14 +1370,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Done! Apple Watch Extension/Pods-Done! Apple Watch Extension-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		66F2B314EB24E2BB55DE1EB4 /* 📦 Check Pods Manifest.lock */ = {
+		66F2B314EB24E2BB55DE1EB4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1310,14 +1385,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		6B6072B544FAD5BF18A27642 /* 📦 Copy Pods Resources */ = {
+		6B6072B544FAD5BF18A27642 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1325,14 +1400,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Done Widget/Pods-Done Widget-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		985931BD511981C0595CEA3D /* 📦 Embed Pods Frameworks */ = {
+		985931BD511981C0595CEA3D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1340,14 +1415,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Done!/Pods-Done!-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B63B112249B56F8E11F02FFE /* 📦 Copy Pods Resources */ = {
+		B63B112249B56F8E11F02FFE /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1355,14 +1430,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Done!/Pods-Done!-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CFA7B2874C644EAA44E2D028 /* 📦 Embed Pods Frameworks */ = {
+		CFA7B2874C644EAA44E2D028 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1370,14 +1445,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Done! Apple Watch Extension/Pods-Done! Apple Watch Extension-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E8F2B812DA75E331B36D49B4 /* 📦 Check Pods Manifest.lock */ = {
+		E8F2B812DA75E331B36D49B4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1417,7 +1492,6 @@
 				0020F7271CD584A900F47CEE /* QBPlasticPopupMenu.m in Sources */,
 				28B7ACA11CE0AB2E007B3662 /* MDDeviceHelper.m in Sources */,
 				280EFD951CE2C17500C31E46 /* MSCurrentTimeGridline.m in Sources */,
-				28BF6F571CD0D56000059D7D /* ProjectCollectionViewCell.m in Sources */,
 				28B7ACA41CE0AB2E007B3662 /* UIColorHelper.m in Sources */,
 				286C08D11D0FACEC0077F91F /* addEventCell.m in Sources */,
 				28F4FD0A1CDC01740042352F /* GKBar.m in Sources */,
@@ -1493,6 +1567,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2820EAA01D380F72007A9178 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2820EAA71D380F73007A9178 /* DoneTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2820EAAE1D380F89007A9178 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2820EAB51D380F8A007A9178 /* DoneUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1510,6 +1600,16 @@
 			isa = PBXTargetDependency;
 			target = 00FA9E1F1CE902BE00E977D0 /* Done Widget */;
 			targetProxy = 00FA9E2A1CE902BE00E977D0 /* PBXContainerItemProxy */;
+		};
+		2820EAAA1D380F73007A9178 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 006083471CC4007500A344F1 /* Done! */;
+			targetProxy = 2820EAA91D380F73007A9178 /* PBXContainerItemProxy */;
+		};
+		2820EAB81D380F8A007A9178 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 006083471CC4007500A344F1 /* Done! */;
+			targetProxy = 2820EAB71D380F8A007A9178 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1815,6 +1915,60 @@
 			};
 			name = Release;
 		};
+		2820EAAB1D380F73007A9178 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				INFOPLIST_FILE = DoneTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yongyang.DoneTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Done!.app/Done!";
+			};
+			name = Debug;
+		};
+		2820EAAC1D380F73007A9178 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				INFOPLIST_FILE = DoneTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yongyang.DoneTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Done!.app/Done!";
+			};
+			name = Release;
+		};
+		2820EABA1D380F8A007A9178 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				INFOPLIST_FILE = DoneUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yongyang.DoneUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Done!";
+			};
+			name = Debug;
+		};
+		2820EABB1D380F8A007A9178 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				INFOPLIST_FILE = DoneUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yongyang.DoneUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Done!";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1859,6 +2013,24 @@
 			buildConfigurations = (
 				00FA9E2D1CE902BE00E977D0 /* Debug */,
 				00FA9E2E1CE902BE00E977D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2820EAAD1D380F73007A9178 /* Build configuration list for PBXNativeTarget "DoneTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2820EAAB1D380F73007A9178 /* Debug */,
+				2820EAAC1D380F73007A9178 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2820EAB91D380F8A007A9178 /* Build configuration list for PBXNativeTarget "DoneUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2820EABA1D380F8A007A9178 /* Debug */,
+				2820EABB1D380F8A007A9178 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

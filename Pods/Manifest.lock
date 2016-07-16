@@ -10,9 +10,6 @@ PODS:
   - Firebase/Database (3.3.0):
     - Firebase/Analytics (= 3.3.0)
     - FirebaseDatabase (= 3.0.2)
-  - Firebase/Messaging (3.3.0):
-    - Firebase/Analytics (= 3.3.0)
-    - FirebaseMessaging (= 1.1.0)
   - FirebaseAnalytics (3.2.1):
     - FirebaseInstanceID (~> 1.0)
     - GoogleInterchangeUtilities (~> 1.2)
@@ -26,17 +23,9 @@ PODS:
   - FirebaseDatabase (3.0.2):
     - FirebaseAnalytics (~> 3.2)
   - FirebaseInstanceID (1.0.7)
-  - FirebaseMessaging (1.1.0):
-    - FirebaseAnalytics (~> 3.2)
-    - GoogleInterchangeUtilities (~> 1.2)
-    - GoogleIPhoneUtilities (~> 1.2)
-    - GoogleSymbolUtilities (~> 1.1)
   - FrameAccessor (2.0)
   - GoogleInterchangeUtilities (1.2.1):
     - GoogleSymbolUtilities (~> 1.0)
-  - GoogleIPhoneUtilities (1.2.1):
-    - GoogleSymbolUtilities (~> 1.0)
-    - GoogleUtilities (~> 1.0)
   - GoogleNetworkingUtilities (1.2.1):
     - GoogleSymbolUtilities (~> 1.0)
   - GoogleParsingUtilities (1.1.1):
@@ -76,9 +65,9 @@ PODS:
     - MKFoundationKit/Base64
   - MKFoundationKit/Queue (1.3.0)
   - MKFoundationKit/Stack (1.3.0)
-  - Realm (1.0.1):
-    - Realm/Headers (= 1.0.1)
-  - Realm/Headers (1.0.1)
+  - Realm (1.0.2):
+    - Realm/Headers (= 1.0.2)
+  - Realm/Headers (1.0.2)
   - RKDropdownAlert (0.3.0)
   - SCLAlertView-Objective-C (1.0.4)
   - SWTableViewCell (0.3.7)
@@ -90,7 +79,6 @@ DEPENDENCIES:
   - Firebase/Analytics
   - Firebase/Auth
   - Firebase/Database
-  - Firebase/Messaging
   - FrameAccessor
   - JTCalendar (~> 2.0)
   - Masonry
@@ -109,10 +97,8 @@ SPEC CHECKSUMS:
   FirebaseAuth: 5efddc3fae47042b73585f083f956462be4f5b8e
   FirebaseDatabase: 59bea2e7dfd81b3b8b2f8e396caf1a52c2ced6f7
   FirebaseInstanceID: a9d923f3d0b6fbf9fac89310860357aaadc34be5
-  FirebaseMessaging: 8a92e9ea70673605aa7d1803d2d5aa3eb946009c
   FrameAccessor: 443a13e58e23a10ff22180da0897b28c3f6abf66
   GoogleInterchangeUtilities: def8415a862effc67d549d5b5b0b9c7a2f97d4de
-  GoogleIPhoneUtilities: 63f25e93a3ddcb66884d182aab3a660d98f1479b
   GoogleNetworkingUtilities: 3e83269048cfb498dc7ec83ab36813360965c74f
   GoogleParsingUtilities: 30b3896f9ee167dc78747f013d3de157ced1cadf
   GoogleSymbolUtilities: 33117db1b5f290c6fbf259585e4885b4c84b98d7
@@ -120,12 +106,12 @@ SPEC CHECKSUMS:
   JTCalendar: bc7f3086a4df02aa2e02ac4d505ef888cc2283a0
   Masonry: a1a931a0d08870ed8ae415a2ea5ea68ebcac77df
   MKFoundationKit: 26afe1cf63d4982a937d555537ca1a3fb50a9c77
-  Realm: 2e15e39d35b08abb529e212ed5d8af107b5236c8
+  Realm: 9d5c46a4d7d27958530a8dfc58f63a99e5c2cba3
   RKDropdownAlert: f4b3364c251829ad439dc666836a1f2dad26f4c7
   SCLAlertView-Objective-C: dd8a12b4068b8bae1b25c1748d7413b5abcad05b
   SWTableViewCell: 2a94aadc9d47b2b611fa064566bf57948b95b579
   UIColor-HexString: fadc2e1389db19147ac99dee92222d3bd8bfec4a
 
-PODFILE CHECKSUM: 183e2d27517b160bbde6e53bc1a23dd8135be515
+PODFILE CHECKSUM: 1911d69992faa82fc91b3b876e329ce570f21dc3
 
-COCOAPODS: 1.0.0
+COCOAPODS: 1.0.1

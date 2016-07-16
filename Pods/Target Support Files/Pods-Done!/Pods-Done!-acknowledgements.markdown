@@ -66,10 +66,6 @@ Copyright 2016 Google
 
 Copyright 2016 Google Inc.
 
-## FirebaseMessaging
-
-Copyright 2016 Google Inc.
-
 ## FrameAccessor
 
 Copyright (c) 2012 Alexey Denisov
@@ -92,10 +88,6 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
-
-## GoogleIPhoneUtilities
-
-Copyright 2015 Google Inc.
 
 ## GoogleInterchangeUtilities
 

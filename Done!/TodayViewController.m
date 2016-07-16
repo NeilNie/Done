@@ -119,7 +119,7 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
 
 -(NSArray<Events *> *)timePeriodsinTimeline{
 
-    NSArray *calendarEvents = [self.ApplicationDelegate.eventManager getTodayEventCalendars];
+    NSArray *calendarEvents = [[[EventManager alloc] init] getTodayEventCalendars];
     NSMutableArray *events = [NSMutableArray array];
     NSDateFormatter *formate = [[NSDateFormatter alloc] init];
     [formate setDateFormat:@"dd"];
@@ -136,6 +136,24 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     }
     NSArray *returnArray = [allEvents arrayByAddingObjectsFromArray:events];
     return returnArray;
+}
+
+-(IBAction)refreshData:(id)sender{
+    
+    result = [Events allObjects];
+    collectionViewArray = [self timePeriodsinTimeline];
+    allEvents = [EventsHelper findTodayCompletedEvents:result];
+    self.ApplicationDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    [self setUpCollectionView];
+    [self setUpview];
+    
+    //YOU SHOULDN'T DO THIS. Call the -setUpGraph function in a dispatch block with system low level timer. However, there is no easy workaround. We have to wait until the layout is full loaded and setup before calling -setUpGraph function.
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        [self.graphView reset];
+        [self setUpGraphData];
+    });
+    [self setUpUserInterface];
 }
 
 -(IBAction)addNewEvent:(id)sender{
@@ -191,9 +209,6 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
 
 -(void)setUpUserInterface{
 
-    //set up data
-    result = [Events allObjects];
-    allEvents = [EventsHelper findTodayNotCompletedEvents:result];
     self.labels = @[@"1", @"2", @"3",@"4", @"5", @"6",@"7"];
     
     //set up views with data
@@ -309,6 +324,27 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     //set up for animation
 }
 
+-(void)tapTimeline:(UITapGestureRecognizer *)tap{
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self performSegueWithIdentifier:@"showTimeline" sender:nil];
+    });
+}
+-(void)tapGraph:(UITapGestureRecognizer *)tap{
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self performSegueWithIdentifier:@"showGraph" sender:nil];
+    });
+}
+
+-(void)setupGestures{
+    
+    UITapGestureRecognizer *tapTimeline = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapTimeline:)];
+    UITapGestureRecognizer *tapGraph = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGraph:)];
+    [self.masterView addGestureRecognizer:tapTimeline];
+    [self.graphView addGestureRecognizer:tapGraph];
+}
+
 #pragma mark - GraphKit Delegate
 
 - (NSInteger)numberOfLines {
@@ -327,7 +363,7 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
 }
 
 - (CFTimeInterval)animationDurationForLineAtIndex:(NSInteger)index {
-    return [[@[@1.5, @2] objectAtIndex:index] doubleValue];
+    return [[@[@2, @1.5] objectAtIndex:index] doubleValue];
 }
 
 - (NSString *)titleForLineAtIndex:(NSInteger)index {
@@ -342,8 +378,9 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     allEvents = [EventsHelper findTodayCompletedEvents:result];
     collectionViewArray = [self timePeriodsinTimeline];
     self.ApplicationDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    [self setUpCollectionView];
     [self setUpview];
+    [self setupGestures];
+    [self setUpCollectionView];
     [self updateAuthorizationStatusToAccessEventStore];
     
     //YOU SHOULDN'T DO THIS. Call the -setUpGraph function in a dispatch block with system low level timer. However, there is no easy workaround. We have to wait until the layout is full loaded and setup before calling -setUpGraph function. 
@@ -353,7 +390,7 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
         [self setUpGraphData];
         
     });
-    
+        
     NSLog(@"%@", [self.ApplicationDelegate.eventManager freeTimesToday]);
     [super viewDidLoad];
     // Do any additional setup after loading the view.

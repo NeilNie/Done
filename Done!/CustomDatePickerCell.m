@@ -10,8 +10,7 @@
 
 @implementation CustomDatePickerCell
 - (IBAction)setDate:(id)sender {
-    
-    NSLog(@"%@", [super delegate]);
+
     [[super delegate] dateWasSelected:self.datePicker.date];
 }
 

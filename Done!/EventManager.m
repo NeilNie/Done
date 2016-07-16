@@ -80,26 +80,28 @@
     
     ////1
     //go through all the busy periods in the day, and find the gaps between each peroids.
-    for (int i = 0; i < busyTimes.count - 1; i++) {
-        
-        NYTimePeriod *current = [busyTimes objectAtIndex:i];
-        NYTimePeriod *next = [busyTimes objectAtIndex:i + 1];
-        
-        //if the gap between the events are more than 5 minutes, then create a NYTimePeriod object and add it to the array.
-        if ([current.endDate timeIntervalSinceDate:next.startDate] < - 5 * 60) { // if
-            NYTimePeriod *freePeriod = [[NYTimePeriod alloc] initWithStart:current.endDate andEnd:next.startDate];
-            [freePeriods addObject:freePeriod];
+    if (busyTimes.count >= 1) {
+        for (int i = 0; i < busyTimes.count - 1; i++) {
+            
+            NYTimePeriod *current = [busyTimes objectAtIndex:i];
+            NYTimePeriod *next = [busyTimes objectAtIndex:i + 1];
+            
+            //if the gap between the events are more than 5 minutes, then create a NYTimePeriod object and add it to the array.
+            if ([current.endDate timeIntervalSinceDate:next.startDate] < - 5 * 60) { // if
+                NYTimePeriod *freePeriod = [[NYTimePeriod alloc] initWithStart:current.endDate andEnd:next.startDate];
+                [freePeriods addObject:freePeriod];
+            }
         }
-    }
-    
-    ////2
-    //if the first event of the day is after 9, then
-    NSDate *todayAtEight = [NYDate getDateTodayWithHour:8 minutes:0];
-    NYTimePeriod *firstPeriod = [busyTimes objectAtIndex:0];
-    
-    //
-    if ([todayAtEight timeIntervalSinceDate:firstPeriod.startDate] > 10 * 60) {
         
+        ////2
+        //if the first event of the day is after 9, then
+        NSDate *todayAtEight = [NYDate getDateTodayWithHour:8 minutes:0];
+        NYTimePeriod *firstPeriod = [busyTimes objectAtIndex:0];
+        
+        //
+        if ([todayAtEight timeIntervalSinceDate:firstPeriod.startDate] > 10 * 60) {
+            
+        }
     }
     
     return freePeriods;
