@@ -1,15 +1,24 @@
 
-/* Class = "WKInterfaceController"; title = "Today"; ObjectID = "9NK-ux-9FD"; */
-"9NK-ux-9FD.title" = "Today";
+/* Class = "WKInterfaceLabel"; text = "10:45 PM:"; ObjectID = "3ss-Qd-NMG"; */
+"3ss-Qd-NMG.text" = "10:45 PM:";
 
-/* Class = "WKInterfaceLabel"; text = "There are () events today and you have completed () of them."; ObjectID = "BAB-Y7-Uzj"; */
-"BAB-Y7-Uzj.text" = "There are () events today and you have completed () of them.";
+/* Class = "WKInterfaceButton"; title = "Sync"; ObjectID = "7Di-EL-TQQ"; */
+"7Di-EL-TQQ.title" = "Sync";
 
-/* Class = "WKInterfaceButton"; title = "Projects"; ObjectID = "D6k-73-d05"; */
-"D6k-73-d05.title" = "Projects";
+/* Class = "WKInterfaceController"; title = "Projects"; ObjectID = "9NK-ux-9FD"; */
+"9NK-ux-9FD.title" = "Projects";
+
+/* Class = "WKInterfaceLabel"; text = "2015/04/21"; ObjectID = "SId-df-Rh7"; */
+"SId-df-Rh7.text" = "2015/04/21";
+
+/* Class = "WKInterfaceLabel"; text = "Complete WatchKit interface controllers"; ObjectID = "SX7-G2-Z6r"; */
+"SX7-G2-Z6r.text" = "Complete WatchKit interface controllers";
 
 /* Class = "WKInterfaceLabel"; text = "2015/04/21"; ObjectID = "Vu1-Xb-pJK"; */
 "Vu1-Xb-pJK.text" = "2015/04/21";
+
+/* Class = "WKInterfaceLabel"; text = "Help Joseph with science homework"; ObjectID = "XcB-TJ-qij"; */
+"XcB-TJ-qij.text" = "Help Joseph with science homework";
 
 /* Class = "WKInterfaceLabel"; text = "Alert Label"; ObjectID = "XkS-y5-khE"; */
 "XkS-y5-khE.text" = "Alert Label";
@@ -17,26 +26,23 @@
 /* Class = "WKInterfaceButton"; title = "Today"; ObjectID = "Ya5-dG-33i"; */
 "Ya5-dG-33i.title" = "Today";
 
-/* Class = "WKInterfaceLabel"; text = "Welcome"; ObjectID = "bbl-Qu-woo"; */
-"bbl-Qu-woo.text" = "Welcome";
+/* Class = "WKInterfaceLabel"; text = "11/15"; ObjectID = "gFv-Qf-CYv"; */
+"gFv-Qf-CYv.text" = "11/15";
 
-/* Class = "WKInterfaceLabel"; text = "@ 11:00 PM 05/05"; ObjectID = "h4h-1o-wYD"; */
-"h4h-1o-wYD.text" = "@ 11:00 PM 05/05";
+/* Class = "WKInterfaceButton"; title = "Project"; ObjectID = "jph-7d-ALt"; */
+"jph-7d-ALt.title" = "Project";
 
-/* Class = "WKInterfaceLabel"; text = "The first event of your day is () at ()"; ObjectID = "hYq-tL-tuX"; */
-"hYq-tL-tuX.text" = "The first event of your day is () at ()";
-
-/* Class = "WKInterfaceLabel"; text = "Teach computer sicence class"; ObjectID = "il2-1B-n7d"; */
-"il2-1B-n7d.text" = "Teach computer sicence class";
-
-/* Class = "WKInterfaceLabel"; text = "Help Joseph with science homework"; ObjectID = "lsk-yo-Deb"; */
-"lsk-yo-Deb.text" = "Help Joseph with science homework";
+/* Class = "WKInterfaceLabel"; text = "2015/04/21"; ObjectID = "nQo-Fp-ptH"; */
+"nQo-Fp-ptH.text" = "2015/04/21";
 
 /* Class = "WKInterfaceController"; title = "Today"; ObjectID = "rD2-VK-CGW"; */
 "rD2-VK-CGW.title" = "Today";
 
-/* Class = "WKInterfaceLabel"; text = "2015/04/21"; ObjectID = "tsh-9g-l3g"; */
-"tsh-9g-l3g.text" = "2015/04/21";
+/* Class = "WKInterfaceLabel"; text = "Help Joseph with science homework"; ObjectID = "u2e-Xc-8un"; */
+"u2e-Xc-8un.text" = "Help Joseph with science homework";
 
 /* Class = "WKInterfaceLabel"; text = "Help Joseph with science homework"; ObjectID = "u5l-4e-ekb"; */
 "u5l-4e-ekb.text" = "Help Joseph with science homework";
+
+/* Class = "WKInterfaceLabel"; text = "11/15"; ObjectID = "yex-FL-qn1"; */
+"yex-FL-qn1.text" = "11/15";

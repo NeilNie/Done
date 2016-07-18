@@ -390,6 +390,10 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
         [self setUpGraphData];
         
     });
+    
+    WCSession *wcsession = [WCSession defaultSession];
+    wcsession.delegate = self;
+    [wcsession activateSession];
         
     NSLog(@"%@", [self.ApplicationDelegate.eventManager freeTimesToday]);
     [super viewDidLoad];

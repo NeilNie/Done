@@ -254,7 +254,7 @@
     else {
         NSString *string = [[[cellDescriptors objectAtIndex:indexPath.section] objectAtIndex:indexOfTappedRow.integerValue] objectForKey:@"cellIdentifier"];
         if ([string isEqualToString:@"idCellValuePicker"]) {
-            int indexOfParentCell;
+            int indexOfParentCell = 0;
             
             for (int i = indexOfTappedRow.intValue - 1; i >= 0; i --) {
                 NSNumber *x = [[[cellDescriptors objectAtIndex:0] objectAtIndex:i] objectForKey:@"isExpandable"];

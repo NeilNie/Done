@@ -50,7 +50,7 @@
     
     NSMutableArray *arry = [NSMutableArray array];
     NSDateFormatter *formate = [[NSDateFormatter alloc] init];
-    [formate setDateFormat:@"dd/MM/yyyy HH:MM"];
+    [formate setDateFormat:@"dd/MM/yyyy hh:mm"];
     
     for (int i = 0; i < results.count; i++) {
         
@@ -59,6 +59,7 @@
         [dictionary setValue:event.title forKey:@"title"];
         [dictionary setValue:[formate stringFromDate:event.date] forKey:@"date"];
         [dictionary setValue:[NSNumber numberWithBool:event.completed] forKey:@"completed"];
+        [dictionary setValue:[NSNumber numberWithBool:event.important] forKey:@"important"];
         [arry addObject:dictionary];
     }
     return arry;
@@ -68,7 +69,7 @@
     static NSDateFormatter *dateFormatter;
     if(!dateFormatter){
         dateFormatter = [NSDateFormatter new];
-        dateFormatter.dateFormat = @"dd/MM/yyyy HH:MM";
+        dateFormatter.dateFormat = @"dd/MM/yyyy hh:mm";
     }
     
     return dateFormatter;
@@ -88,10 +89,10 @@
 
 +(NSMutableArray *)convertAllObjecttoArray{
     
-    NSMutableArray *arry = [NSMutableArray array];
+    NSMutableArray *array = [NSMutableArray array];
     
     NSDateFormatter *formate = [[NSDateFormatter alloc] init];
-    [formate setDateFormat:@"dd/MM/yyyy HH:MM"];
+    [formate setDateFormat:@"dd/MM/yyyy hh:mm"];
     RLMResults *result = [Projects allObjects];
     
     for (int i = 0; i < result.count; i++) {
@@ -108,20 +109,21 @@
             [dic setValue:e.title forKey:@"title"];
             [dic setValue:e.date forKey:@"date"];
             [dic setValue:[NSNumber numberWithBool:e.completed] forKey:@"completed"];
+            [dic setValue:[NSNumber numberWithBool:e.important] forKey:@"important"];
             [es addObject:dic];
         }
         [dic setValue:es forKey:@"events"];
         
-        [arry addObject:dic];
+        [array addObject:dic];
     }
-    return arry;
+    return array;
 }
 
 +(void)createRealmWithArray:(NSMutableArray *)array{
     
     RLMRealm *realm = [RLMRealm defaultRealm];
     NSDateFormatter *formate = [[NSDateFormatter alloc] init];
-    [formate setDateFormat:@"dd/MM/yyyy HH:MM"];
+    [formate setDateFormat:@"dd/MM/yyyy hh:mm"];
     
     for (int i = 0; i < array.count; i++) {
         
@@ -138,13 +140,13 @@
             e.title = [d objectForKey:@"title"];
             e.date = [d objectForKey:@"date"];
             e.completed = ([[d objectForKey:@"completed"] intValue] == 1)? YES : NO;
+            e.important = ([[d objectForKey:@"important"] intValue] == 1)? YES : NO;
             [pro.events addObject:e];
         }
         [realm addObject:pro];
         NSLog(@"added event %@", pro);
         [realm commitWriteTransaction];
     }
-    
 }
 
 +(NSMutableArray *)findEventsForToday:(NSDate *)today withRealm:(RLMResults *)realm{

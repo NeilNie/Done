@@ -17,5 +17,6 @@
 
 @property (strong, nonatomic) UIWindow *window;
 @property (nonatomic, strong) EventManager *eventManager;
+@property (strong, nonatomic) WCSession *session;
 
 @end

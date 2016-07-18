@@ -12,10 +12,8 @@
 
 @property NSString *uoid;
 @property NSString *title;
-@property NSString *subTitle;
 @property NSDate *date;
 @property NSDate *endDate;
-@property NSString *location;
 @property BOOL completed;
 @property BOOL important;
 

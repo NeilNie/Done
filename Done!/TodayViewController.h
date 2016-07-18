@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <Realm/Realm.h>
+#import <WatchKit/WatchKit.h>
 
 #import "AppDelegate.h"
 #import "Events.h"
@@ -32,7 +33,7 @@
 
 @import FirebaseAuth;
 
-@interface TodayViewController : UIViewController <MSCollectionViewDelegateCalendarLayout,GKLineGraphDataSource, CreateNewDelegate, UIViewControllerPreviewingDelegate>{
+@interface TodayViewController : UIViewController <MSCollectionViewDelegateCalendarLayout,GKLineGraphDataSource, CreateNewDelegate, UIViewControllerPreviewingDelegate, WCSessionDelegate>{
     NSMutableArray *allEvents;
     RLMResults *result;
     NSArray *collectionViewArray;

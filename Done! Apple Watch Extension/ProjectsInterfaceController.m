@@ -23,7 +23,6 @@
 -(void)session:(WCSession *)session didReceiveApplicationContext:(NSDictionary<NSString *,id> *)applicationContext{
     
     NSLog(@"received context (delegate method) %@", applicationContext);
-    [self checkModification:applicationContext];
 }
 
 -(void)session:(WCSession *)session didReceiveMessage:(NSDictionary<NSString *,id> *)message replyHandler:(void (^)(NSDictionary<NSString *,id> * _Nonnull))replyHandler{
@@ -72,54 +71,6 @@
     [self pushControllerWithName:@"Events" context:p.events];
 }
 
--(void)syncDataWithCounterpart{
-    
-    if ([self.session isReachable]) {
-        
-        NSLog(@"will request data");
-        
-        [self.session sendMessage:@{@"key": @"syncRequest"} replyHandler:^(NSDictionary<NSString *,id> * _Nonnull replyMessage) {
-            
-            //reply handler, delete old database,
-            RLMRealm *realm = [RLMRealm defaultRealm];
-            [realm beginWriteTransaction];
-            [realm deleteAllObjects];
-            [realm commitWriteTransaction];
-            
-            //create new database with replyMessage, get main queue and update table
-            NSMutableArray *array = [replyMessage objectForKey:@"data"];
-            if ([array count] > 0) {
-                
-                [EventsHelper createRealmWithArray:array];
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    result = [Projects allObjects];
-                    NSLog(@"%@", replyMessage);
-                    [self setupTable];
-                    
-                });
-            }
-            
-        } errorHandler:^(NSError * _Nonnull error) {
-            NSLog(@"%@", error);
-        }];
-    }else{
-        NSLog(@"session not reacheable");
-    }
-}
-
--(void)checkModification:(NSDictionary *)dictionary{
-    
-    if ([[dictionary objectForKey:@"needSync"] isEqualToString:@"YES"]) {
-        
-        NSLog(@"updated context to no");
-        //there are modification, therefore, update application context
-        [self syncDataWithCounterpart];
-        if (result.count > 0) {
-            [self.session updateApplicationContext:@{@"needSync":@"NO"} error:nil];
-        }
-    }
-}
-
 #pragma mark - Lifecycle
 
 - (void)awakeWithContext:(id)context {
@@ -135,19 +86,7 @@
         [self setupTable];
     });
     
-    self.session = [WCSession defaultSession];
-    self.session.delegate = self;
-    [self.session activateSession];
-    if (![self.session.applicationContext isEqual:self.session.receivedApplicationContext]) {
-        [self checkModification:self.session.receivedApplicationContext];
-    }
-    
-    CLKComplicationServer *complicationServer = [CLKComplicationServer sharedInstance];
-    for (CLKComplication *complication in complicationServer.activeComplications) {
-        NSLog(@"reloaded complication");
-        [complicationServer reloadTimelineForComplication:complication];
-    }
-    [self syncDataWithCounterpart];
+
     // This method is called when watch view controller is about to be visible to user
     [super willActivate];
 }

@@ -1,0 +1,162 @@
+
+/* Class = "UILabel"; text = "Done!"; ObjectID = "1Ua-y7-e3y"; */
+"1Ua-y7-e3y.text" = "Done!";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "1uW-Ta-7FV"; */
+"1uW-Ta-7FV.text" = "Label";
+
+/* Class = "UILabel"; text = "April 7, 2016 15:00"; ObjectID = "5Fz-7x-SNY"; */
+"5Fz-7x-SNY.text" = "April 7, 2016 15:00";
+
+/* Class = "UIButton"; normalTitle = "+"; ObjectID = "7HY-08-bAU"; */
+"7HY-08-bAU.normalTitle" = "+";
+
+/* Class = "UILabel"; text = "Hooray! Your day is clear!"; ObjectID = "7e7-l6-n3l"; */
+"7e7-l6-n3l.text" = "Hooray! Your day is clear!";
+
+/* Class = "UILabel"; text = "neil@nspiresoftware.net & contact@nspiresoftware.net"; ObjectID = "7uw-8E-hsP"; */
+"7uw-8E-hsP.text" = "neil@nspiresoftware.net & contact@nspiresoftware.net";
+
+/* Class = "UILabel"; text = "May, 2016"; ObjectID = "8ux-JZ-6FR"; */
+"8ux-JZ-6FR.text" = "May, 2016";
+
+/* Class = "UILabel"; text = "label"; ObjectID = "AkZ-01-U4W"; */
+"AkZ-01-U4W.text" = "label";
+
+/* Class = "UILabel"; text = "0/0"; ObjectID = "CEU-Dq-on0"; */
+"CEU-Dq-on0.text" = "0/0";
+
+/* Class = "UINavigationItem"; title = "Pro Tips"; ObjectID = "CU8-90-JmH"; */
+"CU8-90-JmH.title" = "Pro Tips";
+
+/* Class = "UILabel"; text = "Email & Feedback"; ObjectID = "Cp1-aq-htU"; */
+"Cp1-aq-htU.text" = "Email & Feedback";
+
+/* Class = "UINavigationItem"; title = "Projects"; ObjectID = "EzC-Mh-fB0"; */
+"EzC-Mh-fB0.title" = "Projects";
+
+/* Class = "UIButton"; normalTitle = "+"; ObjectID = "F1M-gZ-x9h"; */
+"F1M-gZ-x9h.normalTitle" = "+";
+
+/* Class = "UIButton"; normalTitle = "Add"; ObjectID = "F4W-ia-LiK"; */
+"F4W-ia-LiK.normalTitle" = "Add";
+
+/* Class = "UILabel"; text = "May, 07"; ObjectID = "G91-a5-W1s"; */
+"G91-a5-W1s.text" = "May, 07";
+
+/* Class = "UILabel"; text = "19"; ObjectID = "Gld-hN-J1e"; */
+"Gld-hN-J1e.text" = "19";
+
+/* Class = "UILabel"; text = "Productivity Graph"; ObjectID = "Jet-IQ-sLY"; */
+"Jet-IQ-sLY.text" = "Productivity Graph";
+
+/* Class = "UITabBarItem"; title = "Today"; ObjectID = "JvH-Uw-7jK"; */
+"JvH-Uw-7jK.title" = "Today";
+
+/* Class = "UINavigationItem"; title = "Calendar"; ObjectID = "Kfz-KN-Qdj"; */
+"Kfz-KN-Qdj.title" = "Calendar";
+
+/* Class = "UILabel"; text = "Computer Science Class"; ObjectID = "LMM-1t-UQJ"; */
+"LMM-1t-UQJ.text" = "Computer Science Class";
+
+/* Class = "UILabel"; text = "Yongyang (Neil) Nie & MaterialKit (open source)"; ObjectID = "NSH-Zt-jaA"; */
+"NSH-Zt-jaA.text" = "Yongyang (Neil) Nie & MaterialKit (open source)";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Nh3-Cd-No8"; */
+"Nh3-Cd-No8.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "User email"; ObjectID = "OT7-7B-Dfu"; */
+"OT7-7B-Dfu.text" = "User email";
+
+/* Class = "UINavigationItem"; title = "Tasks"; ObjectID = "QBJ-Ga-ILs"; */
+"QBJ-Ga-ILs.title" = "Tasks";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "RNa-vi-xHj"; */
+"RNa-vi-xHj.normalTitle" = "Cancel";
+
+/* Class = "UINavigationItem"; title = "Information"; ObjectID = "RYt-Vg-We1"; */
+"RYt-Vg-We1.title" = "Information";
+
+/* Class = "UINavigationItem"; title = "Today"; ObjectID = "RmN-cR-kqP"; */
+"RmN-cR-kqP.title" = "Today";
+
+/* Class = "UILabel"; text = "Yongyang (Neil) Nie"; ObjectID = "SuL-0Z-XhY"; */
+"SuL-0Z-XhY.text" = "Yongyang (Neil) Nie";
+
+/* Class = "UILabel"; text = "User name"; ObjectID = "Szz-EH-lId"; */
+"Szz-EH-lId.text" = "User name";
+
+/* Class = "UINavigationItem"; title = "Productivity"; ObjectID = "T2w-7U-R2G"; */
+"T2w-7U-R2G.title" = "Productivity";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "Try-iM-Zv9"; */
+"Try-iM-Zv9.normalTitle" = "Cancel";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "X0B-51-D5D"; */
+"X0B-51-D5D.normalTitle" = "Button";
+
+/* Class = "UINavigationItem"; title = "Timeline"; ObjectID = "XKb-HT-z1J"; */
+"XKb-HT-z1J.title" = "Timeline";
+
+/* Class = "UILabel"; text = "Graphics & Design"; ObjectID = "YaR-Ix-nHj"; */
+"YaR-Ix-nHj.text" = "Graphics & Design";
+
+/* Class = "UILabel"; text = "2016"; ObjectID = "aub-YJ-poQ"; */
+"aub-YJ-poQ.text" = "2016";
+
+/* Class = "UIButton"; normalTitle = "REGISTER"; ObjectID = "ekb-in-cP7"; */
+"ekb-in-cP7.normalTitle" = "REGISTER";
+
+/* Class = "UILabel"; text = "total"; ObjectID = "ezi-dr-yH0"; */
+"ezi-dr-yH0.text" = "total";
+
+/* Class = "UILabel"; text = "Completed"; ObjectID = "fJT-az-sdv"; */
+"fJT-az-sdv.text" = "Completed";
+
+/* Class = "UILabel"; text = "dates"; ObjectID = "k6X-nz-k9y"; */
+"k6X-nz-k9y.text" = "dates";
+
+/* Class = "UILabel"; text = "Friday"; ObjectID = "kIO-pc-ce7"; */
+"kIO-pc-ce7.text" = "Friday";
+
+/* Class = "UILabel"; text = "Organization & Website"; ObjectID = "kyy-g9-GxP"; */
+"kyy-g9-GxP.text" = "Organization & Website";
+
+/* Class = "UIButton"; normalTitle = "REGISTER"; ObjectID = "l3v-Iu-6gX"; */
+"l3v-Iu-6gX.normalTitle" = "REGISTER";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "lQg-Y3-mXA"; */
+"lQg-Y3-mXA.text" = "Label";
+
+/* Class = "UITextView"; text = "The graph above shows the number of events vs. number of events completed per day. Click on the screen to switch to other data. "; ObjectID = "lma-Qo-aeB"; */
+"lma-Qo-aeB.text" = "The graph above shows the number of events vs. number of events completed per day. Click on the screen to switch to other data. ";
+
+/* Class = "UINavigationItem"; title = "New"; ObjectID = "pOs-o6-a9X"; */
+"pOs-o6-a9X.title" = "New";
+
+/* Class = "UILabel"; text = "Nspire Software: www.nspiresoftware.net"; ObjectID = "pis-QX-4cZ"; */
+"pis-QX-4cZ.text" = "Nspire Software: www.nspiresoftware.net";
+
+/* Class = "UIButton"; normalTitle = "Done"; ObjectID = "ql4-eA-enW"; */
+"ql4-eA-enW.normalTitle" = "Done";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "rHV-g7-oN9"; */
+"rHV-g7-oN9.text" = "Title";
+
+/* Class = "UINavigationItem"; title = "Preference"; ObjectID = "rvz-cc-EgS"; */
+"rvz-cc-EgS.title" = "Preference";
+
+/* Class = "UILabel"; text = "3 Events on this day"; ObjectID = "s7C-Kn-E1E"; */
+"s7C-Kn-E1E.text" = "3 Events on this day";
+
+/* Class = "UILabel"; text = "# Events"; ObjectID = "sPu-Te-lsC"; */
+"sPu-Te-lsC.text" = "# Events";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "u96-MY-EfH"; */
+"u96-MY-EfH.title" = "Back";
+
+/* Class = "UILabel"; text = "Created & Programmed by"; ObjectID = "xqH-nS-nqx"; */
+"xqH-nS-nqx.text" = "Created & Programmed by";
+
+/* Class = "UIButton"; normalTitle = "      LOGIN      "; ObjectID = "yoL-Kp-Noi"; */
+"yoL-Kp-Noi.normalTitle" = "      LOGIN      ";

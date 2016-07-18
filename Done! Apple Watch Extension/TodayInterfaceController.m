@@ -14,16 +14,26 @@
 
 @implementation TodayInterfaceController
 
-- (NSDateFormatter *)dateFormatter
-{
-    static NSDateFormatter *dateFormatter;
-    if(!dateFormatter){
-        dateFormatter = [NSDateFormatter new];
-        dateFormatter.dateFormat = @"dd/MM HH:mm";
-    }
+#pragma mark - Private
+
+-(void)setUpView{
     
-    return dateFormatter;
+    //create date formatter
+    NSDateFormatter *formate = [[NSDateFormatter alloc] init];
+    [formate setDateFormat:@"hh:mm dd/MM"];
+    
+    //display the upcoming events.
+    RLMResults *result = [Events allObjects];
+    NSMutableArray *todo = [EventsHelper findTodayNotCompletedEvents:result];
+    NSMutableArray *completed = [EventsHelper findTodayCompletedEvents:result];
+    NSUInteger x = todo.count / completed.count * 100;
+    
+    //update user interface
+    [self.image startAnimatingWithImagesInRange:NSMakeRange(0, x) duration:0.8 repeatCount:0];
+    [self.todayLabel setText:[NSString stringWithFormat:@"%i/%i", todo.count, completed.count]];
 }
+
+#pragma mark - Life Cycle
 
 - (void)awakeWithContext:(id)context {
     [super awakeWithContext:context];
@@ -32,12 +42,7 @@
 }
 
 - (void)willActivate {
-    
-    result = [Events allObjects];
-    NSMutableArray *allEvents = [EventsHelper findTodayNotCompletedEvents:result];
-    Events *event = [EventsHelper findEarliestEventTodayWithArray:allEvents];
-    [self.label1 setText:[NSString stringWithFormat:@"The first event of your day is %@ at %@", event.title, [[self dateFormatter] stringFromDate:event.date]]];
-    [self.label2 setText:[NSString stringWithFormat:@"There are %lu events today and you have completed %lu of them.", (unsigned long)allEvents.count, (unsigned long)[EventsHelper findCompletedEventsWithArrayOfEvents:allEvents withDate:[NSDate date]].count]];
+
     // This method is called when watch view controller is about to be visible to user
     [super willActivate];
 }
