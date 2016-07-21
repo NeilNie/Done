@@ -142,7 +142,7 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     
     result = [Events allObjects];
     collectionViewArray = [self timePeriodsinTimeline];
-    allEvents = [EventsHelper findTodayCompletedEvents:result];
+    allEvents = [EventsHelper findTodayNotCompletedEvents:result];
     self.ApplicationDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     [self setUpCollectionView];
     [self setUpview];
@@ -375,7 +375,7 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
 - (void)viewDidLoad {
     
     result = [Events allObjects];
-    allEvents = [EventsHelper findTodayCompletedEvents:result];
+    allEvents = [EventsHelper findTodayNotCompletedEvents:result];
     collectionViewArray = [self timePeriodsinTimeline];
     self.ApplicationDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     [self setUpview];
@@ -390,10 +390,6 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
         [self setUpGraphData];
         
     });
-    
-    WCSession *wcsession = [WCSession defaultSession];
-    wcsession.delegate = self;
-    [wcsession activateSession];
         
     NSLog(@"%@", [self.ApplicationDelegate.eventManager freeTimesToday]);
     [super viewDidLoad];

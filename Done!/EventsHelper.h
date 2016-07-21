@@ -91,4 +91,6 @@
 
 + (NSDateFormatter *)dateFormatter;
 
++(NSDate *)currentDateLocalTimeZone;
+
 @end

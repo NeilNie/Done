@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11163.2" systemVersion="16A239j" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ci1-LB-qPP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11173.2" systemVersion="16A254g" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ci1-LB-qPP">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11133"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11143.2"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Segues with Peek and Pop" minToolsVersion="7.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -121,70 +121,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lma-Qo-aeB">
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="dws-Jk-jgE"/>
-                                </constraints>
-                                <string key="text">The graph above shows the number of events vs. number of events completed per day. Click on the screen to switch to other data. </string>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8VZ-c5-aYR" customClass="GKLineGraph">
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="270" id="8Wp-UX-9nS"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZzF-tl-YvB" customClass="GKBarGraph">
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Productivity Graph" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jet-IQ-sLY">
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="# Events" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sPu-Te-lsC">
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dates" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k6X-nz-k9y">
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YBd-6a-le9">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Yk4-fy-gsz" id="aSv-j5-ito"/>
+                                    <outlet property="delegate" destination="Yk4-fy-gsz" id="exQ-8N-XAx"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="k6X-nz-k9y" firstAttribute="top" secondItem="ZzF-tl-YvB" secondAttribute="bottom" constant="8" id="7II-ng-f8O"/>
-                            <constraint firstItem="k6X-nz-k9y" firstAttribute="top" secondItem="8VZ-c5-aYR" secondAttribute="bottom" constant="8" symbolic="YES" id="8Ue-vz-oOU"/>
-                            <constraint firstItem="8VZ-c5-aYR" firstAttribute="leading" secondItem="cSb-hg-dNG" secondAttribute="leadingMargin" constant="-10" id="BK6-YG-1ib"/>
-                            <constraint firstItem="lma-Qo-aeB" firstAttribute="trailing" secondItem="cSb-hg-dNG" secondAttribute="trailingMargin" id="G3T-Cn-DuD"/>
-                            <constraint firstItem="sPu-Te-lsC" firstAttribute="top" secondItem="UqP-0u-6be" secondAttribute="bottom" constant="8" id="Koq-FT-at6"/>
-                            <constraint firstItem="lma-Qo-aeB" firstAttribute="leading" secondItem="cSb-hg-dNG" secondAttribute="leadingMargin" id="LpO-aO-SAb"/>
-                            <constraint firstItem="ZzF-tl-YvB" firstAttribute="top" secondItem="UqP-0u-6be" secondAttribute="bottom" constant="50" id="NcI-pf-OJO"/>
-                            <constraint firstItem="Jet-IQ-sLY" firstAttribute="leading" secondItem="cSb-hg-dNG" secondAttribute="leadingMargin" id="Pvg-Ur-zBp"/>
-                            <constraint firstItem="lma-Qo-aeB" firstAttribute="top" secondItem="8VZ-c5-aYR" secondAttribute="bottom" constant="30" id="QWu-iE-A4R"/>
-                            <constraint firstItem="8VZ-c5-aYR" firstAttribute="top" secondItem="UqP-0u-6be" secondAttribute="bottom" constant="50" id="US4-5e-AxJ"/>
-                            <constraint firstItem="Jet-IQ-sLY" firstAttribute="trailing" secondItem="cSb-hg-dNG" secondAttribute="trailingMargin" id="ZHF-gP-Sxq"/>
+                            <constraint firstItem="UdL-fo-eCo" firstAttribute="top" secondItem="YBd-6a-le9" secondAttribute="bottom" constant="8" id="Gf9-ts-ALl"/>
+                            <constraint firstItem="YBd-6a-le9" firstAttribute="leading" secondItem="cSb-hg-dNG" secondAttribute="leading" constant="6" id="Zsa-Y3-wWE"/>
+                            <constraint firstItem="YBd-6a-le9" firstAttribute="top" secondItem="UqP-0u-6be" secondAttribute="bottom" constant="8" id="c6Q-Y3-529"/>
                             <constraint firstAttribute="trailingMargin" secondItem="k6X-nz-k9y" secondAttribute="trailing" constant="8" id="dDZ-k7-hyQ"/>
-                            <constraint firstItem="ZzF-tl-YvB" firstAttribute="trailing" secondItem="cSb-hg-dNG" secondAttribute="trailingMargin" constant="10" id="fl1-v2-Jd8"/>
-                            <constraint firstItem="8VZ-c5-aYR" firstAttribute="trailing" secondItem="cSb-hg-dNG" secondAttribute="trailingMargin" id="fuh-2N-owr"/>
-                            <constraint firstItem="ZzF-tl-YvB" firstAttribute="leading" secondItem="cSb-hg-dNG" secondAttribute="leadingMargin" constant="-10" id="fv4-rE-nsy"/>
-                            <constraint firstItem="sPu-Te-lsC" firstAttribute="leading" secondItem="cSb-hg-dNG" secondAttribute="leadingMargin" constant="-10" id="qQb-Q8-SR9"/>
-                            <constraint firstItem="Jet-IQ-sLY" firstAttribute="top" secondItem="UqP-0u-6be" secondAttribute="bottom" constant="8" id="sdW-zZ-JeD"/>
+                            <constraint firstAttribute="trailing" secondItem="YBd-6a-le9" secondAttribute="trailing" constant="8" id="mFu-0o-tId"/>
+                            <constraint firstItem="UdL-fo-eCo" firstAttribute="top" secondItem="k6X-nz-k9y" secondAttribute="bottom" constant="16" id="vHh-nR-vNZ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Productivity" id="T2w-7U-R2G"/>
                     <connections>
-                        <outlet property="barGraph" destination="ZzF-tl-YvB" id="7vZ-jM-TCp"/>
-                        <outlet property="lineGraph" destination="8VZ-c5-aYR" id="My3-L4-BNU"/>
+                        <outlet property="table" destination="YBd-6a-le9" id="4jc-cr-3WB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="flZ-Xi-WX7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2599" y="1166"/>
+            <point key="canvasLocation" x="2684" y="1165"/>
         </scene>
         <!--Information-->
         <scene sceneID="CGd-O5-BFG">
@@ -284,7 +251,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EM8-TU-gop" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3257" y="1166"/>
+            <point key="canvasLocation" x="3377" y="1165"/>
         </scene>
         <!--Delegate-->
         <scene sceneID="ae1-AL-uYp">
@@ -603,7 +570,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XpO-0A-3vw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2599" y="1836"/>
+            <point key="canvasLocation" x="2684" y="1836"/>
         </scene>
         <!--New-->
         <scene sceneID="zPs-nk-ZFJ">
@@ -895,7 +862,7 @@
                                         </connections>
                                     </collectionView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hooray! Your day is clear!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7e7-l6-n3l">
-                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="28"/>
                                         <color key="textColor" red="0.1058823529" green="0.2156862745" blue="0.29803921570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -1008,7 +975,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aDI-Z2-48x">
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="5t9-iU-Mpq"/>
                                     <constraint firstAttribute="width" constant="80" id="Hos-sb-95T"/>
@@ -1076,7 +1043,7 @@
                         <outlet property="completedLabel" destination="CEU-Dq-on0" id="W7F-KS-zrc"/>
                         <outlet property="dateLabel" destination="Gld-hN-J1e" id="w7n-tY-NKi"/>
                         <outlet property="graphConstr" destination="85z-mP-pIe" id="43P-OC-ukr"/>
-                        <outlet property="graphView" destination="nsO-7w-3hj" id="8Sg-XQ-0qL"/>
+                        <outlet property="graphView" destination="nsO-7w-3hj" id="Rvb-a4-rf0"/>
                         <outlet property="listButton" destination="aDI-Z2-48x" id="ruS-ps-y5Z"/>
                         <outlet property="masterView" destination="dr1-Fg-uqB" id="lwl-gi-j6R"/>
                         <outlet property="preferenceButton" destination="77k-hr-zxG" id="vt3-Nl-fIc"/>
@@ -1174,7 +1141,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gGZ-Zc-XYs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2684" y="3172"/>
+            <point key="canvasLocation" x="2684" y="3171.3643178410798"/>
         </scene>
         <!--Today-->
         <scene sceneID="xXe-eB-sgb">
@@ -1244,7 +1211,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oUM-Hy-LwR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3256.8000000000002" y="1835.5322338830586"/>
+            <point key="canvasLocation" x="3377" y="1836"/>
         </scene>
         <!--Projects-->
         <scene sceneID="9nh-cM-uNg">
@@ -1287,7 +1254,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fvf-Cx-0S0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3911" y="1836"/>
+            <point key="canvasLocation" x="4075" y="1836"/>
         </scene>
     </scenes>
     <resources>
@@ -1298,7 +1265,7 @@
         <image name="calendar" width="33" height="33"/>
         <image name="circle-nf.png" width="200" height="200"/>
         <image name="circled_down_filled.png" width="84" height="84"/>
-        <image name="close" width="25" height="25"/>
+        <image name="close" width="48" height="48"/>
         <image name="colorBackground.jpg" width="1080" height="1920"/>
         <image name="done-icon copy.png" width="766" height="766"/>
         <image name="done-icon.png" width="768" height="768"/>
@@ -1306,7 +1273,7 @@
         <image name="export.png" width="100" height="100"/>
         <image name="folder" width="25" height="25"/>
         <image name="icon-1" width="28" height="28"/>
-        <image name="plus" width="96" height="96"/>
+        <image name="plus" width="48" height="48"/>
         <image name="settings" width="33" height="33"/>
         <image name="todo_list" width="25" height="25"/>
         <image name="user.png" width="548" height="548"/>

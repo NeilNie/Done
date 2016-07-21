@@ -207,7 +207,7 @@ NSString * const MSCTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentif
 
 -(IBAction)expandClose:(id)sender{
     
-    if (self.constrs.constant == 40) {
+    if (self.constrs.constant == 45) {
         dispatch_async(dispatch_get_main_queue(), ^{
             [UIView animateWithDuration:0.2 animations:^{
                 self.constrs.constant = 250;

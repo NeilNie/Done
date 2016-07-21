@@ -84,19 +84,20 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>UICountingLabel.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-<<<<<<< Updated upstream
 		<key>0443296581402605E3D61174B12FB64F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>0801E05E46CA6B36108BACF38B83E77A</key>
-=======
-		<key>0D233DC858A278BA4405A695CFF29EF6</key>
->>>>>>> Stashed changes
+		<key>081FDBABCDCDE327979B39270743CAE7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -106,25 +107,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-<<<<<<< Updated upstream
-		<key>129F90E179B17CC5DA48A17561448137</key>
-=======
-		<key>164A2609FB4616DAA3F12381E1629518</key>
->>>>>>> Stashed changes
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-<<<<<<< Updated upstream
 		<key>199ABC0B1BFC8D546690C537651AF134</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3C8BEDC9D0B126DDE949BD890FCF5818</key>
-=======
-		<key>3D01CE87D48E02D0A98A29AA3A740FEA</key>
->>>>>>> Stashed changes
+		<key>4322651DE168903EBA5D8522817F5A20</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -139,11 +127,6 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>506649191F5E736506B4058E4786A408</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>53480ED0BE09FF49E34B1702D485CAAB</key>
 		<dict>
 			<key>primary</key>
@@ -154,21 +137,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-<<<<<<< Updated upstream
-		<key>A79BAADC08D4BAB0B76BEA34B037370D</key>
-=======
-		<key>9CEE09AA88C31EE671B34AC3B68B277A</key>
+		<key>7FD263B1804A09654674286972DB9259</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A0296F1F5703E7D31E57B3714334959D</key>
->>>>>>> Stashed changes
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B2C555CC3A28F589B96527D824F18F23</key>
+		<key>B1B0C7789F23B156455FBE31688DE267</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -183,7 +157,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>C7006B5EFF583CC8A92CB0319E69036D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>D1EC2572C5166CE2498C72FAF128EABE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D85D267AEBE1397E14A52E1C1B8E5F1B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D8D6DB1C7858AB8540F781E070795EFE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
