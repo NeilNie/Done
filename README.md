@@ -1,14 +1,22 @@
-# Done-
+# Done! - Todo list & task manager
 
-This is a Todo list for iPhone and Apple Watch. <br>
+Done is a todo list app for iPhone, iPad and Apple Watch. I developed this project starting from March of 2016 until now. My goal is to create a smart task manager that gives you suggestion about the time to completed tasks, and also intellegently remind you and suggest you to complete certain tasks. You can find the specifics in the commits. 
 
-Libraries & API used :<br>
-- Realm (realm.io) <br>
-- Google Mobile (Admob, Analysis)<br>
-- GraphKit (https://github.com/michalkonturek/GraphKit) <br>
+### Overview - What can it do?
 
-Important Functions:
-- Apple Watch Complication
-- Syncing data with WCSession
-- Apple Watch Glance Scene
-- Display productivity data (GraphKit)
+
+### User Interface
+
+
+### Libraries
+
+User Interface:
+- PNChart
+- GraphKit
+- MaterialKit
+
+Database:
+- Firebase (server sided syncing) [link] (firebase.google.com)
+- Realm local data storage [link] (www.realm.io)
+
+### Notes
