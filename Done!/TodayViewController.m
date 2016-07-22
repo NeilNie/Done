@@ -81,7 +81,7 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
 
 - (NSDate *)collectionView:(UICollectionView *)collectionView layout:(MSCollectionViewCalendarLayout *)collectionViewCalendarLayout dayForSection:(NSInteger)section
 {
-    return [NSDate date];
+    return [EventsHelper currentDateLocalTimeZone];
 }
 
 - (NSDate *)collectionView:(UICollectionView *)collectionView layout:(MSCollectionViewCalendarLayout *)collectionViewCalendarLayout startTimeForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -101,7 +101,7 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
 }
 
 - (NSDate *)currentTimeComponentsForCollectionView:(UICollectionView *)collectionView layout:(MSCollectionViewCalendarLayout *)collectionViewCalendarLayout{
-    return [NSDate date];
+    return [EventsHelper currentDateLocalTimeZone];
 }
 
 #pragma mark - CreateNew Delegate
@@ -213,7 +213,7 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     
     //set up views with data
     NSUInteger totalEts = allEvents.count;
-    NSUInteger compleEts = [EventsHelper findCompletedEventsWithArrayOfEvents:allEvents withDate:[NSDate date]].count;
+    NSUInteger compleEts = [EventsHelper findCompletedEventsWithArrayOfEvents:allEvents withDate:[EventsHelper currentDateLocalTimeZone]].count;
     self.completedLabel.text = [NSString stringWithFormat:@"%lu/%lu", (unsigned long)compleEts, (unsigned long)totalEts];
     NSDateFormatter *formate = [[NSDateFormatter alloc] init];
     NSDate *date = [NSDate date];
@@ -251,9 +251,9 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     self.eventNumber = [NSMutableArray array];
     
     RLMResults *events = [Events allObjects];
-    for (int i = 7; i > 0; i--) {
+    for (int i = 6; i >= 0; i--) {
         
-        NSDate *date = [NSDate dateWithTimeIntervalSinceNow:i * -(60 * 60 * 24)];
+        NSDate *date = [NSDate dateWithTimeInterval:i * -(60 * 60 * 24) sinceDate:[EventsHelper currentDateLocalTimeZone]];
         NSMutableArray *a = [EventsHelper findCompletedEventsRealm:events withDate:date];
         NSMutableArray *a2 = [EventsHelper findEventsForToday:date withRealm:events];
         [self.completedData addObject:[NSNumber numberWithInteger:a.count]];
@@ -345,6 +345,13 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     [self.graphView addGestureRecognizer:tapGraph];
 }
 
+-(void)syncWithExtension{
+    
+    NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.done.com.yongyang"];
+    [sharedDefaults setObject:[EventsHelper convertAllObjecttoArray] forKey:@"idAllItems"];
+    [sharedDefaults synchronize];
+}
+
 #pragma mark - GraphKit Delegate
 
 - (NSInteger)numberOfLines {
@@ -378,6 +385,7 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     allEvents = [EventsHelper findTodayNotCompletedEvents:result];
     collectionViewArray = [self timePeriodsinTimeline];
     self.ApplicationDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    [self syncWithExtension];
     [self setUpview];
     [self setupGestures];
     [self setUpCollectionView];
@@ -390,8 +398,7 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
         [self setUpGraphData];
         
     });
-        
-    NSLog(@"%@", [self.ApplicationDelegate.eventManager freeTimesToday]);
+    
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }

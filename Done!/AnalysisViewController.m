@@ -45,7 +45,7 @@
     
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 280;
+    return 340;
 }
 
 #pragma mark - Life Cycle
@@ -61,6 +61,7 @@
 
 - (void)viewDidLoad {
 
+    self.table.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.table registerNib:[UINib nibWithNibName:@"GraphTableViewCell" bundle:nil] forCellReuseIdentifier:@"idGraphCell"];
     [super viewDidLoad];
     // Do any additional setup after loading the view.

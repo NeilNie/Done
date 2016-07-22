@@ -92,14 +92,14 @@
 
 +(NSMutableArray *)convertEventsToArray:(RLMResults *)results{
     
-    NSMutableArray *arry = [NSMutableArray array];
+    NSMutableArray *array = [NSMutableArray array];
     
     for (int i = 0; i < results.count; i++) {
         
         Events *event = [results objectAtIndex:i];
-        [arry addObject:event];
+        [array addObject:event];
     }
-    return arry;
+    return array;
 }
 
 +(NSMutableArray *)convertAllObjecttoArray{
@@ -399,7 +399,6 @@
     NSMutableArray *returnArray = [NSMutableArray array];
     for (int i = 0; i < array.count; i++) {
         Events *event = [realm objectAtIndex:i];
-        NSLog(@"Hello");
         if (event.important == YES) {
             [returnArray addObject:event];
         }

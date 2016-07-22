@@ -32,7 +32,7 @@
     NSMutableArray *completed = [NSMutableArray array];
     NSMutableArray *total = [NSMutableArray array];
     
-    for (int i = 10; i > 0; i--) {
+    for (int i = 6; i >= 0; i--) {
         
         NSDate *date = [NSDate dateWithTimeIntervalSinceNow:i * -(60 * 60 * 24)];
         NSMutableArray *a = [EventsHelper findCompletedEventsRealm:events withDate:date];
@@ -54,7 +54,7 @@
     RLMResults *result = [Projects allObjects];
     for (int i = 0; i < result.count; i++) {
         Projects *p = [result objectAtIndex:i];
-        [array addObject:[PNPieChartDataItem dataItemWithValue:p.events.count color:[UIColor colorWithRed:(86 - i*2)/255.0 green:(220 - i*10)/255.0 blue:(128 - i*2)/255.0 alpha:1.0] description:p.title]];
+        [array addObject:[PNPieChartDataItem dataItemWithValue:p.events.count color:[UIColor colorWithRed:(86 - i*3)/255.0 green:(220 - i*12)/255.0 blue:(128 - i*3)/255.0 alpha:1.0] description:p.title]];
     }
     
     return array;
@@ -66,7 +66,7 @@
 
     NSArray *items = [self getPieGraphData];
     
-    self.pieChart = [[PNPieChart alloc] initWithFrame:CGRectMake(20, 20, 200.0, 200.0) items:items];
+    self.pieChart = [[PNPieChart alloc] initWithFrame:CGRectMake(self.frame.size.width/2 - 120.0, 40, 240.0, 240.0) items:items];
     self.pieChart.descriptionTextColor = [UIColor whiteColor];
     self.pieChart.descriptionTextFont  = [UIFont fontWithName:@"Avenir-Medium" size:11.0];
     self.pieChart.descriptionTextShadowColor = [UIColor clearColor];
@@ -79,7 +79,7 @@
     self.pieChart.legendFont = [UIFont boldSystemFontOfSize:12.0f];
     
     UIView *legend = [self.pieChart getLegendWithMaxWidth:200];
-    [legend setFrame:CGRectMake(130, 350, legend.frame.size.width, legend.frame.size.height)];
+    [legend setFrame:CGRectMake(self.frame.size.width/2 - 120.0, self.pieChart.frame.origin.y + 260, legend.frame.size.width, legend.frame.size.height)];
     [self addSubview:legend];
     [self addSubview:self.pieChart];
 }
@@ -87,7 +87,7 @@
 -(void)setUpLineChart{
     
     self.titleLabel.text = @"Line Chart";
-    self.lineChart = [[PNLineChart alloc] initWithFrame:CGRectMake(20, 0, 300, 200.0)];
+    self.lineChart = [[PNLineChart alloc] initWithFrame:CGRectMake(8, 30, self.frame.size.width - 16, 200.0)];
     self.lineChart.yLabelFormat = @"%1.1f";
     self.lineChart.backgroundColor = [UIColor clearColor];
     [self.lineChart setXLabels:@[@"1",@"2",@"3",@"4",@"5",@"6",@"7"]];
@@ -98,8 +98,9 @@
     NSArray * data01Array = [[self getLineData] objectAtIndex:0];
     PNLineChartData *data01 = [PNLineChartData new];
     data01.dataTitle = @"Completed";
-    data01.color = PNFreshGreen;
+    data01.color = PNRed;
     data01.alpha = 0.3f;
+    data01.lineWidth = 4.0;
     data01.itemCount = data01Array.count;
     data01.getData = ^(NSUInteger index) {
         CGFloat yValue = [data01Array[index] floatValue];
@@ -112,6 +113,7 @@
     data02.dataTitle = @"Total";
     data02.color = PNTwitterColor;
     data02.alpha = 0.5f;
+    data02.lineWidth = 4.0;
     data02.itemCount = data02Array.count;
     data02.getData = ^(NSUInteger index) {
         CGFloat yValue = [data02Array[index] floatValue];
@@ -125,10 +127,10 @@
     
     self.lineChart.legendStyle = PNLegendItemStyleStacked;
     self.lineChart.legendFont = [UIFont boldSystemFontOfSize:12.0f];
-    self.lineChart.legendFontColor = [UIColor redColor];
+    self.lineChart.legendFontColor = [UIColor darkGrayColor];
     
-    UIView *legend = [self.lineChart getLegendWithMaxWidth:320];
-    [legend setFrame:CGRectMake(30, 340, legend.frame.size.width, legend.frame.size.width)];
+    UIView *legend = [self.lineChart getLegendWithMaxWidth:200];
+    [legend setFrame:CGRectMake(self.lineChart.frame.origin.x, self.lineChart.frame.origin.y + 210, legend.frame.size.width, legend.frame.size.width)];
     [self addSubview:legend];
 }
 

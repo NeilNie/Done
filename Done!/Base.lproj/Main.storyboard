@@ -1116,7 +1116,7 @@
                                     <constraint firstItem="Nh3-Cd-No8" firstAttribute="centerX" secondItem="uve-pA-Klf" secondAttribute="centerX" id="Ovd-Ti-Cxg"/>
                                     <constraint firstAttribute="height" constant="250" id="QVh-bS-cTL"/>
                                     <constraint firstItem="Nh3-Cd-No8" firstAttribute="top" secondItem="uve-pA-Klf" secondAttribute="top" id="sdy-xN-j1o"/>
-                                    <constraint firstAttribute="bottom" secondItem="siA-GK-4Jb" secondAttribute="bottom" constant="-12" id="vuT-ic-feS"/>
+                                    <constraint firstAttribute="bottom" secondItem="siA-GK-4Jb" secondAttribute="bottom" constant="-20" id="vuT-ic-feS"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -1280,6 +1280,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="WiM-vY-LxD"/>
-        <segue reference="diM-LW-AMI"/>
+        <segue reference="xsq-Rv-5Da"/>
     </inferredMetricsTieBreakers>
 </document>
