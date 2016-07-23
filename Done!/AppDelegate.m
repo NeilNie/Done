@@ -23,10 +23,11 @@
     self.eventManager = [[EventManager alloc] init];
     [FIRApp configure];
     
-    [[UITabBar appearance] setBackgroundImage:[UIImage imageNamed:@"tabBar.png"]];
-    [[UITabBar appearance] setTintColor:[UIColor lightGrayColor]];
-    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]} forState:UIControlStateNormal];
-    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor lightGrayColor]} forState:UIControlStateSelected];
+    if(WCSession.isSupported){
+        self.session = [WCSession defaultSession];
+        self.session.delegate = self;
+        [self.session activateSession];
+    }
     
     application.applicationIconBadgeNumber = 0;
     //register for notification
@@ -64,9 +65,10 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     
     if(WCSession.isSupported){
-        WCSession *session = [WCSession defaultSession];
-        session.delegate = self;
-        [session activateSession];
+        self.session = [WCSession defaultSession];
+        self.session.delegate = self;
+        [self.session activateSession];
+        
     }
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
@@ -101,15 +103,12 @@
     NSLog(@"received application context %@", applicationContext);
 }
 
--(void)session:(WCSession *)session didReceiveMessage:(NSDictionary<NSString *,id> *)message replyHandler:(void (^)(NSDictionary<NSString *,id> * _Nonnull))replyHandler{
+-(void)session:(WCSession *)session didReceiveUserInfo:(NSDictionary<NSString *,id> *)userInfo{
     
     NSLog(@"received message");
     NSMutableArray *array = [EventsHelper convertAllObjecttoArray];
-    WCSession *wcsession = [WCSession defaultSession];
-    wcsession.delegate = self;
-    [wcsession activateSession];
-    replyHandler(@{@"data": array});
-    NSLog(@"sent reply");
+    [self.session transferUserInfo:@{@"data": array}];
+    NSLog(@"%@", userInfo);
 }
 
 -(void)sessionWatchStateDidChange:(WCSession *)session{

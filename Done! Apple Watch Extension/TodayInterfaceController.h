@@ -13,10 +13,11 @@
 #import "Events.h"
 #import "EventsHelper.h"
 
-@interface TodayInterfaceController : WKInterfaceController{
-    RLMResults *result;
-}
-@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceLabel *label1;
-@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceLabel *label2;
+@interface TodayInterfaceController : WKInterfaceController
+
+@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceTable *table;
+@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceImage *image;
+@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceLabel *completion;
+@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceLabel *todayLabel;
 
 @end

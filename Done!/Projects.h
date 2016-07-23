@@ -13,7 +13,6 @@
 
 @property NSString *title;
 @property NSDate *date;
-@property int color;
 @property int priority;
 @property NSString *location;
 @property RLMArray<Events *><Events> *events;

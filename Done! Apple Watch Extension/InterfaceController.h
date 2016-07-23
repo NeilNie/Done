@@ -15,7 +15,14 @@
 #import "EventsHelper.h"
 
 @interface InterfaceController : WKInterfaceController <WCSessionDelegate> {
-    RLMResults *result;
+    
+    __strong WCSession *session;
+    NSTimer *Timer;
+    int count;
 }
+@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceImage *image;
+@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceLabel *todayLabel;
+@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceLabel *upcomingDate;
+@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceLabel *upcomingEvent;
 
 @end

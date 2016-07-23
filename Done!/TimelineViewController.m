@@ -180,7 +180,7 @@ NSString * const MSCTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentif
 
 - (NSDate *)collectionView:(UICollectionView *)collectionView layout:(MSCollectionViewCalendarLayout *)collectionViewCalendarLayout dayForSection:(NSInteger)section
 {
-    return [NSDate date];
+    return [EventsHelper currentDateLocalTimeZone];
 }
 
 - (NSDate *)collectionView:(UICollectionView *)collectionView layout:(MSCollectionViewCalendarLayout *)collectionViewCalendarLayout startTimeForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -200,14 +200,14 @@ NSString * const MSCTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentif
 }
 
 - (NSDate *)currentTimeComponentsForCollectionView:(UICollectionView *)collectionView layout:(MSCollectionViewCalendarLayout *)collectionViewCalendarLayout{
-    return [NSDate date];
+    return [EventsHelper currentDateLocalTimeZone];
 }
 
 #pragma mark - Privates
 
 -(IBAction)expandClose:(id)sender{
     
-    if (self.constrs.constant == 40) {
+    if (self.constrs.constant == 45) {
         dispatch_async(dispatch_get_main_queue(), ^{
             [UIView animateWithDuration:0.2 animations:^{
                 self.constrs.constant = 250;
@@ -244,7 +244,7 @@ NSString * const MSCTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentif
             [events addObject:event];
         }
     }
-    NSArray *returnArray = [[EventsHelper findTodayCompletedEvents:[Events allObjects]] arrayByAddingObjectsFromArray:events];
+    NSArray *returnArray = [allEvents arrayByAddingObjectsFromArray:events];
     return returnArray;
 }
 
@@ -274,8 +274,8 @@ NSString * const MSCTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentif
 
 - (void)viewDidLoad {
     
-    collectionViewArray = [self timePeriodsinTimeline];
     allEvents = [EventsHelper findTodayNotCompletedEvents:[Events allObjects]];
+    collectionViewArray = [self timePeriodsinTimeline];
     [self.tableView registerNib:[UINib nibWithNibName:@"EventTableViewCell" bundle:nil] forCellReuseIdentifier:@"idEventCell"];
     self.tableView.layer.cornerRadius = 20.0f;
     [self setUpCollectionView];

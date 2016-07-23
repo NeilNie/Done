@@ -15,18 +15,18 @@
 #import "Projects.h"
 #import "EventsHelper.h"
 #import "Events.h"
-#import "GraphKit.h"
 #import "CalendarViewController.h"
+#import "GraphTableViewCell.h"
 
-@interface AnalysisViewController : UIViewController <GKLineGraphDataSource, GKBarGraphDataSource>
+@interface AnalysisViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>{
+    
+    NSMutableArray *array;
+    NSMutableArray *eventNumber;
+    NSArray *labels;
+    NSArray *data;
+    NSMutableArray *barData;
+}
 
-@property (nonatomic, strong) NSMutableArray *array;
-@property (nonatomic, strong) NSMutableArray *eventNumber;
-@property (nonatomic, strong) NSArray *labels;
-@property (nonatomic, strong) NSArray *data;
-@property (nonatomic, strong) NSMutableArray *barData;
-@property (weak, nonatomic) IBOutlet GKLineGraph *lineGraph;
-@property (weak, nonatomic) IBOutlet GKBarGraph *barGraph;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *graphConst;
+@property (weak, nonatomic) IBOutlet UITableView *table;
 
 @end

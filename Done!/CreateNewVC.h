@@ -37,10 +37,10 @@
     NSString *subTitle;
     NSDate *date;
     NSString *location;
-    BOOL reminder;
     
     FirebaseHelper *FBHelper;
 }
+@property __strong NSNumber* reminder;
 @property (strong, nonatomic) NSString *sender;
 @property (strong, nonatomic) Projects *addedToProject;
 @property (nonatomic, assign) id <CreateNewDelegate> delegate;

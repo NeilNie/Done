@@ -1,5 +1,6 @@
 target 'Done!' do
 
+pod 'UICountingLabel','~> 1.2.0'
 pod 'EARestrictedScrollView', '~> 1.1.0'
 pod 'EAIntroView', '~> 2.8.0'
 pod 'JTCalendar', '~> 2.0'

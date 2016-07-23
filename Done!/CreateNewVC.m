@@ -18,7 +18,7 @@
 
 - (IBAction)addEvent:(id)sender {
     
-    if (reminder == YES) {
+    if (self.reminder == [NSNumber numberWithBool:YES]) {
         UILocalNotification *notification = [[UILocalNotification alloc] init];
         notification.fireDate = date;
         notification.alertTitle = NSLocalizedString(@"You have a new reminder", nil);
@@ -254,7 +254,7 @@
     else {
         NSString *string = [[[cellDescriptors objectAtIndex:indexPath.section] objectAtIndex:indexOfTappedRow.integerValue] objectForKey:@"cellIdentifier"];
         if ([string isEqualToString:@"idCellValuePicker"]) {
-            int indexOfParentCell;
+            int indexOfParentCell = 0;
             
             for (int i = indexOfTappedRow.intValue - 1; i >= 0; i --) {
                 NSNumber *x = [[[cellDescriptors objectAtIndex:0] objectAtIndex:i] objectForKey:@"isExpandable"];
@@ -378,8 +378,7 @@
     
     NSString *bo = isOn? @"Yes" : @"No";
     [[[cellDescriptors objectAtIndex:0] objectAtIndex:6] setValue:bo forKey:@"primaryTitle"];
-    reminder = isOn;
-    NSLog(@"%i", isOn);
+    self.reminder = [NSNumber numberWithBool:isOn];
 }
 
 #pragma mark - Life Cycle
