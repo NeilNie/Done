@@ -6,7 +6,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             scope = "1"
@@ -51,13 +51,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Done! Apple Watch Extension/InterfaceController.m"
-            timestampString = "490480227.561183"
+            filePath = "Done!/CreateNewVC.m"
+            timestampString = "490905313.149293"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "-session:didReceiveUserInfo:"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "-addEvent:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -67,13 +67,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Done! Apple Watch Extension/InterfaceController.m"
-            timestampString = "490480227.561183"
+            filePath = "Done!/CreateNewVC.m"
+            timestampString = "490925019.732784"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
-            landmarkName = "-syncDataWithCounterpart"
+            startingLineNumber = "381"
+            endingLineNumber = "381"
+            landmarkName = "-switchHasChanged:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -83,29 +83,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Done! Apple Watch Extension/InterfaceController.m"
-            timestampString = "490480227.561183"
+            filePath = "Done!/CustomCell.m"
+            timestampString = "490925084.073482"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
-            landmarkName = "-willActivate"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Done!/EventsHelper.m"
-            timestampString = "490667434.745921"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "225"
-            endingLineNumber = "225"
-            landmarkName = "+findTodayNotCompletedEvents:"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "-switchHasChanged:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

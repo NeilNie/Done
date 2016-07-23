@@ -15,9 +15,9 @@
 -(void)dateWasSelected:(NSString *)selectedDateString{
     
 }
--(void)switchHasChanged:(BOOL)isOn{
+-(IBAction)switchHasChanged:(BOOL)isOn{
     if (delegate != nil) {
-        [delegate switchHasChanged:_Switch.on];
+        [delegate switchHasChanged:!_Switch.isOn];
     }
     
 }

@@ -11,7 +11,7 @@
 #import "PNGenericChart.h"
 #import "PNChartDelegate.h"
 
-@interface PNPieChart : PNGenericChart
+@interface PNPieChart : PNGenericChart <CAAnimationDelegate>
 
 - (id)initWithFrame:(CGRect)frame items:(NSArray *)items;
 
