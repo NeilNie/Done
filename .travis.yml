@@ -1,4 +1,3 @@
 language: objective-c 
 osx_image: xcode8
-xcode_project: Done!.xcodeproj
-xcode_scheme: Done!
+script: xcodebuild -workspace Done!.xcworkspace -scheme Done! -sdk iphonesimulator10.0
