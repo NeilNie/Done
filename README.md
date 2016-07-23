@@ -1,5 +1,7 @@
 # Done! - Todo list & task manager
 
+[![Build Status](https://travis-ci.org/NeilNie/Done-.svg?branch=master)](https://travis-ci.org/NeilNie/Done-)
+
 Done is a todo list app for iPhone, iPad and Apple Watch. I developed this project starting from March of 2016 until now. My goal is to create a smart task manager that gives you suggestion about the time to completed tasks, and also intellegently remind you and suggest you to complete certain tasks. You can find the specifics in the commits. Feel free to make changes and let me know if you have any suggestions. my email: appledeveloper.neil@gmail.com. 
 
 ### Overview - What can it do?
