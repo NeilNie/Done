@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UIButton *button;
 @property (weak, nonatomic) IBOutlet UIImageView *importantIcon;
+@property (weak, nonatomic) IBOutlet UIImageView *AlertIcon;
 @property (nonatomic, assign) id delegate;
 - (IBAction)done:(id)sender;
 - (void)setUpCell;

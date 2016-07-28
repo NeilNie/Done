@@ -62,7 +62,7 @@
 
 -(void)setUpPieGraph{
     
-    self.titleLabel.text = @"Pie Chart";
+    self.titleLabel.text = NSLocalizedString(@"Pie Chart", nil);
 
     NSArray *items = [self getPieGraphData];
     
@@ -86,7 +86,7 @@
 
 -(void)setUpLineChart{
     
-    self.titleLabel.text = @"Line Chart";
+    self.titleLabel.text = NSLocalizedString(@"Line Chart", nil);
     self.lineChart = [[PNLineChart alloc] initWithFrame:CGRectMake(8, 30, self.frame.size.width - 16, 200.0)];
     self.lineChart.yLabelFormat = @"%1.1f";
     self.lineChart.backgroundColor = [UIColor clearColor];

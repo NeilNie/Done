@@ -214,7 +214,7 @@
 - (void)addNewEvent{
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UINavigationController *view = [storyboard instantiateViewControllerWithIdentifier:@"createNew"];
+    UINavigationController __weak *view = [storyboard instantiateViewControllerWithIdentifier:@"createNew"];
     ((CreateNewVC *)view.topViewController).delegate = self;
     ((CreateNewVC *)view.topViewController).addedToProject = self.project;
     dispatch_async(dispatch_get_main_queue(), ^ {

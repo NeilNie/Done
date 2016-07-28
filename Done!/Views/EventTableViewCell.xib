@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11163.2" systemVersion="16A239j" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11173.2" systemVersion="16A254g" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11133"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11143.2"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -12,7 +12,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jMh-8Y-oS7" id="l5u-jE-jh2">
-                <frame key="frameInset" width="320" height="79"/>
+                <frame key="frameInset" width="320" height="79.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Computer Science Class" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ogi-lh-CXa">
@@ -37,29 +37,38 @@
                     </button>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OhP-bN-iUH">
                         <constraints>
-                            <constraint firstAttribute="width" constant="15" id="sZF-U0-75Y"/>
-                            <constraint firstAttribute="height" constant="15" id="tc2-2g-EyO"/>
+                            <constraint firstAttribute="width" constant="5" id="sZF-U0-75Y"/>
+                            <constraint firstAttribute="height" constant="55" id="tc2-2g-EyO"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ode-kY-fW4">
+                        <constraints>
+                            <constraint firstAttribute="width" constant="5" id="D6D-O3-bx3"/>
+                            <constraint firstAttribute="height" constant="55" id="jeu-HF-tb5"/>
                         </constraints>
                     </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="WyS-4b-56k" firstAttribute="top" secondItem="Ogi-lh-CXa" secondAttribute="bottom" constant="8" id="1qB-ag-rPf"/>
-                    <constraint firstItem="WyS-4b-56k" firstAttribute="leading" secondItem="OhP-bN-iUH" secondAttribute="trailing" constant="6" id="5sT-Ia-rUV"/>
                     <constraint firstItem="Vd3-AJ-Cf8" firstAttribute="leading" secondItem="WyS-4b-56k" secondAttribute="trailing" constant="8" id="PiZ-jB-Z10"/>
+                    <constraint firstItem="Ogi-lh-CXa" firstAttribute="leading" secondItem="ode-kY-fW4" secondAttribute="trailing" constant="6" id="Rmh-SV-w8a"/>
+                    <constraint firstItem="ode-kY-fW4" firstAttribute="centerY" secondItem="OhP-bN-iUH" secondAttribute="centerY" id="Tno-NQ-H36"/>
                     <constraint firstItem="Vd3-AJ-Cf8" firstAttribute="top" secondItem="l5u-jE-jh2" secondAttribute="topMargin" constant="15" id="Z09-fi-Lg3"/>
                     <constraint firstAttribute="trailingMargin" secondItem="Vd3-AJ-Cf8" secondAttribute="trailing" constant="14" id="Z1F-9r-jTW"/>
-                    <constraint firstItem="OhP-bN-iUH" firstAttribute="leading" secondItem="l5u-jE-jh2" secondAttribute="leading" constant="5" id="ao9-aR-Xaa"/>
+                    <constraint firstItem="OhP-bN-iUH" firstAttribute="leading" secondItem="l5u-jE-jh2" secondAttribute="leading" constant="3" id="ao9-aR-Xaa"/>
+                    <constraint firstItem="ode-kY-fW4" firstAttribute="leading" secondItem="OhP-bN-iUH" secondAttribute="trailing" constant="6" id="czN-47-azA"/>
                     <constraint firstItem="Ogi-lh-CXa" firstAttribute="top" secondItem="l5u-jE-jh2" secondAttribute="topMargin" constant="6" id="gQb-LI-4pk"/>
-                    <constraint firstItem="WyS-4b-56k" firstAttribute="leading" secondItem="l5u-jE-jh2" secondAttribute="leadingMargin" constant="18" id="pn3-aw-L4s"/>
-                    <constraint firstItem="Ogi-lh-CXa" firstAttribute="leading" secondItem="l5u-jE-jh2" secondAttribute="leadingMargin" constant="18" id="rod-AL-iOB"/>
+                    <constraint firstItem="WyS-4b-56k" firstAttribute="leading" secondItem="ode-kY-fW4" secondAttribute="trailing" constant="6" id="nI1-g8-5GC"/>
                     <constraint firstItem="Vd3-AJ-Cf8" firstAttribute="leading" secondItem="Ogi-lh-CXa" secondAttribute="trailing" constant="8" id="u6h-6x-gRf"/>
                     <constraint firstItem="OhP-bN-iUH" firstAttribute="centerY" secondItem="l5u-jE-jh2" secondAttribute="centerY" id="vbK-Ce-DDL"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
+                <outlet property="AlertIcon" destination="ode-kY-fW4" id="hSG-xn-kal"/>
                 <outlet property="button" destination="Vd3-AJ-Cf8" id="SI0-eL-pLb"/>
                 <outlet property="dateLabel" destination="WyS-4b-56k" id="GL4-R5-MO8"/>
+                <outlet property="importantIcon" destination="OhP-bN-iUH" id="pgS-oh-vvh"/>
                 <outlet property="titleLabel" destination="Ogi-lh-CXa" id="TyN-II-K5M"/>
             </connections>
             <point key="canvasLocation" x="556" y="392"/>
