@@ -36,7 +36,6 @@
         
         if ([self.sender isEqualToString:@"project"]){
             Projects *p = [EventsHelper createProjectWithDate:date title:title];
-            [self addProjectToFirebase:p];
             [delegate addProject:p];
             [self.navigationController popViewControllerAnimated:YES];
         }else if (self.addedToProject != nil){
@@ -45,7 +44,6 @@
             [realm beginWriteTransaction];
             Events *event = [EventsHelper createEventWithDate:date title:title otherInfo:nil];
             [self.addedToProject.events addObject:event];
-            //                    [FBHelper addEventToFirebase:event addedToProject:self.addedToProject];
             [realm commitWriteTransaction];
             [self.navigationController popViewControllerAnimated:YES];
             
@@ -57,39 +55,39 @@
     [self dismissViewControllerAnimated:YES
                              completion:nil];
 }
-
--(void)addEventToFirebase:(Events *)event{
-    
-    FIRUser *user = [FIRAuth auth].currentUser;
-    NSString *eventID = [self uuid];
-    [[[_ref child:@"events"] child:eventID] setValue:@{@"event_title": event.title,
-                                                       @"event_date": [[self dateFormatter] stringFromDate:event.date],
-                                                       @"owner": user.displayName
-                                                       }];
-    [[[[_ref child:@"projects"] child:user.displayName] child:self.addedToProject.title] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
-        
-        __block NSMutableArray *UpdateArray;
-        if ([snapshot.value objectForKey:@"events"] == nil) {
-            UpdateArray = [NSMutableArray array];
-        }else{
-            UpdateArray = [snapshot.value objectForKey:@"events"];
-        }
-        [UpdateArray addObject:eventID];
-        NSDictionary *updateDic = @{[NSString stringWithFormat:@"projects/%@/%@/events", user.displayName, self.addedToProject.title]:UpdateArray};
-        [_ref updateChildValues:updateDic];
-    }];
-}
-
--(void)addProjectToFirebase:(Projects *)project{
-    
-    FIRUser *user = [FIRAuth auth].currentUser;
-    NSLog(@"username %@", user.displayName);
-    NSString *projectID = [self uuid];
-    [[[[_ref child:@"projects"] child:user.displayName] child:project.title] setValue:@{@"project_title": project.title,
-                                                                                        @"project_id":projectID,
-                                                                                        @"project_date": [[self dateFormatter] stringFromDate:project.date],
-                                                                                        @"events":[NSMutableArray array]}];
-}
+//
+//-(void)addEventToFirebase:(Events *)event{
+//    
+//    FIRUser *user = [FIRAuth auth].currentUser;
+//    NSString *eventID = [self uuid];
+//    [[[_ref child:@"events"] child:eventID] setValue:@{@"event_title": event.title,
+//                                                       @"event_date": [[self dateFormatter] stringFromDate:event.date],
+//                                                       @"owner": user.displayName
+//                                                       }];
+//    [[[[_ref child:@"projects"] child:user.displayName] child:self.addedToProject.title] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+//        
+//        __block NSMutableArray *UpdateArray;
+//        if ([snapshot.value objectForKey:@"events"] == nil) {
+//            UpdateArray = [NSMutableArray array];
+//        }else{
+//            UpdateArray = [snapshot.value objectForKey:@"events"];
+//        }
+//        [UpdateArray addObject:eventID];
+//        NSDictionary *updateDic = @{[NSString stringWithFormat:@"projects/%@/%@/events", user.displayName, self.addedToProject.title]:UpdateArray};
+//        [_ref updateChildValues:updateDic];
+//    }];
+//}
+//
+//-(void)addProjectToFirebase:(Projects *)project{
+//    
+//    FIRUser *user = [FIRAuth auth].currentUser;
+//    NSLog(@"username %@", user.displayName);
+//    NSString *projectID = [self uuid];
+//    [[[[_ref child:@"projects"] child:user.displayName] child:project.title] setValue:@{@"project_title": project.title,
+//                                                                                        @"project_id":projectID,
+//                                                                                        @"project_date": [[self dateFormatter] stringFromDate:project.date],
+//                                                                                        @"events":[NSMutableArray array]}];
+//}
 
 - (NSString *)uuid
 {

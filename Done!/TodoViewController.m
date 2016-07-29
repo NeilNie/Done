@@ -78,12 +78,8 @@
 {
     NSMutableArray *rightUtilityButtons = [NSMutableArray new];
     [rightUtilityButtons sw_addUtilityButtonWithColor:
-     [UIColor colorWithRed:0.78f green:0.78f blue:0.8f alpha:1.0]
-                                                title:@"Done"];
-    [rightUtilityButtons sw_addUtilityButtonWithColor:
      [UIColor colorWithRed:1.0f green:0.231f blue:0.188 alpha:1.0f]
                                                 title:@"Delete"];
-    
     return rightUtilityButtons;
 }
 
@@ -93,12 +89,14 @@
     
     [leftUtilityButtons sw_addUtilityButtonWithColor:
      [UIColor orangeColor] title:@"Important"];
-    [leftUtilityButtons sw_addUtilityButtonWithColor:
-     [UIColor blueColor] title:@"Alert"];;
     return leftUtilityButtons;
 }
 
 #pragma mark - SWTableViewCell Delegate
+
+-(void)reloadTableView{
+    [self.table reloadData];
+}
 
 - (void)swipeableTableViewCell:(SWTableViewCell *)cell didTriggerLeftUtilityButtonWithIndex:(NSInteger)index {
 
@@ -106,22 +104,19 @@
         case 0:
             [self markImportant:(EventTableViewCell *)cell];
             break;
-        case 1:
-            [self setReminder:((EventTableViewCell *)cell).event.date withText:((EventTableViewCell *)cell).event.title];
-            break;
         default:
             break;
     }
+    [cell hideUtilityButtonsAnimated:YES];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.table reloadData];
+    });
 }
 
 - (void)swipeableTableViewCell:(SWTableViewCell *)cell didTriggerRightUtilityButtonWithIndex:(NSInteger)index {
     NSIndexPath *indexPath = [self.table indexPathForCell:cell];
     switch (index) {
         case 0:
-            [self clickedDone:(EventTableViewCell *)cell];
-            
-            break;
-        case 1:
             [EventsHelper deleteEvent:[allEvents objectAtIndex:indexPath.row]];
             [allEvents removeObjectAtIndex:indexPath.row];
             [self.table deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationTop];
@@ -133,10 +128,15 @@
                 [session updateApplicationContext:@{@"needSync": @"YES"} error:nil];
                 NSLog(@"updated context");
             }
+            
             break;
         default:
             break;
     }
+    [cell hideUtilityButtonsAnimated:YES];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.table reloadData];
+    });
 }
 
 #pragma mark - EventCell Delegate
@@ -150,18 +150,10 @@
     [realm commitWriteTransaction];
     
     allEvents = [EventsHelper findNotCompletedEvents:self.project.events];
-    //[self syncDataWithExtension];
     [allEvents addObject:@""];
     [self.table reloadData];
     
-    UILocalNotification *notification = [[UILocalNotification alloc] init];
-    notification.fireDate = [[NSDate date] dateByAddingTimeInterval:5 * 60];
-    notification.alertTitle = NSLocalizedString(@"You have a new reminder", nil);
-    notification.alertBody = cell.textfield.text;
-    notification.soundName = UILocalNotificationDefaultSoundName;
-    notification.timeZone = [NSTimeZone localTimeZone];
-    notification.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber] + 1;
-    [[UIApplication sharedApplication] scheduleLocalNotification:notification];
+    [self setReminder:[[NSDate date] dateByAddingTimeInterval:5 * 60] withText:cell.textfield.text];
 }
 
 #pragma mark - CreateNew Delegate
@@ -172,7 +164,6 @@
     [realm beginWriteTransaction];
     [realm addObject:project];
     [realm commitWriteTransaction];
-    NSLog(@"new project added %@", project);
 }
 
 #pragma mark - Private
@@ -258,33 +249,19 @@
     
     allEvents = [NSMutableArray array];
     RLMResults *result = [Events allObjects];
-    switch (self.tabBar.selectedIndex) {
-        case 0:
-            allEvents = [EventsHelper findImportantEvents:[NSDate date] withRealm:result];
-            [allEvents addObject:@""];
-            [self.table reloadData];
-            return;
-            break;
-        case 1:
-            allEvents = [EventsHelper findTodayCompletedEvents:result];
-            [allEvents addObject:@""];
-            [self.table reloadData];
-            return;
-            break;
-        case 2:
-            allEvents = [EventsHelper convertEventsToArray:result];
-            [allEvents addObject:@""];
-            [self.table reloadData];
-            return;
-            break;
-            
-        default:
-            break;
-    }
-    
-    NSUInteger barIndex = self.tabBar.selectedIndex;
-    if (barIndex == tabBarArray.count || barIndex == 0 || barIndex == 1 || barIndex == 2) {
-        
+    if (self.tabBar.selectedIndex == 0) {
+        allEvents = [EventsHelper findImportantEvents:[NSDate date] withRealm:result];
+        [allEvents addObject:@""];
+        [self.table reloadData];
+
+    }else if (self.tabBar.selectedIndex == tabBarArray.count - 1){
+        allEvents = [EventsHelper findTodayCompletedEvents:result];
+        [allEvents addObject:@""];
+        [self.table reloadData];
+    }else if (self.tabBar.selectedIndex == tabBarArray.count - 2){
+        allEvents = [EventsHelper convertEventsToArray:result];
+        [allEvents addObject:@""];
+        [self.table reloadData];
     }else{
         self.project = [EventsHelper findProjectWithName:[tabBarArray objectAtIndex:self.tabBar.selectedIndex]];
         allEvents = [EventsHelper findNotCompletedEvents:self.project.events];
@@ -297,12 +274,14 @@
     
     _tabBar.delegate = self;
     
-    tabBarArray = [[NSMutableArray alloc] initWithObjects:@"Important", @"Completed", @" All ", nil];
+    tabBarArray = [[NSMutableArray alloc] initWithObjects:@"Important", nil];
     RLMResults *allProjects = [Projects allObjects];
     for (int i = 0; i < allProjects.count; i++) {
         Projects *currentProject = [allProjects objectAtIndex:i];
         [tabBarArray addObject:currentProject.title];
     }
+    [tabBarArray addObject:@"Completed"];
+    [tabBarArray addObject:@"All"];
     [_tabBar setItems:tabBarArray];
 
     self.tabBar.textFont = [UIFont systemFontOfSize:15 weight:UIFontWeightMedium];

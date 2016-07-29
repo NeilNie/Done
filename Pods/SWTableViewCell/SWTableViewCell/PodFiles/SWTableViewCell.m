@@ -497,6 +497,7 @@ static NSString * const kTableViewPanState = @"state";
             [self.delegate swipeableTableViewCell:self scrollingToState:kCellStateCenter];
         }
     }
+    //[self.delegate reloadTableView];
 }
 
 - (void)showLeftUtilityButtonsAnimated:(BOOL)animated {

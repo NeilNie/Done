@@ -28,7 +28,7 @@ BOOL phoneModified;
 
 @interface TodoViewController : UIViewController <WCSessionDelegate, UITableViewDelegate, UITableViewDataSource, EventCellDelegate, SWTableViewCellDelegate, addEventCellDelegate, MDTabBarDelegate, CreateNewDelegate, MDButtonDelegate>{
 
-    NSMutableArray *allEvents;
+    NSMutableArray *allEvents; //an array of Event objects
     NSMutableArray *tabBarArray;
     NSInteger selected;
     BOOL sameSelection;
@@ -39,9 +39,6 @@ BOOL phoneModified;
 @property (weak, nonatomic) IBOutlet MDButton *btAddProject;
 @property (weak, nonatomic) IBOutlet MDButton *btEdit;
 @property (strong, nonatomic) Projects *project;
-@property (weak, nonatomic) IBOutlet UINavigationItem *naviTitle;
-@property (weak, nonatomic) IBOutlet UINavigationItem *item;
 @property (weak, nonatomic) IBOutlet UITableView *table;
-//@property (weak, nonatomic) IBOutlet GADBannerView *banner;
 
 @end
