@@ -67,7 +67,7 @@
             self.registerBbg.alpha = 0;
             
             [UIView animateWithDuration:0.4 animations:^{
-                self.constr.constant = 130;
+                self.constr.constant = 80;
                 [self.view layoutIfNeeded];
             }];
             self.loginBbg.image = [UIImage imageNamed:@"button_selected.png"];
@@ -113,7 +113,7 @@
         self.registerBbg.alpha = 0;
         
         [UIView animateWithDuration:0.4 animations:^{
-            self.constr.constant = 130;
+            self.constr.constant = 80;
             [self.view layoutIfNeeded];
         }];
         self.loginB.alpha = 0;
@@ -125,6 +125,13 @@
         self.email.alpha = 1.0;
     }];
     
+}
+
+-(void)gestureActions:(UITapGestureRecognizer *)gesture{
+    
+    [self.email resignFirstResponder];
+    [self.username resignFirstResponder];
+    [self.password resignFirstResponder];
 }
 
 #pragma mark - MDTextField Delegate
@@ -147,6 +154,9 @@
     self.email.delegate = self;
     self.username.delegate = self;
     self.password.delegate = self;
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(gestureActions:)];
+    [self.background addGestureRecognizer:tap];
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }

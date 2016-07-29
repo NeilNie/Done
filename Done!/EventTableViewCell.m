@@ -27,7 +27,6 @@
 
 - (void)awakeFromNib {
 
-    //[self.markButton addGestureRecognizer:gesture];
     self.importantIcon.backgroundColor = [UIColor orangeColor];
     [self cropImagetoRound:self.importantIcon];
     [super awakeFromNib];
@@ -48,14 +47,6 @@
     [imageLayer setMasksToBounds:YES];
     [image.layer setCornerRadius:image.frame.size.width/2];
     [image.layer setMasksToBounds:YES];
-}
-
-- (IBAction)markImportant:(id)sender {
-
-    self.importantIcon.hidden = NO;
-    if (delegate != nil) {
-        [delegate markImportant:self];
-    }
 }
 
 - (IBAction)done:(id)sender

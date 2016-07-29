@@ -529,8 +529,6 @@
                         <outlet property="btAddProject" destination="xdl-NL-xgF" id="Oto-sx-qv5"/>
                         <outlet property="btEdit" destination="mkv-vM-8Eh" id="R3w-Gc-lmJ"/>
                         <outlet property="btMore" destination="Ovv-3l-B5h" id="jmD-eO-BdN"/>
-                        <outlet property="item" destination="QBJ-Ga-ILs" id="yfQ-07-fTK"/>
-                        <outlet property="naviTitle" destination="QBJ-Ga-ILs" id="GNM-F0-nIm"/>
                         <outlet property="tabBar" destination="ds1-45-wDd" id="ksV-vE-TmT"/>
                         <outlet property="table" destination="hi4-mY-Say" id="EH8-8M-dPU"/>
                     </connections>

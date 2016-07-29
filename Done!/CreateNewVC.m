@@ -18,78 +18,76 @@
 
 - (IBAction)addEvent:(id)sender {
     
-    if (self.reminder == [NSNumber numberWithBool:YES]) {
-        UILocalNotification *notification = [[UILocalNotification alloc] init];
-        notification.fireDate = date;
-        notification.alertTitle = NSLocalizedString(@"You have a new reminder", nil);
-        notification.alertBody = title;
-        notification.soundName = UILocalNotificationDefaultSoundName;
-        notification.timeZone = [NSTimeZone localTimeZone];
-        notification.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber] + 1;
-        [[UIApplication sharedApplication] scheduleLocalNotification:notification];
-    }
-    
     if ([self checkData] == NO) {
         [RKDropdownAlert title:@"Opps" message:@"You have to set a date and a title for your project/event."];
-    
+        
     }else{
+        
+        if (self.reminder == [NSNumber numberWithBool:YES]) {
+            UILocalNotification *notification = [[UILocalNotification alloc] init];
+            notification.fireDate = date;
+            notification.alertTitle = NSLocalizedString(@"You have a new reminder", nil);
+            notification.alertBody = title;
+            notification.soundName = UILocalNotificationDefaultSoundName;
+            notification.timeZone = [NSTimeZone localTimeZone];
+            notification.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber] + 1;
+            [[UIApplication sharedApplication] scheduleLocalNotification:notification];
+        }
+        
         if ([self.sender isEqualToString:@"project"]){
             Projects *p = [EventsHelper createProjectWithDate:date title:title];
-            [self addProjectToFirebase:p];
             [delegate addProject:p];
             [self.navigationController popViewControllerAnimated:YES];
-        }else{
+        }else if (self.addedToProject != nil){
             
-            if (self.delegate == nil) {
-                [RKDropdownAlert title:@"Opps" message:@"You have to select a project that this event will be added to."];
-            }else{
-                RLMRealm *realm = [RLMRealm defaultRealm];
-                [realm beginWriteTransaction];
-                Events *event = [EventsHelper createEventWithDate:date title:title otherInfo:nil];
-                [self.addedToProject.events addObject:event];
-                [FBHelper addEventToFirebase:event addedToProject:self.addedToProject];
-                [realm commitWriteTransaction];
-                [self.navigationController popViewControllerAnimated:YES];
-            }
+            RLMRealm *realm = [RLMRealm defaultRealm];
+            [realm beginWriteTransaction];
+            Events *event = [EventsHelper createEventWithDate:date title:title otherInfo:nil];
+            [self.addedToProject.events addObject:event];
+            [realm commitWriteTransaction];
+            [self.navigationController popViewControllerAnimated:YES];
+            
+        }else{
+            [RKDropdownAlert title:@"Opps" message:@"You have to select a project that this event will be added to."];
         }
         [self syncWithWatch];
     }
     [self dismissViewControllerAnimated:YES
                              completion:nil];
 }
-
--(void)addEventToFirebase:(Events *)event{
-    
-    FIRUser *user = [FIRAuth auth].currentUser;
-    NSString *eventID = [self uuid];
-    [[[_ref child:@"events"] child:eventID] setValue:@{@"event_title": event.title,
-                                                       @"event_date": [[self dateFormatter] stringFromDate:event.date],
-                                                       @"owner": user.displayName
-                                                       }];
-    [[[[_ref child:@"projects"] child:user.displayName] child:self.addedToProject.title] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
-        
-        __block NSMutableArray *UpdateArray;
-        if ([snapshot.value objectForKey:@"events"] == nil) {
-            UpdateArray = [NSMutableArray array];
-        }else{
-            UpdateArray = [snapshot.value objectForKey:@"events"];
-        }
-        [UpdateArray addObject:eventID];
-        NSDictionary *updateDic = @{[NSString stringWithFormat:@"projects/%@/%@/events", user.displayName, self.addedToProject.title]:UpdateArray};
-        [_ref updateChildValues:updateDic];
-    }];
-}
-
--(void)addProjectToFirebase:(Projects *)project{
-    
-    FIRUser *user = [FIRAuth auth].currentUser;
-    NSLog(@"username %@", user.displayName);
-    NSString *projectID = [self uuid];
-    [[[[_ref child:@"projects"] child:user.displayName] child:project.title] setValue:@{@"project_title": project.title,
-                                                                                        @"project_id":projectID,
-                                                                                        @"project_date": [[self dateFormatter] stringFromDate:project.date],
-                                                                                        @"events":[NSMutableArray array]}];
-}
+//
+//-(void)addEventToFirebase:(Events *)event{
+//    
+//    FIRUser *user = [FIRAuth auth].currentUser;
+//    NSString *eventID = [self uuid];
+//    [[[_ref child:@"events"] child:eventID] setValue:@{@"event_title": event.title,
+//                                                       @"event_date": [[self dateFormatter] stringFromDate:event.date],
+//                                                       @"owner": user.displayName
+//                                                       }];
+//    [[[[_ref child:@"projects"] child:user.displayName] child:self.addedToProject.title] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+//        
+//        __block NSMutableArray *UpdateArray;
+//        if ([snapshot.value objectForKey:@"events"] == nil) {
+//            UpdateArray = [NSMutableArray array];
+//        }else{
+//            UpdateArray = [snapshot.value objectForKey:@"events"];
+//        }
+//        [UpdateArray addObject:eventID];
+//        NSDictionary *updateDic = @{[NSString stringWithFormat:@"projects/%@/%@/events", user.displayName, self.addedToProject.title]:UpdateArray};
+//        [_ref updateChildValues:updateDic];
+//    }];
+//}
+//
+//-(void)addProjectToFirebase:(Projects *)project{
+//    
+//    FIRUser *user = [FIRAuth auth].currentUser;
+//    NSLog(@"username %@", user.displayName);
+//    NSString *projectID = [self uuid];
+//    [[[[_ref child:@"projects"] child:user.displayName] child:project.title] setValue:@{@"project_title": project.title,
+//                                                                                        @"project_id":projectID,
+//                                                                                        @"project_date": [[self dateFormatter] stringFromDate:project.date],
+//                                                                                        @"events":[NSMutableArray array]}];
+//}
 
 - (NSString *)uuid
 {
