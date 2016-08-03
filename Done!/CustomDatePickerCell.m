@@ -9,16 +9,19 @@
 #import "CustomDatePickerCell.h"
 
 @implementation CustomDatePickerCell
+
+@synthesize delegate;
+
 - (IBAction)setDate:(id)sender {
 
-    [[super delegate] dateWasSelected:self.datePicker.date];
+    [delegate dateWasSelected:self.datePicker.date];
 }
 
 - (void)layoutSubviews {
     [super layoutSubviews];
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        NSArray *datePickerSubviews = [[self datePicker] subviews];
+        NSArray *datePickerSubviews = [self.datePicker subviews];
         
         for (UIView *subview in datePickerSubviews) {
             [subview sizeToFit];

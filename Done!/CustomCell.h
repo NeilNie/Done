@@ -13,15 +13,14 @@
 #import "UIFontHelper.h"
 #import "Events.h"
 
-@interface CustomCell : UITableViewCell <UITextFieldDelegate, MDTextFieldDelegate>
+@interface CustomCell : UITableViewCell <UITextFieldDelegate, MDTextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource>
 
+@property (strong, nonatomic) NSMutableArray *pickerViewData;
+@property (weak, nonatomic) IBOutlet UIPickerView *PickerView;
 @property (weak, nonatomic) IBOutlet MDTextField *textField;
-@property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 @property (weak, nonatomic) IBOutlet MDSwitch *Switch;
 @property (weak, nonatomic) IBOutlet UILabel *SwitchLabel;
-@property (weak, nonatomic) IBOutlet UIButton *button;
 @property (nonatomic, assign) id delegate;
-@property (weak, nonatomic) IBOutlet UILabel *valuePickerText;
 
 @end
 
@@ -29,5 +28,6 @@
 
 -(void)switchHasChanged:(BOOL)isOn;
 -(void)textFieldChanged:(NSString *)newText withCell:(CustomCell *)parentCell;
+-(void)pickerViewValueSelected:(NSUInteger)value;
 
 @end

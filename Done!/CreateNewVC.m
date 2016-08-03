@@ -55,39 +55,6 @@
     [self dismissViewControllerAnimated:YES
                              completion:nil];
 }
-//
-//-(void)addEventToFirebase:(Events *)event{
-//    
-//    FIRUser *user = [FIRAuth auth].currentUser;
-//    NSString *eventID = [self uuid];
-//    [[[_ref child:@"events"] child:eventID] setValue:@{@"event_title": event.title,
-//                                                       @"event_date": [[self dateFormatter] stringFromDate:event.date],
-//                                                       @"owner": user.displayName
-//                                                       }];
-//    [[[[_ref child:@"projects"] child:user.displayName] child:self.addedToProject.title] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
-//        
-//        __block NSMutableArray *UpdateArray;
-//        if ([snapshot.value objectForKey:@"events"] == nil) {
-//            UpdateArray = [NSMutableArray array];
-//        }else{
-//            UpdateArray = [snapshot.value objectForKey:@"events"];
-//        }
-//        [UpdateArray addObject:eventID];
-//        NSDictionary *updateDic = @{[NSString stringWithFormat:@"projects/%@/%@/events", user.displayName, self.addedToProject.title]:UpdateArray};
-//        [_ref updateChildValues:updateDic];
-//    }];
-//}
-//
-//-(void)addProjectToFirebase:(Projects *)project{
-//    
-//    FIRUser *user = [FIRAuth auth].currentUser;
-//    NSLog(@"username %@", user.displayName);
-//    NSString *projectID = [self uuid];
-//    [[[[_ref child:@"projects"] child:user.displayName] child:project.title] setValue:@{@"project_title": project.title,
-//                                                                                        @"project_id":projectID,
-//                                                                                        @"project_date": [[self dateFormatter] stringFromDate:project.date],
-//                                                                                        @"events":[NSMutableArray array]}];
-//}
 
 - (NSString *)uuid
 {
@@ -104,7 +71,6 @@
         dateFormatter = [NSDateFormatter new];
         dateFormatter.dateFormat = @"dd/MM/yyyy HH:MM";
     }
-    
     return dateFormatter;
 }
 
@@ -131,208 +97,75 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
--(void)setUpView{
-    
-    self.table.delegate = self;
-    self.table.dataSource = self;
-    
-    [self.table registerNib:[UINib nibWithNibName:@"NormalCell" bundle:nil] forCellReuseIdentifier:@"idCellNormal"];
-    [self.table registerNib:[UINib nibWithNibName:@"TextfieldCell" bundle:nil] forCellReuseIdentifier:@"idCellTextfield"];
-    [self.table registerNib:[UINib nibWithNibName:@"DatePickerCell" bundle:nil] forCellReuseIdentifier:@"idCellDatePicker"];
-    [self.table registerNib:[UINib nibWithNibName:@"ValuePickerCell" bundle:nil] forCellReuseIdentifier:@"idCellValuePicker"];
-    [self.table registerNib:[UINib nibWithNibName:@"SwitchCell" bundle:nil] forCellReuseIdentifier:@"idCellSwitch"];    
-}
-
--(void)loadCellDiscriptors{
-    
-    NSString *path;
-    if ([self.sender isEqualToString:@"project"]){
-        path = [[NSBundle mainBundle] pathForResource:@"CellDescriptor2" ofType:@"plist"];
-    }else{
-        path = [[NSBundle mainBundle] pathForResource:@"CellDescriptor" ofType:@"plist"];
-    }
-    
-    cellDescriptors = [NSMutableArray arrayWithContentsOfFile:path];
-    
-    if (![self.sender isEqualToString:@"project"]) {
-        NSMutableArray *array2 = [cellDescriptors objectAtIndex:0];
-        RLMResults *result = [Projects allObjects];
-        
-        NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
-        [dict setObject:[NSNumber numberWithInteger:result.count] forKey:@"additionalRows"];
-        [dict setObject:@"idCellNormal" forKey:@"cellIdentifier"];
-        [dict setObject:@1 forKey:@"isExpandable"];
-        [dict setObject:@0 forKey:@"isExpanded"];
-        [dict setObject:@1 forKey:@"isVisible"];
-        if (self.addedToProject) {
-            [dict setObject:self.addedToProject.title forKey:@"primaryTitle"];
-        }else{
-            [dict setObject:@"" forKey:@"primaryTitle"];
-        }
-        
-        [dict setObject:@"Add this this project" forKey:@"secondaryTitle"];
-        [dict setObject:@"" forKey:@"value"];
-        
-        [array2 addObject:dict];
-        for (int i = 0; i < result.count; i++) {
-            Projects *cPro = [result objectAtIndex:i];
-            
-            NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
-            [dic setObject:@0 forKey:@"additionalRows"];
-            [dic setObject:@"idCellValuePicker" forKey:@"cellIdentifier"];
-            [dic setObject:@0 forKey:@"isExpandable"];
-            [dic setObject:@0 forKey:@"isExpanded"];
-            [dic setObject:@0 forKey:@"isVisible"];
-            [dic setObject:cPro.title forKey:@"primaryTitle"];
-            [dic setObject:@"" forKey:@"secondaryTitle"];
-            [dic setObject:@"" forKey:@"value"];
-            
-            [array2 addObject:dic];
-        }
-        [cellDescriptors removeAllObjects];
-        [cellDescriptors addObject:array2];
-    }
-    
-    [self getIndicesOfVisible];
-    [self.table reloadData];
-}
-
--(void)getIndicesOfVisible{
-    
-    [visibleRowsPerSection removeAllObjects];
-    
-    for (NSMutableArray *currentCells in cellDescriptors) {
-        
-        NSMutableArray *visibleRows = [NSMutableArray array];
-    
-        for (int rows = 0; rows < currentCells.count; rows++) {
-            
-            if ([[[currentCells objectAtIndex:rows] objectForKey:@"isVisible"] intValue] == 1) {
-                [visibleRows addObject:[NSNumber numberWithInt:rows]];
-            }
-        }
-        [visibleRowsPerSection addObject:visibleRows];
-    }
-}
-
--(NSDictionary *)getCellDescriptorForIndexPath:(NSIndexPath *)indexPath{
-    
-    NSNumber *indexOfVisibleRow = [[visibleRowsPerSection objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
-    NSDictionary *cellDescriptor = [[cellDescriptors objectAtIndex:indexPath.section] objectAtIndex:indexOfVisibleRow.integerValue];
-    return cellDescriptor;
-}
-
 #pragma mark - UITableView Delegate
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    NSNumber *indexOfTappedRow = [[visibleRowsPerSection objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
-    
-    NSNumber *number = [[[cellDescriptors objectAtIndex:indexPath.section] objectAtIndex:indexOfTappedRow.integerValue] objectForKey:@"isExpandable"];
-    if (number.intValue == 1) {
-        
-        BOOL shouldExpandAndShowSubRows = NO;
-        NSNumber *Int = [[[cellDescriptors objectAtIndex:indexPath.section] objectAtIndex:indexOfTappedRow.integerValue] objectForKey:@"isExpanded"];
-        if (Int.intValue == 0) {
-            
-            NSLog(@"should expand = yes");
-            // In this case the cell should expand.
-            shouldExpandAndShowSubRows = YES;
-        }
-        [[[cellDescriptors objectAtIndex:indexPath.section] objectAtIndex:indexOfTappedRow.integerValue] setValue:[NSNumber numberWithBool:shouldExpandAndShowSubRows] forKey:@"isExpanded"];
-        
-        NSNumber *x = [[[cellDescriptors objectAtIndex:indexPath.section] objectAtIndex:indexOfTappedRow.integerValue] objectForKey:@"additionalRows"];
-        NSLog(@"X value %@ i value %i", x, indexOfTappedRow.intValue + 1);
-        for (int i = indexOfTappedRow.intValue + 1; i <= x.intValue + indexOfTappedRow.intValue; i ++) {
-            [[[cellDescriptors objectAtIndex:indexPath.section] objectAtIndex:i] setValue:[NSNumber numberWithBool:shouldExpandAndShowSubRows] forKey:@"isVisible"];
-            NSLog(@"set visiblity");
-        }
-        
-    }
-    else {
-        NSString *string = [[[cellDescriptors objectAtIndex:indexPath.section] objectAtIndex:indexOfTappedRow.integerValue] objectForKey:@"cellIdentifier"];
-        if ([string isEqualToString:@"idCellValuePicker"]) {
-            int indexOfParentCell = 0;
-            
-            for (int i = indexOfTappedRow.intValue - 1; i >= 0; i --) {
-                NSNumber *x = [[[cellDescriptors objectAtIndex:0] objectAtIndex:i] objectForKey:@"isExpandable"];
-                if (x.intValue == 1) {
-                    indexOfParentCell = i;
-                    break;
-                }
-            }
-            CustomCell *cell = (CustomCell *)[self tableView:self.table cellForRowAtIndexPath:indexPath];
-            [[cellDescriptors[indexPath.section] objectAtIndex:indexOfParentCell] setValue:cell.valuePickerText.text forKey:@"primaryTitle"];
-            [cellDescriptors[indexPath.section][indexOfParentCell] setValue:@0 forKey:@"isExpanded"];
-            
-            if (self.addedToProject == nil) {
-                self.addedToProject = [EventsHelper findProjectWithName:cell.valuePickerText.text];
-            }
-            for (int i = 0; i > indexOfParentCell + 1 && i < [[[[cellDescriptors objectAtIndex:indexPath.section] objectAtIndex:indexOfParentCell] objectForKey:@"additionalRows"] intValue]; i++) {
-                [cellDescriptors[indexPath.section][i] setValue:@0 forKey:@"isVisible"];
-            }
-        }
-    }
-    
-    [self getIndicesOfVisible];
-    [self.table reloadSections:[NSIndexSet indexSetWithIndex:indexPath.section] withRowAnimation:UITableViewRowAnimationFade];
+
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    NSArray *A = [NSArray arrayWithArray:[visibleRowsPerSection objectAtIndex:section]];
-    return A.count;
+    return 5;
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return cellDescriptors.count;
+    return 1;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    NSDictionary *currentDescriptor = [self getCellDescriptorForIndexPath:indexPath];
-    if ([currentDescriptor[@"cellIdentifier"] isEqualToString:@"idCellNormal"]) {
-        return 60;
-    }else if ([currentDescriptor[@"cellIdentifier"] isEqualToString:@"idCellDatePicker"]){
-        return 270;
-    }else{
-        return 53;
+    switch (indexPath.row) {
+        case 0:
+            return 55;
+            break;
+        case 1:
+            return 250;
+            break;
+        case 2:
+            return 55;
+            break;
+        case 3:
+            return 55;
+            break;
+        case 4:
+            return 100;
+            break;
+            
+        default:
+            return 60;
+            break;
     }
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
 
-    NSDictionary *currentDescriptor = [self getCellDescriptorForIndexPath:indexPath];
-    
-    //[self setUpView];
-    CustomCell *cell = [tableView dequeueReusableCellWithIdentifier:currentDescriptor[@"cellIdentifier"] forIndexPath:indexPath];
-    
-    if ([currentDescriptor[@"cellIdentifier"] isEqualToString:@"idCellNormal"]) {
-        
-        if (currentDescriptor[@"primaryTitle"]) {
-            cell.textLabel.text = currentDescriptor[@"primaryTitle"];
-        }
-        if (currentDescriptor[@"secondaryTitle"]) {
-            cell.detailTextLabel.text = currentDescriptor[@"secondaryTitle"];
-        }
-        
-    }
-    else if ([currentDescriptor[@"cellIdentifier"] isEqualToString:@"idCellTextfield"]) {
-//        self.table.separatorStyle = UITableViewCellSeparatorStyleNone;
-        cell.textField.hint = currentDescriptor[@"primaryTitle"];
-        //cell.textField.floatingLabel = currentDescriptor[@"primaryTitle"];
-    }
-    else if ([currentDescriptor[@"cellIdentifier"] isEqualToString:@"idCellSwitch"]) {
-        cell.SwitchLabel.text = currentDescriptor[@"primaryTitle"];
-        
-        NSString *value = currentDescriptor[@"value"];
-        cell.Switch.on = ([value isEqualToString:@"true"]) ? YES : NO;
-    }
-    else if ([currentDescriptor[@"cellIdentifier"] isEqualToString:@"idCellValuePicker"]) {
-        cell.valuePickerText.text = currentDescriptor[@"primaryTitle"];
-    }
+    CustomCell *cell = [[CustomCell alloc] init];
     cell.delegate = self;
-    return cell;
+    
+    if (indexPath.row == 0) {
+        cell = (CustomCell *)[tableView dequeueReusableCellWithIdentifier:@"idCellTextfield" forIndexPath:indexPath];
+        cell.textField.hint = NSLocalizedString(@"Task Title", nil);
+        cell.textField.floatingLabel = YES;
+        return cell;
+        
+    }else if (indexPath.row == 1){
+        TimelineTableViewCell *cell = (TimelineTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"idTimelineCell" forIndexPath:indexPath];
+        return cell;
+        
+    }else if (indexPath.row == 2 || indexPath.row == 3){
+        cell = (CustomCell *)[tableView dequeueReusableCellWithIdentifier:@"idCellSwitch" forIndexPath:indexPath];
+        cell.SwitchLabel.text = NSLocalizedString(@"Reminder", nil);
+        return cell;
+        
+    }else if (indexPath.row == 4){
+        cell = (CustomCell *)[tableView dequeueReusableCellWithIdentifier:@"idValuePicker" forIndexPath:indexPath];
+        cell.SwitchLabel.text = NSLocalizedString(@"Important", nil);
+        return cell;
+        
+    }else{
+        return cell;
+    }
 }
 
 #pragma mark - CustomCell Delegate
@@ -343,11 +176,7 @@
     [formate setDateFormat:@"dd/MM/yyyy hh:mm"];
     NSString *dateString = [formate stringFromDate:selectedDate];
     NSLog(@"%@", dateString);
-    if ([self.sender isEqualToString:@"project"]) {
-        [[[cellDescriptors objectAtIndex:0] objectAtIndex:2] setValue:dateString forKey:@"primaryTitle"];
-    }else{
-        [[[cellDescriptors objectAtIndex:0] objectAtIndex:2] setValue:dateString forKey:@"primaryTitle"];
-    }
+    
     
     [self.table reloadData];
     
@@ -355,47 +184,38 @@
 }
 
 -(void)textFieldChanged:(NSString *)newText withCell:(CustomCell *)parentCell{
-    
-    NSIndexPath *parentCellIndex = [self.table indexPathForCell:parentCell];
-    if (parentCellIndex.row == 1) {
-        [[[cellDescriptors objectAtIndex:0] objectAtIndex:0] setValue:newText forKey:@"primaryTitle"];
-        title = newText;
-    }
-    else if ([self.sender isEqualToString:@"project"] && parentCellIndex.row == 5){
-        [[[cellDescriptors objectAtIndex:0] objectAtIndex:4] setValue:newText forKey:@"primaryTitle"];
-        title = newText;
-    }
-    else{
-        subTitle = newText;
-    }
+
     [self.table reloadData];
-    NSLog(@"new text %@", newText);
 }
 
 -(void)switchHasChanged:(BOOL)isOn{
     
     NSString *bo = isOn? @"Yes" : @"No";
-    [[[cellDescriptors objectAtIndex:0] objectAtIndex:6] setValue:bo forKey:@"primaryTitle"];
+    
     self.reminder = [NSNumber numberWithBool:isOn];
+}
+
+-(void)pickerViewValueSelected:(NSUInteger)value{
+    
 }
 
 #pragma mark - Life Cycle
 
 -(void)viewDidAppear:(BOOL)animated{
-    
-    visibleRowsPerSection = [NSMutableArray array];
-    //self.ref = [[FIRDatabase database] reference];
-    FBHelper = [[FirebaseHelper alloc] init];
-    [self setUpView];
-    [self loadCellDiscriptors];
+
     self.table.hidden = NO;
     [super viewDidAppear:YES];
 }
 
 - (void)viewDidLoad {
 
-    NSLog(@"%@", delegate);
     [super viewDidLoad];
+    [self.table registerNib:[UINib nibWithNibName:@"TextfieldCell" bundle:nil] forCellReuseIdentifier:@"idCellTextfield"];
+    [self.table registerNib:[UINib nibWithNibName:@"DatePickerCell" bundle:nil] forCellReuseIdentifier:@"idCellDatePicker"];
+    [self.table registerNib:[UINib nibWithNibName:@"SwitchCell" bundle:nil] forCellReuseIdentifier:@"idCellSwitch"];
+    [self.table registerNib:[UINib nibWithNibName:@"ValuePickerCell" bundle:nil] forCellReuseIdentifier:@"idValuePicker"];
+    [self.table registerNib:[UINib nibWithNibName:@"TimelineTableViewCell" bundle:nil] forCellReuseIdentifier:@"idTimelineCell"];
+    
     // Do any additional setup after loading the view.
 }
 
