@@ -2,27 +2,27 @@ PODS:
   - EAIntroView (2.8.3):
     - EARestrictedScrollView (~> 1.1.0)
   - EARestrictedScrollView (1.1.0)
-  - Firebase/Analytics (3.3.0):
-    - FirebaseAnalytics (= 3.2.1)
-  - Firebase/Auth (3.3.0):
-    - Firebase/Analytics (= 3.3.0)
-    - FirebaseAuth (= 3.0.3)
-  - Firebase/Database (3.3.0):
-    - Firebase/Analytics (= 3.3.0)
+  - Firebase/Analytics (3.4.0):
+    - FirebaseAnalytics (~> 3.3)
+  - Firebase/Auth (3.4.0):
+    - Firebase/Analytics
+    - FirebaseAuth (= 3.0.4)
+  - Firebase/Database (3.4.0):
+    - Firebase/Analytics
     - FirebaseDatabase (= 3.0.2)
-  - FirebaseAnalytics (3.2.1):
+  - FirebaseAnalytics (3.3.0):
     - FirebaseInstanceID (~> 1.0)
     - GoogleInterchangeUtilities (~> 1.2)
     - GoogleSymbolUtilities (~> 1.1)
-    - GoogleUtilities (~> 1.3)
-  - FirebaseAuth (3.0.3):
+    - GoogleUtilities (~> 1.2)
+  - FirebaseAuth (3.0.4):
     - FirebaseAnalytics (~> 3.2)
     - GoogleNetworkingUtilities (~> 1.2)
     - GoogleParsingUtilities (~> 1.1)
-    - GoogleUtilities (~> 1.3)
+    - GoogleUtilities (~> 1.2)
   - FirebaseDatabase (3.0.2):
     - FirebaseAnalytics (~> 3.2)
-  - FirebaseInstanceID (1.0.7)
+  - FirebaseInstanceID (1.0.8)
   - FrameAccessor (2.0)
   - GoogleInterchangeUtilities (1.2.1):
     - GoogleSymbolUtilities (~> 1.0)
@@ -34,7 +34,7 @@ PODS:
   - GoogleSymbolUtilities (1.1.1)
   - GoogleUtilities (1.3.1):
     - GoogleSymbolUtilities (~> 1.0)
-  - JTCalendar (2.1.7)
+  - JTCalendar (2.1.9)
   - Masonry (1.0.1)
   - MKFoundationKit (1.3.0):
     - MKFoundationKit/AutoDescribe (= 1.3.0)
@@ -94,18 +94,18 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   EAIntroView: e948c83e642f30010d427e643c18a6f2b529afed
   EARestrictedScrollView: b0c2a3f92fb2610bb44d71c5e4893777c89e45ef
-  Firebase: 6250071f0e2440a5c4c67b8cb6b868f868237ac3
-  FirebaseAnalytics: 0fd6532cb2c3d03cd5cf26ad295ccb091efd3104
-  FirebaseAuth: 5efddc3fae47042b73585f083f956462be4f5b8e
+  Firebase: 754562547af419cc2f4b15247fee419081924bc2
+  FirebaseAnalytics: 228be2991cb28efb96cdafc4d62f64680e615c69
+  FirebaseAuth: 26fd291c3b552fc9658420b867520d5ae080421c
   FirebaseDatabase: 59bea2e7dfd81b3b8b2f8e396caf1a52c2ced6f7
-  FirebaseInstanceID: a9d923f3d0b6fbf9fac89310860357aaadc34be5
+  FirebaseInstanceID: ba1e640935235e5fac39dfa816fe7660e72e1a8a
   FrameAccessor: 443a13e58e23a10ff22180da0897b28c3f6abf66
   GoogleInterchangeUtilities: def8415a862effc67d549d5b5b0b9c7a2f97d4de
   GoogleNetworkingUtilities: 3e83269048cfb498dc7ec83ab36813360965c74f
   GoogleParsingUtilities: 30b3896f9ee167dc78747f013d3de157ced1cadf
   GoogleSymbolUtilities: 33117db1b5f290c6fbf259585e4885b4c84b98d7
   GoogleUtilities: 56c5ac05b7aa5dc417a1bb85221a9516e04d7032
-  JTCalendar: bc7f3086a4df02aa2e02ac4d505ef888cc2283a0
+  JTCalendar: beb2f4c1b639bf6880f680b4858227acf83a049c
   Masonry: a1a931a0d08870ed8ae415a2ea5ea68ebcac77df
   MKFoundationKit: 26afe1cf63d4982a937d555537ca1a3fb50a9c77
   Realm: 9d5c46a4d7d27958530a8dfc58f63a99e5c2cba3

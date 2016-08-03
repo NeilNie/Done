@@ -15,6 +15,7 @@
 #import "Events.h"
 #import "EventsHelper.h"
 #import "FirebaseHelper.h"
+#import "TimelineTableViewCell.h"
 
 @import FirebaseDatabase;
 @import FirebaseAuth;
@@ -30,20 +31,17 @@
 @interface CreateNewVC : UIViewController <WCSessionDelegate, UITableViewDelegate, UITableViewDataSource, CustomCellDelegates>{
     
     NSArray *array;
-    NSMutableArray *cellDescriptors;
-    NSMutableArray *visibleRowsPerSection;
     
     NSString *title;
     NSString *subTitle;
     NSDate *date;
     NSString *location;
-    
-    FirebaseHelper *FBHelper;
+
 }
 @property __strong NSNumber* reminder;
 @property (strong, nonatomic) NSString *sender;
 @property (strong, nonatomic) Projects *addedToProject;
 @property (nonatomic, assign) id <CreateNewDelegate> delegate;
 @property (weak, nonatomic) IBOutlet UITableView *table;
-@property (strong, nonatomic) FIRDatabaseReference *ref;
+
 @end

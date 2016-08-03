@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11173.2" systemVersion="16A270f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11143.2"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="idTimelineCell" id="KGk-i7-Jjw" customClass="TimelineTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <frame key="frameInset" width="320" height="299"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="acH-wS-jwy">
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Trs-fO-MCp">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                    </collectionView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="06/05 12:29PM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DJc-V2-h8g">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="pjW-A0-J7O"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="yPM-qJ-gpy">
+                        <constraints>
+                            <constraint firstAttribute="width" id="DCn-e6-tGn"/>
+                        </constraints>
+                        <date key="date" timeIntervalSinceReferenceDate="491884206.85915798">
+                            <!--2016-08-03 02:30:06 +0000-->
+                        </date>
+                    </datePicker>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="DJc-V2-h8g" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="3iU-nm-tYJ"/>
+                    <constraint firstItem="yPM-qJ-gpy" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="Vw9-Wp-t5U"/>
+                    <constraint firstItem="yPM-qJ-gpy" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="a47-yl-WlQ"/>
+                    <constraint firstItem="acH-wS-jwy" firstAttribute="top" secondItem="DJc-V2-h8g" secondAttribute="bottom" constant="8" id="flg-Iq-Wpa"/>
+                    <constraint firstItem="acH-wS-jwy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="ivG-2B-Iyl"/>
+                    <constraint firstItem="DJc-V2-h8g" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="oGI-uH-JzS"/>
+                    <constraint firstItem="DJc-V2-h8g" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="p69-62-qfw"/>
+                    <constraint firstItem="yPM-qJ-gpy" firstAttribute="leading" secondItem="acH-wS-jwy" secondAttribute="trailing" constant="-8" id="wgI-ns-nTz"/>
+                    <constraint firstAttribute="bottom" secondItem="acH-wS-jwy" secondAttribute="bottom" constant="8" id="wpd-Tt-tdL"/>
+                    <constraint firstItem="yPM-qJ-gpy" firstAttribute="top" secondItem="DJc-V2-h8g" secondAttribute="bottom" constant="8" id="zvL-8o-dxB"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="collectionView" destination="acH-wS-jwy" id="fh8-Ke-tPg"/>
+                <outlet property="datePicker" destination="yPM-qJ-gpy" id="UCi-IF-IFa"/>
+                <outlet property="pickerWidth" destination="DCn-e6-tGn" id="UUK-Pw-H89"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

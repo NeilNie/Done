@@ -133,15 +133,15 @@
 		28D48AE01D06E52000723DA5 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 28D48ADF1D06E52000723DA5 /* menu.png */; };
 		28D844C71D3A5DE8004B7570 /* circle-nf.png in Resources */ = {isa = PBXBuildFile; fileRef = 28D844C61D3A5DE8004B7570 /* circle-nf.png */; };
 		28D9AF271CDA9F6800E50C10 /* AnalysisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D9AF261CDA9F6800E50C10 /* AnalysisViewController.m */; };
+		28DA92CE1D52159200ACC2B3 /* ValuePickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28DA92CD1D52159200ACC2B3 /* ValuePickerCell.xib */; };
+		28DED30E1D50BFE10046E55A /* TimelineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 28DED30C1D50BFE10046E55A /* TimelineTableViewCell.m */; };
+		28DED30F1D50BFE10046E55A /* TimelineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28DED30D1D50BFE10046E55A /* TimelineTableViewCell.xib */; };
 		28E53D021CD04662002DB55F /* Projects.m in Sources */ = {isa = PBXBuildFile; fileRef = 28E53D011CD04662002DB55F /* Projects.m */; };
 		28E5430F1CFDEEC000FD05A7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 28E543111CFDEEC000FD05A7 /* Localizable.strings */; };
 		28E757091CE4BD2E00707380 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28E757081CE4BD2E00707380 /* Media.xcassets */; };
-		28EB3A6E1CEA8E2D00A5BCED /* DatePickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28EB3A671CEA8E2D00A5BCED /* DatePickerCell.xib */; };
 		28EB3A6F1CEA8E2D00A5BCED /* EventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28EB3A681CEA8E2D00A5BCED /* EventTableViewCell.xib */; };
-		28EB3A701CEA8E2D00A5BCED /* NormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28EB3A691CEA8E2D00A5BCED /* NormalCell.xib */; };
 		28EB3A721CEA8E2D00A5BCED /* SwitchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28EB3A6B1CEA8E2D00A5BCED /* SwitchCell.xib */; };
 		28EB3A731CEA8E2D00A5BCED /* TextfieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28EB3A6C1CEA8E2D00A5BCED /* TextfieldCell.xib */; };
-		28EB3A741CEA8E2D00A5BCED /* ValuePickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28EB3A6D1CEA8E2D00A5BCED /* ValuePickerCell.xib */; };
 		28EB3AA11CEA8EBE00A5BCED /* appWScr-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 28EB3A861CEA8EBE00A5BCED /* appWScr-3.png */; };
 		28EB3AA41CEA8EBE00A5BCED /* bg1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 28EB3A891CEA8EBE00A5BCED /* bg1@2x.png */; };
 		28EB3AA51CEA8EBE00A5BCED /* bg3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 28EB3A8A1CEA8EBE00A5BCED /* bg3@2x.png */; };
@@ -164,7 +164,6 @@
 		28F896FC1CEBFB5500C546EC /* done-icon copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 28F896FA1CEBFB5500C546EC /* done-icon copy.png */; };
 		28F896FD1CEBFB5500C546EC /* done-icon copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 28F896FA1CEBFB5500C546EC /* done-icon copy.png */; };
 		28FDBD611CFB968700EFEB59 /* FirebaseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 28FDBD601CFB968700EFEB59 /* FirebaseHelper.m */; };
-		28FE7D031D065CB200855009 /* LeftViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 28FE7D011D065CB200855009 /* LeftViewCell.m */; };
 		9CEEF1370D088F60D48BC164 /* libPods-Done!.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 73CF65656B7124C7E976D33D /* libPods-Done!.a */; };
 		9CF1839CAA7AE4AA60648E2F /* libPods-Done Widget.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F533992DD0B9B0E597A583C4 /* libPods-Done Widget.a */; };
 		A931ADA412206B3B6C964EBF /* libPods-Done! Apple Watch Extension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58D101F026E7EA98FF50A53C /* libPods-Done! Apple Watch Extension.a */; };
@@ -481,16 +480,17 @@
 		28D9AF301CDACF3700E50C10 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		28D9AF321CDACF3F00E50C10 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		28D9AF341CDACF4E00E50C10 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		28DA92CD1D52159200ACC2B3 /* ValuePickerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ValuePickerCell.xib; sourceTree = "<group>"; };
+		28DED30B1D50BFE10046E55A /* TimelineTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimelineTableViewCell.h; sourceTree = "<group>"; };
+		28DED30C1D50BFE10046E55A /* TimelineTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimelineTableViewCell.m; sourceTree = "<group>"; };
+		28DED30D1D50BFE10046E55A /* TimelineTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimelineTableViewCell.xib; sourceTree = "<group>"; };
 		28E53D001CD04662002DB55F /* Projects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Projects.h; sourceTree = "<group>"; };
 		28E53D011CD04662002DB55F /* Projects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Projects.m; sourceTree = "<group>"; };
 		28E543101CFDEEC000FD05A7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		28E757081CE4BD2E00707380 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
-		28EB3A671CEA8E2D00A5BCED /* DatePickerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DatePickerCell.xib; path = Views/DatePickerCell.xib; sourceTree = "<group>"; };
 		28EB3A681CEA8E2D00A5BCED /* EventTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EventTableViewCell.xib; path = Views/EventTableViewCell.xib; sourceTree = "<group>"; };
-		28EB3A691CEA8E2D00A5BCED /* NormalCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NormalCell.xib; path = Views/NormalCell.xib; sourceTree = "<group>"; };
 		28EB3A6B1CEA8E2D00A5BCED /* SwitchCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SwitchCell.xib; path = Views/SwitchCell.xib; sourceTree = "<group>"; };
 		28EB3A6C1CEA8E2D00A5BCED /* TextfieldCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TextfieldCell.xib; path = Views/TextfieldCell.xib; sourceTree = "<group>"; };
-		28EB3A6D1CEA8E2D00A5BCED /* ValuePickerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ValuePickerCell.xib; path = Views/ValuePickerCell.xib; sourceTree = "<group>"; };
 		28EB3A861CEA8EBE00A5BCED /* appWScr-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appWScr-3.png"; sourceTree = "<group>"; };
 		28EB3A891CEA8EBE00A5BCED /* bg1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg1@2x.png"; sourceTree = "<group>"; };
 		28EB3A8A1CEA8EBE00A5BCED /* bg3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg3@2x.png"; sourceTree = "<group>"; };
@@ -512,8 +512,6 @@
 		28F896FA1CEBFB5500C546EC /* done-icon copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "done-icon copy.png"; sourceTree = "<group>"; };
 		28FDBD5F1CFB968700EFEB59 /* FirebaseHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirebaseHelper.h; sourceTree = "<group>"; };
 		28FDBD601CFB968700EFEB59 /* FirebaseHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirebaseHelper.m; sourceTree = "<group>"; };
-		28FE7D001D065CB200855009 /* LeftViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftViewCell.h; sourceTree = "<group>"; };
-		28FE7D011D065CB200855009 /* LeftViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftViewCell.m; sourceTree = "<group>"; };
 		4F2DC1E672D94AAE239BF1C9 /* Pods-Done! Apple Watch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Done! Apple Watch Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-Done! Apple Watch Extension/Pods-Done! Apple Watch Extension.release.xcconfig"; sourceTree = "<group>"; };
 		54EF6EB6570BDEC6F8FFBC6F /* Pods-Done!.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Done!.release.xcconfig"; path = "Pods/Target Support Files/Pods-Done!/Pods-Done!.release.xcconfig"; sourceTree = "<group>"; };
 		58D101F026E7EA98FF50A53C /* libPods-Done! Apple Watch Extension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Done! Apple Watch Extension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -752,14 +750,13 @@
 			isa = PBXGroup;
 			children = (
 				287125C51D3C548300F1C791 /* Main.storyboard */,
-				28EB3A671CEA8E2D00A5BCED /* DatePickerCell.xib */,
+				28DED30D1D50BFE10046E55A /* TimelineTableViewCell.xib */,
 				28EB3A681CEA8E2D00A5BCED /* EventTableViewCell.xib */,
-				28EB3A691CEA8E2D00A5BCED /* NormalCell.xib */,
 				284A641A1D0FA953009A348A /* addEventCell.xib */,
 				28EB3A6B1CEA8E2D00A5BCED /* SwitchCell.xib */,
 				28EB3A6C1CEA8E2D00A5BCED /* TextfieldCell.xib */,
-				28EB3A6D1CEA8E2D00A5BCED /* ValuePickerCell.xib */,
 				280523BA1D3FE0F800D0EA0C /* GraphTableViewCell.xib */,
+				28DA92CD1D52159200ACC2B3 /* ValuePickerCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -899,10 +896,10 @@
 		284CFBB41D13684B00BFDCBE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				28DED30B1D50BFE10046E55A /* TimelineTableViewCell.h */,
+				28DED30C1D50BFE10046E55A /* TimelineTableViewCell.m */,
 				280523BC1D3FE10C00D0EA0C /* GraphTableViewCell.h */,
 				280523BD1D3FE10C00D0EA0C /* GraphTableViewCell.m */,
-				28FE7D001D065CB200855009 /* LeftViewCell.h */,
-				28FE7D011D065CB200855009 /* LeftViewCell.m */,
 				286C08CF1D0FACEC0077F91F /* addEventCell.h */,
 				286C08D01D0FACEC0077F91F /* addEventCell.m */,
 				28006A111CC6B41900583D69 /* CustomCell.h */,
@@ -1309,12 +1306,12 @@
 				28F176B11D3976B300DCE3E1 /* circled_down_filled.png in Resources */,
 				0002893B1CF10D9F005CEA17 /* GoogleService-Info.plist in Resources */,
 				28EB3AA81CEA8EBE00A5BCED /* circle-f.png in Resources */,
+				28DED30F1D50BFE10046E55A /* TimelineTableViewCell.xib in Resources */,
 				28F176B31D3984DC00DCE3E1 /* circle-nf.png in Resources */,
-				28EB3A6E1CEA8E2D00A5BCED /* DatePickerCell.xib in Resources */,
 				28EB3AAF1CEA8EBE00A5BCED /* screen_shot_2.png in Resources */,
 				289873601CF3BE8B00A283C1 /* button_outline.png in Resources */,
 				28E5430F1CFDEEC000FD05A7 /* Localizable.strings in Resources */,
-				28EB3A701CEA8E2D00A5BCED /* NormalCell.xib in Resources */,
+				28DA92CE1D52159200ACC2B3 /* ValuePickerCell.xib in Resources */,
 				005F07971CFA245F00BEA06B /* export.png in Resources */,
 				287125C31D3C548300F1C791 /* Main.storyboard in Resources */,
 				2898735E1CF3ABA600A283C1 /* colorBackground.jpg in Resources */,
@@ -1326,7 +1323,6 @@
 				28D48AE01D06E52000723DA5 /* menu.png in Resources */,
 				28EB3AAA1CEA8EBE00A5BCED /* done-icon.png in Resources */,
 				284A641B1D0FA953009A348A /* addEventCell.xib in Resources */,
-				28EB3A741CEA8E2D00A5BCED /* ValuePickerCell.xib in Resources */,
 				28EB3AB01CEA8EBE00A5BCED /* screen_shot_3.png in Resources */,
 				0060835B1CC4007500A344F1 /* LaunchScreen.storyboard in Resources */,
 				289873621CF3E1C300A283C1 /* button_selected.png in Resources */,
@@ -1542,6 +1538,7 @@
 				28B7ACA11CE0AB2E007B3662 /* MDDeviceHelper.m in Sources */,
 				280523AF1D3FA3DC00D0EA0C /* PNGenericChart.m in Sources */,
 				280EFD951CE2C17500C31E46 /* MSCurrentTimeGridline.m in Sources */,
+				28DED30E1D50BFE10046E55A /* TimelineTableViewCell.m in Sources */,
 				280523B31D3FA3DC00D0EA0C /* PNPieChart.m in Sources */,
 				28B7ACA41CE0AB2E007B3662 /* UIColorHelper.m in Sources */,
 				286C08D11D0FACEC0077F91F /* addEventCell.m in Sources */,
@@ -1562,7 +1559,6 @@
 				006083501CC4007500A344F1 /* AppDelegate.m in Sources */,
 				28B7ACB11CE0AB2E007B3662 /* MDTextField.m in Sources */,
 				285475FE1D147AD500069310 /* EventManager.m in Sources */,
-				28FE7D031D065CB200855009 /* LeftViewCell.m in Sources */,
 				28AD9C521D4037F200156A29 /* GKBarGraph.m in Sources */,
 				280EFD9A1CE2C17500C31E46 /* MSTimeRowHeader.m in Sources */,
 				280523B71D3FA3DC00D0EA0C /* PNScatterChart.m in Sources */,
@@ -1937,7 +1933,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Done Widget/Done Widget.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Done Widget/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yongyang.done.Done-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1952,7 +1948,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Done Widget/Done Widget.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Done Widget/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yongyang.done.Done-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -8,7 +8,10 @@
 
 #import "CustomCell.h"
 
-@interface CustomDatePickerCell : CustomCell
+@interface CustomDatePickerCell : UITableViewCell
+
+@property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
+@property (retain, nonatomic) id delegate;
 
 @end
 
