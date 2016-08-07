@@ -156,16 +156,6 @@
     [self setReminder:[[NSDate date] dateByAddingTimeInterval:5 * 60] withText:cell.textfield.text];
 }
 
-#pragma mark - CreateNew Delegate
-
--(void)addProject:(Projects *)project{
-    
-    RLMRealm *realm = [RLMRealm defaultRealm];
-    [realm beginWriteTransaction];
-    [realm addObject:project];
-    [realm commitWriteTransaction];
-}
-
 #pragma mark - Private
 
 -(void)markImportant:(EventTableViewCell *)cell{
@@ -215,13 +205,24 @@
 
 -(void)addNewProject{
     
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UINavigationController *view = [storyboard instantiateViewControllerWithIdentifier:@"createNew"];
-    ((CreateNewVC *)view.topViewController).delegate = self;
-    ((CreateNewVC *)view.topViewController).sender = @"project";
-    dispatch_async(dispatch_get_main_queue(), ^ {
-        [self presentViewController:view animated:YES completion:nil];
-    });
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"New Project"
+                                                                    message:@"Create a title for this project"
+                                                             preferredStyle:UIAlertControllerStyleAlert];
+    [alert addTextFieldWithConfigurationHandler:nil];
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"Add" style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action) {
+                                                              if (((UITextField *)[alert.textFields objectAtIndex:0]).text) {
+                                                                  RLMRealm *realm = [RLMRealm defaultRealm];
+                                                                  [realm beginWriteTransaction];
+                                                                  Projects *project = [[Projects alloc] init];
+                                                                  project.title = ((UITextField *)[alert.textFields objectAtIndex:0]).text;
+                                                                  [realm addObject:project];
+                                                                  [realm commitWriteTransaction];
+                                                                  [alert dismissViewControllerAnimated:YES completion:nil];
+                                                              }
+                                                          }];
+    [alert addAction:defaultAction];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 -(void)editProjects{

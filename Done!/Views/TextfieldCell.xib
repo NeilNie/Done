@@ -12,7 +12,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="55"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="G9y-wU-J5M" id="hD2-cC-J80">
-                <frame key="frameInset" width="320" height="54"/>
+                <frame key="frameInset" width="320" height="54.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hZ8-0o-DSu" customClass="MDTextField">
@@ -24,14 +24,15 @@
                                 <color key="value" red="0.18772074580192566" green="0.51381963491439819" blue="0.9836958646774292" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="singleLine" value="YES"/>
+                            <userDefinedRuntimeAttribute type="string" keyPath="hint" value="Task Title"/>
                         </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
                 <constraints>
                     <constraint firstItem="hZ8-0o-DSu" firstAttribute="top" secondItem="hD2-cC-J80" secondAttribute="topMargin" id="8tm-dy-Bux"/>
-                    <constraint firstItem="hZ8-0o-DSu" firstAttribute="leading" secondItem="hD2-cC-J80" secondAttribute="leadingMargin" id="f8i-OH-Div"/>
-                    <constraint firstItem="hZ8-0o-DSu" firstAttribute="bottom" secondItem="hD2-cC-J80" secondAttribute="bottomMargin" constant="-8" id="pIo-0W-27o"/>
-                    <constraint firstItem="hZ8-0o-DSu" firstAttribute="trailing" secondItem="hD2-cC-J80" secondAttribute="trailingMargin" id="q1N-mq-WJU"/>
+                    <constraint firstItem="hZ8-0o-DSu" firstAttribute="leading" secondItem="hD2-cC-J80" secondAttribute="leadingMargin" constant="4" id="f8i-OH-Div"/>
+                    <constraint firstItem="hZ8-0o-DSu" firstAttribute="bottom" secondItem="hD2-cC-J80" secondAttribute="bottomMargin" constant="17" id="pIo-0W-27o"/>
+                    <constraint firstItem="hZ8-0o-DSu" firstAttribute="trailing" secondItem="hD2-cC-J80" secondAttribute="trailingMargin" constant="-4" id="q1N-mq-WJU"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

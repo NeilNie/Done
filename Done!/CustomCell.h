@@ -28,6 +28,6 @@
 
 -(void)switchHasChanged:(BOOL)isOn;
 -(void)textFieldChanged:(NSString *)newText withCell:(CustomCell *)parentCell;
--(void)pickerViewValueSelected:(NSUInteger)value;
+-(void)pickerViewValueSelected:(NSString *)title;
 
 @end

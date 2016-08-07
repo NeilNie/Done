@@ -33,12 +33,7 @@
             notification.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber] + 1;
             [[UIApplication sharedApplication] scheduleLocalNotification:notification];
         }
-        
-        if ([self.sender isEqualToString:@"project"]){
-            Projects *p = [EventsHelper createProjectWithDate:date title:title];
-            [delegate addProject:p];
-            [self.navigationController popViewControllerAnimated:YES];
-        }else if (self.addedToProject != nil){
+        if (self.addedToProject != nil){
             
             RLMRealm *realm = [RLMRealm defaultRealm];
             [realm beginWriteTransaction];
@@ -97,6 +92,21 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+-(NSMutableArray *)getPickerViewData{
+    
+    RLMResults *result = [Projects allObjects];
+    NSMutableArray *Rarray = [NSMutableArray array];
+    
+    for (int i = 0; i < result.count; i ++) {
+        Projects *project = [result objectAtIndex:i];
+        [Rarray addObject:project.title];
+    }
+    if (result.count == 0) {
+        [Rarray addObject:@"No Project"];
+    }
+    return Rarray;
+}
+
 #pragma mark - UITableView Delegate
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -129,7 +139,7 @@
             return 55;
             break;
         case 4:
-            return 100;
+            return 110;
             break;
             
         default:
@@ -145,7 +155,6 @@
     
     if (indexPath.row == 0) {
         cell = (CustomCell *)[tableView dequeueReusableCellWithIdentifier:@"idCellTextfield" forIndexPath:indexPath];
-        cell.textField.hint = NSLocalizedString(@"Task Title", nil);
         cell.textField.floatingLabel = YES;
         return cell;
         
@@ -153,14 +162,19 @@
         TimelineTableViewCell *cell = (TimelineTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"idTimelineCell" forIndexPath:indexPath];
         return cell;
         
-    }else if (indexPath.row == 2 || indexPath.row == 3){
+    }else if (indexPath.row == 2){
         cell = (CustomCell *)[tableView dequeueReusableCellWithIdentifier:@"idCellSwitch" forIndexPath:indexPath];
         cell.SwitchLabel.text = NSLocalizedString(@"Reminder", nil);
         return cell;
         
-    }else if (indexPath.row == 4){
-        cell = (CustomCell *)[tableView dequeueReusableCellWithIdentifier:@"idValuePicker" forIndexPath:indexPath];
+    }else if (indexPath.row == 3){
+        cell = (CustomCell *)[tableView dequeueReusableCellWithIdentifier:@"idCellSwitch" forIndexPath:indexPath];
         cell.SwitchLabel.text = NSLocalizedString(@"Important", nil);
+        return cell;
+    }
+    else if (indexPath.row == 4){
+        cell = (CustomCell *)[tableView dequeueReusableCellWithIdentifier:@"idValuePicker" forIndexPath:indexPath];
+        cell.pickerViewData = [self getPickerViewData];
         return cell;
         
     }else{
@@ -190,12 +204,12 @@
 
 -(void)switchHasChanged:(BOOL)isOn{
     
-    NSString *bo = isOn? @"Yes" : @"No";
-    
-    self.reminder = [NSNumber numberWithBool:isOn];
+//    NSString *bo = isOn? @"Yes" : @"No";
+//    
+//    self.reminder = [NSNumber numberWithBool:isOn];
 }
 
--(void)pickerViewValueSelected:(NSUInteger)value{
+-(void)pickerViewValueSelected:(NSString *)title{
     
 }
 

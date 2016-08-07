@@ -24,8 +24,6 @@
 
 @optional
 -(void)addNewEventToProject:(Events *)event;
-@required
--(void)addProject:(Projects *)project;
 @end
 
 @interface CreateNewVC : UIViewController <WCSessionDelegate, UITableViewDelegate, UITableViewDataSource, CustomCellDelegates>{

@@ -30,7 +30,7 @@ NSString * const MSCSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdenti
 {
     MSEventCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:MSCSEventCellReuseIdentifier forIndexPath:indexPath];
     if (indexPath.row != collectionViewArray.count) {
-        cell.eventColor = [UIColor lightGrayColor];
+        [cell setEventColor:[UIColor colorWithRed:204.0/255.0 green:204.0/255.0 blue:204.0/255.0 alpha:0.65]];
         cell.event = [collectionViewArray objectAtIndex:indexPath.row];
     }
     return cell;
@@ -46,10 +46,9 @@ NSString * const MSCSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdenti
         
         NSDate *startOfDay = [[NSCalendar currentCalendar] startOfDayForDate:day];
         NSDate *startOfCurrentDay = [[NSCalendar currentCalendar] startOfDayForDate:currentDay];
-        
         dayColumnHeader.day = day;
         dayColumnHeader.currentDay = [startOfDay isEqualToDate:startOfCurrentDay];
-        
+        dayColumnHeader.hidden = YES;
         view = dayColumnHeader;
     } else if (kind == MSCollectionElementKindTimeRowHeader) {
         MSTimeRowHeader *timeRowHeader = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:MSCSTimeRowHeaderReuseIdentifier forIndexPath:indexPath];
@@ -63,7 +62,7 @@ NSString * const MSCSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdenti
 
 - (NSDate *)collectionView:(UICollectionView *)collectionView layout:(MSCollectionViewCalendarLayout *)collectionViewCalendarLayout dayForSection:(NSInteger)section
 {
-    return [EventsHelper currentDateLocalTimeZone];
+    return [NSDate date];
 }
 
 - (NSDate *)collectionView:(UICollectionView *)collectionView layout:(MSCollectionViewCalendarLayout *)collectionViewCalendarLayout startTimeForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -83,7 +82,7 @@ NSString * const MSCSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdenti
 }
 
 - (NSDate *)currentTimeComponentsForCollectionView:(UICollectionView *)collectionView layout:(MSCollectionViewCalendarLayout *)collectionViewCalendarLayout{
-    return [EventsHelper currentDateLocalTimeZone];
+    return [NSDate date];
 }
 
 -(void)setUpCollectionView{
@@ -92,9 +91,7 @@ NSString * const MSCSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdenti
     [self.collectionView registerClass:MSEventCell.class forCellWithReuseIdentifier:MSCSEventCellReuseIdentifier];
     [self.collectionView registerClass:MSDayColumnHeader.class forSupplementaryViewOfKind:MSCollectionElementKindDayColumnHeader withReuseIdentifier:MSCSDayColumnHeaderReuseIdentifier];
     [self.collectionView registerClass:MSTimeRowHeader.class forSupplementaryViewOfKind:MSCollectionElementKindTimeRowHeader withReuseIdentifier:MSCSTimeRowHeaderReuseIdentifier];
-    
-    //self.collectionViewCalendarLayout.sectionWidth = self.layoutSectionWidth;
-    
+
     self.collectionViewCalendarLayout = [[MSCollectionViewCalendarLayout alloc] init];
     self.collectionViewCalendarLayout.delegate = self;
     [self.collectionView setCollectionViewLayout:self.collectionViewCalendarLayout];
@@ -104,9 +101,6 @@ NSString * const MSCSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdenti
     [self.collectionViewCalendarLayout registerClass:MSGridline.class forDecorationViewOfKind:MSCollectionElementKindVerticalGridline];
     [self.collectionViewCalendarLayout registerClass:MSGridline.class forDecorationViewOfKind:MSCollectionElementKindHorizontalGridline];
     [self.collectionViewCalendarLayout registerClass:MSTimeRowHeaderBackground.class forDecorationViewOfKind:MSCollectionElementKindTimeRowHeaderBackground];
-    
-    [self.collectionViewCalendarLayout scrollCollectionViewToClosetSectionToCurrentTimeAnimated:NO];
-    
     [self.collectionView reloadData];
 }
 
@@ -131,6 +125,8 @@ NSString * const MSCSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdenti
             [events addObject:event];
         }
     }
+    
+    [events addObjectsFromArray:[EventsHelper findTodayNotCompletedEvents:[Events allObjects]]];
     return events;
 }
 
@@ -154,6 +150,9 @@ NSString * const MSCSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdenti
 #pragma mark - Life Cycle
 
 - (void)awakeFromNib {
+    
+    collectionViewArray = [self setUpEventArray];
+    [self setUpCollectionView];
     [super awakeFromNib];
     // Initialization code
 }

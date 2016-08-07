@@ -16,7 +16,6 @@
 @property (nonatomic, weak) Events *event;
 
 @property (nonatomic, strong) UIColor *eventColor;
-@property (nonatomic, strong) UIColor *textColor;
 @property (nonatomic, strong) UILabel *title;
 @property (nonatomic, strong) UILabel *location;
 

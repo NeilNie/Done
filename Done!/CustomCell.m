@@ -13,10 +13,10 @@
 @synthesize delegate;
 
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
-    [self.delegate pickerViewValueSelected:row];
+    [self.delegate pickerViewValueSelected:[self.pickerViewData objectAtIndex:component]];
 }
 -(CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component{
-    return 25.0;
+    return 28.0;
 }
 
 -(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{

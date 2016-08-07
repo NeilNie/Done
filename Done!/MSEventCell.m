@@ -40,21 +40,13 @@
         
         self.title = [UILabel new];
         self.title.numberOfLines = 0;
+        self.title.textColor = [UIColor whiteColor];
         self.title.backgroundColor = [UIColor clearColor];
-        if (self.textColor) {
-            self.title.textColor = self.textColor;
-        }else{
-            self.title.textColor = [UIColor whiteColor];
-        }
         [self.contentView addSubview:self.title];
         
         self.location = [UILabel new];
         self.location.numberOfLines = 0;
-        if (self.textColor) {
-            self.location.textColor = self.textColor;
-        }else{
-            self.location.textColor = [UIColor whiteColor];
-        }
+        self.location.textColor = [UIColor whiteColor];
         self.location.backgroundColor = [UIColor clearColor];
         [self.contentView addSubview:self.location];
         
@@ -85,6 +77,11 @@
         }];
     }
     return self;
+}
+
+-(void)setEventColor:(UIColor *)eventColor{
+    _eventColor = eventColor;
+    [self updateColors];
 }
 
 #pragma mark - UICollectionViewCell
@@ -122,14 +119,14 @@
 
 - (void)updateColors
 {
-    if (self.eventColor) {
+    if (self.eventColor != nil) {
         self.contentView.backgroundColor = self.eventColor;
     }else{
         self.contentView.backgroundColor = [self backgroundColorHighlighted:self.selected];
     }
     self.borderView.backgroundColor = [self borderColor];
-    self.title.textColor = [self textColorHighlighted:self.selected];
-    self.location.textColor = [self textColorHighlighted:self.selected];
+    self.title.textColor = [UIColor whiteColor];
+    self.location.textColor = [UIColor whiteColor];
 }
 
 - (NSDictionary *)titleAttributesHighlighted:(BOOL)highlighted
