@@ -23,7 +23,7 @@
         
     }else{
         
-        if (self.reminder == [NSNumber numberWithBool:YES]) {
+        if (reminder == [NSNumber numberWithBool:YES]) {
             UILocalNotification *notification = [[UILocalNotification alloc] init];
             notification.fireDate = date;
             notification.alertTitle = NSLocalizedString(@"You have a new reminder", nil);
@@ -38,6 +38,7 @@
             RLMRealm *realm = [RLMRealm defaultRealm];
             [realm beginWriteTransaction];
             Events *event = [EventsHelper createEventWithDate:date title:title otherInfo:nil];
+            event.important = important.boolValue;
             [self.addedToProject.events addObject:event];
             [realm commitWriteTransaction];
             [self.navigationController popViewControllerAnimated:YES];
@@ -109,11 +110,6 @@
 
 #pragma mark - UITableView Delegate
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-
-}
-
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
     return 5;
@@ -130,7 +126,7 @@
             return 55;
             break;
         case 1:
-            return 250;
+            return 300;
             break;
         case 2:
             return 55;
@@ -139,7 +135,7 @@
             return 55;
             break;
         case 4:
-            return 110;
+            return 130;
             break;
             
         default:
@@ -151,30 +147,34 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
 
     CustomCell *cell = [[CustomCell alloc] init];
-    cell.delegate = self;
     
     if (indexPath.row == 0) {
         cell = (CustomCell *)[tableView dequeueReusableCellWithIdentifier:@"idCellTextfield" forIndexPath:indexPath];
         cell.textField.floatingLabel = YES;
+        cell.delegate = self;
         return cell;
         
     }else if (indexPath.row == 1){
         TimelineTableViewCell *cell = (TimelineTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"idTimelineCell" forIndexPath:indexPath];
+        cell.delegate = self;
         return cell;
         
     }else if (indexPath.row == 2){
         cell = (CustomCell *)[tableView dequeueReusableCellWithIdentifier:@"idCellSwitch" forIndexPath:indexPath];
         cell.SwitchLabel.text = NSLocalizedString(@"Reminder", nil);
+        cell.delegate = self;
         return cell;
         
     }else if (indexPath.row == 3){
         cell = (CustomCell *)[tableView dequeueReusableCellWithIdentifier:@"idCellSwitch" forIndexPath:indexPath];
         cell.SwitchLabel.text = NSLocalizedString(@"Important", nil);
+        cell.delegate = self;
         return cell;
     }
     else if (indexPath.row == 4){
         cell = (CustomCell *)[tableView dequeueReusableCellWithIdentifier:@"idValuePicker" forIndexPath:indexPath];
         cell.pickerViewData = [self getPickerViewData];
+        cell.delegate = self;
         return cell;
         
     }else{
@@ -186,31 +186,27 @@
 
 -(void)dateWasSelected:(NSDate *)selectedDate{
     
-    NSDateFormatter *formate = [[NSDateFormatter alloc] init];
-    [formate setDateFormat:@"dd/MM/yyyy hh:mm"];
-    NSString *dateString = [formate stringFromDate:selectedDate];
-    NSLog(@"%@", dateString);
-    
-    
-    [self.table reloadData];
-    
     date = selectedDate;
 }
 
 -(void)textFieldChanged:(NSString *)newText withCell:(CustomCell *)parentCell{
 
+    title = newText;
     [self.table reloadData];
 }
 
--(void)switchHasChanged:(BOOL)isOn{
+-(void)switchHasChanged:(BOOL)isOn atCell:(CustomCell *)cell{
     
-//    NSString *bo = isOn? @"Yes" : @"No";
-//    
-//    self.reminder = [NSNumber numberWithBool:isOn];
+    NSIndexPath *index = [self.table indexPathForCell:cell];
+    if (index.row == 2) {
+        reminder = [NSNumber numberWithBool:YES];
+    }else{
+        important = [NSNumber numberWithBool:YES];
+    }
 }
 
--(void)pickerViewValueSelected:(NSString *)title{
-    
+-(void)pickerViewValueSelected:(NSString *)string{
+    self.addedToProject = [EventsHelper findProjectWithName:string];
 }
 
 #pragma mark - Life Cycle

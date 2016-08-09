@@ -27,6 +27,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Events.h"
 
 extern NSString * const MSCollectionElementKindTimeRowHeader;
 extern NSString * const MSCollectionElementKindDayColumnHeader;

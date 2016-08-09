@@ -205,11 +205,11 @@
 
 -(void)addNewProject{
     
-    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"New Project"
-                                                                    message:@"Create a title for this project"
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"New Project", nil)
+                                                                    message:NSLocalizedString(@"Create a title for this project", nil)
                                                              preferredStyle:UIAlertControllerStyleAlert];
     [alert addTextFieldWithConfigurationHandler:nil];
-    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"Add" style:UIAlertActionStyleDefault
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Add", nil) style:UIAlertActionStyleDefault
                                                           handler:^(UIAlertAction * action) {
                                                               if (((UITextField *)[alert.textFields objectAtIndex:0]).text) {
                                                                   RLMRealm *realm = [RLMRealm defaultRealm];

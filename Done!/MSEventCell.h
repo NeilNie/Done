@@ -18,5 +18,12 @@
 @property (nonatomic, strong) UIColor *eventColor;
 @property (nonatomic, strong) UILabel *title;
 @property (nonatomic, strong) UILabel *location;
+@property (nonatomic, retain) id delegate;
+
+@end
+
+@protocol MSEventCellDelegate <NSObject>
+
+- (void)collectionViewCell:(MSEventCell *)collectionViewCell didSelectEvent:(Events *)event;
 
 @end

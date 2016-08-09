@@ -14,6 +14,8 @@
 		0020F72A1CD584A900F47CEE /* QBPopupMenuItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0020F7221CD584A900F47CEE /* QBPopupMenuItemView.m */; };
 		0020F72B1CD584A900F47CEE /* QBPopupMenuOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0020F7241CD584A900F47CEE /* QBPopupMenuOverlayView.m */; };
 		0020F72C1CD584A900F47CEE /* QBPopupMenuPagenatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0020F7261CD584A900F47CEE /* QBPopupMenuPagenatorView.m */; };
+		003A9CB41D57ECAB00271737 /* DoneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 003A9CB31D57ECAB00271737 /* DoneTests.m */; };
+		003A9CC21D57ECB800271737 /* DoneUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 003A9CC11D57ECB800271737 /* DoneUITests.m */; };
 		005F07971CFA245F00BEA06B /* export.png in Resources */ = {isa = PBXBuildFile; fileRef = 005F07961CFA245F00BEA06B /* export.png */; };
 		0060834D1CC4007500A344F1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0060834C1CC4007500A344F1 /* main.m */; };
 		006083501CC4007500A344F1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0060834F1CC4007500A344F1 /* AppDelegate.m */; };
@@ -171,6 +173,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		003A9CB61D57ECAB00271737 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 006083401CC4007500A344F1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 006083471CC4007500A344F1;
+			remoteInfo = "Done!";
+		};
+		003A9CC41D57ECB800271737 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 006083401CC4007500A344F1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 006083471CC4007500A344F1;
+			remoteInfo = "Done!";
+		};
 		0083154F1CDE8FDB003E706D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 006083401CC4007500A344F1 /* Project object */;
@@ -244,6 +260,12 @@
 		0020F7241CD584A900F47CEE /* QBPopupMenuOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBPopupMenuOverlayView.m; sourceTree = "<group>"; };
 		0020F7251CD584A900F47CEE /* QBPopupMenuPagenatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBPopupMenuPagenatorView.h; sourceTree = "<group>"; };
 		0020F7261CD584A900F47CEE /* QBPopupMenuPagenatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBPopupMenuPagenatorView.m; sourceTree = "<group>"; };
+		003A9CB11D57ECAB00271737 /* DoneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DoneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		003A9CB31D57ECAB00271737 /* DoneTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DoneTests.m; sourceTree = "<group>"; };
+		003A9CB51D57ECAB00271737 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		003A9CBF1D57ECB800271737 /* DoneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DoneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		003A9CC11D57ECB800271737 /* DoneUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DoneUITests.m; sourceTree = "<group>"; };
+		003A9CC31D57ECB800271737 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		005F07961CFA245F00BEA06B /* export.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = export.png; sourceTree = "<group>"; };
 		006083481CC4007500A344F1 /* Done!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Done!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0060834C1CC4007500A344F1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -525,6 +547,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		003A9CAE1D57ECAB00271737 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		003A9CBC1D57ECB800271737 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		006083451CC4007500A344F1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -587,6 +623,24 @@
 			name = "QBPopup Menu";
 			sourceTree = "<group>";
 		};
+		003A9CB21D57ECAB00271737 /* DoneTests */ = {
+			isa = PBXGroup;
+			children = (
+				003A9CB31D57ECAB00271737 /* DoneTests.m */,
+				003A9CB51D57ECAB00271737 /* Info.plist */,
+			);
+			path = DoneTests;
+			sourceTree = "<group>";
+		};
+		003A9CC01D57ECB800271737 /* DoneUITests */ = {
+			isa = PBXGroup;
+			children = (
+				003A9CC11D57ECB800271737 /* DoneUITests.m */,
+				003A9CC31D57ECB800271737 /* Info.plist */,
+			);
+			path = DoneUITests;
+			sourceTree = "<group>";
+		};
 		0060833F1CC4007500A344F1 = {
 			isa = PBXGroup;
 			children = (
@@ -597,6 +651,8 @@
 				00FA9E221CE902BE00E977D0 /* Done Widget */,
 				2820EAA51D380F73007A9178 /* DoneTests */,
 				2820EAB31D380F8A007A9178 /* DoneUITests */,
+				003A9CB21D57ECAB00271737 /* DoneTests */,
+				003A9CC01D57ECB800271737 /* DoneUITests */,
 				006083491CC4007500A344F1 /* Products */,
 				E6E9915F888699DBBD0F4075 /* Frameworks */,
 				B74423AB2838B07D2C52E67F /* Pods */,
@@ -610,6 +666,8 @@
 				008315411CDE8FDB003E706D /* Done! Apple Watch.app */,
 				0083154D1CDE8FDB003E706D /* Done! Apple Watch Extension.appex */,
 				00FA9E201CE902BE00E977D0 /* Done Widget.appex */,
+				003A9CB11D57ECAB00271737 /* DoneTests.xctest */,
+				003A9CBF1D57ECB800271737 /* DoneUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1139,6 +1197,42 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		003A9CB01D57ECAB00271737 /* DoneTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 003A9CBA1D57ECAB00271737 /* Build configuration list for PBXNativeTarget "DoneTests" */;
+			buildPhases = (
+				003A9CAD1D57ECAB00271737 /* Sources */,
+				003A9CAE1D57ECAB00271737 /* Frameworks */,
+				003A9CAF1D57ECAB00271737 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				003A9CB71D57ECAB00271737 /* PBXTargetDependency */,
+			);
+			name = DoneTests;
+			productName = DoneTests;
+			productReference = 003A9CB11D57ECAB00271737 /* DoneTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		003A9CBE1D57ECB800271737 /* DoneUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 003A9CC61D57ECB800271737 /* Build configuration list for PBXNativeTarget "DoneUITests" */;
+			buildPhases = (
+				003A9CBB1D57ECB800271737 /* Sources */,
+				003A9CBC1D57ECB800271737 /* Frameworks */,
+				003A9CBD1D57ECB800271737 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				003A9CC51D57ECB800271737 /* PBXTargetDependency */,
+			);
+			name = DoneUITests;
+			productName = DoneUITests;
+			productReference = 003A9CBF1D57ECB800271737 /* DoneUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		006083471CC4007500A344F1 /* Done! */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 006083751CC4007500A344F1 /* Build configuration list for PBXNativeTarget "Done!" */;
@@ -1239,6 +1333,18 @@
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Yongyang Nie";
 				TargetAttributes = {
+					003A9CB01D57ECAB00271737 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 8NZ8K5GNH8;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 006083471CC4007500A344F1;
+					};
+					003A9CBE1D57ECB800271737 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 8NZ8K5GNH8;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 006083471CC4007500A344F1;
+					};
 					006083471CC4007500A344F1 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 8NZ8K5GNH8;
@@ -1294,11 +1400,27 @@
 				008315401CDE8FDB003E706D /* Done! Apple Watch */,
 				0083154C1CDE8FDB003E706D /* Done! Apple Watch Extension */,
 				00FA9E1F1CE902BE00E977D0 /* Done Widget */,
+				003A9CB01D57ECAB00271737 /* DoneTests */,
+				003A9CBE1D57ECB800271737 /* DoneUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		003A9CAF1D57ECAB00271737 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		003A9CBD1D57ECB800271737 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		006083461CC4007500A344F1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1649,6 +1771,22 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		003A9CAD1D57ECAB00271737 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				003A9CB41D57ECAB00271737 /* DoneTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		003A9CBB1D57ECB800271737 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				003A9CC21D57ECB800271737 /* DoneUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		006083441CC4007500A344F1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1773,6 +1911,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		003A9CB71D57ECAB00271737 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 006083471CC4007500A344F1 /* Done! */;
+			targetProxy = 003A9CB61D57ECAB00271737 /* PBXContainerItemProxy */;
+		};
+		003A9CC51D57ECB800271737 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 006083471CC4007500A344F1 /* Done! */;
+			targetProxy = 003A9CC41D57ECB800271737 /* PBXContainerItemProxy */;
+		};
 		008315501CDE8FDB003E706D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 0083154C1CDE8FDB003E706D /* Done! Apple Watch Extension */;
@@ -1851,6 +1999,68 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		003A9CB81D57ECAB00271737 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				DEVELOPMENT_TEAM = 8NZ8K5GNH8;
+				INFOPLIST_FILE = DoneTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yongyang.DoneTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Done!.app/Done!";
+			};
+			name = Debug;
+		};
+		003A9CB91D57ECAB00271737 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				DEVELOPMENT_TEAM = 8NZ8K5GNH8;
+				INFOPLIST_FILE = DoneTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yongyang.DoneTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Done!.app/Done!";
+			};
+			name = Release;
+		};
+		003A9CC71D57ECB800271737 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				DEVELOPMENT_TEAM = 8NZ8K5GNH8;
+				INFOPLIST_FILE = DoneUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yongyang.DoneUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Done!";
+			};
+			name = Debug;
+		};
+		003A9CC81D57ECB800271737 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				DEVELOPMENT_TEAM = 8NZ8K5GNH8;
+				INFOPLIST_FILE = DoneUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yongyang.DoneUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Done!";
+			};
+			name = Release;
+		};
 		006083731CC4007500A344F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -2111,6 +2321,22 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		003A9CBA1D57ECAB00271737 /* Build configuration list for PBXNativeTarget "DoneTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				003A9CB81D57ECAB00271737 /* Debug */,
+				003A9CB91D57ECAB00271737 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		003A9CC61D57ECB800271737 /* Build configuration list for PBXNativeTarget "DoneUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				003A9CC71D57ECB800271737 /* Debug */,
+				003A9CC81D57ECB800271737 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		006083431CC4007500A344F1 /* Build configuration list for PBXProject "Done!" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

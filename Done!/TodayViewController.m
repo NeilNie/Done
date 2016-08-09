@@ -153,6 +153,7 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
         [self.graphView reset];
         [self setUpGraphData];
     });
+    [self.collectionView reloadData];
     [self setUpUserInterface];
 }
 
@@ -399,7 +400,7 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
 }
 
 -(void)viewDidAppear:(BOOL)animated{
-
+    
     [self setUpUserInterface];
     [self.collectionViewCalendarLayout scrollCollectionViewToClosetSectionToCurrentTimeAnimated:YES];
     [super viewDidAppear:YES];

@@ -30,10 +30,10 @@
     return 1;
 }
 
--(IBAction)switchHasChanged:(BOOL)isOn{
+-(IBAction)SwitchChanged:(BOOL)isOn{
     
     if (delegate != nil) {
-        [delegate switchHasChanged:!_Switch.isOn];
+        [delegate switchHasChanged:!_Switch.isOn atCell:self];
     }
 }
 
@@ -43,7 +43,6 @@
     
     if (delegate != nil) {
         [delegate textFieldChanged:textField.text withCell:self];
-        NSLog(@"Textfield return called");
     }
     return YES;
 }
@@ -51,6 +50,7 @@
 - (void)awakeFromNib {
 
     _textField.delegate = self;
+    [self.delegate pickerViewValueSelected:[self.pickerViewData objectAtIndex:0]];
     [super awakeFromNib];
     // Initialization code
 }

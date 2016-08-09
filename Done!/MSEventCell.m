@@ -20,6 +20,8 @@
 
 @implementation MSEventCell
 
+@synthesize delegate;
+
 #pragma mark - UIView
 
 - (id)initWithFrame:(CGRect)frame
@@ -89,6 +91,7 @@
 - (void)setSelected:(BOOL)selected
 {
     if (selected && (self.selected != selected)) {
+        [delegate collectionViewCell:self didSelectEvent:self.event];
         [UIView animateWithDuration:0.1 animations:^{
             self.transform = CGAffineTransformMakeScale(1.025, 1.025);
             self.layer.shadowOpacity = 0.2;
@@ -97,6 +100,7 @@
                 self.transform = CGAffineTransformIdentity;
             }];
         }];
+        
     } else if (selected) {
         self.layer.shadowOpacity = 0.2;
     } else {

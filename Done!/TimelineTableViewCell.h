@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <UIColor+HexString.h>
 #import "Events.h"
 #import "Projects.h"
 #import "EventsHelper.h"
@@ -23,13 +24,16 @@
 #import "MSCurrentTimeIndicator.h"
 #import "MSCurrentTimeGridline.h"
 
-@interface TimelineTableViewCell : UITableViewCell <MSCollectionViewDelegateCalendarLayout>{
+@interface TimelineTableViewCell : UITableViewCell <MSCollectionViewDelegateCalendarLayout, MSEventCellDelegate>{
     NSArray *collectionViewArray;
 }
 
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *pickerWidth;
+@property (weak, nonatomic) IBOutlet UIButton *setButton;
+
 @property (nonatomic, strong) MSCollectionViewCalendarLayout *collectionViewCalendarLayout;
 @property (nonatomic, readonly) CGFloat layoutSectionWidth;
 @property (nonatomic, retain) id delegate;
