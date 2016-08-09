@@ -29,10 +29,14 @@ NSString * const MSCSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdenti
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     MSEventCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:MSCSEventCellReuseIdentifier forIndexPath:indexPath];
-    if (indexPath.row != collectionViewArray.count) {
-        cell.eventColor = [UIColor lightGrayColor];
-        cell.event = [collectionViewArray objectAtIndex:indexPath.row];
+    Events *currentEvent = [collectionViewArray objectAtIndex:indexPath.row];
+    if (![currentEvent.title isEqualToString:@"Free time"]) {
+        [cell setEventColor:[UIColor colorWithRed:230.0/255.0 green:230.0/255.0 blue:230.0/255.0 alpha:0.65]];
+    }else{
+        [cell setEventColor:[UIColor colorWithRed:91.0/255.0 green:175.0/255.0 blue:236.0/255.0 alpha:0.2]];
     }
+    cell.event = [collectionViewArray objectAtIndex:indexPath.row];
+    cell.delegate = self;
     return cell;
 }
 
@@ -46,10 +50,9 @@ NSString * const MSCSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdenti
         
         NSDate *startOfDay = [[NSCalendar currentCalendar] startOfDayForDate:day];
         NSDate *startOfCurrentDay = [[NSCalendar currentCalendar] startOfDayForDate:currentDay];
-        
         dayColumnHeader.day = day;
         dayColumnHeader.currentDay = [startOfDay isEqualToDate:startOfCurrentDay];
-        
+        dayColumnHeader.hidden = YES;
         view = dayColumnHeader;
     } else if (kind == MSCollectionElementKindTimeRowHeader) {
         MSTimeRowHeader *timeRowHeader = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:MSCSTimeRowHeaderReuseIdentifier forIndexPath:indexPath];
@@ -63,7 +66,7 @@ NSString * const MSCSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdenti
 
 - (NSDate *)collectionView:(UICollectionView *)collectionView layout:(MSCollectionViewCalendarLayout *)collectionViewCalendarLayout dayForSection:(NSInteger)section
 {
-    return [EventsHelper currentDateLocalTimeZone];
+    return [NSDate date];
 }
 
 - (NSDate *)collectionView:(UICollectionView *)collectionView layout:(MSCollectionViewCalendarLayout *)collectionViewCalendarLayout startTimeForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -83,7 +86,7 @@ NSString * const MSCSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdenti
 }
 
 - (NSDate *)currentTimeComponentsForCollectionView:(UICollectionView *)collectionView layout:(MSCollectionViewCalendarLayout *)collectionViewCalendarLayout{
-    return [EventsHelper currentDateLocalTimeZone];
+    return [NSDate date];
 }
 
 -(void)setUpCollectionView{
@@ -92,9 +95,7 @@ NSString * const MSCSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdenti
     [self.collectionView registerClass:MSEventCell.class forCellWithReuseIdentifier:MSCSEventCellReuseIdentifier];
     [self.collectionView registerClass:MSDayColumnHeader.class forSupplementaryViewOfKind:MSCollectionElementKindDayColumnHeader withReuseIdentifier:MSCSDayColumnHeaderReuseIdentifier];
     [self.collectionView registerClass:MSTimeRowHeader.class forSupplementaryViewOfKind:MSCollectionElementKindTimeRowHeader withReuseIdentifier:MSCSTimeRowHeaderReuseIdentifier];
-    
-    //self.collectionViewCalendarLayout.sectionWidth = self.layoutSectionWidth;
-    
+
     self.collectionViewCalendarLayout = [[MSCollectionViewCalendarLayout alloc] init];
     self.collectionViewCalendarLayout.delegate = self;
     [self.collectionView setCollectionViewLayout:self.collectionViewCalendarLayout];
@@ -104,13 +105,38 @@ NSString * const MSCSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdenti
     [self.collectionViewCalendarLayout registerClass:MSGridline.class forDecorationViewOfKind:MSCollectionElementKindVerticalGridline];
     [self.collectionViewCalendarLayout registerClass:MSGridline.class forDecorationViewOfKind:MSCollectionElementKindHorizontalGridline];
     [self.collectionViewCalendarLayout registerClass:MSTimeRowHeaderBackground.class forDecorationViewOfKind:MSCollectionElementKindTimeRowHeaderBackground];
-    
-    [self.collectionViewCalendarLayout scrollCollectionViewToClosetSectionToCurrentTimeAnimated:NO];
-    
     [self.collectionView reloadData];
 }
 
+#pragma mark - MSEventCell Delegate
+
+-(void)collectionViewCell:(UICollectionViewCell *)collectionViewCell didSelectEvent:(Events *)event{
+    
+    NSDateFormatter *formate = [[NSDateFormatter alloc] init];
+    [formate setDateFormat:@"dd/MM/yyyy hh:mm"];
+    NSString *dateString = [formate stringFromDate:event.date];
+    self.timeLabel.text = dateString;
+    [delegate dateWasSelected:event.date];
+    self.datePicker.date = event.date;
+    
+    [UIView animateWithDuration:0.5 animations:^{
+        self.pickerWidth.constant = self.frame.size.width;
+        [self layoutIfNeeded];
+        [self layoutSubviews];
+    }];
+    self.setButton.hidden = NO;
+}
+
 #pragma mark - Private
+
+-(IBAction)setDate:(id)sender{
+    
+    NSDateFormatter *formate = [[NSDateFormatter alloc] init];
+    [formate setDateFormat:@"dd/MM/yyyy hh:mm"];
+    NSString *dateString = [formate stringFromDate:self.datePicker.date];
+    self.timeLabel.text = dateString;
+    [delegate dateWasSelected:self.datePicker.date];
+}
 
 -(NSArray<Events *> *)setUpEventArray{
     
@@ -131,12 +157,24 @@ NSString * const MSCSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdenti
             [events addObject:event];
         }
     }
+    
+    [events addObjectsFromArray:[EventsHelper findTodayNotCompletedEvents:[Events allObjects]]];
+    [events addObjectsFromArray:[self convertPeriodsToEvents:[[[EventManager alloc] init] freeTimesToday]]];
     return events;
 }
 
-- (IBAction)setDate:(id)sender {
+-(NSMutableArray <Events *> *)convertPeriodsToEvents:(NSArray *)periods{
+    NSMutableArray *returnArray = [NSMutableArray array];
     
-    [delegate dateWasSelected:self.datePicker.date];
+    for (int i = 0; i < periods.count; i++) {
+        NYTimePeriod *period = [periods objectAtIndex:i];
+        Events *event = [[Events alloc] init];
+        event.date = period.startDate;
+        event.endDate = period.endDate;
+        event.title = NSLocalizedString(@"Free time", nil);
+        [returnArray addObject:event];
+    }
+    return returnArray;
 }
 
 - (void)layoutSubviews {
@@ -151,9 +189,39 @@ NSString * const MSCSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdenti
     });
 }
 
+-(void)gestureRecognizersAction:(UISwipeGestureRecognizer *)gesture{
+    
+    if (gesture.direction == UISwipeGestureRecognizerDirectionLeft) {
+        [UIView animateWithDuration:0.5 animations:^{
+            self.pickerWidth.constant = self.frame.size.width;
+        }];
+    }else{
+        [UIView animateWithDuration:0.5 animations:^{
+            self.pickerWidth.constant = 0;
+        }];
+    }
+}
+
 #pragma mark - Life Cycle
 
 - (void)awakeFromNib {
+    
+    NSDateFormatter *formate = [[NSDateFormatter alloc] init];
+    [formate setDateFormat:@"dd/MM/yyyy hh:mm"];
+    NSString *dateString = [formate stringFromDate:[NSDate date]];
+    self.timeLabel.text = dateString;
+    collectionViewArray = [self setUpEventArray];
+    [self setUpCollectionView];
+    self.setButton.hidden = YES;
+    
+    UISwipeGestureRecognizer *RightSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(gestureRecognizersAction:)];
+    RightSwipe.direction = UISwipeGestureRecognizerDirectionRight;
+    UISwipeGestureRecognizer *LeftSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(gestureRecognizersAction:)];
+    LeftSwipe.direction = UISwipeGestureRecognizerDirectionLeft;
+    [self.collectionView addGestureRecognizer:LeftSwipe];
+    [self.collectionView addGestureRecognizer:RightSwipe];
+    [self.collectionViewCalendarLayout scrollCollectionViewToClosetSectionToCurrentTimeAnimated:YES];
+    
     [super awakeFromNib];
     // Initialization code
 }

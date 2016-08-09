@@ -26,8 +26,8 @@
 
 @protocol CustomCellDelegates <NSObject>
 
--(void)switchHasChanged:(BOOL)isOn;
+-(void)switchHasChanged:(BOOL)isOn atCell:(CustomCell *)cell;
 -(void)textFieldChanged:(NSString *)newText withCell:(CustomCell *)parentCell;
--(void)pickerViewValueSelected:(NSUInteger)value;
+-(void)pickerViewValueSelected:(NSString *)string;
 
 @end

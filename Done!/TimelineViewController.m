@@ -180,7 +180,7 @@ NSString * const MSCTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentif
 
 - (NSDate *)collectionView:(UICollectionView *)collectionView layout:(MSCollectionViewCalendarLayout *)collectionViewCalendarLayout dayForSection:(NSInteger)section
 {
-    return [EventsHelper currentDateLocalTimeZone];
+    return [NSDate date];
 }
 
 - (NSDate *)collectionView:(UICollectionView *)collectionView layout:(MSCollectionViewCalendarLayout *)collectionViewCalendarLayout startTimeForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -200,7 +200,7 @@ NSString * const MSCTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentif
 }
 
 - (NSDate *)currentTimeComponentsForCollectionView:(UICollectionView *)collectionView layout:(MSCollectionViewCalendarLayout *)collectionViewCalendarLayout{
-    return [EventsHelper currentDateLocalTimeZone];
+    return [NSDate date];
 }
 
 #pragma mark - Privates

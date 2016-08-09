@@ -23,12 +23,12 @@
 @protocol CreateNewDelegate <NSObject>
 
 @optional
+
 -(void)addNewEventToProject:(Events *)event;
-@required
--(void)addProject:(Projects *)project;
+
 @end
 
-@interface CreateNewVC : UIViewController <WCSessionDelegate, UITableViewDelegate, UITableViewDataSource, CustomCellDelegates>{
+@interface CreateNewVC : UIViewController <WCSessionDelegate, UITableViewDelegate, UITableViewDataSource, CustomCellDelegates, TimelineTableViewCellDelegate>{
     
     NSArray *array;
     
@@ -36,9 +36,10 @@
     NSString *subTitle;
     NSDate *date;
     NSString *location;
+    NSNumber __strong *important;
+    NSNumber __strong *reminder;
 
 }
-@property __strong NSNumber* reminder;
 @property (strong, nonatomic) NSString *sender;
 @property (strong, nonatomic) Projects *addedToProject;
 @property (nonatomic, assign) id <CreateNewDelegate> delegate;

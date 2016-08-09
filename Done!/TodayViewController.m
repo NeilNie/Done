@@ -81,7 +81,7 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
 
 - (NSDate *)collectionView:(UICollectionView *)collectionView layout:(MSCollectionViewCalendarLayout *)collectionViewCalendarLayout dayForSection:(NSInteger)section
 {
-    return [EventsHelper currentDateLocalTimeZone];
+    return [NSDate date];
 }
 
 - (NSDate *)collectionView:(UICollectionView *)collectionView layout:(MSCollectionViewCalendarLayout *)collectionViewCalendarLayout startTimeForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -101,7 +101,7 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
 }
 
 - (NSDate *)currentTimeComponentsForCollectionView:(UICollectionView *)collectionView layout:(MSCollectionViewCalendarLayout *)collectionViewCalendarLayout{
-    return [EventsHelper currentDateLocalTimeZone];
+    return [NSDate date];
 }
 
 #pragma mark - CreateNew Delegate
@@ -153,13 +153,14 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
         [self.graphView reset];
         [self setUpGraphData];
     });
+    [self.collectionView reloadData];
     [self setUpUserInterface];
 }
 
 -(IBAction)addNewEvent:(id)sender{
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UINavigationController *view = [storyboard instantiateViewControllerWithIdentifier:@"createNew"];
+    UINavigationController * __strong view = [storyboard instantiateViewControllerWithIdentifier:@"createNew"];
     ((CreateNewVC *)view.topViewController).delegate = self;
     dispatch_async(dispatch_get_main_queue(), ^ {
         [self presentViewController:view animated:YES completion:nil];
@@ -184,9 +185,6 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     [self.collectionViewCalendarLayout registerClass:MSGridline.class forDecorationViewOfKind:MSCollectionElementKindVerticalGridline];
     [self.collectionViewCalendarLayout registerClass:MSGridline.class forDecorationViewOfKind:MSCollectionElementKindHorizontalGridline];
     [self.collectionViewCalendarLayout registerClass:MSTimeRowHeaderBackground.class forDecorationViewOfKind:MSCollectionElementKindTimeRowHeaderBackground];
-    
-    [self.collectionViewCalendarLayout scrollCollectionViewToClosetSectionToCurrentTimeAnimated:NO];
-    
     [self.collectionView reloadData];
 }
 
@@ -391,12 +389,10 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     [self setUpCollectionView];
     [self updateAuthorizationStatusToAccessEventStore];
     
-    //YOU SHOULDN'T DO THIS. Call the -setUpGraph function in a dispatch block with system low level timer. However, there is no easy workaround. We have to wait until the layout is full loaded and setup before calling -setUpGraph function. 
+    //YOU SHOULDN'T DO THIS. Call the -setUpGraph function in a dispatch block with system low level timer. However, there is no easy workaround. We have to wait until the layout is full loaded and setup before calling -setUpGraph function.
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        
         [self.graphView reset];
         [self setUpGraphData];
-        
     });
     
     [super viewDidLoad];
@@ -404,8 +400,9 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
 }
 
 -(void)viewDidAppear:(BOOL)animated{
-
+    
     [self setUpUserInterface];
+    [self.collectionViewCalendarLayout scrollCollectionViewToClosetSectionToCurrentTimeAnimated:YES];
     [super viewDidAppear:YES];
 }
 

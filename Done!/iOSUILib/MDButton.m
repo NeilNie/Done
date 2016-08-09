@@ -42,9 +42,11 @@
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
-  if (self = [super initWithCoder:aDecoder])
-    [self initLayer];
-  return self;
+    
+    if (self = [super initWithCoder:aDecoder]){
+        [self initLayer];
+    }
+    return self;
 }
 
 - (instancetype)initWithFrame:(CGRect)frame {

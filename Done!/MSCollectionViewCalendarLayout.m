@@ -452,7 +452,7 @@ NSUInteger const MSCollectionMinBackgroundZ = 0.0;
         NSDateComponents *currentDay = [self dayForSection:section];
         NSDateComponents *currentTimeDateComponents = [self currentTimeDateComponents];
         // The current time is within this section's day
-        if ((currentTimeDateComponents.day == currentDay.day) && (currentTimeDateComponents.hour >= earliestHour) && (currentTimeDateComponents.hour < latestHour)) {
+        if ((currentTimeDateComponents.day == currentDay.day) || (currentTimeDateComponents.hour >= earliestHour) || (currentTimeDateComponents.hour < latestHour)) {
             
             // The y value of the current time
             CGFloat timeY = (calendarGridMinY + nearbyintf(((currentTimeDateComponents.hour - earliestHour) * self.hourHeight) + (currentTimeDateComponents.minute * self.minuteHeight)));
@@ -1160,9 +1160,9 @@ NSUInteger const MSCollectionMinBackgroundZ = 0.0;
 
 - (NSInteger)latestHourForSection:(NSInteger)section
 {
-    if (self.cachedLatestHours[@(section)]) {
-        return [self.cachedLatestHours[@(section)] integerValue];
-    }
+//    if (self.cachedLatestHours[@(section)]) {
+//        return [self.cachedLatestHours[@(section)] integerValue];
+//    }
     NSInteger latestHour = NSIntegerMin;
     for (NSInteger item = 0; item < [self.collectionView numberOfItemsInSection:section]; item++) {
         NSIndexPath *itemIndexPath = [NSIndexPath indexPathForItem:item inSection:section];
@@ -1230,9 +1230,9 @@ NSUInteger const MSCollectionMinBackgroundZ = 0.0;
 
 - (NSDateComponents *)currentTimeDateComponents
 {
-    if ([self.cachedCurrentDateComponents objectForKey:@(0)]) {
-        return [self.cachedCurrentDateComponents objectForKey:@(0)];
-    }
+//    if ([self.cachedCurrentDateComponents objectForKey:@(0)]) {
+//        return [self.cachedCurrentDateComponents objectForKey:@(0)];
+//    }
     
     NSDate *date = [self.delegate currentTimeComponentsForCollectionView:self.collectionView layout:self];
     NSDateComponents *currentTime = [[NSCalendar currentCalendar] components:(NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute) fromDate:date];

@@ -13,10 +13,10 @@
 @synthesize delegate;
 
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
-    [self.delegate pickerViewValueSelected:row];
+    [self.delegate pickerViewValueSelected:[self.pickerViewData objectAtIndex:component]];
 }
 -(CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component{
-    return 25.0;
+    return 28.0;
 }
 
 -(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
@@ -30,10 +30,10 @@
     return 1;
 }
 
--(IBAction)switchHasChanged:(BOOL)isOn{
+-(IBAction)SwitchChanged:(BOOL)isOn{
     
     if (delegate != nil) {
-        [delegate switchHasChanged:!_Switch.isOn];
+        [delegate switchHasChanged:!_Switch.isOn atCell:self];
     }
 }
 
@@ -43,7 +43,6 @@
     
     if (delegate != nil) {
         [delegate textFieldChanged:textField.text withCell:self];
-        NSLog(@"Textfield return called");
     }
     return YES;
 }
@@ -51,6 +50,7 @@
 - (void)awakeFromNib {
 
     _textField.delegate = self;
+    [self.delegate pickerViewValueSelected:[self.pickerViewData objectAtIndex:0]];
     [super awakeFromNib];
     // Initialization code
 }

@@ -11,6 +11,7 @@
 #import <EventKitUI/EventKitUI.h>
 #import "NYDate.h"
 #import "NYTimePeriod.h"
+#import "EventsHelper.h"
 
 @interface EventManager : NSObject
 
