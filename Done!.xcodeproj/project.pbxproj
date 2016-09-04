@@ -675,7 +675,7 @@
 		0060834A1CC4007500A344F1 /* Done! */ = {
 			isa = PBXGroup;
 			children = (
-				2802F8241CC5B7BB00C65966 /* Nibs */,
+				2802F8241CC5B7BB00C65966 /* Views */,
 				2827C8DC1D14795700986D9E /* Source */,
 				2802F8231CC5B7B200C65966 /* Classes */,
 				00F48A371CC5195600B94EA4 /* ViewControllers */,
@@ -808,7 +808,7 @@
 			name = Classes;
 			sourceTree = "<group>";
 		};
-		2802F8241CC5B7BB00C65966 /* Nibs */ = {
+		2802F8241CC5B7BB00C65966 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				287125C51D3C548300F1C791 /* Main.storyboard */,
@@ -820,7 +820,7 @@
 				280523BA1D3FE0F800D0EA0C /* GraphTableViewCell.xib */,
 				28DA92CD1D52159200ACC2B3 /* ValuePickerCell.xib */,
 			);
-			name = Nibs;
+			name = Views;
 			sourceTree = "<group>";
 		};
 		280523871D3FA3DC00D0EA0C /* PNChart */ = {
@@ -2328,7 +2328,6 @@
 				003A9CB91D57ECAB00271737 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 		003A9CC61D57ECB800271737 /* Build configuration list for PBXNativeTarget "DoneUITests" */ = {
 			isa = XCConfigurationList;
@@ -2337,7 +2336,6 @@
 				003A9CC81D57ECB800271737 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 		006083431CC4007500A344F1 /* Build configuration list for PBXProject "Done!" */ = {
 			isa = XCConfigurationList;
