@@ -51,6 +51,7 @@
     NewProject.date = date;
     return NewProject;
 }
+
 +(void)deleteEvent:(Events *)event{
     
     RLMRealm *realm = [RLMRealm defaultRealm];
@@ -58,9 +59,11 @@
     [realm deleteObject:event];
     [realm commitWriteTransaction];
 }
+
 +(void)modifyEventValue:(NSString *)value withKey:(NSString *)key{
     
 }
+
 +(NSMutableArray *)convertToArray:(RLMArray *)results{
     
     NSMutableArray *arry = [NSMutableArray array];
@@ -79,6 +82,7 @@
     }
     return arry;
 }
+
 + (NSDateFormatter *)dateFormatter
 {
     static NSDateFormatter *dateFormatter;
@@ -405,4 +409,5 @@
     }
     return returnArray;
 }
+
 @end

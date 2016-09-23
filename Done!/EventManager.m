@@ -37,6 +37,30 @@
     [[NSUserDefaults standardUserDefaults] setValue:[NSNumber numberWithBool:eventsAccessGranted] forKey:@"eventkit_events_access_granted"];
 }
 
+//for display's sake, convert all the EKEvent (local calendar) to event so UIColletionView layout can understand it. Remember in controller implementation append the newly created array to all events.
+
++(NSArray<Events *> *)timePeriodsinTimeline{
+    
+    NSArray *calendarEvents = [[[EventManager alloc] init] getTodayEventCalendars];
+    NSMutableArray <Events *> *events = [NSMutableArray array];
+    
+    NSDateFormatter *formate = [[NSDateFormatter alloc] init];
+    [formate setDateFormat:@"dd"];
+    
+    for (int i = 0; i < calendarEvents.count; i++) {
+        
+        Events *event = [[Events alloc] init];
+        EKEvent *calendar = [calendarEvents objectAtIndex:i];
+        if ([[formate stringFromDate:calendar.startDate] isEqualToString:[formate stringFromDate:calendar.endDate]]) {
+            event.title = calendar.title;
+            event.date = calendar.startDate;
+            event.endDate = calendar.endDate;
+            [events addObject:event];
+        }
+    }
+    return events;
+}
+
 -(NSArray *)getLocalEventCalendars{
     
     NSArray *allCalendars = [self.eventStore calendarsForEntityType:EKEntityTypeEvent];
@@ -81,7 +105,7 @@
     return returnArray;
 }
 
--(NSArray<NYTimePeriod *> *)busyTimesToday{
+-(NSArray<Events *> *)busyTimesToday{
     
     NSMutableArray *eventsToday = [self convertEKEventtoEvents];
     [eventsToday addObjectsFromArray:[EventsHelper findTodayNotCompletedEvents:[Events allObjects]]];
@@ -102,6 +126,7 @@
     NSArray *result = [eventsToday sortedArrayUsingComparator:^NSComparisonResult(Events *event1, Events *event2) {
         return [event1.date compare:event2.date];
     }];
+
     return result;
 }
 

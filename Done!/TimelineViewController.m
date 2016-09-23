@@ -90,6 +90,7 @@ NSString * const MSCTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentif
 }
 
 - (void)swipeableTableViewCell:(SWTableViewCell *)cell didTriggerRightUtilityButtonWithIndex:(NSInteger)index {
+    
     NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
     switch (index) {
         case 0:
@@ -210,7 +211,7 @@ NSString * const MSCTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentif
     if (self.constrs.constant == 45) {
         dispatch_async(dispatch_get_main_queue(), ^{
             [UIView animateWithDuration:0.2 animations:^{
-                self.constrs.constant = 250;
+                self.constrs.constant = 300;
                 [self.view layoutIfNeeded];
                 self.button.transform = CGAffineTransformMakeRotation(2*M_PI_2);
             }];
@@ -224,28 +225,6 @@ NSString * const MSCTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentif
             }];
         });
     }
-}
-
--(NSArray<Events *> *)timePeriodsinTimeline{
-    
-    EventManager *manager = [[EventManager alloc] init];
-    NSArray *calendarEvents = [manager getTodayEventCalendars];
-    NSMutableArray *events = [NSMutableArray array];
-    NSDateFormatter *formate = [[NSDateFormatter alloc] init];
-    [formate setDateFormat:@"dd"];
-    
-    for (int i = 0; i < calendarEvents.count; i++) {
-        Events *event = [[Events alloc] init];
-        EKEvent *calendar = [calendarEvents objectAtIndex:i];
-        if ([[formate stringFromDate:calendar.startDate] isEqualToString:[formate stringFromDate:calendar.endDate]]) {
-            event.title = calendar.title;
-            event.date = calendar.startDate;
-            event.endDate = calendar.endDate;
-            [events addObject:event];
-        }
-    }
-    NSArray *returnArray = [allEvents arrayByAddingObjectsFromArray:events];
-    return returnArray;
 }
 
 -(void)setUpCollectionView{
@@ -275,7 +254,7 @@ NSString * const MSCTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentif
 - (void)viewDidLoad {
     
     allEvents = [EventsHelper findTodayNotCompletedEvents:[Events allObjects]];
-    collectionViewArray = [self timePeriodsinTimeline];
+    collectionViewArray = [EventManager timePeriodsinTimeline];
     [self.tableView registerNib:[UINib nibWithNibName:@"EventTableViewCell" bundle:nil] forCellReuseIdentifier:@"idEventCell"];
     self.tableView.layer.cornerRadius = 20.0f;
     [self setUpCollectionView];

@@ -13,12 +13,10 @@
 
 #import "iOSUILib/MDTabBarViewController.h"
 #import "Events.h"
-#import "AppDelegate.h"
 #import "EventTableViewCell.h"
 #import "CreateNewVC.h"
 #import "EventsHelper.h"
 #import "Projects.h"
-#import "PurchaseViewController.h"
 #import "addEventCell.h"
 #import "iOSUILib/MDButton.h"
 #import "MDDeviceHelper.h"

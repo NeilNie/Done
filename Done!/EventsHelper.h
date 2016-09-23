@@ -10,6 +10,7 @@
 #import <UIKit/UIKit.h>
 #import <Realm/Realm.h>
 #import <WatchConnectivity/WatchConnectivity.h>
+#import "EventManager.h"
 #import "Events.h"
 #import "Projects.h"
 
@@ -81,6 +82,7 @@
 ///Find the most recent event on a day. Parameters: date and realm (RLMArray and RLMResults).
 
 +(Events *)findMostRecentEvent:(NSDate *)date withRealm:(RLMArray *)realm;
+
 +(Events *)findMostRecentEvent:(NSDate *)date withRealmResult:(RLMResults *)realm;
 
 +(NSMutableArray *)findImportantEvents:(NSDate *)date withRealm:(RLMResults *)realm;

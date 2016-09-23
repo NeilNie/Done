@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <EventKit/EventKit.h>
-#import <EventKitUI/EventKitUI.h>
+#import "Events.h"
 #import "NYDate.h"
 #import "NYTimePeriod.h"
 #import "EventsHelper.h"
@@ -20,7 +20,8 @@
 
 -(NSArray *)getLocalEventCalendars;
 -(NSArray *)getTodayEventCalendars;
--(NSMutableArray<NYTimePeriod *> *)busyTimesToday;
+-(NSMutableArray<Events *> *)busyTimesToday;
 -(NSMutableArray<NYTimePeriod *> *)freeTimesToday;
++(NSArray<Events *> *)timePeriodsinTimeline;
 
 @end

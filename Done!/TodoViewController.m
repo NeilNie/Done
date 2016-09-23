@@ -114,6 +114,7 @@
 }
 
 - (void)swipeableTableViewCell:(SWTableViewCell *)cell didTriggerRightUtilityButtonWithIndex:(NSInteger)index {
+    
     NSIndexPath *indexPath = [self.table indexPathForCell:cell];
     switch (index) {
         case 0:

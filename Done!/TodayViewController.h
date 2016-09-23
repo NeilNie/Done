@@ -17,7 +17,6 @@
 #import "EventsHelper.h"
 #import "CreateNewVC.h"
 #import "PurchaseViewController.h"
-#import "GraphKit.h"
 #import "NYDate.h"
 
 #import "MSCollectionViewCalendarLayout.h"
@@ -33,7 +32,7 @@
 
 @import FirebaseAuth;
 
-@interface TodayViewController : UIViewController <MSCollectionViewDelegateCalendarLayout,GKLineGraphDataSource, CreateNewDelegate, UIViewControllerPreviewingDelegate, WCSessionDelegate>{
+@interface TodayViewController : UIViewController <MSCollectionViewDelegateCalendarLayout, CreateNewDelegate, WCSessionDelegate>{
     NSMutableArray *allEvents;
     RLMResults *result;
     NSArray *collectionViewArray;
@@ -43,12 +42,11 @@
 //@property (weak, nonatomic) IBOutlet GADBannerView *banner;
 @property (weak, nonatomic) IBOutlet UILabel *completedLabel;
 
-@property (weak, nonatomic) IBOutlet GKLineGraph *graphView;
 @property (weak, nonatomic) IBOutlet UIView *todayView;
 @property (weak, nonatomic) IBOutlet UIView *masterView;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *contr;
+@property (weak, nonatomic) IBOutlet UITableView *table;
 @property (weak, nonatomic) IBOutlet UILabel *clearLabel;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableContr;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *tlConstr;
 
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *yearLabel;
@@ -59,6 +57,5 @@
 @property (weak, nonatomic) IBOutlet UIButton *userButton;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *todayConstr;
 @property (weak, nonatomic) IBOutlet UIButton *preferenceButton;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *graphConstr;
 
 @end

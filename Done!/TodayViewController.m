@@ -26,14 +26,121 @@ NSString * const MSEventCellReuseIdentifier = @"MSEventCellReuseIdentifier";
 NSString * const MSDayColumnHeaderReuseIdentifier = @"MSDayColumnHeaderReuseIdentifier";
 NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifier";
 
-#pragma mark - UIViewControllerPreviewingDelegate
 
--(void)previewingContext:(id<UIViewControllerPreviewing>)previewingContext commitViewController:(UIViewController *)viewControllerToCommit{
-    
+#pragma mark - UITableView Delegate
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return allEvents.count;
 }
 
--(UIViewController *)previewingContext:(id<UIViewControllerPreviewing>)previewingContext viewControllerForLocation:(CGPoint)location{
-    return nil;
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    return 70;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    EventTableViewCell *cell = (EventTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"idEventCell" forIndexPath:indexPath];
+    cell.leftUtilityButtons = [self leftButtons];
+    cell.rightUtilityButtons = [self rightButtons];
+    
+    Events *event = [allEvents objectAtIndex:indexPath.row];
+    cell.event = event;
+    cell.titleLabel.textColor = [UIColor whiteColor];
+    [cell setUpCell];
+    cell.delegate = self;
+    return cell;
+}
+
+- (NSArray *)rightButtons
+{
+    NSMutableArray *rightUtilityButtons = [NSMutableArray new];
+    [rightUtilityButtons sw_addUtilityButtonWithColor:
+     [UIColor colorWithRed:0.78f green:0.78f blue:0.8f alpha:1.0]
+                                                title:@"Done"];
+    [rightUtilityButtons sw_addUtilityButtonWithColor:
+     [UIColor colorWithRed:1.0f green:0.231f blue:0.188 alpha:1.0f]
+                                                title:@"Delete"];
+    
+    return rightUtilityButtons;
+}
+
+- (NSArray *)leftButtons
+{
+    NSMutableArray *leftUtilityButtons = [NSMutableArray new];
+    
+    [leftUtilityButtons sw_addUtilityButtonWithColor:
+     [UIColor orangeColor] title:@"Important"];
+    [leftUtilityButtons sw_addUtilityButtonWithColor:
+     [UIColor blueColor] title:@"Hide"];;
+    return leftUtilityButtons;
+}
+
+#pragma mark - SWTableViewCell Delegate
+
+- (void)swipeableTableViewCell:(SWTableViewCell *)cell didTriggerLeftUtilityButtonWithIndex:(NSInteger)index {
+    switch (index) {
+        case 0:
+            [self markImportant:(EventTableViewCell *)cell];
+            break;
+        case 1:
+            NSLog(@"clock button was pressed");
+            break;
+        default:
+            break;
+    }
+}
+
+- (void)swipeableTableViewCell:(SWTableViewCell *)cell didTriggerRightUtilityButtonWithIndex:(NSInteger)index {
+    
+    NSIndexPath *indexPath = [self.table indexPathForCell:cell];
+    switch (index) {
+        case 0:
+            [self clickedDone:(EventTableViewCell *)cell];
+            break;
+        case 1:
+            [EventsHelper deleteEvent:[allEvents objectAtIndex:indexPath.row]];
+            [allEvents removeObjectAtIndex:indexPath.row];
+            [self.table deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationTop];
+            if(WCSession.isSupported){
+                NSLog(@"sent request");
+                WCSession *session = [WCSession defaultSession];
+                session.delegate = self;
+                [session activateSession];
+                [session updateApplicationContext:@{@"needSync": @"YES"} error:nil];
+                NSLog(@"updated context");
+            }
+            break;
+        default:
+            break;
+    }
+}
+
+#pragma mark - EventCell Delegate
+
+-(void)markImportant:(EventTableViewCell *)cell{
+    
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    [realm beginWriteTransaction];
+    Events *update = cell.event;
+    update.important = YES;
+    [realm commitWriteTransaction];
+}
+
+-(void)clickedDone:(EventTableViewCell *)cell{
+    
+    NSIndexPath *index = [self.table indexPathForCell:cell];
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    [realm beginWriteTransaction];
+    Events *update = cell.event;
+    update.completed = YES;
+    [realm commitWriteTransaction];
+    allEvents = [EventsHelper findTodayNotCompletedEvents:[Events allObjects]];
+    [self.table deleteRowsAtIndexPaths:@[index] withRowAnimation:UITableViewRowAnimationTop];
 }
 
 
@@ -104,55 +211,16 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     return [NSDate date];
 }
 
-#pragma mark - CreateNew Delegate
-
--(void)addProject:(Projects *)project{
-    
-    RLMRealm *realm = [RLMRealm defaultRealm];
-    [realm beginWriteTransaction];
-    [realm addObject:project];
-    [realm commitWriteTransaction];
-    NSLog(@"new project added %@", project);
-}
-
 #pragma mark - Privates
-
--(NSArray<Events *> *)timePeriodsinTimeline{
-
-    NSArray *calendarEvents = [[[EventManager alloc] init] getTodayEventCalendars];
-    NSMutableArray *events = [NSMutableArray array];
-    NSDateFormatter *formate = [[NSDateFormatter alloc] init];
-    [formate setDateFormat:@"dd"];
-    
-    for (int i = 0; i < calendarEvents.count; i++) {
-        Events *event = [[Events alloc] init];
-        EKEvent *calendar = [calendarEvents objectAtIndex:i];
-        if ([[formate stringFromDate:calendar.startDate] isEqualToString:[formate stringFromDate:calendar.endDate]]) {
-            event.title = calendar.title;
-            event.date = calendar.startDate;
-            event.endDate = calendar.endDate;
-            [events addObject:event];
-        }
-    }
-    NSArray *returnArray = [allEvents arrayByAddingObjectsFromArray:events];
-    return returnArray;
-}
 
 -(IBAction)refreshData:(id)sender{
     
     result = [Events allObjects];
-    collectionViewArray = [self timePeriodsinTimeline];
     allEvents = [EventsHelper findTodayNotCompletedEvents:result];
+    collectionViewArray = [allEvents arrayByAddingObjectsFromArray:[EventManager timePeriodsinTimeline]];
     self.ApplicationDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     [self setUpCollectionView];
     [self setUpview];
-    
-    //YOU SHOULDN'T DO THIS. Call the -setUpGraph function in a dispatch block with system low level timer. However, there is no easy workaround. We have to wait until the layout is full loaded and setup before calling -setUpGraph function.
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        
-        [self.graphView reset];
-        [self setUpGraphData];
-    });
     [self.collectionView reloadData];
     [self setUpUserInterface];
 }
@@ -188,12 +256,6 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     [self.collectionView reloadData];
 }
 
--(void)tapGesture:(UITapGestureRecognizer *)tap{
-    if (_graphView.alpha == 1) {
-        [self performSegueWithIdentifier:@"showGraphUI" sender:nil];
-    }
-}
-
 -(void)setShadowforView:(UIView *)view{
     
     view.layer.cornerRadius = 15;
@@ -202,7 +264,6 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     view.layer.shadowOffset = CGSizeMake(-1.0f, 3.0f);
     view.layer.shadowOpacity = 0.8f;
     view.layer.masksToBounds = NO;
-
 }
 
 -(void)setUpUserInterface{
@@ -232,36 +293,6 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     }
 }
 
-- (void)setUpLineGraph{
-    
-    self.data = [[NSMutableArray alloc] initWithObjects:self.completedData,self.eventNumber, nil];
-    self.graphView.dataSource = self;
-    self.graphView.lineWidth = 3.0;
-    
-    self.graphView.valueLabelCount = 5;
-    [self.graphView draw];
-}
-
--(void)setUpGraphData{
-    
-    self.data = [NSMutableArray array];
-    self.completedData = [NSMutableArray array];
-    self.eventNumber = [NSMutableArray array];
-    
-    RLMResults *events = [Events allObjects];
-    for (int i = 6; i >= 0; i--) {
-        
-        NSDate *date = [NSDate dateWithTimeInterval:i * -(60 * 60 * 24) sinceDate:[EventsHelper currentDateLocalTimeZone]];
-        NSMutableArray *a = [EventsHelper findCompletedEventsRealm:events withDate:date];
-        NSMutableArray *a2 = [EventsHelper findEventsForToday:date withRealm:events];
-        [self.completedData addObject:[NSNumber numberWithInteger:a.count]];
-        [self.eventNumber addObject:[NSNumber numberWithInteger:a2.count]];
-    }
-    [self setUpLineGraph];
-    [self.graphView reset];
-    [self.graphView draw];
-}
-
 - (void)updateAuthorizationStatusToAccessEventStore {
     
     // 2
@@ -273,13 +304,10 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
         case EKAuthorizationStatusRestricted: {
             
             self.ApplicationDelegate.eventManager.eventsAccessGranted = NO;
-            UIAlertController *alertView = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Oh No", ni
-                                                                                                         ) message:NSLocalizedString(@"We have no acess to your calendar", ni
-                                                                                                                          ) preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertController *alertView = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Oh No", nil) message:NSLocalizedString(@"We have no acess to your calendar", nil) preferredStyle:UIAlertControllerStyleAlert];
             [self presentViewController:alertView animated:YES completion:nil];
             break;
         }
-            
             // 4
         case EKAuthorizationStatusAuthorized:
             self.ApplicationDelegate.eventManager.eventsAccessGranted = YES;
@@ -307,14 +335,11 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
 -(void)setUpview{
 
     self.todayConstr.constant = (self.view.frame.size.width - 10) * 3 / 4;
-    if (self.view.bounds.size.width == 320) {
-        self.graphConstr.constant = 135;
-    }
+    
     //set up shadows in view
     [self setShadowforView:self.preferenceButton];
     [self setShadowforView:self.userButton];
     [self setShadowforView:self.todayView];
-    [self setShadowforView:self.graphView];
     [self setShadowforView:self.masterView];
     [self setShadowforView:self.calendarButton];
     [self setShadowforView:self.listButton];
@@ -338,9 +363,7 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
 -(void)setupGestures{
     
     UITapGestureRecognizer *tapTimeline = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapTimeline:)];
-    UITapGestureRecognizer *tapGraph = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGraph:)];
     [self.masterView addGestureRecognizer:tapTimeline];
-    [self.graphView addGestureRecognizer:tapGraph];
 }
 
 -(void)syncWithExtension{
@@ -350,51 +373,12 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     [sharedDefaults synchronize];
 }
 
-#pragma mark - GraphKit Delegate
-
-- (NSInteger)numberOfLines {
-    return [self.data count];
-}
-
-- (UIColor *)colorForLineAtIndex:(NSInteger)index {
-    id colors = @[[UIColor gk_turquoiseColor],
-                  [UIColor gk_orangeColor]
-                  ];
-    return [colors objectAtIndex:index];
-}
-
-- (NSArray *)valuesForLineAtIndex:(NSInteger)index {
-    return [self.data objectAtIndex:index];
-}
-
-- (CFTimeInterval)animationDurationForLineAtIndex:(NSInteger)index {
-    return [[@[@2, @1.5] objectAtIndex:index] doubleValue];
-}
-
-- (NSString *)titleForLineAtIndex:(NSInteger)index {
-    return [self.labels objectAtIndex:index];
-}
-
 #pragma mark - Life Cycle
 
 - (void)viewDidLoad {
     
-    result = [Events allObjects];
-    allEvents = [EventsHelper findTodayNotCompletedEvents:result];
-    collectionViewArray = [self timePeriodsinTimeline];
-    self.ApplicationDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    [self syncWithExtension];
-    [self setUpview];
-    [self setupGestures];
-    [self setUpCollectionView];
+    [self refreshData:nil];
     [self updateAuthorizationStatusToAccessEventStore];
-    
-    //YOU SHOULDN'T DO THIS. Call the -setUpGraph function in a dispatch block with system low level timer. However, there is no easy workaround. We have to wait until the layout is full loaded and setup before calling -setUpGraph function.
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self.graphView reset];
-        [self setUpGraphData];
-    });
-    
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
