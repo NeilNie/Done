@@ -29,9 +29,8 @@
     self = [super initWithFrame:frame];
     if (self) {
         
-        self.layer.rasterizationScale = [[UIScreen mainScreen] scale];
-        self.layer.shouldRasterize = YES;
-        
+//        self.layer.rasterizationScale = [[UIScreen mainScreen] scale];
+//        self.layer.shouldRasterize = YES;
         self.layer.shadowColor = [[UIColor blackColor] CGColor];
         self.layer.shadowOffset = CGSizeMake(0.0, 4.0);
         self.layer.shadowRadius = 5.0;
@@ -77,6 +76,9 @@
             make.right.equalTo(self.mas_right).offset(-contentPadding.right);
             make.bottom.lessThanOrEqualTo(self.mas_bottom).offset(-contentPadding.bottom);
         }];
+        
+        self.contentView.frame = self.bounds;
+        self.contentView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     }
     return self;
 }

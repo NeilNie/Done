@@ -16,7 +16,6 @@
 #import "EventTableViewCell.h"
 #import "EventsHelper.h"
 #import "CreateNewVC.h"
-#import "PurchaseViewController.h"
 #import "NYDate.h"
 
 #import "MSCollectionViewCalendarLayout.h"
@@ -28,7 +27,6 @@
 #import "MSTimeRowHeader.h"
 #import "MSCurrentTimeIndicator.h"
 #import "MSCurrentTimeGridline.h"
-#import "iOSUILib/MDRippleLayer.h"
 
 @import FirebaseAuth;
 
@@ -48,14 +46,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *clearLabel;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *tlConstr;
 
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSMutableArray *buttons;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *yearLabel;
 @property (weak, nonatomic) IBOutlet UILabel *weekLabel;
-@property (weak, nonatomic) IBOutlet UIButton *calendarButton;
-@property (weak, nonatomic) IBOutlet UIButton *addNewButton;
-@property (weak, nonatomic) IBOutlet UIButton *listButton;
-@property (weak, nonatomic) IBOutlet UIButton *userButton;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *todayConstr;
-@property (weak, nonatomic) IBOutlet UIButton *preferenceButton;
 
 @end

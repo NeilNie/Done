@@ -157,6 +157,8 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     MSEventCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:MSEventCellReuseIdentifier forIndexPath:indexPath];
+    cell.contentView.frame = cell.bounds;
+    cell.contentView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     cell.event = [collectionViewArray objectAtIndex:indexPath.row];
     return cell;
 }
@@ -219,10 +221,12 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     allEvents = [EventsHelper findTodayNotCompletedEvents:result];
     collectionViewArray = [allEvents arrayByAddingObjectsFromArray:[EventManager timePeriodsinTimeline]];
     self.ApplicationDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    [self setUpCollectionView];
     [self setUpview];
-    [self.collectionView reloadData];
     [self setUpUserInterface];
+    [self setUpCollectionView];
+    [self.collectionView reloadData];
+    [self.table reloadData];
+    
 }
 
 -(IBAction)addNewEvent:(id)sender{
@@ -236,14 +240,13 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
 }
 
 -(void)setUpCollectionView{
-    
-    self.collectionView.backgroundColor = [UIColor clearColor];
+
     [self.collectionView registerClass:MSEventCell.class forCellWithReuseIdentifier:MSEventCellReuseIdentifier];
     [self.collectionView registerClass:MSDayColumnHeader.class forSupplementaryViewOfKind:MSCollectionElementKindDayColumnHeader withReuseIdentifier:MSDayColumnHeaderReuseIdentifier];
     [self.collectionView registerClass:MSTimeRowHeader.class forSupplementaryViewOfKind:MSCollectionElementKindTimeRowHeader withReuseIdentifier:MSTimeRowHeaderReuseIdentifier];
-    
-    //self.collectionViewCalendarLayout.sectionWidth = self.layoutSectionWidth;
-    
+    self.collectionView.frame = self.collectionView.bounds;
+    self.collectionView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+
     self.collectionViewCalendarLayout = [[MSCollectionViewCalendarLayout alloc] init];
     self.collectionViewCalendarLayout.delegate = self;
     [self.collectionView setCollectionViewLayout:self.collectionViewCalendarLayout];
@@ -282,12 +285,15 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     self.dateLabel.text = [formate stringFromDate:date];
     [formate setDateFormat:@"EEEE"];
     self.weekLabel.text = [formate stringFromDate:[NSDate date]];
+    [self.table reloadData];
     
     //hide or show table
     if (allEvents.count == 0) {
+        self.table.hidden = YES;
         self.collectionView.hidden = YES;
         self.clearLabel.hidden = NO;
     }else{
+        self.table.hidden = NO;
         self.collectionView.hidden = NO;
         self.clearLabel.hidden = YES;
     }
@@ -337,32 +343,26 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     self.todayConstr.constant = (self.view.frame.size.width - 10) * 3 / 4;
     
     //set up shadows in view
-    [self setShadowforView:self.preferenceButton];
-    [self setShadowforView:self.userButton];
+    for (UIButton *view in self.buttons) {
+        [self setShadowforView:view];
+    }
     [self setShadowforView:self.todayView];
     [self setShadowforView:self.masterView];
-    [self setShadowforView:self.calendarButton];
-    [self setShadowforView:self.listButton];
-    [self setShadowforView:self.addNewButton];
+    [self setShadowforView:self.collectionView];
+    self.collectionView.layer.masksToBounds = YES;
     //set up for animation
 }
 
--(void)tapTimeline:(UITapGestureRecognizer *)tap{
+-(void)tapMasterView:(UITapGestureRecognizer *)tap{
     
     dispatch_async(dispatch_get_main_queue(), ^{
-        [self performSegueWithIdentifier:@"showTimeline" sender:nil];
-    });
-}
--(void)tapGraph:(UITapGestureRecognizer *)tap{
-    
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self performSegueWithIdentifier:@"showGraph" sender:nil];
+        [self performSegueWithIdentifier:@"idShowTasks" sender:nil];
     });
 }
 
 -(void)setupGestures{
     
-    UITapGestureRecognizer *tapTimeline = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapTimeline:)];
+    UITapGestureRecognizer *tapTimeline = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapMasterView:)];
     [self.masterView addGestureRecognizer:tapTimeline];
 }
 
@@ -378,6 +378,8 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
 - (void)viewDidLoad {
     
     [self refreshData:nil];
+    [self.table registerNib:[UINib nibWithNibName:@"EventTableViewCell" bundle:nil] forCellReuseIdentifier:@"idEventCell"];
+    [self setupGestures];
     [self updateAuthorizationStatusToAccessEventStore];
     [super viewDidLoad];
     // Do any additional setup after loading the view.

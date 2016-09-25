@@ -43,13 +43,33 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "003A9CB01D57ECAB00271737"
+               BuildableName = "DoneTests.xctest"
+               BlueprintName = "DoneTests"
+               ReferencedContainer = "container:Done!.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "003A9CBE1D57ECB800271737"
+               BuildableName = "DoneUITests.xctest"
+               BlueprintName = "DoneUITests"
+               ReferencedContainer = "container:Done!.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "00FA9E1F1CE902BE00E977D0"
-            BuildableName = "Done Widget.appex"
-            BlueprintName = "Done Widget"
+            BlueprintIdentifier = "006083471CC4007500A344F1"
+            BuildableName = "Done!.app"
+            BlueprintName = "Done!"
             ReferencedContainer = "container:Done!.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

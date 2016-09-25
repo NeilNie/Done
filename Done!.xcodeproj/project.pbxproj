@@ -39,6 +39,7 @@
 		009A022A1CDE9DE200C0B23D /* Row.m in Sources */ = {isa = PBXBuildFile; fileRef = 009A02211CDE9DE200C0B23D /* Row.m */; };
 		00BEC6721CCBC93A008B7862 /* EventsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 00BEC6711CCBC93A008B7862 /* EventsHelper.m */; };
 		00C1977B1CDFE6B100604203 /* TipsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C1977A1CDFE6B100604203 /* TipsViewController.m */; };
+		00C5997D1D974E7F000F7067 /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C5997C1D974E7F000F7067 /* Reveal.framework */; };
 		00D95DEF1CF2006B00DF7736 /* left.png in Resources */ = {isa = PBXBuildFile; fileRef = 00D95DEE1CF2006B00DF7736 /* left.png */; };
 		00F48A301CC5193000B94EA4 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F48A2F1CC5193000B94EA4 /* CalendarViewController.m */; };
 		00F48A331CC5194100B94EA4 /* TodoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F48A321CC5194100B94EA4 /* TodoViewController.m */; };
@@ -50,7 +51,6 @@
 		00FA9E3D1CE90C7900E977D0 /* Events.m in Sources */ = {isa = PBXBuildFile; fileRef = 2802F8211CC5B7AE00C65966 /* Events.m */; };
 		00FA9E3E1CE90C7E00E977D0 /* EventsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 00BEC6711CCBC93A008B7862 /* EventsHelper.m */; };
 		00FA9E3F1CE90C8400E977D0 /* Projects.m in Sources */ = {isa = PBXBuildFile; fileRef = 28E53D011CD04662002DB55F /* Projects.m */; };
-		00FDADF21D56416700DED375 /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00FDADF11D56416700DED375 /* Reveal.framework */; };
 		28006A131CC6B41900583D69 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 28006A121CC6B41900583D69 /* CustomCell.m */; };
 		2802F81F1CC5B78800C65966 /* EventTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2802F81E1CC5B78800C65966 /* EventTableViewCell.m */; };
 		2802F8221CC5B7AE00C65966 /* Events.m in Sources */ = {isa = PBXBuildFile; fileRef = 2802F8211CC5B7AE00C65966 /* Events.m */; };
@@ -304,6 +304,7 @@
 		00BEC6711CCBC93A008B7862 /* EventsHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsHelper.m; sourceTree = "<group>"; };
 		00C197791CDFE6B100604203 /* TipsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TipsViewController.h; sourceTree = "<group>"; };
 		00C1977A1CDFE6B100604203 /* TipsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TipsViewController.m; sourceTree = "<group>"; };
+		00C5997C1D974E7F000F7067 /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
 		00D95DEE1CF2006B00DF7736 /* left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = left.png; sourceTree = "<group>"; };
 		00F48A2E1CC5193000B94EA4 /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
 		00F48A2F1CC5193000B94EA4 /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
@@ -315,7 +316,6 @@
 		00FA9E201CE902BE00E977D0 /* Done Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Done Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		00FA9E271CE902BE00E977D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		00FA9E291CE902BE00E977D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00FDADF11D56416700DED375 /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
 		215A00102AF7A886CFA3C401 /* Pods-Done Widget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Done Widget.release.xcconfig"; path = "Pods/Target Support Files/Pods-Done Widget/Pods-Done Widget.release.xcconfig"; sourceTree = "<group>"; };
 		28006A111CC6B41900583D69 /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
 		28006A121CC6B41900583D69 /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
@@ -571,7 +571,7 @@
 				285475FF1D147AF600069310 /* EventKit.framework in Frameworks */,
 				285476001D147AF600069310 /* EventKitUI.framework in Frameworks */,
 				28F5E53F1CE53BFB00C15FF6 /* Accelerate.framework in Frameworks */,
-				00FDADF21D56416700DED375 /* Reveal.framework in Frameworks */,
+				00C5997D1D974E7F000F7067 /* Reveal.framework in Frameworks */,
 				28F5E53D1CE53BF500C15FF6 /* CoreGraphics.framework in Frameworks */,
 				285431891CE01BE20022F993 /* QuartzCore.framework in Frameworks */,
 				285431871CE01BD80022F993 /* UIKit.framework in Frameworks */,
@@ -647,7 +647,7 @@
 		0060833F1CC4007500A344F1 = {
 			isa = PBXGroup;
 			children = (
-				00FDADF11D56416700DED375 /* Reveal.framework */,
+				00C5997C1D974E7F000F7067 /* Reveal.framework */,
 				0060834A1CC4007500A344F1 /* Done! */,
 				008315421CDE8FDB003E706D /* Done! Apple Watch */,
 				008315511CDE8FDB003E706D /* Done! Apple Watch Extension */,
