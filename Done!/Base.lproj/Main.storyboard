@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2327e" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ci1-LB-qPP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11521.1" systemVersion="16B2327e" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ci1-LB-qPP">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11517.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -44,14 +44,14 @@
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="idSettingCell" textLabel="rHV-g7-oN9" rowHeight="50" style="IBUITableViewCellStyleDefault" id="BWX-9N-XrO">
-                                        <rect key="frame" x="0.0" y="28" width="363" height="50"/>
+                                        <rect key="frame" x="0.0" y="28" width="1000" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BWX-9N-XrO" id="aP6-yV-dkl">
-                                            <frame key="frameInset" width="330" height="49"/>
+                                            <frame key="frameInset" width="818" height="49.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rHV-g7-oN9">
-                                                    <frame key="frameInset" minX="15" width="313" height="49"/>
+                                                    <frame key="frameInset" minX="164" width="654" height="49.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -531,6 +531,7 @@
                         <outlet property="btMore" destination="Ovv-3l-B5h" id="jmD-eO-BdN"/>
                         <outlet property="tabBar" destination="ds1-45-wDd" id="ksV-vE-TmT"/>
                         <outlet property="table" destination="hi4-mY-Say" id="EH8-8M-dPU"/>
+                        <outlet property="tableButtom" destination="BeD-SQ-4dc" id="nbV-9Z-wwu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I5B-iO-FF4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -953,6 +954,13 @@
                                     <constraint firstItem="8ux-JZ-6FR" firstAttribute="top" secondItem="Gld-hN-J1e" secondAttribute="bottom" constant="4" id="zcf-Hd-0ay"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B4H-sZ-dfi">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="VDc-zP-dJD"/>
+                                    <constraint firstAttribute="height" constant="25" id="pdY-UH-sAA"/>
+                                </constraints>
+                                <state key="normal" image="circled_down_filled.png"/>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F1M-gZ-x9h">
                                 <color key="backgroundColor" red="0.93725490196078431" green="0.31372549019607843" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -1025,6 +1033,8 @@
                             <constraint firstAttribute="trailing" secondItem="77k-hr-zxG" secondAttribute="trailing" constant="5" id="Qcr-Y6-Cde"/>
                             <constraint firstItem="fO0-KO-5dM" firstAttribute="top" secondItem="aDI-Z2-48x" secondAttribute="bottom" constant="8" id="Qjx-17-HK9"/>
                             <constraint firstItem="fO0-KO-5dM" firstAttribute="top" secondItem="uBT-dS-XXr" secondAttribute="bottom" constant="8" id="Rqb-oP-aJB"/>
+                            <constraint firstItem="B4H-sZ-dfi" firstAttribute="centerX" secondItem="E37-p5-Ub1" secondAttribute="centerX" id="blp-p5-x2m"/>
+                            <constraint firstItem="E37-p5-Ub1" firstAttribute="top" secondItem="B4H-sZ-dfi" secondAttribute="bottom" constant="8" id="fjF-0h-gtv"/>
                             <constraint firstItem="77k-hr-zxG" firstAttribute="leading" secondItem="vTA-ce-5Ih" secondAttribute="trailing" constant="8" id="gD5-eu-WZN"/>
                             <constraint firstItem="jIF-DM-Mot" firstAttribute="top" secondItem="vTA-ce-5Ih" secondAttribute="top" id="j9h-3B-zmh"/>
                             <constraint firstItem="fO0-KO-5dM" firstAttribute="top" secondItem="F1M-gZ-x9h" secondAttribute="bottom" constant="8" id="l16-7H-v1K"/>
@@ -1038,8 +1048,10 @@
                         <outlet property="collectionView" destination="E37-p5-Ub1" id="fiM-xZ-cDC"/>
                         <outlet property="completedLabel" destination="CEU-Dq-on0" id="W7F-KS-zrc"/>
                         <outlet property="dateLabel" destination="Gld-hN-J1e" id="w7n-tY-NKi"/>
+                        <outlet property="dragButton" destination="B4H-sZ-dfi" id="cOf-OM-mYc"/>
                         <outlet property="masterView" destination="dr1-Fg-uqB" id="lwl-gi-j6R"/>
                         <outlet property="table" destination="iQa-Ws-W30" id="ztQ-0D-a5h"/>
+                        <outlet property="tlConstr" destination="Byr-Tk-Za1" id="dkS-mR-fqf"/>
                         <outlet property="todayConstr" destination="BlT-fo-K59" id="cM7-mX-MUn"/>
                         <outlet property="todayView" destination="vTA-ce-5Ih" id="CYs-ha-7kv"/>
                         <outlet property="weekLabel" destination="kIO-pc-ce7" id="9tW-Fw-fzL"/>
@@ -1140,7 +1152,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HLw-lg-1bh" id="uON-Ux-Q5n">
-                                    <frame key="frameInset" width="375" height="43"/>
+                                    <frame key="frameInset" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -1178,6 +1190,7 @@
         <image name="button_selected.png" width="838" height="317"/>
         <image name="calendar" width="33" height="33"/>
         <image name="circle-nf.png" width="200" height="200"/>
+        <image name="circled_down_filled.png" width="84" height="84"/>
         <image name="close" width="48" height="48"/>
         <image name="colorBackground.jpg" width="1080" height="1920"/>
         <image name="done-icon copy.png" width="766" height="766"/>

@@ -12,6 +12,10 @@
 
 @synthesize delegate;
 
+-(void)textFieldDidBeginEditing:(MDTextField *)textField{
+    [delegate textFieldBeginEditing];
+}
+
 -(BOOL)textFieldShouldReturn:(MDTextField *)textField
 {
     NSLog(@"textfield returned");

@@ -353,6 +353,62 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     //set up for animation
 }
 
+-(void)syncWithExtension{
+    
+    NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.done.com.yongyang"];
+    [sharedDefaults setObject:[EventsHelper convertAllObjecttoArray] forKey:@"idAllItems"];
+    [sharedDefaults synchronize];
+}
+
+#pragma mark - Gesture
+
+-(void)panGesture:(UIPanGestureRecognizer *)panGesture{
+    
+    CGPoint translation = [panGesture translationInView:self.dragButton];
+    
+    CGPoint velocity = [panGesture velocityInView:self.dragButton];
+    
+    //NSLog(@"translation %f", translation.x);
+    NSLog(@"velocity %f", velocity.x);
+    
+    if (panGesture.state == UIGestureRecognizerStateBegan) {
+        // Reset the translation value at the beginning of the gesture.
+        [panGesture setTranslation:CGPointMake(0, - self.tlConstr.constant) inView:self.masterView];
+    }
+    else if (panGesture.state == UIGestureRecognizerStateChanged) {
+        // Get the current translation value.
+        
+        // Compute how far the gesture has travelled vertically,
+        //  relative to the height of the container view.
+        
+        self.tlConstr.constant = -1 * translation.y;
+        
+        NSLog(@"constraint %f", self.tlConstr.constant);
+        
+    }else if (panGesture.state == UIGestureRecognizerStateEnded){
+        
+        if (self.tlConstr.constant > self.masterView.frame.size.height / 2) {
+            NSLog(@"frame height %f", self.masterView.frame.size.height);
+            [UIView animateWithDuration:0.7 animations:^{
+                self.tlConstr.constant = self.masterView.frame.size.height;
+                [self.view layoutIfNeeded];
+            }];
+        }
+        if (self.tlConstr.constant < self.masterView.frame.size.height * 3/4 && self.tlConstr.constant > self.masterView.frame.size.height * 1/3){
+            [UIView animateWithDuration:0.7 animations:^{
+                self.tlConstr.constant = self.masterView.frame.size.height / 2;
+                [self.view layoutIfNeeded];
+            }];
+        }
+        if (self.tlConstr.constant < self.masterView.frame.size.height * 1/3){
+            [UIView animateWithDuration:0.7 animations:^{
+                self.tlConstr.constant = 0;
+                [self.view layoutIfNeeded];
+            }];
+        }
+    }
+}
+
 -(void)tapMasterView:(UITapGestureRecognizer *)tap{
     
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -364,13 +420,9 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     
     UITapGestureRecognizer *tapTimeline = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapMasterView:)];
     [self.masterView addGestureRecognizer:tapTimeline];
-}
-
--(void)syncWithExtension{
-    
-    NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.done.com.yongyang"];
-    [sharedDefaults setObject:[EventsHelper convertAllObjecttoArray] forKey:@"idAllItems"];
-    [sharedDefaults synchronize];
+    [self.collectionView addGestureRecognizer:tapTimeline];
+    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGesture:)];
+    [self.dragButton addGestureRecognizer:pan];
 }
 
 #pragma mark - Life Cycle

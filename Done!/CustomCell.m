@@ -39,6 +39,10 @@
 
 #pragma mark - TextField Delegate
 
+-(void)textFieldDidBeginEditing:(MDTextField *)textField{
+    
+}
+
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
     
     if (delegate != nil) {

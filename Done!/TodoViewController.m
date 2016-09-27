@@ -140,7 +140,7 @@
     });
 }
 
-#pragma mark - EventCell Delegate
+#pragma mark - AddEventCell Delegate
 
 -(void)addNewEventFromCell:(addEventCell *)cell{
     
@@ -155,6 +155,16 @@
     [self.table reloadData];
     
     [self setReminder:[[NSDate date] dateByAddingTimeInterval:5 * 60] withText:cell.textfield.text];
+}
+
+-(void)textFieldBeginEditing{
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        
+        [UIView animateWithDuration:0.4 animations:^{
+            
+        }];
+    });
 }
 
 #pragma mark - Private
@@ -223,7 +233,9 @@
                                                               }
                                                           }];
     [alert addAction:defaultAction];
-    [self presentViewController:alert animated:YES completion:nil];
+    [self presentViewController:alert animated:YES completion:^{
+        [self loadViewBasedonTabBar];
+    }];
 }
 
 -(void)editProjects{

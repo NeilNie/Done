@@ -45,7 +45,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *table;
 @property (weak, nonatomic) IBOutlet UILabel *clearLabel;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *tlConstr;
-
+@property (weak, nonatomic) IBOutlet UIButton *dragButton;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSMutableArray *buttons;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *yearLabel;
