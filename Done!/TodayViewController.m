@@ -289,10 +289,12 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     
     //hide or show table
     if (allEvents.count == 0) {
+        self.tlConstr.constant = 0;
         self.table.hidden = YES;
         self.collectionView.hidden = YES;
         self.clearLabel.hidden = NO;
     }else{
+        self.tlConstr.constant = self.masterView.frame.size.height/2;
         self.table.hidden = NO;
         self.collectionView.hidden = NO;
         self.clearLabel.hidden = YES;
@@ -420,7 +422,8 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     
     UITapGestureRecognizer *tapTimeline = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapMasterView:)];
     [self.masterView addGestureRecognizer:tapTimeline];
-    [self.collectionView addGestureRecognizer:tapTimeline];
+    UITapGestureRecognizer *tapView = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapMasterView:)];
+    [self.collectionView addGestureRecognizer:tapView];
     UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGesture:)];
     [self.dragButton addGestureRecognizer:pan];
 }

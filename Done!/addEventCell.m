@@ -16,6 +16,10 @@
     [delegate textFieldBeginEditing];
 }
 
+-(void)textFieldDidEndEditing:(MDTextField *)textField{
+    [delegate textFieldEndEditing];
+}
+
 -(BOOL)textFieldShouldReturn:(MDTextField *)textField
 {
     NSLog(@"textfield returned");

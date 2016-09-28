@@ -19,6 +19,7 @@
 @protocol addEventCellDelegate <NSObject>
 
 -(void)textFieldBeginEditing;
+-(void)textFieldEndEditing;
 -(void)addNewEventFromCell:(addEventCell *)cell;
 
 @end

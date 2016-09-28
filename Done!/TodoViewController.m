@@ -161,8 +161,20 @@
     
     dispatch_async(dispatch_get_main_queue(), ^{
         
-        [UIView animateWithDuration:0.4 animations:^{
-            
+        [UIView animateWithDuration:0.5 animations:^{
+            self.tableButtom.constant = 270;
+            [self.view layoutIfNeeded];
+        }];
+    });
+}
+
+-(void)textFieldEndEditing{
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        
+        [UIView animateWithDuration:0.5 animations:^{
+            self.tableButtom.constant = 0;
+            [self.view layoutIfNeeded];
         }];
     });
 }
