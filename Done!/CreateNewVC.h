@@ -40,6 +40,7 @@
     NSNumber __strong *reminder;
 
 }
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *buttomConst;
 @property (strong, nonatomic) NSString *sender;
 @property (strong, nonatomic) Projects *addedToProject;
 @property (nonatomic, assign) id <CreateNewDelegate> delegate;
