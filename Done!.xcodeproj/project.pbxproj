@@ -39,7 +39,6 @@
 		009A022A1CDE9DE200C0B23D /* Row.m in Sources */ = {isa = PBXBuildFile; fileRef = 009A02211CDE9DE200C0B23D /* Row.m */; };
 		00BEC6721CCBC93A008B7862 /* EventsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 00BEC6711CCBC93A008B7862 /* EventsHelper.m */; };
 		00C1977B1CDFE6B100604203 /* TipsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C1977A1CDFE6B100604203 /* TipsViewController.m */; };
-		00C5997D1D974E7F000F7067 /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C5997C1D974E7F000F7067 /* Reveal.framework */; };
 		00D95DEF1CF2006B00DF7736 /* left.png in Resources */ = {isa = PBXBuildFile; fileRef = 00D95DEE1CF2006B00DF7736 /* left.png */; };
 		00F48A301CC5193000B94EA4 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F48A2F1CC5193000B94EA4 /* CalendarViewController.m */; };
 		00F48A331CC5194100B94EA4 /* TodoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F48A321CC5194100B94EA4 /* TodoViewController.m */; };
@@ -304,7 +303,6 @@
 		00BEC6711CCBC93A008B7862 /* EventsHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsHelper.m; sourceTree = "<group>"; };
 		00C197791CDFE6B100604203 /* TipsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TipsViewController.h; sourceTree = "<group>"; };
 		00C1977A1CDFE6B100604203 /* TipsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TipsViewController.m; sourceTree = "<group>"; };
-		00C5997C1D974E7F000F7067 /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
 		00D95DEE1CF2006B00DF7736 /* left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = left.png; sourceTree = "<group>"; };
 		00F48A2E1CC5193000B94EA4 /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
 		00F48A2F1CC5193000B94EA4 /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
@@ -571,7 +569,6 @@
 				285475FF1D147AF600069310 /* EventKit.framework in Frameworks */,
 				285476001D147AF600069310 /* EventKitUI.framework in Frameworks */,
 				28F5E53F1CE53BFB00C15FF6 /* Accelerate.framework in Frameworks */,
-				00C5997D1D974E7F000F7067 /* Reveal.framework in Frameworks */,
 				28F5E53D1CE53BF500C15FF6 /* CoreGraphics.framework in Frameworks */,
 				285431891CE01BE20022F993 /* QuartzCore.framework in Frameworks */,
 				285431871CE01BD80022F993 /* UIKit.framework in Frameworks */,
@@ -647,7 +644,6 @@
 		0060833F1CC4007500A344F1 = {
 			isa = PBXGroup;
 			children = (
-				00C5997C1D974E7F000F7067 /* Reveal.framework */,
 				0060834A1CC4007500A344F1 /* Done! */,
 				008315421CDE8FDB003E706D /* Done! Apple Watch */,
 				008315511CDE8FDB003E706D /* Done! Apple Watch Extension */,
@@ -691,6 +687,8 @@
 		0060834B1CC4007500A344F1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0060834E1CC4007500A344F1 /* AppDelegate.h */,
+				0060834F1CC4007500A344F1 /* AppDelegate.m */,
 				281F990B1CE2B4B6008D9342 /* Done!-Bridging-Header.h */,
 				0002893A1CF10D9F005CEA17 /* GoogleService-Info.plist */,
 				28AB06A41CCA3F8F0071B16D /* Done!.entitlements */,
@@ -780,7 +778,18 @@
 		00F48A371CC5195600B94EA4 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				280C83DD1CF31D6A00DC8742 /* Main */,
+				28EB42E61D94A8470049DACF /* TodayViewController.h */,
+				28EB42E71D94A8470049DACF /* TodayViewController.m */,
+				00F48A311CC5194100B94EA4 /* TodoViewController.h */,
+				00F48A321CC5194100B94EA4 /* TodoViewController.m */,
+				00F48A2E1CC5193000B94EA4 /* CalendarViewController.h */,
+				00F48A2F1CC5193000B94EA4 /* CalendarViewController.m */,
+				00F48A341CC5194A00B94EA4 /* PreferenceViewController.h */,
+				00F48A351CC5194A00B94EA4 /* PreferenceViewController.m */,
+				28D9AF251CDA9F6800E50C10 /* AnalysisViewController.h */,
+				28D9AF261CDA9F6800E50C10 /* AnalysisViewController.m */,
+				28B446391D370D76000A0501 /* TimelineViewController.h */,
+				28B4463A1D370D76000A0501 /* TimelineViewController.m */,
 				280C83DC1CF31D6500DC8742 /* Helpers */,
 			);
 			name = ViewControllers;
@@ -806,7 +815,6 @@
 				287125C01D3C540200F1C791 /* Helpers */,
 				287125BF1D3C539800F1C791 /* Data */,
 				287125C11D3C540E00F1C791 /* Objects */,
-				287125C21D3C542500F1C791 /* Delegate */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -882,25 +890,6 @@
 				2836B9081D303806006ADBAF /* TableController.m */,
 			);
 			name = Helpers;
-			sourceTree = "<group>";
-		};
-		280C83DD1CF31D6A00DC8742 /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				28EB42E61D94A8470049DACF /* TodayViewController.h */,
-				28EB42E71D94A8470049DACF /* TodayViewController.m */,
-				00F48A311CC5194100B94EA4 /* TodoViewController.h */,
-				00F48A321CC5194100B94EA4 /* TodoViewController.m */,
-				00F48A2E1CC5193000B94EA4 /* CalendarViewController.h */,
-				00F48A2F1CC5193000B94EA4 /* CalendarViewController.m */,
-				00F48A341CC5194A00B94EA4 /* PreferenceViewController.h */,
-				00F48A351CC5194A00B94EA4 /* PreferenceViewController.m */,
-				28D9AF251CDA9F6800E50C10 /* AnalysisViewController.h */,
-				28D9AF261CDA9F6800E50C10 /* AnalysisViewController.m */,
-				28B446391D370D76000A0501 /* TimelineViewController.h */,
-				28B4463A1D370D76000A0501 /* TimelineViewController.m */,
-			);
-			name = Main;
 			sourceTree = "<group>";
 		};
 		280EFD9C1CE2C17A00C31E46 /* Timeline */ = {
@@ -1012,15 +1001,6 @@
 				286E50631D150E8000EEA0A6 /* NYDate.m */,
 			);
 			name = Objects;
-			sourceTree = "<group>";
-		};
-		287125C21D3C542500F1C791 /* Delegate */ = {
-			isa = PBXGroup;
-			children = (
-				0060834E1CC4007500A344F1 /* AppDelegate.h */,
-				0060834F1CC4007500A344F1 /* AppDelegate.m */,
-			);
-			name = Delegate;
 			sourceTree = "<group>";
 		};
 		28AD9C451D4037F200156A29 /* Source */ = {

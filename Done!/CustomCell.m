@@ -40,7 +40,11 @@
 #pragma mark - TextField Delegate
 
 -(void)textFieldDidBeginEditing:(MDTextField *)textField{
-    
+    [delegate textFieldBeginEditing];
+}
+
+-(void)textFieldDidEndEditing:(MDTextField *)textField{
+    [delegate textFieldEndEditing];
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
