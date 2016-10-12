@@ -687,6 +687,8 @@
 		0060834B1CC4007500A344F1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0060834E1CC4007500A344F1 /* AppDelegate.h */,
+				0060834F1CC4007500A344F1 /* AppDelegate.m */,
 				281F990B1CE2B4B6008D9342 /* Done!-Bridging-Header.h */,
 				0002893A1CF10D9F005CEA17 /* GoogleService-Info.plist */,
 				28AB06A41CCA3F8F0071B16D /* Done!.entitlements */,
@@ -776,7 +778,18 @@
 		00F48A371CC5195600B94EA4 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				280C83DD1CF31D6A00DC8742 /* Main */,
+				28EB42E61D94A8470049DACF /* TodayViewController.h */,
+				28EB42E71D94A8470049DACF /* TodayViewController.m */,
+				00F48A311CC5194100B94EA4 /* TodoViewController.h */,
+				00F48A321CC5194100B94EA4 /* TodoViewController.m */,
+				00F48A2E1CC5193000B94EA4 /* CalendarViewController.h */,
+				00F48A2F1CC5193000B94EA4 /* CalendarViewController.m */,
+				00F48A341CC5194A00B94EA4 /* PreferenceViewController.h */,
+				00F48A351CC5194A00B94EA4 /* PreferenceViewController.m */,
+				28D9AF251CDA9F6800E50C10 /* AnalysisViewController.h */,
+				28D9AF261CDA9F6800E50C10 /* AnalysisViewController.m */,
+				28B446391D370D76000A0501 /* TimelineViewController.h */,
+				28B4463A1D370D76000A0501 /* TimelineViewController.m */,
 				280C83DC1CF31D6500DC8742 /* Helpers */,
 			);
 			name = ViewControllers;
@@ -802,7 +815,6 @@
 				287125C01D3C540200F1C791 /* Helpers */,
 				287125BF1D3C539800F1C791 /* Data */,
 				287125C11D3C540E00F1C791 /* Objects */,
-				287125C21D3C542500F1C791 /* Delegate */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -878,25 +890,6 @@
 				2836B9081D303806006ADBAF /* TableController.m */,
 			);
 			name = Helpers;
-			sourceTree = "<group>";
-		};
-		280C83DD1CF31D6A00DC8742 /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				28EB42E61D94A8470049DACF /* TodayViewController.h */,
-				28EB42E71D94A8470049DACF /* TodayViewController.m */,
-				00F48A311CC5194100B94EA4 /* TodoViewController.h */,
-				00F48A321CC5194100B94EA4 /* TodoViewController.m */,
-				00F48A2E1CC5193000B94EA4 /* CalendarViewController.h */,
-				00F48A2F1CC5193000B94EA4 /* CalendarViewController.m */,
-				00F48A341CC5194A00B94EA4 /* PreferenceViewController.h */,
-				00F48A351CC5194A00B94EA4 /* PreferenceViewController.m */,
-				28D9AF251CDA9F6800E50C10 /* AnalysisViewController.h */,
-				28D9AF261CDA9F6800E50C10 /* AnalysisViewController.m */,
-				28B446391D370D76000A0501 /* TimelineViewController.h */,
-				28B4463A1D370D76000A0501 /* TimelineViewController.m */,
-			);
-			name = Main;
 			sourceTree = "<group>";
 		};
 		280EFD9C1CE2C17A00C31E46 /* Timeline */ = {
@@ -1008,15 +1001,6 @@
 				286E50631D150E8000EEA0A6 /* NYDate.m */,
 			);
 			name = Objects;
-			sourceTree = "<group>";
-		};
-		287125C21D3C542500F1C791 /* Delegate */ = {
-			isa = PBXGroup;
-			children = (
-				0060834E1CC4007500A344F1 /* AppDelegate.h */,
-				0060834F1CC4007500A344F1 /* AppDelegate.m */,
-			);
-			name = Delegate;
 			sourceTree = "<group>";
 		};
 		28AD9C451D4037F200156A29 /* Source */ = {

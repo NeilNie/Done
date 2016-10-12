@@ -13,6 +13,7 @@
 #import "EventsHelper.h"
 #import "EventManager.h"
 #import "EventTableViewCell.h"
+#import "MDTabBar.h"
 
 #import "MSCollectionViewCalendarLayout.h"
 #import "MSGridline.h"
@@ -24,7 +25,7 @@
 #import "MSCurrentTimeIndicator.h"
 #import "MSCurrentTimeGridline.h"
 
-@interface TimelineTableViewCell : UITableViewCell <MSCollectionViewDelegateCalendarLayout, MSEventCellDelegate>{
+@interface TimelineTableViewCell : UITableViewCell <MSCollectionViewDelegateCalendarLayout, MSEventCellDelegate, MDTabBarDelegate>{
     NSArray *collectionViewArray;
 }
 
@@ -33,6 +34,7 @@
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *pickerWidth;
 @property (weak, nonatomic) IBOutlet UIButton *setButton;
+@property (weak, nonatomic) IBOutlet MDTabBar *tabBar;
 
 @property (nonatomic, strong) MSCollectionViewCalendarLayout *collectionViewCalendarLayout;
 @property (nonatomic, readonly) CGFloat layoutSectionWidth;

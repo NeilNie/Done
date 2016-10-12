@@ -16,6 +16,29 @@ NSString * const MSCSEventCellReuseIdentifier = @"MSEventCellReuseIdentifier";
 NSString * const MSCSDayColumnHeaderReuseIdentifier = @"MSDayColumnHeaderReuseIdentifier";
 NSString * const MSCSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifier";
 
+#pragma mark - MDTab Bar Delegates
+
+-(void)tabBar:(MDTabBar *)tabBar didChangeSelectedIndex:(NSUInteger)selectedIndex{
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if (selectedIndex == 1 ) {
+            
+            [UIView animateWithDuration:0.5 animations:^{
+                self.pickerWidth.constant = self.frame.size.width;
+                [self layoutIfNeeded];
+                [self layoutSubviews];
+                self.setButton.hidden = NO;
+            }];
+        }else{
+            [UIView animateWithDuration:0.5 animations:^{
+                self.pickerWidth.constant = 0;
+                [self layoutIfNeeded];
+                self.setButton.hidden = YES;
+            }];
+        }
+    });
+}
+
 #pragma mark - UICollectionViewDataSource
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
@@ -64,19 +87,17 @@ NSString * const MSCSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdenti
 
 #pragma mark - MSCollectionViewCalendarLayout
 
-- (NSDate *)collectionView:(UICollectionView *)collectionView layout:(MSCollectionViewCalendarLayout *)collectionViewCalendarLayout dayForSection:(NSInteger)section
-{
+- (NSDate *)collectionView:(UICollectionView *)collectionView layout:(MSCollectionViewCalendarLayout *)collectionViewCalendarLayout dayForSection:(NSInteger)section{
     return [NSDate date];
 }
 
-- (NSDate *)collectionView:(UICollectionView *)collectionView layout:(MSCollectionViewCalendarLayout *)collectionViewCalendarLayout startTimeForItemAtIndexPath:(NSIndexPath *)indexPath
-{
+- (NSDate *)collectionView:(UICollectionView *)collectionView layout:(MSCollectionViewCalendarLayout *)collectionViewCalendarLayout startTimeForItemAtIndexPath:(NSIndexPath *)indexPath{
     Events *time = [collectionViewArray objectAtIndex:indexPath.row];
     return time.date;
 }
 
-- (NSDate *)collectionView:(UICollectionView *)collectionView layout:(MSCollectionViewCalendarLayout *)collectionViewCalendarLayout endTimeForItemAtIndexPath:(NSIndexPath *)indexPath
-{
+- (NSDate *)collectionView:(UICollectionView *)collectionView layout:(MSCollectionViewCalendarLayout *)collectionViewCalendarLayout endTimeForItemAtIndexPath:(NSIndexPath *)indexPath{
+    
     Events *time = [collectionViewArray objectAtIndex:indexPath.row];
     if (time.endDate) {
         return time.endDate;
@@ -189,19 +210,6 @@ NSString * const MSCSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdenti
     });
 }
 
--(void)gestureRecognizersAction:(UISwipeGestureRecognizer *)gesture{
-    
-    if (gesture.direction == UISwipeGestureRecognizerDirectionLeft) {
-        [UIView animateWithDuration:0.5 animations:^{
-            self.pickerWidth.constant = self.frame.size.width;
-        }];
-    }else{
-        [UIView animateWithDuration:0.5 animations:^{
-            self.pickerWidth.constant = 0;
-        }];
-    }
-}
-
 #pragma mark - Life Cycle
 
 - (void)awakeFromNib {
@@ -214,13 +222,10 @@ NSString * const MSCSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdenti
     [self setUpCollectionView];
     self.setButton.hidden = YES;
     
-    UISwipeGestureRecognizer *RightSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(gestureRecognizersAction:)];
-    RightSwipe.direction = UISwipeGestureRecognizerDirectionRight;
-    UISwipeGestureRecognizer *LeftSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(gestureRecognizersAction:)];
-    LeftSwipe.direction = UISwipeGestureRecognizerDirectionLeft;
-    [self.collectionView addGestureRecognizer:LeftSwipe];
-    [self.collectionView addGestureRecognizer:RightSwipe];
     [self.collectionViewCalendarLayout scrollCollectionViewToClosetSectionToCurrentTimeAnimated:YES];
+    
+    [self.tabBar setItems:[NSArray arrayWithObjects:@"Timeline",@"Time Picker", nil]];
+    self.tabBar.delegate = self;
     
     [super awakeFromNib];
     // Initialization code

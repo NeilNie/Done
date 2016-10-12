@@ -241,13 +241,12 @@
                                                                   project.title = ((UITextField *)[alert.textFields objectAtIndex:0]).text;
                                                                   [realm addObject:project];
                                                                   [realm commitWriteTransaction];
+                                                                  [self setUpTabBar];
                                                                   [alert dismissViewControllerAnimated:YES completion:nil];
                                                               }
                                                           }];
     [alert addAction:defaultAction];
-    [self presentViewController:alert animated:YES completion:^{
-        [self loadViewBasedonTabBar];
-    }];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 -(void)editProjects{
@@ -298,7 +297,7 @@
 
 -(void)setUpTabBar{
     
-    _tabBar.delegate = self;
+    self.tabBar.delegate = self;
     
     tabBarArray = [[NSMutableArray alloc] initWithObjects:@"Important", nil];
     RLMResults *allProjects = [Projects allObjects];
@@ -308,7 +307,7 @@
     }
     [tabBarArray addObject:@"Completed"];
     [tabBarArray addObject:@"All"];
-    [_tabBar setItems:tabBarArray];
+    [self.tabBar setItems:tabBarArray];
 
     self.tabBar.textFont = [UIFont systemFontOfSize:15 weight:UIFontWeightMedium];
 }
@@ -317,6 +316,7 @@
     
     self.btMore.mdButtonDelegate = self;
     self.btMore.rotated = NO;
+    
     //invisible all related buttons
     self.btEdit.alpha = 0.f;
     self.btAddEvent.alpha = 0.f;
