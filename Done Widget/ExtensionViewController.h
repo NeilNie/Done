@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <Realm/Realm.h>
 
 #import "Events.h"
 #import "Projects.h"

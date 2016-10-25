@@ -168,8 +168,8 @@
 		28F896FD1CEBFB5500C546EC /* done-icon copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 28F896FA1CEBFB5500C546EC /* done-icon copy.png */; };
 		28FDBD611CFB968700EFEB59 /* FirebaseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 28FDBD601CFB968700EFEB59 /* FirebaseHelper.m */; };
 		9CEEF1370D088F60D48BC164 /* libPods-Done!.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 73CF65656B7124C7E976D33D /* libPods-Done!.a */; };
-		9CF1839CAA7AE4AA60648E2F /* libPods-Done Widget.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F533992DD0B9B0E597A583C4 /* libPods-Done Widget.a */; };
 		A931ADA412206B3B6C964EBF /* libPods-Done! Apple Watch Extension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58D101F026E7EA98FF50A53C /* libPods-Done! Apple Watch Extension.a */; };
+		DE77E73F13860E6C7F73831D /* libPods-Done Widget.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F533992DD0B9B0E597A583C4 /* libPods-Done Widget.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -314,7 +314,6 @@
 		00FA9E201CE902BE00E977D0 /* Done Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Done Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		00FA9E271CE902BE00E977D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		00FA9E291CE902BE00E977D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		215A00102AF7A886CFA3C401 /* Pods-Done Widget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Done Widget.release.xcconfig"; path = "Pods/Target Support Files/Pods-Done Widget/Pods-Done Widget.release.xcconfig"; sourceTree = "<group>"; };
 		28006A111CC6B41900583D69 /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
 		28006A121CC6B41900583D69 /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
 		2802F81D1CC5B78800C65966 /* EventTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventTableViewCell.h; sourceTree = "<group>"; };
@@ -542,7 +541,8 @@
 		58D101F026E7EA98FF50A53C /* libPods-Done! Apple Watch Extension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Done! Apple Watch Extension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		73CF65656B7124C7E976D33D /* libPods-Done!.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Done!.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8E78843F52A9FC0E43D112A /* Pods-Done! Apple Watch Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Done! Apple Watch Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Done! Apple Watch Extension/Pods-Done! Apple Watch Extension.debug.xcconfig"; sourceTree = "<group>"; };
-		C45F529C8583CF22CD419C41 /* Pods-Done Widget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Done Widget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Done Widget/Pods-Done Widget.debug.xcconfig"; sourceTree = "<group>"; };
+		BEC6670C30B02E46C22B6405 /* Pods-Done Widget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Done Widget.release.xcconfig"; path = "Pods/Target Support Files/Pods-Done Widget/Pods-Done Widget.release.xcconfig"; sourceTree = "<group>"; };
+		DEBEEEF914A6969E2FB589EB /* Pods-Done Widget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Done Widget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Done Widget/Pods-Done Widget.debug.xcconfig"; sourceTree = "<group>"; };
 		E3C7AD9357B1019013A26D88 /* Pods-Done!.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Done!.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Done!/Pods-Done!.debug.xcconfig"; sourceTree = "<group>"; };
 		F533992DD0B9B0E597A583C4 /* libPods-Done Widget.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Done Widget.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -590,7 +590,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00FA9E211CE902BE00E977D0 /* NotificationCenter.framework in Frameworks */,
-				9CF1839CAA7AE4AA60648E2F /* libPods-Done Widget.a in Frameworks */,
+				DE77E73F13860E6C7F73831D /* libPods-Done Widget.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1148,10 +1148,10 @@
 			children = (
 				E3C7AD9357B1019013A26D88 /* Pods-Done!.debug.xcconfig */,
 				54EF6EB6570BDEC6F8FFBC6F /* Pods-Done!.release.xcconfig */,
-				C45F529C8583CF22CD419C41 /* Pods-Done Widget.debug.xcconfig */,
-				215A00102AF7A886CFA3C401 /* Pods-Done Widget.release.xcconfig */,
 				B8E78843F52A9FC0E43D112A /* Pods-Done! Apple Watch Extension.debug.xcconfig */,
 				4F2DC1E672D94AAE239BF1C9 /* Pods-Done! Apple Watch Extension.release.xcconfig */,
+				DEBEEEF914A6969E2FB589EB /* Pods-Done Widget.debug.xcconfig */,
+				BEC6670C30B02E46C22B6405 /* Pods-Done Widget.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -1296,8 +1296,6 @@
 				00FA9E1D1CE902BE00E977D0 /* Frameworks */,
 				00FA9E1E1CE902BE00E977D0 /* Resources */,
 				6B6072B544FAD5BF18A27642 /* [CP] Copy Pods Resources */,
-				CFF6E99725E54F948F7588FC /* 📦 Embed Pods Frameworks */,
-				734FC2D95B20BE7D6ABF2B70 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1602,21 +1600,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Done Widget/Pods-Done Widget-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		734FC2D95B20BE7D6ABF2B70 /* 📦 Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Done Widget/Pods-Done Widget-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		985931BD511981C0595CEA3D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1705,21 +1688,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Done! Apple Watch Extension/Pods-Done! Apple Watch Extension-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CFF6E99725E54F948F7588FC /* 📦 Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Done Widget/Pods-Done Widget-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E8F2B812DA75E331B36D49B4 /* [CP] Check Pods Manifest.lock */ = {
@@ -2260,7 +2228,7 @@
 		};
 		00FA9E2D1CE902BE00E977D0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C45F529C8583CF22CD419C41 /* Pods-Done Widget.debug.xcconfig */;
+			baseConfigurationReference = DEBEEEF914A6969E2FB589EB /* Pods-Done Widget.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "Done Widget/Done Widget.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -2275,7 +2243,7 @@
 		};
 		00FA9E2E1CE902BE00E977D0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 215A00102AF7A886CFA3C401 /* Pods-Done Widget.release.xcconfig */;
+			baseConfigurationReference = BEC6670C30B02E46C22B6405 /* Pods-Done Widget.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "Done Widget/Done Widget.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
