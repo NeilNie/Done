@@ -13,6 +13,7 @@
 @import FirebaseAuth;
 
 @interface UserAuthViewController : UIViewController <MDTextFieldDelegate>
+
 @property (weak, nonatomic) IBOutlet UIImageView *background;
 @property (weak, nonatomic) IBOutlet UIButton *registerB;
 @property (weak, nonatomic) IBOutlet UIImageView *registerBbg;

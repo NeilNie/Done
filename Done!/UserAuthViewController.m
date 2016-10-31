@@ -19,8 +19,6 @@
 
     [[FIRAuth auth] createUserWithEmail:self.email.text password:self.password.text completion:^(FIRUser * _Nullable user, NSError * _Nullable error) {
         
-        NSLog(@"resigstered user %@", user);
-        NSLog(@"error %@", error);
         NSLocale *currentLocale = [NSLocale currentLocale];  // get the current locale.
         NSString *countryCode = [currentLocale objectForKey:NSLocaleCountryCode];
         [[[_ref child:@"users"] child:self.username.text] setValue:@{@"email": self.email.text,
@@ -40,8 +38,8 @@
     }];
 }
 
-- (NSDateFormatter *)dateFormatter
-{
+- (NSDateFormatter *)dateFormatter{
+    
     static NSDateFormatter *dateFormatter;
     if(!dateFormatter){
         dateFormatter = [NSDateFormatter new];
@@ -51,8 +49,8 @@
     return dateFormatter;
 }
 
-- (NSString *)uuid
-{
+- (NSString *)uuid{
+    
     CFUUIDRef uuidRef = CFUUIDCreate(NULL);
     CFStringRef uuidStringRef = CFUUIDCreateString(NULL, uuidRef);
     CFRelease(uuidRef);
