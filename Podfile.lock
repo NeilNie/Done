@@ -75,9 +75,9 @@ PODS:
     - MKFoundationKit/Base64
   - MKFoundationKit/Queue (1.3.0)
   - MKFoundationKit/Stack (1.3.0)
-  - Realm (2.1.0):
-    - Realm/Headers (= 2.1.0)
-  - Realm/Headers (2.1.0)
+  - Realm (2.1.1):
+    - Realm/Headers (= 2.1.1)
+  - Realm/Headers (2.1.1)
   - RKDropdownAlert (0.3.0)
   - SCLAlertView-Objective-C (1.0.6)
   - SWTableViewCell (0.3.7)
@@ -118,7 +118,7 @@ SPEC CHECKSUMS:
   JTCalendar: beb2f4c1b639bf6880f680b4858227acf83a049c
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MKFoundationKit: 26afe1cf63d4982a937d555537ca1a3fb50a9c77
-  Realm: bc829ad0ef3d4eea70c34cfcc3b1704d18d50df1
+  Realm: a55959c0b171a5fe5267406d17f314fec3cefaae
   RKDropdownAlert: f4b3364c251829ad439dc666836a1f2dad26f4c7
   SCLAlertView-Objective-C: ca78280817e66e74366b78579350dee2ff277e23
   SWTableViewCell: 2a94aadc9d47b2b611fa064566bf57948b95b579
