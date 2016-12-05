@@ -16,27 +16,14 @@
 #import "EventTableViewCell.h"
 #import "EventsHelper.h"
 #import "CreateNewVC.h"
-#import "NYDate.h"
-
-#import "MSCollectionViewCalendarLayout.h"
-#import "MSGridline.h"
-#import "MSTimeRowHeaderBackground.h"
-#import "MSDayColumnHeaderBackground.h"
-#import "MSEventCell.h"
-#import "MSDayColumnHeader.h"
-#import "MSTimeRowHeader.h"
-#import "MSCurrentTimeIndicator.h"
-#import "MSCurrentTimeGridline.h"
+#import "Date.h"
 
 @import FirebaseAuth;
 
-@interface TodayViewController : UIViewController <MSCollectionViewDelegateCalendarLayout, CreateNewDelegate, WCSessionDelegate>{
+@interface TodayViewController : UIViewController <CreateNewDelegate, WCSessionDelegate>{
     NSMutableArray *allEvents;
     RLMResults *result;
-    NSArray *collectionViewArray;
 }
-
-@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 //@property (weak, nonatomic) IBOutlet GADBannerView *banner;
 @property (weak, nonatomic) IBOutlet UILabel *completedLabel;
 

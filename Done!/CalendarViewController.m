@@ -10,144 +10,100 @@
 
 @interface CalendarViewController ()
 
+@property (strong, nonatomic) NSMutableArray *data;
+@property (strong, nonatomic) NSMutableArray *completedData;
+@property (strong, nonatomic) NSMutableArray *eventNumber;
+@property (nonatomic, strong) NSArray *labels;
+@property (nonatomic, strong) MSCollectionViewCalendarLayout *collectionViewCalendarLayout;
+@property (nonatomic, readonly) CGFloat layoutSectionWidth;
+
 @end
 
 @implementation CalendarViewController
 
-#define kRemoveAdsProductIdentifier @"com.yongyang.done.pf"
+NSString * const MSEventCellReuseIdentifier = @"MSEventCellReuseIdentifier";
+NSString * const MSDayColumnHeaderReuseIdentifier = @"MSDayColumnHeaderReuseIdentifier";
+NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifier";
 
-#pragma mark - SkProduct / Payment delegates
+#pragma mark - UICollectionViewDataSource
 
-- (IBAction)tapsRemoveAdsButton{
-    NSLog(@"User requests to remove ads");
-    
-    if([SKPaymentQueue canMakePayments]){
-        NSLog(@"User can make payments");
-        
-        SKProductsRequest *productsRequest = [[SKProductsRequest alloc] initWithProductIdentifiers:[NSSet setWithObject:kRemoveAdsProductIdentifier]];
-        productsRequest.delegate = self;
-        [productsRequest start];
-        
-    }
-    else{
-        NSLog(@"User cannot make payments due to parental controls");
-        //this is called the user cannot make payments, most likely due to parental controls
-    }
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
+    return 1;
 }
 
-- (void)productsRequest:(SKProductsRequest *)request didReceiveResponse:(SKProductsResponse *)response{
-    SKProduct *validProduct = nil;
-    if([response.products count] > 0){
-        validProduct = [response.products objectAtIndex:0];
-        NSLog(@"Products Available!");
-        [self purchase:validProduct];
-    }
-    else if(!validProduct){
-        NSLog(@"No products available");
-        //this is called if your product id is not valid, this shouldn't be called unless that happens.
-    }
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    return collectionViewArray.count;
 }
 
-- (IBAction)purchase:(SKProduct *)product{
-    
-    SKPayment *payment = [SKPayment paymentWithProduct:product];
-    [[SKPaymentQueue defaultQueue] addTransactionObserver:self];
-    [[SKPaymentQueue defaultQueue] addPayment:payment];
-}
-
-- (IBAction)restore{
-    
-    //this is called when the user restores purchases, you should hook this up to a button
-    [[SKPaymentQueue defaultQueue] restoreCompletedTransactions];
-    areAdsRemoved = NO;
-    [[NSUserDefaults standardUserDefaults] setBool:areAdsRemoved forKey:@"areAdsRemoved"];
-    //use NSUserDefaults so that you can load wether or not they bought it
-    [[NSUserDefaults standardUserDefaults] synchronize];
-}
-
-- (void) paymentQueueRestoreCompletedTransactionsFinished:(SKPaymentQueue *)queue
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"received restored transactions: %lu", (unsigned long)queue.transactions.count);
-    for (SKPaymentTransaction *transaction in queue.transactions)
-    {
-        if((SKPaymentTransactionState)transaction == SKPaymentTransactionStateRestored){
-            NSLog(@"Transaction state -> Restored");
-            //called when the user successfully restores a purchase
-            [self doRemoveAds];
-            [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
-            break;
-        }
-        
-    }
-}
-
-- (void)paymentQueue:(SKPaymentQueue *)queue updatedTransactions:(NSArray *)transactions{
-    
-    for(SKPaymentTransaction *transaction in transactions){
-        switch (transaction.transactionState){
-            case SKPaymentTransactionStatePurchasing: NSLog(@"Transaction state -> Purchasing");
-                //called when the user is in the process of purchasing, do not add any of your own code here.
-                break;
-            case SKPaymentTransactionStatePurchased:
-                //this is called when the user has successfully purchased the package (Cha-Ching!)
-                [self doRemoveAds]; //you can add your code for what you want to happen when the user buys the purchase here, for this tutorial we use removing ads
-                [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
-                NSLog(@"Transaction state -> Purchased NoAds");
-                break;
-            case SKPaymentTransactionStateRestored:
-                NSLog(@"Transaction state -> Restored NoAds");
-                //add the same code as you did from SKPaymentTransactionStatePurchased here
-                [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
-                break;
-            case SKPaymentTransactionStateFailed:
-                //called when the transaction does not finnish
-                if(transaction.error.code != SKErrorPaymentCancelled){
-                    NSLog(@"Transaction state -> Cancelled");
-                    //the user cancelled the payment ;(
-                }
-                [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
-                break;
-            case SKPaymentTransactionStateDeferred:
-                break;
-        }
-    }
-}
-
-- (void)doRemoveAds{
-    
-    areAdsRemoved = YES;
-    [[NSUserDefaults standardUserDefaults] setBool:areAdsRemoved forKey:@"areAdsRemoved"];
-    //use NSUserDefaults so that you can load wether or not they bought it
-    [[NSUserDefaults standardUserDefaults] synchronize];
-}
-
-#pragma mark - UITableView Delegate
-
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-}
-
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return eventArray.count;
-}
-
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 1;;
-}
-
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 70;
-}
-
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    EventTableViewCell *cell = (EventTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"idEventCell" forIndexPath:indexPath];
-    Events *event = [eventArray objectAtIndex:indexPath.row];
-    cell.titleLabel.text = event.title;
-    cell.dateLabel.text = [[NYDate getDefaultDateFormatter] stringFromDate:event.date];
-    
+    MSEventCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:MSEventCellReuseIdentifier forIndexPath:indexPath];
+    cell.contentView.frame = cell.bounds;
+    cell.contentView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    cell.event = [collectionViewArray objectAtIndex:indexPath.row];
     return cell;
 }
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+{
+    UICollectionReusableView *view;
+    if (kind == MSCollectionElementKindDayColumnHeader) {
+        MSDayColumnHeader *dayColumnHeader = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:MSDayColumnHeaderReuseIdentifier forIndexPath:indexPath];
+        NSDate *day = [self.collectionViewCalendarLayout dateForDayColumnHeaderAtIndexPath:indexPath];
+        NSDate *currentDay = [self currentTimeComponentsForCollectionView:self.collectionView layout:self.collectionViewCalendarLayout];
+        
+        NSDate *startOfDay = [[NSCalendar currentCalendar] startOfDayForDate:day];
+        NSDate *startOfCurrentDay = [[NSCalendar currentCalendar] startOfDayForDate:currentDay];
+        
+        dayColumnHeader.day = day;
+        dayColumnHeader.currentDay = [startOfDay isEqualToDate:startOfCurrentDay];
+        
+        view = dayColumnHeader;
+    } else if (kind == MSCollectionElementKindTimeRowHeader) {
+        MSTimeRowHeader *timeRowHeader = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:MSTimeRowHeaderReuseIdentifier forIndexPath:indexPath];
+        timeRowHeader.time = [self.collectionViewCalendarLayout dateForTimeRowHeaderAtIndexPath:indexPath];
+        view = timeRowHeader;
+    }
+    return view;
+}
+
+#pragma mark - MSCollectionViewCalendarLayout
+
+- (NSDate *)collectionView:(UICollectionView *)collectionView layout:(MSCollectionViewCalendarLayout *)collectionViewCalendarLayout dayForSection:(NSInteger)section
+{
+    return [NSDate date];
+}
+
+- (NSDate *)collectionView:(UICollectionView *)collectionView layout:(MSCollectionViewCalendarLayout *)collectionViewCalendarLayout startTimeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    Events *time = [collectionViewArray objectAtIndex:indexPath.row];
+    return time.date;
+}
+
+- (NSDate *)collectionView:(UICollectionView *)collectionView layout:(MSCollectionViewCalendarLayout *)collectionViewCalendarLayout endTimeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    Events *time = [collectionViewArray objectAtIndex:indexPath.row];
+    if (time.endDate) {
+        return time.endDate;
+    }else{
+        return [time.date dateByAddingTimeInterval:60*30];
+    }
+}
+
+- (NSDate *)currentTimeComponentsForCollectionView:(UICollectionView *)collectionView layout:(MSCollectionViewCalendarLayout *)collectionViewCalendarLayout{
+    return [NSDate date];
+}
+
+//
+//-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+//    
+//    EventTableViewCell *cell = (EventTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"idEventCell" forIndexPath:indexPath];
+//    Events *event = [eventArray objectAtIndex:indexPath.row];
+//    cell.titleLabel.text = event.title;
+//    cell.dateLabel.text = [[Date getDefaultDateFormatter] stringFromDate:event.date];
+//    
+//    return cell;
+//}
 
 #pragma mark - JTCalendar Delegate
 
@@ -176,7 +132,7 @@
     NSMutableArray *array = [EventsHelper findEventsForToday:dayView.date withRealm:[Events allObjects]];
     if(array.count > 0){
         eventArray = array;
-        [self.table reloadData];
+        [self.collectionView reloadData];
     }
     self.eventCountl.text = [NSString stringWithFormat:NSLocalizedString(@"%lu Events on this day", nil), (unsigned long)array.count];
     
@@ -265,7 +221,7 @@
                 self.labelContr2.constant = 0;
                 self.labelConst3.constant = 0;
                 self.contr.constant = 250;
-                [self.table reloadData];
+                [self.collectionView reloadData];
                 [self.view layoutIfNeeded];
             }];
         }else if (swipe.direction == UISwipeGestureRecognizerDirectionDown){
@@ -276,10 +232,29 @@
                 self.contr.constant = 0;
                 [self.view layoutIfNeeded];
             }];
-            
         }
     });
     
+}
+
+-(void)setUpCollectionView{
+    
+    [self.collectionView registerClass:MSEventCell.class forCellWithReuseIdentifier:MSEventCellReuseIdentifier];
+    [self.collectionView registerClass:MSDayColumnHeader.class forSupplementaryViewOfKind:MSCollectionElementKindDayColumnHeader withReuseIdentifier:MSDayColumnHeaderReuseIdentifier];
+    [self.collectionView registerClass:MSTimeRowHeader.class forSupplementaryViewOfKind:MSCollectionElementKindTimeRowHeader withReuseIdentifier:MSTimeRowHeaderReuseIdentifier];
+    self.collectionView.frame = self.collectionView.bounds;
+    self.collectionView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    
+    self.collectionViewCalendarLayout = [[MSCollectionViewCalendarLayout alloc] init];
+    self.collectionViewCalendarLayout.delegate = self;
+    [self.collectionView setCollectionViewLayout:self.collectionViewCalendarLayout];
+    // These are optional. If you don't want any of the decoration views, just don't register a class for them.
+    [self.collectionViewCalendarLayout registerClass:MSCurrentTimeIndicator.class forDecorationViewOfKind:MSCollectionElementKindCurrentTimeIndicator];
+    [self.collectionViewCalendarLayout registerClass:MSCurrentTimeGridline.class forDecorationViewOfKind:MSCollectionElementKindCurrentTimeHorizontalGridline];
+    [self.collectionViewCalendarLayout registerClass:MSGridline.class forDecorationViewOfKind:MSCollectionElementKindVerticalGridline];
+    [self.collectionViewCalendarLayout registerClass:MSGridline.class forDecorationViewOfKind:MSCollectionElementKindHorizontalGridline];
+    [self.collectionViewCalendarLayout registerClass:MSTimeRowHeaderBackground.class forDecorationViewOfKind:MSCollectionElementKindTimeRowHeaderBackground];
+    [self.collectionView reloadData];
 }
 
 -(void)setUpGestures{
@@ -307,7 +282,7 @@
     NSMutableArray *array = [EventsHelper findEventsForToday:[NSDate date] withRealm:[Events allObjects]];
     if(array.count > 0){
         eventArray = [[NSMutableArray alloc] initWithArray:array];
-        [self.table reloadData];
+        [self.collectionView reloadData];
     }
     self.eventCountl.text = [NSString stringWithFormat:NSLocalizedString(@"%lu Events on this day", nil), (unsigned long)array.count];
 }
@@ -325,8 +300,14 @@
     NSMutableArray *array = [EventsHelper findEventsForToday:[NSDate date] withRealm:[Events allObjects]];
     if(array.count > 0){
         eventArray = array;
-        [self.table reloadData];
+        [self.collectionView reloadData];
     }
+    
+    //collection view settings
+    NSMutableArray *events = [EventsHelper findTodayNotCompletedEvents:[Events allObjects]];
+    collectionViewArray = [events arrayByAddingObjectsFromArray:[EventManager timePeriodsinTimeline]];
+    self.collectionView.layer.masksToBounds = YES;
+    [self.collectionViewCalendarLayout scrollCollectionViewToClosetSectionToCurrentTimeAnimated:YES];
     [super viewDidAppear:YES];
 }
 

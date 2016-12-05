@@ -58,7 +58,7 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     if (indexPath.row + 1 == allEvents.count) {
-        addEventCell *cell = [tableView dequeueReusableCellWithIdentifier:@"addEventCell" forIndexPath:indexPath];
+        AddEventCell *cell = [tableView dequeueReusableCellWithIdentifier:@"addEventCell" forIndexPath:indexPath];
         cell.textfield.text = @"";
         cell.delegate = self;
         return cell;
@@ -142,7 +142,7 @@
 
 #pragma mark - AddEventCell Delegate
 
--(void)addNewEventFromCell:(addEventCell *)cell{
+-(void)addNewEventFromCell:(AddEventCell *)cell{
     
     RLMRealm *realm = [RLMRealm defaultRealm];
     [realm beginWriteTransaction];

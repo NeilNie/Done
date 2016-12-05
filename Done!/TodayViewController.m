@@ -10,22 +10,11 @@
 
 @interface TodayViewController ()
 
-@property (strong, nonatomic) NSMutableArray *data;
-@property (strong, nonatomic) NSMutableArray *completedData;
-@property (strong, nonatomic) NSMutableArray *eventNumber;
-@property (nonatomic, strong) NSArray *labels;
 @property (nonatomic, strong) AppDelegate *ApplicationDelegate;
-@property (nonatomic, strong) MSCollectionViewCalendarLayout *collectionViewCalendarLayout;
-@property (nonatomic, readonly) CGFloat layoutSectionWidth;
 
 @end
 
 @implementation TodayViewController
-
-NSString * const MSEventCellReuseIdentifier = @"MSEventCellReuseIdentifier";
-NSString * const MSDayColumnHeaderReuseIdentifier = @"MSDayColumnHeaderReuseIdentifier";
-NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifier";
-
 
 #pragma mark - UITableView Delegate
 
@@ -143,88 +132,15 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     [self.table deleteRowsAtIndexPaths:@[index] withRowAnimation:UITableViewRowAnimationTop];
 }
 
-
-#pragma mark - UICollectionViewDataSource
-
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
-    return 1;
-}
-
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return collectionViewArray.count;
-}
-
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    MSEventCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:MSEventCellReuseIdentifier forIndexPath:indexPath];
-    cell.contentView.frame = cell.bounds;
-    cell.contentView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    cell.event = [collectionViewArray objectAtIndex:indexPath.row];
-    return cell;
-}
-
-- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
-{
-    UICollectionReusableView *view;
-    if (kind == MSCollectionElementKindDayColumnHeader) {
-        MSDayColumnHeader *dayColumnHeader = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:MSDayColumnHeaderReuseIdentifier forIndexPath:indexPath];
-        NSDate *day = [self.collectionViewCalendarLayout dateForDayColumnHeaderAtIndexPath:indexPath];
-        NSDate *currentDay = [self currentTimeComponentsForCollectionView:self.collectionView layout:self.collectionViewCalendarLayout];
-        
-        NSDate *startOfDay = [[NSCalendar currentCalendar] startOfDayForDate:day];
-        NSDate *startOfCurrentDay = [[NSCalendar currentCalendar] startOfDayForDate:currentDay];
-        
-        dayColumnHeader.day = day;
-        dayColumnHeader.currentDay = [startOfDay isEqualToDate:startOfCurrentDay];
-        
-        view = dayColumnHeader;
-    } else if (kind == MSCollectionElementKindTimeRowHeader) {
-        MSTimeRowHeader *timeRowHeader = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:MSTimeRowHeaderReuseIdentifier forIndexPath:indexPath];
-        timeRowHeader.time = [self.collectionViewCalendarLayout dateForTimeRowHeaderAtIndexPath:indexPath];
-        view = timeRowHeader;
-    }
-    return view;
-}
-
-#pragma mark - MSCollectionViewCalendarLayout
-
-- (NSDate *)collectionView:(UICollectionView *)collectionView layout:(MSCollectionViewCalendarLayout *)collectionViewCalendarLayout dayForSection:(NSInteger)section
-{
-    return [NSDate date];
-}
-
-- (NSDate *)collectionView:(UICollectionView *)collectionView layout:(MSCollectionViewCalendarLayout *)collectionViewCalendarLayout startTimeForItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    Events *time = [collectionViewArray objectAtIndex:indexPath.row];
-    return time.date;
-}
-
-- (NSDate *)collectionView:(UICollectionView *)collectionView layout:(MSCollectionViewCalendarLayout *)collectionViewCalendarLayout endTimeForItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    Events *time = [collectionViewArray objectAtIndex:indexPath.row];
-    if (time.endDate) {
-        return time.endDate;
-    }else{
-        return [time.date dateByAddingTimeInterval:60*30];
-    }
-}
-
-- (NSDate *)currentTimeComponentsForCollectionView:(UICollectionView *)collectionView layout:(MSCollectionViewCalendarLayout *)collectionViewCalendarLayout{
-    return [NSDate date];
-}
-
 #pragma mark - Privates
 
 -(IBAction)refreshData:(id)sender{
     
     result = [Events allObjects];
     allEvents = [EventsHelper findTodayNotCompletedEvents:result];
-    collectionViewArray = [allEvents arrayByAddingObjectsFromArray:[EventManager timePeriodsinTimeline]];
     self.ApplicationDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     [self setUpview];
     [self setUpUserInterface];
-    [self setUpCollectionView];
-    [self.collectionView reloadData];
     [self.table reloadData];
     
 }
@@ -239,26 +155,6 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     });
 }
 
--(void)setUpCollectionView{
-
-    [self.collectionView registerClass:MSEventCell.class forCellWithReuseIdentifier:MSEventCellReuseIdentifier];
-    [self.collectionView registerClass:MSDayColumnHeader.class forSupplementaryViewOfKind:MSCollectionElementKindDayColumnHeader withReuseIdentifier:MSDayColumnHeaderReuseIdentifier];
-    [self.collectionView registerClass:MSTimeRowHeader.class forSupplementaryViewOfKind:MSCollectionElementKindTimeRowHeader withReuseIdentifier:MSTimeRowHeaderReuseIdentifier];
-    self.collectionView.frame = self.collectionView.bounds;
-    self.collectionView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-
-    self.collectionViewCalendarLayout = [[MSCollectionViewCalendarLayout alloc] init];
-    self.collectionViewCalendarLayout.delegate = self;
-    [self.collectionView setCollectionViewLayout:self.collectionViewCalendarLayout];
-    // These are optional. If you don't want any of the decoration views, just don't register a class for them.
-    [self.collectionViewCalendarLayout registerClass:MSCurrentTimeIndicator.class forDecorationViewOfKind:MSCollectionElementKindCurrentTimeIndicator];
-    [self.collectionViewCalendarLayout registerClass:MSCurrentTimeGridline.class forDecorationViewOfKind:MSCollectionElementKindCurrentTimeHorizontalGridline];
-    [self.collectionViewCalendarLayout registerClass:MSGridline.class forDecorationViewOfKind:MSCollectionElementKindVerticalGridline];
-    [self.collectionViewCalendarLayout registerClass:MSGridline.class forDecorationViewOfKind:MSCollectionElementKindHorizontalGridline];
-    [self.collectionViewCalendarLayout registerClass:MSTimeRowHeaderBackground.class forDecorationViewOfKind:MSCollectionElementKindTimeRowHeaderBackground];
-    [self.collectionView reloadData];
-}
-
 -(void)setShadowforView:(UIView *)view{
     
     view.layer.cornerRadius = 15;
@@ -270,8 +166,6 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
 }
 
 -(void)setUpUserInterface{
-
-    self.labels = @[@"1", @"2", @"3",@"4", @"5", @"6",@"7"];
     
     //set up views with data
     NSUInteger totalEts = allEvents.count;
@@ -291,12 +185,12 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     if (allEvents.count == 0) {
         self.tlConstr.constant = 0;
         self.table.hidden = YES;
-        self.collectionView.hidden = YES;
+        //self.collectionView.hidden = YES;
         self.clearLabel.hidden = NO;
     }else{
         self.tlConstr.constant = self.masterView.frame.size.height/2;
         self.table.hidden = NO;
-        self.collectionView.hidden = NO;
+        //self.collectionView.hidden = NO;
         self.clearLabel.hidden = YES;
     }
 }
@@ -350,8 +244,8 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     }
     [self setShadowforView:self.todayView];
     [self setShadowforView:self.masterView];
-    [self setShadowforView:self.collectionView];
-    self.collectionView.layer.masksToBounds = YES;
+    //[self setShadowforView:self.collectionView];
+    
     //set up for animation
 }
 
@@ -422,8 +316,6 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     
     UITapGestureRecognizer *tapTimeline = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapMasterView:)];
     [self.masterView addGestureRecognizer:tapTimeline];
-    UITapGestureRecognizer *tapView = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapMasterView:)];
-    [self.collectionView addGestureRecognizer:tapView];
     UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGesture:)];
     [self.dragButton addGestureRecognizer:pan];
 }
@@ -443,7 +335,6 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
 -(void)viewDidAppear:(BOOL)animated{
     
     [self setUpUserInterface];
-    [self.collectionViewCalendarLayout scrollCollectionViewToClosetSectionToCurrentTimeAnimated:YES];
     [super viewDidAppear:YES];
 }
 

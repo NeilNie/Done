@@ -33,27 +33,32 @@
  */
 +(void)modifyEventValue:(NSString *)value withKey:(NSString *)key;
 
+
 /**
- The opposite of the previous method. It takes in an array and turn store them in Default Realm. The array parameter has to include 
+ It takes in an array and store them in Realm.
+ @param NSMutableArray
+ @returns nil
+ @exception nil
  */
 +(void)createRealmWithArray:(NSMutableArray *)array;
 
+
 /**
  This method converts all the Event objects to a NSMutableArray that contains Event objects.
+ @param RLMResults
+ @returns NSMutableArray
+ @exception nil
  */
-
 +(NSMutableArray *)convertEventsToArray:(RLMResults *)results;
 
 /**
  This method finds all the Event objects on a specific day which is the parameter.
+ @param NSDate, RLMResults
+ @returns NSMutableArray
+ @exception nil
  */
 +(NSMutableArray *)findEventsForToday:(NSDate *)today withRealm:(RLMResults *)realm;
-
 +(NSMutableArray *)findEventsForToday:(NSDate *)today withArrayOfEvents:(NSMutableArray *)realm;
-
-+(NSMutableArray *)findTodayCompletedEvents:(RLMResults *)realm;
-
-+(NSMutableArray *)findCompletedEventsWithArrayOfEvents:(NSMutableArray *)realm withDate:(NSDate *)date;
 
 /**
  This method finds all the completed events on a day which is the parameter. The method returns an NSMutableArray that contains events objects.
@@ -62,30 +67,43 @@
 
 /**
  This method converts all Event objects, disregarding date, completion to an NSMutableArray that contains NSDictionaries.
+ @param nil
+ @returns NSMutableArray
+ @exception nil
  */
 +(NSMutableArray *)convertAllObjecttoArray;
 
+/**
+ Find all events today that is not completed yet
+ @param realm
+ @returns NSMutableArray
+ @exception nil
+ */
 +(NSMutableArray *)findTodayNotCompletedEvents:(RLMResults *)realm;
 
 +(NSMutableArray *)findNotCompletedEvents:(RLMArray *)realm;
 
 +(Events *)findEarliestEventTodayWithArray:(NSMutableArray *)array;
 
-//+(Events *)findEventWithTitle:(NSString *)string withRealm:(RLMArray *)array;
-
 +(Events *)findEventWithTitle:(NSString *)string withAllRealm:(RLMResults *)array;
-
-+(Events *)findMostRecentEvent:(NSDate *)date withArrayOfEvents:(NSMutableArray *)realm;
 
 +(Projects *)findProjectWithName:(NSString *)name;
 
-///Find the most recent event on a day. Parameters: date and realm (RLMArray and RLMResults).
-
+/**
+ Find the most recent event on a day. Parameters: date and realm (RLMArray or RLMResults or NSMutableArray)
+ @param NSDate, RLMArray / RLMResults / NSMutableArray
+ @returns Events
+ @exception nil
+ */
 +(Events *)findMostRecentEvent:(NSDate *)date withRealm:(RLMArray *)realm;
-
 +(Events *)findMostRecentEvent:(NSDate *)date withRealmResult:(RLMResults *)realm;
++(Events *)findMostRecentEvent:(NSDate *)date withArrayOfEvents:(NSMutableArray *)realm;
 
 +(NSMutableArray *)findImportantEvents:(NSDate *)date withRealm:(RLMResults *)realm;
+
++(NSMutableArray *)findTodayCompletedEvents:(RLMResults *)realm;
+
++(NSMutableArray *)findCompletedEventsWithArrayOfEvents:(NSMutableArray *)realm withDate:(NSDate *)date;
 
 #pragma mark - Helpers
 

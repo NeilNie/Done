@@ -6,9 +6,9 @@
 //  Copyright © 2016 Yongyang Nie. All rights reserved.
 //
 
-#import "NYTimePeriod.h"
+#import "TimePeriod.h"
 
-@implementation NYTimePeriod
+@implementation TimePeriod
 
 - (instancetype)initWithStart:(NSDate *)start andEnd:(NSDate *)end
 {

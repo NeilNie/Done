@@ -162,7 +162,7 @@ NSString * const MSCSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdenti
 -(NSArray<Events *> *)setUpEventArray{
     
     EventManager *manager = [[EventManager alloc] init];
-    NSArray *calendarEvents = [manager getTodayEventCalendars];
+    NSArray *calendarEvents = [manager getTodayLocalEvent];
     
     NSMutableArray *events = [NSMutableArray array];
     NSDateFormatter *formate = [[NSDateFormatter alloc] init];
@@ -180,7 +180,7 @@ NSString * const MSCSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdenti
     }
     
     [events addObjectsFromArray:[EventsHelper findTodayNotCompletedEvents:[Events allObjects]]];
-    [events addObjectsFromArray:[self convertPeriodsToEvents:[[[EventManager alloc] init] freeTimesToday]]];
+    [events addObjectsFromArray:[self convertPeriodsToEvents:[[[EventManager alloc] init] findFreePeriodsToday]]];
     return events;
 }
 
@@ -188,7 +188,7 @@ NSString * const MSCSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdenti
     NSMutableArray *returnArray = [NSMutableArray array];
     
     for (int i = 0; i < periods.count; i++) {
-        NYTimePeriod *period = [periods objectAtIndex:i];
+        TimePeriod *period = [periods objectAtIndex:i];
         Events *event = [[Events alloc] init];
         event.date = period.startDate;
         event.endDate = period.endDate;

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NYTimePeriod : NSObject
+@interface TimePeriod : NSObject
 
 @property (strong, nonatomic) NSDate *startDate;
 @property (strong, nonatomic) NSDate *endDate;

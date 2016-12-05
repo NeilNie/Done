@@ -70,7 +70,6 @@
 		280523B91D3FA3DC00D0EA0C /* PNScatterChartDataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 280523A91D3FA3DC00D0EA0C /* PNScatterChartDataItem.m */; };
 		280523BB1D3FE0F800D0EA0C /* GraphTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 280523BA1D3FE0F800D0EA0C /* GraphTableViewCell.xib */; };
 		280523BE1D3FE10C00D0EA0C /* GraphTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 280523BD1D3FE10C00D0EA0C /* GraphTableViewCell.m */; };
-		28097FE71CE55A3F000530BF /* PurchaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28097FE61CE55A3F000530BF /* PurchaseViewController.m */; };
 		280C83DB1CF31D4D00DC8742 /* UserAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 280C83DA1CF31D4D00DC8742 /* UserAuthViewController.m */; };
 		280EFD951CE2C17500C31E46 /* MSCurrentTimeGridline.m in Sources */ = {isa = PBXBuildFile; fileRef = 280EFD881CE2C17500C31E46 /* MSCurrentTimeGridline.m */; };
 		280EFD961CE2C17500C31E46 /* MSCurrentTimeIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 280EFD8A1CE2C17500C31E46 /* MSCurrentTimeIndicator.m */; };
@@ -84,15 +83,15 @@
 		2836B9091D303806006ADBAF /* TableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2836B9081D303806006ADBAF /* TableController.m */; };
 		283B892C1D3D5DD6000ADA9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 283B892B1D3D5DD6000ADA9E /* Assets.xcassets */; };
 		283B89321D3D71D7000ADA9E /* ExtensionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 283B89311D3D71D7000ADA9E /* ExtensionViewController.m */; };
-		283D1B111D1640DF000CEC0C /* NYTimePeriod.m in Sources */ = {isa = PBXBuildFile; fileRef = 283D1B101D1640DF000CEC0C /* NYTimePeriod.m */; };
+		283D1B111D1640DF000CEC0C /* TimePeriod.m in Sources */ = {isa = PBXBuildFile; fileRef = 283D1B101D1640DF000CEC0C /* TimePeriod.m */; };
 		284A641B1D0FA953009A348A /* addEventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 284A641A1D0FA953009A348A /* addEventCell.xib */; };
 		285431871CE01BD80022F993 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 285431861CE01BD80022F993 /* UIKit.framework */; };
 		285431891CE01BE20022F993 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 285431881CE01BE20022F993 /* QuartzCore.framework */; };
 		285475FE1D147AD500069310 /* EventManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 285475FD1D147AD500069310 /* EventManager.m */; };
 		285475FF1D147AF600069310 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D9AF281CDACEE700E50C10 /* EventKit.framework */; };
 		285476001D147AF600069310 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D9AF291CDACEE700E50C10 /* EventKitUI.framework */; };
-		286C08D11D0FACEC0077F91F /* addEventCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 286C08D01D0FACEC0077F91F /* addEventCell.m */; };
-		286E50641D150E8000EEA0A6 /* NYDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 286E50631D150E8000EEA0A6 /* NYDate.m */; };
+		286C08D11D0FACEC0077F91F /* AddEventCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 286C08D01D0FACEC0077F91F /* AddEventCell.m */; };
+		286E50641D150E8000EEA0A6 /* Date.m in Sources */ = {isa = PBXBuildFile; fileRef = 286E50631D150E8000EEA0A6 /* Date.m */; };
 		287125C31D3C548300F1C791 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 287125C51D3C548300F1C791 /* Main.storyboard */; };
 		287125D41D3C5A9500F1C791 /* interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 287125D61D3C5A9500F1C791 /* interface.storyboard */; };
 		288538901D1225F1008EADFE /* CustomDatePickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2885388F1D1225F1008EADFE /* CustomDatePickerCell.m */; };
@@ -154,7 +153,6 @@
 		28EB3AB21CEA8EBE00A5BCED /* screen_shot_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 28EB3A971CEA8EBE00A5BCED /* screen_shot_5.png */; };
 		28EB3AB91CEA8EBE00A5BCED /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = 28EB3A9E1CEA8EBE00A5BCED /* user.png */; };
 		28EB42E81D94A8470049DACF /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28EB42E71D94A8470049DACF /* TodayViewController.m */; };
-		28EB42EB1D94AA2E0049DACF /* ViewHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 28EB42EA1D94AA2E0049DACF /* ViewHelper.m */; };
 		28F176B11D3976B300DCE3E1 /* circled_down_filled.png in Resources */ = {isa = PBXBuildFile; fileRef = 28F176B01D3976B300DCE3E1 /* circled_down_filled.png */; };
 		28F176B31D3984DC00DCE3E1 /* circle-nf.png in Resources */ = {isa = PBXBuildFile; fileRef = 28F176B21D3984DC00DCE3E1 /* circle-nf.png */; };
 		28F5E53D1CE53BF500C15FF6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D9AF341CDACF4E00E50C10 /* CoreGraphics.framework */; };
@@ -353,8 +351,6 @@
 		280523BA1D3FE0F800D0EA0C /* GraphTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GraphTableViewCell.xib; sourceTree = "<group>"; };
 		280523BC1D3FE10C00D0EA0C /* GraphTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphTableViewCell.h; sourceTree = "<group>"; };
 		280523BD1D3FE10C00D0EA0C /* GraphTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphTableViewCell.m; sourceTree = "<group>"; };
-		28097FE51CE55A3F000530BF /* PurchaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PurchaseViewController.h; sourceTree = "<group>"; };
-		28097FE61CE55A3F000530BF /* PurchaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PurchaseViewController.m; sourceTree = "<group>"; };
 		280C83D91CF31D4D00DC8742 /* UserAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserAuthViewController.h; sourceTree = "<group>"; };
 		280C83DA1CF31D4D00DC8742 /* UserAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAuthViewController.m; sourceTree = "<group>"; };
 		280EFD871CE2C17500C31E46 /* MSCurrentTimeGridline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCurrentTimeGridline.h; sourceTree = "<group>"; };
@@ -386,18 +382,18 @@
 		283B892B1D3D5DD6000ADA9E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		283B89301D3D71D7000ADA9E /* ExtensionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtensionViewController.h; sourceTree = "<group>"; };
 		283B89311D3D71D7000ADA9E /* ExtensionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtensionViewController.m; sourceTree = "<group>"; };
-		283D1B0F1D1640DF000CEC0C /* NYTimePeriod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYTimePeriod.h; sourceTree = "<group>"; };
-		283D1B101D1640DF000CEC0C /* NYTimePeriod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYTimePeriod.m; sourceTree = "<group>"; };
+		283D1B0F1D1640DF000CEC0C /* TimePeriod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimePeriod.h; sourceTree = "<group>"; };
+		283D1B101D1640DF000CEC0C /* TimePeriod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimePeriod.m; sourceTree = "<group>"; };
 		284112D61CDAD09900718101 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		284A641A1D0FA953009A348A /* addEventCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = addEventCell.xib; sourceTree = "<group>"; };
 		285431861CE01BD80022F993 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		285431881CE01BE20022F993 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		285475FC1D147AD500069310 /* EventManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventManager.h; sourceTree = "<group>"; };
 		285475FD1D147AD500069310 /* EventManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventManager.m; sourceTree = "<group>"; };
-		286C08CF1D0FACEC0077F91F /* addEventCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = addEventCell.h; sourceTree = "<group>"; };
-		286C08D01D0FACEC0077F91F /* addEventCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = addEventCell.m; sourceTree = "<group>"; };
-		286E50621D150E8000EEA0A6 /* NYDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYDate.h; sourceTree = "<group>"; };
-		286E50631D150E8000EEA0A6 /* NYDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYDate.m; sourceTree = "<group>"; };
+		286C08CF1D0FACEC0077F91F /* AddEventCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddEventCell.h; sourceTree = "<group>"; };
+		286C08D01D0FACEC0077F91F /* AddEventCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddEventCell.m; sourceTree = "<group>"; };
+		286E50621D150E8000EEA0A6 /* Date.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Date.h; sourceTree = "<group>"; };
+		286E50631D150E8000EEA0A6 /* Date.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Date.m; sourceTree = "<group>"; };
 		287125C41D3C548300F1C791 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		287125C61D3C548C00F1C791 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		287125C71D3C548C00F1C791 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -519,8 +515,6 @@
 		28EB3A9E1CEA8EBE00A5BCED /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user.png; sourceTree = "<group>"; };
 		28EB42E61D94A8470049DACF /* TodayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
 		28EB42E71D94A8470049DACF /* TodayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodayViewController.m; sourceTree = "<group>"; };
-		28EB42E91D94AA2E0049DACF /* ViewHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewHelper.h; sourceTree = "<group>"; };
-		28EB42EA1D94AA2E0049DACF /* ViewHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewHelper.m; sourceTree = "<group>"; };
 		28F176B01D3976B300DCE3E1 /* circled_down_filled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circled_down_filled.png; sourceTree = "<group>"; };
 		28F176B21D3984DC00DCE3E1 /* circle-nf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "circle-nf.png"; sourceTree = "<group>"; };
 		28F5E53E1CE53BFB00C15FF6 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
@@ -854,8 +848,6 @@
 			children = (
 				00C197791CDFE6B100604203 /* TipsViewController.h */,
 				00C1977A1CDFE6B100604203 /* TipsViewController.m */,
-				28097FE51CE55A3F000530BF /* PurchaseViewController.h */,
-				28097FE61CE55A3F000530BF /* PurchaseViewController.m */,
 				2802F8321CC5C2F400C65966 /* CreateNewVC.h */,
 				2802F8331CC5C2F400C65966 /* CreateNewVC.m */,
 				280C83D91CF31D4D00DC8742 /* UserAuthViewController.h */,
@@ -928,8 +920,8 @@
 				28DED30C1D50BFE10046E55A /* TimelineTableViewCell.m */,
 				280523BC1D3FE10C00D0EA0C /* GraphTableViewCell.h */,
 				280523BD1D3FE10C00D0EA0C /* GraphTableViewCell.m */,
-				286C08CF1D0FACEC0077F91F /* addEventCell.h */,
-				286C08D01D0FACEC0077F91F /* addEventCell.m */,
+				286C08CF1D0FACEC0077F91F /* AddEventCell.h */,
+				286C08D01D0FACEC0077F91F /* AddEventCell.m */,
 				28006A111CC6B41900583D69 /* CustomCell.h */,
 				28006A121CC6B41900583D69 /* CustomCell.m */,
 				2885388E1D1225F1008EADFE /* CustomDatePickerCell.h */,
@@ -954,8 +946,6 @@
 		287125C01D3C540200F1C791 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				28EB42E91D94AA2E0049DACF /* ViewHelper.h */,
-				28EB42EA1D94AA2E0049DACF /* ViewHelper.m */,
 				285475FC1D147AD500069310 /* EventManager.h */,
 				285475FD1D147AD500069310 /* EventManager.m */,
 				00BEC6701CCBC93A008B7862 /* EventsHelper.h */,
@@ -969,10 +959,10 @@
 		287125C11D3C540E00F1C791 /* Objects */ = {
 			isa = PBXGroup;
 			children = (
-				283D1B0F1D1640DF000CEC0C /* NYTimePeriod.h */,
-				283D1B101D1640DF000CEC0C /* NYTimePeriod.m */,
-				286E50621D150E8000EEA0A6 /* NYDate.h */,
-				286E50631D150E8000EEA0A6 /* NYDate.m */,
+				283D1B0F1D1640DF000CEC0C /* TimePeriod.h */,
+				283D1B101D1640DF000CEC0C /* TimePeriod.m */,
+				286E50621D150E8000EEA0A6 /* Date.h */,
+				286E50631D150E8000EEA0A6 /* Date.m */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -1710,7 +1700,7 @@
 				280523AD1D3FA3DC00D0EA0C /* PNCircleChart.m in Sources */,
 				00F48A301CC5193000B94EA4 /* CalendarViewController.m in Sources */,
 				0020F72A1CD584A900F47CEE /* QBPopupMenuItemView.m in Sources */,
-				286E50641D150E8000EEA0A6 /* NYDate.m in Sources */,
+				286E50641D150E8000EEA0A6 /* Date.m in Sources */,
 				28B4463B1D370D76000A0501 /* TimelineViewController.m in Sources */,
 				28E53D021CD04662002DB55F /* Projects.m in Sources */,
 				28DBC0651D52876400880D55 /* MDTabBar.m in Sources */,
@@ -1724,7 +1714,7 @@
 				28DBC06E1D52876400880D55 /* MDSuggestTableView.m in Sources */,
 				28DBC05A1D52876400880D55 /* MDDeviceHelper.m in Sources */,
 				28DBC0671D52876400880D55 /* MDTableViewCell.m in Sources */,
-				283D1B111D1640DF000CEC0C /* NYTimePeriod.m in Sources */,
+				283D1B111D1640DF000CEC0C /* TimePeriod.m in Sources */,
 				280523B81D3FA3DC00D0EA0C /* PNScatterChartData.m in Sources */,
 				280523BE1D3FE10C00D0EA0C /* GraphTableViewCell.m in Sources */,
 				280523AA1D3FA3DC00D0EA0C /* PNBar.m in Sources */,
@@ -1735,12 +1725,11 @@
 				28DED30E1D50BFE10046E55A /* TimelineTableViewCell.m in Sources */,
 				28DBC06C1D52876400880D55 /* MDProgressLayer.m in Sources */,
 				280523B31D3FA3DC00D0EA0C /* PNPieChart.m in Sources */,
-				286C08D11D0FACEC0077F91F /* addEventCell.m in Sources */,
+				286C08D11D0FACEC0077F91F /* AddEventCell.m in Sources */,
 				280523B21D3FA3DC00D0EA0C /* PNLineChartDataItem.m in Sources */,
 				280523B61D3FA3DC00D0EA0C /* PNRadarChartDataItem.m in Sources */,
 				28DBC0691D52876400880D55 /* MDTouchGestureRecognizer.m in Sources */,
 				28DBC0681D52876400880D55 /* MDTextField.m in Sources */,
-				28097FE71CE55A3F000530BF /* PurchaseViewController.m in Sources */,
 				2802F8341CC5C2F400C65966 /* CreateNewVC.m in Sources */,
 				280EFD9B1CE2C17500C31E46 /* MSTimeRowHeaderBackground.m in Sources */,
 				280523B01D3FA3DC00D0EA0C /* PNLineChart.m in Sources */,
@@ -1755,7 +1744,6 @@
 				28DBC05B1D52876400880D55 /* NSDateHelper.m in Sources */,
 				28FDBD611CFB968700EFEB59 /* FirebaseHelper.m in Sources */,
 				006083501CC4007500A344F1 /* AppDelegate.m in Sources */,
-				28EB42EB1D94AA2E0049DACF /* ViewHelper.m in Sources */,
 				28DBC0621D52876400880D55 /* MDRippleLayer.m in Sources */,
 				28DBC05D1D52876400880D55 /* UIFontHelper.m in Sources */,
 				285475FE1D147AD500069310 /* EventManager.m in Sources */,

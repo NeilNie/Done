@@ -16,19 +16,30 @@
 #import "EventTableViewCell.h"
 #import "EventsHelper.h"
 #import "JTCalendar/JTCalendar.h"
-#import "NYDate.h"
+#import "Date.h"
+
+#import "MSCollectionViewCalendarLayout.h"
+#import "MSGridline.h"
+#import "MSTimeRowHeaderBackground.h"
+#import "MSDayColumnHeaderBackground.h"
+#import "MSEventCell.h"
+#import "MSDayColumnHeader.h"
+#import "MSTimeRowHeader.h"
+#import "MSCurrentTimeIndicator.h"
+#import "MSCurrentTimeGridline.h"
 
 BOOL areAdsRemoved;
 
-@interface CalendarViewController : UIViewController <JTCalendarDelegate, UITableViewDataSource, UITableViewDelegate, SKProductsRequestDelegate, SKPaymentTransactionObserver>{
+@interface CalendarViewController : UIViewController <JTCalendarDelegate, MSCollectionViewDelegateCalendarLayout>{
 
     NSDate *dateSelected;
     NSMutableDictionary *eventsByDate;
     NSMutableArray *eventArray;
+    NSArray *collectionViewArray;
 }
 
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet JTHorizontalCalendarView *calendarContentView;
-@property (weak, nonatomic) IBOutlet UITableView *table;
 @property (strong, nonatomic) JTCalendarManager *calendarManager;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *contr;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *labelContr1;

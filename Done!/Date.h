@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <EventKit/EventKit.h>
 
-@interface NYDate : NSDate
+@interface Date : NSDate
 
 @property (strong, nonatomic) NSDateFormatter *defaultDateFormatter;
 
