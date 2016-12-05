@@ -20,14 +20,6 @@
 @import FirebaseDatabase;
 @import FirebaseAuth;
 
-@protocol CreateNewDelegate <NSObject>
-
-@optional
-
--(void)addNewEventToProject:(Events *)event;
-
-@end
-
 @interface CreateNewVC : UIViewController <WCSessionDelegate, UITableViewDelegate, UITableViewDataSource, CustomCellDelegates, TimelineTableViewCellDelegate>{
     
     NSArray *array;
@@ -43,7 +35,15 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *buttomConst;
 @property (strong, nonatomic) NSString *sender;
 @property (strong, nonatomic) Projects *addedToProject;
-@property (nonatomic, assign) id <CreateNewDelegate> delegate;
+@property (nonatomic, assign) id delegate;
 @property (weak, nonatomic) IBOutlet UITableView *table;
+
+@end
+
+@protocol CreateNewDelegate <NSObject>
+
+@optional
+
+-(void)addNewEventToProject:(Events *)event;
 
 @end

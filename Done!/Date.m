@@ -6,9 +6,9 @@
 //  Copyright © 2016 Yongyang Nie. All rights reserved.
 //
 
-#import "NYDate.h"
+#import "Date.h"
 
-@implementation NYDate
+@implementation Date
 
 - (instancetype)init
 {
@@ -30,7 +30,7 @@
 }
 +(NSDate *)tomorrowStarts{
     
-    NSDate *date = [NSDate dateWithTimeInterval:60 * 60 * 24 sinceDate: [NYDate todayStarts]];
+    NSDate *date = [NSDate dateWithTimeInterval:60 * 60 * 24 sinceDate: [Date todayStarts]];
     return date;
 }
 

@@ -24,7 +24,7 @@
 
 BOOL phoneModified;
 
-@interface TodoViewController : UIViewController <WCSessionDelegate, UITableViewDelegate, UITableViewDataSource, EventCellDelegate, SWTableViewCellDelegate, addEventCellDelegate, MDTabBarDelegate, CreateNewDelegate, MDButtonDelegate>{
+@interface TodoViewController : UIViewController <WCSessionDelegate, UITableViewDelegate, UITableViewDataSource, EventCellDelegate, SWTableViewCellDelegate, AddEventCellDelegate, MDTabBarDelegate, CreateNewDelegate, MDButtonDelegate>{
 
     NSMutableArray *allEvents; //an array of Event objects
     NSMutableArray *tabBarArray;

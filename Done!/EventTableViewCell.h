@@ -28,7 +28,7 @@
 @protocol EventCellDelegate <NSObject>
 
 @required
--(void)clickedDone:(EventTableViewCell *)cell;
 
+-(void)clickedDone:(EventTableViewCell *)cell;
 
 @end

@@ -9,18 +9,18 @@
 #import <UIKit/UIKit.h>
 #import "iOSUILib/MDTextField.h"
 
-@interface addEventCell : UITableViewCell <MDTextFieldDelegate>
+@interface AddEventCell : UITableViewCell <MDTextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet MDTextField *textfield;
 @property (nonatomic, assign) id delegate;
 
 @end
 
-@protocol addEventCellDelegate <NSObject>
+@protocol AddEventCellDelegate <NSObject>
 
 -(void)textFieldBeginEditing;
 -(void)textFieldEndEditing;
--(void)addNewEventFromCell:(addEventCell *)cell;
+-(void)addNewEventFromCell:(AddEventCell *)cell;
 
 @end
 

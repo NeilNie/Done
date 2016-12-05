@@ -6,9 +6,9 @@
 //  Copyright © 2016 Yongyang Nie. All rights reserved.
 //
 
-#import "addEventCell.h"
+#import "AddEventCell.h"
 
-@implementation addEventCell
+@implementation AddEventCell
 
 @synthesize delegate;
 
