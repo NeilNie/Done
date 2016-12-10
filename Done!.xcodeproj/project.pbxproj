@@ -144,7 +144,6 @@
 		28EB3AA41CEA8EBE00A5BCED /* bg1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 28EB3A891CEA8EBE00A5BCED /* bg1@2x.png */; };
 		28EB3AA51CEA8EBE00A5BCED /* bg3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 28EB3A8A1CEA8EBE00A5BCED /* bg3@2x.png */; };
 		28EB3AA61CEA8EBE00A5BCED /* bg5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 28EB3A8B1CEA8EBE00A5BCED /* bg5@2x.png */; };
-		28EB3AA81CEA8EBE00A5BCED /* circle-f.png in Resources */ = {isa = PBXBuildFile; fileRef = 28EB3A8D1CEA8EBE00A5BCED /* circle-f.png */; };
 		28EB3AAA1CEA8EBE00A5BCED /* done-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 28EB3A8F1CEA8EBE00A5BCED /* done-icon.png */; };
 		28EB3AAD1CEA8EBE00A5BCED /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28EB3A921CEA8EBE00A5BCED /* Media.xcassets */; };
 		28EB3AAE1CEA8EBE00A5BCED /* screen_shot_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 28EB3A931CEA8EBE00A5BCED /* screen_shot_1.png */; };
@@ -153,8 +152,6 @@
 		28EB3AB21CEA8EBE00A5BCED /* screen_shot_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 28EB3A971CEA8EBE00A5BCED /* screen_shot_5.png */; };
 		28EB3AB91CEA8EBE00A5BCED /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = 28EB3A9E1CEA8EBE00A5BCED /* user.png */; };
 		28EB42E81D94A8470049DACF /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28EB42E71D94A8470049DACF /* TodayViewController.m */; };
-		28F176B11D3976B300DCE3E1 /* circled_down_filled.png in Resources */ = {isa = PBXBuildFile; fileRef = 28F176B01D3976B300DCE3E1 /* circled_down_filled.png */; };
-		28F176B31D3984DC00DCE3E1 /* circle-nf.png in Resources */ = {isa = PBXBuildFile; fileRef = 28F176B21D3984DC00DCE3E1 /* circle-nf.png */; };
 		28F5E53D1CE53BF500C15FF6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D9AF341CDACF4E00E50C10 /* CoreGraphics.framework */; };
 		28F5E53F1CE53BFB00C15FF6 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28F5E53E1CE53BFB00C15FF6 /* Accelerate.framework */; };
 		28F666841D00F0FB008B6A1D /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = 28F666831D00F0FB008B6A1D /* info.png */; };
@@ -505,7 +502,6 @@
 		28EB3A891CEA8EBE00A5BCED /* bg1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg1@2x.png"; sourceTree = "<group>"; };
 		28EB3A8A1CEA8EBE00A5BCED /* bg3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg3@2x.png"; sourceTree = "<group>"; };
 		28EB3A8B1CEA8EBE00A5BCED /* bg5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg5@2x.png"; sourceTree = "<group>"; };
-		28EB3A8D1CEA8EBE00A5BCED /* circle-f.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "circle-f.png"; sourceTree = "<group>"; };
 		28EB3A8F1CEA8EBE00A5BCED /* done-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "done-icon.png"; sourceTree = "<group>"; };
 		28EB3A921CEA8EBE00A5BCED /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		28EB3A931CEA8EBE00A5BCED /* screen_shot_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screen_shot_1.png; sourceTree = "<group>"; };
@@ -515,8 +511,6 @@
 		28EB3A9E1CEA8EBE00A5BCED /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user.png; sourceTree = "<group>"; };
 		28EB42E61D94A8470049DACF /* TodayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
 		28EB42E71D94A8470049DACF /* TodayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodayViewController.m; sourceTree = "<group>"; };
-		28F176B01D3976B300DCE3E1 /* circled_down_filled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circled_down_filled.png; sourceTree = "<group>"; };
-		28F176B21D3984DC00DCE3E1 /* circle-nf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "circle-nf.png"; sourceTree = "<group>"; };
 		28F5E53E1CE53BFB00C15FF6 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		28F666831D00F0FB008B6A1D /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info.png; sourceTree = "<group>"; };
 		28F896F71CEBF98100C546EC /* TodayInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodayInterfaceController.h; sourceTree = "<group>"; };
@@ -1081,7 +1075,6 @@
 			isa = PBXGroup;
 			children = (
 				28EB3A921CEA8EBE00A5BCED /* Media.xcassets */,
-				28F176B01D3976B300DCE3E1 /* circled_down_filled.png */,
 				28908B421D0FA3E800341F20 /* star_full.png */,
 				28D48ADF1D06E52000723DA5 /* menu.png */,
 				28F666831D00F0FB008B6A1D /* info.png */,
@@ -1094,10 +1087,8 @@
 				28EB3A891CEA8EBE00A5BCED /* bg1@2x.png */,
 				28EB3A8A1CEA8EBE00A5BCED /* bg3@2x.png */,
 				28EB3A8B1CEA8EBE00A5BCED /* bg5@2x.png */,
-				28EB3A8D1CEA8EBE00A5BCED /* circle-f.png */,
 				28EB3A8F1CEA8EBE00A5BCED /* done-icon.png */,
 				28EB3A931CEA8EBE00A5BCED /* screen_shot_1.png */,
-				28F176B21D3984DC00DCE3E1 /* circle-nf.png */,
 				28EB3A941CEA8EBE00A5BCED /* screen_shot_2.png */,
 				28EB3A951CEA8EBE00A5BCED /* screen_shot_3.png */,
 				28EB3A971CEA8EBE00A5BCED /* screen_shot_5.png */,
@@ -1384,11 +1375,8 @@
 				28EB3AB91CEA8EBE00A5BCED /* user.png in Resources */,
 				28EB3AAE1CEA8EBE00A5BCED /* screen_shot_1.png in Resources */,
 				28F666841D00F0FB008B6A1D /* info.png in Resources */,
-				28F176B11D3976B300DCE3E1 /* circled_down_filled.png in Resources */,
 				0002893B1CF10D9F005CEA17 /* GoogleService-Info.plist in Resources */,
-				28EB3AA81CEA8EBE00A5BCED /* circle-f.png in Resources */,
 				28DED30F1D50BFE10046E55A /* TimelineTableViewCell.xib in Resources */,
-				28F176B31D3984DC00DCE3E1 /* circle-nf.png in Resources */,
 				28EB3AAF1CEA8EBE00A5BCED /* screen_shot_2.png in Resources */,
 				289873601CF3BE8B00A283C1 /* button_outline.png in Resources */,
 				28E5430F1CFDEEC000FD05A7 /* Localizable.strings in Resources */,

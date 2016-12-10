@@ -18,16 +18,6 @@
 #import "JTCalendar/JTCalendar.h"
 #import "Date.h"
 
-#import "MSCollectionViewCalendarLayout.h"
-#import "MSGridline.h"
-#import "MSTimeRowHeaderBackground.h"
-#import "MSDayColumnHeaderBackground.h"
-#import "MSEventCell.h"
-#import "MSDayColumnHeader.h"
-#import "MSTimeRowHeader.h"
-#import "MSCurrentTimeIndicator.h"
-#import "MSCurrentTimeGridline.h"
-
 BOOL areAdsRemoved;
 
 @interface CalendarViewController : UIViewController <UITableViewDelegate, UITableViewDelegate, JTCalendarDelegate>{
@@ -36,6 +26,7 @@ BOOL areAdsRemoved;
     NSMutableArray *eventArray;
 }
 
+@property (weak, nonatomic) IBOutlet UIButton *addButton;
 @property (weak, nonatomic) IBOutlet UITableView *table;
 @property (weak, nonatomic) IBOutlet JTHorizontalCalendarView *calendarContentView;
 @property (strong, nonatomic) JTCalendarManager *calendarManager;

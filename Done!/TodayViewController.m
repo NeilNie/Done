@@ -8,8 +8,10 @@
 
 #import "TodayViewController.h"
 
-@interface TodayViewController ()
-
+@interface TodayViewController (){
+    NSMutableArray *allEvents;
+    RLMResults *result;
+}
 @property (nonatomic, strong) AppDelegate *ApplicationDelegate;
 
 @end
@@ -39,33 +41,26 @@
     
     Events *event = [allEvents objectAtIndex:indexPath.row];
     cell.event = event;
-    cell.titleLabel.textColor = [UIColor colorWithRed:27.0f/255.0f green:55.0f/255.0f blue:76.0f/255.0f alpha:1.0];
+    cell.titleLabel.textColor = [UIColor whiteColor];
     [cell setUpCell];
     cell.delegate = self;
     return cell;
 }
 
-- (NSArray *)rightButtons
-{
+- (NSArray *)rightButtons{
+    
     NSMutableArray *rightUtilityButtons = [NSMutableArray new];
-    [rightUtilityButtons sw_addUtilityButtonWithColor:
-     [UIColor colorWithRed:0.78f green:0.78f blue:0.8f alpha:1.0]
-                                                title:@"Done"];
-    [rightUtilityButtons sw_addUtilityButtonWithColor:
-     [UIColor colorWithRed:1.0f green:0.231f blue:0.188 alpha:1.0f]
-                                                title:@"Delete"];
+    [rightUtilityButtons sw_addUtilityButtonWithColor: [UIColor colorWithRed:0.78f green:0.78f blue:0.8f alpha:1.0] title:@"Done"];
+    [rightUtilityButtons sw_addUtilityButtonWithColor: [UIColor colorWithRed:1.0f green:0.231f blue:0.188 alpha:1.0f] title:@"Delete"];
     
     return rightUtilityButtons;
 }
 
-- (NSArray *)leftButtons
-{
+- (NSArray *)leftButtons{
     NSMutableArray *leftUtilityButtons = [NSMutableArray new];
     
-    [leftUtilityButtons sw_addUtilityButtonWithColor:
-     [UIColor orangeColor] title:@"Important"];
-    [leftUtilityButtons sw_addUtilityButtonWithColor:
-     [UIColor blueColor] title:@"Hide"];;
+    [leftUtilityButtons sw_addUtilityButtonWithColor: [UIColor orangeColor] title:@"Important"];
+    [leftUtilityButtons sw_addUtilityButtonWithColor: [UIColor blueColor] title:@"Hide"];;
     return leftUtilityButtons;
 }
 
@@ -183,14 +178,10 @@
     
     //hide or show table
     if (allEvents.count == 0) {
-        self.tlConstr.constant = 0;
         self.table.hidden = YES;
-        //self.collectionView.hidden = YES;
         self.clearLabel.hidden = NO;
     }else{
-        self.tlConstr.constant = self.masterView.frame.size.height/2;
         self.table.hidden = NO;
-        //self.collectionView.hidden = NO;
         self.clearLabel.hidden = YES;
     }
 }
@@ -258,53 +249,6 @@
 
 #pragma mark - Gesture
 
--(void)panGesture:(UIPanGestureRecognizer *)panGesture{
-    
-    CGPoint translation = [panGesture translationInView:self.dragButton];
-    
-    CGPoint velocity = [panGesture velocityInView:self.dragButton];
-    
-    //NSLog(@"translation %f", translation.x);
-    NSLog(@"velocity %f", velocity.x);
-    
-    if (panGesture.state == UIGestureRecognizerStateBegan) {
-        // Reset the translation value at the beginning of the gesture.
-        [panGesture setTranslation:CGPointMake(0, - self.tlConstr.constant) inView:self.masterView];
-    }
-    else if (panGesture.state == UIGestureRecognizerStateChanged) {
-        // Get the current translation value.
-        
-        // Compute how far the gesture has travelled vertically,
-        //  relative to the height of the container view.
-        
-        self.tlConstr.constant = -1 * translation.y;
-        
-        NSLog(@"constraint %f", self.tlConstr.constant);
-        
-    }else if (panGesture.state == UIGestureRecognizerStateEnded){
-        
-        if (self.tlConstr.constant > self.masterView.frame.size.height / 2) {
-            NSLog(@"frame height %f", self.masterView.frame.size.height);
-            [UIView animateWithDuration:0.7 animations:^{
-                self.tlConstr.constant = self.masterView.frame.size.height;
-                [self.view layoutIfNeeded];
-            }];
-        }
-        if (self.tlConstr.constant < self.masterView.frame.size.height * 3/4 && self.tlConstr.constant > self.masterView.frame.size.height * 1/3){
-            [UIView animateWithDuration:0.7 animations:^{
-                self.tlConstr.constant = self.masterView.frame.size.height / 2;
-                [self.view layoutIfNeeded];
-            }];
-        }
-        if (self.tlConstr.constant < self.masterView.frame.size.height * 1/3){
-            [UIView animateWithDuration:0.7 animations:^{
-                self.tlConstr.constant = 0;
-                [self.view layoutIfNeeded];
-            }];
-        }
-    }
-}
-
 -(void)tapMasterView:(UITapGestureRecognizer *)tap{
     
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -313,11 +257,8 @@
 }
 
 -(void)setupGestures{
-    
     UITapGestureRecognizer *tapTimeline = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapMasterView:)];
     [self.masterView addGestureRecognizer:tapTimeline];
-    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGesture:)];
-    [self.dragButton addGestureRecognizer:pan];
 }
 
 #pragma mark - Life Cycle
