@@ -84,7 +84,7 @@
 		283B892C1D3D5DD6000ADA9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 283B892B1D3D5DD6000ADA9E /* Assets.xcassets */; };
 		283B89321D3D71D7000ADA9E /* ExtensionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 283B89311D3D71D7000ADA9E /* ExtensionViewController.m */; };
 		283D1B111D1640DF000CEC0C /* TimePeriod.m in Sources */ = {isa = PBXBuildFile; fileRef = 283D1B101D1640DF000CEC0C /* TimePeriod.m */; };
-		284A641B1D0FA953009A348A /* addEventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 284A641A1D0FA953009A348A /* addEventCell.xib */; };
+		284A641B1D0FA953009A348A /* AddEventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 284A641A1D0FA953009A348A /* AddEventCell.xib */; };
 		285431871CE01BD80022F993 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 285431861CE01BD80022F993 /* UIKit.framework */; };
 		285431891CE01BE20022F993 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 285431881CE01BE20022F993 /* QuartzCore.framework */; };
 		285475FE1D147AD500069310 /* EventManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 285475FD1D147AD500069310 /* EventManager.m */; };
@@ -385,7 +385,7 @@
 		283D1B0F1D1640DF000CEC0C /* TimePeriod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimePeriod.h; sourceTree = "<group>"; };
 		283D1B101D1640DF000CEC0C /* TimePeriod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimePeriod.m; sourceTree = "<group>"; };
 		284112D61CDAD09900718101 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
-		284A641A1D0FA953009A348A /* addEventCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = addEventCell.xib; sourceTree = "<group>"; };
+		284A641A1D0FA953009A348A /* AddEventCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddEventCell.xib; sourceTree = "<group>"; };
 		285431861CE01BD80022F993 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		285431881CE01BE20022F993 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		285475FC1D147AD500069310 /* EventManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventManager.h; sourceTree = "<group>"; };
@@ -793,7 +793,7 @@
 				287125C51D3C548300F1C791 /* Main.storyboard */,
 				28DED30D1D50BFE10046E55A /* TimelineTableViewCell.xib */,
 				28EB3A681CEA8E2D00A5BCED /* EventTableViewCell.xib */,
-				284A641A1D0FA953009A348A /* addEventCell.xib */,
+				284A641A1D0FA953009A348A /* AddEventCell.xib */,
 				28EB3A6B1CEA8E2D00A5BCED /* SwitchCell.xib */,
 				28EB3A6C1CEA8E2D00A5BCED /* TextfieldCell.xib */,
 				280523BA1D3FE0F800D0EA0C /* GraphTableViewCell.xib */,
@@ -1403,7 +1403,7 @@
 				28EB3A721CEA8E2D00A5BCED /* SwitchCell.xib in Resources */,
 				28D48AE01D06E52000723DA5 /* menu.png in Resources */,
 				28EB3AAA1CEA8EBE00A5BCED /* done-icon.png in Resources */,
-				284A641B1D0FA953009A348A /* addEventCell.xib in Resources */,
+				284A641B1D0FA953009A348A /* AddEventCell.xib in Resources */,
 				28EB3AB01CEA8EBE00A5BCED /* screen_shot_3.png in Resources */,
 				0060835B1CC4007500A344F1 /* LaunchScreen.storyboard in Resources */,
 				289873621CF3E1C300A283C1 /* button_selected.png in Resources */,

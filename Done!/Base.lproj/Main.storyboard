@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11760" systemVersion="16C53a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ci1-LB-qPP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11761" systemVersion="16C63a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ci1-LB-qPP">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11755"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -291,54 +291,98 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sfk-jU-MYC" customClass="JTHorizontalCalendarView">
-                                <rect key="frame" x="16" y="263" width="343" height="204"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sfk-jU-MYC" customClass="JTHorizontalCalendarView">
+                                <rect key="frame" x="16" y="263" width="343" height="404"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="delegate" destination="maE-xy-l0I" id="XGp-cH-UQb"/>
                                 </connections>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Sn2-nw-Yzf">
-                                <rect key="frame" x="-4" y="475" width="383" height="192"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="B2Y-GJ-di9">
+                                <rect key="frame" x="-4" y="667" width="383" height="0.0"/>
                                 <color key="backgroundColor" red="0.77219378949999995" green="0.92752397060000003" blue="0.84120088820000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="192" id="Nbv-p0-yES"/>
+                                    <constraint firstAttribute="height" id="RQJ-Vd-AOB"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Mxz-El-amZ">
-                                    <size key="itemSize" width="50" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="idEventCell" rowHeight="70" id="mAa-AS-Ony" customClass="EventTableViewCell">
+                                        <rect key="frame" x="0.0" y="28" width="383" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mAa-AS-Ony" id="vis-Js-n6l">
+                                            <rect key="frame" x="0.0" y="0.0" width="350" height="69.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Computer Science Class" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MRx-4n-UxZ">
+                                                    <rect key="frame" x="28" y="14" width="268" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.1058823529" green="0.2156862745" blue="0.29803921570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="April 7, 2016 15:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kLd-Yc-YmC">
+                                                    <rect key="frame" x="28" y="41" width="268" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qq5-37-hx0">
+                                                    <rect key="frame" x="304" y="20" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="f8e-pR-ZFD"/>
+                                                        <constraint firstAttribute="width" constant="30" id="pnT-k3-9dC"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Done" image="circle-nf.png"/>
+                                                    <connections>
+                                                        <action selector="done:" destination="mAa-AS-Ony" eventType="touchUpInside" id="3a9-6K-MQz"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="kLd-Yc-YmC" firstAttribute="leading" secondItem="vis-Js-n6l" secondAttribute="leadingMargin" constant="20" id="0Cg-mz-EFr"/>
+                                                <constraint firstItem="qq5-37-hx0" firstAttribute="top" secondItem="vis-Js-n6l" secondAttribute="topMargin" constant="12" id="0rV-IC-i3P"/>
+                                                <constraint firstItem="MRx-4n-UxZ" firstAttribute="top" secondItem="vis-Js-n6l" secondAttribute="topMargin" constant="6" id="47i-3u-zqK"/>
+                                                <constraint firstItem="MRx-4n-UxZ" firstAttribute="leading" secondItem="vis-Js-n6l" secondAttribute="leadingMargin" constant="20" id="4zk-jv-RTq"/>
+                                                <constraint firstItem="qq5-37-hx0" firstAttribute="leading" secondItem="MRx-4n-UxZ" secondAttribute="trailing" constant="8" id="F0g-Tk-coM"/>
+                                                <constraint firstItem="qq5-37-hx0" firstAttribute="leading" secondItem="kLd-Yc-YmC" secondAttribute="trailing" constant="8" id="NfQ-fj-fNb"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="kLd-Yc-YmC" secondAttribute="bottom" constant="3" id="isS-ld-63g"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="qq5-37-hx0" secondAttribute="trailing" constant="8" id="xXH-mk-LH1"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="button" destination="qq5-37-hx0" id="oU0-AQ-UP9"/>
+                                            <outlet property="dateLabel" destination="kLd-Yc-YmC" id="Zi3-Kt-CCJ"/>
+                                            <outlet property="titleLabel" destination="MRx-4n-UxZ" id="tnp-hS-wJB"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="maE-xy-l0I" id="b6b-3s-edE"/>
-                                    <outlet property="delegate" destination="maE-xy-l0I" id="LFo-XR-Qr4"/>
+                                    <outlet property="dataSource" destination="maE-xy-l0I" id="1RS-ab-Oag"/>
+                                    <outlet property="delegate" destination="maE-xy-l0I" id="KtM-MT-S6Q"/>
                                 </connections>
-                            </collectionView>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="G91-a5-W1s" firstAttribute="top" secondItem="vdh-T6-41y" secondAttribute="bottom" id="2gI-4h-CEN"/>
                             <constraint firstItem="sfk-jU-MYC" firstAttribute="trailing" secondItem="YEf-iq-JKT" secondAttribute="trailingMargin" id="2rj-ZU-OJ0"/>
                             <constraint firstItem="sfk-jU-MYC" firstAttribute="leading" secondItem="YEf-iq-JKT" secondAttribute="leadingMargin" id="52Z-qd-pz0"/>
-                            <constraint firstAttribute="trailing" secondItem="Sn2-nw-Yzf" secondAttribute="trailing" constant="-4" id="9zg-Cr-rrA"/>
                             <constraint firstItem="sfk-jU-MYC" firstAttribute="trailing" secondItem="YEf-iq-JKT" secondAttribute="trailingMargin" id="BxH-9W-NYe"/>
-                            <constraint firstItem="8Ec-aF-KXf" firstAttribute="top" secondItem="Sn2-nw-Yzf" secondAttribute="bottom" id="GEA-cA-CW4"/>
                             <constraint firstItem="G91-a5-W1s" firstAttribute="leading" secondItem="YEf-iq-JKT" secondAttribute="leadingMargin" constant="-20" id="H7O-az-rrt"/>
+                            <constraint firstAttribute="trailing" secondItem="B2Y-GJ-di9" secondAttribute="trailing" constant="-4" id="JNY-sg-Vfe"/>
                             <constraint firstItem="aub-YJ-poQ" firstAttribute="leading" secondItem="YEf-iq-JKT" secondAttribute="leadingMargin" constant="-20" id="PzS-FA-Ji7"/>
                             <constraint firstItem="s7C-Kn-E1E" firstAttribute="top" secondItem="aub-YJ-poQ" secondAttribute="bottom" id="W9B-Tn-8X4"/>
                             <constraint firstItem="s7C-Kn-E1E" firstAttribute="leading" secondItem="YEf-iq-JKT" secondAttribute="leadingMargin" constant="-20" id="Xi0-aB-eVU"/>
                             <constraint firstItem="sfk-jU-MYC" firstAttribute="trailing" secondItem="YEf-iq-JKT" secondAttribute="trailingMargin" id="cTY-EE-6JC"/>
                             <constraint firstItem="sfk-jU-MYC" firstAttribute="leading" secondItem="YEf-iq-JKT" secondAttribute="leadingMargin" id="enf-ZZ-WpX"/>
-                            <constraint firstItem="Sn2-nw-Yzf" firstAttribute="top" secondItem="sfk-jU-MYC" secondAttribute="bottom" id="gKr-bG-L1n"/>
                             <constraint firstItem="sfk-jU-MYC" firstAttribute="top" secondItem="s7C-Kn-E1E" secondAttribute="bottom" id="hcQ-L7-lDI"/>
+                            <constraint firstItem="8Ec-aF-KXf" firstAttribute="top" secondItem="B2Y-GJ-di9" secondAttribute="bottom" id="izM-h7-4TR"/>
                             <constraint firstItem="G91-a5-W1s" firstAttribute="trailing" secondItem="YEf-iq-JKT" secondAttribute="trailingMargin" constant="20" id="kKn-zw-nQt"/>
                             <constraint firstItem="aub-YJ-poQ" firstAttribute="trailing" secondItem="YEf-iq-JKT" secondAttribute="trailingMargin" constant="20" id="mr0-Ik-jyb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="s7C-Kn-E1E" secondAttribute="trailing" constant="-20" id="oj7-db-iYV"/>
+                            <constraint firstItem="B2Y-GJ-di9" firstAttribute="top" secondItem="sfk-jU-MYC" secondAttribute="bottom" id="u5s-BG-WB6"/>
                             <constraint firstItem="aub-YJ-poQ" firstAttribute="top" secondItem="G91-a5-W1s" secondAttribute="bottom" constant="-1" id="ubb-cZ-55j"/>
+                            <constraint firstItem="B2Y-GJ-di9" firstAttribute="leading" secondItem="YEf-iq-JKT" secondAttribute="leading" constant="-4" id="ug9-Aj-6zB"/>
                             <constraint firstItem="sfk-jU-MYC" firstAttribute="leading" secondItem="YEf-iq-JKT" secondAttribute="leadingMargin" id="xay-b9-tyG"/>
-                            <constraint firstItem="Sn2-nw-Yzf" firstAttribute="leading" secondItem="YEf-iq-JKT" secondAttribute="leading" constant="-4" id="xs5-Kk-d3k"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Calendar" id="Kfz-KN-Qdj">
@@ -358,13 +402,13 @@
                     </navigationItem>
                     <connections>
                         <outlet property="calendarContentView" destination="sfk-jU-MYC" id="2fY-Zr-cJP"/>
-                        <outlet property="collectionView" destination="Sn2-nw-Yzf" id="aw2-9P-2WR"/>
-                        <outlet property="contr" destination="Nbv-p0-yES" id="7x6-1Q-Qxs"/>
+                        <outlet property="contr" destination="RQJ-Vd-AOB" id="BpK-bC-FCL"/>
                         <outlet property="dateLabel" destination="G91-a5-W1s" id="tqg-rp-hnE"/>
                         <outlet property="eventCountl" destination="s7C-Kn-E1E" id="ESb-4n-9G4"/>
                         <outlet property="labelConst3" destination="6Th-4z-QxF" id="Dtf-j2-4fJ"/>
                         <outlet property="labelContr1" destination="zeA-Tj-n73" id="U7y-cE-QBX"/>
                         <outlet property="labelContr2" destination="RHQ-Ni-6pj" id="hd6-d5-lfN"/>
+                        <outlet property="table" destination="B2Y-GJ-di9" id="2ji-uQ-mTc"/>
                         <outlet property="yearLabel" destination="aub-YJ-poQ" id="58H-BK-tXe"/>
                     </connections>
                 </viewController>
@@ -842,7 +886,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.53323942422866821" blue="0.59274953603744507" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.53323942420000003" blue="0.59274953600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="iQa-Ws-W30" firstAttribute="top" secondItem="dr1-Fg-uqB" secondAttribute="top" id="5K6-8B-nty"/>
                                     <constraint firstItem="7e7-l6-n3l" firstAttribute="centerX" secondItem="dr1-Fg-uqB" secondAttribute="centerX" id="FRW-Qb-4KR"/>
@@ -1153,6 +1197,7 @@
         <image name="button_outline.png" width="838" height="317"/>
         <image name="button_selected.png" width="838" height="317"/>
         <image name="calendar" width="33" height="33"/>
+        <image name="circle-nf.png" width="200" height="200"/>
         <image name="close" width="48" height="48"/>
         <image name="colorBackground.jpg" width="1080" height="1920"/>
         <image name="done-icon copy.png" width="766" height="766"/>

@@ -58,7 +58,7 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     if (indexPath.row + 1 == allEvents.count) {
-        AddEventCell *cell = [tableView dequeueReusableCellWithIdentifier:@"addEventCell" forIndexPath:indexPath];
+        AddEventCell *cell = (AddEventCell *)[tableView dequeueReusableCellWithIdentifier:@"addEventCell" forIndexPath:indexPath];
         cell.textfield.text = @"";
         cell.delegate = self;
         return cell;
@@ -218,7 +218,7 @@
 - (void)addNewEvent{
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UINavigationController __weak *view = [storyboard instantiateViewControllerWithIdentifier:@"createNew"];
+    UINavigationController __strong *view = [storyboard instantiateViewControllerWithIdentifier:@"createNew"];
     ((CreateNewVC *)view.topViewController).delegate = self;
     ((CreateNewVC *)view.topViewController).addedToProject = self.project;
     dispatch_async(dispatch_get_main_queue(), ^ {
@@ -390,12 +390,6 @@
         }
     }
 }
--(void)rotationCompleted:(id)sender{
-    
-    if (self.btMore == sender){
-        //NSLog(@"btShare rotationCompleted %s", self.btMore.isRotated?"rotated":"normal");
-    }
-}
 
 #pragma mark - Life Cycle
 
@@ -421,7 +415,7 @@
     [self setUpButtons];
     NSLog(@"%@", [RLMRealm defaultRealm].configuration.fileURL);
     [self.table registerNib:[UINib nibWithNibName:@"EventTableViewCell" bundle:nil] forCellReuseIdentifier:@"idEventCell"];
-    [self.table registerNib:[UINib nibWithNibName:@"addEventCell" bundle:nil] forCellReuseIdentifier:@"addEventCell"];
+    [self.table registerNib:[UINib nibWithNibName:@"AddEventCell" bundle:nil] forCellReuseIdentifier:@"addEventCell"];
     
     sameSelection = YES;
     selected = 1;

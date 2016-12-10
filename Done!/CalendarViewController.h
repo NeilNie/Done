@@ -30,15 +30,13 @@
 
 BOOL areAdsRemoved;
 
-@interface CalendarViewController : UIViewController <JTCalendarDelegate, MSCollectionViewDelegateCalendarLayout>{
+@interface CalendarViewController : UIViewController <UITableViewDelegate, UITableViewDelegate, JTCalendarDelegate>{
 
     NSDate *dateSelected;
-    NSMutableDictionary *eventsByDate;
     NSMutableArray *eventArray;
-    NSArray *collectionViewArray;
 }
 
-@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (weak, nonatomic) IBOutlet UITableView *table;
 @property (weak, nonatomic) IBOutlet JTHorizontalCalendarView *calendarContentView;
 @property (strong, nonatomic) JTCalendarManager *calendarManager;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *contr;
