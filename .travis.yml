@@ -1,3 +1,2 @@
 language: objective-c 
-osx_image: xcode8
-script: xcodebuild -workspace Done!.xcworkspace -scheme Done!
+osx_image: xcode8.1

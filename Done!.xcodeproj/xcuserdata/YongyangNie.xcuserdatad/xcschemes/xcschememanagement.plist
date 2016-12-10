@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Done Widget.xcscheme_^#shared#^_</key>
+		<key>Done Widget.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>3</integer>
@@ -14,7 +14,7 @@
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
-		<key>Done! Apple Watch.xcscheme_^#shared#^_</key>
+		<key>Done! Apple Watch.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>1</integer>

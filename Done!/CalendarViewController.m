@@ -117,6 +117,16 @@
 
 #pragma mark - Privates
 
+-(void)setShadowforView:(UIView *)view{
+    
+    view.layer.cornerRadius = 15;
+    view.layer.shadowRadius = 2.0f;
+    view.layer.shadowColor = [UIColor lightGrayColor].CGColor;
+    view.layer.shadowOffset = CGSizeMake(-1.0f, 3.0f);
+    view.layer.shadowOpacity = 0.8f;
+    view.layer.masksToBounds = NO;
+}
+
 - (NSDateFormatter *)dateFormatter
 {
     static NSDateFormatter *dateFormatter;
@@ -197,6 +207,8 @@
     }
     self.eventCountl.text = [NSString stringWithFormat:NSLocalizedString(@"%lu Events on this day", nil), (unsigned long)array.count];
 }
+- (IBAction)addEvent:(id)sender {
+}
 
 #pragma mark - Life Cycle
 
@@ -222,22 +234,12 @@
     
     [self setUpLabels];
     [self setUpGestures];
-    
-    // Do any additional setup after loading the view.
+    [self setShadowforView:self.table];
+    [self setShadowforView:self.addButton];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
 
 @end

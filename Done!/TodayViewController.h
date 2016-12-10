@@ -20,10 +20,8 @@
 
 @import FirebaseAuth;
 
-@interface TodayViewController : UIViewController <CreateNewDelegate, WCSessionDelegate>{
-    NSMutableArray *allEvents;
-    RLMResults *result;
-}
+@interface TodayViewController : UIViewController <CreateNewDelegate, WCSessionDelegate>
+
 //@property (weak, nonatomic) IBOutlet GADBannerView *banner;
 @property (weak, nonatomic) IBOutlet UILabel *completedLabel;
 
@@ -31,8 +29,6 @@
 @property (weak, nonatomic) IBOutlet UIView *masterView;
 @property (weak, nonatomic) IBOutlet UITableView *table;
 @property (weak, nonatomic) IBOutlet UILabel *clearLabel;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *tlConstr;
-@property (weak, nonatomic) IBOutlet UIButton *dragButton;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSMutableArray *buttons;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *yearLabel;
