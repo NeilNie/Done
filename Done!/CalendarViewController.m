@@ -10,100 +10,33 @@
 
 @interface CalendarViewController ()
 
-@property (strong, nonatomic) NSMutableArray *data;
-@property (strong, nonatomic) NSMutableArray *completedData;
-@property (strong, nonatomic) NSMutableArray *eventNumber;
-@property (nonatomic, strong) NSArray *labels;
-@property (nonatomic, strong) MSCollectionViewCalendarLayout *collectionViewCalendarLayout;
-@property (nonatomic, readonly) CGFloat layoutSectionWidth;
-
 @end
 
 @implementation CalendarViewController
 
-NSString * const MSEventCellReuseIdentifier = @"MSEventCellReuseIdentifier";
-NSString * const MSDayColumnHeaderReuseIdentifier = @"MSDayColumnHeaderReuseIdentifier";
-NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifier";
+#pragma mark - UITableView Delegate
 
-#pragma mark - UICollectionViewDataSource
-
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
-    return 1;
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return eventArray.count;
 }
 
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return collectionViewArray.count;
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;;
 }
 
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    MSEventCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:MSEventCellReuseIdentifier forIndexPath:indexPath];
-    cell.contentView.frame = cell.bounds;
-    cell.contentView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    cell.event = [collectionViewArray objectAtIndex:indexPath.row];
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 70;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    EventTableViewCell *cell = (EventTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"idEventCell" forIndexPath:indexPath];
+    Events *event = [eventArray objectAtIndex:indexPath.row];
+    cell.titleLabel.text = event.title;
+    cell.dateLabel.text = [[Date getDefaultDateFormatter] stringFromDate:event.date];
+    
     return cell;
 }
-
-- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
-{
-    UICollectionReusableView *view;
-    if (kind == MSCollectionElementKindDayColumnHeader) {
-        MSDayColumnHeader *dayColumnHeader = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:MSDayColumnHeaderReuseIdentifier forIndexPath:indexPath];
-        NSDate *day = [self.collectionViewCalendarLayout dateForDayColumnHeaderAtIndexPath:indexPath];
-        NSDate *currentDay = [self currentTimeComponentsForCollectionView:self.collectionView layout:self.collectionViewCalendarLayout];
-        
-        NSDate *startOfDay = [[NSCalendar currentCalendar] startOfDayForDate:day];
-        NSDate *startOfCurrentDay = [[NSCalendar currentCalendar] startOfDayForDate:currentDay];
-        
-        dayColumnHeader.day = day;
-        dayColumnHeader.currentDay = [startOfDay isEqualToDate:startOfCurrentDay];
-        
-        view = dayColumnHeader;
-    } else if (kind == MSCollectionElementKindTimeRowHeader) {
-        MSTimeRowHeader *timeRowHeader = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:MSTimeRowHeaderReuseIdentifier forIndexPath:indexPath];
-        timeRowHeader.time = [self.collectionViewCalendarLayout dateForTimeRowHeaderAtIndexPath:indexPath];
-        view = timeRowHeader;
-    }
-    return view;
-}
-
-#pragma mark - MSCollectionViewCalendarLayout
-
-- (NSDate *)collectionView:(UICollectionView *)collectionView layout:(MSCollectionViewCalendarLayout *)collectionViewCalendarLayout dayForSection:(NSInteger)section
-{
-    return [NSDate date];
-}
-
-- (NSDate *)collectionView:(UICollectionView *)collectionView layout:(MSCollectionViewCalendarLayout *)collectionViewCalendarLayout startTimeForItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    Events *time = [collectionViewArray objectAtIndex:indexPath.row];
-    return time.date;
-}
-
-- (NSDate *)collectionView:(UICollectionView *)collectionView layout:(MSCollectionViewCalendarLayout *)collectionViewCalendarLayout endTimeForItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    Events *time = [collectionViewArray objectAtIndex:indexPath.row];
-    if (time.endDate) {
-        return time.endDate;
-    }else{
-        return [time.date dateByAddingTimeInterval:60*30];
-    }
-}
-
-- (NSDate *)currentTimeComponentsForCollectionView:(UICollectionView *)collectionView layout:(MSCollectionViewCalendarLayout *)collectionViewCalendarLayout{
-    return [NSDate date];
-}
-
-//
-//-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-//    
-//    EventTableViewCell *cell = (EventTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"idEventCell" forIndexPath:indexPath];
-//    Events *event = [eventArray objectAtIndex:indexPath.row];
-//    cell.titleLabel.text = event.title;
-//    cell.dateLabel.text = [[Date getDefaultDateFormatter] stringFromDate:event.date];
-//    
-//    return cell;
-//}
 
 #pragma mark - JTCalendar Delegate
 
@@ -115,8 +48,8 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     // Animation for the circleView
     dayView.circleView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.1, 0.1);
     [UIView transitionWithView:dayView duration:.1 options:0 animations:^{
-                        dayView.circleView.transform = CGAffineTransformIdentity;
-                        [_calendarManager reload];
+        dayView.circleView.transform = CGAffineTransformIdentity;
+        [_calendarManager reload];
     } completion:nil];
     
     // Load the previous or next page if touch a day from another month
@@ -132,7 +65,7 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     NSMutableArray *array = [EventsHelper findEventsForToday:dayView.date withRealm:[Events allObjects]];
     if(array.count > 0){
         eventArray = array;
-        [self.collectionView reloadData];
+        [self.table reloadData];
     }
     self.eventCountl.text = [NSString stringWithFormat:NSLocalizedString(@"%lu Events on this day", nil), (unsigned long)array.count];
     
@@ -208,11 +141,10 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
         }
     }
     return NO;
-    
 }
 
 -(void)gestureAction:(UISwipeGestureRecognizer *)swipe{
-
+    
     dispatch_async(dispatch_get_main_queue(), ^{
         
         if (swipe.direction == UISwipeGestureRecognizerDirectionUp) {
@@ -221,7 +153,7 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
                 self.labelContr2.constant = 0;
                 self.labelConst3.constant = 0;
                 self.contr.constant = 250;
-                [self.collectionView reloadData];
+                [self.table reloadData];
                 [self.view layoutIfNeeded];
             }];
         }else if (swipe.direction == UISwipeGestureRecognizerDirectionDown){
@@ -234,27 +166,6 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
             }];
         }
     });
-    
-}
-
--(void)setUpCollectionView{
-    
-    [self.collectionView registerClass:MSEventCell.class forCellWithReuseIdentifier:MSEventCellReuseIdentifier];
-    [self.collectionView registerClass:MSDayColumnHeader.class forSupplementaryViewOfKind:MSCollectionElementKindDayColumnHeader withReuseIdentifier:MSDayColumnHeaderReuseIdentifier];
-    [self.collectionView registerClass:MSTimeRowHeader.class forSupplementaryViewOfKind:MSCollectionElementKindTimeRowHeader withReuseIdentifier:MSTimeRowHeaderReuseIdentifier];
-    self.collectionView.frame = self.collectionView.bounds;
-    self.collectionView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    
-    self.collectionViewCalendarLayout = [[MSCollectionViewCalendarLayout alloc] init];
-    self.collectionViewCalendarLayout.delegate = self;
-    [self.collectionView setCollectionViewLayout:self.collectionViewCalendarLayout];
-    // These are optional. If you don't want any of the decoration views, just don't register a class for them.
-    [self.collectionViewCalendarLayout registerClass:MSCurrentTimeIndicator.class forDecorationViewOfKind:MSCollectionElementKindCurrentTimeIndicator];
-    [self.collectionViewCalendarLayout registerClass:MSCurrentTimeGridline.class forDecorationViewOfKind:MSCollectionElementKindCurrentTimeHorizontalGridline];
-    [self.collectionViewCalendarLayout registerClass:MSGridline.class forDecorationViewOfKind:MSCollectionElementKindVerticalGridline];
-    [self.collectionViewCalendarLayout registerClass:MSGridline.class forDecorationViewOfKind:MSCollectionElementKindHorizontalGridline];
-    [self.collectionViewCalendarLayout registerClass:MSTimeRowHeaderBackground.class forDecorationViewOfKind:MSCollectionElementKindTimeRowHeaderBackground];
-    [self.collectionView reloadData];
 }
 
 -(void)setUpGestures{
@@ -267,7 +178,7 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     UISwipeGestureRecognizer *swipeUp = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(gestureAction:)];
     swipeUp.direction = UISwipeGestureRecognizerDirectionUp;
     [self.calendarContentView addGestureRecognizer:swipeUp];
-} 
+}
 -(void)setUpLabels{
     
     self.contr.constant = 0;
@@ -282,32 +193,22 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     NSMutableArray *array = [EventsHelper findEventsForToday:[NSDate date] withRealm:[Events allObjects]];
     if(array.count > 0){
         eventArray = [[NSMutableArray alloc] initWithArray:array];
-        [self.collectionView reloadData];
+        [self.table reloadData];
     }
     self.eventCountl.text = [NSString stringWithFormat:NSLocalizedString(@"%lu Events on this day", nil), (unsigned long)array.count];
-}
-
-- (IBAction)addNewEvent:(id)sender {
-    //[self performSegueWithIdentifier:@"idaddNewEvent" sender:nil];
 }
 
 #pragma mark - Life Cycle
 
 -(void)viewDidAppear:(BOOL)animated{
-
+    
     [_calendarManager reload];
     
     NSMutableArray *array = [EventsHelper findEventsForToday:[NSDate date] withRealm:[Events allObjects]];
     if(array.count > 0){
         eventArray = array;
-        [self.collectionView reloadData];
+        [self.table reloadData];
     }
-    
-    //collection view settings
-    NSMutableArray *events = [EventsHelper findTodayNotCompletedEvents:[Events allObjects]];
-    collectionViewArray = [events arrayByAddingObjectsFromArray:[EventManager timePeriodsinTimeline]];
-    self.collectionView.layer.masksToBounds = YES;
-    [self.collectionViewCalendarLayout scrollCollectionViewToClosetSectionToCurrentTimeAnimated:YES];
     [super viewDidAppear:YES];
 }
 
@@ -321,7 +222,7 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     
     [self setUpLabels];
     [self setUpGestures];
-
+    
     // Do any additional setup after loading the view.
 }
 - (void)didReceiveMemoryWarning {
@@ -330,13 +231,13 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

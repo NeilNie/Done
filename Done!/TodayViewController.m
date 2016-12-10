@@ -39,7 +39,7 @@
     
     Events *event = [allEvents objectAtIndex:indexPath.row];
     cell.event = event;
-    cell.titleLabel.textColor = [UIColor whiteColor];
+    cell.titleLabel.textColor = [UIColor colorWithRed:27.0f/255.0f green:55.0f/255.0f blue:76.0f/255.0f alpha:1.0];
     [cell setUpCell];
     cell.delegate = self;
     return cell;
