@@ -10,7 +10,6 @@
 #import <Realm/Realm.h>
 #import "EventsHelper.h"
 #import "Events.h"
-#import "TipsViewController.h"
 
 @interface AppDelegate ()
 

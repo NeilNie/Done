@@ -36,7 +36,6 @@
 		009A02291CDE9DE200C0B23D /* ProjectsInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 009A021F1CDE9DE200C0B23D /* ProjectsInterfaceController.m */; };
 		009A022A1CDE9DE200C0B23D /* Row.m in Sources */ = {isa = PBXBuildFile; fileRef = 009A02211CDE9DE200C0B23D /* Row.m */; };
 		00BEC6721CCBC93A008B7862 /* EventsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 00BEC6711CCBC93A008B7862 /* EventsHelper.m */; };
-		00C1977B1CDFE6B100604203 /* TipsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00C1977A1CDFE6B100604203 /* TipsViewController.m */; };
 		00D95DEF1CF2006B00DF7736 /* left.png in Resources */ = {isa = PBXBuildFile; fileRef = 00D95DEE1CF2006B00DF7736 /* left.png */; };
 		00F48A301CC5193000B94EA4 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F48A2F1CC5193000B94EA4 /* CalendarViewController.m */; };
 		00F48A331CC5194100B94EA4 /* TodoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F48A321CC5194100B94EA4 /* TodoViewController.m */; };
@@ -155,7 +154,6 @@
 		28F896FB1CEBFB5500C546EC /* done-icon copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 28F896FA1CEBFB5500C546EC /* done-icon copy.png */; };
 		28F896FC1CEBFB5500C546EC /* done-icon copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 28F896FA1CEBFB5500C546EC /* done-icon copy.png */; };
 		28F896FD1CEBFB5500C546EC /* done-icon copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 28F896FA1CEBFB5500C546EC /* done-icon copy.png */; };
-		28FDBD611CFB968700EFEB59 /* FirebaseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 28FDBD601CFB968700EFEB59 /* FirebaseHelper.m */; };
 		9CEEF1370D088F60D48BC164 /* libPods-Done!.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 73CF65656B7124C7E976D33D /* libPods-Done!.a */; };
 		A931ADA412206B3B6C964EBF /* libPods-Done! Apple Watch Extension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58D101F026E7EA98FF50A53C /* libPods-Done! Apple Watch Extension.a */; };
 		DE77E73F13860E6C7F73831D /* libPods-Done Widget.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F533992DD0B9B0E597A583C4 /* libPods-Done Widget.a */; };
@@ -286,8 +284,6 @@
 		009A02211CDE9DE200C0B23D /* Row.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Row.m; sourceTree = "<group>"; };
 		00BEC6701CCBC93A008B7862 /* EventsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsHelper.h; sourceTree = "<group>"; };
 		00BEC6711CCBC93A008B7862 /* EventsHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsHelper.m; sourceTree = "<group>"; };
-		00C197791CDFE6B100604203 /* TipsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TipsViewController.h; sourceTree = "<group>"; };
-		00C1977A1CDFE6B100604203 /* TipsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TipsViewController.m; sourceTree = "<group>"; };
 		00D95DEE1CF2006B00DF7736 /* left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = left.png; sourceTree = "<group>"; };
 		00F48A2E1CC5193000B94EA4 /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
 		00F48A2F1CC5193000B94EA4 /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
@@ -503,8 +499,6 @@
 		28F896F71CEBF98100C546EC /* TodayInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodayInterfaceController.h; sourceTree = "<group>"; };
 		28F896F81CEBF98100C546EC /* TodayInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodayInterfaceController.m; sourceTree = "<group>"; };
 		28F896FA1CEBFB5500C546EC /* done-icon copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "done-icon copy.png"; sourceTree = "<group>"; };
-		28FDBD5F1CFB968700EFEB59 /* FirebaseHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirebaseHelper.h; sourceTree = "<group>"; };
-		28FDBD601CFB968700EFEB59 /* FirebaseHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirebaseHelper.m; sourceTree = "<group>"; };
 		4F2DC1E672D94AAE239BF1C9 /* Pods-Done! Apple Watch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Done! Apple Watch Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-Done! Apple Watch Extension/Pods-Done! Apple Watch Extension.release.xcconfig"; sourceTree = "<group>"; };
 		54EF6EB6570BDEC6F8FFBC6F /* Pods-Done!.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Done!.release.xcconfig"; path = "Pods/Target Support Files/Pods-Done!/Pods-Done!.release.xcconfig"; sourceTree = "<group>"; };
 		58D101F026E7EA98FF50A53C /* libPods-Done! Apple Watch Extension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Done! Apple Watch Extension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -827,8 +821,6 @@
 		280C83DC1CF31D6500DC8742 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				00C197791CDFE6B100604203 /* TipsViewController.h */,
-				00C1977A1CDFE6B100604203 /* TipsViewController.m */,
 				2802F8321CC5C2F400C65966 /* CreateNewVC.h */,
 				2802F8331CC5C2F400C65966 /* CreateNewVC.m */,
 				280C83D91CF31D4D00DC8742 /* UserAuthViewController.h */,
@@ -930,8 +922,6 @@
 				285475FD1D147AD500069310 /* EventManager.m */,
 				00BEC6701CCBC93A008B7862 /* EventsHelper.h */,
 				00BEC6711CCBC93A008B7862 /* EventsHelper.m */,
-				28FDBD5F1CFB968700EFEB59 /* FirebaseHelper.h */,
-				28FDBD601CFB968700EFEB59 /* FirebaseHelper.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -1681,7 +1671,6 @@
 				28DBC0591D52876400880D55 /* AutoResizeTextView.m in Sources */,
 				28DBC0601D52876400880D55 /* MDCollectionViewCell.m in Sources */,
 				28DBC05B1D52876400880D55 /* NSDateHelper.m in Sources */,
-				28FDBD611CFB968700EFEB59 /* FirebaseHelper.m in Sources */,
 				006083501CC4007500A344F1 /* AppDelegate.m in Sources */,
 				28DBC0621D52876400880D55 /* MDRippleLayer.m in Sources */,
 				28DBC05D1D52876400880D55 /* UIFontHelper.m in Sources */,
@@ -1704,7 +1693,6 @@
 				0060834D1CC4007500A344F1 /* main.m in Sources */,
 				28006A131CC6B41900583D69 /* CustomCell.m in Sources */,
 				280EFD961CE2C17500C31E46 /* MSCurrentTimeIndicator.m in Sources */,
-				00C1977B1CDFE6B100604203 /* TipsViewController.m in Sources */,
 				280523B91D3FA3DC00D0EA0C /* PNScatterChartDataItem.m in Sources */,
 				28DBC05E1D52876400880D55 /* UIViewHelper.m in Sources */,
 				0020F7291CD584A900F47CEE /* QBPopupMenuItem.m in Sources */,

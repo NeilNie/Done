@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "iOSUILib/MDTextField.h"
 
-@import FirebaseDatabase;
 @import FirebaseAuth;
 
 @interface UserAuthViewController : UIViewController <MDTextFieldDelegate>
@@ -26,5 +25,5 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constr;
 @property (weak, nonatomic) IBOutlet UIButton *registerb2;
 @property (strong, nonatomic) UIWindow *window;
-@property (strong, nonatomic) FIRDatabaseReference *ref;
+
 @end

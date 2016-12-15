@@ -7,7 +7,6 @@
 //
 
 #import "UserAuthViewController.h"
-#import "TipsViewController.h"
 
 @interface UserAuthViewController ()
 
@@ -19,12 +18,12 @@
 
     [[FIRAuth auth] createUserWithEmail:self.email.text password:self.password.text completion:^(FIRUser * _Nullable user, NSError * _Nullable error) {
         
-        NSLocale *currentLocale = [NSLocale currentLocale];  // get the current locale.
-        NSString *countryCode = [currentLocale objectForKey:NSLocaleCountryCode];
-        [[[_ref child:@"users"] child:self.username.text] setValue:@{@"email": self.email.text,
-                                                                     @"UUID": [self uuid],
-                                                                     @"region": countryCode,
-                                                                     @"register_date": [[self dateFormatter] stringFromDate:[NSDate date]]}];
+//        NSLocale *currentLocale = [NSLocale currentLocale];  // get the current locale.
+//        NSString *countryCode = [currentLocale objectForKey:NSLocaleCountryCode];
+//        [[[_ref child:@"users"] child:self.username.text] setValue:@{@"email": self.email.text,
+//                                                                     @"UUID": [self uuid],
+//                                                                     @"region": countryCode,
+//                                                                     @"register_date": [[self dateFormatter] stringFromDate:[NSDate date]]}];
         
         FIRUserProfileChangeRequest *changeRequest = [user profileChangeRequest];
         changeRequest.displayName = self.username.text;
@@ -83,25 +82,15 @@
 
 -(void)showIntro{
     
-    intro = [[NSUserDefaults standardUserDefaults] boolForKey:@"intro"];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UIWindow *window = [UIApplication sharedApplication].delegate.window;
-    UIViewController *StartView = [storyboard instantiateViewControllerWithIdentifier:@"TipView"];
-    if (intro == NO) {
-        window.rootViewController = StartView;
-        [window makeKeyAndVisible];
-        intro = YES;
-        [[NSUserDefaults standardUserDefaults] setBool:intro forKey:@"intro"];
-    }else{
-        NSLog(@"will display view controller");
-        UINavigationController *navigationController = [storyboard instantiateViewControllerWithIdentifier:@"NavigationController"];
-        window.rootViewController = navigationController;
-        [UIView transitionWithView:window
-                          duration:0.3
-                           options:UIViewAnimationOptionTransitionCrossDissolve
-                        animations:nil
-                        completion:nil];
-    }
+    UINavigationController *navigationController = [storyboard instantiateViewControllerWithIdentifier:@"NavigationController"];
+    window.rootViewController = navigationController;
+    [UIView transitionWithView:window
+                      duration:0.3
+                       options:UIViewAnimationOptionTransitionCrossDissolve
+                    animations:nil
+                    completion:nil];
     
 }
 - (IBAction)registerUser:(id)sender {
@@ -141,12 +130,6 @@
 
 #pragma mark - Life Cycle
 
--(void)viewDidAppear:(BOOL)animated{
-    
-    self.ref = [[FIRDatabase database] reference];
-    NSLog(@"uuid: %@",[self uuid]);
-    [super viewDidAppear:YES];
-}
 - (void)viewDidLoad {
     
     self.email.delegate = self;

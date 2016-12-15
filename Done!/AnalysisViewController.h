@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import <Realm/Realm.h>
-#import <MKFoundationKit/MKFoundationKit.h>
 #import <SCLAlertView.h>
 #import <RKDropdownAlert.h>
 
