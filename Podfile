@@ -7,8 +7,6 @@ pod 'RKDropdownAlert'
 pod 'SCLAlertView-Objective-C'
 pod 'UIColor-HexString'
 pod 'Masonry'
-pod 'Firebase/Auth'
-pod 'Firebase/Analytics'
 pod 'SWTableViewCell', '~> 0.3.7'
 pod 'Parse'
 
