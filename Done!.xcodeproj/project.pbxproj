@@ -99,10 +99,6 @@
 		2898735E1CF3ABA600A283C1 /* colorBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2898735D1CF3ABA600A283C1 /* colorBackground.jpg */; };
 		289873601CF3BE8B00A283C1 /* button_outline.png in Resources */ = {isa = PBXBuildFile; fileRef = 2898735F1CF3BE8B00A283C1 /* button_outline.png */; };
 		289873621CF3E1C300A283C1 /* button_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 289873611CF3E1C300A283C1 /* button_selected.png */; };
-		28AD9C511D4037F200156A29 /* GKBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 28AD9C481D4037F200156A29 /* GKBar.m */; };
-		28AD9C521D4037F200156A29 /* GKBarGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = 28AD9C4A1D4037F200156A29 /* GKBarGraph.m */; };
-		28AD9C531D4037F200156A29 /* GKLineGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = 28AD9C4E1D4037F200156A29 /* GKLineGraph.m */; };
-		28AD9C541D4037F200156A29 /* UIColor+GraphKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 28AD9C501D4037F200156A29 /* UIColor+GraphKit.m */; };
 		28B2003C1CC7C36500A18DFC /* CellDescriptor.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28B2003B1CC7C36500A18DFC /* CellDescriptor.plist */; };
 		28B4463B1D370D76000A0501 /* TimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B4463A1D370D76000A0501 /* TimelineViewController.m */; };
 		28D48AE01D06E52000723DA5 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 28D48ADF1D06E52000723DA5 /* menu.png */; };
@@ -417,15 +413,6 @@
 		2898735F1CF3BE8B00A283C1 /* button_outline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_outline.png; sourceTree = "<group>"; };
 		289873611CF3E1C300A283C1 /* button_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_selected.png; sourceTree = "<group>"; };
 		28AB06A41CCA3F8F0071B16D /* Done!.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Done!.entitlements"; sourceTree = "<group>"; };
-		28AD9C471D4037F200156A29 /* GKBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKBar.h; sourceTree = "<group>"; };
-		28AD9C481D4037F200156A29 /* GKBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKBar.m; sourceTree = "<group>"; };
-		28AD9C491D4037F200156A29 /* GKBarGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKBarGraph.h; sourceTree = "<group>"; };
-		28AD9C4A1D4037F200156A29 /* GKBarGraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKBarGraph.m; sourceTree = "<group>"; };
-		28AD9C4B1D4037F200156A29 /* GraphKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphKit.h; sourceTree = "<group>"; };
-		28AD9C4D1D4037F200156A29 /* GKLineGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKLineGraph.h; sourceTree = "<group>"; };
-		28AD9C4E1D4037F200156A29 /* GKLineGraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKLineGraph.m; sourceTree = "<group>"; };
-		28AD9C4F1D4037F200156A29 /* UIColor+GraphKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+GraphKit.h"; sourceTree = "<group>"; };
-		28AD9C501D4037F200156A29 /* UIColor+GraphKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+GraphKit.m"; sourceTree = "<group>"; };
 		28B2003B1CC7C36500A18DFC /* CellDescriptor.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CellDescriptor.plist; sourceTree = "<group>"; };
 		28B446391D370D76000A0501 /* TimelineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimelineViewController.h; sourceTree = "<group>"; };
 		28B4463A1D370D76000A0501 /* TimelineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimelineViewController.m; sourceTree = "<group>"; };
@@ -899,7 +886,6 @@
 			isa = PBXGroup;
 			children = (
 				28DBC0261D52876400880D55 /* iOSUILib */,
-				28AD9C451D4037F200156A29 /* Source */,
 				280523871D3FA3DC00D0EA0C /* PNChart */,
 				280EFD9C1CE2C17A00C31E46 /* Timeline */,
 				0020F72D1CD584B400F47CEE /* QBPopup Menu */,
@@ -959,38 +945,6 @@
 				286E50631D150E8000EEA0A6 /* Date.m */,
 			);
 			name = Objects;
-			sourceTree = "<group>";
-		};
-		28AD9C451D4037F200156A29 /* Source */ = {
-			isa = PBXGroup;
-			children = (
-				28AD9C461D4037F200156A29 /* BarGraph */,
-				28AD9C4B1D4037F200156A29 /* GraphKit.h */,
-				28AD9C4C1D4037F200156A29 /* LineGraph */,
-				28AD9C4F1D4037F200156A29 /* UIColor+GraphKit.h */,
-				28AD9C501D4037F200156A29 /* UIColor+GraphKit.m */,
-			);
-			path = Source;
-			sourceTree = "<group>";
-		};
-		28AD9C461D4037F200156A29 /* BarGraph */ = {
-			isa = PBXGroup;
-			children = (
-				28AD9C471D4037F200156A29 /* GKBar.h */,
-				28AD9C481D4037F200156A29 /* GKBar.m */,
-				28AD9C491D4037F200156A29 /* GKBarGraph.h */,
-				28AD9C4A1D4037F200156A29 /* GKBarGraph.m */,
-			);
-			path = BarGraph;
-			sourceTree = "<group>";
-		};
-		28AD9C4C1D4037F200156A29 /* LineGraph */ = {
-			isa = PBXGroup;
-			children = (
-				28AD9C4D1D4037F200156A29 /* GKLineGraph.h */,
-				28AD9C4E1D4037F200156A29 /* GKLineGraph.m */,
-			);
-			path = LineGraph;
 			sourceTree = "<group>";
 		};
 		28DBC0261D52876400880D55 /* iOSUILib */ = {
@@ -1682,7 +1636,6 @@
 				280523AE1D3FA3DC00D0EA0C /* PNColor.m in Sources */,
 				00BEC6721CCBC93A008B7862 /* EventsHelper.m in Sources */,
 				28DBC05C1D52876400880D55 /* UIColorHelper.m in Sources */,
-				28AD9C511D4037F200156A29 /* GKBar.m in Sources */,
 				28DBC06F1D52876400880D55 /* UIView+MDExtension.m in Sources */,
 				280C83DB1CF31D4D00DC8742 /* UserAuthViewController.m in Sources */,
 				280523AD1D3FA3DC00D0EA0C /* PNCircleChart.m in Sources */,
@@ -1706,7 +1659,6 @@
 				280523B81D3FA3DC00D0EA0C /* PNScatterChartData.m in Sources */,
 				280523BE1D3FE10C00D0EA0C /* GraphTableViewCell.m in Sources */,
 				280523AA1D3FA3DC00D0EA0C /* PNBar.m in Sources */,
-				28AD9C541D4037F200156A29 /* UIColor+GraphKit.m in Sources */,
 				0020F7271CD584A900F47CEE /* QBPlasticPopupMenu.m in Sources */,
 				280523AF1D3FA3DC00D0EA0C /* PNGenericChart.m in Sources */,
 				280EFD951CE2C17500C31E46 /* MSCurrentTimeGridline.m in Sources */,
@@ -1726,7 +1678,6 @@
 				280523B51D3FA3DC00D0EA0C /* PNRadarChart.m in Sources */,
 				28DBC0661D52876400880D55 /* MDTabBarViewController.m in Sources */,
 				28EB42E81D94A8470049DACF /* TodayViewController.m in Sources */,
-				28AD9C531D4037F200156A29 /* GKLineGraph.m in Sources */,
 				28DBC0591D52876400880D55 /* AutoResizeTextView.m in Sources */,
 				28DBC0601D52876400880D55 /* MDCollectionViewCell.m in Sources */,
 				28DBC05B1D52876400880D55 /* NSDateHelper.m in Sources */,
@@ -1736,7 +1687,6 @@
 				28DBC05D1D52876400880D55 /* UIFontHelper.m in Sources */,
 				285475FE1D147AD500069310 /* EventManager.m in Sources */,
 				28DBC0641D52876400880D55 /* MDSwitch.m in Sources */,
-				28AD9C521D4037F200156A29 /* GKBarGraph.m in Sources */,
 				280EFD9A1CE2C17500C31E46 /* MSTimeRowHeader.m in Sources */,
 				280523B71D3FA3DC00D0EA0C /* PNScatterChart.m in Sources */,
 				280523B11D3FA3DC00D0EA0C /* PNLineChartData.m in Sources */,

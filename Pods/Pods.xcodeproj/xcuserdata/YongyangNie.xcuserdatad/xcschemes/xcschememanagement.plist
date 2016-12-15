@@ -4,17 +4,12 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>EAIntroView.xcscheme</key>
+		<key>Bolts-iOS.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>EARestrictedScrollView.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>FrameAccessor.xcscheme</key>
+		<key>Bolts-watchOS.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -34,12 +29,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>MKFoundationKit.xcscheme</key>
+		<key>Masonry.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Masonry.xcscheme</key>
+		<key>Parse-iOS.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Parse-watchOS.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -101,102 +101,6 @@
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
-	<dict>
-		<key>0BE4A16FFDEF8D8F814E3AE6A2577F6C</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>139417467CEFF9FD93AFB9388BE013CE</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>15771CDB60DFAA769E27961D321E12C2</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>434DBF377DB5063A4DA629FDBEAD7CD2</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>4666205142BAD40D5357A24921FB276C</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>49C8B6053F14F66EB62BD827C43374D4</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>552499CFCDD766CAE292F7A9B6E47F55</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>58E7450DB13C5ECCE92D3C0DF7CF0903</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>5AF840CA7660D6A8983E1C5D58E1DF2D</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>89D810CBE8662E5B7D25DC553B9DD697</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>9DC8D9E02903E93BD0B2FEC9D846EA20</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>AF69178B2DCD9A20E000D2F04F8B6843</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>BAA7AE1BB0AC54EB495B37334B5C26DA</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>BCE97A02348AE572B65D4F3B99900357</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C6DF87AB9C726B4D74FA26AFFD2218DB</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>D1ECA51E11F66D60CCE5109C04A7BCD8</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>DE868725B18AE240E550C5515AE66BC4</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E079843C9C79118289CFD9619070B0B8</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F9DC899C980FFB79E4FEF391E41B9F88</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-	</dict>
+	<dict/>
 </dict>
 </plist>
