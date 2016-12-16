@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "iOSUILib/MDTextField.h"
-
-@import FirebaseAuth;
+#import <Parse/Parse.h>
 
 @interface UserAuthViewController : UIViewController <MDTextFieldDelegate>
 

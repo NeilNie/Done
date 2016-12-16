@@ -15,25 +15,24 @@
 @implementation UserAuthViewController
 
 - (IBAction)Register:(id)sender {
-
-    [[FIRAuth auth] createUserWithEmail:self.email.text password:self.password.text completion:^(FIRUser * _Nullable user, NSError * _Nullable error) {
-        
-//        NSLocale *currentLocale = [NSLocale currentLocale];  // get the current locale.
-//        NSString *countryCode = [currentLocale objectForKey:NSLocaleCountryCode];
-//        [[[_ref child:@"users"] child:self.username.text] setValue:@{@"email": self.email.text,
-//                                                                     @"UUID": [self uuid],
-//                                                                     @"region": countryCode,
-//                                                                     @"register_date": [[self dateFormatter] stringFromDate:[NSDate date]]}];
-        
-        FIRUserProfileChangeRequest *changeRequest = [user profileChangeRequest];
-        changeRequest.displayName = self.username.text;
-        [changeRequest commitChangesWithCompletion:^(NSError *_Nullable error) {
-            if (error) {
-                NSLog(@"%@", error);
-            }
-        }];
-        
-        [self showIntro];
+    
+    PFUser *user = [PFUser user];
+    user.username = self.username.text;
+    user.password = self.password.text;
+    user.email = self.email.text;
+    
+    NSLocale *currentLocale = [NSLocale currentLocale];  // get the current locale.
+    NSString *countryCode = [currentLocale objectForKey:NSLocaleCountryCode];
+    user[@"countryCode"] = countryCode;
+    
+    [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (!error) {
+            [self showInitialViewController];
+        } else {
+            NSString *errorString = [error userInfo][@"error"];
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Oops, something went wrong" message:errorString preferredStyle:UIAlertControllerStyleAlert];
+            [self presentViewController:alert animated:YES completion:nil];
+        }
     }];
 }
 
@@ -73,15 +72,25 @@
             self.email.alpha = 1.0;
         }];
     }else{
-        [[FIRAuth auth] signInWithEmail:self.email.text password:self.password.text completion:^(FIRUser * _Nullable user, NSError * _Nullable error) {
-            
-            [self showIntro];
+        
+        //login with user name and password
+        [PFUser logInWithUsernameInBackground:@"myname" password:@"mypass" block:^(PFUser *user, NSError *error) {
+            if (user) {
+                [self showInitialViewController];
+            } else {
+                
+                //something went wrong
+                NSString *errorString = [error userInfo][@"error"];
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Oops, something went wrong" message:errorString preferredStyle:UIAlertControllerStyleAlert];
+                [self presentViewController:alert animated:YES completion:nil];
+            }
         }];
     }
 }
 
--(void)showIntro{
+-(void)showInitialViewController{
     
+    //hey, we are in, let's show the view controller.
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UIWindow *window = [UIApplication sharedApplication].delegate.window;
     UINavigationController *navigationController = [storyboard instantiateViewControllerWithIdentifier:@"NavigationController"];
@@ -148,13 +157,13 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

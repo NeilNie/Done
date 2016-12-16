@@ -167,11 +167,7 @@
 }
 - (IBAction)logout:(id)sender {
     
-    NSError *error;
-    [[FIRAuth auth] signOut:&error];
-    if (!error) {
-        assert(@"");
-    }
+    [PFUser logOut];
 }
 
 - (void)viewDidLoad {

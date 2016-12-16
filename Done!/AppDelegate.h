@@ -9,9 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <WatchConnectivity/WatchConnectivity.h>
 #import "EventManager.h"
-
-@import FirebaseAnalytics;
-@import FirebaseAuth;
+#import <Parse/Parse.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate, WCSessionDelegate>
 

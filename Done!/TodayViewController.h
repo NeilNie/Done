@@ -18,7 +18,7 @@
 #import "CreateNewVC.h"
 #import "Date.h"
 
-@import FirebaseAuth;
+#import <Parse/Parse.h>
 
 @interface TodayViewController : UIViewController <CreateNewDelegate, WCSessionDelegate>
 

@@ -19,8 +19,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    [Parse initializeWithConfiguration:[ParseClientConfiguration configurationWithBlock:^(id<ParseMutableClientConfiguration> configuration) {
+        configuration.applicationId = @"com.yongyang.plus-macos";
+        configuration.server = @"https://plus-macos.herokuapp.com/parse";
+    }]];
+    
     self.eventManager = [[EventManager alloc] init];
-    [FIRApp configure];
     
     if(WCSession.isSupported){
         self.session = [WCSession defaultSession];
@@ -35,23 +39,19 @@
     UIUserNotificationSettings *mySettings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
     [[UIApplication sharedApplication] registerUserNotificationSettings:mySettings];
     
-    FIRUser *user = [FIRAuth auth].currentUser;
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
     UINavigationController *navigationController = [storyboard instantiateViewControllerWithIdentifier:@"NavigationController"];
     UIViewController *startView = [storyboard instantiateViewControllerWithIdentifier:@"userAuth"];
     self.window.rootViewController = navigationController;
-    if (user == nil) {
+
+    PFUser *currentUser = [PFUser currentUser];
+    if (currentUser) {
+        [UIView transitionWithView:self.window duration:0.3 options:UIViewAnimationOptionTransitionCrossDissolve animations:nil completion:nil];
+    } else {
         self.window.rootViewController = startView;
         [self.window makeKeyAndVisible];
-    }else{
-        [UIView transitionWithView:self.window
-                          duration:0.3
-                           options:UIViewAnimationOptionTransitionCrossDissolve
-                        animations:nil
-                        completion:nil];
     }
     
-
     // Override point for customization after application launch.
     return YES;
 }
