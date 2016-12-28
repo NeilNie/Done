@@ -14,7 +14,9 @@
 
 @implementation UserAuthViewController
 
-- (IBAction)Register:(id)sender {
+#pragma mark - User Auth
+
+- (IBAction)registerUser:(id)sender {
     
     PFUser *user = [PFUser user];
     user.username = self.username.text;
@@ -26,33 +28,21 @@
     user[@"countryCode"] = countryCode;
     
     [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        
+        [self animationActivityIndicator];
+        self.loginB.enabled = NO;
+        self.registerB.enabled = NO;
+        self.registerb2.enabled = NO;
+        
         if (!error) {
             [self showInitialViewController];
+            NSLog(@"registered sucessfully, user: %@", [PFUser currentUser]);
         } else {
             NSString *errorString = [error userInfo][@"error"];
             UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Oops, something went wrong" message:errorString preferredStyle:UIAlertControllerStyleAlert];
             [self presentViewController:alert animated:YES completion:nil];
         }
     }];
-}
-
-- (NSDateFormatter *)dateFormatter{
-    
-    static NSDateFormatter *dateFormatter;
-    if(!dateFormatter){
-        dateFormatter = [NSDateFormatter new];
-        dateFormatter.dateFormat = @"dd/MM/yyyy HH:MM";
-    }
-    
-    return dateFormatter;
-}
-
-- (NSString *)uuid{
-    
-    CFUUIDRef uuidRef = CFUUIDCreate(NULL);
-    CFStringRef uuidStringRef = CFUUIDCreateString(NULL, uuidRef);
-    CFRelease(uuidRef);
-    return (__bridge_transfer NSString *)uuidStringRef;
 }
 
 - (IBAction)login:(id)sender {
@@ -73,12 +63,17 @@
         }];
     }else{
         
+        [self animationActivityIndicator];
+        self.loginB.enabled = NO;
+        self.registerB.enabled = NO;
+        self.registerb2.enabled = NO;
+        
         //login with user name and password
-        [PFUser logInWithUsernameInBackground:@"myname" password:@"mypass" block:^(PFUser *user, NSError *error) {
+        [PFUser logInWithUsernameInBackground:self.username.text password:self.password.text block:^(PFUser *user, NSError *error) {
             if (user) {
                 [self showInitialViewController];
+                NSLog(@"registered sucessfully, user: %@", [PFUser currentUser]);
             } else {
-                
                 //something went wrong
                 NSString *errorString = [error userInfo][@"error"];
                 UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Oops, something went wrong" message:errorString preferredStyle:UIAlertControllerStyleAlert];
@@ -87,6 +82,8 @@
         }];
     }
 }
+
+#pragma mark - Private Helpers
 
 -(void)showInitialViewController{
     
@@ -102,7 +99,7 @@
                     completion:nil];
     
 }
-- (IBAction)registerUser:(id)sender {
+- (IBAction)registerBegin:(id)sender {
     
     [UIView animateWithDuration:0.5 animations:^{
         self.registerB.alpha = 0;
@@ -130,6 +127,15 @@
     [self.password resignFirstResponder];
 }
 
+-(void)animationActivityIndicator{
+    
+    self.activityIndicator = [[PCAngularActivityIndicatorView alloc] initWithActivityIndicatorStyle:PCAngularActivityIndicatorViewStyleLarge];
+    self.activityIndicator.color = [UIColor whiteColor];
+    self.activityIndicator.center = self.view.center;
+    [self.view addSubview:self.activityIndicator];
+    [self.activityIndicator startAnimating];
+}
+
 #pragma mark - MDTextField Delegate
 
 -(BOOL)textFieldShouldReturn:(MDTextField *)textField{
@@ -155,15 +161,5 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
 
 @end

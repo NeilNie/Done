@@ -20,8 +20,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     [Parse initializeWithConfiguration:[ParseClientConfiguration configurationWithBlock:^(id<ParseMutableClientConfiguration> configuration) {
-        configuration.applicationId = @"com.yongyang.plus-macos";
-        configuration.server = @"https://plus-macos.herokuapp.com/parse";
+        configuration.applicationId = @"com.yongyang.done";
+        configuration.server = @"https://done-server.herokuapp.com//parse";
     }]];
     
     self.eventManager = [[EventManager alloc] init];

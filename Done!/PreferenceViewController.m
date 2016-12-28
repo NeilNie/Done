@@ -168,6 +168,7 @@
 - (IBAction)logout:(id)sender {
     
     [PFUser logOut];
+    exit(0);
 }
 
 - (void)viewDidLoad {
