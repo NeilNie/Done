@@ -14,11 +14,9 @@
 #import "CustomCell.h"
 #import "Events.h"
 #import "EventsHelper.h"
-#import "FirebaseHelper.h"
 #import "TimelineTableViewCell.h"
 
-@import FirebaseDatabase;
-@import FirebaseAuth;
+#import <Parse/Parse.h>
 
 @interface CreateNewVC : UIViewController <WCSessionDelegate, UITableViewDelegate, UITableViewDataSource, CustomCellDelegates, TimelineTableViewCellDelegate>{
     

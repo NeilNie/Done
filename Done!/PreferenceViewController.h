@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <Realm/Realm.h>
+#import <Parse/Parse.h>
 
 #import "Projects.h"
 #import "Events.h"
@@ -15,8 +16,6 @@
 #import "AnalysisViewController.h"
 
 BOOL areAdsRemoved2;
-
-@import FirebaseAuth;
 
 @interface PreferenceViewController : UIViewController <UITableViewDataSource, UITabBarDelegate, SKProductsRequestDelegate, SKPaymentTransactionObserver>{
     NSMutableArray *array;

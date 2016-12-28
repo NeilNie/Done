@@ -1,99 +1,22 @@
 PODS:
-  - EAIntroView (2.8.3):
-    - EARestrictedScrollView (~> 1.1.0)
-  - EARestrictedScrollView (1.1.0)
-  - Firebase/Analytics (3.10.0):
-    - Firebase/Core
-  - Firebase/Auth (3.10.0):
-    - Firebase/Core
-    - FirebaseAuth (= 3.0.6)
-  - Firebase/Core (3.10.0):
-    - FirebaseAnalytics (= 3.6.0)
-    - FirebaseCore (= 3.4.5)
-  - Firebase/Database (3.10.0):
-    - Firebase/Core
-    - FirebaseDatabase (= 3.1.1)
-  - FirebaseAnalytics (3.6.0):
-    - FirebaseCore (~> 3.4)
-    - FirebaseInstanceID (~> 1.0)
-    - GoogleInterchangeUtilities (~> 1.2)
-    - GoogleSymbolUtilities (~> 1.1)
-    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
-  - FirebaseAuth (3.0.6):
-    - FirebaseAnalytics (~> 3.4)
-    - GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)
-    - GTMSessionFetcher/Core (~> 1.1)
-  - FirebaseCore (3.4.5):
-    - GoogleInterchangeUtilities (~> 1.2)
-    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
-  - FirebaseDatabase (3.1.1):
-    - FirebaseAnalytics (~> 3.5)
-  - FirebaseInstanceID (1.0.8)
-  - FrameAccessor (2.0)
-  - GoogleInterchangeUtilities (1.2.2):
-    - GoogleSymbolUtilities (~> 1.1)
-  - GoogleSymbolUtilities (1.1.2)
-  - GoogleToolboxForMac/DebugUtils (2.1.0):
-    - GoogleToolboxForMac/Defines (= 2.1.0)
-  - GoogleToolboxForMac/Defines (2.1.0)
-  - GoogleToolboxForMac/NSData+zlib (2.1.0):
-    - GoogleToolboxForMac/Defines (= 2.1.0)
-  - GoogleToolboxForMac/NSDictionary+URLArguments (2.1.0):
-    - GoogleToolboxForMac/DebugUtils (= 2.1.0)
-    - GoogleToolboxForMac/Defines (= 2.1.0)
-    - GoogleToolboxForMac/NSString+URLArguments (= 2.1.0)
-  - GoogleToolboxForMac/NSString+URLArguments (2.1.0)
-  - GTMSessionFetcher/Core (1.1.7)
+  - Bolts/Tasks (1.8.4)
   - JTCalendar (2.1.9)
   - Masonry (1.0.2)
-  - MKFoundationKit (1.3.0):
-    - MKFoundationKit/AutoDescribe (= 1.3.0)
-    - MKFoundationKit/Base64 (= 1.3.0)
-    - MKFoundationKit/Block (= 1.3.0)
-    - MKFoundationKit/NSArray (= 1.3.0)
-    - MKFoundationKit/NSBundle (= 1.3.0)
-    - MKFoundationKit/NSDate (= 1.3.0)
-    - MKFoundationKit/NSDictionary (= 1.3.0)
-    - MKFoundationKit/NSNumber (= 1.3.0)
-    - MKFoundationKit/NSObject (= 1.3.0)
-    - MKFoundationKit/NSSet (= 1.3.0)
-    - MKFoundationKit/NSString (= 1.3.0)
-    - MKFoundationKit/Queue (= 1.3.0)
-    - MKFoundationKit/Stack (= 1.3.0)
-  - MKFoundationKit/AutoDescribe (1.3.0)
-  - MKFoundationKit/Base64 (1.3.0)
-  - MKFoundationKit/Block (1.3.0)
-  - MKFoundationKit/NSArray (1.3.0)
-  - MKFoundationKit/NSBundle (1.3.0)
-  - MKFoundationKit/NSDate (1.3.0)
-  - MKFoundationKit/NSDictionary (1.3.0)
-  - MKFoundationKit/NSNumber (1.3.0)
-  - MKFoundationKit/NSObject (1.3.0)
-  - MKFoundationKit/NSSet (1.3.0):
-    - MKFoundationKit/Block
-  - MKFoundationKit/NSString (1.3.0):
-    - MKFoundationKit/Base64
-  - MKFoundationKit/Queue (1.3.0)
-  - MKFoundationKit/Stack (1.3.0)
-  - Realm (2.1.1):
-    - Realm/Headers (= 2.1.1)
-  - Realm/Headers (2.1.1)
+  - Parse (1.14.2):
+    - Bolts/Tasks (~> 1.8)
+  - Realm (2.1.2):
+    - Realm/Headers (= 2.1.2)
+  - Realm/Headers (2.1.2)
   - RKDropdownAlert (0.3.0)
-  - SCLAlertView-Objective-C (1.0.6)
+  - SCLAlertView-Objective-C (1.1.0)
   - SWTableViewCell (0.3.7)
   - UIColor-HexString (1.3.0)
   - UICountingLabel (1.2.0)
 
 DEPENDENCIES:
-  - EAIntroView (~> 2.8.0)
-  - EARestrictedScrollView (~> 1.1.0)
-  - Firebase/Analytics
-  - Firebase/Auth
-  - Firebase/Database
-  - FrameAccessor
   - JTCalendar (~> 2.0)
   - Masonry
-  - MKFoundationKit (~> 1.3)
+  - Parse
   - Realm
   - RKDropdownAlert
   - SCLAlertView-Objective-C
@@ -102,29 +25,17 @@ DEPENDENCIES:
   - UICountingLabel (~> 1.2.0)
 
 SPEC CHECKSUMS:
-  EAIntroView: e948c83e642f30010d427e643c18a6f2b529afed
-  EARestrictedScrollView: b0c2a3f92fb2610bb44d71c5e4893777c89e45ef
-  Firebase: 387f37c7dca894a02708da9ff35ba147040eae9e
-  FirebaseAnalytics: 9c67af0ebeb8d2146c9b4ea2616439affa947b58
-  FirebaseAuth: 96e9674ff31d6e1f826d53e26aa003a57cab0295
-  FirebaseCore: 1e383fdfe37b6b5d6ff88e84204bdee30276af0f
-  FirebaseDatabase: 6de92187481ff0e8e124064f21742e95ee883b02
-  FirebaseInstanceID: ba1e640935235e5fac39dfa816fe7660e72e1a8a
-  FrameAccessor: 443a13e58e23a10ff22180da0897b28c3f6abf66
-  GoogleInterchangeUtilities: d5bc4d88d5b661ab72f9d70c58d02ca8c27ad1f7
-  GoogleSymbolUtilities: 631ee17048aa5e9ab133470d768ea997a5ef9b96
-  GoogleToolboxForMac: 2b2596cbb7186865e98cadf2b1e262d851c2b168
-  GTMSessionFetcher: a1f8ed39e4fe21c68957daed472c7afbcdf29166
+  Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   JTCalendar: beb2f4c1b639bf6880f680b4858227acf83a049c
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
-  MKFoundationKit: 26afe1cf63d4982a937d555537ca1a3fb50a9c77
-  Realm: a55959c0b171a5fe5267406d17f314fec3cefaae
+  Parse: 4335d65f40cb3d43190d723144bbe1afb9c38230
+  Realm: efe855f4d977c8ce5a82d3116d9f1ff155a6550c
   RKDropdownAlert: f4b3364c251829ad439dc666836a1f2dad26f4c7
-  SCLAlertView-Objective-C: ca78280817e66e74366b78579350dee2ff277e23
+  SCLAlertView-Objective-C: 349a894d4e1d1dbf14d443da784c6ca1e92c78d2
   SWTableViewCell: 2a94aadc9d47b2b611fa064566bf57948b95b579
   UIColor-HexString: fadc2e1389db19147ac99dee92222d3bd8bfec4a
   UICountingLabel: 1db4e7d023e1762171eb226d6dff47a7a84f27aa
 
-PODFILE CHECKSUM: a9c735fbd07f5c960f74c0884b7607b164a47e18
+PODFILE CHECKSUM: 1fa378c260b154f4da37992652e343f9a2f76dcf
 
 COCOAPODS: 1.1.1

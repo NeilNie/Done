@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "iOSUILib/MDTextField.h"
-
-@import FirebaseDatabase;
-@import FirebaseAuth;
+#import "PCAngularActivityIndicatorView.h"
+#import <Parse/Parse.h>
 
 @interface UserAuthViewController : UIViewController <MDTextFieldDelegate>
 
+@property (strong, nonatomic) PCAngularActivityIndicatorView *activityIndicator;
 @property (weak, nonatomic) IBOutlet UIImageView *background;
 @property (weak, nonatomic) IBOutlet UIButton *registerB;
 @property (weak, nonatomic) IBOutlet UIImageView *registerBbg;
@@ -26,5 +26,5 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constr;
 @property (weak, nonatomic) IBOutlet UIButton *registerb2;
 @property (strong, nonatomic) UIWindow *window;
-@property (strong, nonatomic) FIRDatabaseReference *ref;
+
 @end

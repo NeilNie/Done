@@ -7,7 +7,6 @@
 //
 
 #import "UserAuthViewController.h"
-#import "TipsViewController.h"
 
 @interface UserAuthViewController ()
 
@@ -15,46 +14,35 @@
 
 @implementation UserAuthViewController
 
-- (IBAction)Register:(id)sender {
+#pragma mark - User Auth
 
-    [[FIRAuth auth] createUserWithEmail:self.email.text password:self.password.text completion:^(FIRUser * _Nullable user, NSError * _Nullable error) {
+- (IBAction)registerUser:(id)sender {
+    
+    PFUser *user = [PFUser user];
+    user.username = self.username.text;
+    user.password = self.password.text;
+    user.email = self.email.text;
+    
+    NSLocale *currentLocale = [NSLocale currentLocale];  // get the current locale.
+    NSString *countryCode = [currentLocale objectForKey:NSLocaleCountryCode];
+    user[@"countryCode"] = countryCode;
+    
+    [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         
-        NSLocale *currentLocale = [NSLocale currentLocale];  // get the current locale.
-        NSString *countryCode = [currentLocale objectForKey:NSLocaleCountryCode];
-        [[[_ref child:@"users"] child:self.username.text] setValue:@{@"email": self.email.text,
-                                                                     @"UUID": [self uuid],
-                                                                     @"region": countryCode,
-                                                                     @"register_date": [[self dateFormatter] stringFromDate:[NSDate date]]}];
+        [self animationActivityIndicator];
+        self.loginB.enabled = NO;
+        self.registerB.enabled = NO;
+        self.registerb2.enabled = NO;
         
-        FIRUserProfileChangeRequest *changeRequest = [user profileChangeRequest];
-        changeRequest.displayName = self.username.text;
-        [changeRequest commitChangesWithCompletion:^(NSError *_Nullable error) {
-            if (error) {
-                NSLog(@"%@", error);
-            }
-        }];
-        
-        [self showIntro];
+        if (!error) {
+            [self showInitialViewController];
+            NSLog(@"registered sucessfully, user: %@", [PFUser currentUser]);
+        } else {
+            NSString *errorString = [error userInfo][@"error"];
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Oops, something went wrong" message:errorString preferredStyle:UIAlertControllerStyleAlert];
+            [self presentViewController:alert animated:YES completion:nil];
+        }
     }];
-}
-
-- (NSDateFormatter *)dateFormatter{
-    
-    static NSDateFormatter *dateFormatter;
-    if(!dateFormatter){
-        dateFormatter = [NSDateFormatter new];
-        dateFormatter.dateFormat = @"dd/MM/yyyy HH:MM";
-    }
-    
-    return dateFormatter;
-}
-
-- (NSString *)uuid{
-    
-    CFUUIDRef uuidRef = CFUUIDCreate(NULL);
-    CFStringRef uuidStringRef = CFUUIDCreateString(NULL, uuidRef);
-    CFRelease(uuidRef);
-    return (__bridge_transfer NSString *)uuidStringRef;
 }
 
 - (IBAction)login:(id)sender {
@@ -74,37 +62,44 @@
             self.email.alpha = 1.0;
         }];
     }else{
-        [[FIRAuth auth] signInWithEmail:self.email.text password:self.password.text completion:^(FIRUser * _Nullable user, NSError * _Nullable error) {
-            
-            [self showIntro];
+        
+        [self animationActivityIndicator];
+        self.loginB.enabled = NO;
+        self.registerB.enabled = NO;
+        self.registerb2.enabled = NO;
+        
+        //login with user name and password
+        [PFUser logInWithUsernameInBackground:self.username.text password:self.password.text block:^(PFUser *user, NSError *error) {
+            if (user) {
+                [self showInitialViewController];
+                NSLog(@"registered sucessfully, user: %@", [PFUser currentUser]);
+            } else {
+                //something went wrong
+                NSString *errorString = [error userInfo][@"error"];
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Oops, something went wrong" message:errorString preferredStyle:UIAlertControllerStyleAlert];
+                [self presentViewController:alert animated:YES completion:nil];
+            }
         }];
     }
 }
 
--(void)showIntro{
+#pragma mark - Private Helpers
+
+-(void)showInitialViewController{
     
-    intro = [[NSUserDefaults standardUserDefaults] boolForKey:@"intro"];
+    //hey, we are in, let's show the view controller.
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UIWindow *window = [UIApplication sharedApplication].delegate.window;
-    UIViewController *StartView = [storyboard instantiateViewControllerWithIdentifier:@"TipView"];
-    if (intro == NO) {
-        window.rootViewController = StartView;
-        [window makeKeyAndVisible];
-        intro = YES;
-        [[NSUserDefaults standardUserDefaults] setBool:intro forKey:@"intro"];
-    }else{
-        NSLog(@"will display view controller");
-        UINavigationController *navigationController = [storyboard instantiateViewControllerWithIdentifier:@"NavigationController"];
-        window.rootViewController = navigationController;
-        [UIView transitionWithView:window
-                          duration:0.3
-                           options:UIViewAnimationOptionTransitionCrossDissolve
-                        animations:nil
-                        completion:nil];
-    }
+    UINavigationController *navigationController = [storyboard instantiateViewControllerWithIdentifier:@"NavigationController"];
+    window.rootViewController = navigationController;
+    [UIView transitionWithView:window
+                      duration:0.3
+                       options:UIViewAnimationOptionTransitionCrossDissolve
+                    animations:nil
+                    completion:nil];
     
 }
-- (IBAction)registerUser:(id)sender {
+- (IBAction)registerBegin:(id)sender {
     
     [UIView animateWithDuration:0.5 animations:^{
         self.registerB.alpha = 0;
@@ -132,6 +127,15 @@
     [self.password resignFirstResponder];
 }
 
+-(void)animationActivityIndicator{
+    
+    self.activityIndicator = [[PCAngularActivityIndicatorView alloc] initWithActivityIndicatorStyle:PCAngularActivityIndicatorViewStyleLarge];
+    self.activityIndicator.color = [UIColor whiteColor];
+    self.activityIndicator.center = self.view.center;
+    [self.view addSubview:self.activityIndicator];
+    [self.activityIndicator startAnimating];
+}
+
 #pragma mark - MDTextField Delegate
 
 -(BOOL)textFieldShouldReturn:(MDTextField *)textField{
@@ -141,12 +145,6 @@
 
 #pragma mark - Life Cycle
 
--(void)viewDidAppear:(BOOL)animated{
-    
-    self.ref = [[FIRDatabase database] reference];
-    NSLog(@"uuid: %@",[self uuid]);
-    [super viewDidAppear:YES];
-}
 - (void)viewDidLoad {
     
     self.email.delegate = self;
@@ -163,15 +161,5 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
