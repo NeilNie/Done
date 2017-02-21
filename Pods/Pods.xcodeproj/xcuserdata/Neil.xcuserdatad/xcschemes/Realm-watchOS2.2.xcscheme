@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '434DBF377DB5063A4DA629FDBEAD7CD2'
+               BlueprintIdentifier = '10AC857A9C09535D3CA1A6E039C2D26B'
                BlueprintName = 'Realm-watchOS2.2'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libRealm-watchOS2.2.a'>

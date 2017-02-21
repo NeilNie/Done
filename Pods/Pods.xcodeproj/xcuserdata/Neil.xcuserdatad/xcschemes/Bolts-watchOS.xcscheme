@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'E079843C9C79118289CFD9619070B0B8'
-               BlueprintName = 'EAIntroView'
+               BlueprintIdentifier = '8FE92979BA9D13806D4AEB2F0E868FDE'
+               BlueprintName = 'Bolts-watchOS'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libEAIntroView.a'>
+               BuildableName = 'libBolts-watchOS.a'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

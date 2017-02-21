@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'DE868725B18AE240E550C5515AE66BC4'
-               BlueprintName = 'GTMSessionFetcher'
+               BlueprintIdentifier = '7D4AC162D20B2562D3CF6AA629CC47C7'
+               BlueprintName = 'Parse-watchOS'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libGTMSessionFetcher.a'>
+               BuildableName = 'libParse-watchOS.a'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
