@@ -4,9 +4,9 @@ PODS:
   - Masonry (1.0.2)
   - Parse (1.14.2):
     - Bolts/Tasks (~> 1.8)
-  - Realm (2.4.3):
-    - Realm/Headers (= 2.4.3)
-  - Realm/Headers (2.4.3)
+  - Realm (2.4.4):
+    - Realm/Headers (= 2.4.4)
+  - Realm/Headers (2.4.4)
   - RKDropdownAlert (0.3.0)
   - SCLAlertView-Objective-C (1.1.1)
   - SWTableViewCell (0.3.7)
@@ -29,7 +29,7 @@ SPEC CHECKSUMS:
   JTCalendar: beb2f4c1b639bf6880f680b4858227acf83a049c
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   Parse: 4335d65f40cb3d43190d723144bbe1afb9c38230
-  Realm: e08d60b0048ccccd3949c8c28a92c4db5712d7e9
+  Realm: 5a280a1f5a9a3c267bebf4f41ee47911137703d7
   RKDropdownAlert: f4b3364c251829ad439dc666836a1f2dad26f4c7
   SCLAlertView-Objective-C: d397ae2b52bae7dedf7188fa1616fcb89200b33a
   SWTableViewCell: 2a94aadc9d47b2b611fa064566bf57948b95b579
