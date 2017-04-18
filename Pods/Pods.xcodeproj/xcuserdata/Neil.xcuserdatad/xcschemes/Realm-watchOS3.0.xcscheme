@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '129F90E179B17CC5DA48A17561448137'
-               BlueprintName = 'RKDropdownAlert'
+               BlueprintIdentifier = '0E888DD8E0F3DE4E5BDCC0AFB17E336B'
+               BlueprintName = 'Realm-watchOS3.0'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libRKDropdownAlert.a'>
+               BuildableName = 'libRealm-watchOS3.0.a'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

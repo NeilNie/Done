@@ -25,7 +25,6 @@ typedef NS_ENUM(NSInteger, SWCellState)
 @protocol SWTableViewCellDelegate <NSObject>
 
 @optional
-- (void)reloadTableView;
 - (void)swipeableTableViewCell:(SWTableViewCell *)cell didTriggerLeftUtilityButtonWithIndex:(NSInteger)index;
 - (void)swipeableTableViewCell:(SWTableViewCell *)cell didTriggerRightUtilityButtonWithIndex:(NSInteger)index;
 - (void)swipeableTableViewCell:(SWTableViewCell *)cell scrollingToState:(SWCellState)state;

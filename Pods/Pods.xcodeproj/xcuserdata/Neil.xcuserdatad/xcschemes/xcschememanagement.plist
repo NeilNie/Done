@@ -54,17 +54,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Realm-iOS10.0.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Realm-iOS9.0.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Realm-iOS9.3.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Realm-watchOS2.2.xcscheme</key>
+		<key>Realm-watchOS3.0.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

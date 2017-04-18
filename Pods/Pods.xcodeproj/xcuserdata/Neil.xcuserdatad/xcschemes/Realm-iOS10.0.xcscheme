@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '45E3B30E961462B4325CA1B9905B6FA4'
-               BlueprintName = 'SCLAlertView-Objective-C'
+               BlueprintIdentifier = 'EA0C6D32972272662FB8614F52A469E9'
+               BlueprintName = 'Realm-iOS10.0'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libSCLAlertView-Objective-C.a'>
+               BuildableName = 'libRealm-iOS10.0.a'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
