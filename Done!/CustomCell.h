@@ -7,9 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "iOSUILib/MDTableViewCell.h"
-#import "iOSUILib/MDTextField.h"
-#import "iOSUILib/MDSwitch.h"
+#import <MaterialControls/MaterialControls.h>
 #import "UIFontHelper.h"
 #import "Events.h"
 

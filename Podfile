@@ -13,6 +13,7 @@ pod 'UIColor-HexString'
 pod 'Masonry'
 pod 'SWTableViewCell', '~> 0.3.7'
 pod 'Parse'
+pod 'MaterialControls'
 
 end
 

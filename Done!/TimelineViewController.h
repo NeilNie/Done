@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <WatchConnectivity/WatchConnectivity.h>
+#import <MaterialControls/MaterialControls.h>
 #import "Events.h"
 #import "Projects.h"
 #import "EventsHelper.h"
@@ -23,7 +24,6 @@
 #import "MSTimeRowHeader.h"
 #import "MSCurrentTimeIndicator.h"
 #import "MSCurrentTimeGridline.h"
-#import "iOSUILib/MDRippleLayer.h"
 
 @interface TimelineViewController : UIViewController <MSCollectionViewDelegateCalendarLayout, EventCellDelegate, WCSessionDelegate, SWTableViewCellDelegate, UITableViewDelegate, UITableViewDataSource>{
     NSArray *collectionViewArray;

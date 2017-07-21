@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "iOSUILib/MDTextField.h"
+#import <MaterialControls/MaterialControls.h>
 
 @interface AddEventCell : UITableViewCell <MDTextFieldDelegate>
 

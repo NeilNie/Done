@@ -41,6 +41,7 @@ PODS:
   - GTMSessionFetcher/Core (1.1.11)
   - JTCalendar (2.1.9)
   - Masonry (1.0.2)
+  - MaterialControls (1.2.2)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
     - nanopb/encode (= 0.3.8)
@@ -64,6 +65,7 @@ DEPENDENCIES:
   - Firebase/Database
   - JTCalendar (~> 2.0)
   - Masonry
+  - MaterialControls
   - Parse
   - Realm
   - RKDropdownAlert
@@ -85,6 +87,7 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 5ad62e8200fa00ed011fe5e08d27fef72c5b1429
   JTCalendar: beb2f4c1b639bf6880f680b4858227acf83a049c
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  MaterialControls: 1c6b29e78d3a13d8dd6a67ed31b6d26eb5de8f72
   nanopb: 22bc080fa3955e2116b6ff3ee6c2cb3c15ab97cb
   Parse: b7a77b20b8a6dede8058da1e2b339593578ce158
   Realm: 3601ef091c8c499a31101d8563b991e75546cdce
@@ -94,6 +97,6 @@ SPEC CHECKSUMS:
   UIColor-HexString: fadc2e1389db19147ac99dee92222d3bd8bfec4a
   UICountingLabel: 1db4e7d023e1762171eb226d6dff47a7a84f27aa
 
-PODFILE CHECKSUM: 402275a028721bc571d2917dafc8476f10edf88e
+PODFILE CHECKSUM: 39f233d16660d6e48eb8f5aaafb4370e0cfbb818
 
 COCOAPODS: 1.2.0

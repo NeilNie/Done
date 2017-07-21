@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "iOSUILib/MDTableViewCell.h"
+#import <MaterialControls/MaterialControls.h>
 #import "Events.h"
 #import <SWTableViewCell.h>
 

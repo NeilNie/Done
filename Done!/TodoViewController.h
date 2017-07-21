@@ -11,14 +11,13 @@
 #import <WatchConnectivity/WatchConnectivity.h>
 #import <SWTableViewCell/SWTableViewCell.h>
 
-#import "iOSUILib/MDTabBarViewController.h"
+#import <MaterialControls/MaterialControls.h>
 #import "Events.h"
 #import "EventTableViewCell.h"
 #import "CreateNewVC.h"
 #import "EventsHelper.h"
 #import "Projects.h"
 #import "AddEventCell.h"
-#import "iOSUILib/MDButton.h"
 #import "MDDeviceHelper.h"
 #import "UIView+MDExtension.h"
 
