@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '3EB059A92D84DA0D8644DD10BFEDAB78'
+               BlueprintIdentifier = '8A7F761A305C47191C5AC5B2E46F77A2'
                BlueprintName = 'Parse-watchOS'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libParse-watchOS.a'>

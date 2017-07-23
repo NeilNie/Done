@@ -1,5 +1,9 @@
 target 'Done!' do
 
+pod 'Firebase/Core'	
+pod 'Firebase/Auth'
+pod 'Firebase/AdMob'
+pod 'Firebase/Database'
 pod 'UICountingLabel','~> 1.2.0'
 pod 'JTCalendar', '~> 2.0'
 pod 'Realm'
