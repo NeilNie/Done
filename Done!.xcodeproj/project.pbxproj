@@ -71,7 +71,7 @@
 		280523BB1D3FE0F800D0EA0C /* GraphTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 280523BA1D3FE0F800D0EA0C /* GraphTableViewCell.xib */; };
 		280523BE1D3FE10C00D0EA0C /* GraphTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 280523BD1D3FE10C00D0EA0C /* GraphTableViewCell.m */; };
 		2806674B1F24932200823D0A /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 2806674A1F24932200823D0A /* background.png */; };
-		280C83DB1CF31D4D00DC8742 /* UserAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 280C83DA1CF31D4D00DC8742 /* UserAuthViewController.m */; };
+		280C83DB1CF31D4D00DC8742 /* AuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 280C83DA1CF31D4D00DC8742 /* AuthViewController.m */; };
 		280EFD951CE2C17500C31E46 /* MSCurrentTimeGridline.m in Sources */ = {isa = PBXBuildFile; fileRef = 280EFD881CE2C17500C31E46 /* MSCurrentTimeGridline.m */; };
 		280EFD961CE2C17500C31E46 /* MSCurrentTimeIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 280EFD8A1CE2C17500C31E46 /* MSCurrentTimeIndicator.m */; };
 		280EFD971CE2C17500C31E46 /* MSDayColumnHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 280EFD8C1CE2C17500C31E46 /* MSDayColumnHeader.m */; };
@@ -81,7 +81,7 @@
 		280EFD9B1CE2C17500C31E46 /* MSTimeRowHeaderBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 280EFD941CE2C17500C31E46 /* MSTimeRowHeaderBackground.m */; };
 		280EFD9F1CE2C1C600C31E46 /* MSCollectionViewCalendarLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 280EFD9E1CE2C1C600C31E46 /* MSCollectionViewCalendarLayout.m */; };
 		280EFDA21CE2C1E400C31E46 /* MSEventCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 280EFDA11CE2C1E400C31E46 /* MSEventCell.m */; };
-		2836B9091D303806006ADBAF /* TableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2836B9081D303806006ADBAF /* TableController.m */; };
+		2836B9091D303806006ADBAF /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2836B9081D303806006ADBAF /* TableViewController.m */; };
 		283B892C1D3D5DD6000ADA9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 283B892B1D3D5DD6000ADA9E /* Assets.xcassets */; };
 		283B89321D3D71D7000ADA9E /* ExtensionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 283B89311D3D71D7000ADA9E /* ExtensionViewController.m */; };
 		283D1B111D1640DF000CEC0C /* TimePeriod.m in Sources */ = {isa = PBXBuildFile; fileRef = 283D1B101D1640DF000CEC0C /* TimePeriod.m */; };
@@ -306,8 +306,8 @@
 		280523BC1D3FE10C00D0EA0C /* GraphTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphTableViewCell.h; sourceTree = "<group>"; };
 		280523BD1D3FE10C00D0EA0C /* GraphTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphTableViewCell.m; sourceTree = "<group>"; };
 		2806674A1F24932200823D0A /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
-		280C83D91CF31D4D00DC8742 /* UserAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = UserAuthViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		280C83DA1CF31D4D00DC8742 /* UserAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAuthViewController.m; sourceTree = "<group>"; };
+		280C83D91CF31D4D00DC8742 /* AuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = AuthViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		280C83DA1CF31D4D00DC8742 /* AuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthViewController.m; sourceTree = "<group>"; };
 		280EFD871CE2C17500C31E46 /* MSCurrentTimeGridline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCurrentTimeGridline.h; sourceTree = "<group>"; };
 		280EFD881CE2C17500C31E46 /* MSCurrentTimeGridline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCurrentTimeGridline.m; sourceTree = "<group>"; };
 		280EFD891CE2C17500C31E46 /* MSCurrentTimeIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCurrentTimeIndicator.h; sourceTree = "<group>"; };
@@ -328,8 +328,8 @@
 		280EFDA11CE2C1E400C31E46 /* MSEventCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSEventCell.m; sourceTree = "<group>"; };
 		281838BA1CC9B01800D5930E /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		281F990B1CE2B4B6008D9342 /* Done!-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Done!-Bridging-Header.h"; sourceTree = "<group>"; };
-		2836B9071D303806006ADBAF /* TableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableController.h; sourceTree = "<group>"; };
-		2836B9081D303806006ADBAF /* TableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableController.m; sourceTree = "<group>"; };
+		2836B9071D303806006ADBAF /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		2836B9081D303806006ADBAF /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		283B892B1D3D5DD6000ADA9E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		283B89301D3D71D7000ADA9E /* ExtensionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtensionViewController.h; sourceTree = "<group>"; };
 		283B89311D3D71D7000ADA9E /* ExtensionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtensionViewController.m; sourceTree = "<group>"; };
@@ -532,7 +532,6 @@
 				281F990B1CE2B4B6008D9342 /* Done!-Bridging-Header.h */,
 				0002893A1CF10D9F005CEA17 /* GoogleService-Info.plist */,
 				28AB06A41CCA3F8F0071B16D /* Done!.entitlements */,
-				006083591CC4007500A344F1 /* LaunchScreen.storyboard */,
 				0060835C1CC4007500A344F1 /* Info.plist */,
 				28B2003B1CC7C36500A18DFC /* CellDescriptor.plist */,
 				00F4A8FB1CD520690062416D /* CellDescriptor2.plist */,
@@ -670,6 +669,7 @@
 				28EB3A6C1CEA8E2D00A5BCED /* TextfieldCell.xib */,
 				280523BA1D3FE0F800D0EA0C /* GraphTableViewCell.xib */,
 				28DA92CD1D52159200ACC2B3 /* ValuePickerCell.xib */,
+				006083591CC4007500A344F1 /* LaunchScreen.storyboard */,
 			);
 			name = Nibs;
 			sourceTree = "<group>";
@@ -720,10 +720,10 @@
 			children = (
 				2802F8321CC5C2F400C65966 /* CreateNewVC.h */,
 				2802F8331CC5C2F400C65966 /* CreateNewVC.m */,
-				280C83D91CF31D4D00DC8742 /* UserAuthViewController.h */,
-				280C83DA1CF31D4D00DC8742 /* UserAuthViewController.m */,
-				2836B9071D303806006ADBAF /* TableController.h */,
-				2836B9081D303806006ADBAF /* TableController.m */,
+				280C83D91CF31D4D00DC8742 /* AuthViewController.h */,
+				280C83DA1CF31D4D00DC8742 /* AuthViewController.m */,
+				2836B9071D303806006ADBAF /* TableViewController.h */,
+				2836B9081D303806006ADBAF /* TableViewController.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -1351,7 +1351,7 @@
 				280EFD9F1CE2C1C600C31E46 /* MSCollectionViewCalendarLayout.m in Sources */,
 				280523AE1D3FA3DC00D0EA0C /* PNColor.m in Sources */,
 				00BEC6721CCBC93A008B7862 /* EventsHelper.m in Sources */,
-				280C83DB1CF31D4D00DC8742 /* UserAuthViewController.m in Sources */,
+				280C83DB1CF31D4D00DC8742 /* AuthViewController.m in Sources */,
 				280523AD1D3FA3DC00D0EA0C /* PNCircleChart.m in Sources */,
 				00F48A301CC5193000B94EA4 /* CalendarViewController.m in Sources */,
 				0020F72A1CD584A900F47CEE /* QBPopupMenuItemView.m in Sources */,
@@ -1401,7 +1401,7 @@
 				280523B91D3FA3DC00D0EA0C /* PNScatterChartDataItem.m in Sources */,
 				0020F7291CD584A900F47CEE /* QBPopupMenuItem.m in Sources */,
 				003BA4C61E14134D008C5F7A /* PCAngularActivityIndicatorView.m in Sources */,
-				2836B9091D303806006ADBAF /* TableController.m in Sources */,
+				2836B9091D303806006ADBAF /* TableViewController.m in Sources */,
 				0020F72C1CD584A900F47CEE /* QBPopupMenuPagenatorView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11129.15" systemVersion="16A201w" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" generatesPrototypingConstraints="YES" useTraitCollections="YES" colorMatched="NO" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.19" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <development version="7000" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11103.10"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.16"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,17 +21,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="done-icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="vWg-8X-g6q">
-                                <rect key="frame" x="88" y="234" width="200" height="200"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background.png" translatesAutoresizingMaskIntoConstraints="NO" id="vWg-8X-g6q">
+                                <rect key="frame" x="47" y="80" width="280" height="280"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="EAZ-JF-cSI"/>
-                                    <constraint firstAttribute="width" constant="200" id="sLZ-FQ-08p"/>
+                                    <constraint firstAttribute="height" constant="280" id="EAZ-JF-cSI"/>
+                                    <constraint firstAttribute="width" constant="280" id="sLZ-FQ-08p"/>
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.96460121870040894" green="0.96476620435714722" blue="0.96459084749221802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="vWg-8X-g6q" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="a2o-CO-PCJ"/>
+                            <constraint firstItem="vWg-8X-g6q" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="60" id="F6s-z8-q7a"/>
                             <constraint firstItem="vWg-8X-g6q" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="myF-av-a2p"/>
                         </constraints>
                     </view>
@@ -38,6 +42,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="done-icon.png" width="768" height="768"/>
+        <image name="background.png" width="2600" height="2600"/>
     </resources>
 </document>

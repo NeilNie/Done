@@ -6,13 +6,13 @@
 //  Copyright © 2016 Yongyang Nie. All rights reserved.
 //
 
-#import "TableController.h"
+#import "TableViewController.h"
 
-@interface TableController ()
+@interface TableViewController ()
 
 @end
 
-@implementation TableController
+@implementation TableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

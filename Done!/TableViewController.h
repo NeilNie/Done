@@ -11,7 +11,7 @@
 
 #import "Projects.h"
 
-@interface TableController : UITableViewController
+@interface TableViewController : UITableViewController
 @property (strong, nonatomic) RLMResults *array;
 
 @end
