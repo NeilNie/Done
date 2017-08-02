@@ -14,6 +14,13 @@
 
 @implementation AuthViewController
 
+#pragma mark - Private
+
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self.email resignFirstResponder];
+    [self.password resignFirstResponder];
+}
+
 #pragma mark - IBAction
 
 - (IBAction)authenticateUser:(id)sender {
@@ -62,8 +69,15 @@
     self.password.delegate = self;
     
     self.doneButton.layer.cornerRadius = 5.0;
+    self.doneButton.layer.shadowColor = [UIColor lightGrayColor].CGColor;
+    self.doneButton.layer.shadowRadius = 3.0;
+    self.doneButton.layer.shadowOffset = CGSizeMake(5.0, 5.0);
     self.doneButton.layer.masksToBounds = YES;
     
+    if (self.view.frame.size.width == 320) {
+        self.iconLeft.constant = 35;
+        self.iconRight.constant = 35;
+    }
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }

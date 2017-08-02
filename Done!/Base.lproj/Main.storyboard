@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.19" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ci1-LB-qPP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13168.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ci1-LB-qPP">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.16"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13147.4"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -75,7 +75,7 @@
                     <navigationItem key="navigationItem" title="Preference" id="rvz-cc-EgS">
                         <barButtonItem key="rightBarButtonItem" id="73v-42-HAy">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="X0B-51-D5D">
-                                <rect key="frame" x="259" y="12" width="100" height="20"/>
+                                <rect key="frame" x="259" y="0.0" width="100" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="export.png"/>
                                 <connections>
@@ -125,6 +125,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="UdL-fo-eCo" firstAttribute="top" secondItem="YBd-6a-le9" secondAttribute="bottom" constant="8" id="Gf9-ts-ALl"/>
+                            <constraint firstItem="k6X-nz-k9y" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="cSb-hg-dNG" secondAttribute="leadingMargin" id="Mw8-B2-Z3u"/>
                             <constraint firstItem="YBd-6a-le9" firstAttribute="leading" secondItem="cSb-hg-dNG" secondAttribute="leading" constant="6" id="Zsa-Y3-wWE"/>
                             <constraint firstItem="YBd-6a-le9" firstAttribute="top" secondItem="UqP-0u-6be" secondAttribute="bottom" constant="8" id="c6Q-Y3-529"/>
                             <constraint firstAttribute="trailingMargin" secondItem="k6X-nz-k9y" secondAttribute="trailing" constant="8" id="dDZ-k7-hyQ"/>
@@ -390,7 +391,7 @@
                     <navigationItem key="navigationItem" title="Calendar" id="Kfz-KN-Qdj">
                         <barButtonItem key="rightBarButtonItem" id="qiS-3J-BBU">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7HY-08-bAU">
-                                <rect key="frame" x="327" y="6" width="32" height="32"/>
+                                <rect key="frame" x="327" y="0.0" width="32" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
                                 <state key="normal" title="+">
@@ -562,7 +563,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4SB-6H-vU1" customClass="EAIntroView">
-                                <rect key="frame" x="-4" y="20" width="383" height="647"/>
+                                <rect key="frame" x="-4" y="64" width="383" height="603"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                         </subviews>
@@ -623,7 +624,7 @@
                     <navigationItem key="navigationItem" title="New" id="pOs-o6-a9X">
                         <barButtonItem key="leftBarButtonItem" style="done" id="AqK-jZ-cX7">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="RNa-vi-xHj">
-                                <rect key="frame" x="16" y="7" width="60" height="30"/>
+                                <rect key="frame" x="16" y="6" width="60" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="Cancel">
@@ -636,7 +637,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" id="y7q-Hh-ro5">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="F4W-ia-LiK">
-                                <rect key="frame" x="289" y="7" width="70" height="30"/>
+                                <rect key="frame" x="289" y="6" width="70" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="Add">
@@ -766,6 +767,8 @@
                         <outlet property="doneButton" destination="IZN-ZD-LBi" id="GdU-nU-2zB"/>
                         <outlet property="email" destination="rOI-qN-2hp" id="yhO-d9-wNI"/>
                         <outlet property="icon" destination="Ypp-YK-cqf" id="gGF-Da-dCT"/>
+                        <outlet property="iconLeft" destination="3rt-8N-2vm" id="itn-F3-sWn"/>
+                        <outlet property="iconRight" destination="L6E-ud-MU3" id="POw-jO-5Lz"/>
                         <outlet property="password" destination="9Zs-Sw-1Sf" id="H2o-au-piQ"/>
                     </connections>
                 </viewController>
@@ -1098,7 +1101,7 @@
                     <navigationItem key="navigationItem" title="Projects" id="EzC-Mh-fB0">
                         <barButtonItem key="leftBarButtonItem" id="ugT-rE-dgj">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Try-iM-Zv9">
-                                <rect key="frame" x="16" y="7" width="75" height="30"/>
+                                <rect key="frame" x="16" y="6" width="75" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="Cancel">

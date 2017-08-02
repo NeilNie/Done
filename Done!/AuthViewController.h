@@ -20,5 +20,7 @@
 @property (weak, nonatomic) IBOutlet MDTextField *password;
 @property (weak, nonatomic) IBOutlet MDTextField *email;
 @property (strong, nonatomic) UIWindow *window;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *iconLeft;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *iconRight;
 
 @end
