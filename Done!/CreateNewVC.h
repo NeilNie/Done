@@ -16,8 +16,6 @@
 #import "EventsHelper.h"
 #import "TimelineTableViewCell.h"
 
-#import <Parse/Parse.h>
-
 @interface CreateNewVC : UIViewController <WCSessionDelegate, UITableViewDelegate, UITableViewDataSource, CustomCellDelegates, TimelineTableViewCellDelegate>{
     
     NSArray *array;

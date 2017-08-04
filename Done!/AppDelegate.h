@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import <WatchConnectivity/WatchConnectivity.h>
 #import "EventManager.h"
-#import <Parse/Parse.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate, WCSessionDelegate>
 

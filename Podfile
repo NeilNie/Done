@@ -4,15 +4,14 @@ pod 'Firebase/Core'
 pod 'Firebase/Auth'
 pod 'Firebase/AdMob'
 pod 'Firebase/Database'
-pod 'UICountingLabel','~> 1.2.0'
-pod 'JTCalendar', '~> 2.0'
+pod 'UICountingLabel'
+pod 'JTCalendar'
 pod 'Realm'
 pod 'RKDropdownAlert'
 pod 'SCLAlertView-Objective-C'
 pod 'UIColor-HexString'
 pod 'Masonry'
-pod 'SWTableViewCell', '~> 0.3.7'
-pod 'Parse'
+pod 'SWTableViewCell'
 pod 'MaterialControls'
 
 end
@@ -26,5 +25,4 @@ end
 target 'Done! Apple Watch Extension' do
 
 pod 'Realm'
-pod 'Parse'
 end

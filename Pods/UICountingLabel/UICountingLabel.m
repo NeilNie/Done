@@ -1,3 +1,5 @@
+#import <QuartzCore/QuartzCore.h>
+
 #import "UICountingLabel.h"
 
 #if !__has_feature(objc_arc)
@@ -6,43 +8,35 @@
 
 #pragma mark - UILabelCounter
 
-// This whole class & subclasses are private to UICountingLabel, which is why they are declared here in the .m file
+#ifndef kUILabelCounterRate
+#define kUILabelCounterRate 3.0
+#endif
 
-@interface UILabelCounter : NSObject
+@protocol UILabelCounter<NSObject>
 
--(float)update:(float)t;
-
-@property float rate;
-
-@end
-
-@interface UILabelCounterLinear : UILabelCounter
+-(CGFloat)update:(CGFloat)t;
 
 @end
 
-@interface UILabelCounterEaseIn : UILabelCounter
+@interface UILabelCounterLinear : NSObject<UILabelCounter>
 
 @end
 
-@interface UILabelCounterEaseOut : UILabelCounter
+@interface UILabelCounterEaseIn : NSObject<UILabelCounter>
 
 @end
 
-@interface UILabelCounterEaseInOut : UILabelCounter
+@interface UILabelCounterEaseOut : NSObject<UILabelCounter>
 
 @end
 
-@implementation  UILabelCounter
-
--(float)update:(float)t{
-    return 0;
-}
+@interface UILabelCounterEaseInOut : NSObject<UILabelCounter>
 
 @end
 
 @implementation UILabelCounterLinear
 
--(float)update:(float)t
+-(CGFloat)update:(CGFloat)t
 {
     return t;
 }
@@ -51,34 +45,34 @@
 
 @implementation UILabelCounterEaseIn
 
--(float)update:(float)t
+-(CGFloat)update:(CGFloat)t
 {
-    return powf(t, self.rate);
+    return powf(t, kUILabelCounterRate);
 }
 
 @end
 
 @implementation UILabelCounterEaseOut
 
--(float)update:(float)t{
-    return 1.0-powf((1.0-t), self.rate);
+-(CGFloat)update:(CGFloat)t{
+    return 1.0-powf((1.0-t), kUILabelCounterRate);
 }
 
 @end
 
 @implementation UILabelCounterEaseInOut
 
--(float) update: (float) t
+-(CGFloat) update: (CGFloat) t
 {
 	int sign =1;
-	int r = (int) self.rate;
+	int r = (int) kUILabelCounterRate;
 	if (r % 2 == 0)
 		sign = -1;
 	t *= 2;
 	if (t < 1)
-		return 0.5f * powf (t, self.rate);
+		return 0.5f * powf(t, kUILabelCounterRate);
 	else
-		return sign*0.5f * (powf (t-2, self.rate) + sign*2);
+		return sign * 0.5f * (powf(t-2, kUILabelCounterRate) + sign * 2);
 }
 
 @end
@@ -87,21 +81,21 @@
 
 @interface UICountingLabel ()
 
-@property float startingValue;
-@property float destinationValue;
+@property CGFloat startingValue;
+@property CGFloat destinationValue;
 @property NSTimeInterval progress;
 @property NSTimeInterval lastUpdate;
 @property NSTimeInterval totalTime;
-@property float easingRate;
+@property CGFloat easingRate;
 
-@property (nonatomic, weak) NSTimer *timer;
-@property (nonatomic, strong) UILabelCounter *counter;
+@property (nonatomic, strong) CADisplayLink *timer;
+@property (nonatomic, strong) id<UILabelCounter> counter;
 
 @end
 
 @implementation UICountingLabel
 
--(void)countFrom:(float)value to:(float)endValue {
+-(void)countFrom:(CGFloat)value to:(CGFloat)endValue {
     
     if (self.animationDuration == 0.0f) {
         self.animationDuration = 2.0f;
@@ -110,7 +104,7 @@
     [self countFrom:value to:endValue withDuration:self.animationDuration];
 }
 
--(void)countFrom:(float)startValue to:(float)endValue withDuration:(NSTimeInterval)duration {
+-(void)countFrom:(CGFloat)startValue to:(CGFloat)endValue withDuration:(NSTimeInterval)duration {
     
     self.startingValue = startValue;
     self.destinationValue = endValue;
@@ -150,27 +144,26 @@
             break;
     }
 
-    self.counter.rate = 3.0f;
-
-    NSTimer *timer = [NSTimer timerWithTimeInterval:(1.0f/30.0f) target:self selector:@selector(updateValue:) userInfo:nil repeats:YES];
-    [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
-    [[NSRunLoop mainRunLoop] addTimer:timer forMode:UITrackingRunLoopMode];
+    CADisplayLink *timer = [CADisplayLink displayLinkWithTarget:self selector:@selector(updateValue:)];
+    timer.frameInterval = 2;
+    [timer addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
+    [timer addToRunLoop:[NSRunLoop mainRunLoop] forMode:UITrackingRunLoopMode];
     self.timer = timer;
 }
 
-- (void)countFromCurrentValueTo:(float)endValue {
+- (void)countFromCurrentValueTo:(CGFloat)endValue {
     [self countFrom:[self currentValue] to:endValue];
 }
 
-- (void)countFromCurrentValueTo:(float)endValue withDuration:(NSTimeInterval)duration {
+- (void)countFromCurrentValueTo:(CGFloat)endValue withDuration:(NSTimeInterval)duration {
     [self countFrom:[self currentValue] to:endValue withDuration:duration];
 }
 
-- (void)countFromZeroTo:(float)endValue {
+- (void)countFromZeroTo:(CGFloat)endValue {
     [self countFrom:0.0f to:endValue];
 }
 
-- (void)countFromZeroTo:(float)endValue withDuration:(NSTimeInterval)duration {
+- (void)countFromZeroTo:(CGFloat)endValue withDuration:(NSTimeInterval)duration {
     [self countFrom:0.0f to:endValue withDuration:duration];
 }
 
@@ -194,7 +187,7 @@
     }
 }
 
-- (void)setTextValue:(float)value
+- (void)setTextValue:(CGFloat)value
 {
     if (self.attributedFormatBlock != nil) {
         self.attributedText = self.attributedFormatBlock(value);

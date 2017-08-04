@@ -3,114 +3,94 @@
 <plist version="1.0">
 <dict>
 	<key>SchemeUserState</key>
-	<dict/>
-	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>05F8BECCCCA31F9FF414A00B4C6AB5B6</key>
+		<key>GTMSessionFetcher.xcscheme</key>
 		<dict>
-			<key>primary</key>
-			<true/>
+			<key>isShown</key>
+			<false/>
 		</dict>
-		<key>0BE4A16FFDEF8D8F814E3AE6A2577F6C</key>
+		<key>GoogleToolboxForMac.xcscheme</key>
 		<dict>
-			<key>primary</key>
-			<true/>
+			<key>isShown</key>
+			<false/>
 		</dict>
-		<key>0E888DD8E0F3DE4E5BDCC0AFB17E336B</key>
+		<key>JTCalendar.xcscheme</key>
 		<dict>
-			<key>primary</key>
-			<true/>
+			<key>isShown</key>
+			<false/>
 		</dict>
-		<key>18043061E9307EE3BFF141F4445CDBC2</key>
+		<key>Masonry.xcscheme</key>
 		<dict>
-			<key>primary</key>
-			<true/>
+			<key>isShown</key>
+			<false/>
 		</dict>
-		<key>1CE78EB1F838BE47C970CACD85F07023</key>
+		<key>MaterialControls.xcscheme</key>
 		<dict>
-			<key>primary</key>
-			<true/>
+			<key>isShown</key>
+			<false/>
 		</dict>
-		<key>1E2C81610AC61705353BE823872FAFE1</key>
+		<key>Pods-Done Widget.xcscheme</key>
 		<dict>
-			<key>primary</key>
-			<true/>
+			<key>isShown</key>
+			<false/>
 		</dict>
-		<key>39F0EDE05F3710D557BFCF24D4F38C40</key>
+		<key>Pods-Done! Apple Watch Extension.xcscheme</key>
 		<dict>
-			<key>primary</key>
-			<true/>
+			<key>isShown</key>
+			<false/>
 		</dict>
-		<key>58E7450DB13C5ECCE92D3C0DF7CF0903</key>
+		<key>Pods-Done!.xcscheme</key>
 		<dict>
-			<key>primary</key>
-			<true/>
+			<key>isShown</key>
+			<false/>
 		</dict>
-		<key>7D47C51FF727A0A6221B0535519B4AFE</key>
+		<key>RKDropdownAlert.xcscheme</key>
 		<dict>
-			<key>primary</key>
-			<true/>
+			<key>isShown</key>
+			<false/>
 		</dict>
-		<key>85CF5C89AB7799B7EE09C050667C784D</key>
+		<key>Realm-iOS10.0.xcscheme</key>
 		<dict>
-			<key>primary</key>
-			<true/>
+			<key>isShown</key>
+			<false/>
 		</dict>
-		<key>8A7F761A305C47191C5AC5B2E46F77A2</key>
+		<key>Realm-iOS9.0.xcscheme</key>
 		<dict>
-			<key>primary</key>
-			<true/>
+			<key>isShown</key>
+			<false/>
 		</dict>
-		<key>8FE92979BA9D13806D4AEB2F0E868FDE</key>
+		<key>Realm-watchOS3.0.xcscheme</key>
 		<dict>
-			<key>primary</key>
-			<true/>
+			<key>isShown</key>
+			<false/>
 		</dict>
-		<key>9DC8D9E02903E93BD0B2FEC9D846EA20</key>
+		<key>SCLAlertView-Objective-C.xcscheme</key>
 		<dict>
-			<key>primary</key>
-			<true/>
+			<key>isShown</key>
+			<false/>
 		</dict>
-		<key>AD13FDF9802F9AA7780EED9D40A7C010</key>
+		<key>SWTableViewCell.xcscheme</key>
 		<dict>
-			<key>primary</key>
-			<true/>
+			<key>isShown</key>
+			<false/>
 		</dict>
-		<key>AD920D7CB28199D1981082AD9D06A335</key>
+		<key>UIColor-HexString.xcscheme</key>
 		<dict>
-			<key>primary</key>
-			<true/>
+			<key>isShown</key>
+			<false/>
 		</dict>
-		<key>C37A9F7B0E22DBDBD9314D454A4047CB</key>
+		<key>UICountingLabel.xcscheme</key>
 		<dict>
-			<key>primary</key>
-			<true/>
+			<key>isShown</key>
+			<false/>
 		</dict>
-		<key>CF4B35B9FC819386EB09219BC91827D7</key>
+		<key>nanopb.xcscheme</key>
 		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>D0E79636478942936F70EA3A9CBAD3F5</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>DE868725B18AE240E550C5515AE66BC4</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E00F40A9A474BA872D2E0B8E9D410492</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>EA0C6D32972272662FB8614F52A469E9</key>
-		<dict>
-			<key>primary</key>
-			<true/>
+			<key>isShown</key>
+			<false/>
 		</dict>
 	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict/>
 </dict>
 </plist>

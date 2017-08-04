@@ -8,12 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import <Realm/Realm.h>
-#import <Parse/Parse.h>
 
 #import "Projects.h"
 #import "Events.h"
 #import "EventsHelper.h"
 #import "AnalysisViewController.h"
+
+@import FirebaseAuth;
 
 BOOL areAdsRemoved2;
 

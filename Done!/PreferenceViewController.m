@@ -167,8 +167,18 @@
 }
 - (IBAction)logout:(id)sender {
     
-    [PFUser logOut];
-    exit(0);
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Are you sure?" message:@"The app will quit once you logout. Your data will be savely stored in your server." preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *action = [UIAlertAction actionWithTitle:@"Logout" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+        NSError *error;
+        [FIRAuth.auth signOut:&error];
+        exit(0);
+    }];
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        [alert dismissViewControllerAnimated:YES completion:nil];
+    }];
+    [alert addAction:action];
+    [alert addAction:cancel];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 - (void)viewDidLoad {

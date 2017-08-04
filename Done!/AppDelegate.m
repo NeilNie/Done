@@ -11,6 +11,9 @@
 #import "EventsHelper.h"
 #import "Events.h"
 
+@import FirebaseAuth;
+@import Firebase;
+
 @interface AppDelegate ()
 
 @end
@@ -19,10 +22,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    [Parse initializeWithConfiguration:[ParseClientConfiguration configurationWithBlock:^(id<ParseMutableClientConfiguration> configuration) {
-        configuration.applicationId = @"com.yongyang.done";
-        configuration.server = @"https://done-server.herokuapp.com//parse";
-    }]];
+    [FIRApp configure];
     
     self.eventManager = [[EventManager alloc] init];
     
@@ -32,20 +32,20 @@
         [self.session activateSession];
     }
     
+    //notifications
     application.applicationIconBadgeNumber = 0;
-    //register for notification
     UIUserNotificationType types = UIUserNotificationTypeBadge |
     UIUserNotificationTypeSound | UIUserNotificationTypeAlert;
     UIUserNotificationSettings *mySettings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
     [[UIApplication sharedApplication] registerUserNotificationSettings:mySettings];
     
+    //navigation
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-    UINavigationController *navigationController = [storyboard instantiateViewControllerWithIdentifier:@"NavigationController"];
-    UIViewController *startView = [storyboard instantiateViewControllerWithIdentifier:@"userAuth"];
-    self.window.rootViewController = navigationController;
+    UINavigationController *mainViewcontroller = [storyboard instantiateViewControllerWithIdentifier:@"kMainViewcontroller"];
+    UIViewController *startView = [storyboard instantiateViewControllerWithIdentifier:@"kUserAuthViewcontroller"];
+    self.window.rootViewController = mainViewcontroller;
 
-    PFUser *currentUser = [PFUser currentUser];
-    if (currentUser) {
+    if ([FIRAuth.auth currentUser]) {
         [UIView transitionWithView:self.window duration:0.3 options:UIViewAnimationOptionTransitionCrossDissolve animations:nil completion:nil];
     } else {
         self.window.rootViewController = startView;

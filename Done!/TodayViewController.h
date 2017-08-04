@@ -18,8 +18,6 @@
 #import "CreateNewVC.h"
 #import "Date.h"
 
-#import <Parse/Parse.h>
-
 @interface TodayViewController : UIViewController <CreateNewDelegate, WCSessionDelegate>
 
 //@property (weak, nonatomic) IBOutlet GADBannerView *banner;

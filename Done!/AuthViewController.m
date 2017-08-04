@@ -21,11 +21,26 @@
     [self.password resignFirstResponder];
 }
 
+-(void)presentMainViewcontroller{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    UIViewController *mainViewcontroller = [storyboard instantiateViewControllerWithIdentifier:@"kMainViewcontroller"];
+    [self presentViewController:mainViewcontroller animated:YES completion:nil];
+}
+
 #pragma mark - IBAction
 
 - (IBAction)authenticateUser:(id)sender {
     
-    
+    [[FIRAuth auth] signInWithEmail:self.email.text password:self.password.text completion:^(FIRUser * _Nullable user, NSError * _Nullable error) {
+        if (error == nil) {
+            [self presentMainViewcontroller];
+        }else{
+            [[FIRAuth auth] createUserWithEmail:self.email.text password:self.password.text completion:^(FIRUser * _Nullable user, NSError * _Nullable error) {
+                //register with database
+                [self presentMainViewcontroller];
+            }];
+        }
+    }];
 }
 
 #pragma mark - Private Helpers

@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <MaterialControls/MaterialControls.h>
 #import "PCAngularActivityIndicatorView.h"
-#import <Parse/Parse.h>
+
+@import FirebaseAuth;
+@import FirebaseDatabase;
 
 @interface AuthViewController : UIViewController <MDTextFieldDelegate>
 

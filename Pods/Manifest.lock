@@ -1,5 +1,4 @@
 PODS:
-  - Bolts/Tasks (1.8.4)
   - Firebase/AdMob (4.0.4):
     - Firebase/Core
     - Google-Mobile-Ads-SDK (= 7.21.0)
@@ -47,35 +46,31 @@ PODS:
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
-  - Parse (1.15.1):
-    - Bolts/Tasks (~> 1.8)
-  - Realm (2.9.0):
-    - Realm/Headers (= 2.9.0)
-  - Realm/Headers (2.9.0)
+  - Realm (2.9.1):
+    - Realm/Headers (= 2.9.1)
+  - Realm/Headers (2.9.1)
   - RKDropdownAlert (0.3.0)
   - SCLAlertView-Objective-C (1.1.2)
   - SWTableViewCell (0.3.7)
   - UIColor-HexString (1.3.0)
-  - UICountingLabel (1.2.0)
+  - UICountingLabel (1.4.0)
 
 DEPENDENCIES:
   - Firebase/AdMob
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
-  - JTCalendar (~> 2.0)
+  - JTCalendar
   - Masonry
   - MaterialControls
-  - Parse
   - Realm
   - RKDropdownAlert
   - SCLAlertView-Objective-C
-  - SWTableViewCell (~> 0.3.7)
+  - SWTableViewCell
   - UIColor-HexString
-  - UICountingLabel (~> 1.2.0)
+  - UICountingLabel
 
 SPEC CHECKSUMS:
-  Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   Firebase: 1492bf04e1b73a7353b4fb2cf5a20bac9692f341
   FirebaseAnalytics: ad41720e3e67fc63fbe3d2948d3e26932a8de311
   FirebaseAuth: ebb6abcbabae00fc47446d690c19ce68d8484fde
@@ -89,14 +84,13 @@ SPEC CHECKSUMS:
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MaterialControls: 1c6b29e78d3a13d8dd6a67ed31b6d26eb5de8f72
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
-  Parse: b7a77b20b8a6dede8058da1e2b339593578ce158
-  Realm: f14ab1673502559cb16592ddb8f383c474c13e05
+  Realm: f91fb43bd474c4f731a116ebf7392c75dd015920
   RKDropdownAlert: f4b3364c251829ad439dc666836a1f2dad26f4c7
   SCLAlertView-Objective-C: 0e54351fa4f98a5c7c6ad3727e6dbb46784534e5
   SWTableViewCell: 2a94aadc9d47b2b611fa064566bf57948b95b579
   UIColor-HexString: fadc2e1389db19147ac99dee92222d3bd8bfec4a
-  UICountingLabel: 1db4e7d023e1762171eb226d6dff47a7a84f27aa
+  UICountingLabel: ed5ce5b6d5ef278ff40d99cfa49577a30ab0c87b
 
-PODFILE CHECKSUM: 39f233d16660d6e48eb8f5aaafb4370e0cfbb818
+PODFILE CHECKSUM: ae2721cf26466abc30b4e549fee358fb533ef7aa
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.2.1
