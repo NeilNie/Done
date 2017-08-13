@@ -227,7 +227,7 @@
 
 -(void)setUpview{
 
-    self.todayConstr.constant = (self.view.frame.size.width - 10) * 3 / 4;
+    self.todayConstr.constant = (self.view.frame.size.width - 10) / 3;
     
     //set up shadows in view
     for (UIButton *view in self.buttons) {
@@ -235,7 +235,7 @@
     }
     [self setShadowforView:self.todayView];
     [self setShadowforView:self.masterView];
-    //[self setShadowforView:self.collectionView];
+    [self setShadowforView:self.graphView];
     
     //set up for animation
 }

@@ -25,6 +25,7 @@
 
 @property (weak, nonatomic) IBOutlet UIView *todayView;
 @property (weak, nonatomic) IBOutlet UIView *masterView;
+@property (weak, nonatomic) IBOutlet UIView *graphView;
 @property (weak, nonatomic) IBOutlet UITableView *table;
 @property (weak, nonatomic) IBOutlet UILabel *clearLabel;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSMutableArray *buttons;
