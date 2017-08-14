@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <MaterialControls/MaterialControls.h>
 #import "Events.h"
-#import <SWTableViewCell.h>
+#import <SWTableViewCell/SWTableViewCell.h>
 
 @interface EventTableViewCell : SWTableViewCell
 

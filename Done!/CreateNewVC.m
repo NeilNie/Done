@@ -19,7 +19,7 @@
 - (IBAction)addEvent:(id)sender {
     
     if ([self checkData] == NO) {
-        [RKDropdownAlert title:@"Opps" message:@"You have to set a date and a title for your project/event."];
+        //[RKDropdownAlert title:@"Opps" message:@"You have to set a date and a title for your project/event."];
         
     }else{
         
@@ -44,7 +44,7 @@
             [self.navigationController popViewControllerAnimated:YES];
             
         }else{
-            [RKDropdownAlert title:@"Opps" message:@"You have to select a project that this event will be added to."];
+            //[RKDropdownAlert title:@"Opps" message:@"You have to select a project that this event will be added to."];
         }
         [self syncWithWatch];
     }
@@ -155,9 +155,9 @@
         return cell;
         
     }else if (indexPath.row == 1){
-        TimelineTableViewCell *cell = (TimelineTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"idTimelineCell" forIndexPath:indexPath];
-        cell.delegate = self;
-        return cell;
+//        TimelineTableViewCell *cell = (TimelineTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"idTimelineCell" forIndexPath:indexPath];
+//        cell.delegate = self;
+        return nil;
         
     }else if (indexPath.row == 2){
         cell = (CustomCell *)[tableView dequeueReusableCellWithIdentifier:@"idCellSwitch" forIndexPath:indexPath];

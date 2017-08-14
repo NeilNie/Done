@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import <Realm/Realm.h>
-#import <SCLAlertView.h>
-#import <RKDropdownAlert.h>
 
 #import "Projects.h"
 #import "EventsHelper.h"

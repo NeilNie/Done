@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import <StoreKit/StoreKit.h>
 #import <Realm/Realm.h>
-#import <SCLAlertView.h>
 
 #import "Events.h"
 #import "AppDelegate.h"

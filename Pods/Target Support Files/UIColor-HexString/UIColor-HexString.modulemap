@@ -1,0 +1,6 @@
+framework module UIColor_HexString {
+  umbrella header "UIColor-HexString-umbrella.h"
+
+  export *
+  module * { export * }
+}

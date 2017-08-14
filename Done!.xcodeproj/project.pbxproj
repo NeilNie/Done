@@ -72,15 +72,6 @@
 		280523BE1D3FE10C00D0EA0C /* GraphTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 280523BD1D3FE10C00D0EA0C /* GraphTableViewCell.m */; };
 		2806674B1F24932200823D0A /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 2806674A1F24932200823D0A /* background.png */; };
 		280C83DB1CF31D4D00DC8742 /* AuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 280C83DA1CF31D4D00DC8742 /* AuthViewController.m */; };
-		280EFD951CE2C17500C31E46 /* MSCurrentTimeGridline.m in Sources */ = {isa = PBXBuildFile; fileRef = 280EFD881CE2C17500C31E46 /* MSCurrentTimeGridline.m */; };
-		280EFD961CE2C17500C31E46 /* MSCurrentTimeIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 280EFD8A1CE2C17500C31E46 /* MSCurrentTimeIndicator.m */; };
-		280EFD971CE2C17500C31E46 /* MSDayColumnHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 280EFD8C1CE2C17500C31E46 /* MSDayColumnHeader.m */; };
-		280EFD981CE2C17500C31E46 /* MSDayColumnHeaderBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 280EFD8E1CE2C17500C31E46 /* MSDayColumnHeaderBackground.m */; };
-		280EFD991CE2C17500C31E46 /* MSGridline.m in Sources */ = {isa = PBXBuildFile; fileRef = 280EFD901CE2C17500C31E46 /* MSGridline.m */; };
-		280EFD9A1CE2C17500C31E46 /* MSTimeRowHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 280EFD921CE2C17500C31E46 /* MSTimeRowHeader.m */; };
-		280EFD9B1CE2C17500C31E46 /* MSTimeRowHeaderBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 280EFD941CE2C17500C31E46 /* MSTimeRowHeaderBackground.m */; };
-		280EFD9F1CE2C1C600C31E46 /* MSCollectionViewCalendarLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 280EFD9E1CE2C1C600C31E46 /* MSCollectionViewCalendarLayout.m */; };
-		280EFDA21CE2C1E400C31E46 /* MSEventCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 280EFDA11CE2C1E400C31E46 /* MSEventCell.m */; };
 		2836B9091D303806006ADBAF /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2836B9081D303806006ADBAF /* TableViewController.m */; };
 		283B892C1D3D5DD6000ADA9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 283B892B1D3D5DD6000ADA9E /* Assets.xcassets */; };
 		283B89321D3D71D7000ADA9E /* ExtensionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 283B89311D3D71D7000ADA9E /* ExtensionViewController.m */; };
@@ -133,9 +124,9 @@
 		28F896FB1CEBFB5500C546EC /* done-icon copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 28F896FA1CEBFB5500C546EC /* done-icon copy.png */; };
 		28F896FC1CEBFB5500C546EC /* done-icon copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 28F896FA1CEBFB5500C546EC /* done-icon copy.png */; };
 		28F896FD1CEBFB5500C546EC /* done-icon copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 28F896FA1CEBFB5500C546EC /* done-icon copy.png */; };
-		9CEEF1370D088F60D48BC164 /* libPods-Done!.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 73CF65656B7124C7E976D33D /* libPods-Done!.a */; };
-		A931ADA412206B3B6C964EBF /* libPods-Done! Apple Watch Extension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58D101F026E7EA98FF50A53C /* libPods-Done! Apple Watch Extension.a */; };
-		DE77E73F13860E6C7F73831D /* libPods-Done Widget.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F533992DD0B9B0E597A583C4 /* libPods-Done Widget.a */; };
+		477EF8E2A8553DBFAB69E1ED /* Pods_Done__Apple_Watch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 030C5519E1410599FD4EA12A /* Pods_Done__Apple_Watch_Extension.framework */; };
+		A175531BC09A49B9B04319B3 /* Pods_Done_Widget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 165CDB6150CB58125564BA8C /* Pods_Done_Widget.framework */; };
+		CE69A16B208AC2173651BDDA /* Pods_Done_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CACCA4110A94144A6ACB9EF0 /* Pods_Done_.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -260,6 +251,8 @@
 		00FA9E201CE902BE00E977D0 /* Done Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Done Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		00FA9E271CE902BE00E977D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		00FA9E291CE902BE00E977D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		030C5519E1410599FD4EA12A /* Pods_Done__Apple_Watch_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Done__Apple_Watch_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		165CDB6150CB58125564BA8C /* Pods_Done_Widget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Done_Widget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		28006A111CC6B41900583D69 /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
 		28006A121CC6B41900583D69 /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
 		2802F81D1CC5B78800C65966 /* EventTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventTableViewCell.h; sourceTree = "<group>"; };
@@ -308,24 +301,6 @@
 		2806674A1F24932200823D0A /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		280C83D91CF31D4D00DC8742 /* AuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = AuthViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		280C83DA1CF31D4D00DC8742 /* AuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthViewController.m; sourceTree = "<group>"; };
-		280EFD871CE2C17500C31E46 /* MSCurrentTimeGridline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCurrentTimeGridline.h; sourceTree = "<group>"; };
-		280EFD881CE2C17500C31E46 /* MSCurrentTimeGridline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCurrentTimeGridline.m; sourceTree = "<group>"; };
-		280EFD891CE2C17500C31E46 /* MSCurrentTimeIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCurrentTimeIndicator.h; sourceTree = "<group>"; };
-		280EFD8A1CE2C17500C31E46 /* MSCurrentTimeIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCurrentTimeIndicator.m; sourceTree = "<group>"; };
-		280EFD8B1CE2C17500C31E46 /* MSDayColumnHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSDayColumnHeader.h; sourceTree = "<group>"; };
-		280EFD8C1CE2C17500C31E46 /* MSDayColumnHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSDayColumnHeader.m; sourceTree = "<group>"; };
-		280EFD8D1CE2C17500C31E46 /* MSDayColumnHeaderBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSDayColumnHeaderBackground.h; sourceTree = "<group>"; };
-		280EFD8E1CE2C17500C31E46 /* MSDayColumnHeaderBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSDayColumnHeaderBackground.m; sourceTree = "<group>"; };
-		280EFD8F1CE2C17500C31E46 /* MSGridline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSGridline.h; sourceTree = "<group>"; };
-		280EFD901CE2C17500C31E46 /* MSGridline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSGridline.m; sourceTree = "<group>"; };
-		280EFD911CE2C17500C31E46 /* MSTimeRowHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTimeRowHeader.h; sourceTree = "<group>"; };
-		280EFD921CE2C17500C31E46 /* MSTimeRowHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTimeRowHeader.m; sourceTree = "<group>"; };
-		280EFD931CE2C17500C31E46 /* MSTimeRowHeaderBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTimeRowHeaderBackground.h; sourceTree = "<group>"; };
-		280EFD941CE2C17500C31E46 /* MSTimeRowHeaderBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTimeRowHeaderBackground.m; sourceTree = "<group>"; };
-		280EFD9D1CE2C1C600C31E46 /* MSCollectionViewCalendarLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCollectionViewCalendarLayout.h; sourceTree = "<group>"; };
-		280EFD9E1CE2C1C600C31E46 /* MSCollectionViewCalendarLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCollectionViewCalendarLayout.m; sourceTree = "<group>"; };
-		280EFDA01CE2C1E400C31E46 /* MSEventCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSEventCell.h; sourceTree = "<group>"; };
-		280EFDA11CE2C1E400C31E46 /* MSEventCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSEventCell.m; sourceTree = "<group>"; };
 		281838BA1CC9B01800D5930E /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		281F990B1CE2B4B6008D9342 /* Done!-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Done!-Bridging-Header.h"; sourceTree = "<group>"; };
 		2836B9071D303806006ADBAF /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
@@ -416,13 +391,11 @@
 		28F896FA1CEBFB5500C546EC /* done-icon copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "done-icon copy.png"; sourceTree = "<group>"; };
 		4F2DC1E672D94AAE239BF1C9 /* Pods-Done! Apple Watch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Done! Apple Watch Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-Done! Apple Watch Extension/Pods-Done! Apple Watch Extension.release.xcconfig"; sourceTree = "<group>"; };
 		54EF6EB6570BDEC6F8FFBC6F /* Pods-Done!.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Done!.release.xcconfig"; path = "Pods/Target Support Files/Pods-Done!/Pods-Done!.release.xcconfig"; sourceTree = "<group>"; };
-		58D101F026E7EA98FF50A53C /* libPods-Done! Apple Watch Extension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Done! Apple Watch Extension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		73CF65656B7124C7E976D33D /* libPods-Done!.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Done!.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8E78843F52A9FC0E43D112A /* Pods-Done! Apple Watch Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Done! Apple Watch Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Done! Apple Watch Extension/Pods-Done! Apple Watch Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		BEC6670C30B02E46C22B6405 /* Pods-Done Widget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Done Widget.release.xcconfig"; path = "Pods/Target Support Files/Pods-Done Widget/Pods-Done Widget.release.xcconfig"; sourceTree = "<group>"; };
+		CACCA4110A94144A6ACB9EF0 /* Pods_Done_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Done_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEBEEEF914A6969E2FB589EB /* Pods-Done Widget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Done Widget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Done Widget/Pods-Done Widget.debug.xcconfig"; sourceTree = "<group>"; };
 		E3C7AD9357B1019013A26D88 /* Pods-Done!.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Done!.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Done!/Pods-Done!.debug.xcconfig"; sourceTree = "<group>"; };
-		F533992DD0B9B0E597A583C4 /* libPods-Done Widget.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Done Widget.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -437,7 +410,7 @@
 				285431891CE01BE20022F993 /* QuartzCore.framework in Frameworks */,
 				285431871CE01BD80022F993 /* UIKit.framework in Frameworks */,
 				0091B29E1CCD3E4F000B50A0 /* WatchConnectivity.framework in Frameworks */,
-				9CEEF1370D088F60D48BC164 /* libPods-Done!.a in Frameworks */,
+				CE69A16B208AC2173651BDDA /* Pods_Done_.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,7 +418,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A931ADA412206B3B6C964EBF /* libPods-Done! Apple Watch Extension.a in Frameworks */,
+				477EF8E2A8553DBFAB69E1ED /* Pods_Done__Apple_Watch_Extension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,7 +427,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00FA9E211CE902BE00E977D0 /* NotificationCenter.framework in Frameworks */,
-				DE77E73F13860E6C7F73831D /* libPods-Done Widget.a in Frameworks */,
+				A175531BC09A49B9B04319B3 /* Pods_Done_Widget.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -728,36 +701,10 @@
 			name = Helpers;
 			sourceTree = "<group>";
 		};
-		280EFD9C1CE2C17A00C31E46 /* Timeline */ = {
-			isa = PBXGroup;
-			children = (
-				280EFDA01CE2C1E400C31E46 /* MSEventCell.h */,
-				280EFDA11CE2C1E400C31E46 /* MSEventCell.m */,
-				280EFD9D1CE2C1C600C31E46 /* MSCollectionViewCalendarLayout.h */,
-				280EFD9E1CE2C1C600C31E46 /* MSCollectionViewCalendarLayout.m */,
-				280EFD871CE2C17500C31E46 /* MSCurrentTimeGridline.h */,
-				280EFD881CE2C17500C31E46 /* MSCurrentTimeGridline.m */,
-				280EFD891CE2C17500C31E46 /* MSCurrentTimeIndicator.h */,
-				280EFD8A1CE2C17500C31E46 /* MSCurrentTimeIndicator.m */,
-				280EFD8B1CE2C17500C31E46 /* MSDayColumnHeader.h */,
-				280EFD8C1CE2C17500C31E46 /* MSDayColumnHeader.m */,
-				280EFD8D1CE2C17500C31E46 /* MSDayColumnHeaderBackground.h */,
-				280EFD8E1CE2C17500C31E46 /* MSDayColumnHeaderBackground.m */,
-				280EFD8F1CE2C17500C31E46 /* MSGridline.h */,
-				280EFD901CE2C17500C31E46 /* MSGridline.m */,
-				280EFD911CE2C17500C31E46 /* MSTimeRowHeader.h */,
-				280EFD921CE2C17500C31E46 /* MSTimeRowHeader.m */,
-				280EFD931CE2C17500C31E46 /* MSTimeRowHeaderBackground.h */,
-				280EFD941CE2C17500C31E46 /* MSTimeRowHeaderBackground.m */,
-			);
-			name = Timeline;
-			sourceTree = "<group>";
-		};
 		2827C8DC1D14795700986D9E /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
 				280523871D3FA3DC00D0EA0C /* PNChart */,
-				280EFD9C1CE2C17A00C31E46 /* Timeline */,
 				0020F72D1CD584B400F47CEE /* QBPopup Menu */,
 			);
 			name = Libraries;
@@ -874,9 +821,9 @@
 				0091B29D1CCD3E4F000B50A0 /* WatchConnectivity.framework */,
 				007334531CCC5144009D8FDC /* StoreKit.framework */,
 				281838BA1CC9B01800D5930E /* NotificationCenter.framework */,
-				73CF65656B7124C7E976D33D /* libPods-Done!.a */,
-				F533992DD0B9B0E597A583C4 /* libPods-Done Widget.a */,
-				58D101F026E7EA98FF50A53C /* libPods-Done! Apple Watch Extension.a */,
+				165CDB6150CB58125564BA8C /* Pods_Done_Widget.framework */,
+				CACCA4110A94144A6ACB9EF0 /* Pods_Done_.framework */,
+				030C5519E1410599FD4EA12A /* Pods_Done__Apple_Watch_Extension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1348,7 +1295,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				280EFD9F1CE2C1C600C31E46 /* MSCollectionViewCalendarLayout.m in Sources */,
 				280523AE1D3FA3DC00D0EA0C /* PNColor.m in Sources */,
 				00BEC6721CCBC93A008B7862 /* EventsHelper.m in Sources */,
 				280C83DB1CF31D4D00DC8742 /* AuthViewController.m in Sources */,
@@ -1358,25 +1304,20 @@
 				286E50641D150E8000EEA0A6 /* Date.m in Sources */,
 				28B4463B1D370D76000A0501 /* TimelineViewController.m in Sources */,
 				28E53D021CD04662002DB55F /* Projects.m in Sources */,
-				280EFD991CE2C17500C31E46 /* MSGridline.m in Sources */,
 				2802F8221CC5B7AE00C65966 /* Events.m in Sources */,
-				280EFDA21CE2C1E400C31E46 /* MSEventCell.m in Sources */,
 				0020F7281CD584A900F47CEE /* QBPopupMenu.m in Sources */,
-				280EFD971CE2C17500C31E46 /* MSDayColumnHeader.m in Sources */,
 				283D1B111D1640DF000CEC0C /* TimePeriod.m in Sources */,
 				280523B81D3FA3DC00D0EA0C /* PNScatterChartData.m in Sources */,
 				280523BE1D3FE10C00D0EA0C /* GraphTableViewCell.m in Sources */,
 				280523AA1D3FA3DC00D0EA0C /* PNBar.m in Sources */,
 				0020F7271CD584A900F47CEE /* QBPlasticPopupMenu.m in Sources */,
 				280523AF1D3FA3DC00D0EA0C /* PNGenericChart.m in Sources */,
-				280EFD951CE2C17500C31E46 /* MSCurrentTimeGridline.m in Sources */,
 				28DED30E1D50BFE10046E55A /* TimelineTableViewCell.m in Sources */,
 				280523B31D3FA3DC00D0EA0C /* PNPieChart.m in Sources */,
 				286C08D11D0FACEC0077F91F /* AddEventCell.m in Sources */,
 				280523B21D3FA3DC00D0EA0C /* PNLineChartDataItem.m in Sources */,
 				280523B61D3FA3DC00D0EA0C /* PNRadarChartDataItem.m in Sources */,
 				2802F8341CC5C2F400C65966 /* CreateNewVC.m in Sources */,
-				280EFD9B1CE2C17500C31E46 /* MSTimeRowHeaderBackground.m in Sources */,
 				280523B01D3FA3DC00D0EA0C /* PNLineChart.m in Sources */,
 				280523AC1D3FA3DC00D0EA0C /* PNChartLabel.m in Sources */,
 				280523B41D3FA3DC00D0EA0C /* PNPieChartDataItem.m in Sources */,
@@ -1384,20 +1325,17 @@
 				28EB42E81D94A8470049DACF /* TodayViewController.m in Sources */,
 				006083501CC4007500A344F1 /* AppDelegate.m in Sources */,
 				285475FE1D147AD500069310 /* EventManager.m in Sources */,
-				280EFD9A1CE2C17500C31E46 /* MSTimeRowHeader.m in Sources */,
 				280523B71D3FA3DC00D0EA0C /* PNScatterChart.m in Sources */,
 				280523B11D3FA3DC00D0EA0C /* PNLineChartData.m in Sources */,
 				280523AB1D3FA3DC00D0EA0C /* PNBarChart.m in Sources */,
 				2802F81F1CC5B78800C65966 /* EventTableViewCell.m in Sources */,
 				28D9AF271CDA9F6800E50C10 /* AnalysisViewController.m in Sources */,
 				0020F72B1CD584A900F47CEE /* QBPopupMenuOverlayView.m in Sources */,
-				280EFD981CE2C17500C31E46 /* MSDayColumnHeaderBackground.m in Sources */,
 				00F48A361CC5194A00B94EA4 /* PreferenceViewController.m in Sources */,
 				288538901D1225F1008EADFE /* CustomDatePickerCell.m in Sources */,
 				00F48A331CC5194100B94EA4 /* TodoViewController.m in Sources */,
 				0060834D1CC4007500A344F1 /* main.m in Sources */,
 				28006A131CC6B41900583D69 /* CustomCell.m in Sources */,
-				280EFD961CE2C17500C31E46 /* MSCurrentTimeIndicator.m in Sources */,
 				280523B91D3FA3DC00D0EA0C /* PNScatterChartDataItem.m in Sources */,
 				0020F7291CD584A900F47CEE /* QBPopupMenuItem.m in Sources */,
 				003BA4C61E14134D008C5F7A /* PCAngularActivityIndicatorView.m in Sources */,

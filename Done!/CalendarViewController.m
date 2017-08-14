@@ -208,6 +208,7 @@
     self.eventCountl.text = [NSString stringWithFormat:NSLocalizedString(@"%lu Events on this day", nil), (unsigned long)array.count];
 }
 - (IBAction)addEvent:(id)sender {
+    
 }
 
 #pragma mark - Life Cycle

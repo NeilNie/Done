@@ -9,14 +9,13 @@
 #import <UIKit/UIKit.h>
 #import <Realm/Realm.h>
 #import <WatchConnectivity/WatchConnectivity.h>
-#import <RKDropdownAlert.h>
 
 #import "CustomCell.h"
 #import "Events.h"
 #import "EventsHelper.h"
 #import "TimelineTableViewCell.h"
 
-@interface CreateNewVC : UIViewController <WCSessionDelegate, UITableViewDelegate, UITableViewDataSource, CustomCellDelegates, TimelineTableViewCellDelegate>{
+@interface CreateNewVC : UIViewController <WCSessionDelegate, UITableViewDelegate, UITableViewDataSource, CustomCellDelegates>{
     
     NSArray *array;
     

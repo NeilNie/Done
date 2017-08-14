@@ -87,6 +87,33 @@ strip_invalid_archs() {
   fi
 }
 
+
+if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "$BUILT_PRODUCTS_DIR/Charts/Charts.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/GTMSessionFetcher/GTMSessionFetcher.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/GoogleToolboxForMac/GoogleToolboxForMac.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/JTCalendar/JTCalendar.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Masonry/Masonry.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/MaterialControls/MaterialControls.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SWTableViewCell/SWTableViewCell.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/UIColor-HexString/UIColor_HexString.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/UICountingLabel/UICountingLabel.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/nanopb/nanopb.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Realm-iOS/Realm.framework"
+fi
+if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "$BUILT_PRODUCTS_DIR/Charts/Charts.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/GTMSessionFetcher/GTMSessionFetcher.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/GoogleToolboxForMac/GoogleToolboxForMac.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/JTCalendar/JTCalendar.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Masonry/Masonry.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/MaterialControls/MaterialControls.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SWTableViewCell/SWTableViewCell.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/UIColor-HexString/UIColor_HexString.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/UICountingLabel/UICountingLabel.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/nanopb/nanopb.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Realm-iOS/Realm.framework"
+fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait
 fi

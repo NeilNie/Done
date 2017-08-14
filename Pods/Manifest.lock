@@ -1,4 +1,7 @@
 PODS:
+  - Charts (3.0.2):
+    - Charts/Core (= 3.0.2)
+  - Charts/Core (3.0.2)
   - Firebase/AdMob (4.0.4):
     - Firebase/Core
     - Google-Mobile-Ads-SDK (= 7.21.0)
@@ -49,13 +52,12 @@ PODS:
   - Realm (2.9.1):
     - Realm/Headers (= 2.9.1)
   - Realm/Headers (2.9.1)
-  - RKDropdownAlert (0.3.0)
-  - SCLAlertView-Objective-C (1.1.2)
   - SWTableViewCell (0.3.7)
   - UIColor-HexString (1.3.0)
   - UICountingLabel (1.4.0)
 
 DEPENDENCIES:
+  - Charts
   - Firebase/AdMob
   - Firebase/Auth
   - Firebase/Core
@@ -64,13 +66,12 @@ DEPENDENCIES:
   - Masonry
   - MaterialControls
   - Realm
-  - RKDropdownAlert
-  - SCLAlertView-Objective-C
   - SWTableViewCell
   - UIColor-HexString
   - UICountingLabel
 
 SPEC CHECKSUMS:
+  Charts: 236d6ccdd0ce6feae151d89e829a7397381a21fd
   Firebase: 1492bf04e1b73a7353b4fb2cf5a20bac9692f341
   FirebaseAnalytics: ad41720e3e67fc63fbe3d2948d3e26932a8de311
   FirebaseAuth: ebb6abcbabae00fc47446d690c19ce68d8484fde
@@ -85,12 +86,10 @@ SPEC CHECKSUMS:
   MaterialControls: 1c6b29e78d3a13d8dd6a67ed31b6d26eb5de8f72
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Realm: f91fb43bd474c4f731a116ebf7392c75dd015920
-  RKDropdownAlert: f4b3364c251829ad439dc666836a1f2dad26f4c7
-  SCLAlertView-Objective-C: 0e54351fa4f98a5c7c6ad3727e6dbb46784534e5
   SWTableViewCell: 2a94aadc9d47b2b611fa064566bf57948b95b579
   UIColor-HexString: fadc2e1389db19147ac99dee92222d3bd8bfec4a
   UICountingLabel: ed5ce5b6d5ef278ff40d99cfa49577a30ab0c87b
 
-PODFILE CHECKSUM: ae2721cf26466abc30b4e549fee358fb533ef7aa
+PODFILE CHECKSUM: 90a17b4df3011cf80c6f0e3aed20910178451735
 
 COCOAPODS: 1.2.1
