@@ -522,6 +522,10 @@
                                 <rect key="frame" x="309" y="7" width="50" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="type">
                                         <integer key="value" value="3"/>
@@ -655,7 +659,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3z4-1y-qY7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3097" y="2423"/>
+            <point key="canvasLocation" x="3942" y="2423"/>
         </scene>
         <!--Auth View Controller-->
         <scene sceneID="vuc-KX-hdg">
@@ -908,7 +912,7 @@
         <scene sceneID="xXe-eB-sgb">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ci1-LB-qPP" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Today" image="icon-1" selectedImage="icon-1" id="JvH-Uw-7jK"/>
+                    <tabBarItem key="tabBarItem" title="Today" image="star_outline" selectedImage="star_outline" id="JvH-Uw-7jK"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7t2-s2-6K1">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -929,11 +933,11 @@
             </objects>
             <point key="canvasLocation" x="1622" y="3209"/>
         </scene>
-        <!--Item-->
+        <!--Add-->
         <scene sceneID="CFq-Z4-cjw">
             <objects>
                 <navigationController storyboardIdentifier="createNew" automaticallyAdjustsScrollViewInsets="NO" id="qKj-IR-fdj" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="rxD-P3-Hcm"/>
+                    <tabBarItem key="tabBarItem" title="Add" image="plus-large" selectedImage="plus-large" id="rxD-P3-Hcm"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Vq2-a3-Coy">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -951,7 +955,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C9S-jf-6nN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3879" y="2423"/>
+            <point key="canvasLocation" x="3140" y="2423"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="d7X-AK-Lno">
@@ -1040,11 +1044,11 @@
             </objects>
             <point key="canvasLocation" x="882" y="3208"/>
         </scene>
-        <!--Item-->
+        <!--Todos-->
         <scene sceneID="JWl-7n-Nl6">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VLp-63-2ct" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="hJ7-UX-zyK"/>
+                    <tabBarItem key="tabBarItem" title="Todos" image="todo_list-black" selectedImage="todo_list-black" id="hJ7-UX-zyK"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EbA-ji-NY6">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -1063,11 +1067,11 @@
             </objects>
             <point key="canvasLocation" x="1622" y="2423"/>
         </scene>
-        <!--Item-->
+        <!--Calendar-->
         <scene sceneID="LLC-m4-TOq">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="T3V-PU-PL5" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="72T-dJ-T50"/>
+                    <tabBarItem key="tabBarItem" title="Calendar" image="calendar-1" selectedImage="calendar-1" id="72T-dJ-T50"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Gtu-EV-iXi">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -1086,11 +1090,11 @@
             </objects>
             <point key="canvasLocation" x="1622" y="1639"/>
         </scene>
-        <!--Item-->
+        <!--Preference-->
         <scene sceneID="eyz-5g-6QK">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mad-eq-0DD" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="RF0-Ea-mbi"/>
+                    <tabBarItem key="tabBarItem" title="Preference" image="settings-black" selectedImage="settings-black" id="RF0-Ea-mbi"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="H06-x5-zsD">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -1107,19 +1111,23 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bue-5F-qcj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="881" y="3950"/>
+            <point key="canvasLocation" x="881" y="3949"/>
         </scene>
     </scenes>
     <resources>
         <image name="background.png" width="2600" height="2600"/>
+        <image name="calendar-1" width="30" height="30"/>
         <image name="circle-nf-2" width="200" height="200"/>
         <image name="close" width="48" height="48"/>
         <image name="done-icon.png" width="768" height="768"/>
         <image name="edit" width="25" height="25"/>
         <image name="folder" width="25" height="25"/>
-        <image name="icon-1" width="28" height="28"/>
         <image name="plus" width="48" height="48"/>
+        <image name="plus-large" width="30" height="30"/>
+        <image name="settings-black" width="30" height="30"/>
+        <image name="star_outline" width="30" height="30"/>
         <image name="todo_list" width="25" height="25"/>
+        <image name="todo_list-black" width="30" height="30"/>
         <image name="visible" width="33" height="33"/>
     </resources>
 </document>

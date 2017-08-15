@@ -13,7 +13,7 @@
 #import "CustomCell.h"
 #import "Events.h"
 #import "EventsHelper.h"
-#import "TimelineTableViewCell.h"
+#import "DatePickerTableViewCell.h"
 
 @interface CreateNewVC : UIViewController <WCSessionDelegate, UITableViewDelegate, UITableViewDataSource, CustomCellDelegates>{
     

@@ -18,11 +18,10 @@
 
 - (IBAction)addEvent:(id)sender {
     
-    if ([self checkData] == NO) {
-        //[RKDropdownAlert title:@"Opps" message:@"You have to set a date and a title for your project/event."];
+    if ([self checkData] == NO)
+        [self presentDefaultAlertController:@"Oops" message:@"You did not enter the correct information"];
         
-    }else{
-        
+    else{
         if (reminder == [NSNumber numberWithBool:YES]) {
             UILocalNotification *notification = [[UILocalNotification alloc] init];
             notification.fireDate = date;
@@ -43,13 +42,12 @@
             [realm commitWriteTransaction];
             [self.navigationController popViewControllerAnimated:YES];
             
-        }else{
-            //[RKDropdownAlert title:@"Opps" message:@"You have to select a project that this event will be added to."];
-        }
+        }else
+            [self presentDefaultAlertController:@"Sorry..." message:@"You have to select a project"];
+        
         [self syncWithWatch];
     }
-    [self dismissViewControllerAnimated:YES
-                             completion:nil];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (NSString *)uuid
@@ -108,6 +106,13 @@
     return Rarray;
 }
 
+-(void)presentDefaultAlertController:(NSString *)title message:(NSString *)message{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *action = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil];
+    [alert addAction:action];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
 #pragma mark - UITableView Delegate
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -126,7 +131,7 @@
             return 55;
             break;
         case 1:
-            return 300;
+            return 280;
             break;
         case 2:
             return 55;
@@ -155,8 +160,8 @@
         return cell;
         
     }else if (indexPath.row == 1){
-//        TimelineTableViewCell *cell = (TimelineTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"idTimelineCell" forIndexPath:indexPath];
-//        cell.delegate = self;
+        DatePickerTableViewCell *cell = (DatePickerTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"idTimelineCell" forIndexPath:indexPath];
+        cell.delegate = self;
         return nil;
         
     }else if (indexPath.row == 2){
@@ -244,7 +249,7 @@
     [self.table registerNib:[UINib nibWithNibName:@"DatePickerCell" bundle:nil] forCellReuseIdentifier:@"idCellDatePicker"];
     [self.table registerNib:[UINib nibWithNibName:@"SwitchCell" bundle:nil] forCellReuseIdentifier:@"idCellSwitch"];
     [self.table registerNib:[UINib nibWithNibName:@"ValuePickerCell" bundle:nil] forCellReuseIdentifier:@"idValuePicker"];
-    [self.table registerNib:[UINib nibWithNibName:@"TimelineTableViewCell" bundle:nil] forCellReuseIdentifier:@"idTimelineCell"];
+    [self.table registerNib:[UINib nibWithNibName:@"DatePickerTableViewCell" bundle:nil] forCellReuseIdentifier:@"idTimelineCell"];
     
     // Do any additional setup after loading the view.
 }

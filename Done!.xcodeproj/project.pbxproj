@@ -97,8 +97,8 @@
 		28D844C71D3A5DE8004B7570 /* circle-nf.png in Resources */ = {isa = PBXBuildFile; fileRef = 28D844C61D3A5DE8004B7570 /* circle-nf.png */; };
 		28D9AF271CDA9F6800E50C10 /* AnalysisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D9AF261CDA9F6800E50C10 /* AnalysisViewController.m */; };
 		28DA92CE1D52159200ACC2B3 /* ValuePickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28DA92CD1D52159200ACC2B3 /* ValuePickerCell.xib */; };
-		28DED30E1D50BFE10046E55A /* TimelineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 28DED30C1D50BFE10046E55A /* TimelineTableViewCell.m */; };
-		28DED30F1D50BFE10046E55A /* TimelineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28DED30D1D50BFE10046E55A /* TimelineTableViewCell.xib */; };
+		28DED30E1D50BFE10046E55A /* DatePickerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 28DED30C1D50BFE10046E55A /* DatePickerTableViewCell.m */; };
+		28DED30F1D50BFE10046E55A /* DatePickerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28DED30D1D50BFE10046E55A /* DatePickerTableViewCell.xib */; };
 		28E53D021CD04662002DB55F /* Projects.m in Sources */ = {isa = PBXBuildFile; fileRef = 28E53D011CD04662002DB55F /* Projects.m */; };
 		28E5430F1CFDEEC000FD05A7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 28E543111CFDEEC000FD05A7 /* Localizable.strings */; };
 		28E757091CE4BD2E00707380 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28E757081CE4BD2E00707380 /* Media.xcassets */; };
@@ -361,9 +361,9 @@
 		28D9AF321CDACF3F00E50C10 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		28D9AF341CDACF4E00E50C10 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		28DA92CD1D52159200ACC2B3 /* ValuePickerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ValuePickerCell.xib; sourceTree = "<group>"; };
-		28DED30B1D50BFE10046E55A /* TimelineTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimelineTableViewCell.h; sourceTree = "<group>"; };
-		28DED30C1D50BFE10046E55A /* TimelineTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimelineTableViewCell.m; sourceTree = "<group>"; };
-		28DED30D1D50BFE10046E55A /* TimelineTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimelineTableViewCell.xib; sourceTree = "<group>"; };
+		28DED30B1D50BFE10046E55A /* DatePickerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatePickerTableViewCell.h; sourceTree = "<group>"; };
+		28DED30C1D50BFE10046E55A /* DatePickerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatePickerTableViewCell.m; sourceTree = "<group>"; };
+		28DED30D1D50BFE10046E55A /* DatePickerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DatePickerTableViewCell.xib; sourceTree = "<group>"; };
 		28E53D001CD04662002DB55F /* Projects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Projects.h; sourceTree = "<group>"; };
 		28E53D011CD04662002DB55F /* Projects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Projects.m; sourceTree = "<group>"; };
 		28E543101CFDEEC000FD05A7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -635,7 +635,7 @@
 			isa = PBXGroup;
 			children = (
 				287125C51D3C548300F1C791 /* Main.storyboard */,
-				28DED30D1D50BFE10046E55A /* TimelineTableViewCell.xib */,
+				28DED30D1D50BFE10046E55A /* DatePickerTableViewCell.xib */,
 				28EB3A681CEA8E2D00A5BCED /* EventTableViewCell.xib */,
 				284A641A1D0FA953009A348A /* AddEventCell.xib */,
 				28EB3A6B1CEA8E2D00A5BCED /* SwitchCell.xib */,
@@ -715,8 +715,8 @@
 			children = (
 				003BA4C41E14134D008C5F7A /* PCAngularActivityIndicatorView.h */,
 				003BA4C51E14134D008C5F7A /* PCAngularActivityIndicatorView.m */,
-				28DED30B1D50BFE10046E55A /* TimelineTableViewCell.h */,
-				28DED30C1D50BFE10046E55A /* TimelineTableViewCell.m */,
+				28DED30B1D50BFE10046E55A /* DatePickerTableViewCell.h */,
+				28DED30C1D50BFE10046E55A /* DatePickerTableViewCell.m */,
 				280523BC1D3FE10C00D0EA0C /* GraphTableViewCell.h */,
 				280523BD1D3FE10C00D0EA0C /* GraphTableViewCell.m */,
 				286C08CF1D0FACEC0077F91F /* AddEventCell.h */,
@@ -1006,7 +1006,7 @@
 				28EB3AAE1CEA8EBE00A5BCED /* screen_shot_1.png in Resources */,
 				28F666841D00F0FB008B6A1D /* info.png in Resources */,
 				0002893B1CF10D9F005CEA17 /* GoogleService-Info.plist in Resources */,
-				28DED30F1D50BFE10046E55A /* TimelineTableViewCell.xib in Resources */,
+				28DED30F1D50BFE10046E55A /* DatePickerTableViewCell.xib in Resources */,
 				28EB3AAF1CEA8EBE00A5BCED /* screen_shot_2.png in Resources */,
 				289873601CF3BE8B00A283C1 /* button_outline.png in Resources */,
 				28E5430F1CFDEEC000FD05A7 /* Localizable.strings in Resources */,
@@ -1312,7 +1312,7 @@
 				280523AA1D3FA3DC00D0EA0C /* PNBar.m in Sources */,
 				0020F7271CD584A900F47CEE /* QBPlasticPopupMenu.m in Sources */,
 				280523AF1D3FA3DC00D0EA0C /* PNGenericChart.m in Sources */,
-				28DED30E1D50BFE10046E55A /* TimelineTableViewCell.m in Sources */,
+				28DED30E1D50BFE10046E55A /* DatePickerTableViewCell.m in Sources */,
 				280523B31D3FA3DC00D0EA0C /* PNPieChart.m in Sources */,
 				286C08D11D0FACEC0077F91F /* AddEventCell.m in Sources */,
 				280523B21D3FA3DC00D0EA0C /* PNLineChartDataItem.m in Sources */,
