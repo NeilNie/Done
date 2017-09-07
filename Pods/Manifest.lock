@@ -2,6 +2,7 @@ PODS:
   - Charts (3.0.2):
     - Charts/Core (= 3.0.2)
   - Charts/Core (3.0.2)
+  - Eureka (3.1.0)
   - Firebase/AdMob (4.0.4):
     - Firebase/Core
     - Google-Mobile-Ads-SDK (= 7.21.0)
@@ -58,6 +59,7 @@ PODS:
 
 DEPENDENCIES:
   - Charts
+  - Eureka
   - Firebase/AdMob
   - Firebase/Auth
   - Firebase/Core
@@ -72,6 +74,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Charts: 236d6ccdd0ce6feae151d89e829a7397381a21fd
+  Eureka: d6725c38d0dcdceaa331d1468f75e76315715ae0
   Firebase: 1492bf04e1b73a7353b4fb2cf5a20bac9692f341
   FirebaseAnalytics: ad41720e3e67fc63fbe3d2948d3e26932a8de311
   FirebaseAuth: ebb6abcbabae00fc47446d690c19ce68d8484fde
@@ -90,6 +93,6 @@ SPEC CHECKSUMS:
   UIColor-HexString: fadc2e1389db19147ac99dee92222d3bd8bfec4a
   UICountingLabel: ed5ce5b6d5ef278ff40d99cfa49577a30ab0c87b
 
-PODFILE CHECKSUM: 90a17b4df3011cf80c6f0e3aed20910178451735
+PODFILE CHECKSUM: 17445d6491edfd990922a5e384272b722b0e6072
 
 COCOAPODS: 1.2.1
