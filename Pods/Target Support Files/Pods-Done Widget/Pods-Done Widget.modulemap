@@ -1,6 +1,0 @@
-framework module Pods_Done_Widget {
-  umbrella header "Pods-Done Widget-umbrella.h"
-
-  export *
-  module * { export * }
-}

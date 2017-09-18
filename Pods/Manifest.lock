@@ -1,9 +1,17 @@
 PODS:
+<<<<<<< HEAD
   - Charts (3.0.4):
     - Charts/Core (= 3.0.4)
   - Charts/Core (3.0.4)
   - Eureka (3.1.0)
   - Firebase/AdMob (4.2.0):
+=======
+  - Charts (3.0.2):
+    - Charts/Core (= 3.0.2)
+  - Charts/Core (3.0.2)
+  - Eureka (3.1.0)
+  - Firebase/AdMob (4.0.4):
+>>>>>>> b39c7abda5fddeb92da36250930cfd1a1e18511a
     - Firebase/Core
     - Google-Mobile-Ads-SDK (= 7.24.0)
   - Firebase/Auth (4.2.0):
@@ -76,6 +84,7 @@ DEPENDENCIES:
   - UICountingLabel
 
 SPEC CHECKSUMS:
+<<<<<<< HEAD
   Charts: 0705898046257443f0afbbc3179f4b67507b6e48
   Eureka: d6725c38d0dcdceaa331d1468f75e76315715ae0
   Firebase: 9548cae14d69718add12d75a5b312893f7ef89c7
@@ -85,6 +94,17 @@ SPEC CHECKSUMS:
   FirebaseDatabase: 03940adcac54ce30db06f1fc2136f8581734ce2c
   FirebaseInstanceID: a4fc702b5a026f7322964376047f1a3f1f7cc6ff
   Google-Mobile-Ads-SDK: f405b7acb098fe89e6fcd05fdbf400c1a5bcb935
+=======
+  Charts: 236d6ccdd0ce6feae151d89e829a7397381a21fd
+  Eureka: d6725c38d0dcdceaa331d1468f75e76315715ae0
+  Firebase: 1492bf04e1b73a7353b4fb2cf5a20bac9692f341
+  FirebaseAnalytics: ad41720e3e67fc63fbe3d2948d3e26932a8de311
+  FirebaseAuth: ebb6abcbabae00fc47446d690c19ce68d8484fde
+  FirebaseCore: cfc042628ef9f20debe09c0eb683135fcd404cb4
+  FirebaseDatabase: d829b3a8c3e2ac7a16773c5df226966b0805dfc2
+  FirebaseInstanceID: 9fbf536668f4d3f0880e7438456dabd1376e294b
+  Google-Mobile-Ads-SDK: 4a6f1b43c8cc0e1e95a3b59d9f52a01671c6f9f3
+>>>>>>> b39c7abda5fddeb92da36250930cfd1a1e18511a
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMSessionFetcher: 5ad62e8200fa00ed011fe5e08d27fef72c5b1429
   JTCalendar: beb2f4c1b639bf6880f680b4858227acf83a049c
