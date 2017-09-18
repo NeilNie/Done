@@ -2,6 +2,7 @@ use_frameworks!
 
 target 'Done!' do
 
+pod 'Eureka'
 pod 'Charts'
 pod 'Firebase/Core'	
 pod 'Firebase/Auth'
