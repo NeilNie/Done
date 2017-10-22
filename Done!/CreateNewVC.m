@@ -160,8 +160,6 @@
         return cell;
         
     }else if (indexPath.row == 1){
-        DatePickerTableViewCell *cell = (DatePickerTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"idTimelineCell" forIndexPath:indexPath];
-        cell.delegate = self;
         return nil;
         
     }else if (indexPath.row == 2){
