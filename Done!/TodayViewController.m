@@ -142,12 +142,7 @@
 
 -(IBAction)addNewEvent:(id)sender{
     
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UINavigationController * __strong view = [storyboard instantiateViewControllerWithIdentifier:@"createNew"];
-    ((CreateNewVC *)view.topViewController).delegate = self;
-    dispatch_async(dispatch_get_main_queue(), ^ {
-        [self presentViewController:view animated:YES completion:nil];
-    });
+    
 }
 
 -(void)setShadowforView:(UIView *)view{
@@ -289,10 +284,10 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
-    if ([[segue destinationViewController] isKindOfClass:[CreateNewVC class]]) {
-        CreateNewVC *vc = [segue destinationViewController];
-        vc.sender = @"event";
-    }
+//    if ([[segue destinationViewController] isKindOfClass:[CreateNewVC class]]) {
+//        CreateNewVC *vc = [segue destinationViewController];
+//        vc.sender = @"event";
+//    }
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }

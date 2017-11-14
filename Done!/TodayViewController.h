@@ -15,10 +15,10 @@
 #import "Projects.h"
 #import "EventTableViewCell.h"
 #import "EventsHelper.h"
-#import "CreateNewVC.h"
 #import "Date.h"
+#import "Done_-Swift.h"
 
-@interface TodayViewController : UIViewController <CreateNewDelegate, WCSessionDelegate>
+@interface TodayViewController : UIViewController <WCSessionDelegate>
 
 //@property (weak, nonatomic) IBOutlet GADBannerView *banner;
 @property (weak, nonatomic) IBOutlet UILabel *completedLabel;

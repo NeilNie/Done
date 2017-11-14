@@ -14,16 +14,16 @@
 #import <MaterialControls/MaterialControls.h>
 #import "Events.h"
 #import "EventTableViewCell.h"
-#import "CreateNewVC.h"
 #import "EventsHelper.h"
 #import "Projects.h"
 #import "AddEventCell.h"
 #import "MDDeviceHelper.h"
 #import "UIView+MDExtension.h"
+#import "Done_-Swift.h"
 
 BOOL phoneModified;
 
-@interface TodoViewController : UIViewController <WCSessionDelegate, UITableViewDelegate, UITableViewDataSource, EventCellDelegate, SWTableViewCellDelegate, AddEventCellDelegate, MDTabBarDelegate, CreateNewDelegate, MDButtonDelegate>{
+@interface TodoViewController : UIViewController <WCSessionDelegate, UITableViewDelegate, UITableViewDataSource, EventCellDelegate, SWTableViewCellDelegate, AddEventCellDelegate, MDTabBarDelegate, MDButtonDelegate>{
 
     NSMutableArray *allEvents; //an array of Event objects
     NSMutableArray *tabBarArray;

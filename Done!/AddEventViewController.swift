@@ -9,6 +9,10 @@
 import UIKit
 import Eureka
 
+protocol AddEventViewControllerDelegate {
+    
+}
+
 class AddEventViewController : FormViewController {
     
     override func viewDidLoad() {
@@ -106,8 +110,21 @@ class AddEventViewController : FormViewController {
     }
     
     @IBAction func cancelTapped(){
-        self.dismiss(animated: true, completion: nil)
+        self.tabBarController?.selectedIndex = 0
     }
+    
+    @IBAction func saveEvent(){
+
+        if (self.form.values()["Title"] != nil) {
+            
+            self.tabBarController?.selectedIndex = 0
+        }else{
+            let alert = UIAlertController.init(title: "Please enter a title", message: "We need sufficient information in order to store this task", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction.init(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+            present(alert, animated: true, completion: nil)
+        }
+    }
+    
     
     enum RepeatInterval : String, CustomStringConvertible {
         case Never = "Never"

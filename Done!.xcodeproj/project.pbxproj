@@ -52,7 +52,6 @@
 		28006A131CC6B41900583D69 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 28006A121CC6B41900583D69 /* CustomCell.m */; };
 		2802F81F1CC5B78800C65966 /* EventTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2802F81E1CC5B78800C65966 /* EventTableViewCell.m */; };
 		2802F8221CC5B7AE00C65966 /* Events.m in Sources */ = {isa = PBXBuildFile; fileRef = 2802F8211CC5B7AE00C65966 /* Events.m */; };
-		2802F8341CC5C2F400C65966 /* CreateNewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2802F8331CC5C2F400C65966 /* CreateNewVC.m */; };
 		280523AA1D3FA3DC00D0EA0C /* PNBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 280523891D3FA3DC00D0EA0C /* PNBar.m */; };
 		280523AB1D3FA3DC00D0EA0C /* PNBarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 2805238B1D3FA3DC00D0EA0C /* PNBarChart.m */; };
 		280523AC1D3FA3DC00D0EA0C /* PNChartLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2805238F1D3FA3DC00D0EA0C /* PNChartLabel.m */; };
@@ -261,8 +260,6 @@
 		2802F81E1CC5B78800C65966 /* EventTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventTableViewCell.m; sourceTree = "<group>"; };
 		2802F8201CC5B7AE00C65966 /* Events.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Events.h; sourceTree = "<group>"; };
 		2802F8211CC5B7AE00C65966 /* Events.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Events.m; sourceTree = "<group>"; };
-		2802F8321CC5C2F400C65966 /* CreateNewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CreateNewVC.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		2802F8331CC5C2F400C65966 /* CreateNewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateNewVC.m; sourceTree = "<group>"; };
 		280523881D3FA3DC00D0EA0C /* PNBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNBar.h; sourceTree = "<group>"; };
 		280523891D3FA3DC00D0EA0C /* PNBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNBar.m; sourceTree = "<group>"; };
 		2805238A1D3FA3DC00D0EA0C /* PNBarChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNBarChart.h; sourceTree = "<group>"; };
@@ -605,8 +602,6 @@
 				28D9AF261CDA9F6800E50C10 /* AnalysisViewController.m */,
 				28B446391D370D76000A0501 /* TimelineViewController.h */,
 				28B4463A1D370D76000A0501 /* TimelineViewController.m */,
-				2802F8321CC5C2F400C65966 /* CreateNewVC.h */,
-				2802F8331CC5C2F400C65966 /* CreateNewVC.m */,
 				280C83D91CF31D4D00DC8742 /* AuthViewController.h */,
 				280C83DA1CF31D4D00DC8742 /* AuthViewController.m */,
 				2836B9071D303806006ADBAF /* TableViewController.h */,
@@ -1109,13 +1104,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Done!-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		3F0D71EB9A0E4717619F7CFB /* 📦 Copy Pods Resources */ = {
@@ -1184,9 +1182,36 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Done!/Pods-Done!-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
+				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/JTCalendar/JTCalendar.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/MaterialControls/MaterialControls.framework",
+				"${BUILT_PRODUCTS_DIR}/SWTableViewCell/SWTableViewCell.framework",
+				"${BUILT_PRODUCTS_DIR}/UIColor-HexString/UIColor_HexString.framework",
+				"${BUILT_PRODUCTS_DIR}/UICountingLabel/UICountingLabel.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm-iOS/Realm.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Eureka.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTCalendar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialControls.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWTableViewCell.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIColor_HexString.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UICountingLabel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1214,13 +1239,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Done! Apple Watch Extension-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B63B112249B56F8E11F02FFE /* [CP] Copy Pods Resources */ = {
@@ -1244,13 +1272,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Done Widget-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CFA7B2874C644EAA44E2D028 /* [CP] Embed Pods Frameworks */ = {
@@ -1259,9 +1290,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Done! Apple Watch Extension/Pods-Done! Apple Watch Extension-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm-watchOS/Realm.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1313,7 +1347,6 @@
 				286C08D11D0FACEC0077F91F /* AddEventCell.m in Sources */,
 				280523B21D3FA3DC00D0EA0C /* PNLineChartDataItem.m in Sources */,
 				280523B61D3FA3DC00D0EA0C /* PNRadarChartDataItem.m in Sources */,
-				2802F8341CC5C2F400C65966 /* CreateNewVC.m in Sources */,
 				280523B01D3FA3DC00D0EA0C /* PNLineChart.m in Sources */,
 				280523AC1D3FA3DC00D0EA0C /* PNChartLabel.m in Sources */,
 				280523B41D3FA3DC00D0EA0C /* PNPieChartDataItem.m in Sources */,

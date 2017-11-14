@@ -579,7 +579,6 @@
         <!--New Event-->
         <scene sceneID="zPs-nk-ZFJ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3z4-1y-qY7" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="7cw-cj-uka" customClass="AddEventViewController" customModule="Done_" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y1b-BZ-RGh"/>
@@ -612,10 +611,14 @@
                                 <state key="normal" title="Add">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="saveEvent" destination="7cw-cj-uka" eventType="touchUpInside" id="M98-5g-rTl"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3z4-1y-qY7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3942" y="2423"/>
         </scene>
