@@ -3,35 +3,35 @@ PODS:
     - Charts/Core (= 3.0.4)
   - Charts/Core (3.0.4)
   - Eureka (4.0.1)
-  - Firebase/AdMob (4.6.0):
+  - Firebase/AdMob (4.7.0):
     - Firebase/Core
-    - Google-Mobile-Ads-SDK (= 7.25.0)
-  - Firebase/Auth (4.6.0):
+    - Google-Mobile-Ads-SDK (= 7.26.0)
+  - Firebase/Auth (4.7.0):
     - Firebase/Core
-    - FirebaseAuth (= 4.3.2)
-  - Firebase/Core (4.6.0):
+    - FirebaseAuth (= 4.4.0)
+  - Firebase/Core (4.7.0):
     - FirebaseAnalytics (= 4.0.5)
-    - FirebaseCore (= 4.0.11)
-  - Firebase/Database (4.6.0):
+    - FirebaseCore (= 4.0.12)
+  - Firebase/Database (4.7.0):
     - Firebase/Core
-    - FirebaseDatabase (= 4.1.1)
+    - FirebaseDatabase (= 4.1.2)
   - FirebaseAnalytics (4.0.5):
     - FirebaseCore (~> 4.0)
     - FirebaseInstanceID (~> 2.0)
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
     - nanopb (~> 0.3)
-  - FirebaseAuth (4.3.2):
+  - FirebaseAuth (4.4.0):
     - FirebaseAnalytics (~> 4.0)
     - GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)
     - GTMSessionFetcher/Core (~> 1.1)
-  - FirebaseCore (4.0.11):
+  - FirebaseCore (4.0.12):
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
-  - FirebaseDatabase (4.1.1):
+  - FirebaseDatabase (4.1.2):
     - FirebaseAnalytics (~> 4.0)
     - FirebaseCore (~> 4.0)
     - leveldb-library (~> 1.18)
-  - FirebaseInstanceID (2.0.6)
-  - Google-Mobile-Ads-SDK (7.25.0)
+  - FirebaseInstanceID (2.0.7)
+  - Google-Mobile-Ads-SDK (7.26.0)
   - GoogleToolboxForMac/DebugUtils (2.1.3):
     - GoogleToolboxForMac/Defines (= 2.1.3)
   - GoogleToolboxForMac/Defines (2.1.3)
@@ -43,7 +43,7 @@ PODS:
     - GoogleToolboxForMac/NSString+URLArguments (= 2.1.3)
   - GoogleToolboxForMac/NSString+URLArguments (2.1.3)
   - GTMSessionFetcher/Core (1.1.12)
-  - JTCalendar (2.1.10)
+  - JTCalendar (2.2.0)
   - leveldb-library (1.20)
   - Masonry (1.1.0)
   - MaterialControls (1.2.2)
@@ -77,17 +77,17 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Charts: 0705898046257443f0afbbc3179f4b67507b6e48
   Eureka: c8bd5cc07143b6f66268c208d28a246c99b41955
-  Firebase: 27321a925aa85520618255a7c630859e0502ccbd
+  Firebase: dbfb98ccec2dcfcd21ab9cc1b4981a3f3c8c5e26
   FirebaseAnalytics: 5b02a63ead2c3f0259cfc7f15e053e440587ecf8
-  FirebaseAuth: e58563adb207a43910a2ed87fecb9fa7d556df5a
-  FirebaseCore: 2a946ece8fbe3ce1fdeeb55324f273caade22df9
-  FirebaseDatabase: 2e6e8e110b93b9a6e7aac71774c769a363035cb1
-  FirebaseInstanceID: 24958382a1011bba5aaff37e334e7a650b9118f5
-  Google-Mobile-Ads-SDK: 113804f266381a30f982ad3c18063d4e0155414f
+  FirebaseAuth: cdeee95b528958dbb7dcf220ad0fb804d3a284b0
+  FirebaseCore: 6cf108b63997bc08c04a1ffa55a3ac0d71a59ffc
+  FirebaseDatabase: 18ecb23e15c7f58bb0c4527e9cace06897cc40ca
+  FirebaseInstanceID: 148c25c986c8699e67304b114e365713dce467f2
+  Google-Mobile-Ads-SDK: 22d4a6fe18d526adcc12a86d8cc2d53872700966
   GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
   GTMSessionFetcher: ebaa1f79a5366922c1735f1566901f50beba23b7
-  JTCalendar: d85b0222e9378007a2d185b15c90b7d707a2abe0
-  leveldb-library: 4f9eedf84ab46b4fa3b7893bf30714b2a1a74022
+  JTCalendar: 3f576b73433bb173eaca7edc7c26560981530280
+  leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MaterialControls: 1c6b29e78d3a13d8dd6a67ed31b6d26eb5de8f72
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
