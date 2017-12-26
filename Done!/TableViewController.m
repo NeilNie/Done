@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.array = [Projects allObjects];
+    self.array = [List allObjects];
     // Uncomment the following line to preserve selection between presentations.
     self.clearsSelectionOnViewWillAppear = NO;
     [self.tableView reloadData];
@@ -42,7 +42,7 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellReusableID" forIndexPath:indexPath];
     // Configure the cell...
-    Projects *project = [self.array objectAtIndex:indexPath.row];
+    List *project = [self.array objectAtIndex:indexPath.row];
     cell.textLabel.text = project.title;
     
     return cell;
@@ -61,7 +61,7 @@
         [realm beginWriteTransaction];
         [realm deleteObject:[self.array objectAtIndex:indexPath.row]];
         [realm commitWriteTransaction];
-        self.array = [Projects allObjects];
+        self.array = [List allObjects];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
         [self dismissViewControllerAnimated:YES completion:nil];
     }

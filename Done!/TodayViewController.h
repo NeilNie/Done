@@ -11,8 +11,8 @@
 #import <WatchKit/WatchKit.h>
 
 #import "AppDelegate.h"
-#import "Events.h"
-#import "Projects.h"
+#import "Task.h"
+#import "List.h"
 #import "EventTableViewCell.h"
 #import "EventsHelper.h"
 #import "Date.h"

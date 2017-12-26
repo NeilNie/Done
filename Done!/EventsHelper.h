@@ -11,22 +11,22 @@
 #import <Realm/Realm.h>
 #import <WatchConnectivity/WatchConnectivity.h>
 #import "EventManager.h"
-#import "Events.h"
-#import "Projects.h"
+#import "Task.h"
+#import "List.h"
 
 @interface EventsHelper : NSObject
 
 /**
  create an event object with date, title. Other info should be in a dictionary and will be process in the method. (to be implemented)
  */
-+(Events *)createEventWithDate:(NSDate *)date title:(NSString *)title otherInfo:(NSDictionary *)info;
++(Task *)createEventWithDate:(NSDate *)date title:(NSString *)title otherInfo:(NSDictionary *)info;
 
-+(Projects *)createProjectWithDate:(NSDate *)date title:(NSString *)title;
++(List *)createProjectWithDate:(NSDate *)date title:(NSString *)title;
 
 /**
- Delete an event, the `Events` object will be passed in the paramenter.
+ Delete an event, the `Task` object will be passed in the paramenter.
  */
-+(void)deleteEvent:(Events *)event;
++(void)deleteEvent:(Task *)event;
 
 /**
  Modify event with value. The object that is being alternated is the key value. (This method need to be implemented)
@@ -83,21 +83,21 @@
 
 +(NSMutableArray *)findNotCompletedEvents:(RLMArray *)realm;
 
-+(Events *)findEarliestEventTodayWithArray:(NSMutableArray *)array;
++(Task *)findEarliestEventTodayWithArray:(NSMutableArray *)array;
 
-+(Events *)findEventWithTitle:(NSString *)string withAllRealm:(RLMResults *)array;
++(Task *)findEventWithTitle:(NSString *)string withAllRealm:(RLMResults *)array;
 
-+(Projects *)findProjectWithName:(NSString *)name;
++(List *)findProjectWithName:(NSString *)name;
 
 /**
  Find the most recent event on a day. Parameters: date and realm (RLMArray or RLMResults or NSMutableArray)
  @param NSDate, RLMArray / RLMResults / NSMutableArray
- @returns Events
+ @returns Task
  @exception nil
  */
-+(Events *)findMostRecentEvent:(NSDate *)date withRealm:(RLMArray *)realm;
-+(Events *)findMostRecentEvent:(NSDate *)date withRealmResult:(RLMResults *)realm;
-+(Events *)findMostRecentEvent:(NSDate *)date withArrayOfEvents:(NSMutableArray *)realm;
++(Task *)findMostRecentEvent:(NSDate *)date withRealm:(RLMArray *)realm;
++(Task *)findMostRecentEvent:(NSDate *)date withRealmResult:(RLMResults *)realm;
++(Task *)findMostRecentEvent:(NSDate *)date withArrayOfEvents:(NSMutableArray *)realm;
 
 +(NSMutableArray *)findImportantEvents:(NSDate *)date withRealm:(RLMResults *)realm;
 

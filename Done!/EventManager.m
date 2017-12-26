@@ -37,19 +37,19 @@
     [[NSUserDefaults standardUserDefaults] setValue:[NSNumber numberWithBool:eventsAccessGranted] forKey:@"eventkit_events_access_granted"];
 }
 
-//for display's sake, convert all the EKEvent (local calendar) to Events object so UIColletionView layout can understand it. Remember in controller implementation append the newly created array to all events.
+//for display's sake, convert all the EKEvent (local calendar) to Task object so UIColletionView layout can understand it. Remember in controller implementation append the newly created array to all events.
 
-+(NSArray<Events *> *)timePeriodsinTimeline{
++(NSArray<Task *> *)timePeriodsinTimeline{
     
     NSArray *calendarEvents = [[[EventManager alloc] init] getTodayLocalEvent];
-    NSMutableArray <Events *> *events = [NSMutableArray array];
+    NSMutableArray <Task *> *events = [NSMutableArray array];
     
     NSDateFormatter *formate = [[NSDateFormatter alloc] init];
     [formate setDateFormat:@"dd"];
     
     for (int i = 0; i < calendarEvents.count; i++) {
         
-        Events *event = [[Events alloc] init];
+        Task *event = [[Task alloc] init];
         EKEvent *calendar = [calendarEvents objectAtIndex:i];
         if ([[formate stringFromDate:calendar.startDate] isEqualToString:[formate stringFromDate:calendar.endDate]]) {
             event.title = calendar.title;
@@ -84,7 +84,7 @@
     return todayEvents;
 }
 
--(NSMutableArray <Events *> *)convertEKEventtoEvents{
+-(NSMutableArray <Task *> *)convertEKEventtoEvents{
     
     NSMutableArray *eventsToday = [[NSMutableArray alloc] initWithArray:[self getTodayLocalEvent]];
     
@@ -96,7 +96,7 @@
     
     for (int i = 0; i < eventsToday.count; i++) {
         EKEvent *EKEvent = [eventsToday objectAtIndex:i];
-        Events *event = [[Events alloc] init];
+        Task *event = [[Task alloc] init];
         event.title = EKEvent.title;
         event.date = EKEvent.startDate;
         event.endDate = EKEvent.endDate;
@@ -105,15 +105,15 @@
     return returnArray;
 }
 
--(NSArray<Events *> *)findEventsToday{
+-(NSArray<Task *> *)findEventsToday{
     
     NSMutableArray *eventsToday = [self convertEKEventtoEvents];
-    [eventsToday addObjectsFromArray:[EventsHelper findTodayNotCompletedEvents:[Events allObjects]]];
+    [eventsToday addObjectsFromArray:[EventsHelper findTodayNotCompletedEvents:[Task allObjects]]];
     
     NSMutableArray *periodArray = [NSMutableArray array];
     for (int i = 0; i < eventsToday.count; i++) {
         
-        Events *event = [eventsToday objectAtIndex:i];
+        Task *event = [eventsToday objectAtIndex:i];
         
         if (event.endDate) {
             TimePeriod *period = [[TimePeriod alloc] initWithStart:event.date andEnd:event.endDate];
@@ -123,19 +123,19 @@
             [periodArray addObject:period];
         }
     }
-    NSArray *result = [eventsToday sortedArrayUsingComparator:^NSComparisonResult(Events *event1, Events *event2) {
+    NSArray *result = [eventsToday sortedArrayUsingComparator:^NSComparisonResult(Task *event1, Task *event2) {
         return [event1.date compare:event2.date];
     }];
 
     return result;
 }
 
--(NSMutableArray <Events *> *)convertPeriodsToEvents:(NSArray *)periods{
+-(NSMutableArray <Task *> *)convertPeriodsToEvents:(NSArray *)periods{
     NSMutableArray *returnArray = [NSMutableArray array];
     
     for (int i = 0; i < periods.count; i++) {
         TimePeriod *period = [periods objectAtIndex:i];
-        Events *event = [[Events alloc] init];
+        Task *event = [[Task alloc] init];
         event.date = period.startDate;
         event.endDate = period.endDate;
         event.title = NSLocalizedString(@"Free time", nil);
@@ -155,8 +155,8 @@
     if (busyTimes.count >= 1) {
         for (int i = 0; i < busyTimes.count - 1; i++) {
             
-            Events *current = [busyTimes objectAtIndex:i];
-            Events *next = [busyTimes objectAtIndex:i + 1];
+            Task *current = [busyTimes objectAtIndex:i];
+            Task *next = [busyTimes objectAtIndex:i + 1];
             
             //if the gap between the events are more than 5 minutes, then create a TimePeriod object and add it to the array.
             if ([current.endDate timeIntervalSinceDate:next.date] < - 15 * 60) { // if
@@ -168,7 +168,7 @@
         ////2
         //if the first event of the day is after 9, then
         NSDate *todayAtEight = [Date getDateTodayWithHour:8 minutes:0];
-        Events *firstPeriod = [busyTimes objectAtIndex:0];
+        Task *firstPeriod = [busyTimes objectAtIndex:0];
         
         //
         if ([todayAtEight timeIntervalSinceDate:firstPeriod.date] > 20 * 60) {

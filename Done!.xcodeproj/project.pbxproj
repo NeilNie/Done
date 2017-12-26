@@ -24,10 +24,10 @@
 		0083157D1CDE8FF2003E706D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 008315701CDE8FF2003E706D /* Assets.xcassets */; };
 		008315841CDE8FF2003E706D /* PushNotificationPayload.apns in Resources */ = {isa = PBXBuildFile; fileRef = 0083157C1CDE8FF2003E706D /* PushNotificationPayload.apns */; };
 		0083158A1CDE8FFE003E706D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 008315851CDE8FFE003E706D /* Assets.xcassets */; };
-		008315991CDE9095003E706D /* Events.m in Sources */ = {isa = PBXBuildFile; fileRef = 2802F8211CC5B7AE00C65966 /* Events.m */; };
+		008315991CDE9095003E706D /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = 2802F8211CC5B7AE00C65966 /* Task.m */; };
 		0083159A1CDE9095003E706D /* EventsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 00BEC6711CCBC93A008B7862 /* EventsHelper.m */; };
 		0091B29E1CCD3E4F000B50A0 /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0091B29D1CCD3E4F000B50A0 /* WatchConnectivity.framework */; };
-		009A02101CDE9DA200C0B23D /* Projects.m in Sources */ = {isa = PBXBuildFile; fileRef = 28E53D011CD04662002DB55F /* Projects.m */; };
+		009A02101CDE9DA200C0B23D /* List.m in Sources */ = {isa = PBXBuildFile; fileRef = 28E53D011CD04662002DB55F /* List.m */; };
 		009A02231CDE9DE200C0B23D /* ComplicationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 009A02131CDE9DE200C0B23D /* ComplicationController.m */; };
 		009A02241CDE9DE200C0B23D /* EventsInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 009A02151CDE9DE200C0B23D /* EventsInterfaceController.m */; };
 		009A02251CDE9DE200C0B23D /* ExtensionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 009A02171CDE9DE200C0B23D /* ExtensionDelegate.m */; };
@@ -45,13 +45,13 @@
 		00FA9E211CE902BE00E977D0 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 281838BA1CC9B01800D5930E /* NotificationCenter.framework */; };
 		00FA9E281CE902BE00E977D0 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00FA9E261CE902BE00E977D0 /* MainInterface.storyboard */; };
 		00FA9E2C1CE902BE00E977D0 /* Done Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 00FA9E201CE902BE00E977D0 /* Done Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		00FA9E3D1CE90C7900E977D0 /* Events.m in Sources */ = {isa = PBXBuildFile; fileRef = 2802F8211CC5B7AE00C65966 /* Events.m */; };
+		00FA9E3D1CE90C7900E977D0 /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = 2802F8211CC5B7AE00C65966 /* Task.m */; };
 		00FA9E3E1CE90C7E00E977D0 /* EventsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 00BEC6711CCBC93A008B7862 /* EventsHelper.m */; };
-		00FA9E3F1CE90C8400E977D0 /* Projects.m in Sources */ = {isa = PBXBuildFile; fileRef = 28E53D011CD04662002DB55F /* Projects.m */; };
+		00FA9E3F1CE90C8400E977D0 /* List.m in Sources */ = {isa = PBXBuildFile; fileRef = 28E53D011CD04662002DB55F /* List.m */; };
 		00FDD4C91F9C35F90017BEB3 /* AddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FDD4C81F9C35F90017BEB3 /* AddEventViewController.swift */; };
 		28006A131CC6B41900583D69 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 28006A121CC6B41900583D69 /* CustomCell.m */; };
 		2802F81F1CC5B78800C65966 /* EventTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2802F81E1CC5B78800C65966 /* EventTableViewCell.m */; };
-		2802F8221CC5B7AE00C65966 /* Events.m in Sources */ = {isa = PBXBuildFile; fileRef = 2802F8211CC5B7AE00C65966 /* Events.m */; };
+		2802F8221CC5B7AE00C65966 /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = 2802F8211CC5B7AE00C65966 /* Task.m */; };
 		280523AA1D3FA3DC00D0EA0C /* PNBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 280523891D3FA3DC00D0EA0C /* PNBar.m */; };
 		280523AB1D3FA3DC00D0EA0C /* PNBarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 2805238B1D3FA3DC00D0EA0C /* PNBarChart.m */; };
 		280523AC1D3FA3DC00D0EA0C /* PNChartLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2805238F1D3FA3DC00D0EA0C /* PNChartLabel.m */; };
@@ -99,7 +99,7 @@
 		28DA92CE1D52159200ACC2B3 /* ValuePickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28DA92CD1D52159200ACC2B3 /* ValuePickerCell.xib */; };
 		28DED30E1D50BFE10046E55A /* DatePickerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 28DED30C1D50BFE10046E55A /* DatePickerTableViewCell.m */; };
 		28DED30F1D50BFE10046E55A /* DatePickerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28DED30D1D50BFE10046E55A /* DatePickerTableViewCell.xib */; };
-		28E53D021CD04662002DB55F /* Projects.m in Sources */ = {isa = PBXBuildFile; fileRef = 28E53D011CD04662002DB55F /* Projects.m */; };
+		28E53D021CD04662002DB55F /* List.m in Sources */ = {isa = PBXBuildFile; fileRef = 28E53D011CD04662002DB55F /* List.m */; };
 		28E5430F1CFDEEC000FD05A7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 28E543111CFDEEC000FD05A7 /* Localizable.strings */; };
 		28E757091CE4BD2E00707380 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28E757081CE4BD2E00707380 /* Media.xcassets */; };
 		28EB3A6F1CEA8E2D00A5BCED /* EventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28EB3A681CEA8E2D00A5BCED /* EventTableViewCell.xib */; };
@@ -258,8 +258,8 @@
 		28006A121CC6B41900583D69 /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
 		2802F81D1CC5B78800C65966 /* EventTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventTableViewCell.h; sourceTree = "<group>"; };
 		2802F81E1CC5B78800C65966 /* EventTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventTableViewCell.m; sourceTree = "<group>"; };
-		2802F8201CC5B7AE00C65966 /* Events.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Events.h; sourceTree = "<group>"; };
-		2802F8211CC5B7AE00C65966 /* Events.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Events.m; sourceTree = "<group>"; };
+		2802F8201CC5B7AE00C65966 /* Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Task.h; sourceTree = "<group>"; };
+		2802F8211CC5B7AE00C65966 /* Task.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Task.m; sourceTree = "<group>"; };
 		280523881D3FA3DC00D0EA0C /* PNBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNBar.h; sourceTree = "<group>"; };
 		280523891D3FA3DC00D0EA0C /* PNBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PNBar.m; sourceTree = "<group>"; };
 		2805238A1D3FA3DC00D0EA0C /* PNBarChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNBarChart.h; sourceTree = "<group>"; };
@@ -363,8 +363,8 @@
 		28DED30B1D50BFE10046E55A /* DatePickerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatePickerTableViewCell.h; sourceTree = "<group>"; };
 		28DED30C1D50BFE10046E55A /* DatePickerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatePickerTableViewCell.m; sourceTree = "<group>"; };
 		28DED30D1D50BFE10046E55A /* DatePickerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DatePickerTableViewCell.xib; sourceTree = "<group>"; };
-		28E53D001CD04662002DB55F /* Projects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Projects.h; sourceTree = "<group>"; };
-		28E53D011CD04662002DB55F /* Projects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Projects.m; sourceTree = "<group>"; };
+		28E53D001CD04662002DB55F /* List.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = List.h; sourceTree = "<group>"; };
+		28E53D011CD04662002DB55F /* List.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = List.m; sourceTree = "<group>"; };
 		28E543101CFDEEC000FD05A7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		28E757081CE4BD2E00707380 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		28EB3A681CEA8E2D00A5BCED /* EventTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EventTableViewCell.xib; path = Views/EventTableViewCell.xib; sourceTree = "<group>"; };
@@ -724,10 +724,10 @@
 		287125BF1D3C539800F1C791 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				2802F8201CC5B7AE00C65966 /* Events.h */,
-				2802F8211CC5B7AE00C65966 /* Events.m */,
-				28E53D001CD04662002DB55F /* Projects.h */,
-				28E53D011CD04662002DB55F /* Projects.m */,
+				2802F8201CC5B7AE00C65966 /* Task.h */,
+				2802F8211CC5B7AE00C65966 /* Task.m */,
+				28E53D001CD04662002DB55F /* List.h */,
+				28E53D011CD04662002DB55F /* List.m */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -915,7 +915,7 @@
 		006083401CC4007500A344F1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Yongyang Nie";
 				TargetAttributes = {
 					006083471CC4007500A344F1 = {
@@ -1333,8 +1333,8 @@
 				0020F72A1CD584A900F47CEE /* QBPopupMenuItemView.m in Sources */,
 				286E50641D150E8000EEA0A6 /* Date.m in Sources */,
 				28B4463B1D370D76000A0501 /* TimelineViewController.m in Sources */,
-				28E53D021CD04662002DB55F /* Projects.m in Sources */,
-				2802F8221CC5B7AE00C65966 /* Events.m in Sources */,
+				28E53D021CD04662002DB55F /* List.m in Sources */,
+				2802F8221CC5B7AE00C65966 /* Task.m in Sources */,
 				0020F7281CD584A900F47CEE /* QBPopupMenu.m in Sources */,
 				283D1B111D1640DF000CEC0C /* TimePeriod.m in Sources */,
 				280523B81D3FA3DC00D0EA0C /* PNScatterChartData.m in Sources */,
@@ -1381,13 +1381,13 @@
 				009A02261CDE9DE200C0B23D /* GlanceController.m in Sources */,
 				009A02251CDE9DE200C0B23D /* ExtensionDelegate.m in Sources */,
 				009A02241CDE9DE200C0B23D /* EventsInterfaceController.m in Sources */,
-				009A02101CDE9DA200C0B23D /* Projects.m in Sources */,
+				009A02101CDE9DA200C0B23D /* List.m in Sources */,
 				009A02231CDE9DE200C0B23D /* ComplicationController.m in Sources */,
 				009A02281CDE9DE200C0B23D /* NotificationController.m in Sources */,
 				28F896F91CEBF98100C546EC /* TodayInterfaceController.m in Sources */,
 				009A02271CDE9DE200C0B23D /* InterfaceController.m in Sources */,
 				009A02291CDE9DE200C0B23D /* ProjectsInterfaceController.m in Sources */,
-				008315991CDE9095003E706D /* Events.m in Sources */,
+				008315991CDE9095003E706D /* Task.m in Sources */,
 				0083159A1CDE9095003E706D /* EventsHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1397,9 +1397,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				283B89321D3D71D7000ADA9E /* ExtensionViewController.m in Sources */,
-				00FA9E3F1CE90C8400E977D0 /* Projects.m in Sources */,
+				00FA9E3F1CE90C8400E977D0 /* List.m in Sources */,
 				00FA9E3E1CE90C7E00E977D0 /* EventsHelper.m in Sources */,
-				00FA9E3D1CE90C7900E977D0 /* Events.m in Sources */,
+				00FA9E3D1CE90C7900E977D0 /* Task.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1581,6 +1581,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};

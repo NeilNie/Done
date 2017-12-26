@@ -10,7 +10,7 @@
 #import "PNChartDelegate.h"
 #import "PNChart.h"
 #import "EventsHelper.h"
-#import "Events.h"
+#import "Task.h"
 
 typedef NS_ENUM( NSInteger, GraphType ) {
     PNPieGraph,

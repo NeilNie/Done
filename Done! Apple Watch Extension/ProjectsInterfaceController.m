@@ -58,7 +58,7 @@
     
     for (NSInteger i = 0; i < rowCount; i++) {
         
-        Projects *pro = [result objectAtIndex:i];
+        List *pro = [result objectAtIndex:i];
         Row *row = [self.table rowControllerAtIndex:i];
         [row.titleLabel setText:pro.title];
         [row.date setText:[formate stringFromDate:pro.date]];
@@ -67,7 +67,7 @@
 
 -(void)table:(WKInterfaceTable *)table didSelectRowAtIndex:(NSInteger)rowIndex{
     
-    Projects *p = [result objectAtIndex:rowIndex];
+    List *p = [result objectAtIndex:rowIndex];
     [self pushControllerWithName:@"Events" context:p.events];
 }
 
@@ -82,7 +82,7 @@
 - (void)willActivate {
     
     dispatch_async(dispatch_get_main_queue(), ^{
-        result = [Projects allObjects];
+        result = [List allObjects];
         [self setupTable];
     });
     

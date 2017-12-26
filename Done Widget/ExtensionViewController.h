@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-#import "Events.h"
-#import "Projects.h"
+#import "Task.h"
+#import "List.h"
 #import "EventsHelper.h"
 
 @interface ExtensionViewController : UIViewController {

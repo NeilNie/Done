@@ -9,7 +9,7 @@
 #import <ClockKit/ClockKit.h>
 #import "EventsHelper.h"
 #import <Realm/Realm.h>
-#import "Events.h"
+#import "Task.h"
 
 @interface ComplicationController : NSObject <CLKComplicationDataSource>{
     

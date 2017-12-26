@@ -9,8 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <Realm/Realm.h>
 
-#import "Projects.h"
-#import "Events.h"
+#import "List.h"
+#import "Task.h"
 #import "EventsHelper.h"
 #import "AnalysisViewController.h"
 

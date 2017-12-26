@@ -36,7 +36,7 @@
             [self presentMainViewcontroller];
         }else{
             [[FIRAuth auth] createUserWithEmail:self.email.text password:self.password.text completion:^(FIRUser * _Nullable user, NSError * _Nullable error) {
-                //register with database
+                [self setupDefaultLists];
                 [self presentMainViewcontroller];
             }];
         }
@@ -44,6 +44,18 @@
 }
 
 #pragma mark - Private Helpers
+
+-(void)setupDefaultLists{
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    [realm beginWriteTransaction];
+    List *family = [[List alloc] init];
+    family.title = @"Family";
+    List *work = [[List alloc] init];
+    work.title = @"Work";
+    [realm addObject:family];
+    [realm addObject:work];
+    [realm commitWriteTransaction];
+}
 
 -(void)showInitialViewController{
     

@@ -14,7 +14,7 @@
 
 #pragma mark - MSEventCell Delegate
 
--(void)collectionViewCell:(UICollectionViewCell *)collectionViewCell didSelectEvent:(Events *)event{
+-(void)collectionViewCell:(UICollectionViewCell *)collectionViewCell didSelectEvent:(Task *)event{
 
     NSDateFormatter *formate = [[NSDateFormatter alloc] init];
     [formate setDateFormat:@"dd/MM/yyyy hh:mm"];
@@ -41,7 +41,7 @@
     [delegate dateWasSelected:self.datePicker.date];
 }
 
--(NSArray<Events *> *)setUpEventArray{
+-(NSArray<Task *> *)setUpEventArray{
 
     EventManager *manager = [[EventManager alloc] init];
     NSArray *calendarEvents = [manager getTodayLocalEvent];
@@ -51,7 +51,7 @@
     [formate setDateFormat:@"dd"];
 
     for (int i = 0; i < calendarEvents.count; i++) {
-        Events *event = [[Events alloc] init];
+        Task *event = [[Task alloc] init];
         EKEvent *calendar = [calendarEvents objectAtIndex:i];
         if ([[formate stringFromDate:calendar.startDate] isEqualToString:[formate stringFromDate:calendar.endDate]]) {
             event.title = calendar.title;
@@ -61,17 +61,17 @@
         }
     }
 
-    [events addObjectsFromArray:[EventsHelper findTodayNotCompletedEvents:[Events allObjects]]];
+    [events addObjectsFromArray:[EventsHelper findTodayNotCompletedEvents:[Task allObjects]]];
     [events addObjectsFromArray:[self convertPeriodsToEvents:[[[EventManager alloc] init] findFreePeriodsToday]]];
     return events;
 }
 
--(NSMutableArray <Events *> *)convertPeriodsToEvents:(NSArray *)periods{
+-(NSMutableArray <Task *> *)convertPeriodsToEvents:(NSArray *)periods{
     NSMutableArray *returnArray = [NSMutableArray array];
 
     for (int i = 0; i < periods.count; i++) {
         TimePeriod *period = [periods objectAtIndex:i];
-        Events *event = [[Events alloc] init];
+        Task *event = [[Task alloc] init];
         event.date = period.startDate;
         event.endDate = period.endDate;
         event.title = NSLocalizedString(@"Free time", nil);

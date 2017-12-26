@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <EventKit/EventKit.h>
-#import "Events.h"
+#import "Task.h"
 #import "Date.h"
 #import "TimePeriod.h"
 #import "EventsHelper.h"
@@ -21,12 +21,12 @@
 -(NSArray *)getTodayLocalEvent;
 
 /**
-  This method will find all the events on this calendar day and return an array of Events objects.
+  This method will find all the events on this calendar day and return an array of Task objects.
   @param nil
-  @returns NSMutableArray<Events *> *
+  @returns NSMutableArray<Task *> *
   @exception nil
   */
--(NSMutableArray<Events *> *)findEventsToday;
+-(NSMutableArray<Task *> *)findEventsToday;
 
 /**
  This method will find free periods on this calendar day and return an array of TimePeriods.
@@ -37,6 +37,6 @@
 -(NSMutableArray<TimePeriod *> *)findFreePeriodsToday;
 
 
-+(NSArray<Events *> *)timePeriodsinTimeline;
++(NSArray<Task *> *)timePeriodsinTimeline;
 
 @end

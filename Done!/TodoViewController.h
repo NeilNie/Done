@@ -12,10 +12,10 @@
 #import <SWTableViewCell/SWTableViewCell.h>
 
 #import <MaterialControls/MaterialControls.h>
-#import "Events.h"
+#import "Task.h"
 #import "EventTableViewCell.h"
 #import "EventsHelper.h"
-#import "Projects.h"
+#import "List.h"
 #import "AddEventCell.h"
 #import "MDDeviceHelper.h"
 #import "UIView+MDExtension.h"
@@ -35,7 +35,7 @@ BOOL phoneModified;
 @property (weak, nonatomic) IBOutlet MDButton *btAddEvent;
 @property (weak, nonatomic) IBOutlet MDButton *btAddProject;
 @property (weak, nonatomic) IBOutlet MDButton *btEdit;
-@property (strong, nonatomic) Projects *project;
+@property (strong, nonatomic) List *list;
 @property (weak, nonatomic) IBOutlet UITableView *table;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableButtom;
 

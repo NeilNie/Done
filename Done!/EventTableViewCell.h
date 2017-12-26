@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <MaterialControls/MaterialControls.h>
-#import "Events.h"
+#import "Task.h"
 #import <SWTableViewCell/SWTableViewCell.h>
 
 @interface EventTableViewCell : SWTableViewCell
 
-@property (strong, nonatomic) Events *event;
+@property (strong, nonatomic) Task *event;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UIButton *button;

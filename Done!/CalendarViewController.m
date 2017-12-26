@@ -31,7 +31,7 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     EventTableViewCell *cell = (EventTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"idEventCell" forIndexPath:indexPath];
-    Events *event = [eventArray objectAtIndex:indexPath.row];
+    Task *event = [eventArray objectAtIndex:indexPath.row];
     cell.titleLabel.text = event.title;
     cell.dateLabel.text = [[Date getDefaultDateFormatter] stringFromDate:event.date];
     
@@ -62,12 +62,12 @@
         }
     }
     
-    NSMutableArray *array = [EventsHelper findEventsForToday:dayView.date withRealm:[Events allObjects]];
+    NSMutableArray *array = [EventsHelper findEventsForToday:dayView.date withRealm:[Task allObjects]];
     if(array.count > 0){
         eventArray = array;
         [self.table reloadData];
     }
-    self.eventCountl.text = [NSString stringWithFormat:NSLocalizedString(@"%lu Events on this day", nil), (unsigned long)array.count];
+    self.eventCountl.text = [NSString stringWithFormat:NSLocalizedString(@"%lu Task on this day", nil), (unsigned long)array.count];
     
     NSDateFormatter *formate = [[NSDateFormatter alloc] init];
     [formate setDateFormat:@"MMMM, dd"];
@@ -106,7 +106,7 @@
         dayView.dotView.backgroundColor = [UIColor redColor];
         dayView.textLabel.textColor = [UIColor blackColor];
     }
-    NSMutableArray *array = [EventsHelper findEventsForToday:dayView.date withRealm:[Events allObjects]];
+    NSMutableArray *array = [EventsHelper findEventsForToday:dayView.date withRealm:[Task allObjects]];
     if(array.count > 0){
         dayView.dotView.hidden = NO;
     }
@@ -143,7 +143,7 @@
     [eventArray removeAllObjects];
     for (int i = 0; i < realm.count; i++) {
         
-        Events *event = [realm objectAtIndex:i];
+        Task *event = [realm objectAtIndex:i];
         NSString *string = [[self dateFormatter] stringFromDate:event.date];
         if ([string isEqualToString:[[self dateFormatter] stringFromDate:date]]) {
             [eventArray addObject:event];
@@ -200,12 +200,12 @@
     [formate setDateFormat:@"EEEE"];
     self.navigationItem.title = [formate stringFromDate:[NSDate date]];
     
-    NSMutableArray *array = [EventsHelper findEventsForToday:[NSDate date] withRealm:[Events allObjects]];
+    NSMutableArray *array = [EventsHelper findEventsForToday:[NSDate date] withRealm:[Task allObjects]];
     if(array.count > 0){
         eventArray = [[NSMutableArray alloc] initWithArray:array];
         [self.table reloadData];
     }
-    self.eventCountl.text = [NSString stringWithFormat:NSLocalizedString(@"%lu Events on this day", nil), (unsigned long)array.count];
+    self.eventCountl.text = [NSString stringWithFormat:NSLocalizedString(@"%lu Task on this day", nil), (unsigned long)array.count];
 }
 - (IBAction)addEvent:(id)sender {
     
@@ -217,7 +217,7 @@
     
     [_calendarManager reload];
     
-    NSMutableArray *array = [EventsHelper findEventsForToday:[NSDate date] withRealm:[Events allObjects]];
+    NSMutableArray *array = [EventsHelper findEventsForToday:[NSDate date] withRealm:[Task allObjects]];
     if(array.count > 0){
         eventArray = array;
         [self.table reloadData];

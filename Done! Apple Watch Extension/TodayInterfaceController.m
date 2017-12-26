@@ -23,7 +23,7 @@
     [formate setDateFormat:@"hh:mm dd/MM"];
     
     //display the upcoming events.
-    RLMResults *result = [Events allObjects];
+    RLMResults *result = [Task allObjects];
     NSMutableArray *todo = [EventsHelper findTodayNotCompletedEvents:result];
     NSMutableArray *completed = [EventsHelper findTodayCompletedEvents:result];
     NSUInteger x = todo.count / completed.count * 100;

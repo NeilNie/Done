@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <MaterialControls/MaterialControls.h>
 #import "PCAngularActivityIndicatorView.h"
+#import "List.h"
+#import "Task.h"
 
 @import FirebaseAuth;
 @import FirebaseDatabase;

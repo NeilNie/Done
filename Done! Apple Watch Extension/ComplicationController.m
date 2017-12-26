@@ -37,8 +37,8 @@
 - (void)getCurrentTimelineEntryForComplication:(CLKComplication *)complication withHandler:(void(^)(CLKComplicationTimelineEntry * __nullable))handler {
     
 //    NSLog(@"got current entry");
-//    RLMResults *re = [Events allObjects];
-//    Events *event;
+//    RLMResults *re = [Task allObjects];
+//    Task *event;
 //    if (re.count > 0) {
 //        event = [re objectAtIndex:0];
 //    }
@@ -55,12 +55,12 @@
 - (void)getTimelineEntriesForComplication:(CLKComplication *)complication beforeDate:(NSDate *)date limit:(NSUInteger)limit withHandler:(void(^)(NSArray<CLKComplicationTimelineEntry *> * __nullable entries))handler {
     
     NSMutableArray<CLKComplicationTimelineEntry *> *entries = [[NSMutableArray alloc] init];
-    RLMResults *result = [Events allObjects];
+    RLMResults *result = [Task allObjects];
     
     //NSMutableArray *array = [EventsHelper convertToArray:result];
     //NSString *string = [NSString stringWithFormat:@"%lu events today, you have completed %lu of them.", (unsigned long)result.count, (unsigned long)[EventsHelper findCompletedEvents:array withDate:[NSDate date]].count];
     
-    for (Events *event in result) {
+    for (Task *event in result) {
         
         if (result.count < limit && [event.date timeIntervalSinceDate:date] > 0){
             CLKComplicationTemplateModularLargeStandardBody *template = [[CLKComplicationTemplateModularLargeStandardBody alloc] init];
@@ -93,10 +93,10 @@
 
 - (void)getPlaceholderTemplateForComplication:(CLKComplication *)complication withHandler:(void(^)(CLKComplicationTemplate * __nullable complicationTemplate))handler {
     
-    RLMResults *result = [Events allObjects];
+    RLMResults *result = [Task allObjects];
     
     if (result.count > 0) {
-        Events *event = [result objectAtIndex:0];
+        Task *event = [result objectAtIndex:0];
         CLKComplicationTemplateModularLargeStandardBody *template = [[CLKComplicationTemplateModularLargeStandardBody alloc] init];
         template.headerTextProvider = [CLKTimeIntervalTextProvider textProviderWithStartDate:[NSDate date] endDate:[NSDate dateWithTimeIntervalSinceNow:60 * 60]];
         template.body1TextProvider = [CLKSimpleTextProvider textProviderWithText:event.title shortText:@"Event Title"];

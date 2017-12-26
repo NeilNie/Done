@@ -39,7 +39,7 @@
     cell.leftUtilityButtons = [self leftButtons];
     cell.rightUtilityButtons = [self rightButtons];
     
-    Events *event = [allEvents objectAtIndex:indexPath.row];
+    Task *event = [allEvents objectAtIndex:indexPath.row];
     cell.event = event;
     cell.titleLabel.textColor = [UIColor whiteColor];
     [cell setUpCell];
@@ -110,7 +110,7 @@
     
     RLMRealm *realm = [RLMRealm defaultRealm];
     [realm beginWriteTransaction];
-    Events *update = cell.event;
+    Task *update = cell.event;
     update.important = YES;
     [realm commitWriteTransaction];
 }
@@ -120,10 +120,10 @@
     NSIndexPath *index = [self.table indexPathForCell:cell];
     RLMRealm *realm = [RLMRealm defaultRealm];
     [realm beginWriteTransaction];
-    Events *update = cell.event;
+    Task *update = cell.event;
     update.completed = YES;
     [realm commitWriteTransaction];
-    allEvents = [EventsHelper findTodayNotCompletedEvents:[Events allObjects]];
+    allEvents = [EventsHelper findTodayNotCompletedEvents:[Task allObjects]];
     [self.table deleteRowsAtIndexPaths:@[index] withRowAnimation:UITableViewRowAnimationTop];
 }
 
@@ -131,7 +131,7 @@
 
 -(IBAction)refreshData:(id)sender{
     
-    result = [Events allObjects];
+    result = [Task allObjects];
     allEvents = [EventsHelper findTodayNotCompletedEvents:result];
     self.ApplicationDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     [self setUpview];
@@ -164,7 +164,7 @@
     NSDateFormatter *formate = [[NSDateFormatter alloc] init];
     NSDate *date = [NSDate date];
     [formate setDateFormat:@"MMMM"];
-    self.yearLabel.text = [NSString stringWithFormat:@"%@ 2016", [formate stringFromDate:date]];
+    self.yearLabel.text = [NSString stringWithFormat:@"%@", [formate stringFromDate:date]];
     [formate setDateFormat:@"dd"];
     self.dateLabel.text = [formate stringFromDate:date];
     [formate setDateFormat:@"EEEE"];

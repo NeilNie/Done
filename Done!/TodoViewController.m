@@ -67,7 +67,7 @@
         cell.leftUtilityButtons = [self leftButtons];
         cell.rightUtilityButtons = [self rightButtons];
         
-        Events *event = [allEvents objectAtIndex:indexPath.row];
+        Task *event = [allEvents objectAtIndex:indexPath.row];
         cell.event = event;
         [cell setUpCell];
         cell.delegate = self;
@@ -144,11 +144,11 @@
     
     RLMRealm *realm = [RLMRealm defaultRealm];
     [realm beginWriteTransaction];
-    Events *event = [EventsHelper createEventWithDate:[NSDate date] title:cell.textfield.text otherInfo:nil];
-    [self.project.events addObject:event];
+    Task *event = [EventsHelper createEventWithDate:[NSDate date] title:cell.textfield.text otherInfo:nil];
+    [self.list.events addObject:event];
     [realm commitWriteTransaction];
     
-    allEvents = [EventsHelper findNotCompletedEvents:self.project.events];
+    allEvents = [EventsHelper findNotCompletedEvents:self.list.events];
     [allEvents addObject:@""];
     [self.table reloadData];
     
@@ -183,7 +183,7 @@
     
     RLMRealm *realm = [RLMRealm defaultRealm];
     [realm beginWriteTransaction];
-    Events *update = cell.event;
+    Task *update = cell.event;
     update.important = YES;
     [realm commitWriteTransaction];
 }
@@ -193,10 +193,10 @@
     NSIndexPath *index = [self.table indexPathForCell:cell];
     RLMRealm *realm = [RLMRealm defaultRealm];
     [realm beginWriteTransaction];
-    Events *update = cell.event;
+    Task *update = cell.event;
     update.completed = YES;
     [realm commitWriteTransaction];
-    allEvents = [EventsHelper findNotCompletedEvents:self.project.events];
+    allEvents = [EventsHelper findNotCompletedEvents:self.list.events];
     [allEvents addObject:@""];
     [self.table deleteRowsAtIndexPaths:@[index] withRowAnimation:UITableViewRowAnimationTop];
 }
@@ -229,7 +229,7 @@
                                                               if (((UITextField *)[alert.textFields objectAtIndex:0]).text) {
                                                                   RLMRealm *realm = [RLMRealm defaultRealm];
                                                                   [realm beginWriteTransaction];
-                                                                  Projects *project = [[Projects alloc] init];
+                                                                  List *project = [[List alloc] init];
                                                                   project.title = ((UITextField *)[alert.textFields objectAtIndex:0]).text;
                                                                   [realm addObject:project];
                                                                   [realm commitWriteTransaction];
@@ -252,11 +252,11 @@
 
 -(void)syncDataWithExtension{
     
-    NSMutableArray *a = [EventsHelper findEventsForToday:[NSDate date] withRealm:[Events allObjects]];
+    NSMutableArray *a = [EventsHelper findEventsForToday:[NSDate date] withRealm:[Task allObjects]];
     NSUserDefaults *shared = [[NSUserDefaults alloc] initWithSuiteName:@"group.done.com.yongyang"];
     [shared setObject:[NSNumber numberWithInteger:a.count] forKey:@"totalEvents"];
     [shared setObject:[NSNumber numberWithInteger:[EventsHelper findCompletedEventsWithArrayOfEvents:allEvents withDate:[NSDate date]].count] forKey:@"completedEvents"];
-    Events *event = [EventsHelper findMostRecentEvent:[NSDate date] withArrayOfEvents:allEvents];
+    Task *event = [EventsHelper findMostRecentEvent:[NSDate date] withArrayOfEvents:allEvents];
     [shared setObject:event.title forKey:@"title"];
     [shared setObject:event.date forKey:@"date"];
     [shared synchronize];
@@ -265,7 +265,7 @@
 -(void)loadViewBasedonTabBar{
     
     allEvents = [NSMutableArray array];
-    RLMResults *result = [Events allObjects];
+    RLMResults *result = [Task allObjects];
     if (self.tabBar.selectedIndex == 0) {
         allEvents = [EventsHelper findImportantEvents:[NSDate date] withRealm:result];
         [allEvents addObject:@""];
@@ -280,8 +280,8 @@
         [allEvents addObject:@""];
         [self.table reloadData];
     }else{
-        self.project = [EventsHelper findProjectWithName:[tabBarArray objectAtIndex:self.tabBar.selectedIndex]];
-        allEvents = [EventsHelper findNotCompletedEvents:self.project.events];
+        self.list = [EventsHelper findProjectWithName:[tabBarArray objectAtIndex:self.tabBar.selectedIndex]];
+        allEvents = [EventsHelper findNotCompletedEvents:self.list.events];
         [allEvents addObject:@""];
         [self.table reloadData];
     }
@@ -292,9 +292,9 @@
     self.tabBar.delegate = self;
     
     tabBarArray = [[NSMutableArray alloc] initWithObjects:@"Important", nil];
-    RLMResults *allProjects = [Projects allObjects];
+    RLMResults *allProjects = [List allObjects];
     for (int i = 0; i < allProjects.count; i++) {
-        Projects *currentProject = [allProjects objectAtIndex:i];
+        List *currentProject = [allProjects objectAtIndex:i];
         [tabBarArray addObject:currentProject.title];
     }
     [tabBarArray addObject:@"Completed"];
@@ -343,9 +343,7 @@
         int padding = 90;
         CGFloat duration = 0.2f;
         if (!self.btMore.isRotated) {
-            [UIView animateWithDuration:duration
-                                  delay:0.0
-                                options: (UIViewAnimationOptionAllowUserInteraction|UIViewAnimationCurveEaseOut)
+            [UIView animateWithDuration:duration delay:0.0 options: (UIViewAnimationOptionAllowUserInteraction|UIViewAnimationCurveEaseOut)
                              animations:^{
                                  self.btEdit.alpha = 1;
                                  self.btEdit.transform = CGAffineTransformMakeScale(1.0,.4);
@@ -359,13 +357,9 @@
                                  self.btAddEvent.transform = CGAffineTransformMakeScale(1.0,.6);
                                  self.btAddEvent.transform = CGAffineTransformConcat(CGAffineTransformMakeTranslation(0, +padding*2), CGAffineTransformMakeScale(1.0, 1.0));
                                  
-                             } completion:^(BOOL finished) {
-                                 
-                             }];
+                             } completion:^(BOOL finished) { }];
        } else {
-            [UIView animateWithDuration:duration/2
-                                  delay:0.0
-                                options: kNilOptions
+            [UIView animateWithDuration:duration/2 delay:0.0 options: kNilOptions
                              animations:^{
                                  self.btEdit.alpha = 0;
                                  self.btEdit.transform = CGAffineTransformMakeTranslation(0, 0);
@@ -376,9 +370,7 @@
                                  self.btAddEvent.alpha = 0;
                                  self.btAddEvent.transform = CGAffineTransformMakeTranslation(0, 0);
                                  
-                             } completion:^(BOOL finished) {
-                                 
-                             }];
+                             } completion:^(BOOL finished) { }];
         }
     }
 }
@@ -405,7 +397,6 @@
 - (void)viewDidLoad {
     
     [self setUpButtons];
-    NSLog(@"%@", [RLMRealm defaultRealm].configuration.fileURL);
     [self.table registerNib:[UINib nibWithNibName:@"EventTableViewCell" bundle:nil] forCellReuseIdentifier:@"idEventCell"];
     [self.table registerNib:[UINib nibWithNibName:@"AddEventCell" bundle:nil] forCellReuseIdentifier:@"addEventCell"];
     
@@ -430,7 +421,7 @@
 //    if ([[segue destinationViewController] isKindOfClass:[CreateNewVC class]]) {
 //        CreateNewVC *vc = [segue destinationViewController];
 //        vc.sender = @"event";
-//        vc.addedToProject = self.project;
+//        vc.addedToProject = self.list;
 //    }
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.

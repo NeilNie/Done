@@ -10,9 +10,9 @@
 
 @implementation EventsHelper
 
-+(Events *)createEventWithDate:(NSDate *)date title:(NSString *)title otherInfo:(NSDictionary *)info{
++(Task *)createEventWithDate:(NSDate *)date title:(NSString *)title otherInfo:(NSDictionary *)info{
     
-    Events *NewEvent = [[Events alloc] init];
+    Task *NewEvent = [[Task alloc] init];
     NewEvent.title = title;
     NewEvent.date = date;
     NewEvent.completed = NO;
@@ -44,15 +44,15 @@
     return destinationDate;
 }
 
-+(Projects *)createProjectWithDate:(NSDate *)date title:(NSString *)title{
++(List *)createProjectWithDate:(NSDate *)date title:(NSString *)title{
     
-    Projects *NewProject = [[Projects alloc] init];
-    NewProject.title = title;
-    NewProject.date = date;
-    return NewProject;
+    List *newProject = [[List alloc] init];
+    newProject.title = title;
+    newProject.date = date;
+    return newProject;
 }
 
-+(void)deleteEvent:(Events *)event{
++(void)deleteEvent:(Task *)event{
     
     RLMRealm *realm = [RLMRealm defaultRealm];
     [realm beginWriteTransaction];
@@ -72,7 +72,7 @@
     
     for (int i = 0; i < results.count; i++) {
         
-        Events *event = [results objectAtIndex:i];
+        Task *event = [results objectAtIndex:i];
         NSMutableDictionary *dictionary = [[NSMutableDictionary alloc] init];
         [dictionary setValue:event.title forKey:@"title"];
         [dictionary setValue:[formate stringFromDate:event.date] forKey:@"date"];
@@ -100,7 +100,7 @@
     
     for (int i = 0; i < results.count; i++) {
         
-        Events *event = [results objectAtIndex:i];
+        Task *event = [results objectAtIndex:i];
         [array addObject:event];
     }
     return array;
@@ -112,18 +112,18 @@
     
     NSDateFormatter *formate = [[NSDateFormatter alloc] init];
     [formate setDateFormat:@"dd/MM/yyyy hh:mm"];
-    RLMResults *result = [Projects allObjects];
+    RLMResults *result = [List allObjects];
     
     for (int i = 0; i < result.count; i++) {
         
         NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
-        Projects *pro = [result objectAtIndex:i];
+        List *pro = [result objectAtIndex:i];
         [dic setValue:pro.title forKey:@"title"];
         [dic setValue:pro.date forKey:@"date"];
         
         NSMutableArray *es = [[NSMutableArray alloc] init];
         for (int i = 0; i < pro.events.count; i ++) {
-            Events *e = [pro.events objectAtIndex:i];
+            Task *e = [pro.events objectAtIndex:i];
             NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
             [dic setValue:e.title forKey:@"title"];
             [dic setValue:e.date forKey:@"date"];
@@ -148,14 +148,14 @@
         
         NSDictionary *dic = [array objectAtIndex:i];
         [realm beginWriteTransaction];
-        Projects *pro = [[Projects alloc] init];
+        List *pro = [[List alloc] init];
         pro.title = [dic objectForKey:@"title"];
         pro.date = [dic objectForKey:@"date"];
        
         NSArray *es = [dic objectForKey:@"events"];
         for (int i = 0; i < es.count; i++) {
             NSDictionary *d = [es objectAtIndex:i];
-            Events *e = [[Events alloc] init];
+            Task *e = [[Task alloc] init];
             e.title = [d objectForKey:@"title"];
             e.date = [d objectForKey:@"date"];
             e.completed = ([[d objectForKey:@"completed"] intValue] == 1)? YES : NO;
@@ -176,7 +176,7 @@
     
     for (int i = 0; i < realm.count; i++) {
         
-        Events *event = [realm objectAtIndex:i];
+        Task *event = [realm objectAtIndex:i];
         if ([[formate stringFromDate:today] isEqualToString:[formate stringFromDate:event.date]]) {
             [array addObject:event];
         }
@@ -192,7 +192,7 @@
     
     for (int i = 0; i < realm.count; i++) {
         
-        Events *event = [realm objectAtIndex:i];
+        Task *event = [realm objectAtIndex:i];
         if ([[formate stringFromDate:today] isEqualToString:[formate stringFromDate:event.date]]) {
             [array addObject:event];
         }
@@ -206,7 +206,7 @@
     
     for (int i = 0; i < realm.count; i ++) {
         
-        Events *event = [realm objectAtIndex:i];
+        Task *event = [realm objectAtIndex:i];
         if (event.completed == YES) {
             [array addObject:event];
         }
@@ -221,7 +221,7 @@
     
     for (int i = 0; i < objects.count; i ++) {
         
-        Events *event = [objects objectAtIndex:i];
+        Task *event = [objects objectAtIndex:i];
         if (event.completed == NO) {
             [array addObject:event];
         }
@@ -237,7 +237,7 @@
 
     for (int i = 0; i < realm.count; i ++) {
         
-        Events *event = [realm objectAtIndex:i];
+        Task *event = [realm objectAtIndex:i];
         if (event.completed == YES && [[formate stringFromDate:date] isEqualToString:[formate stringFromDate:event.date]]) {
             [array addObject:event];
         }
@@ -254,7 +254,7 @@
     
     for (int i = 0; i < realm.count; i ++) {
         
-        Events *event = [realm objectAtIndex:i];
+        Task *event = [realm objectAtIndex:i];
         if (event.completed == YES) {
             if ([[formate stringFromDate:date] isEqualToString:[formate stringFromDate:event.date]]) {
                 [array addObject:event];
@@ -264,13 +264,13 @@
     return array;
 }
 
-+(Events *)findEarliestEventTodayWithArray:(NSMutableArray *)array{
++(Task *)findEarliestEventTodayWithArray:(NSMutableArray *)array{
     
     NSDateFormatter *formate = [[NSDateFormatter alloc] init];
     [formate setDateFormat:@"HH"];
-    Events *event = [array firstObject];
+    Task *event = [array firstObject];
     for (int i = 0; i < array.count; i++) {
-        Events *e = [array objectAtIndex:i];
+        Task *e = [array objectAtIndex:i];
         if ([formate stringFromDate:e.date].intValue < [formate stringFromDate:event.date].intValue) {
             event = e;
         }
@@ -279,12 +279,12 @@
     return event;
 }
 
-+(Events *)findEventWithTitle:(NSString *)string withAllRealm:(RLMResults *)array{
++(Task *)findEventWithTitle:(NSString *)string withAllRealm:(RLMResults *)array{
     
-    Events *event = [[Events alloc] init];
+    Task *event = [[Task alloc] init];
     for (int i = 0; i < array.count; i++) {
         
-        Events *e = [array objectAtIndex:i];
+        Task *e = [array objectAtIndex:i];
         if ([e.title isEqualToString:string]) {
             return e;
         }
@@ -292,19 +292,19 @@
     return event;
 }
 
-+(Events *)findMostRecentEvent:(NSDate *)date withArrayOfEvents:(NSMutableArray *)realm{
++(Task *)findMostRecentEvent:(NSDate *)date withArrayOfEvents:(NSMutableArray *)realm{
     
     NSDateFormatter *formate = [[NSDateFormatter alloc] init];
     [formate setDateFormat:@"HH"];
     
     //create event
-    Events *returnEvent = [realm firstObject];
+    Task *returnEvent = [realm firstObject];
     //get the difference between time now and first event of the day.
     int diff = [formate stringFromDate:returnEvent.date].intValue - [formate stringFromDate:date].intValue;
     
     //run a loop through
     for (int i = 0; i < realm.count; i++) {
-        Events *e = [realm objectAtIndex:i];
+        Task *e = [realm objectAtIndex:i];
         
         //see of the difference in time of the current event and current date
         int Cdiff = [formate stringFromDate:e.date].intValue - [formate stringFromDate:date].intValue;
@@ -324,7 +324,7 @@
     
     for (int i = 0; i < realm.count; i ++) {
         
-        Events *event = [realm objectAtIndex:i];
+        Task *event = [realm objectAtIndex:i];
         if (event.completed == NO) {
             [array addObject:event];
         }
@@ -332,19 +332,19 @@
     return array;
 }
 
-+(Events *)findMostRecentEvent:(NSDate *)date withRealm:(RLMArray *)realm{
++(Task *)findMostRecentEvent:(NSDate *)date withRealm:(RLMArray *)realm{
     
     NSDateFormatter *formate = [[NSDateFormatter alloc] init];
     [formate setDateFormat:@"HH"];
     
     //create event
-    Events *returnEvent = [realm firstObject];
+    Task *returnEvent = [realm firstObject];
     //get the difference between time now and first event of the day.
     int diff = [formate stringFromDate:returnEvent.date].intValue - [formate stringFromDate:date].intValue;
     
     //run a loop through
     for (int i = 0; i < realm.count; i++) {
-        Events *e = [realm objectAtIndex:i];
+        Task *e = [realm objectAtIndex:i];
         
         //see of the difference in time of the current event and current date
         int Cdiff = [formate stringFromDate:e.date].intValue - [formate stringFromDate:date].intValue;
@@ -358,19 +358,19 @@
     return returnEvent;
 }
 
-+(Events *)findMostRecentEvent:(NSDate *)date withRealmResult:(RLMResults *)realm{
++(Task *)findMostRecentEvent:(NSDate *)date withRealmResult:(RLMResults *)realm{
     
     NSDateFormatter *formate = [[NSDateFormatter alloc] init];
     [formate setDateFormat:@"HH"];
     
     //create event
-    Events *returnEvent = [realm firstObject];
+    Task *returnEvent = [realm firstObject];
     //get the difference between time now and first event of the day.
     int diff = [formate stringFromDate:returnEvent.date].intValue - [formate stringFromDate:date].intValue;
     
     //run a loop through
     for (int i = 0; i < realm.count; i++) {
-        Events *e = [realm objectAtIndex:i];
+        Task *e = [realm objectAtIndex:i];
         
         //see of the difference in time of the current event and current date
         int Cdiff = [formate stringFromDate:e.date].intValue - [formate stringFromDate:date].intValue;
@@ -384,12 +384,12 @@
     return returnEvent;
 }
 
-+(Projects *)findProjectWithName:(NSString *)name{
++(List *)findProjectWithName:(NSString *)name{
     
-    RLMResults *re = [Projects allObjects];
+    RLMResults *re = [List allObjects];
     
     for (int i = 0; i < re.count; i++) {
-        Projects *p = [re objectAtIndex:i];
+        List *p = [re objectAtIndex:i];
         if ([p.title isEqualToString:name]) {
             return p;
         }
@@ -402,7 +402,7 @@
     NSMutableArray *array = [EventsHelper findEventsForToday:date withRealm:realm];
     NSMutableArray *returnArray = [NSMutableArray array];
     for (int i = 0; i < array.count; i++) {
-        Events *event = [realm objectAtIndex:i];
+        Task *event = [realm objectAtIndex:i];
         if (event.important == YES) {
             [returnArray addObject:event];
         }

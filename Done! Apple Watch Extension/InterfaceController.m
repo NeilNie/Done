@@ -82,8 +82,8 @@
     [formate setDateFormat:@"hh:mm dd/MM"];
     
     //display the upcoming events.
-    RLMResults *result = [Events allObjects];
-    Events *event = [EventsHelper findMostRecentEvent:[NSDate date] withRealmResult:result];
+    RLMResults *result = [Task allObjects];
+    Task *event = [EventsHelper findMostRecentEvent:[NSDate date] withRealmResult:result];
     [self.upcomingDate setText:[NSString stringWithFormat:@"%@", [formate stringFromDate:event.date]]];
     [self.upcomingEvent setText:[NSString stringWithFormat:@"%@", event.title]];
     

@@ -27,8 +27,8 @@
     NSDateFormatter *formate = [[NSDateFormatter alloc] init];
     [formate setDateFormat:@"@ HH:mm MM/dd"];
     
-    NSMutableArray *todayEvents = [EventsHelper findEventsForToday:[NSDate date] withRealm:[Events allObjects]];
-    Events *recent = [EventsHelper findMostRecentEvent:[NSDate date] withArrayOfEvents:todayEvents];
+    NSMutableArray *todayEvents = [EventsHelper findEventsForToday:[NSDate date] withRealm:[Task allObjects]];
+    Task *recent = [EventsHelper findMostRecentEvent:[NSDate date] withArrayOfEvents:todayEvents];
     [self.titleLabel setText:recent.title];
     [self.dateLabel setText:[formate stringFromDate:recent.date]];
     // This method is called when watch view controller is about to be visible to user

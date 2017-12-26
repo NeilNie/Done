@@ -1,5 +1,5 @@
 //
-//  TodayEvents.h
+//  TodayTask.h
 //  Done!
 //
 //  Created by Yongyang Nie on 4/24/16.
@@ -12,9 +12,9 @@
 #import <WatchConnectivity/WatchConnectivity.h>
 #import <ClockKit/ClockKit.h>
 #import "Row.h"
-#import "Events.h"
+#import "Task.h"
 #import "EventsHelper.h"
-#import "Projects.h"
+#import "List.h"
 
 BOOL updated;
 

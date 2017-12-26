@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Realm/Realm.h>
 
-#import "Projects.h"
+#import "List.h"
 
 @interface TableViewController : UITableViewController
 @property (strong, nonatomic) RLMResults *array;

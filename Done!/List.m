@@ -1,14 +1,14 @@
 //
-//  Events.m
+//  Projects.m
 //  Done!
 //
-//  Created by Yongyang Nie on 4/18/16.
+//  Created by Yongyang Nie on 4/26/16.
 //  Copyright © 2016 Yongyang Nie. All rights reserved.
 //
 
-#import "Events.h"
+#import "List.h"
 
-@implementation Events
+@implementation List
 
 // Specify default values for properties
 

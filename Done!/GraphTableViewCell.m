@@ -27,7 +27,7 @@
 
 -(NSMutableArray *)getLineData{
     
-    RLMResults *events = [Events allObjects];
+    RLMResults *events = [Task allObjects];
     NSMutableArray *lineData = [NSMutableArray array];
     NSMutableArray *completed = [NSMutableArray array];
     NSMutableArray *total = [NSMutableArray array];
@@ -51,9 +51,9 @@
     
     NSMutableArray *array = [NSMutableArray array];
     
-    RLMResults *result = [Projects allObjects];
+    RLMResults *result = [List allObjects];
     for (int i = 0; i < result.count; i++) {
-        Projects *p = [result objectAtIndex:i];
+        List *p = [result objectAtIndex:i];
         [array addObject:[PNPieChartDataItem dataItemWithValue:p.events.count color:[UIColor colorWithRed:(86 - i*3)/255.0 green:(220 - i*12)/255.0 blue:(128 - i*3)/255.0 alpha:1.0] description:p.title]];
     }
     

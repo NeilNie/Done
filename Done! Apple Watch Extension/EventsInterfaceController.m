@@ -25,7 +25,7 @@
     
     for (NSInteger i = 0; i < rowCount; i++) {
         
-        Events *event = [array objectAtIndex:i];
+        Task *event = [array objectAtIndex:i];
         Row *row = [self.table rowControllerAtIndex:i];
         [row.titleLabel setText:event.title];
         [row.date setText:[formate stringFromDate:event.date]];

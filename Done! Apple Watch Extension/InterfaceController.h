@@ -11,7 +11,7 @@
 #import <Foundation/Foundation.h>
 #import <Realm/Realm.h>
 
-#import "Events.h"
+#import "Task.h"
 #import "EventsHelper.h"
 
 @interface InterfaceController : WKInterfaceController <WCSessionDelegate> {

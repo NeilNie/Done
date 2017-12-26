@@ -11,9 +11,9 @@
 #import <Realm/Realm.h>
 
 #import "Row.h"
-#import "Events.h"
+#import "Task.h"
 #import "EventsHelper.h"
-#import "Projects.h"
+#import "List.h"
 
 @interface EventsInterfaceController : WKInterfaceController{
     RLMArray *array;

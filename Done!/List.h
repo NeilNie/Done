@@ -1,5 +1,5 @@
 //
-//  Projects.h
+//  List.h
 //  Done!
 //
 //  Created by Yongyang Nie on 4/26/16.
@@ -7,17 +7,17 @@
 //
 
 #import <Realm/Realm.h>
-#import "Events.h"
+#import "Task.h"
 
-@interface Projects : RLMObject
+@interface List : RLMObject
 
 @property NSString *title;
 @property NSDate *date;
 @property int priority;
 @property NSString *location;
-@property RLMArray<Events *><Events> *events;
+@property RLMArray<Task *><Task> *events;
 @end
 
 // This protocol enables typed collections. i.e.:
 // RLMArray<Projects>
-RLM_ARRAY_TYPE(Projects)
+RLM_ARRAY_TYPE(List)

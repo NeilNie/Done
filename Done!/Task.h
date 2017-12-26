@@ -1,5 +1,5 @@
 //
-//  Events.h
+//  Task.h
 //  Done!
 //
 //  Created by Yongyang Nie on 4/18/16.
@@ -8,7 +8,7 @@
 
 #import <Realm/Realm.h>
 
-@interface Events : RLMObject
+@interface Task : RLMObject
 
 @property NSString *uoid;
 @property NSString *title;
@@ -21,4 +21,4 @@
 
 // This protocol enables typed collections. i.e.:
 // RLMArray<Events>
-RLM_ARRAY_TYPE(Events)
+RLM_ARRAY_TYPE(Task)
