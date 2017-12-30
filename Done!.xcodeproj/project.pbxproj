@@ -37,6 +37,11 @@
 		009A02291CDE9DE200C0B23D /* ProjectsInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 009A021F1CDE9DE200C0B23D /* ProjectsInterfaceController.m */; };
 		009A022A1CDE9DE200C0B23D /* Row.m in Sources */ = {isa = PBXBuildFile; fileRef = 009A02211CDE9DE200C0B23D /* Row.m */; };
 		00BEC6721CCBC93A008B7862 /* EventsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 00BEC6711CCBC93A008B7862 /* EventsHelper.m */; };
+		00C9242B1FF70CE900445C07 /* TodayTableViewHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00C9242A1FF70CE900445C07 /* TodayTableViewHeaderView.xib */; };
+		00C9242D1FF70D0900445C07 /* TodayTableViewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C9242C1FF70D0900445C07 /* TodayTableViewHeaderView.swift */; };
+		00C924341FF70ECB00445C07 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 00C924331FF70ECB00445C07 /* Fonts */; };
+		00C924351FF70ECB00445C07 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 00C924331FF70ECB00445C07 /* Fonts */; };
+		00C924361FF70ECB00445C07 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 00C924331FF70ECB00445C07 /* Fonts */; };
 		00D95DEF1CF2006B00DF7736 /* left.png in Resources */ = {isa = PBXBuildFile; fileRef = 00D95DEE1CF2006B00DF7736 /* left.png */; };
 		00F48A301CC5193000B94EA4 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F48A2F1CC5193000B94EA4 /* CalendarViewController.m */; };
 		00F48A331CC5194100B94EA4 /* TodoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F48A321CC5194100B94EA4 /* TodoViewController.m */; };
@@ -240,6 +245,10 @@
 		009A02211CDE9DE200C0B23D /* Row.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Row.m; sourceTree = "<group>"; };
 		00BEC6701CCBC93A008B7862 /* EventsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsHelper.h; sourceTree = "<group>"; };
 		00BEC6711CCBC93A008B7862 /* EventsHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsHelper.m; sourceTree = "<group>"; };
+		00C9242A1FF70CE900445C07 /* TodayTableViewHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodayTableViewHeaderView.xib; sourceTree = "<group>"; };
+		00C9242C1FF70D0900445C07 /* TodayTableViewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayTableViewHeaderView.swift; sourceTree = "<group>"; };
+		00C9242F1FF70D2600445C07 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		00C924331FF70ECB00445C07 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
 		00D95DEE1CF2006B00DF7736 /* left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = left.png; sourceTree = "<group>"; };
 		00F48A2E1CC5193000B94EA4 /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
 		00F48A2F1CC5193000B94EA4 /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
@@ -321,16 +330,12 @@
 		286E50631D150E8000EEA0A6 /* Date.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Date.m; sourceTree = "<group>"; };
 		287125C41D3C548300F1C791 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		287125C61D3C548C00F1C791 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
-		287125C71D3C548C00F1C791 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		287125C81D3C548E00F1C791 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/MainInterface.strings; sourceTree = "<group>"; };
 		287125C91D3C549900F1C791 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
-		287125CA1D3C549900F1C791 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		287125CB1D3C549A00F1C791 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/MainInterface.strings"; sourceTree = "<group>"; };
 		287125CC1D3C54A400F1C791 /* es-MX */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-MX"; path = "es-MX.lproj/Main.strings"; sourceTree = "<group>"; };
-		287125CD1D3C54A500F1C791 /* es-MX */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-MX"; path = "es-MX.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		287125CE1D3C54A600F1C791 /* es-MX */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-MX"; path = "es-MX.lproj/MainInterface.strings"; sourceTree = "<group>"; };
 		287125CF1D3C54AF00F1C791 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
-		287125D01D3C54AF00F1C791 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		287125D11D3C54B000F1C791 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/MainInterface.strings; sourceTree = "<group>"; };
 		287125D51D3C5A9500F1C791 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/interface.storyboard; sourceTree = "<group>"; };
 		287125D81D3C5AA600F1C791 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Interface.strings; sourceTree = "<group>"; };
@@ -589,6 +594,7 @@
 		00F48A371CC5195600B94EA4 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				00C924331FF70ECB00445C07 /* Fonts */,
 				00FDD4C81F9C35F90017BEB3 /* AddEventViewController.swift */,
 				28EB42E61D94A8470049DACF /* TodayViewController.h */,
 				28EB42E71D94A8470049DACF /* TodayViewController.m */,
@@ -645,6 +651,7 @@
 				28EB3A6C1CEA8E2D00A5BCED /* TextfieldCell.xib */,
 				280523BA1D3FE0F800D0EA0C /* GraphTableViewCell.xib */,
 				28DA92CD1D52159200ACC2B3 /* ValuePickerCell.xib */,
+				00C9242A1FF70CE900445C07 /* TodayTableViewHeaderView.xib */,
 				006083591CC4007500A344F1 /* LaunchScreen.storyboard */,
 			);
 			name = Nibs;
@@ -703,6 +710,7 @@
 		284CFBB41D13684B00BFDCBE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				00C9242C1FF70D0900445C07 /* TodayTableViewHeaderView.swift */,
 				003BA4C41E14134D008C5F7A /* PCAngularActivityIndicatorView.h */,
 				003BA4C51E14134D008C5F7A /* PCAngularActivityIndicatorView.m */,
 				28DED30B1D50BFE10046E55A /* DatePickerTableViewCell.h */,
@@ -920,7 +928,6 @@
 				TargetAttributes = {
 					006083471CC4007500A344F1 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 8NZ8K5GNH8;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -985,6 +992,7 @@
 				28908B431D0FA3E800341F20 /* star_full.png in Resources */,
 				28B2003C1CC7C36500A18DFC /* CellDescriptor.plist in Resources */,
 				28EB3AA61CEA8EBE00A5BCED /* bg5@2x.png in Resources */,
+				00C924341FF70ECB00445C07 /* Fonts in Resources */,
 				28EB3AAD1CEA8EBE00A5BCED /* Media.xcassets in Resources */,
 				28EB3AA51CEA8EBE00A5BCED /* bg3@2x.png in Resources */,
 				00D95DEF1CF2006B00DF7736 /* left.png in Resources */,
@@ -1007,6 +1015,7 @@
 				2898735E1CF3ABA600A283C1 /* colorBackground.jpg in Resources */,
 				28EB3AA41CEA8EBE00A5BCED /* bg1@2x.png in Resources */,
 				28F896FB1CEBFB5500C546EC /* done-icon copy.png in Resources */,
+				00C9242B1FF70CE900445C07 /* TodayTableViewHeaderView.xib in Resources */,
 				00F4A8FC1CD520690062416D /* CellDescriptor2.plist in Resources */,
 				28EB3A731CEA8E2D00A5BCED /* TextfieldCell.xib in Resources */,
 				28EB3A721CEA8E2D00A5BCED /* SwitchCell.xib in Resources */,
@@ -1023,6 +1032,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00C924351FF70ECB00445C07 /* Fonts in Resources */,
 				287125D41D3C5A9500F1C791 /* interface.storyboard in Resources */,
 				28F896FC1CEBFB5500C546EC /* done-icon copy.png in Resources */,
 				0083158A1CDE8FFE003E706D /* Assets.xcassets in Resources */,
@@ -1034,6 +1044,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00C924361FF70ECB00445C07 /* Fonts in Resources */,
 				28F896FD1CEBFB5500C546EC /* done-icon copy.png in Resources */,
 				0083157D1CDE8FF2003E706D /* Assets.xcassets in Resources */,
 				008315841CDE8FF2003E706D /* PushNotificationPayload.apns in Resources */,
@@ -1334,6 +1345,7 @@
 				286E50641D150E8000EEA0A6 /* Date.m in Sources */,
 				28B4463B1D370D76000A0501 /* TimelineViewController.m in Sources */,
 				28E53D021CD04662002DB55F /* List.m in Sources */,
+				00C9242D1FF70D0900445C07 /* TodayTableViewHeaderView.swift in Sources */,
 				2802F8221CC5B7AE00C65966 /* Task.m in Sources */,
 				0020F7281CD584A900F47CEE /* QBPopupMenu.m in Sources */,
 				283D1B111D1640DF000CEC0C /* TimePeriod.m in Sources */,
@@ -1428,10 +1440,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				0060835A1CC4007500A344F1 /* Base */,
-				287125C71D3C548C00F1C791 /* fr */,
-				287125CA1D3C549900F1C791 /* zh-Hans */,
-				287125CD1D3C54A500F1C791 /* es-MX */,
-				287125D01D3C54AF00F1C791 /* es */,
+				00C9242F1FF70D2600445C07 /* en */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -1596,6 +1605,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Done!/Done!.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1626,6 +1636,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Done!/Done!.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

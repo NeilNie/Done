@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Display-Bold.otf">
+            <string>SFProDisplay-Bold</string>
+        </array>
+        <array key="SF-Pro-Display-Regular.otf">
+            <string>SFProDisplay-Regular</string>
+        </array>
+        <array key="SF-Pro-Display-Semibold.otf">
+            <string>SFProDisplay-Semibold</string>
+        </array>
+        <array key="SF-Pro-Text-Regular.otf">
+            <string>SFProText-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Z2t-ZI-m8f" customClass="TodayTableViewHeaderView" customModule="Done_" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="115"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friday, December 29" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="toK-BS-hoL">
+                    <rect key="frame" x="8" y="20" width="180" height="87"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="180" id="CTg-gN-Khr"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="28"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="finished/total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ScV-tj-VHd">
+                    <rect key="frame" x="274" y="74" width="93" height="21"/>
+                    <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rUB-id-tjU">
+                    <rect key="frame" x="8" y="8" width="48" height="20"/>
+                    <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="✔️ 8/12" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uQd-Xg-uy2">
+                    <rect key="frame" x="239" y="27.5" width="128" height="38.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="128" id="Rif-Si-pYW"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="32"/>
+                    <color key="textColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="4T3-78-ezw" firstAttribute="bottom" secondItem="toK-BS-hoL" secondAttribute="bottom" constant="8" id="0jE-hQ-avG"/>
+                <constraint firstItem="rUB-id-tjU" firstAttribute="leading" secondItem="4T3-78-ezw" secondAttribute="leading" constant="8" id="1ZW-hj-K4X"/>
+                <constraint firstItem="toK-BS-hoL" firstAttribute="top" secondItem="4T3-78-ezw" secondAttribute="top" constant="20" id="4qX-iS-hMX"/>
+                <constraint firstItem="rUB-id-tjU" firstAttribute="top" secondItem="4T3-78-ezw" secondAttribute="top" constant="8" id="KSP-4T-QQp"/>
+                <constraint firstItem="ScV-tj-VHd" firstAttribute="top" secondItem="uQd-Xg-uy2" secondAttribute="bottom" constant="8" id="hat-lF-TYv"/>
+                <constraint firstItem="toK-BS-hoL" firstAttribute="leading" secondItem="4T3-78-ezw" secondAttribute="leading" constant="8" id="jbg-tW-OiH"/>
+                <constraint firstItem="4T3-78-ezw" firstAttribute="trailing" secondItem="ScV-tj-VHd" secondAttribute="trailing" constant="8" id="mYt-je-WDW"/>
+                <constraint firstItem="4T3-78-ezw" firstAttribute="trailing" secondItem="uQd-Xg-uy2" secondAttribute="trailing" constant="8" id="pco-b7-Fl6"/>
+                <constraint firstItem="4T3-78-ezw" firstAttribute="bottom" secondItem="ScV-tj-VHd" secondAttribute="bottom" constant="20" id="wVv-WQ-5eR"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="4T3-78-ezw"/>
+            <connections>
+                <outlet property="dateLabel" destination="toK-BS-hoL" id="j80-KG-Xf3"/>
+                <outlet property="progressLabel" destination="uQd-Xg-uy2" id="ePN-wd-mcO"/>
+            </connections>
+        </view>
+    </objects>
+</document>

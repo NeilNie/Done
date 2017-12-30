@@ -48,5 +48,16 @@
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>SFCompactDisplay-Regular.otf</string>
+		<string>SFCompactText-Medium.otf</string>
+		<string>SFCompactText-Heavy.otf</string>
+		<string>SF-Pro-Text-Regular.otf</string>
+		<string>SF-Pro-Text-Light.otf</string>
+		<string>SF-Pro-Display-Light.otf</string>
+		<string>SF-Pro-Display-Bold.otf</string>
+		<string>SF-Pro-Text-Medium.otf</string>
+	</array>
 </dict>
 </plist>

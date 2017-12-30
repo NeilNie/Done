@@ -33,6 +33,13 @@
     return 70;
 }
 
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    
+    TodayTableViewHeaderView *header = [self.table dequeueReusableHeaderFooterViewWithIdentifier:@"TableSectionHeader"];
+    [header setFrame:CGRectMake(header.frame.origin.x, header.frame.origin.y, header.frame.size.width, 115)];
+    return header;
+}
+
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     EventTableViewCell *cell = (EventTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"idEventCell" forIndexPath:indexPath];
@@ -260,11 +267,16 @@
 
 - (void)viewDidLoad {
     
+    [super viewDidLoad];
+    
     [self refreshData:nil];
     [self.table registerNib:[UINib nibWithNibName:@"EventTableViewCell" bundle:nil] forCellReuseIdentifier:@"idEventCell"];
     [self setupGestures];
     [self updateAuthorizationStatusToAccessEventStore];
-    [super viewDidLoad];
+    
+    UINib *nib = [UINib nibWithNibName:@"TodayTableViewHeaderView" bundle:nil];
+    [self.table registerNib:nib forCellReuseIdentifier:@"TableSectionHeader"];
+    
     // Do any additional setup after loading the view.
 }
 

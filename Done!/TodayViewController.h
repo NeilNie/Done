@@ -18,7 +18,7 @@
 #import "Date.h"
 #import "Done_-Swift.h"
 
-@interface TodayViewController : UIViewController <WCSessionDelegate>
+@interface TodayViewController : UIViewController <WCSessionDelegate, UITableViewDelegate, UITableViewDataSource>
 
 //@property (weak, nonatomic) IBOutlet GADBannerView *banner;
 @property (weak, nonatomic) IBOutlet UILabel *completedLabel;
