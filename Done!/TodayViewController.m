@@ -33,6 +33,17 @@
     return 70;
 }
 
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    
+    TodayTableViewHeaderView *header = [self.table dequeueReusableHeaderFooterViewWithIdentifier:@"TableSectionHeader"];
+    NSDate *currentDateTime = [NSDate date];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"EEEE, MMMM dd"];
+    header.dateLabel.text = [dateFormatter stringFromDate:currentDateTime];
+
+    return header;
+}
+
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     EventTableViewCell *cell = (EventTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"idEventCell" forIndexPath:indexPath];
@@ -170,15 +181,7 @@
     [formate setDateFormat:@"EEEE"];
     self.weekLabel.text = [formate stringFromDate:[NSDate date]];
     [self.table reloadData];
-    
-    //hide or show table
-    if (allEvents.count == 0) {
-        self.table.hidden = YES;
-        self.clearLabel.hidden = NO;
-    }else{
-        self.table.hidden = NO;
-        self.clearLabel.hidden = YES;
-    }
+
 }
 
 - (void)updateAuthorizationStatusToAccessEventStore {
@@ -260,18 +263,24 @@
 
 - (void)viewDidLoad {
     
+    [super viewDidLoad];
+    
     [self refreshData:nil];
     [self.table registerNib:[UINib nibWithNibName:@"EventTableViewCell" bundle:nil] forCellReuseIdentifier:@"idEventCell"];
     [self setupGestures];
     [self updateAuthorizationStatusToAccessEventStore];
-    [super viewDidLoad];
+    
+    self.table.sectionHeaderHeight = 115;
+    UINib *nib = [UINib nibWithNibName:@"TodayTableViewHeaderView" bundle:nil];
+    [self.table registerNib:nib forHeaderFooterViewReuseIdentifier:@"TableSectionHeader"];
     // Do any additional setup after loading the view.
 }
 
 -(void)viewDidAppear:(BOOL)animated{
     
-    [self setUpUserInterface];
     [super viewDidAppear:YES];
+    [self setUpUserInterface];
+    
 }
 
 - (void)didReceiveMemoryWarning {
