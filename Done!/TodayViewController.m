@@ -36,7 +36,11 @@
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     
     TodayTableViewHeaderView *header = [self.table dequeueReusableHeaderFooterViewWithIdentifier:@"TableSectionHeader"];
-    [header setFrame:CGRectMake(header.frame.origin.x, header.frame.origin.y, header.frame.size.width, 115)];
+    NSDate *currentDateTime = [NSDate date];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"EEEE, MMMM dd"];
+    header.dateLabel.text = [dateFormatter stringFromDate:currentDateTime];
+
     return header;
 }
 
@@ -177,15 +181,7 @@
     [formate setDateFormat:@"EEEE"];
     self.weekLabel.text = [formate stringFromDate:[NSDate date]];
     [self.table reloadData];
-    
-    //hide or show table
-    if (allEvents.count == 0) {
-        self.table.hidden = YES;
-        self.clearLabel.hidden = NO;
-    }else{
-        self.table.hidden = NO;
-        self.clearLabel.hidden = YES;
-    }
+
 }
 
 - (void)updateAuthorizationStatusToAccessEventStore {
@@ -274,16 +270,17 @@
     [self setupGestures];
     [self updateAuthorizationStatusToAccessEventStore];
     
+    self.table.sectionHeaderHeight = 115;
     UINib *nib = [UINib nibWithNibName:@"TodayTableViewHeaderView" bundle:nil];
-    [self.table registerNib:nib forCellReuseIdentifier:@"TableSectionHeader"];
-    
+    [self.table registerNib:nib forHeaderFooterViewReuseIdentifier:@"TableSectionHeader"];
     // Do any additional setup after loading the view.
 }
 
 -(void)viewDidAppear:(BOOL)animated{
     
-    [self setUpUserInterface];
     [super viewDidAppear:YES];
+    [self setUpUserInterface];
+    
 }
 
 - (void)didReceiveMemoryWarning {

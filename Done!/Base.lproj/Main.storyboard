@@ -8,18 +8,14 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="SF-Pro-Display-Bold.otf">
-            <string>SFProDisplay-Bold</string>
-        </array>
-        <array key="SF-Pro-Display-Regular.otf">
-            <string>SFProDisplay-Regular</string>
-        </array>
         <array key="SF-Pro-Display-Semibold.otf">
             <string>SFProDisplay-Semibold</string>
+        </array>
+        <array key="SF-Pro-Text-Bold.otf">
+            <string>SFProText-Bold</string>
         </array>
         <array key="SF-Pro-Text-Regular.otf">
             <string>SFProText-Regular</string>
@@ -160,59 +156,41 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Done!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ua-y7-e3y">
-                                <rect key="frame" x="151" y="116" width="74.5" height="36"/>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
+                                <rect key="frame" x="148" y="116" width="79.5" height="36"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="30"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created &amp; Programmed by" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xqH-nS-nqx">
-                                <rect key="frame" x="85.5" y="172" width="204" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="81" y="172" width="213" height="20"/>
+                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yongyang (Neil) Nie" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SuL-0Z-XhY">
-                                <rect key="frame" x="112" y="200.5" width="151.5" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="108.5" y="200" width="159" height="20"/>
+                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Graphics &amp; Design" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YaR-Ix-nHj">
-                                <rect key="frame" x="116.5" y="241" width="142.5" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yongyang (Neil) Nie &amp; MaterialKit (open source)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NSH-Zt-jaA">
-                                <rect key="frame" x="5" y="269.5" width="365" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Organization &amp; Website" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kyy-g9-GxP">
-                                <rect key="frame" x="97.5" y="310" width="180" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nspire Software: www.nspiresoftware.net" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pis-QX-4cZ">
-                                <rect key="frame" x="29.5" y="338.5" width="316" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Website: www.neilnie.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pis-QX-4cZ">
+                                <rect key="frame" x="83.5" y="260" width="209" height="20"/>
+                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email &amp; Feedback" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cp1-aq-htU">
-                                <rect key="frame" x="119.5" y="379" width="136.5" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="116.5" y="300" width="143" height="20"/>
+                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="appledeveloper.neil@gmail.com &amp; contact@nspiresoftware.net" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7uw-8E-hsP">
-                                <rect key="frame" x="24" y="407.5" width="327" height="45"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="contact@neilnie.com" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7uw-8E-hsP">
+                                <rect key="frame" x="24" y="328" width="327" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="eAX-Fy-ZhB"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -220,26 +198,20 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ei7-qM-WGw" firstAttribute="top" secondItem="1Uw-Zt-0jN" secondAttribute="bottom" constant="8" id="4Zw-bE-alN"/>
-                            <constraint firstItem="YaR-Ix-nHj" firstAttribute="centerX" secondItem="P3e-K3-UpC" secondAttribute="centerX" id="64j-Us-Djh"/>
                             <constraint firstItem="1Ua-y7-e3y" firstAttribute="top" secondItem="ei7-qM-WGw" secondAttribute="bottom" constant="8" id="6z7-HZ-HJ9"/>
-                            <constraint firstItem="NSH-Zt-jaA" firstAttribute="top" secondItem="YaR-Ix-nHj" secondAttribute="bottom" constant="8" id="8su-gW-usu"/>
-                            <constraint firstItem="kyy-g9-GxP" firstAttribute="centerX" secondItem="P3e-K3-UpC" secondAttribute="centerX" id="ETo-tm-2vW"/>
                             <constraint firstItem="Cp1-aq-htU" firstAttribute="centerX" secondItem="P3e-K3-UpC" secondAttribute="centerX" id="EUJ-eL-0cQ"/>
                             <constraint firstItem="pis-QX-4cZ" firstAttribute="centerX" secondItem="P3e-K3-UpC" secondAttribute="centerX" id="JaS-Ya-6xy"/>
                             <constraint firstItem="ei7-qM-WGw" firstAttribute="centerX" secondItem="P3e-K3-UpC" secondAttribute="centerX" id="MJe-ly-ZCN"/>
                             <constraint firstItem="xqH-nS-nqx" firstAttribute="top" secondItem="1Ua-y7-e3y" secondAttribute="bottom" constant="20" id="QRo-rf-0hh"/>
+                            <constraint firstItem="pis-QX-4cZ" firstAttribute="top" secondItem="SuL-0Z-XhY" secondAttribute="bottom" constant="40" id="Qbe-Mw-goq"/>
                             <constraint firstItem="Cp1-aq-htU" firstAttribute="top" secondItem="pis-QX-4cZ" secondAttribute="bottom" constant="20" id="T21-g2-zP7"/>
-                            <constraint firstItem="NSH-Zt-jaA" firstAttribute="centerX" secondItem="P3e-K3-UpC" secondAttribute="centerX" id="X4Q-1K-Lqs"/>
                             <constraint firstItem="1Ua-y7-e3y" firstAttribute="centerX" secondItem="P3e-K3-UpC" secondAttribute="centerX" id="XcP-Rj-KMX"/>
                             <constraint firstItem="7uw-8E-hsP" firstAttribute="top" secondItem="Cp1-aq-htU" secondAttribute="bottom" constant="8" id="Y4Z-vM-keg"/>
                             <constraint firstAttribute="trailingMargin" secondItem="7uw-8E-hsP" secondAttribute="trailing" constant="8" id="bO7-4l-iFg"/>
                             <constraint firstItem="SuL-0Z-XhY" firstAttribute="top" secondItem="xqH-nS-nqx" secondAttribute="bottom" constant="8" id="bi8-Cs-6Ym"/>
-                            <constraint firstItem="kyy-g9-GxP" firstAttribute="top" secondItem="NSH-Zt-jaA" secondAttribute="bottom" constant="20" id="n3y-rK-0hF"/>
                             <constraint firstItem="xqH-nS-nqx" firstAttribute="centerX" secondItem="P3e-K3-UpC" secondAttribute="centerX" id="oZL-do-ETw"/>
                             <constraint firstItem="7uw-8E-hsP" firstAttribute="leading" secondItem="P3e-K3-UpC" secondAttribute="leadingMargin" constant="8" id="sAX-pe-pL7"/>
-                            <constraint firstItem="pis-QX-4cZ" firstAttribute="top" secondItem="kyy-g9-GxP" secondAttribute="bottom" constant="8" id="smy-zC-Ip9"/>
                             <constraint firstItem="SuL-0Z-XhY" firstAttribute="centerX" secondItem="P3e-K3-UpC" secondAttribute="centerX" id="tHD-02-tKs"/>
-                            <constraint firstItem="YaR-Ix-nHj" firstAttribute="top" secondItem="SuL-0Z-XhY" secondAttribute="bottom" constant="20" id="uKS-ji-XSy"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Information" id="RYt-Vg-We1">
@@ -268,7 +240,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="6Th-4z-QxF"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -278,7 +250,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="110" id="zeA-Tj-n73"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="50"/>
+                                <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="40"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -764,62 +736,9 @@
                                 <rect key="frame" x="16" y="20" width="343" height="590"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <view key="tableFooterView" contentMode="scaleToFill" id="oI8-am-Myg" customClass="TodayTableViewHeaderView" customModule="Done_" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="343" height="120"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friday, December 29" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x3B-IE-sxe">
-                                            <rect key="frame" x="8" y="20" width="180" height="92"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="180" id="JIC-qx-IfJ"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="28"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="finished/total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wKo-tg-LuL">
-                                            <rect key="frame" x="242" y="79" width="93" height="21"/>
-                                            <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r9H-0T-0vu">
-                                            <rect key="frame" x="8" y="8" width="48" height="20"/>
-                                            <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="✔️ 8/12" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vPc-Xi-KEF">
-                                            <rect key="frame" x="207" y="32.5" width="128" height="38.5"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="128" id="AJX-Dj-J7X"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="32"/>
-                                            <color key="textColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <color key="backgroundColor" red="0.96567636729999995" green="0.96569901700000005" blue="0.96568685769999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <constraints>
-                                        <constraint firstItem="wKo-tg-LuL" firstAttribute="top" secondItem="vPc-Xi-KEF" secondAttribute="bottom" constant="8" id="5Sa-RQ-lAE"/>
-                                        <constraint firstItem="x3B-IE-sxe" firstAttribute="leading" secondItem="Lgf-lf-mNv" secondAttribute="leading" constant="8" id="HLi-fu-Era"/>
-                                        <constraint firstItem="r9H-0T-0vu" firstAttribute="leading" secondItem="Lgf-lf-mNv" secondAttribute="leading" constant="8" id="J48-tJ-kym"/>
-                                        <constraint firstItem="r9H-0T-0vu" firstAttribute="top" secondItem="Lgf-lf-mNv" secondAttribute="top" constant="8" id="KQH-vN-Nqn"/>
-                                        <constraint firstItem="x3B-IE-sxe" firstAttribute="top" secondItem="Lgf-lf-mNv" secondAttribute="top" constant="20" id="Ozt-OB-2dz"/>
-                                        <constraint firstItem="Lgf-lf-mNv" firstAttribute="bottom" secondItem="x3B-IE-sxe" secondAttribute="bottom" constant="8" id="Tty-Bu-oD2"/>
-                                        <constraint firstItem="Lgf-lf-mNv" firstAttribute="trailing" secondItem="wKo-tg-LuL" secondAttribute="trailing" constant="8" id="dkP-5l-IqX"/>
-                                        <constraint firstItem="Lgf-lf-mNv" firstAttribute="trailing" secondItem="vPc-Xi-KEF" secondAttribute="trailing" constant="8" id="vEn-tF-L1k"/>
-                                        <constraint firstItem="Lgf-lf-mNv" firstAttribute="bottom" secondItem="wKo-tg-LuL" secondAttribute="bottom" constant="20" id="zrR-kl-w8h"/>
-                                    </constraints>
-                                    <viewLayoutGuide key="safeArea" id="Lgf-lf-mNv"/>
-                                    <connections>
-                                        <outlet property="dateLabel" destination="x3B-IE-sxe" id="LZm-Wn-OBH"/>
-                                        <outlet property="progressLabel" destination="vPc-Xi-KEF" id="cPS-JI-UkM"/>
-                                    </connections>
-                                </view>
                                 <connections>
-                                    <outlet property="dataSource" destination="ize-Ru-7FO" id="lUm-2f-VEh"/>
-                                    <outlet property="delegate" destination="ize-Ru-7FO" id="DRy-1L-dUd"/>
+                                    <outlet property="dataSource" destination="ize-Ru-7FO" id="Gwc-ew-dRr"/>
+                                    <outlet property="delegate" destination="ize-Ru-7FO" id="cio-O9-9wf"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -833,6 +752,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Today" image="star_outline" selectedImage="star_outline" id="Bjv-N9-vAa"/>
                     <navigationItem key="navigationItem" title="Today" id="RmN-cR-kqP"/>
+                    <connections>
+                        <outlet property="table" destination="pA0-M3-MG2" id="TQZ-KK-Zlg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="whc-BJ-VzZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
