@@ -1,32 +1,32 @@
 PODS:
-  - Charts (3.0.4):
-    - Charts/Core (= 3.0.4)
-  - Charts/Core (3.0.4)
+  - Charts (3.0.5):
+    - Charts/Core (= 3.0.5)
+  - Charts/Core (3.0.5)
   - Eureka (4.0.1)
-  - Firebase/AdMob (4.8.0):
+  - Firebase/AdMob (4.8.1):
     - Firebase/Core
     - Google-Mobile-Ads-SDK (= 7.27.0)
-  - Firebase/Auth (4.8.0):
+  - Firebase/Auth (4.8.1):
     - Firebase/Core
-    - FirebaseAuth (= 4.4.1)
-  - Firebase/Core (4.8.0):
-    - FirebaseAnalytics (= 4.0.5)
-    - FirebaseCore (= 4.0.13)
-  - Firebase/Database (4.8.0):
+    - FirebaseAuth (= 4.4.2)
+  - Firebase/Core (4.8.1):
+    - FirebaseAnalytics (= 4.0.7)
+    - FirebaseCore (= 4.0.14)
+  - Firebase/Database (4.8.1):
     - Firebase/Core
-    - FirebaseDatabase (= 4.1.3)
-  - FirebaseAnalytics (4.0.5):
+    - FirebaseDatabase (= 4.1.4)
+  - FirebaseAnalytics (4.0.7):
     - FirebaseCore (~> 4.0)
     - FirebaseInstanceID (~> 2.0)
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
     - nanopb (~> 0.3)
-  - FirebaseAuth (4.4.1):
+  - FirebaseAuth (4.4.2):
     - FirebaseAnalytics (~> 4.0)
     - GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)
     - GTMSessionFetcher/Core (~> 1.1)
-  - FirebaseCore (4.0.13):
+  - FirebaseCore (4.0.14):
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
-  - FirebaseDatabase (4.1.3):
+  - FirebaseDatabase (4.1.4):
     - FirebaseAnalytics (~> 4.0)
     - FirebaseCore (~> 4.0)
     - leveldb-library (~> 1.18)
@@ -44,7 +44,7 @@ PODS:
     - GoogleToolboxForMac/NSString+URLArguments (= 2.1.3)
   - GoogleToolboxForMac/NSString+URLArguments (2.1.3)
   - GTMSessionFetcher/Core (1.1.12)
-  - JTCalendar (2.2.0)
+  - JTCalendar (2.2.1)
   - leveldb-library (1.20)
   - Masonry (1.1.0)
   - MaterialControls (1.2.2)
@@ -53,9 +53,9 @@ PODS:
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
-  - Realm (3.0.2):
-    - Realm/Headers (= 3.0.2)
-  - Realm/Headers (3.0.2)
+  - Realm (3.1.0):
+    - Realm/Headers (= 3.1.0)
+  - Realm/Headers (3.1.0)
   - SWTableViewCell (0.3.7)
   - UIColor-HexString (1.3.0)
   - UICountingLabel (1.4.1)
@@ -76,23 +76,23 @@ DEPENDENCIES:
   - UICountingLabel
 
 SPEC CHECKSUMS:
-  Charts: '0705898046257443f0afbbc3179f4b67507b6e48'
+  Charts: 45cdc985b764c838b35ee47eb1365d15735f6d1a
   Eureka: c8bd5cc07143b6f66268c208d28a246c99b41955
-  Firebase: 710decbbc6d9d48530e9a5dba3209740c3532e05
-  FirebaseAnalytics: 5b02a63ead2c3f0259cfc7f15e053e440587ecf8
-  FirebaseAuth: dc0dd403beca5b2b016aac89c2d0b8dad1c81926
-  FirebaseCore: 3c02ec652db3d03fdc8bc6d9154af3e20d64b6f5
-  FirebaseDatabase: 7088bfc4af2cc00231bb36e1404fc2d7509eb4dc
+  Firebase: 2721056b8885eef90233b03f37be64358d35d262
+  FirebaseAnalytics: 617afa8c26b57a0c3f11361b248bc9e17bfd8dfd
+  FirebaseAuth: bd2738c5c1e92b108ba5f7f7335908097a4e50bb
+  FirebaseCore: 2e0b98fb2d64ca8140136beff15772bdd14d2dd7
+  FirebaseDatabase: de4446507ccd3257fca37d16f40e1540324571fd
   FirebaseInstanceID: 81df5805a08001e69138664bdd02c6719a9ac80f
   Google-Mobile-Ads-SDK: 83f7f890e638ce8f1debd440ea363338c9f6be3b
   GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
   GTMSessionFetcher: ebaa1f79a5366922c1735f1566901f50beba23b7
-  JTCalendar: 3f576b73433bb173eaca7edc7c26560981530280
+  JTCalendar: be9e781229c6e539d9b71267560410886cd65cfb
   leveldb-library: '08cba283675b7ed2d99629a4bc5fd052cd2bb6a5'
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MaterialControls: 1c6b29e78d3a13d8dd6a67ed31b6d26eb5de8f72
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
-  Realm: 6f23fd1f178a09342eac21bfa7c2bf4312a7a180
+  Realm: '09513d7c054678d65cd02ce09871f805b0d758ac'
   SWTableViewCell: 2a94aadc9d47b2b611fa064566bf57948b95b579
   UIColor-HexString: fadc2e1389db19147ac99dee92222d3bd8bfec4a
   UICountingLabel: faf890b505d96312e324a86718f031fafffb0ccb
