@@ -350,8 +350,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Calendar" id="Kfz-KN-Qdj">
                         <barButtonItem key="rightBarButtonItem" id="qiS-3J-BBU">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7HY-08-bAU">
-                                <rect key="frame" x="327" y="0.0" width="32" height="32"/>
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7HY-08-bAU">
+                                <rect key="frame" x="327" y="0.0" width="32" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="32"/>
                                 <state key="normal" title="+">
