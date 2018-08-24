@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '0340617599A5ADA319D52EC96226C4E4'
-               BlueprintName = 'SWTableViewCell'
-               ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'SWTableViewCell.framework'>
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "5AB41E47B00DF41AD2BBE4330E7C37AB"
+               BlueprintName = "SWTableViewCell"
+               ReferencedContainer = "container:Pods.xcodeproj"
+               BuildableName = "SWTableViewCell.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

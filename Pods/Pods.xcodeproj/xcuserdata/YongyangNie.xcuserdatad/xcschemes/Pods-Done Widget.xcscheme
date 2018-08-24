@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'E4BABEAB12FC12F6796A22EEC4E75329'
-               BlueprintName = 'Pods-Done Widget'
-               ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'Pods-Done Widget.framework'>
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "E4BABEAB12FC12F6796A22EEC4E75329"
+               BlueprintName = "Pods-Done Widget"
+               ReferencedContainer = "container:Pods.xcodeproj"
+               BuildableName = "Pods-Done Widget.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

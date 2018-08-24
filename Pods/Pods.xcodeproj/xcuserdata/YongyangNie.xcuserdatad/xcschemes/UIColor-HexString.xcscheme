@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'AF4E3952AD2E5B5C829049574C1B6868'
-               BlueprintName = 'UIColor-HexString'
-               ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'UIColor-HexString.framework'>
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "403D67C09112906549D078C76EF5A612"
+               BlueprintName = "UIColor-HexString"
+               ReferencedContainer = "container:Pods.xcodeproj"
+               BuildableName = "UIColor-HexString.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

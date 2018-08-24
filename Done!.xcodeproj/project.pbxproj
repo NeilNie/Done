@@ -993,7 +993,6 @@
 				006083461CC4007500A344F1 /* Resources */,
 				28BDF7DA1CC8F03900E3F63C /* Embed Watch Content */,
 				985931BD511981C0595CEA3D /* [CP] Embed Pods Frameworks */,
-				B63B112249B56F8E11F02FFE /* [CP] Copy Pods Resources */,
 				00FA9E301CE902BE00E977D0 /* Embed App Extensions */,
 				19199F3EFC42BB8CF49BF363 /* 📦 Embed Pods Frameworks */,
 				3F0D71EB9A0E4717619F7CFB /* 📦 Copy Pods Resources */,
@@ -1037,7 +1036,6 @@
 				0083154A1CDE8FDB003E706D /* Frameworks */,
 				0083154B1CDE8FDB003E706D /* Resources */,
 				CFA7B2874C644EAA44E2D028 /* [CP] Embed Pods Frameworks */,
-				57AF8069826B98CFE3958961 /* [CP] Copy Pods Resources */,
 				174B1BF03C98B9EBDD98325F /* 📦 Embed Pods Frameworks */,
 				A1D0D0ABEB242C43AB45CAAC /* 📦 Copy Pods Resources */,
 			);
@@ -1059,7 +1057,6 @@
 				00FA9E1C1CE902BE00E977D0 /* Sources */,
 				00FA9E1D1CE902BE00E977D0 /* Frameworks */,
 				00FA9E1E1CE902BE00E977D0 /* Resources */,
-				6B6072B544FAD5BF18A27642 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1382,21 +1379,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Done!/Pods-Done!-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		57AF8069826B98CFE3958961 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Done! Apple Watch Extension/Pods-Done! Apple Watch Extension-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		66F2B314EB24E2BB55DE1EB4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1412,21 +1394,6 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		6B6072B544FAD5BF18A27642 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Done Widget/Pods-Done Widget-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		985931BD511981C0595CEA3D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1437,7 +1404,7 @@
 				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/JTCalendar/JTCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/MaterialControls/MaterialControls.framework",
@@ -1453,7 +1420,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Eureka.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTCalendar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialControls.framework",
@@ -1500,21 +1467,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B63B112249B56F8E11F02FFE /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Done!/Pods-Done!-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CD2820E62C78B3A56DF3472C /* [CP] Check Pods Manifest.lock */ = {

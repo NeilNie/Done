@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '87D3C9CF10DEE36A4A6279DAFFF0D7CB'
-               BlueprintName = 'UICountingLabel'
-               ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'UICountingLabel.framework'>
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CACD1119B66EF0A765CA64D0B53EA790"
+               BlueprintName = "UICountingLabel"
+               ReferencedContainer = "container:Pods.xcodeproj"
+               BuildableName = "UICountingLabel.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
