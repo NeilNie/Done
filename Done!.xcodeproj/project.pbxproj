@@ -995,7 +995,6 @@
 				985931BD511981C0595CEA3D /* [CP] Embed Pods Frameworks */,
 				00FA9E301CE902BE00E977D0 /* Embed App Extensions */,
 				19199F3EFC42BB8CF49BF363 /* 📦 Embed Pods Frameworks */,
-				3F0D71EB9A0E4717619F7CFB /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1037,7 +1036,6 @@
 				0083154B1CDE8FDB003E706D /* Resources */,
 				CFA7B2874C644EAA44E2D028 /* [CP] Embed Pods Frameworks */,
 				174B1BF03C98B9EBDD98325F /* 📦 Embed Pods Frameworks */,
-				A1D0D0ABEB242C43AB45CAAC /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1364,21 +1362,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		3F0D71EB9A0E4717619F7CFB /* 📦 Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Done!/Pods-Done!-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		66F2B314EB24E2BB55DE1EB4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1434,21 +1417,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Done!/Pods-Done!-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A1D0D0ABEB242C43AB45CAAC /* 📦 Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Done! Apple Watch Extension/Pods-Done! Apple Watch Extension-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A4D240EB3B60641A9E5062C2 /* [CP] Check Pods Manifest.lock */ = {
